@@ -6,6 +6,8 @@ enableEmoji = true
 copyright = "© 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. "
 description = "Max Vogel's personal website."
 
+publishDir = "docs"
+
 [taxonomies]
   category = "categories"
 
