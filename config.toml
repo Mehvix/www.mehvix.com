@@ -1,3 +1,36 @@
-baseURL = "http://example.org/"
+baseURL = "https://www.mehvix.com/"
+title = "home"
+theme ="hugo-theme-basic"
 languageCode = "en-us"
-title = "My New Hugo Site"
+enableEmoji = true 
+copyright = "© 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. "
+description = "Max Vogel's personal website."
+
+[taxonomies]
+  category = "categories"
+
+[params]
+  titleEmoji = ""
+
+[Permalinks]
+  post = "post/:slug"
+
+[[params.menu]]
+  name = "about"
+  url = "about/"
+  
+[[params.menu]]
+  name = "posts"
+  url = "post/"
+
+[[params.menu]]
+  name = "categories"
+  url = "categories/"
+  
+
+
+[privacy]
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
