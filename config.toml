@@ -1,5 +1,5 @@
 baseURL = "https://www.mehvix.com/"
-title = "home"
+title = "welcome!"
 theme ="hugo-theme-basic"
 languageCode = "en-us"
 enableEmoji = true 
@@ -15,18 +15,18 @@ publishDir = "docs"
   titleEmoji = ""
 
 [Permalinks]
-  post = "post/:slug"
+  projects = "projects/:slug"
 
 [[params.menu]]
-  name = "about"
+  name = "about me"
   url = "about/"
   
 [[params.menu]]
-  name = "posts"
-  url = "post/"
+  name = "all projects"
+  url = "projects/"
 
 [[params.menu]]
-  name = "categories"
+  name = "projects by category"
   url = "categories/"
   
 
