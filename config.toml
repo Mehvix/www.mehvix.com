@@ -1,6 +1,6 @@
 baseURL = "https://www.mehvix.com/"
 title = "welcome!"
-theme ="hugo-theme-basic"
+theme ="hugo-theme-basic-customized"
 languageCode = "en-us"
 enableEmoji = true 
 copyright = "© 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. "
@@ -22,7 +22,7 @@ publishDir = "docs"
   url = "about/"
   
 [[params.menu]]
-  name = "all projects"
+  name = "all my projects"
   url = "projects/"
 
 [[params.menu]]
@@ -32,7 +32,15 @@ publishDir = "docs"
 
 
 [privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
   [privacy.twitter]
-    enableDNT = true
+    disable = true
+  [privacy.vimeo]
+    disable = true
   [privacy.youtube]
-    privacyEnhanced = true
+    disable = true
