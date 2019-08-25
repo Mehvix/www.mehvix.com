@@ -10,5 +10,4 @@ project_name = "PROJECTNAME"
 project_url = "URL"
 release_date = "DATE"
 version = "0.0"
-draft = false
 +++

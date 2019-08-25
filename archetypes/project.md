@@ -2,7 +2,7 @@
 title = "{{ replace .Name "-" " " | title }}"
 date = {{ .Date }}
 description = ""
-tags = ["Development"]
+# tags = ["Development"]
 categories = ["Development"]
 download_url = "http://github.com/USERNAME/PROJECTNAME"
 project_description = "DESC"

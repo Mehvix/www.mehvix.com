@@ -15,20 +15,20 @@ publishDir = "docs"
   titleEmoji = ""
 
 [Permalinks]
-  projects = "projects/:slug"
+  post = "post/:slug"
+  project = "project/:slug"
 
 [[params.menu]]
   name = "about me"
   url = "about/"
-  
-[[params.menu]]
-  name = "all my projects"
-  url = "projects/"
 
 [[params.menu]]
-  name = "projects by category"
+  name = "all posts"
+  url = "post/"
+
+[[params.menu]]
+  name = "posts by category"
   url = "categories/"
-  
 
 
 [privacy]

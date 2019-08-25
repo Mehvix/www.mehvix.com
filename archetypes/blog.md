@@ -1,7 +1,7 @@
 +++
 title = ""
 description = ""
-tags = ["development"]
+# tags = ["development"]
 categories = ["Development"]
 # series = []
 date = {{ .Date }}
