@@ -1,5 +1,5 @@
 +++
-title = "How I sold >$1,000 in a wee"
+title = "How I sold >$1,000 in a week"
 description = ""
 categories = ["money"]
 date = 2019-08-24T14:21:26-05:00
