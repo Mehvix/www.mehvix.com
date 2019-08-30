@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "About"
 description: ""
 tags: []
 categories: ["blog"]
@@ -9,8 +9,7 @@ draft: false
 
 
 
-### Hi, I'm Max Vogel.
-I'm a 
+I'm Max Vogel. I'm a 
 <script>
 var today = new Date();
 var date_to_reply = new Date(1027728000000);
@@ -23,8 +22,14 @@ year old who goes to Middleton High School. In my free time I fence, code, CAD, 
 This website was create with [Hugo](https://gohugo.io/) and the a modified version of [Hugo Theme Basic](https://github.com/siegerts/hugo-theme-basic). Currently, it's hosted via [Github pages](github.com/mehvix/mehvix.com), but I might move it over to my webserver at once [get a new CPU](/media/cpu.jpg).
 
 
-<br>**Contact Me**<br>
-• Email:		&#109;&#101;&#104;&#118;&#105;&#120;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;<br>
-• Linkedin:		[Max Vogel](https://www.linkedin.com/in/maxlvogel/)<br>
-• Github:		[Mehvix](https://github.com/mehvix)<br>
-• Discord:		Mehvix#7966<br>
+<br>
+### Contact Me
+* Email:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;mehvix `at` protonmail `dot` com<br>
+* Linkedin:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;  [Max Vogel](https://www.linkedin.com/in/maxlvogel/)<br>
+* Github:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Mehvix](https://github.com/mehvix)<br>
+* Discord:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Mehvix#7966<br>
+
+
+<br>
+### Music:
+<iframe src="https://open.spotify.com/embed/playlist/2uEoR9SXgtMSgjIjgohVnz" width="100%" height="380em" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>

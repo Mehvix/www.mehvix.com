@@ -1,13 +1,18 @@
+* {
+	background-color: 		#292a2d;
+	color:					#a9a9b3;
+}
+
 body {
-  -webkit-font-smoothings: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  -webkit-font-smoothings: 	antialiased;
+  -moz-osx-font-smoothing: 	grayscale;
+  text-rendering: 			optimizeLegibility;
 }
 
 code {
   padding: 					2px 4px;
   font-size: 				90%;
-  background-color: 		#eeeeee;
+  background-color: 		#1e1f21;
   /* border-radius: 4px; */
 }
 
@@ -30,16 +35,12 @@ code {
 }
 
 ::selection {
-  color: black;
-  background: yellow;
+  color: 					#02caf2;
+  background: 				white;
 }
 
 a:hover{
 	background-color:		lime;
-	color:					black;
+	color:					#2b2b2b;
+	box-shadow:				-3px -3px yellow;
 }
-
-
-tooltip1 { position: relative; }
-tooltip1 a span { display: none; color: #FFFFFF; }
-tooltip1 a:hover span { display: block; position: absolute; width: 200px; background: #aaa; height: 50px; left: 100px; top: -10px; color: #FFFFFF; padding: 0 5px; }

@@ -13,13 +13,12 @@
     
     
     <item>
-      <title>How I sold &gt;$1,000 in a week</title>
-      <link>https://www.mehvix.com/posts/how-i-sold-1000-in-a-week/</link>
+      <title>How I sold $1000, and all on a computers</title>
+      <link>https://www.mehvix.com/posts/how-i-sold-1000-and-all-on-a-computers/</link>
       <pubDate>Sat, 24 Aug 2019 14:21:26 -0500</pubDate>
       
-      <guid>https://www.mehvix.com/posts/how-i-sold-1000-in-a-week/</guid>
-      <description>How I was the #1 result on eBay and then got all of my money frozen ---
-First of all, what is dropshipping? Simply put, dropshipping is where you find a product on one site and list it on another site for a higher price than the original site so that you collect the margins. The beauty is that you don&amp;rsquo;t have to ever come in contact with the produce - when someone orders the item on the site you&amp;rsquo;re listing it on, all you have to do is buy the prodcut on the original site with your customers shipping information.</description>
+      <guid>https://www.mehvix.com/posts/how-i-sold-1000-and-all-on-a-computers/</guid>
+      <description>First of all, what is dropshipping? Simply put, dropshipping is where you find a product on one site and list it on another site for a higher price than the original site so that you collect the margins. The beauty is that you don&amp;rsquo;t have to ever come in contact with the produce - when someone orders the item on the site you&amp;rsquo;re listing it on, all you have to do is buy the prodcut on the original site with your customers shipping information.</description>
     </item>
     
     <item>
@@ -51,12 +50,12 @@ The solution Using python 3 I wrote a script that can copy and install config fi
     </item>
     
     <item>
-      <title>About Me</title>
+      <title>About</title>
       <link>https://www.mehvix.com/about/</link>
       <pubDate>Sat, 10 Aug 2019 21:49:48 -0500</pubDate>
       
       <guid>https://www.mehvix.com/about/</guid>
-      <description>Hi, I&amp;rsquo;m Max Vogel. I&amp;rsquo;m a  var today = new Date(); var date_to_reply = new Date(1027728000000); var timeinmilisec = date_to_reply.getTime() - today.getTime(); document.write(-Math.ceil(timeinmilisec / (31556952000.0004)));  year old who goes to Middleton High School. In my free time I fence, code, CAD, play AoE2, or am working on something 1306 related.
+      <description>I&amp;rsquo;m Max Vogel. I&amp;rsquo;m a  var today = new Date(); var date_to_reply = new Date(1027728000000); var timeinmilisec = date_to_reply.getTime() - today.getTime(); document.write(-Math.ceil(timeinmilisec / (31556952000.0004)));  year old who goes to Middleton High School. In my free time I fence, code, CAD, play AoE2, or am working on something 1306 related.
 This website was create with Hugo and the a modified version of Hugo Theme Basic. Currently, it&amp;rsquo;s hosted via Github pages, but I might move it over to my webserver at once get a new CPU.</description>
     </item>
     
