@@ -3,32 +3,34 @@ title = "welcome!"
 theme ="hugo-theme-basic-customized"
 languageCode = "en-us"
 enableEmoji = true 
-copyright = "© 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. "
+copyright = "© 2019 - Max Vogel"
 description = "Max Vogel's personal website."
 
 publishDir = "docs"
 
 [taxonomies]
   category = "categories"
+  series = "series"
+  tag = "tags"
 
 [params]
   titleEmoji = ""
 
 [Permalinks]
-  post = "post/:slug"
-  project = "project/:slug"
+  post = "posts/:slug"
+  tags = "tags/:slug"
 
 [[params.menu]]
   name = "about me"
   url = "about/"
 
 [[params.menu]]
-  name = "all posts"
-  url = "post/"
+  name = "posts"
+  url = "categories/"
 
 [[params.menu]]
-  name = "posts by category"
-  url = "categories/"
+  name = "posts by tags"
+  url = "tags/"
 
 
 [privacy]
