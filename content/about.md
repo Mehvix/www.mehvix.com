@@ -19,7 +19,7 @@ document.write(-Math.ceil(timeinmilisec / (31556952000.0004)));
 year old who goes to Middleton High School. In my free time I fence, code, CAD, play AoE2, or am working on something [1306](https://www.team1306.com) related.
 
 
-This website was create with [Hugo](https://gohugo.io/) and the a modified version of [Hugo Theme Basic](https://github.com/siegerts/hugo-theme-basic). Currently, it's hosted via [Github pages](github.com/mehvix/mehvix.com), but I might move it over to my webserver at once [get a new CPU](/media/cpu.jpg).
+This website was create with [Hugo](https://gohugo.io/) and the a modified version of [Hugo Theme Basic](https://github.com/siegerts/hugo-theme-basic). Currently, it's hosted via [Github pages](https://www.github.com/mehvix/mehvix.com), but I might move it over to my webserver at once [get a new CPU](/media/cpu.jpg).
 
 
 <br>
