@@ -1,11 +1,12 @@
-+++
-title = "SynapsBot"
-date = 2019-08-23T19:58:06-05:00
-description = "[Repo](http://github.com/mehvix/synapsBotRW)"
-categories = ["Python"]
-download_url = "http://github.com/mehvix/synapsBotRW"
-draft = false
-+++
+---
+title: "SynapsBot"
+description: ""
+tags: ["python"]
+categories: ["project"]
+date: 2019-08-23T19:58:06-05:00
+# download_url: "http://github.com/USERNAME/PROJECTNAME"
+draft: false
+---
 
 
 

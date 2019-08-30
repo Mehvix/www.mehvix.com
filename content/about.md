@@ -1,9 +1,13 @@
-+++
-title = "About Me"
-date = 2019-08-10T21:49:48-05:00
-draft = false
-category =  [""]
-+++
+---
+title: "About Me"
+description: ""
+tags: []
+categories: ["blog"]
+date: 2019-08-10T21:49:48-05:00
+draft: false
+---
+
+
 
 ### Hi, I'm Max Vogel.
 I'm a 

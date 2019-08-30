@@ -3,48 +3,77 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.mehvix.com/post/application-configs/</loc>
-    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
+    <loc>https://www.mehvix.com/categories/blog/</loc>
+    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/categories/</loc>
-    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
+    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/posts/how-i-sold-1000-in-a-week/</loc>
+    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/tags/money/</loc>
+    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/post/</loc>
-    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
+    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.mehvix.com/categories/python/</loc>
-    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/post/synapsbot/</loc>
-    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
+    <loc>https://www.mehvix.com/tags/</loc>
+    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/</loc>
+    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/posts/application-configs/</loc>
     <lastmod>2019-08-23T19:58:06-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.mehvix.com/categories/google-sheets/</loc>
+    <loc>https://www.mehvix.com/categories/project/</loc>
+    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/tags/python/</loc>
+    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/posts/synapsbot/</loc>
+    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/posts/google-sheets/</loc>
     <lastmod>2019-08-11T01:10:41-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.mehvix.com/post/google-sheets/</loc>
+    <loc>https://www.mehvix.com/tags/sheets/</loc>
     <lastmod>2019-08-11T01:10:41-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/about/</loc>
     <lastmod>2019-08-10T21:49:48-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/series/</loc>
   </url>
   
 </urlset>

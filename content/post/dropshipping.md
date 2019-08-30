@@ -1,10 +1,14 @@
-+++
-title = "How I sold >$1,000 in a week"
-description = ""
-categories = ["money"]
-date = 2019-08-24T14:21:26-05:00
-draft = true
-+++
+---
+title: "How I sold >$1,000 in a week"
+description: ""
+tags: ["money"]
+categories: ["blog"]
+date: 2019-08-24T14:21:26-05:00
+# download_url: "http://github.com/USERNAME/PROJECTNAME"
+draft: false
+---
+
+
 
 #### How I was the #1 result on eBay and then got all of my money frozen
 

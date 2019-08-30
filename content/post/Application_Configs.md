@@ -1,9 +1,14 @@
-+++
-title = "Application Configs"
-description = ""
-categories = ["Python"]
-date = 2019-08-23T19:58:06-05:00
-+++
+---
+title: "Application Configs"
+description: ""
+tags: ["python"]
+categories: ["project"]
+date: 2019-08-23T19:58:06-05:00
+# download_url: "https://github.com/Mehvix/ApplicationConfigs"
+draft: false
+---
+
+
 
 ### The problem
 

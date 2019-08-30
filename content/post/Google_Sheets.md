@@ -1,10 +1,13 @@
-+++
-title = "Google Sheets"
-description = "I've made a couple projects in the past couples years through Google Sheets."
-categories = ["Google Sheets"]
-date = 2019-08-11T01:10:41-05:00
-draft = false
-+++
+---
+title: "Google Sheets"
+description: "A compilation of the various projects I've done in the past couple years through Google Sheets"
+tags: ["sheets"]
+categories: ["project"]
+date: 2019-08-11T01:10:41-05:00
+# download_url: "http://github.com/USERNAME/PROJECTNAME"
+draft: false
+---
+
 
 
 ### Age of Empires 2 Counter List
