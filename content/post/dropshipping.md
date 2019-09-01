@@ -1,5 +1,5 @@
 ---
-title: "How I sold $1000, and all on a computers"
+title: "How I sold $1000 in a week by dropshipping"
 description: ""
 tags: ["money"]
 categories: ["blog"]
