@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html
+  class=""
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<meta name="keywords" content="nextcloud,
+server,
+">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="" />
+<meta property="og:title" content="Nextcloud Ubuntu Complete Guide" />
+<meta property="og:site_name" content="welcome!" />
+<meta property="og:image" content="" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<meta property="og:url" content="https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/" />
+<meta property="og:locale" content="en-us" />
+<meta property="article:published_time" content="2019-09-03
+" /> <meta property="article:modified_time" content="2019-09-03
+" />
+
+
+<meta property="article:tag" content="nextcloud" />
+<meta property="article:tag" content="server" />
+
+
+
+
+    <title>Nextcloud Ubuntu Complete Guide</title>
+    <link rel="canonical" href="https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/" />
+
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
+/>
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
+/>
+
+<link 
+	rel="stylesheet" 
+	href="https://www.mehvix.com//css/style.css"
+/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+
+
+<body
+  lang="en-us"
+  class="sans-serif w-90 w-80-m w-60-ns center mv2 mv5-ns"
+  itemscope
+  itemtype="http://schema.org/Article"
+>
+  
+  <span class="b">/ </span>
+  <a href="https://www.mehvix.com/" class="b bb bw1 pb1 no-underline #a9a9b3">welcome!</a>
+  <span class="b"> / </span>
+  <a href="/post" class="b bb bw1 pb1 no-underline #a9a9b3">posts</a>
+
+  <section id="main" class="mt5">
+    <h1 itemprop="name" id="title">Nextcloud Ubuntu Complete Guide</h1>
+     <span class="f6 gray">September 3, 2019 - 6 minute read</span> 
+      <article itemprop="articleBody" id="content" class="w-90 lh-copy">
+        
+
+<h4 id="getting-the-machine-up-to-date">Getting the machine up-to-date</h4>
+
+<blockquote>
+<p><code>sudo su</code><br>
+<code>apt autoremove</code><br>
+<code>apt update</code><br>
+<code>apt upgrade</code><br></p>
+</blockquote>
+
+<h4 id="installing-apache-the-webserver">Installing Apache - the webserver</h4>
+
+<blockquote>
+<p><code>apt install apache2</code><br>
+<code>systemctl start apache2</code><br>
+<code>systemctl enable apache2</code>- start apache2 on startup</p>
+
+<p>If you&rsquo;ve configured the server right, you should be able to go to your machine&rsquo;s IP (you can get this via <code>hostname -I</code>) in the webbrowser of your choice and see the <a href="/media/apache2page.png">&ldquo;Apache2 Ubuntu Default Page&rdquo;</a></p>
+</blockquote>
+
+<h4 id="installing-mariadb-the-database">Installing MariaDB - the database</h4>
+
+<blockquote>
+<p><code>apt install mariadb-server</code><br>
+<code>mysql_secure_installation</code></p>
+
+<p>This will prompt you to login to MariaDB. Since we don&rsquo;t have a password, just hit enterset one up. After that, just accept all of the prompts and you&rsquo;re set.</p>
+</blockquote>
+
+<h4 id="installing-phpmyadmin">Installing phpMyAdmin</h4>
+
+<blockquote>
+<p><code>apt install php libapache2-mod-php php-mysql</code><br>
+<code>apt install phpmyadmin</code><br></p>
+
+<p>You should follow all of the default steps, just make sure that you set the webserver as <code>apache2</code> and you&rsquo;ll be good</p>
+
+<p><code>ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf</code><br>
+<code>a2enconf phpmyadmin</code><br>
+<code>service apache2 reload</code><br>
+<code>systemctl reload apache2</code><br></p>
+
+<p>Now, if you go to <code>192.168.something.whatever/phpmyadmin/</code> (your computer&rsquo;s IP) you should see the phpMyAdmin login page; <strong>however, you should not login yet.</strong></p>
+</blockquote>
+
+<h4 id="configuring-mariadb">Configuring MariaDB</h4>
+
+<blockquote>
+<p><code>mariadb</code><br>
+<code>CREATE DATABASE nextcloud;</code><br>
+<code>CREATE USER nextcloud IDENTIFIED BY 'Password';</code>, but with your password<br>
+<code>GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password';</code>, again, your password<br>
+<code>GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;</code><br>
+<code>FLUSH PRIVILEGES;</code><br>
+<code>quit;</code><br></p>
+
+<p>Now you should be able to login on the myphpadmin forum with the <code>nextcloud</code> as the username, and the password you just set up as the password.</p>
+</blockquote>
+
+<h4 id="installing-php">Installing PHP</h4>
+
+<blockquote>
+<p><code>apt install php-gd php-json php-mysql php-curl php-mbstring</code><br>
+<code>apt install php-intl php-imagick php-xml php-zip</code><br></p>
+</blockquote>
+
+<h4 id="installing-nextcloud">Installing Nextcloud</h4>
+
+<blockquote>
+<p>I&rsquo;m going to install Nextcloud 15 because 16 doesn&rsquo;t work with <a href="https://nextcloud.com/collaboraonline/">Collabora Online</a> (at the time of writing this)<br>
+<code>wget https://download.nextcloud.com/server/releases/nextcloud-15.0.7.tar.bz2</code><br>
+<code>tar -xvf nextcloud-15.0.7.tar.bz2</code><br>
+<code>cd nextcloud</code><br>
+<code>mv ./* /var/www/html/</code><br>
+<code>mv ./.htaccess /var/www/html</code><br>
+<code>mv ./.user.ini /var/www/html</code><br>
+<code>cd /var/www/html</code><br>
+<code>chown -R www-data:www-data ./*</code><br>
+<code>chown www-data:www-data .htaccess</code><br>
+<code>chown www-data:www-data .user.ini</code><br></p>
+
+<p>Now if you go to <code>192.168.something.whatever</code> you&rsquo;ll get the Nextcloud page <strong>BUT DO NOT LOGIN / CREATE ACCOUNT</strong>. You need to set up encryption</p>
+</blockquote>
+
+<h4 id="setting-up-encryption">Setting up Encryption</h4>
+
+<blockquote>
+<p><code>apt install certbot</code><br>
+<code>apt install python-certbot-apache</code><br></p>
+
+<p><code>nano /etc/apache2/sites-available/000-default.conf</code> and uncomment and change <code>ServerName</code> to whatever domain you&rsquo;re using, e.g. <code>cloud.mehvix.com</code>. Additionally, it&rsquo;s good practice to change the server admin to your email.</p>
+
+<p>Then you need to point your domain at your server and open your server to the external access. You&rsquo;ll first need to port forward your server (you can find the ip via <code>hostname -I</code>) to port <code>443</code>, and then create an A record under your domain&rsquo;s DNS settings pointing at your external IP (found via <code>dig +short myip.opendns.com @resolver1.opendns.com</code>)</p>
+
+<p><strong>NOTE:</strong> If you&rsquo;re using Cloudflare, you have to disable Universal SSL for Nextcloud to work</p>
+
+<p><code>systemctl restart apache2</code><br>
+<code>certbot --apache</code><br></p>
+
+<p>It will prompt you to autoredirect from http to https, and I would go ahead and choose redirect.</p>
+</blockquote>
+
+<h4 id="setting-up-storage-login">Setting up Storage/Login</h4>
+
+<blockquote>
+<p>I already set up my drives/raid config, so all I had to do was create and mount a partition:<br>
+<code>mkdir /media/nextcloud-data/</code><br>
+<code>chown www-data:www-data /media/nextcloud-data/</code><br>
+<code>mkfs.ext4 /dev/sda</code><br>
+<code>mount /dev/sda /media/nextcloud-data/</code><br></p>
+
+<p>After that, you can go ahead to the Nextcloud page, create an account (you will use this for all Nextcloud logins). Make sure to change the data folder to <code>/media/nextcloud-data/</code>
+or whatever dir you are using, then enter the MariaDB user/password.</p>
+</blockquote>
+
+<p>Now you&rsquo;ve got yourself a Nextcloud Server! However, there are still a couple things that you still need to configure which I&rsquo;ll cover in the follwoing section.</p>
+
+<h3 id="securing-nextcloud">Securing Nextcloud</h3>
+
+<p>If you head to <code>https://yournextcloud.com/settings/admin/overview</code> you&rsquo;ll see all security and setup warnings. Here&rsquo;s how you fix the ones that I encountered:</p>
+
+<h4 id="the-php-memory-limit-is-below-the-recommended-value-of-512mb">The PHP memory limit is below the recommended value of 512MB.</h4>
+
+<blockquote>
+<p><code>nano /etc/php/7.2/apache2/php.ini</code><br></p>
+
+<pre><code>upload_max_filesize = 512M
+memory_limit = 512M
+post_max_size = 512M
+</code></pre>
+
+<p><code>systemctl restart apache2</code></p>
+</blockquote>
+
+<h4 id="the-strict-transport-security-http-header-is-not-set-to-at-least-15552000-seconds-for-enhanced-security-it-is-recommended-to-enable-hsts-as-described-in-the-security-tips">The &ldquo;Strict-Transport-Security&rdquo; HTTP header is not set to at least &ldquo;15552000&rdquo; seconds. For enhanced security, it is recommended to enable HSTS as described in the security tips.</h4>
+
+<blockquote>
+<p><code>nano /etc/apache2/sites-available/000-default-le-ssl.conf</code><br></p>
+
+<p>Add the following under <code>ServerName</code>:</p>
+
+<pre><code>&lt;IfModule mod_headers.c&gt;
+    Header always set Strict-Transport-Security &quot;max-age=15552000; includeSubDomains; preload&quot;
+&lt;/IfModule&gt;
+</code></pre>
+
+<p><code>a2enmod headers</code><br>
+<code>systemctl restart apache2</code></p>
+</blockquote>
+
+<h4 id="your-web-server-is-not-properly-set-up-to-resolve-well-known-caldav-carddav-further-information-can-be-found-in-the-documentation">Your web server is not properly set up to resolve &ldquo;/.well-known/[caldav][carddav]&ldquo;. Further information can be found in the documentation</h4>
+
+<blockquote>
+<p><code>nano /etc/apache2/sites-available/000-default-le-ssl.conf</code><br></p>
+
+<p>Add the following under <code>ServerName</code>:</p>
+
+<pre><code>&lt;Directory /var/www/html/&gt;
+    Options +FollowSymLinks
+    AllowOverride All
+&lt;/Directory&gt;
+</code></pre>
+
+<p><code>systemctl restart apache2</code></p>
+</blockquote>
+
+<h4 id="no-memory-cache-has-been-configured-to-enhance-performance-please-configure-a-memcache-if-available-further-information-can-be-found-in-the-documentation">No memory cache has been configured. To enhance performance, please configure a memcache, if available. Further information can be found in the documentation</h4>
+
+<blockquote>
+<p><code>apt install php-apcu</code><br>
+<code>nano /var/www/html/config/config.php</code><br></p>
+
+<pre><code>'memcache.local' =&gt; '\OC\Memcache\APCu'
+</code></pre>
+
+<p><code>systemctl restart apache2</code></p>
+</blockquote>
+
+<h4 id="the-php-opcache-is-not-properly-configured">The PHP OPcache is not properly configured</h4>
+
+<blockquote>
+<p><code>nano /etc/php/7.2/apache2/php.ini</code><br></p>
+
+<pre><code>opcache.enable=1
+opcache.enable_cli=1
+opcache.memory_consumption=128
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=10000
+opcache.revalidate_freq=1
+opcache.save_comments=1
+</code></pre>
+
+<p><code>systemctl restart apache2</code></p>
+</blockquote>
+
+<h4 id="some-columns-in-the-database-are-missing-a-conversion-to-big-int">Some columns in the database are missing a conversion to big int</h4>
+
+<blockquote>
+<p><code>sudo -u www-data php /var/www/html/occ db:convert-filecache-bigint</code></p>
+</blockquote>
+
+<h4 id="mysql-is-used-as-database-but-does-not-support-4-byte-characters">MySQL is used as database but does not support 4-byte characters</h4>
+
+<blockquote>
+<p>First, update MariaDB:<br>
+<code>nano /etc/mysql/my.cnf</code></p>
+
+<pre><code>[mysqld]
+innodb_file_per_table=1
+</code></pre>
+
+<p><code>systemctl restart mariadb</code><br>
+<code>mariadb</code><br>
+<code>ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;</code><br>
+<code>use nextcloud;</code><br>
+<code>set global innodb_large_prefix=on;</code><br>
+<code>set global innodb_file_format=Barracuda;</code><br>
+<code>quit;</code><br></p>
+
+<p>Then, update Nextcloud:<br>
+<code>sudo -u www-data php /var/www/html/occ config:system:set mysql.utf8mb4 --type boolean --value=&quot;true&quot;</code><br>
+<code>sudo -u www-data php /var/www/html/occ maintenance:repair</code></p>
+</blockquote>
+
+<h3 id="other">Other</h3>
+
+<p>While theses tips aren&rsquo;t needed for security, they&rsquo;re nice to have.</p>
+
+<h4 id="removing-index-php-from-every-url">Removing <code>/index.php</code> from every URL:</h4>
+
+<blockquote>
+<p><code>nano /var/www/html/config/config.php</code></p>
+
+<pre><code>'htaccess.RewriteBase' =&gt; '/'
+</code></pre>
+
+<p><code>sudo -u www-data php /var/www/html/occ maintenance:update:htaccess</code><br>
+<code>systemctl restart apache2</code><br></p>
+</blockquote>
+
+<h4 id="increasing-the-max-file-size">Increasing the max file size</h4>
+
+<blockquote>
+<p><code>nano /etc/php/7.2/apache2/php.ini</code><br></p>
+
+<pre><code>upload_max_filesize = 16G
+post_max_size = 16G
+max_input_time = 3600
+max_execution_time = 3600
+upload_tmp_dir = /var/big_temp_files/
+</code></pre>
+
+<p><code>nano /var/www/html/.user.ini</code><br></p>
+
+<pre><code>upload_max_filesize = 16G
+post_max_size = 16G
+</code></pre>
+
+<p><code>chown www-data:www-data /media/big_temp_files/</code></p>
+</blockquote>
+
+<h4 id="ability-to-extract-from-archieves">Ability to extract from archieves</h4>
+
+<blockquote>
+<p><code>apt-get install unrar</code><br>
+<code>apt-get install p7zip p7zip-full</code><br></p>
+
+<p>Then add the &ldquo;Extract&rdquo; app from the store<br></p>
+</blockquote>
+
+<h4 id="generating-file-previews">Generating file previews</h4>
+
+<blockquote>
+<p>Install &ldquo;Preview Generator&rdquo; from the appstore<br>
+<code>sudo -u www-data php /var/www/html/occ preview:generate-all -vvv</code></p>
+</blockquote>
+
+<h4 id="converting-files-via-ffmpeg">Converting files via ffmpeg</h4>
+
+<blockquote>
+<p>Install &ldquo;Video Converter&rdquo; from the appstore<br>
+<code>apt install ffmpeg</code></p>
+</blockquote>
+
+<h4 id="downloading-youtube-bittorrent-files-remotely">Downloading YouTube/BitTorrent files remotely</h4>
+
+<blockquote>
+<p>Install &ldquo;ocDownloader&rdquo; from the appstore<br></p>
+
+<h4 id="for-bittorrent-br">For BitTorrent:<br></h4>
+
+<p><code>apt-get install aria2 curl php-curl</code><br></p>
+
+<pre><code>mkdir /var/log/aria2c /var/local/aria2c
+touch /var/log/aria2c/aria2c.log
+touch /var/local/aria2c/aria2c.sess
+chown www-data.www-data -R /var/log/aria2c /var/local/aria2c
+chmod 770 -R /var/log/aria2c /var/local/aria2c
+sudo -u www-data aria2c --enable-rpc --rpc-allow-origin-all -c -D --log=/var/log/aria2c/aria2c.log --check-certificate=false --save-session=/var/local/aria2c/aria2c.sess --save-session-interval=2 --continue=true --input-file=/var/local/aria2c/aria2c.sess --rpc-save-upload-metadata=true --force-save=true --log-level=warn
+</code></pre>
+
+<h4 id="for-youtube-br">For YouTube:<br></h4>
+
+<p><code>apt-get install python-pip</code><br>
+<code>pip install youtube-dl</code><br></p>
+</blockquote>
+
+<h4 id="solving-index-column-size-too-large-the-maximum-column-size-is-767-bytes">Solving &ldquo;Index column size too large. The maximum column size is 767 bytes.&rdquo;</h4>
+
+<blockquote>
+<p><code>mariadb</code><br>
+<code>set global innodb_file_format = BARRACUDA;</code><br>
+<code>set global innodb_large_prefix = ON;</code><br>
+<code>set global innodb_file_per_table = ON;</code><br>
+<code>set global innodb_default_row_format = 'DYNAMIC';</code><br>
+<code>quit;</code><br></p>
+
+<p><code>nano /etc/mysql/my.cnf</code><br></p>
+
+<pre><code>innodb_file_per_table=1
+innodb-file-format=barracuda
+innodb-file-per-table=ON
+innodb-large-prefix=ON
+innodb_default_row_format = 'DYNAMIC'
+</code></pre>
+
+<p><code>systemctl restart mariadb</code></p>
+</blockquote>
+
+<h4 id="fixing-right-click-not-working">Fixing right click not working</h4>
+
+<blockquote>
+<p><a href="https://github.com/nextcloud/files_rightclick/issues/83#issuecomment-525592831">As of writing this, 0.13 is the last working version</a><br>
+<code>cd /var/www/html/apps/</code><br>
+<code>wget --load-cookies /tmp/cookies.txt &quot;https://docs.google.com/uc?export=download&amp;confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j&quot; -O rclick &amp;&amp; rm -rf /tmp/cookies.txt</code><br>
+<code>rm -rf files_rightclick/</code><br>
+<code>unzip rclick</code><br>
+<code>rm rclick</code><br>
+<code>systemctl restart apache2</code>
+Then make sure that you re-enable the right click app too. If that doesn&rsquo;t work, try
+<code>apt-get install php-ldap</code><br>
+<code>systemctl restart apache2</code></p>
+</blockquote>
+
+<h4 id="set-timezone">Set timezone</h4>
+
+<blockquote>
+<p><code>nano /var/www/html/config/config.php</code><br>
+Find your timezone in the ones avaliabe <a href="https://www.php.net/manual/en/timezones.php">here</a><br></p>
+
+<pre><code>'logtimezone' =&gt; 'America/Chicago',
+</code></pre>
+
+<p><code>nano /etc/php/7.2/apache2/php.ini</code><br></p>
+
+<pre><code>date.timezone = America/Chicago,
+</code></pre>
+</blockquote>
+
+      </article>
+
+      
+      <span class="f6 gray mv3" title="Lastmod: September 3, 2019. Published at: 2019-09-03.">
+        
+      </span>
+
+      
+
+  </section>
+
+  <footer>
+    <div>
+      <p class="f6 gray mt6 lh-copy">
+		---<br>
+		BTC:&emsp; bc1qqzp6ff9zuxhrxrtfcrxf745mv0amjkp5j0kpeu<br>
+		ETH:&emsp; 0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA<br><br>
+        © 2019 - Max Vogel
+
+    </div>
+  </footer>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+
+  </body>
+</html>

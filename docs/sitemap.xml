@@ -3,12 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.mehvix.com/categories/blog/</loc>
-    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
+    <loc>https://www.mehvix.com/categories/</loc>
+    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.mehvix.com/categories/</loc>
+    <loc>https://www.mehvix.com/tags/nextcloud/</loc>
+    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/</loc>
+    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/post/</loc>
+    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/categories/project/</loc>
+    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/tags/server/</loc>
+    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/tags/</loc>
+    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/</loc>
+    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/categories/blog/</loc>
     <lastmod>2019-08-24T14:21:26-05:00</lastmod>
   </url>
   
@@ -23,27 +58,7 @@
   </url>
   
   <url>
-    <loc>https://www.mehvix.com/post/</loc>
-    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/tags/</loc>
-    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/</loc>
-    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.mehvix.com/posts/application-configs/</loc>
-    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/categories/project/</loc>
     <lastmod>2019-08-23T19:58:06-05:00</lastmod>
   </url>
   
