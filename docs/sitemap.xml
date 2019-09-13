@@ -5,90 +5,126 @@
   <url>
     <loc>https://www.mehvix.com/categories/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/tags/nextcloud/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/post/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/categories/project/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/tags/server/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/tags/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/categories/blog/</loc>
     <lastmod>2019-08-24T14:21:26-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/posts/how-i-sold-1000-in-a-week-by-dropshipping/</loc>
     <lastmod>2019-08-24T14:21:26-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/tags/money/</loc>
     <lastmod>2019-08-24T14:21:26-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/posts/application-configs/</loc>
     <lastmod>2019-08-23T19:58:06-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/tags/python/</loc>
     <lastmod>2019-08-23T19:58:06-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/posts/synapsbot/</loc>
     <lastmod>2019-08-23T19:58:06-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/posts/google-sheets/</loc>
     <lastmod>2019-08-11T01:10:41-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/tags/sheets/</loc>
     <lastmod>2019-08-11T01:10:41-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/about/</loc>
     <lastmod>2019-08-10T21:49:48-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.mehvix.com/series/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

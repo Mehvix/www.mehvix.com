@@ -32,6 +32,10 @@ publishDir = "docs"
   name = "posts by tags"
   url = "tags/"
 
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
 
 [privacy]
   [privacy.disqus]
