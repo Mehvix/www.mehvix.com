@@ -53,6 +53,16 @@ code::selection {
     background: 				black;
 }
 
+span.hljs-title::selector, 
+span.hljs-attr::selector, 
+span.hljs-selector-id::selector, 
+span.hljs-selector-class::selector, 
+span.hljs-selector-attr::selector, 
+span.hljs-selector-pseudo::selector {
+    color: 						#00fb10;
+    background: 				black;
+}
+
 
 a:hover{
 	background-color:			lime;

@@ -50,3 +50,7 @@ publishDir = "docs"
     disable = true
   [privacy.youtube]
     disable = true
+
+
+[services.rss]
+  limit = 15

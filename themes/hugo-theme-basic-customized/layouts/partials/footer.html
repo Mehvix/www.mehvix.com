@@ -1,15 +1,15 @@
 <footer>
-    <div>
-      <p class="f6 gray mt6 lh-copy">
+	<div>
+		<p class="f6 gray mt6 lh-copy">
 		---<br>
 		BTC:&emsp;bc1qqzp6ff9zuxhrxrtfcrxf745mv0amjkp5j0kpeu<br>
 		ETH:&emsp;0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA<br>
-        {{ .Site.Copyright | safeHTML }}<br>
+		{{ .Site.Copyright | safeHTML }}<br>
 		Powered by <a href="https://gohugo.io">Hugo</a><br>
-		{{ if .RSSLink }}
-			<a href="{{ .RSSLink }}" title="{{ .Site.Title }}" type="application/rss+xml" rel="alternate">RSS</a>
-		{{ end }}
 
+		{{- if .OutputFormats.Get "RSS" }}
+			<link href="{{ .OutputFormats.Get "RSS" }}{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+		{{- end -}}
 	</div>
  </footer>
 

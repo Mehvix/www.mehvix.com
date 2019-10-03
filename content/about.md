@@ -24,10 +24,12 @@ This website was create with [Hugo](https://gohugo.io/) and the a modified versi
 
 <br>
 ### Contact Me
-* Email:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;mehvix `at` protonmail `dot` com<br>
-* Linkedin:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;  [Max Vogel](https://www.linkedin.com/in/maxlvogel/)<br>
-* Github:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[Mehvix](https://github.com/mehvix)<br>
-* Discord:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Mehvix#7966<br>
+[//]: <> (https://stackoverflow.com/questions/17978720/invisible-characters-ascii/21797208#21797208)
+* Email:          mehvix `at` protonmail `dot` com - [PGP key](/media/publickey.mehvix@protonmail.com.asc)<br>
+* Github:        [Mehvix](https://github.com/mehvix)<br>
+* Discord:        Mehvix#7966<br>
+* Linkedin:           [Max Vogel](https://www.linkedin.com/in/maxlvogel/)<br>
+
 
 
 <br>
