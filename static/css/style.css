@@ -3,7 +3,6 @@ body {
 	-moz-osx-font-smoothing: 	grayscale;
     text-rendering: 			optimizeLegibility;
 }
-
 code {
     padding: 					2px 4px;
     font-size: 					90%;
@@ -43,34 +42,44 @@ code {
 	color:						#d38b00;
 }
 
-::selection {
-    color: 						white;
-    background: 				blue;
+a:hover {
+background-color:               #018574;
+transition-duration:            .4s;
+
 }
 
-code::selection {
+p a {
+    word-wrap:                  break-word;
+    border:                     none;
+    box-shadow:                 inset 0 -.2em 0 #018574;
+    transition-property:        background-color;
+    color:                      #cbcbcb;
+    transition-timing-function: ease-in-out;
+    text-decoration:            none;
+}
+
+code::selection,
+span.hljs-title::selection,
+span.hljs-attr::selection,
+span.hljs-selector-id::selection,
+span.hljs-selector-class::selection,
+span.hljs-selector-attr::selection,
+span.hljs-built_in::selection,
+span.hljs-string::selection,
+span.hljs-number::selection,
+span.hljs-section::selection,
+span.php::selection,
+span.hljs::selection,
+span.hljs-literal::selection,
+span.hljs-selector-pseudo::selection {
     color: 						#00fb10;
     background: 				black;
 }
 
-span.hljs-title::selector, 
-span.hljs-attr::selector, 
-span.hljs-selector-id::selector, 
-span.hljs-selector-class::selector, 
-span.hljs-selector-attr::selector, 
-span.hljs-selector-pseudo::selector {
-    color: 						#00fb10;
-    background: 				black;
-}
-
-
-a:hover{
-	background-color:			lime;
-	color:						black;
-	box-shadow:					-3px -3px yellow;
-}
 
 * {
 	background-color: 			#292a2d;
 	color:						#a9a9b3;
+    line-height:                1.6;
+    letter-spacing:             .06em;
 }
