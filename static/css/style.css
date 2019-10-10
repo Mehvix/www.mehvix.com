@@ -70,6 +70,8 @@ span.hljs-number::selection,
 span.hljs-section::selection,
 span.php::selection,
 span.hljs::selection,
+span.hljs-nomarkup::selection,
+span.hljs-attribute::selection,
 span.hljs-literal::selection,
 span.hljs-selector-pseudo::selection {
     color: 						#00fb10;
