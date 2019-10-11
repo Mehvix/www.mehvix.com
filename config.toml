@@ -25,7 +25,7 @@ publishDir = "docs"
   url = "about/"
 
 [[params.menu]]
-  name = "posts"
+  name = "posts chronologically"
   url = "categories/"
 
 [[params.menu]]
