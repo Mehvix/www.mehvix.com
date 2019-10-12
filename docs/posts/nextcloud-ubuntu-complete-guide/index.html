@@ -80,7 +80,7 @@ server,
 
   <section id="main" class="mt5">
     <h1 itemprop="name" id="title">Nextcloud Ubuntu Complete Guide</h1>
-     <span class="f6 gray">September 3, 2019 - 6 minute read</span> 
+     <span class="f6 gray">September 3, 2019 - 7 minute read</span> 
       <article itemprop="articleBody" id="content" class="w-90 lh-copy">
         
 
@@ -188,19 +188,20 @@ server,
 <h4 id="setting-up-storage-login">Setting up Storage/Login</h4>
 
 <blockquote>
-<p>I already set up my drives/raid config, so all I had to do was create and mount a partition:<br>
+<p>For security reasons, it&rsquo;s a good idea to have the data folder outside of the web root (<code>/var/www/</code>)
+I already set up my drives/raid config, so all I had to do was create and mount a partition:<br>
 <code>mkdir /media/nextcloud-data/</code><br>
 <code>chown www-data:www-data /media/nextcloud-data/</code><br>
 <code>mkfs.ext4 /dev/sda</code><br>
 <code>mount /dev/sda /media/nextcloud-data/</code><br></p>
 
 <p>After that, you can go ahead to the Nextcloud page, create an account (you will use this for all Nextcloud logins). Make sure to change the data folder to <code>/media/nextcloud-data/</code>
-or whatever dir you are using, then enter the MariaDB user/password.</p>
+or whatever dir you are using, then enter the MariaDB user/password.<br><br></p>
 </blockquote>
 
-<p>Now you&rsquo;ve got yourself a Nextcloud Server! However, there are still a couple things that you still need to configure which I&rsquo;ll cover in the follwoing section.</p>
+<p>Now you&rsquo;ve got yourself a Nextcloud Server! However, there are still a couple things that you still need to configure which I&rsquo;ll cover in the following section.<br><br><br><br></p>
 
-<h3 id="securing-nextcloud">Securing Nextcloud</h3>
+<h2 id="securing-nextcloud">Securing Nextcloud</h2>
 
 <p>If you head to <code>https://yournextcloud.com/settings/admin/overview</code> you&rsquo;ll see all security and setup warnings. Here&rsquo;s how you fix the ones that I encountered:</p>
 
@@ -264,7 +265,8 @@ post_max_size = 512M
 <h4 id="the-php-opcache-is-not-properly-configured">The PHP OPcache is not properly configured</h4>
 
 <blockquote>
-<p><code>nano /etc/php/7.2/apache2/php.ini</code><br></p>
+<p><code>nano /etc/php/7.2/apache2/php.ini</code><br>
+The following are default settings, consider checking out <a href="https://www.scalingphpbook.com/blog/2014/02/14/best-zend-opcache-settings.html">this blog</a> for information on what each parameter means<br></p>
 
 <pre><code>opcache.enable=1
 opcache.enable_cli=1
@@ -304,14 +306,54 @@ innodb_file_per_table=1
 
 <p>Then, update Nextcloud:<br>
 <code>sudo -u www-data php /var/www/html/occ config:system:set mysql.utf8mb4 --type boolean --value=&quot;true&quot;</code><br>
-<code>sudo -u www-data php /var/www/html/occ maintenance:repair</code></p>
+<code>sudo -u www-data php /var/www/html/occ maintenance:repair</code><br><br><br><br></p>
 </blockquote>
 
-<h3 id="other">Other</h3>
+<h2 id="further-securing-optimization">Further Securing / Optimization</h2>
+
+<p>There are various other actions you can take to ensure that both your os and nextcloud are secure. I&rsquo;ll be covering the one&rsquo;s found on <a href="https://docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html">this wiki page</a>.</p>
+
+<h4 id="give-php-read-access-to-dev-urandom">Give PHP read access to <code>/dev/urandom</code></h4>
+
+<blockquote>
+<p>On my system this ended up breaking Nextcloud, but I&rsquo;ll keep it in here because it&rsquo;s in the Nextcloud docs. If you&rsquo;re site breaks, you should try commenting out <code>open_basedir</code><br>
+<code>sudo nano /etc/php/7.2/apache2/php.ini</code><br>
+Add <code>open_basedir = /dev/urandom</code><br>
+<code>systemctl restart apache2</code><br></p>
+</blockquote>
+
+<h4 id="configure-selinux">Configure SELinux</h4>
+
+<blockquote>
+<p>Because this delicate, you should <a href="https://docs.nextcloud.com/server/14/admin_manual/installation/selinux_configuration.html">check out the wiki</a> for the latest information</p>
+</blockquote>
+
+<h3 id="install-and-tune-php-fpm">Install and Tune PHP-FPM</h3>
+
+<blockquote>
+<p><code>apt-get install php-fpm</code><br>
+<code>a2enmod proxy_fcgi setenvif</code><br>
+<code>a2enconf php7.2-fpm</code><br>
+<code>systemctl reload apache2</code><br>
+<code>nano /etc/php/7.2/fpm/pool.d/www.conf</code> and add the following:<br></p>
+
+<pre><code>pm = dynamic
+pm.max_children = 120
+pm.start_servers = 12
+pm.min_spare_servers = 6
+pm.max_spare_servers = 18
+pm.max_requests = 1000
+</code></pre>
+
+<p><br>
+Note that these are the recommended settings for 4gb total/1 gb database and should be modified for your system.<br><br></p>
+</blockquote>
+
+<h2 id="quality-of-life-changes">Quality of Life Changes</h2>
 
 <p>While theses tips aren&rsquo;t needed for security, they&rsquo;re nice to have.</p>
 
-<h4 id="removing-index-php-from-every-url">Removing <code>/index.php</code> from every URL:</h4>
+<h4 id="removing-index-php-from-every-url">Removing <code>/index.php</code> from every URL</h4>
 
 <blockquote>
 <p><code>nano /var/www/html/config/config.php</code></p>
@@ -440,6 +482,12 @@ Find your timezone in the ones avaliabe <a href="https://www.php.net/manual/en/t
 
 <pre><code>date.timezone = America/Chicago,
 </code></pre>
+</blockquote>
+
+<h4 id="change-default-files-for-new-users">Change default files for new users</h4>
+
+<blockquote>
+<p>All files that are created for a user can be found in <code>/var/www/html/core/skeleton/</code></p>
 </blockquote>
 
       </article>

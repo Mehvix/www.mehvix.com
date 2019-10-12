@@ -21,14 +21,13 @@ year old who goes to Middleton High School. In my free time I fence, code, CAD, 
 
 This website was create with [Hugo](https://gohugo.io/) and the a modified version of [Hugo Theme Basic](https://github.com/siegerts/hugo-theme-basic). Currently, it's hosted via [Github pages](https://www.github.com/mehvix/mehvix.com), but I might move it over to my webserver at once [get a new CPU](/media/cpu.jpg).
 
-
 <br>
-### Contact Me
+### Contact Me / Social
 [//]: <> (https://stackoverflow.com/questions/17978720/invisible-characters-ascii/21797208#21797208)
-* Email:          mehvix `at` protonmail `dot` com - [PGP key](/media/publickey.mehvix@protonmail.com.asc)<br>
-* Github:        [Mehvix](https://github.com/mehvix)<br>
-* Discord:        Mehvix#7966<br>
-* Linkedin:           [Max Vogel](https://www.linkedin.com/in/maxlvogel/)<br>
+* Email / mehvix `at` protonmail `dot` com - [PGP key](/media/publickey.mehvix@protonmail.com.asc)<br>
+* Github / [Mehvix](https://github.com/mehvix)<br>
+* Discord / Mehvix#7966<br>
+* Linkedin / [Max Vogel](https://www.linkedin.com/in/maxlvogel/)<br>
 
 
 
