@@ -21,13 +21,13 @@ server,
 
 <meta property="og:type" content="article" />
 <meta property="og:description" content="" />
-<meta property="og:title" content="Nextcloud Ubuntu Complete Guide" />
+<meta property="og:title" content="The complete Nextcloud Ubuntu Guide" />
 <meta property="og:site_name" content="welcome!" />
 <meta property="og:image" content="" />
 <meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:width" content="" />
 <meta property="og:image:height" content="" />
-<meta property="og:url" content="https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/" />
+<meta property="og:url" content="https://www.mehvix.com/posts/the-complete-nextcloud-ubuntu-guide/" />
 <meta property="og:locale" content="en-us" />
 <meta property="article:published_time" content="2019-09-03
 " /> <meta property="article:modified_time" content="2019-09-03
@@ -40,8 +40,8 @@ server,
 
 
 
-    <title>Nextcloud Ubuntu Complete Guide</title>
-    <link rel="canonical" href="https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/" />
+    <title>The complete Nextcloud Ubuntu Guide</title>
+    <link rel="canonical" href="https://www.mehvix.com/posts/the-complete-nextcloud-ubuntu-guide/" />
 
 
     <link
@@ -79,7 +79,7 @@ server,
   <a href="/post" class="b bb bw1 pb1 no-underline #a9a9b3">posts</a>
 
   <section id="main" class="mt5">
-    <h1 itemprop="name" id="title">Nextcloud Ubuntu Complete Guide</h1>
+    <h1 itemprop="name" id="title">The complete Nextcloud Ubuntu Guide</h1>
      <span class="f6 gray">September 3, 2019 - 7 minute read</span> 
       <article itemprop="articleBody" id="content" class="w-90 lh-copy">
         
@@ -87,16 +87,15 @@ server,
 <h4 id="getting-the-machine-up-to-date">Getting the machine up-to-date</h4>
 
 <blockquote>
-<p><code>sudo su</code><br>
-<code>apt autoremove</code><br>
-<code>apt update</code><br>
-<code>apt upgrade</code><br></p>
+<p><code>sudo apt autoremove</code><br>
+<code>sudo apt update</code><br>
+<code>sudo apt upgrade</code><br></p>
 </blockquote>
 
 <h4 id="installing-apache-the-webserver">Installing Apache - the webserver</h4>
 
 <blockquote>
-<p><code>apt install apache2</code><br>
+<p><code>sudo apt install apache2</code><br>
 <code>systemctl start apache2</code><br>
 <code>systemctl enable apache2</code>- start apache2 on startup</p>
 
@@ -106,7 +105,7 @@ server,
 <h4 id="installing-mariadb-the-database">Installing MariaDB - the database</h4>
 
 <blockquote>
-<p><code>apt install mariadb-server</code><br>
+<p><code>sudo apt install mariadb-server</code><br>
 <code>mysql_secure_installation</code></p>
 
 <p>This will prompt you to login to MariaDB. Since we don&rsquo;t have a password, just hit enterset one up. After that, just accept all of the prompts and you&rsquo;re set.</p>
@@ -115,12 +114,12 @@ server,
 <h4 id="installing-phpmyadmin">Installing phpMyAdmin</h4>
 
 <blockquote>
-<p><code>apt install php libapache2-mod-php php-mysql</code><br>
-<code>apt install phpmyadmin</code><br></p>
+<p><code>sudo apt install php libapache2-mod-php php-mysql</code><br>
+<code>sudo apt install phpmyadmin</code><br></p>
 
 <p>You should follow all of the default steps, just make sure that you set the webserver as <code>apache2</code> and you&rsquo;ll be good</p>
 
-<p><code>ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf</code><br>
+<p><code>sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf</code><br>
 <code>a2enconf phpmyadmin</code><br>
 <code>service apache2 reload</code><br>
 <code>systemctl reload apache2</code><br></p>
@@ -145,8 +144,8 @@ server,
 <h4 id="installing-php">Installing PHP</h4>
 
 <blockquote>
-<p><code>apt install php-gd php-json php-mysql php-curl php-mbstring</code><br>
-<code>apt install php-intl php-imagick php-xml php-zip</code><br></p>
+<p><code>sudo apt install php-gd php-json php-mysql php-curl php-mbstring</code><br>
+<code>sudo apt install php-intl php-imagick php-xml php-zip</code><br></p>
 </blockquote>
 
 <h4 id="installing-nextcloud">Installing Nextcloud</h4>
@@ -170,8 +169,8 @@ server,
 <h4 id="setting-up-encryption">Setting up Encryption</h4>
 
 <blockquote>
-<p><code>apt install certbot</code><br>
-<code>apt install python-certbot-apache</code><br></p>
+<p><code>sudo apt install certbot</code><br>
+<code>sudo apt install python-certbot-apache</code><br></p>
 
 <p><code>nano /etc/apache2/sites-available/000-default.conf</code> and uncomment and change <code>ServerName</code> to whatever domain you&rsquo;re using, e.g. <code>cloud.mehvix.com</code>. Additionally, it&rsquo;s good practice to change the server admin to your email.</p>
 
@@ -253,7 +252,7 @@ post_max_size = 512M
 <h4 id="no-memory-cache-has-been-configured-to-enhance-performance-please-configure-a-memcache-if-available-further-information-can-be-found-in-the-documentation">No memory cache has been configured. To enhance performance, please configure a memcache, if available. Further information can be found in the documentation</h4>
 
 <blockquote>
-<p><code>apt install php-apcu</code><br>
+<p><code>sudo apt install php-apcu</code><br>
 <code>nano /var/www/html/config/config.php</code><br></p>
 
 <pre><code>'memcache.local' =&gt; '\OC\Memcache\APCu'
@@ -331,7 +330,7 @@ Add <code>open_basedir = /dev/urandom</code><br>
 <h3 id="install-and-tune-php-fpm">Install and Tune PHP-FPM</h3>
 
 <blockquote>
-<p><code>apt-get install php-fpm</code><br>
+<p><code>sudo apt-get install php-fpm</code><br>
 <code>a2enmod proxy_fcgi setenvif</code><br>
 <code>a2enconf php7.2-fpm</code><br>
 <code>systemctl reload apache2</code><br>
@@ -389,8 +388,8 @@ post_max_size = 16G
 <h4 id="ability-to-extract-from-archieves">Ability to extract from archieves</h4>
 
 <blockquote>
-<p><code>apt-get install unrar</code><br>
-<code>apt-get install p7zip p7zip-full</code><br></p>
+<p><code>sudo apt-get install unrar</code><br>
+<code>sudo apt-get install p7zip p7zip-full</code><br></p>
 
 <p>Then add the &ldquo;Extract&rdquo; app from the store<br></p>
 </blockquote>
@@ -406,7 +405,7 @@ post_max_size = 16G
 
 <blockquote>
 <p>Install &ldquo;Video Converter&rdquo; from the appstore<br>
-<code>apt install ffmpeg</code></p>
+<code>sudo apt install ffmpeg</code></p>
 </blockquote>
 
 <h4 id="downloading-youtube-bittorrent-files-remotely">Downloading YouTube/BitTorrent files remotely</h4>
@@ -416,7 +415,7 @@ post_max_size = 16G
 
 <h4 id="for-bittorrent-br">For BitTorrent:<br></h4>
 
-<p><code>apt-get install aria2 curl php-curl</code><br></p>
+<p><code>sudo apt-get install aria2 curl php-curl</code><br></p>
 
 <pre><code>mkdir /var/log/aria2c /var/local/aria2c
 touch /var/log/aria2c/aria2c.log
@@ -428,7 +427,7 @@ sudo -u www-data aria2c --enable-rpc --rpc-allow-origin-all -c -D --log=/var/log
 
 <h4 id="for-youtube-br">For YouTube:<br></h4>
 
-<p><code>apt-get install python-pip</code><br>
+<p><code>sudo apt-get install python-pip</code><br>
 <code>pip install youtube-dl</code><br></p>
 </blockquote>
 
@@ -463,9 +462,9 @@ innodb_default_row_format = 'DYNAMIC'
 <code>rm -rf files_rightclick/</code><br>
 <code>unzip rclick</code><br>
 <code>rm rclick</code><br>
-<code>systemctl restart apache2</code>
+<code>systemctl restart apache2</code><br>
 Then make sure that you re-enable the right click app too. If that doesn&rsquo;t work, try
-<code>apt-get install php-ldap</code><br>
+<code>sudo apt-get install php-ldap</code><br>
 <code>systemctl restart apache2</code></p>
 </blockquote>
 
@@ -505,8 +504,8 @@ Find your timezone in the ones avaliabe <a href="https://www.php.net/manual/en/t
 	<div>
 		<p class="f6 gray mt6 lh-copy">
 		---<br>
-		BTC:&emsp;bc1qqzp6ff9zuxhrxrtfcrxf745mv0amjkp5j0kpeu<br>
-		ETH:&emsp;0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA<br>
+		BTC / <a href="btc:bc1qqzp6ff9zuxhrxrtfcrxf745mv0amjkp5j0kpeu">bc1qqzp6ff9zuxhrxrtfcrxf745mv0amjkp5j0kpeu</a><br>
+		ETH / <a href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
 		© 2019 - Max Vogel<br>
 		Powered by <a href="https://gohugo.io">Hugo</a><br></div>
  </footer>

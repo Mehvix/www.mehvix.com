@@ -21,16 +21,13 @@ publishDir = "docs"
   tags = "tags/:slug"
 
 [[params.menu]]
-  name = "about me"
+  name = "about"
   url = "about/"
 
 [[params.menu]]
-  name = "posts chronologically"
+  name = "posts"
   url = "categories/"
 
-[[params.menu]]
-  name = "posts by tags"
-  url = "tags/"
 
 [sitemap]
   changefreq = "monthly"

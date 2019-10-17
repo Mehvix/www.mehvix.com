@@ -1,23 +1,21 @@
 ---
-title: "Nextcloud Ubuntu Complete Guide"
+title: "The complete Nextcloud Ubuntu Guide"
 description: ""
 tags: ["nextcloud", "server"]
-categories: ["project"]
+categories: ["blog"]
 date: 2019-09-03T09:32:54-05:00
-# download_url: "http://github.com/USERNAME/PROJECTNAME"
 draft: false
 ---
 
 
 #### Getting the machine up-to-date
->`sudo su`<br>
->`apt autoremove`<br>
->`apt update`<br>
->`apt upgrade`<br>
+>`sudo apt autoremove`<br>
+>`sudo apt update`<br>
+>`sudo apt upgrade`<br>
 
 
 #### Installing Apache - the webserver
->`apt install apache2`<br>
+>`sudo apt install apache2`<br>
 >`systemctl start apache2`<br>
 >`systemctl enable apache2`- start apache2 on startup
 
@@ -26,7 +24,7 @@ draft: false
 
 #### Installing MariaDB - the database
 
->`apt install mariadb-server`<br>
+>`sudo apt install mariadb-server`<br>
 >`mysql_secure_installation`
 
 >This will prompt you to login to MariaDB. Since we don't have a password, just hit enterset one up. After that, just accept all of the prompts and you're set.
@@ -34,13 +32,13 @@ draft: false
 
 #### Installing phpMyAdmin
 
->`apt install php libapache2-mod-php php-mysql`<br>
->`apt install phpmyadmin`<br>
+>`sudo apt install php libapache2-mod-php php-mysql`<br>
+>`sudo apt install phpmyadmin`<br>
 
 >You should follow all of the default steps, just make sure that you set the webserver as `apache2` and you'll be good
 
 
->`ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf`<br>
+>`sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf`<br>
 >`a2enconf phpmyadmin`<br>
 >`service apache2 reload`<br>
 >`systemctl reload apache2`<br>
@@ -63,8 +61,8 @@ draft: false
 
 #### Installing PHP
 
->`apt install php-gd php-json php-mysql php-curl php-mbstring`<br>
->`apt install php-intl php-imagick php-xml php-zip`<br>
+>`sudo apt install php-gd php-json php-mysql php-curl php-mbstring`<br>
+>`sudo apt install php-intl php-imagick php-xml php-zip`<br>
 
 
 #### Installing Nextcloud
@@ -86,8 +84,8 @@ draft: false
 
 #### Setting up Encryption
 
->`apt install certbot`<br>
->`apt install python-certbot-apache`<br>
+>`sudo apt install certbot`<br>
+>`sudo apt install python-certbot-apache`<br>
 
 >`nano /etc/apache2/sites-available/000-default.conf` and uncomment and change `ServerName` to whatever domain you're using, e.g. `cloud.mehvix.com`. Additionally, it's good practice to change the server admin to your email.
 
@@ -162,7 +160,7 @@ post_max_size = 512M
 
 #### No memory cache has been configured. To enhance performance, please configure a memcache, if available. Further information can be found in the documentation
 
->`apt install php-apcu`<br>
+>`sudo apt install php-apcu`<br>
 >`nano /var/www/html/config/config.php`<br>
 >```
 'memcache.local' => '\OC\Memcache\APCu'
@@ -234,7 +232,7 @@ There are various other actions you can take to ensure that both your os and nex
 
 ### Install and Tune PHP-FPM
 
->`apt-get install php-fpm`<br>
+>`sudo apt-get install php-fpm`<br>
 >`a2enmod proxy_fcgi setenvif`<br>
 >`a2enconf php7.2-fpm`<br>
 >`systemctl reload apache2`<br>
@@ -285,8 +283,8 @@ post_max_size = 16G
 
 #### Ability to extract from archieves
 
->`apt-get install unrar`<br>
->`apt-get install p7zip p7zip-full`<br>
+>`sudo apt-get install unrar`<br>
+>`sudo apt-get install p7zip p7zip-full`<br>
 
 >Then add the "Extract" app from the store<br>
 
@@ -299,7 +297,7 @@ post_max_size = 16G
 #### Converting files via ffmpeg
 
 >Install "Video Converter" from the appstore<br>
->`apt install ffmpeg`
+>`sudo apt install ffmpeg`
 
 
 #### Downloading YouTube/BitTorrent files remotely
@@ -307,7 +305,7 @@ post_max_size = 16G
 >Install "ocDownloader" from the appstore<br>
 
 >#### For BitTorrent:<br>
->`apt-get install aria2 curl php-curl`<br>
+>`sudo apt-get install aria2 curl php-curl`<br>
 >```
 mkdir /var/log/aria2c /var/local/aria2c
 touch /var/log/aria2c/aria2c.log
@@ -318,7 +316,7 @@ sudo -u www-data aria2c --enable-rpc --rpc-allow-origin-all -c -D --log=/var/log
 ```
 
 >#### For YouTube:<br>
->`apt-get install python-pip`<br>
+>`sudo apt-get install python-pip`<br>
 >`pip install youtube-dl`<br>
 
 
@@ -352,9 +350,9 @@ innodb_default_row_format = 'DYNAMIC'
 >`rm -rf files_rightclick/`<br>
 >`unzip rclick`<br>
 >`rm rclick`<br>
->`systemctl restart apache2`
+>`systemctl restart apache2`<br>
 >Then make sure that you re-enable the right click app too. If that doesn't work, try
->`apt-get install php-ldap`<br>
+>`sudo apt-get install php-ldap`<br>
 >`systemctl restart apache2`
 
 

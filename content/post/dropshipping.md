@@ -1,5 +1,5 @@
 ---
-title: "How I sold $1000 in a week by dropshipping"
+title: "How I dropshipped $1000, then got banned"
 description: ""
 tags: ["money"]
 categories: ["blog"]

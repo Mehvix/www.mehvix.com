@@ -7,53 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2019 - Max Vogel</copyright>
-    <lastBuildDate>Tue, 03 Sep 2019 09:32:54 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 17 Oct 2019 15:26:35 -0500</lastBuildDate>
     
 	<atom:link href="https://www.mehvix.com/categories/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Nextcloud Ubuntu Complete Guide</title>
-      <link>https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/</link>
-      <pubDate>Tue, 03 Sep 2019 09:32:54 -0500</pubDate>
+      <title>Finished Projects</title>
+      <link>https://www.mehvix.com/posts/finished-projects/</link>
+      <pubDate>Thu, 17 Oct 2019 15:26:35 -0500</pubDate>
       
-      <guid>https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/</guid>
-      <description>Getting the machine up-to-date  sudo su
-apt autoremove
-apt update
-apt upgrade
- Installing Apache - the webserver  apt install apache2
-systemctl start apache2
-systemctl enable apache2- start apache2 on startup
-If you&amp;rsquo;ve configured the server right, you should be able to go to your machine&amp;rsquo;s IP (you can get this via hostname -I) in the webbrowser of your choice and see the &amp;ldquo;Apache2 Ubuntu Default Page&amp;rdquo;</description>
+      <guid>https://www.mehvix.com/posts/finished-projects/</guid>
+      <description>SynapsBot In the summer of 2018 and taught my self python 3 and built my first Discord bot for my server. A couple months later, I rewrote the entire project using a fork on the discord.py library, discord rewrite, and still use the bot to this day
+Application Configs Using Python 3 I wrote a script that backs-up and installs config files for various applications so that I could have the same settings across machines.</description>
     </item>
     
     <item>
-      <title>Application Configs</title>
-      <link>https://www.mehvix.com/posts/application-configs/</link>
-      <pubDate>Fri, 23 Aug 2019 19:58:06 -0500</pubDate>
+      <title>Future Projects</title>
+      <link>https://www.mehvix.com/posts/future-projects/</link>
+      <pubDate>Thu, 17 Oct 2019 14:45:20 -0500</pubDate>
       
-      <guid>https://www.mehvix.com/posts/application-configs/</guid>
-      <description>The problem My settings and configs had no way to sync between my desktop and laptop, e.g. all my custom keybinds would be on one computer but not the other.
-The solution Using python 3 I wrote a script that can copy and install config files to and from a given directory (I used my nextcloud server). The source code is on my Github, but I would highly recommend that you&amp;rsquo;re careful and use a test directory if you want to modify the code - I acciedently deleted my config files more then once while testing.</description>
-    </item>
-    
-    <item>
-      <title>SynapsBot</title>
-      <link>https://www.mehvix.com/posts/synapsbot/</link>
-      <pubDate>Fri, 23 Aug 2019 19:58:06 -0500</pubDate>
-      
-      <guid>https://www.mehvix.com/posts/synapsbot/</guid>
-      <description>In the summer of 2018 and taught my self python 3 and built my first Discord bot for my server. A couple months later, I rewrote the entire project using a fork on the discord.py library, discord rewrite - here&amp;rsquo;s the up to date repo. The project as a whole was a great intrudction to python, my favourite part of the whole project would have to be the hearthstone deckstring decoder.</description>
-    </item>
-    
-    <item>
-      <title>Google Sheets</title>
-      <link>https://www.mehvix.com/posts/google-sheets/</link>
-      <pubDate>Sun, 11 Aug 2019 01:10:41 -0500</pubDate>
-      
-      <guid>https://www.mehvix.com/posts/google-sheets/</guid>
-      <description>Age of Empires 2 Counter List There wasn&amp;rsquo;t a centralized source for counters in AoE2, so I decided to make one. It pulls from various sources, ranging from the wiki, Spirit of the Law, various AoK threads, and Steam discussions. For the icons, I went through and downloaded each image from the wiki, photoshoped out the black background, and uploaded it to imgur. Looking back, I wish I knew python so I didn&amp;rsquo;t have to do it manually.</description>
+      <guid>https://www.mehvix.com/posts/future-projects/</guid>
+      <description>Here&amp;rsquo;s a list of projects that I haven&amp;rsquo;t gotten around to doing
+1. A program to automatically download videos from a YouTube playlist  Prevent this from happening again. I&amp;rsquo;m thinking of using webhooks and youtube-dl
+ 2. Visualize Typeracer data  I did something similar already to this on my discord bot already, but I used typeracer&amp;rsquo;s limited statistics .json for the user. You can export your data to a .</description>
     </item>
     
   </channel>

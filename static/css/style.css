@@ -58,10 +58,10 @@ a.no-underline, a.pa1 {
 }
 
 a.no-underline:hover, a.pa1:hover {
-    background-color: #007593;
+    background-color:           #007593;
 }
 
-p a, li a {
+h4 a, h3 a, h2 a, h1 a, p a, li a {
     word-wrap:                  break-word;
     border:                     none;
     box-shadow:                 inset 0 -.2em 0 #018574;
@@ -70,8 +70,13 @@ p a, li a {
     transition-timing-function: ease-in-out;
     text-decoration:            none;
 }
+
 p a:hover, li a:hover {
-    background-color: #018574;
+    background-color:           #018574;
+}
+
+p.f6 a {
+    color:                      #929292;
 }
 
 code::selection,

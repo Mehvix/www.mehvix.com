@@ -4,6 +4,48 @@
   
   <url>
     <loc>https://www.mehvix.com/categories/</loc>
+    <lastmod>2019-10-17T15:26:35-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/posts/finished-projects/</loc>
+    <lastmod>2019-10-17T15:26:35-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/post/</loc>
+    <lastmod>2019-10-17T15:26:35-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/categories/project/</loc>
+    <lastmod>2019-10-17T15:26:35-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/</loc>
+    <lastmod>2019-10-17T15:26:35-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/posts/future-projects/</loc>
+    <lastmod>2019-10-17T14:45:20-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mehvix.com/categories/blog/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -11,27 +53,6 @@
   
   <url>
     <loc>https://www.mehvix.com/tags/nextcloud/</loc>
-    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/</loc>
-    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/post/</loc>
-    <lastmod>2019-09-03T09:32:54-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/categories/project/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -52,21 +73,14 @@
   </url>
   
   <url>
-    <loc>https://www.mehvix.com/</loc>
+    <loc>https://www.mehvix.com/posts/the-complete-nextcloud-ubuntu-guide/</loc>
     <lastmod>2019-09-03T09:32:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://www.mehvix.com/categories/blog/</loc>
-    <lastmod>2019-08-24T14:21:26-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/posts/how-i-sold-1000-in-a-week-by-dropshipping/</loc>
+    <loc>https://www.mehvix.com/posts/how-i-dropshipped-1000-then-got-banned/</loc>
     <lastmod>2019-08-24T14:21:26-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -75,41 +89,6 @@
   <url>
     <loc>https://www.mehvix.com/tags/money/</loc>
     <lastmod>2019-08-24T14:21:26-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/posts/application-configs/</loc>
-    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/tags/python/</loc>
-    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/posts/synapsbot/</loc>
-    <lastmod>2019-08-23T19:58:06-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/posts/google-sheets/</loc>
-    <lastmod>2019-08-11T01:10:41-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mehvix.com/tags/sheets/</loc>
-    <lastmod>2019-08-11T01:10:41-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

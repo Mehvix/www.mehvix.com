@@ -13,16 +13,15 @@
     
     
     <item>
-      <title>Nextcloud Ubuntu Complete Guide</title>
-      <link>https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/</link>
+      <title>The complete Nextcloud Ubuntu Guide</title>
+      <link>https://www.mehvix.com/posts/the-complete-nextcloud-ubuntu-guide/</link>
       <pubDate>Tue, 03 Sep 2019 09:32:54 -0500</pubDate>
       
-      <guid>https://www.mehvix.com/posts/nextcloud-ubuntu-complete-guide/</guid>
-      <description>Getting the machine up-to-date  sudo su
-apt autoremove
-apt update
-apt upgrade
- Installing Apache - the webserver  apt install apache2
+      <guid>https://www.mehvix.com/posts/the-complete-nextcloud-ubuntu-guide/</guid>
+      <description>Getting the machine up-to-date  sudo apt autoremove
+sudo apt update
+sudo apt upgrade
+ Installing Apache - the webserver  sudo apt install apache2
 systemctl start apache2
 systemctl enable apache2- start apache2 on startup
 If you&amp;rsquo;ve configured the server right, you should be able to go to your machine&amp;rsquo;s IP (you can get this via hostname -I) in the webbrowser of your choice and see the &amp;ldquo;Apache2 Ubuntu Default Page&amp;rdquo;</description>
