@@ -3,7 +3,8 @@ title = "welcome!"
 theme ="hugo-theme-basic-customized"
 languageCode = "en-us"
 enableEmoji = true 
-copyright = "© 2019 - Max Vogel"
+# copyright = "© 2019 - Max Vogel"
+# Instead I'm going to write some js in footers.html to auto-update the year
 description = "Max Vogel's personal website."
 
 publishDir = "docs"

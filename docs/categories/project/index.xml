@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>project on welcome!</title>
@@ -6,7 +6,6 @@
     <description>Recent content in project on welcome!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2019 - Max Vogel</copyright>
     <lastBuildDate>Thu, 17 Oct 2019 15:26:35 -0500</lastBuildDate>
     
 	<atom:link href="https://www.mehvix.com/categories/project/index.xml" rel="self" type="application/rss+xml" />

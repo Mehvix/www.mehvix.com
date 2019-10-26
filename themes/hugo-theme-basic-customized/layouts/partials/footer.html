@@ -1,15 +1,15 @@
 <footer>
 	<div>
 		<p class="f6 gray mt6 lh-copy">
-		---<br>
-		BTC / <a href="btc:bc1qqzp6ff9zuxhrxrtfcrxf745mv0amjkp5j0kpeu">bc1qqzp6ff9zuxhrxrtfcrxf745mv0amjkp5j0kpeu</a><br>
-		ETH / <a href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
-		{{ .Site.Copyright | safeHTML }}<br>
-		Powered by <a href="https://gohugo.io">Hugo</a><br>
+			---<br>
+			BTC / <a href="btc:bc1qqzp6ff9zuxhrxrtfcrxf745mv0amjkp5j0kpeu">bc1qqzp6ff9zuxhrxrtfcrxf745mv0amjkp5j0kpeu</a><br>
+			ETH / <a href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
+			© <script>
+				document.write(new Date().getFullYear())
+			</script> - Max Vogel<br>
 
-		{{- if .OutputFormats.Get "RSS" }}
-			<link href="{{ .OutputFormats.Get "RSS" }}{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-		{{- end -}}
+			<a href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">RSS Feed</a>
+		</p>
 	</div>
  </footer>
 
