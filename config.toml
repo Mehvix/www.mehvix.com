@@ -1,8 +1,3 @@
-# Because I dont' know where else to put this, I'll add it here:
-# In terms.html, there's an "s" at the end of the titles tag. This is purely for the categories page, but it also
-# changes the tags page as well (it's not in use right now, but ya never know)
-
-
 baseURL = "https://www.mehvix.com/"
 title = "welcome!"
 theme ="hugo-theme-basic-customized"
