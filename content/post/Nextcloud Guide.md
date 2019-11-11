@@ -111,8 +111,9 @@ draft: false
 >After that, you can go ahead to the Nextcloud page, create an account (you will use this for all Nextcloud logins). Make sure to change the data folder to `/media/nextcloud-data/`
 or whatever dir you are using, then enter the MariaDB user/password.<br><br>
 
-Now you've got yourself a Nextcloud Server! However, there are still a couple things that you still need to configure which I'll cover in the following section.<br><br><br><br>
+Now you've got yourself a Nextcloud Server! However, there are still a couple things that you still need to configure which I'll cover in the following section.<br><br>
 
+--- 
 ## Securing Nextcloud
 If you head to `https://yournextcloud.com/settings/admin/overview` you'll see all security and setup warnings. Here's how you fix the ones that I encountered:
 
@@ -211,9 +212,9 @@ innodb_file_per_table=1
 
 >Then, update Nextcloud:<br>
 >`sudo -u www-data php /var/www/html/occ config:system:set mysql.utf8mb4 --type boolean --value="true"`<br>
->`sudo -u www-data php /var/www/html/occ maintenance:repair`<br><br><br><br>
+>`sudo -u www-data php /var/www/html/occ maintenance:repair`<br><br>
 
-
+--- 
 ## Further Securing / Optimization
 
 There are various other actions you can take to ensure that both your os and nextcloud are secure. I'll be covering the one's found on [this wiki page](https://docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html).
@@ -230,7 +231,7 @@ There are various other actions you can take to ensure that both your os and nex
 >Because this delicate, you should [check out the wiki](https://docs.nextcloud.com/server/14/admin_manual/installation/selinux_configuration.html) for the latest information
 
 
-### Install and Tune PHP-FPM
+#### Install and Tune PHP-FPM
 
 >`sudo apt-get install php-fpm`<br>
 >`a2enmod proxy_fcgi setenvif`<br>
@@ -247,7 +248,7 @@ pm.max_requests = 1000
 ```<br>
 >Note that these are the recommended settings for 4gb total/1 gb database and should be modified for your system.<br><br>
 
-
+---
 ## Quality of Life Changes
 
 While theses tips aren't needed for security, they're nice to have.
@@ -371,4 +372,19 @@ date.timezone = America/Chicago,
 
 #### Change default files for new users
 
->All files that are created for a user can be found in `/var/www/html/core/skeleton/`
+>All files that are created for a user can be found in `/var/www/html/core/skeleton/`<br><br>
+
+---
+
+## Trouble shooting
+
+#### Transering [file] - server replied: [nothing]
+>`sudo -u www-data php /var/www/html/occ files:scan --all`<br>
+
+
+#### Transfeing [file] - server replied: Forbidden (Sabre\DAV\Exception\Forbidden)
+>`sudo rm [username]/uploads`<br>
+
+
+#### Home storage for user [user] not writable
+>`sudo chown -R www-data:www-data [data mount location]/[user]`

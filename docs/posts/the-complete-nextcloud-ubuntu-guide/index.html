@@ -198,7 +198,9 @@ I already set up my drives/raid config, so all I had to do was create and mount 
 or whatever dir you are using, then enter the MariaDB user/password.<br><br></p>
 </blockquote>
 
-<p>Now you&rsquo;ve got yourself a Nextcloud Server! However, there are still a couple things that you still need to configure which I&rsquo;ll cover in the following section.<br><br><br><br></p>
+<p>Now you&rsquo;ve got yourself a Nextcloud Server! However, there are still a couple things that you still need to configure which I&rsquo;ll cover in the following section.<br><br></p>
+
+<hr />
 
 <h2 id="securing-nextcloud">Securing Nextcloud</h2>
 
@@ -305,8 +307,10 @@ innodb_file_per_table=1
 
 <p>Then, update Nextcloud:<br>
 <code>sudo -u www-data php /var/www/html/occ config:system:set mysql.utf8mb4 --type boolean --value=&quot;true&quot;</code><br>
-<code>sudo -u www-data php /var/www/html/occ maintenance:repair</code><br><br><br><br></p>
+<code>sudo -u www-data php /var/www/html/occ maintenance:repair</code><br><br></p>
 </blockquote>
+
+<hr />
 
 <h2 id="further-securing-optimization">Further Securing / Optimization</h2>
 
@@ -327,7 +331,7 @@ Add <code>open_basedir = /dev/urandom</code><br>
 <p>Because this delicate, you should <a href="https://docs.nextcloud.com/server/14/admin_manual/installation/selinux_configuration.html">check out the wiki</a> for the latest information</p>
 </blockquote>
 
-<h3 id="install-and-tune-php-fpm">Install and Tune PHP-FPM</h3>
+<h4 id="install-and-tune-php-fpm">Install and Tune PHP-FPM</h4>
 
 <blockquote>
 <p><code>sudo apt-get install php-fpm</code><br>
@@ -347,6 +351,8 @@ pm.max_requests = 1000
 <p><br>
 Note that these are the recommended settings for 4gb total/1 gb database and should be modified for your system.<br><br></p>
 </blockquote>
+
+<hr />
 
 <h2 id="quality-of-life-changes">Quality of Life Changes</h2>
 
@@ -486,7 +492,29 @@ Find your timezone in the ones avaliabe <a href="https://www.php.net/manual/en/t
 <h4 id="change-default-files-for-new-users">Change default files for new users</h4>
 
 <blockquote>
-<p>All files that are created for a user can be found in <code>/var/www/html/core/skeleton/</code></p>
+<p>All files that are created for a user can be found in <code>/var/www/html/core/skeleton/</code><br><br></p>
+</blockquote>
+
+<hr />
+
+<h2 id="trouble-shooting">Trouble shooting</h2>
+
+<h4 id="transering-file-server-replied-nothing">Transering [file] - server replied: [nothing]</h4>
+
+<blockquote>
+<p><code>sudo -u www-data php /var/www/html/occ files:scan --all</code><br></p>
+</blockquote>
+
+<h4 id="transfeing-file-server-replied-forbidden-sabre-dav-exception-forbidden">Transfeing [file] - server replied: Forbidden (Sabre\DAV\Exception\Forbidden)</h4>
+
+<blockquote>
+<p><code>sudo rm [username]/uploads</code><br></p>
+</blockquote>
+
+<h4 id="home-storage-for-user-user-not-writable">Home storage for user [user] not writable</h4>
+
+<blockquote>
+<p><code>sudo chown -R www-data:www-data [data mount location]/[user]</code></p>
 </blockquote>
 
       </article>
