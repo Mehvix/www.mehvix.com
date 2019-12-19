@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>welcome!</title>
@@ -27,7 +27,7 @@ Application Configs Using Python 3 I wrote a script that backs-up and installs c
       <pubDate>Thu, 17 Oct 2019 14:45:20 -0500</pubDate>
       
       <guid>https://www.mehvix.com/posts/future-projects/</guid>
-      <description>Here&amp;rsquo;s a list of projects that I haven&amp;rsquo;t gotten around to doing
+      <description>Here&amp;rsquo;s a list of projects that I eventually want to complete
 - A program to automatically download videos from a YouTube playlist  Prevent this from happening again. I&amp;rsquo;m thinking of using webhooks and youtube-dl
  - Visualize Typeracer data  I did something similar already to this on my discord bot already, but I used typeracer&amp;rsquo;s limited statistics .json for the user. You can export your data to a .</description>
     </item>
@@ -62,8 +62,8 @@ If you&amp;rsquo;ve configured the server right, you should be able to go to you
       <pubDate>Sat, 10 Aug 2019 21:49:48 -0500</pubDate>
       
       <guid>https://www.mehvix.com/about/</guid>
-      <description>I&amp;rsquo;m Max Vogel. I&amp;rsquo;m a  var today = new Date(); var date_to_reply = new Date(1027728000000); var timeinmilisec = date_to_reply.getTime() - today.getTime(); document.write(-Math.ceil(timeinmilisec / (31556952000.0004)));  year old who goes to Middleton High School. In my free time I fence, code, CAD, play AoE2, or am working on something 1306 related.
-This website was create with Hugo and the a modified version of Hugo Theme Basic. Currently, it&amp;rsquo;s hosted via Github pages, but I might move it over to my webserver at once get a new CPU.</description>
+      <description>Hello! I&amp;rsquo;m Max Vogel. I&amp;rsquo;m a  var today = new Date(); var date_to_reply = new Date(1027728000000); var timeinmilisec = date_to_reply.getTime() - today.getTime(); document.write(-Math.ceil(timeinmilisec / (31556952000.0004)));  year old who goes to Middleton High School. In my free time I fence, code, CAD, play AoE2, or am working on something 1306 related.
+This website is generated with Hugo and is using a modified version of &amp;lsquo;Hugo Theme Basic&amp;rsquo;. Currently, it&amp;rsquo;s hosted via Github pages, but I might move it over to my webserver when I have the freetime.</description>
     </item>
     
   </channel>

@@ -8,7 +8,11 @@ date: 2019-10-17T14:45:20-05:00
 draft: false
 ---
 
-Here's a list of projects that I haven't gotten around to doing
+Here's a list of projects that I eventually want to complete
+
+
+---
+
 
 ### - A program to automatically download videos from a YouTube playlist
 > Prevent [this](https://old.reddit.com/r/Jon_Bois/comments/ab6930/does_anyone_happen_to_have_pretty_good_episode_4/) from happening again. I'm thinking of using [webhooks](https://zapier.com) and [youtube-dl](https://github.com/ytdl-org/youtube-dl)
@@ -51,7 +55,13 @@ Here's a list of projects that I haven't gotten around to doing
 ### - A year-round "Spoty Wrapped"
 > Something like [this](https://newsroom.spotify.com/2018-12-06/relive-your-year-in-music-with-spotify-wrapped-2018/), but not for just once a year
 
-### - CAD --> Print --> Wire a custom drone
+### - Make a custom drone (3D print parts?)
 
 ### - Write a program to find the sizing of a key, then generate a CAD file that's to scale
 > - [Interesting talk on 3D printing keys](https://youtu.be/7kJnGZlirpI)
+
+### - Write a guide on Jellyfin/Reverse Proxies, as well as move Nextcloud to Dockers
+
+### -  Write an AoE2 Build order guide in LaTeX
+
+### - Script to remove image meta data (location it was taken, exact time, etc.)
