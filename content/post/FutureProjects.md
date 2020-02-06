@@ -65,3 +65,6 @@ Here's a list of projects that I eventually want to complete
 ### -  Write an AoE2 Build order guide in LaTeX
 
 ### - Script to remove image meta data (location it was taken, exact time, etc.)
+
+### - Some audio-elcitrical project -- altoid amp, speakers, etc.
+> This instance in [Louis Rossmann's video](https://youtu.be/-LF3Cy5hZbc?list=PLkVbIsAWN2luLeViTZ499dZNsZHavrGBE&t=503) motivated me
