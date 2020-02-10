@@ -58,7 +58,7 @@ Here's a list of projects that I eventually want to complete
 ### - Make a custom drone (3D print parts?)
 
 ### - Write a program to find the sizing of a key, then generate a CAD file that's to scale
-> - [Interesting talk on 3D printing keys](https://youtu.be/7kJnGZlirpI)
+> [Interesting talk on 3D printing keys](https://youtu.be/7kJnGZlirpI)
 
 ### - Write a guide on Jellyfin/Reverse Proxies, as well as move Nextcloud to Dockers
 
