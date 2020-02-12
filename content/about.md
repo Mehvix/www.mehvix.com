@@ -35,6 +35,7 @@ year old who goes to Middleton High School. In my free time I fence, code, CAD, 
 ### Videos I enjoy:
 * [Pretty Good](https://www.youtube.com/playlist?list=PLRo3mRAtA0hxw9clCLU937g7KDH-QsLd5) - Jon Bois
 * [Never Ever](https://www.youtube.com/playlist?list=PLjXwcOEO8rkTutVvJ3kzbGcJ7Gi0ut-EK) - EMPLemon
+* [Richard Russel](https://youtu.be/ZQSpPrZSDQ8) 
 
 <br><br>
 
