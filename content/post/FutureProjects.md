@@ -68,3 +68,9 @@ Here's a list of projects that I eventually want to complete
 
 ### - Some audio-elcitrical project -- altoid amp, speakers, etc.
 > This instance in [Louis Rossmann's video](https://youtu.be/-LF3Cy5hZbc?list=PLkVbIsAWN2luLeViTZ499dZNsZHavrGBE&t=503) motivated me
+
+### - Software + Hardware keylogger
+> I've been binging defcon and penn testing talks and I think this would be an interesting project with *no real application :)*
+
+### - Transfer my resume to LaTeX
+> I keep telling myself I'll get around to this but never do, so I'm putting it here to feel obligated to
