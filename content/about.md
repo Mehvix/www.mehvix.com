@@ -11,10 +11,15 @@ draft: false
 
 >Hello! I'm Max Vogel. I'm a 
 <script>
-var today = new Date();
-var date_to_reply = new Date(1027728000000);
-var timeinmilisec = date_to_reply.getTime() - today.getTime();
-document.write(-Math.ceil(timeinmilisec / (31556952000.0004)));
+var today = new Date();  //initializes to current date
+var bday = new Date();
+bday.setFullYear(2002);
+bday.setMonth(7-1);  //January is 0
+bday.setDate(27);
+bday.setHours(0);
+bday.setMinutes(0);
+var timeDiff = Math.abs(bday.getTime() - today.getTime());
+document.write(Math.floor(timeDiff / ((1000 * 60 * 60 * 24 * 365))));  // ceil time in years ([milliseconds] * [seconds] * [min] * [hours] * [days])
 </script>
 year old who goes to Middleton High School. In my free time I fence, code, CAD, play AoE2, or am working on something [1306](https://www.team1306.com) related.
 
