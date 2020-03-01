@@ -96,7 +96,7 @@ bday.setDate(27);
 bday.setHours(0);
 bday.setMinutes(0);
 var timeDiff = Math.abs(bday.getTime() - today.getTime());
-document.write(Math.floor(timeDiff / ((365.25 * 1000 * 3600 * 24))));  // ceil time in years
+document.write(Math.floor(timeDiff / ((1000 * 60 * 60 * 24 * 365))));  // ceil time in years ([milliseconds] * [seconds] * [min] * [hours] * [days])
 </script>
 year old who goes to Middleton High School. In my free time I fence, code, CAD, play AoE2, or am working on something <a href="https://www.team1306.com">1306</a> related.</p>
 

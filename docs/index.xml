@@ -53,8 +53,7 @@ If you&amp;rsquo;ve configured the server right, you should be able to go to you
       <pubDate>Sat, 10 Aug 2019 21:49:48 -0500</pubDate>
       
       <guid>https://www.mehvix.com/about/</guid>
-      <description>Hello! I&amp;rsquo;m Max Vogel. I&amp;rsquo;m a  var today = new Date(); var date_to_reply = new Date(1027728000000); var timeinmilisec = date_to_reply.getTime() - today.getTime(); document.write(-Math.ceil(timeinmilisec / (31556952000.0004)));  year old who goes to Middleton High School. In my free time I fence, code, CAD, play AoE2, or am working on something 1306 related.
-This website is generated with Hugo and is using a modified version of &amp;lsquo;Hugo Theme Basic&amp;rsquo;. Currently, it&amp;rsquo;s hosted via Github pages, but I might move it over to my webserver when I have the freetime.</description>
+      <description>Hello! I&amp;rsquo;m Max Vogel. I&amp;rsquo;m a  var today = new Date(); //initializes to current date var bday = new Date(); bday.setFullYear(2002); bday.setMonth(7-1); //January is 0 bday.setDate(27); bday.setHours(0); bday.setMinutes(0); var timeDiff = Math.abs(bday.getTime() - today.getTime()); document.write(Math.floor(timeDiff / ((1000 * 60 * 60 * 24 * 365)))); // ceil time in years ([milliseconds] * [seconds] * [min] * [hours] * [days])  year old who goes to Middleton High School.</description>
     </item>
     
   </channel>
