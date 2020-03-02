@@ -46,7 +46,7 @@ Here's a list of projects that I eventually want to complete
 > - This may be irrelevant when DE comes out
 
 ### - Light alarm clock
-> You can buy a alarm clock that gradually gets brighter to simulate the sun rising, but they're $100+. 
+> You can buy a alarm clock that gradually gets brighter to simulate the sun rising, but they're $100+.</br>
 > This could probably be done with an arduino, but I don't know how I'd limit the brightness of a light.
 
 ### - Visual poker-tracker for Pokerstars
@@ -60,17 +60,22 @@ Here's a list of projects that I eventually want to complete
 ### - Write a program to find the sizing of a key, then generate a CAD file that's to scale
 > [Interesting talk on 3D printing keys](https://youtu.be/7kJnGZlirpI)
 
-### - Write a guide on Jellyfin/Reverse Proxies, as well as move Nextcloud to Dockers
+### - Write a guide on Jellyfin/Reverse Proxies, as well how to transfer Nextcloud to Dockers
 
 ### -  Write an AoE2 Build order guide in LaTeX
 
-### - Script to remove image meta data (location it was taken, exact time, etc.)
+### - Script to remove image/file meta data 
 
 ### - Some audio-elcitrical project -- altoid amp, speakers, etc.
 > This instance in [Louis Rossmann's video](https://youtu.be/-LF3Cy5hZbc?list=PLkVbIsAWN2luLeViTZ499dZNsZHavrGBE&t=503) motivated me
 
 ### - Software + Hardware keylogger
-> I've been binging defcon and penn testing talks and I think this would be an interesting project with *no real application :)*
+> I've been binging defcon and penn testing talks and I think this would be an interesting project with *no real application :)*</br>
+> Some ideas to make it interesting: screenshot functionality, file scraper, computer info, sends files via TCP/FTP.
 
 ### - Transfer my resume to LaTeX
 > I keep telling myself I'll get around to this but never do, so I'm putting it here to feel obligated to
+
+### - Crypto address replacer
+> Replaces copied crypto address with my address</br>
+> Has been done multiple times before, in no way is this my original idea
