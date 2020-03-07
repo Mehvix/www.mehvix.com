@@ -321,6 +321,11 @@ sudo -u www-data aria2c --enable-rpc --rpc-allow-origin-all -c -D --log=/var/log
 >`pip install youtube-dl`<br>
 
 
+>#### For Bookmarks:<br>
+>`sudo apt-get install php-gmp`<br>
+>`systemctl restart apache2`<br>
+
+
 #### Solving "Index column size too large. The maximum column size is 767 bytes."
 
 >`mariadb`<br>
@@ -343,7 +348,7 @@ innodb_default_row_format = 'DYNAMIC'
 
 
 
-#### Fixing right click not working
+#### Fixing right click not working (How to manually install an addon)
 
 >[As of writing this, 0.13 is the last working version](https://github.com/nextcloud/files_rightclick/issues/83#issuecomment-525592831)<br>
 >`cd /var/www/html/apps/`<br>
