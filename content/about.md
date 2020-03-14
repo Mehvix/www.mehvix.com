@@ -21,21 +21,21 @@ bday.setMinutes(0);
 var timeDiff = Math.abs(bday.getTime() - today.getTime());
 document.write(Math.floor(timeDiff / ((1000 * 60 * 60 * 24 * 365))));  // ceil time in years ([milliseconds] * [seconds] * [min] * [hours] * [days])
 </script>
-year old who goes to Middleton High School. In my free time I fence, code, CAD, play AoE2, or am working on something [1306](https://www.team1306.com) related.
+year old who goes to Middleton High School.  [Here's a photo of me at UW's 2019 Madhacks](/media/IMG_20191020_011042.jpg) In my free time I fence, code, CAD, play AoE2, or am working on something [1306](https://www.team1306.com) related. 
 
 
->This website is generated with [Hugo](https://gohugo.io/) and is using a modified version of '[Hugo Theme Basic](https://github.com/siegerts/hugo-theme-basic)'. Currently, it's hosted via [Github pages](https://www.github.com/mehvix/mehvix.com), but I might move it over to my webserver when I have the freetime. [Here's a photo of me at UW's 2019 Madhacks](/media/IMG_20191020_011042.jpg).
+>This website is generated with [Hugo](https://gohugo.io/) and is using a modified version of '[Hugo Theme Basic](https://github.com/siegerts/hugo-theme-basic)'. Currently, it's hosted via [Github pages](https://www.github.com/mehvix/mehvix.com), but I might move it over to my webserver when I have the freetime. Speaking of, if you're interested in a Nextcloud instances, I'm selfhosting [cloud.mehvix.com](https://cloud.mehvix.com) [[scan](https://scan.nextcloud.com/results/4f080b97-0709-41f8-8f75-f87e86d4ea77)]; feel free to reach out, my contact information is below:
 
-<br><br>
+<br>
 
-### Contact Info:
+### Me:
 * Email / mehvix `at` protonmail `dot` com - [PGP key](/media/publickey.mehvix@protonmail.com.asc)
 * Github / [Mehvix](https://github.com/mehvix)
 * Discord / Mehvix#7966
 * Linkedin / [Max Vogel](https://www.linkedin.com/in/maxlvogel/)
 
 
-<br><br>
+<br>
 
 ### Videos I enjoy:
 * [Pretty Good](https://www.youtube.com/playlist?list=PLRo3mRAtA0hxw9clCLU937g7KDH-QsLd5) - Jon Bois

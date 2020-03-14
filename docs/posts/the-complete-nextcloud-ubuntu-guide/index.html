@@ -83,7 +83,7 @@ server,
 
   <section id="main" class="mt5">
     <h1 itemprop="name" id="title">The complete Nextcloud Ubuntu Guide</h1>
-     <span class="f6 gray">September 3, 2019 - 7 minute read</span> 
+     <span class="f6 gray">September 3, 2019 - 8 minute read</span> 
       <article itemprop="articleBody" id="content" class="w-90 lh-copy">
         
 
@@ -288,6 +288,12 @@ opcache.save_comments=1
 
 <blockquote>
 <p><code>sudo -u www-data php /var/www/html/occ db:convert-filecache-bigint</code></p>
+</blockquote>
+
+<h4 id="the-database-is-missing-some-indexes">The database is missing some indexes</h4>
+
+<blockquote>
+<p><code>sudo -u www-data php /var/www/html/occ db:add-missing-indices</code></p>
 </blockquote>
 
 <h4 id="mysql-is-used-as-database-but-does-not-support-4-byte-characters">MySQL is used as database but does not support 4-byte characters</h4>
@@ -523,6 +529,49 @@ Find your timezone in the ones avaliabe <a href="https://www.php.net/manual/en/t
 
 <blockquote>
 <p><code>sudo chown -R www-data:www-data [data mount location]/[user]</code></p>
+</blockquote>
+
+<hr />
+
+<h2 id="updating">Updating</h2>
+
+<h3 id="backup">Backup</h3>
+
+<h4 id="turn-on-maintenance-br">Turn on maintenance<br></h4>
+
+<blockquote>
+<p><code>cd /var/www/html/</code><br>
+<code>sudo -u www-data php occ maintenance:mode --on</code></p>
+</blockquote>
+
+<h4 id="backup-nextcloud-files-br">Backup Nextcloud files<br></h4>
+
+<blockquote>
+<p><code>cd /var/www/</code><br>
+<code>rsync -Aavx html/ backupdir/html_bkup_`date +&quot;%Y%m%d&quot;`/</code><br></p>
+
+<p>Backup MariaDB
+<code>mysqldump --single-transaction -u [nextcloud] -p[password] nextcloud &gt; backupdir/sqlbkp_`date +&quot;%Y%m%d&quot;`.bak</code><br></p>
+</blockquote>
+
+<h4 id="turn-off-maintenance-br">Turn off maintenance<br></h4>
+
+<blockquote>
+<p><code>cd /var/www/html/</code><br>
+<code>sudo -u www-data php occ maintenance:mode --off</code><br><br></p>
+</blockquote>
+
+<h3 id="updating-br">Updating<br></h3>
+
+<blockquote>
+<ul>
+<li>Go to <code>https://cloud.dns.com/settings/admin/overview</code> and select the version you want<br></li>
+<li>Follow the steps, make sure not to touch anything while updating<br></li>
+<li><code>systemctl restart apache2</code></li>
+<li>Double check the &lsquo;Security &amp; setup warnings&rsquo; (also on <code>/admin/overview</code>)<br></li>
+<li><a href="https://scan.nextcloud.com/">Test your server</a><br></li>
+<li>Congrads!</li>
+</ul>
 </blockquote>
 
       </article>

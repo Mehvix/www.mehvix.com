@@ -192,6 +192,11 @@ opcache.save_comments=1
 >`sudo -u www-data php /var/www/html/occ db:convert-filecache-bigint`
 
 
+#### The database is missing some indexes
+
+>`sudo -u www-data php /var/www/html/occ db:add-missing-indices`
+
+
 #### MySQL is used as database but does not support 4-byte characters
 
 >First, update MariaDB:<br>
@@ -393,3 +398,32 @@ date.timezone = America/Chicago,
 
 #### Home storage for user [user] not writable
 >`sudo chown -R www-data:www-data [data mount location]/[user]`
+
+---
+
+## Updating
+
+### Backup
+#### Turn on maintenance<br>
+>`cd /var/www/html/`<br>
+>`sudo -u www-data php occ maintenance:mode --on`
+
+
+#### Backup Nextcloud files<br>
+>`cd /var/www/`<br>
+>``rsync -Aavx html/ backupdir/html_bkup_`date +"%Y%m%d"`/``<br>
+
+> Backup MariaDB
+>``mysqldump --single-transaction -u [nextcloud] -p[password] nextcloud > backupdir/sqlbkp_`date +"%Y%m%d"`.bak``<br>
+
+#### Turn off maintenance<br>
+>`cd /var/www/html/`<br>
+>`sudo -u www-data php occ maintenance:mode --off`<br><br>
+
+### Updating<br>
+> - Go to `https://cloud.dns.com/settings/admin/overview` and select the version you want<br>
+> - Follow the steps, make sure not to touch anything while updating<br>
+> - `systemctl restart apache2`
+> - Double check the 'Security & setup warnings' (also on `/admin/overview`)<br>
+> - [Test your server](https://scan.nextcloud.com/)<br>
+> - Congrads!
