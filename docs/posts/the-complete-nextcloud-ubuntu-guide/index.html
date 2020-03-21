@@ -519,6 +519,13 @@ Find your timezone in the ones avaliabe <a href="https://www.php.net/manual/en/t
 <p><code>sudo -u www-data php /var/www/html/occ files:scan --all</code><br></p>
 </blockquote>
 
+<h4 id="files-aren-t-showing-up-for-user">Files aren&rsquo;t showing up for [user]</h4>
+
+<blockquote>
+<p><code>sudo chown -R www-data:www-data [data mount location]/[user]</code><br>
+<code>sudo -u www-data php /var/www/html/occ files:scan --[user]</code><br></p>
+</blockquote>
+
 <h4 id="transfeing-file-server-replied-forbidden-sabre-dav-exception-forbidden">Transfeing [file] - server replied: Forbidden (Sabre\DAV\Exception\Forbidden)</h4>
 
 <blockquote>

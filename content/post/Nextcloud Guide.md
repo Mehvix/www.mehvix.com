@@ -392,6 +392,11 @@ date.timezone = America/Chicago,
 >`sudo -u www-data php /var/www/html/occ files:scan --all`<br>
 
 
+#### Files aren't showing up for [user]
+>`sudo chown -R www-data:www-data [data mount location]/[user]`<br>
+>`sudo -u www-data php /var/www/html/occ files:scan --[user]`<br>
+
+
 #### Transfeing [file] - server replied: Forbidden (Sabre\DAV\Exception\Forbidden)
 >`sudo rm [username]/uploads`<br>
 
