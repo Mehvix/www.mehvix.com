@@ -79,3 +79,7 @@ Here's a list of projects that I eventually want to complete
 ### - Crypto address replacer
 > Replaces copied crypto address with my address</br>
 > Has been done multiple times before, in no way is this my original idea
+
+### - Soundcloud Downloader with Metadata Scraper
+> Something CMD, like youtube-dl
+> Primarily for [Lex](https://soundcloud.com/carnivalandlent)
