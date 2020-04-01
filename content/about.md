@@ -33,6 +33,7 @@ year old who goes to Middleton High School.  [Here's a photo of me at UW's 2019 
 * Github / [Mehvix](https://github.com/mehvix)
 * Discord / Mehvix#7966
 * Linkedin / [Max Vogel](https://www.linkedin.com/in/maxlvogel/)
+* Keybase / [Mehvix](https://keybase.io/mehvix)
 
 
 <br>
