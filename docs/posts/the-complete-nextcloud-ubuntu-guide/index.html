@@ -195,11 +195,20 @@ I already set up my drives/raid config, so all I had to do was create and mount 
 <code>mkdir /media/nextcloud-data/</code><br>
 <code>chown www-data:www-data /media/nextcloud-data/</code><br>
 <code>mkfs.ext4 /dev/sda</code><br>
-<code>mount /dev/sda /media/nextcloud-data/</code><br></p>
+<code>mount /dev/sda /media/nextcloud-data/</code><br>
+Then, to set up automount:<br>
+<code>sudo blkid</code> and grab the UUID of the partition, then<br>
+<code>sudo nano /etc/fstab</code><br>
+and add<br></p>
+
+<pre><code>UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0
+</code></pre>
+
+<p><br></p>
+</blockquote>
 
 <p>After that, you can go ahead to the Nextcloud page, create an account (you will use this for all Nextcloud logins). Make sure to change the data folder to <code>/media/nextcloud-data/</code>
 or whatever dir you are using, then enter the MariaDB user/password.<br><br></p>
-</blockquote>
 
 <p>Now you&rsquo;ve got yourself a Nextcloud Server! However, there are still a couple things that you still need to configure which I&rsquo;ll cover in the following section.<br><br></p>
 
