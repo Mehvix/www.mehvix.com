@@ -52,7 +52,7 @@ Here's a list of projects that I eventually want to complete
 ### - Visual poker-tracker for Pokerstars
 > A program that can track how your opponents play at the table in Pokerstars
 
-### - A year-round "Spoty Wrapped"
+### - A year-round "Spotify Wrapped"
 > Something like [this](https://newsroom.spotify.com/2018-12-06/relive-your-year-in-music-with-spotify-wrapped-2018/), but not for just once a year
 
 ### - Make a custom drone (3D print parts?)
@@ -66,7 +66,7 @@ Here's a list of projects that I eventually want to complete
 
 ### - Script to remove image/file meta data 
 
-### - Some audio-elcitrical project -- altoid amp, speakers, etc.
+### - Some audio-electrical project -- altoid amp, speakers, etc.
 > This instance in [Louis Rossmann's video](https://youtu.be/-LF3Cy5hZbc?list=PLkVbIsAWN2luLeViTZ499dZNsZHavrGBE&t=503) motivated me
 
 ### - Software + Hardware keylogger
