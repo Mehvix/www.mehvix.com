@@ -44,21 +44,12 @@ server,
     <link rel="canonical" href="https://www.mehvix.com/posts/the-complete-nextcloud-ubuntu-guide/" />
 
 
-    <link
-  rel="stylesheet"
-  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
-/>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"/>
 
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
-/>
 
-<link 
-	rel="stylesheet" 
-	href="https://www.mehvix.com/css/style.css"
-/>
+<link rel="stylesheet" href="https://www.mehvix.com/css/atom-one-dark-reasonable.css" />
+<link rel="stylesheet"  href="https://www.mehvix.com/css/style.css"/>
 
 
   <link href="/posts/the-complete-nextcloud-ubuntu-guide/" rel="alternate" type="application/rss+xml" title="welcome!" />
@@ -133,13 +124,15 @@ server,
 <h4 id="configuring-mariadb">Configuring MariaDB</h4>
 
 <blockquote>
-<p><code>mariadb</code><br>
-<code>CREATE DATABASE nextcloud;</code><br>
-<code>CREATE USER nextcloud IDENTIFIED BY 'Password';</code>, but with your password<br>
-<code>GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password';</code>, again, your password<br>
-<code>GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;</code><br>
-<code>FLUSH PRIVILEGES;</code><br>
-<code>quit;</code><br></p>
+<p><code>mariadb</code><br></p>
+
+<pre><code>CREATE DATABASE nextcloud;
+CREATE USER nextcloud IDENTIFIED BY 'Password'; # but with your password
+GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password'; # again, your password
+GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;
+FLUSH PRIVILEGES;
+quit;
+</code></pre>
 
 <p>Now you should be able to login on the myphpadmin forum with the <code>nextcloud</code> as the username, and the password you just set up as the password.</p>
 </blockquote>
@@ -201,7 +194,7 @@ Then, to set up automount:<br>
 <code>sudo nano /etc/fstab</code><br>
 and add<br></p>
 
-<pre><code>UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0
+<pre><code class="language-ini">UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0
 </code></pre>
 
 <p><br></p>
@@ -223,7 +216,7 @@ or whatever dir you are using, then enter the MariaDB user/password.<br><br></p>
 <blockquote>
 <p><code>nano /etc/php/7.2/apache2/php.ini</code><br></p>
 
-<pre><code>upload_max_filesize = 512M
+<pre><code class="language-ini">upload_max_filesize = 512M
 memory_limit = 512M
 post_max_size = 512M
 </code></pre>
@@ -238,7 +231,7 @@ post_max_size = 512M
 
 <p>Add the following under <code>ServerName</code>:</p>
 
-<pre><code>&lt;IfModule mod_headers.c&gt;
+<pre><code class="language-apache">&lt;IfModule mod_headers.c&gt;
     Header always set Strict-Transport-Security &quot;max-age=15552000; includeSubDomains; preload&quot;
 &lt;/IfModule&gt;
 </code></pre>
@@ -254,7 +247,7 @@ post_max_size = 512M
 
 <p>Add the following under <code>ServerName</code>:</p>
 
-<pre><code>&lt;Directory /var/www/html/&gt;
+<pre><code class="language-apache">&lt;Directory /var/www/html/&gt;
     Options +FollowSymLinks
     AllowOverride All
 &lt;/Directory&gt;
@@ -269,7 +262,7 @@ post_max_size = 512M
 <p><code>sudo apt install php-apcu</code><br>
 <code>nano /var/www/html/config/config.php</code><br></p>
 
-<pre><code>'memcache.local' =&gt; '\OC\Memcache\APCu'
+<pre><code class="language-php">'memcache.local' =&gt; '\OC\Memcache\APCu'
 </code></pre>
 
 <p><code>systemctl restart apache2</code></p>
@@ -281,7 +274,7 @@ post_max_size = 512M
 <p><code>nano /etc/php/7.2/apache2/php.ini</code><br>
 The following are default settings, consider checking out <a href="https://www.scalingphpbook.com/blog/2014/02/14/best-zend-opcache-settings.html">this blog</a> for information on what each parameter means<br></p>
 
-<pre><code>opcache.enable=1
+<pre><code class="language-apache">opcache.enable=1
 opcache.enable_cli=1
 opcache.memory_consumption=128
 opcache.interned_strings_buffer=8
@@ -316,12 +309,14 @@ innodb_file_per_table=1
 </code></pre>
 
 <p><code>systemctl restart mariadb</code><br>
-<code>mariadb</code><br>
-<code>ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;</code><br>
-<code>use nextcloud;</code><br>
-<code>set global innodb_large_prefix=on;</code><br>
-<code>set global innodb_file_format=Barracuda;</code><br>
-<code>quit;</code><br></p>
+<code>mariadb</code><br></p>
+
+<pre><code>ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+use nextcloud;
+set global innodb_large_prefix=on;
+set global innodb_file_format=Barracuda;
+quit;
+</code></pre>
 
 <p>Then, update Nextcloud:<br>
 <code>sudo -u www-data php /var/www/html/occ config:system:set mysql.utf8mb4 --type boolean --value=&quot;true&quot;</code><br>
@@ -358,7 +353,7 @@ Add <code>open_basedir = /dev/urandom</code><br>
 <code>systemctl reload apache2</code><br>
 <code>nano /etc/php/7.2/fpm/pool.d/www.conf</code> and add the following:<br></p>
 
-<pre><code>pm = dynamic
+<pre><code class="language-apache">pm = dynamic
 pm.max_children = 120
 pm.start_servers = 12
 pm.min_spare_servers = 6
@@ -381,7 +376,7 @@ Note that these are the recommended settings for 4gb total/1 gb database and sho
 <blockquote>
 <p><code>nano /var/www/html/config/config.php</code></p>
 
-<pre><code>'htaccess.RewriteBase' =&gt; '/'
+<pre><code class="language-php">'htaccess.RewriteBase' =&gt; '/'
 </code></pre>
 
 <p><code>sudo -u www-data php /var/www/html/occ maintenance:update:htaccess</code><br>
@@ -393,7 +388,7 @@ Note that these are the recommended settings for 4gb total/1 gb database and sho
 <blockquote>
 <p><code>nano /etc/php/7.2/apache2/php.ini</code><br></p>
 
-<pre><code>upload_max_filesize = 16G
+<pre><code class="language-ini">upload_max_filesize = 16G
 post_max_size = 16G
 max_input_time = 3600
 max_execution_time = 3600
@@ -402,7 +397,7 @@ upload_tmp_dir = /var/big_temp_files/
 
 <p><code>nano /var/www/html/.user.ini</code><br></p>
 
-<pre><code>upload_max_filesize = 16G
+<pre><code class="language-ini">upload_max_filesize = 16G
 post_max_size = 16G
 </code></pre>
 
@@ -441,13 +436,12 @@ post_max_size = 16G
 
 <p><code>sudo apt-get install aria2 curl php-curl</code><br></p>
 
-<pre><code>mkdir /var/log/aria2c /var/local/aria2c
-touch /var/log/aria2c/aria2c.log
-touch /var/local/aria2c/aria2c.sess
-chown www-data.www-data -R /var/log/aria2c /var/local/aria2c
-chmod 770 -R /var/log/aria2c /var/local/aria2c
-sudo -u www-data aria2c --enable-rpc --rpc-allow-origin-all -c -D --log=/var/log/aria2c/aria2c.log --check-certificate=false --save-session=/var/local/aria2c/aria2c.sess --save-session-interval=2 --continue=true --input-file=/var/local/aria2c/aria2c.sess --rpc-save-upload-metadata=true --force-save=true --log-level=warn
-</code></pre>
+<p><code>mkdir /var/log/aria2c /var/local/aria2c</code><br>
+<code>touch /var/log/aria2c/aria2c.log</code><br>
+<code>touch /var/local/aria2c/aria2c.sess</code><br>
+<code>chown www-data.www-data -R /var/log/aria2c /var/local/aria2c</code><br>
+<code>chmod 770 -R /var/log/aria2c /var/local/aria2c</code><br>
+<code>sudo -u www-data aria2c --enable-rpc --rpc-allow-origin-all -c -D --log=/var/log/aria2c/aria2c.log --check-certificate=false --save-session=/var/local/aria2c/aria2c.sess --save-session-interval=2 --continue=true --input-file=/var/local/aria2c/aria2c.sess --rpc-save-upload-metadata=true --force-save=true --log-level=warn</code><br></p>
 
 <h4 id="for-youtube-br">For YouTube:<br></h4>
 
@@ -463,16 +457,18 @@ sudo -u www-data aria2c --enable-rpc --rpc-allow-origin-all -c -D --log=/var/log
 <h4 id="solving-index-column-size-too-large-the-maximum-column-size-is-767-bytes">Solving &ldquo;Index column size too large. The maximum column size is 767 bytes.&rdquo;</h4>
 
 <blockquote>
-<p><code>mariadb</code><br>
-<code>set global innodb_file_format = BARRACUDA;</code><br>
-<code>set global innodb_large_prefix = ON;</code><br>
-<code>set global innodb_file_per_table = ON;</code><br>
-<code>set global innodb_default_row_format = 'DYNAMIC';</code><br>
-<code>quit;</code><br></p>
+<p><code>mariadb</code><br></p>
+
+<pre><code>set global innodb_file_format = BARRACUDA
+set global innodb_large_prefix = ON
+set global innodb_file_per_table = ON
+set global innodb_default_row_format = 'DYNAMIC'
+quit
+</code></pre>
 
 <p><code>nano /etc/mysql/my.cnf</code><br></p>
 
-<pre><code>innodb_file_per_table=1
+<pre><code class="language-ini">innodb_file_per_table=1
 innodb-file-format=barracuda
 innodb-file-per-table=ON
 innodb-large-prefix=ON
@@ -503,12 +499,12 @@ Then make sure that you re-enable the right click app too. If that doesn&rsquo;t
 <p><code>nano /var/www/html/config/config.php</code><br>
 Find your timezone in the ones avaliabe <a href="https://www.php.net/manual/en/timezones.php">here</a><br></p>
 
-<pre><code>'logtimezone' =&gt; 'America/Chicago',
+<pre><code class="language-php">'logtimezone' =&gt; 'America/Chicago',
 </code></pre>
 
 <p><code>nano /etc/php/7.2/apache2/php.ini</code><br></p>
 
-<pre><code>date.timezone = America/Chicago,
+<pre><code class="language-apache">date.timezone = America/Chicago,
 </code></pre>
 </blockquote>
 
@@ -579,7 +575,6 @@ Find your timezone in the ones avaliabe <a href="https://www.php.net/manual/en/t
 
 <h3 id="updating-br">Updating<br></h3>
 
-<blockquote>
 <ul>
 <li>Go to <code>https://cloud.dns.com/settings/admin/overview</code> and select the version you want<br></li>
 <li>Follow the steps, make sure not to touch anything while updating<br></li>
@@ -588,7 +583,6 @@ Find your timezone in the ones avaliabe <a href="https://www.php.net/manual/en/t
 <li><a href="https://scan.nextcloud.com/">Test your server</a><br></li>
 <li>Congrads!</li>
 </ul>
-</blockquote>
 
       </article>
 
@@ -616,7 +610,7 @@ Find your timezone in the ones avaliabe <a href="https://www.php.net/manual/en/t
 	</div>
  </footer>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/highlight.min.js"></script>
 
 <script>
   hljs.initHighlightingOnLoad();

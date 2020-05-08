@@ -24,6 +24,7 @@ draft: false
 
 #### Installing MariaDB - the database
 
+
 >`sudo apt install mariadb-server`<br>
 >`mysql_secure_installation`
 
@@ -49,12 +50,15 @@ draft: false
 #### Configuring MariaDB
 
 >`mariadb`<br>
->`CREATE DATABASE nextcloud;`<br>
->`CREATE USER nextcloud IDENTIFIED BY 'Password';`, but with your password<br>
->`GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password';`, again, your password<br>
->`GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;`<br>
->`FLUSH PRIVILEGES;`<br>
->`quit;`<br>
+```
+CREATE DATABASE nextcloud;
+CREATE USER nextcloud IDENTIFIED BY 'Password'; # but with your password
+GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password'; # again, your password
+GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;
+FLUSH PRIVILEGES;
+quit;
+```
+
 
 >Now you should be able to login on the myphpadmin forum with the `nextcloud` as the username, and the password you just set up as the password.
 
@@ -111,7 +115,7 @@ draft: false
 >`sudo blkid` and grab the UUID of the partition, then<br>
 >`sudo nano /etc/fstab`<br>
 >and add<br>
->```
+>```ini
 UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0
 ```<br>
 
@@ -129,7 +133,7 @@ If you head to `https://yournextcloud.com/settings/admin/overview` you'll see al
 #### The PHP memory limit is below the recommended value of 512MB.
 
 >`nano /etc/php/7.2/apache2/php.ini`<br>
->```
+>```ini
 upload_max_filesize = 512M
 memory_limit = 512M
 post_max_size = 512M
@@ -143,7 +147,7 @@ post_max_size = 512M
 >`nano /etc/apache2/sites-available/000-default-le-ssl.conf`<br>
 
 >Add the following under `ServerName`:
->```
+>```apache
 <IfModule mod_headers.c>
     Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
 </IfModule>
@@ -158,7 +162,7 @@ post_max_size = 512M
 >`nano /etc/apache2/sites-available/000-default-le-ssl.conf`<br>
 
 >Add the following under `ServerName`:
->```
+>```apache
 <Directory /var/www/html/>
     Options +FollowSymLinks
     AllowOverride All
@@ -172,7 +176,7 @@ post_max_size = 512M
 
 >`sudo apt install php-apcu`<br>
 >`nano /var/www/html/config/config.php`<br>
->```
+>```php
 'memcache.local' => '\OC\Memcache\APCu'
 ```
 >`systemctl restart apache2`
@@ -183,7 +187,7 @@ post_max_size = 512M
 
 >`nano /etc/php/7.2/apache2/php.ini`<br>
 >The following are default settings, consider checking out [this blog](https://www.scalingphpbook.com/blog/2014/02/14/best-zend-opcache-settings.html) for information on what each parameter means<br>
->```
+>```apache
 opcache.enable=1
 opcache.enable_cli=1
 opcache.memory_consumption=128
@@ -218,11 +222,13 @@ innodb_file_per_table=1
 
 >`systemctl restart mariadb`<br>
 >`mariadb`<br>
->`ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;`<br>
->`use nextcloud;`<br>
->`set global innodb_large_prefix=on;`<br>
->`set global innodb_file_format=Barracuda;`<br>
->`quit;`<br>
+```
+ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+use nextcloud;
+set global innodb_large_prefix=on;
+set global innodb_file_format=Barracuda;
+quit;
+```
 
 >Then, update Nextcloud:<br>
 >`sudo -u www-data php /var/www/html/occ config:system:set mysql.utf8mb4 --type boolean --value="true"`<br>
@@ -252,14 +258,15 @@ There are various other actions you can take to ensure that both your os and nex
 >`a2enconf php7.2-fpm`<br>
 >`systemctl reload apache2`<br>
 >`nano /etc/php/7.2/fpm/pool.d/www.conf` and add the following:<br>
->```
+```apache
 pm = dynamic
 pm.max_children = 120
 pm.start_servers = 12
 pm.min_spare_servers = 6
 pm.max_spare_servers = 18
 pm.max_requests = 1000
-```<br>
+```
+<br>
 >Note that these are the recommended settings for 4gb total/1 gb database and should be modified for your system.<br><br>
 
 ---
@@ -270,7 +277,7 @@ While theses tips aren't needed for security, they're nice to have.
 #### Removing `/index.php` from every URL
 
 >`nano /var/www/html/config/config.php`
->```
+>```php
 'htaccess.RewriteBase' => '/'
 ```
 >`sudo -u www-data php /var/www/html/occ maintenance:update:htaccess`<br>
@@ -280,7 +287,7 @@ While theses tips aren't needed for security, they're nice to have.
 #### Increasing the max file size
 
 >`nano /etc/php/7.2/apache2/php.ini`<br>
->```
+>```ini
 upload_max_filesize = 16G
 post_max_size = 16G
 max_input_time = 3600
@@ -288,7 +295,7 @@ max_execution_time = 3600
 upload_tmp_dir = /var/big_temp_files/
 ```
 >`nano /var/www/html/.user.ini`<br>
->```
+>```ini
 upload_max_filesize = 16G
 post_max_size = 16G
 ```
@@ -321,14 +328,13 @@ post_max_size = 16G
 
 >#### For BitTorrent:<br>
 >`sudo apt-get install aria2 curl php-curl`<br>
->```
-mkdir /var/log/aria2c /var/local/aria2c
-touch /var/log/aria2c/aria2c.log
-touch /var/local/aria2c/aria2c.sess
-chown www-data.www-data -R /var/log/aria2c /var/local/aria2c
-chmod 770 -R /var/log/aria2c /var/local/aria2c
-sudo -u www-data aria2c --enable-rpc --rpc-allow-origin-all -c -D --log=/var/log/aria2c/aria2c.log --check-certificate=false --save-session=/var/local/aria2c/aria2c.sess --save-session-interval=2 --continue=true --input-file=/var/local/aria2c/aria2c.sess --rpc-save-upload-metadata=true --force-save=true --log-level=warn
-```
+
+>`mkdir /var/log/aria2c /var/local/aria2c`<br>
+>`touch /var/log/aria2c/aria2c.log`<br>
+>`touch /var/local/aria2c/aria2c.sess`<br>
+>`chown www-data.www-data -R /var/log/aria2c /var/local/aria2c`<br>
+>`chmod 770 -R /var/log/aria2c /var/local/aria2c`<br>
+>`sudo -u www-data aria2c --enable-rpc --rpc-allow-origin-all -c -D --log=/var/log/aria2c/aria2c.log --check-certificate=false --save-session=/var/local/aria2c/aria2c.sess --save-session-interval=2 --continue=true --input-file=/var/local/aria2c/aria2c.sess --rpc-save-upload-metadata=true --force-save=true --log-level=warn`<br>
 
 >#### For YouTube:<br>
 >`sudo apt-get install python-pip`<br>
@@ -343,14 +349,15 @@ sudo -u www-data aria2c --enable-rpc --rpc-allow-origin-all -c -D --log=/var/log
 #### Solving "Index column size too large. The maximum column size is 767 bytes."
 
 >`mariadb`<br>
->`set global innodb_file_format = BARRACUDA;`<br>
->`set global innodb_large_prefix = ON;`<br>
->`set global innodb_file_per_table = ON;`<br>
->`set global innodb_default_row_format = 'DYNAMIC';`<br>
->`quit;`<br>
-
+```
+set global innodb_file_format = BARRACUDA
+set global innodb_large_prefix = ON
+set global innodb_file_per_table = ON
+set global innodb_default_row_format = 'DYNAMIC'
+quit
+```
 >`nano /etc/mysql/my.cnf`<br>
->```
+>```ini
 innodb_file_per_table=1
 innodb-file-format=barracuda
 innodb-file-per-table=ON
@@ -380,12 +387,12 @@ innodb_default_row_format = 'DYNAMIC'
 
 >`nano /var/www/html/config/config.php`<br>
 >Find your timezone in the ones avaliabe [here](https://www.php.net/manual/en/timezones.php)<br>
->```
+>```php
 'logtimezone' => 'America/Chicago',
 ```
 
 >`nano /etc/php/7.2/apache2/php.ini`<br>
->```
+>```apache
 date.timezone = America/Chicago,
 ```
 
@@ -435,9 +442,9 @@ date.timezone = America/Chicago,
 >`sudo -u www-data php occ maintenance:mode --off`<br><br>
 
 ### Updating<br>
-> - Go to `https://cloud.dns.com/settings/admin/overview` and select the version you want<br>
-> - Follow the steps, make sure not to touch anything while updating<br>
-> - `systemctl restart apache2`
-> - Double check the 'Security & setup warnings' (also on `/admin/overview`)<br>
-> - [Test your server](https://scan.nextcloud.com/)<br>
-> - Congrads!
+- Go to `https://cloud.dns.com/settings/admin/overview` and select the version you want<br>
+- Follow the steps, make sure not to touch anything while updating<br>
+- `systemctl restart apache2`
+- Double check the 'Security & setup warnings' (also on `/admin/overview`)<br>
+- [Test your server](https://scan.nextcloud.com/)<br>
+- Congrads!
