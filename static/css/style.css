@@ -45,8 +45,8 @@ code {
 }
 
 a:hover {
-background-color:               #018574;
-transition-duration:            .4s;
+    background-color:               #018574;
+    transition-duration:            .4s;
 }
 
 a.no-underline, a.pa1 {

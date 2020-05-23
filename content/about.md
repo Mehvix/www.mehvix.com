@@ -41,9 +41,14 @@ year old who goes to Middleton High School.  [Here's a photo of me at UW's 2019 
 ### Videos I enjoy:
 * [Pretty Good](https://www.youtube.com/playlist?list=PLRo3mRAtA0hxw9clCLU937g7KDH-QsLd5) - Jon Bois
 * [Never Ever](https://www.youtube.com/playlist?list=PLjXwcOEO8rkTutVvJ3kzbGcJ7Gi0ut-EK) - EMPLemon
-* [Richard Russel](https://youtu.be/ZQSpPrZSDQ8) 
 
-<br><br>
+<br>
 
 ### Music I enjoy:
 > <iframe src="https://open.spotify.com/embed/playlist/2uEoR9SXgtMSgjIjgohVnz" width="100%" height="380em" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+
+<br>
+### Quotes:
+
+> "We have to believe in free will, there is no choice." -- N/A, from John Conway's [Free Will and Determinism lecture](https://youtu.be/tmx2tpcdKZY?t=1772)

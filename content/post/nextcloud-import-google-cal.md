@@ -18,29 +18,29 @@ Nextcloud needs a `.ics` or `.ical` file. To get a public Google calendar's `.ic
 
 For example, for embedded calendars (in this example the [Codeforces calendar](https://codeforces.com/calendar)) you can find the `cid` by clicking on the plus button in the bottom right corner which will open the following URL:
 
-```ini
+```
 https://calendar.google.com/calendar/render?cid=k23j233gtcvau7a8ulk2p360m4%40group.calendar.google.com
 ```
 
 Alternatively, you can get also use inspect element which will yield the following:
 
-```ini
+```
 https://calendar.google.com/calendar/embed?src=k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com&amp;ctz=America/Chicago&amp;hl=en&amp;wkst=1
 ```
 
 Then take everything **after** `src=`, `cid=`, or `/ical/` and up to `&amp`. Add it to the following:
 
-```ini
+```
 https://calendar.google.com/calendar/ical/[add here!]/public/basic.ics
 ```
 
-e.g., using the Codeforces calendar:
+For example, using the Codeforces calendar:
 
-```ini
+```
 https://calendar.google.com/calendar/ical/k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com/public/basic.ics
 ```
 
-You can then use that URL to as the external URL in the Nextcloud Calendar app. 
+You can then use that URL as the "External URL" when adding a new calendar in the Nextcloud Calendar app. 
 
 
 ---
@@ -52,4 +52,4 @@ Then, add the following to the bottom of the file:
 ```php
 0 0 * * * su -m www-data -c "php -f /var/www/html/cron.php"
 ```
-This will result at 0 hours and 0 minutes every day cron being ran, which should update the calendars.
+This will result at 0 hours and 0 minutes every day cron being ran, which will update the calendar(s).
