@@ -1,142 +1,106 @@
-body {
-	-webkit-font-smoothings: 	antialiased;
-	-moz-osx-font-smoothing: 	grayscale;
-    text-rendering: 			optimizeLegibility;
-}
-code {
-    padding: 					2px 4px;
-    font-size: 					90%;
-    background-color: 			#1e1f21;
-    /* border-radius: 4px; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root{
+	/*Defaults -- these should be overwritten*/
+	--inside-bg-color: 		#e2e5e2;
+	--outside-bg-color: 	#008300;
+	--code-bg-color: 		#282c34;
 }
 
-pre {
-    display: 					block;
-    padding: 					9.5px;
-    margin: 					0 0 10px;
-    line-height: 				1.4;
-    word-break: 				break-all;
-    word-wrap: 					break-word;
-    border:						1px solid #ccc;
-    /* border-radius:			4px; */
-	
+* {
+	letter-spacing:		0;
+	line-height:    	1.44;
+
+
 }
 
-pre,
-code {
-	font-family:				monocode, monospace;
-	-webkit-font-smoothings:	antialiased;
-	-moz-osx-font-smoothing:	grayscale;
-}
-.hljs {
-	background:					#292a2d;
-	color:						#a9a9b3;
-}
-
-.hljs-built_in{
-	color:						green;
+body{
+	font-family:		"Roboto Mono", monospace;
+	font-weight: 		400;
+	font-size: 			20px;
+	max-width: 			40em;
+	margin:				auto;
+	color: 				#2b2b2b;
+	background-color: 	var(--outside-bg-color);
 }
 
-.hljs-nomarkup{
-	color: #0078d3;
+.box{
+	max-width: 			50em;
+	margin:				2em;
+	border:				3px solid black;
+	padding:			1.5em;
+	background: 		var(--inside-bg-color);
+	overflow-wrap:		break-word;
 }
-.hljs-number{
-	color: #e0e0e0;
+
+.footer {
+	margin:		0;
+}
+
+b{
+	font-size: 		115%;
+}
+
+a:link, a:visited {
+	text-decoration:				none;
+	box-shadow: 					inset 0 -0.14em 0 var(--outside-bg-color);
+	color: 							#000000;
+    transition-property:        	background-color;
+    transition-timing-function: 	ease-in-out;
+	transition-duration:    		400ms;
 }
 
 a:hover {
-background-color:               #018574;
-transition-duration:            .4s;
-}
-
-a.no-underline, a.pa1 {
-    word-wrap:                  break-word;
-    border:                     none;
-    box-shadow:                 inset 0 -.2em 0 #007593;
-    transition-property:        background-color;
-    color:                      #cbcbcb;
-    transition-timing-function: ease-in-out;
-    text-decoration:            none;
-}
-
-a.no-underline:hover, a.pa1:hover {
-    background-color:           #007593;
-}
-
-h4 a, h3 a, h2 a, h1 a, p a, li a {
-    word-wrap:                  break-word;
-    border:                     none;
-    box-shadow:                 inset 0 -.2em 0 #018574;
-    transition-property:        background-color;
-    color:                      #cbcbcb;
-    transition-timing-function: ease-in-out;
-    text-decoration:            none;
-}
-
-p a:hover, li a:hover {
-    background-color:           #018574;
-}
-
-p.f6 a {
-    color:                      #929292;
+	background-color: 		var(--outside-bg-color);
+	color: 					var(--inside-bg-color);
+	box-shadow: 			none;
+	transition-duration:    400ms;
 }
 
 
-code::selection,
-span.hljs-keyword::selection,
-span.hljs-operator::selection,
-span.hljs-pattern-match::selection,
-span.hljs-constructor::selection,
-span.hljs-params::selection,
-span.hljs-function::selection,
-span.hljs-typing::selection,
-span.hljs-module-access::selection,
-span.hljs-module::selection,
-span.hljs-comment::selection,
-span.hljs-quote::selection,
-span.hljs-doctag::selection,
-span.hljs-formula::selection,
-span.hljs-section::selection,
-span.hljs-name::selection,
-span.hljs-selector-tag::selection,
-span.hljs-deletion::selection,
-span.hljs-subst::selection,
-span.hljs-literal::selection,
-span.hljs-string::selection,
-span.hljs-regexp::selection,
-span.hljs-addition::selection,
-span.hljs-attribute::selection,
-span.hljs-meta-string::selection,
-span.hljs-built_in::selection,
-span.hljs-class::selection,
-span.hljs-title::selection,
-span.hljs-attr::selection,
-span.hljs-variable::selection,
-span.hljs-template-variable::selection,
-span.hljs-type::selection,
-span.hljs-selector-class::selection,
-span.hljs-selector-attr::selection,
-span.hljs-symbol::selection,
-span.hljs-bullet::selection,
-span.hljs-meta::selection,
-span.hljs-emphasis::selection,
-span.hljs-strong::selection,
-span.hljs-link::selection,
-span.hljs-selector-id::selection,
-span.hljs-number::selection,
-span.hljs::selection,
-span.hljs-nomarkup::selection,
-span.hljs-selector-pseudo::selection {
-    color: 						#00fb10;
+a:hover::selection {
+	transition-duration:    400ms;
+	background-color: 		black;
+	color: 					var(--inside-bg-color);
+	box-shadow: 			none;
+}
+
+a.inverse-bg {
+	transition-duration:	400ms;
+	color: 					white;
+	filter: 				invert(100%);
+}
+
+a.inverse-bg:hover {
+	transition-duration:    400ms;
+	color: 					black;
+}
+
+a.inverse-bg::selection {
+	transition-duration:    400ms;
+	color: 					black;
+}
+
+a.inverse-bg:hover::selection {
+	transition-duration:    400ms;
+	color: 					black !important;
+	background-color: 		white !important;
+}
+
+.hljs, code {
+    padding: 				2px 4px;
+    font-size: 				90%;
+    background-color: 		var(--code-bg-color) !important;
+    color:					seashell;
+	border-radius: 			4px;
+}
+
+.hljs-comment::selection, code::selection{
+	color: 						#00fb10;
     background: 				black;
 }
 
-
-* {
-	background-color: 			#292a2d;
-	color:						#a9a9b3;
-    line-height:                1.6;
-    letter-spacing:             .06em;
+td.posts {
+	width: 					29%;
+	vertical-align: 		top;
 }
-
-

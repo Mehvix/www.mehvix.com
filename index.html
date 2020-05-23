@@ -1,0 +1,71 @@
+<html>
+	<head>
+
+		<link type="text/css" rel="stylesheet" href="static/css/style.css" >
+		<link type="text/css" rel="stylesheet" href="static/css/atom-one-dark-reasonable.css">
+
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+		<meta charset="utf-8">
+		<title>Mehvix | home</title>
+		<style>
+			:root{
+				--outside-bg-color: #920909;
+			}
+		</style>
+	</head>
+	<body>
+		<br>  <!--I don't know how add a space in css here and not have it fuck up other things, so this works for now-->
+		<div class="box">
+			<p style="margin-top: 0">
+				<b><a href="./index.html" class="inverse-bg">About</a></b><br>
+				Hello! I’m Max Vogel. I’m a
+
+				<script>
+					var today = new Date();  //initializes to current date
+					var bday = new Date();
+					bday.setFullYear(2002);
+					bday.setMonth(7-1);  //January is 0
+					bday.setDate(27);
+					bday.setHours(0);
+					bday.setMinutes(0);
+					var timeDiff = Math.abs(bday.getTime() - today.getTime());
+					document.write("" + Math.floor(timeDiff / ((1000 * 60 * 60 * 24 * 365))));  // ceil time in years ([milliseconds] * [seconds] * [min] * [hours] * [days])
+				</script>
+
+				year old who goes to Middleton High School. <a href="./static/media/IMG_20191020_011042.jpg">Here’s a
+				photo of me at UW’s 2019 Madhacks</a>. In my free time I am probably fencing, coding, CADing, playing
+				TF2 pugs, or am working on something <a href="https://www.team1306.com">1306</a> related.
+			</p><br>
+
+			<p>
+					<b>Me</b><br>
+					- Email&emsp;&emsp;&emsp;&emsp;/	mehvix <code>at</code> protonmail <code>dot</code> com -- <a href="pgp.html">PGP key</a><br>
+					- Github&emsp;&emsp;&emsp;/ 		<a href="https://github.com/mehvix">Mehvix</a><br>
+					- Discord &emsp;/ 					Mehvix#7966<br>
+					- Linkedin&emsp;/ 					<a href="https://www.linkedin.com/in/maxlvogel/">Max Vogel</a><br>
+					- Keybase&emsp;&emsp;/ 				<a href="https://keybase.io/mehvix">Mehvix</a>
+				</p><br>
+
+			<p>
+				<b>Pages</b><br>
+				- <a href="posts/index.html">	posts</a><br>
+				- <a href="projects.html">		projects</a><br>
+				- <a href="todo.html">			todo</a><br>
+				- <a href="serverservices.html">server service</a><br>
+			</p><br>
+
+			---<br>
+			<p class="footer">
+				BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
+				ETH / <a href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
+				©
+				<script>
+					document.write("" + new Date().getFullYear())
+				</script>
+				- Max Vogel<br>
+			</p>
+		</div>
+	</body>
+</html>
