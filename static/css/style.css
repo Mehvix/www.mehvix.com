@@ -104,3 +104,32 @@ td.posts {
 	width: 					29%;
 	vertical-align: 		top;
 }
+
+td.projects-image {
+	width: 					35%;
+	vertical-align: 		top;
+	padding-right: 			1em;
+}
+td.projects-text {
+	vertical-align: 		top;
+}
+
+code.tags-py {
+	color: #00f8ff;
+}
+
+code.tags-sheet {
+	color: #00d800;
+}
+
+code.tags-misc {
+	color: #fb00ff;
+}
+
+code.tags-webdev {
+	color: #fff41d;
+}
+
+td.projects-image img {
+	width: 100%;
+}
