@@ -1,14 +1,14 @@
 <script>
 function getRandomImage() {
     path = './static/media/bears/'; // default path here
-    imgAr = ['021.gif', '028.gif', '043.gif', '076.gif', '09f.gif', '0de.gif', '10d.gif', '129.gif', '22c.gif', '281.gif', '28b.gif', '2a0.gif', '34b.gif', '413.gif', '41e.gif', '47c.gif', '538.gif', '57f.gif', '59b.gif', '5ca.gif', '652.gif', '675.gif', '6a1.gif', '6a3.gif', '6e5.gif', '6fd.gif', '71d.gif', '720.gif', '73e.gif', '755.gif', '7af.gif', '814.gif', '827.gif', '82f.gif', '86a.gif', '894.gif', '8ab.gif', '8e9.gif', '8ec.gif', '92a.gif', '949.gif', '9c8.gif', '9ec.gif', 'a61.gif', 'a72.gif', 'ad9.gif', 'af0.gif', 'b23.gif', 'b3b.gif', 'b5a.gif', 'bear.py', 'c09.gif', 'c0e.gif', 'c1b.gif', 'c9b.gif', 'd09.gif', 'd0d.gif', 'd31.gif', 'd47.gif', 'd4f.gif', 'd66.gif', 'd68.gif', 'd6f.gif', 'e3b.gif', 'e49.gif', 'e66.gif', 'e6a.gif', 'e7f.gif', 'e8b.gif', 'ec6.gif', 'ec9.gif', 'f46.gif', 'f56.gif', 'f66.gif', 'f99.gif', 'faf.gif', 'fb0.gif']
-    /* how to generate list -- py
+    imgAr = ['021.gif', '028.gif', '043.gif', '076.gif', '09f.gif', '0de.gif', '10d.gif', '129.gif', '22c.gif', '281.gif', '28b.gif', '2a0.gif', '34b.gif', '413.gif', '41e.gif', '47c.gif', '538.gif', '57f.gif', '59b.gif', '5ca.gif', '652.gif', '675.gif', '6a1.gif', '6a3.gif', '6e5.gif', '6fd.gif', '71d.gif', '720.gif', '73e.gif', '755.gif', '7af.gif', '814.gif', '827.gif', '82f.gif', '86a.gif', '894.gif', '8ab.gif', '8e9.gif', '8ec.gif', '92a.gif', '949.gif', '9c8.gif', '9ec.gif', 'a61.gif', 'a72.gif', 'ad9.gif', 'af0.gif', 'b23.gif', 'b3b.gif', 'b5a.gif', 'c09.gif', 'c0e.gif', 'c1b.gif', 'c9b.gif', 'd09.gif', 'd0d.gif', 'd31.gif', 'd47.gif', 'd4f.gif', 'd66.gif', 'd68.gif', 'd6f.gif', 'e3b.gif', 'e49.gif', 'e66.gif', 'e6a.gif', 'e7f.gif', 'e8b.gif', 'ec6.gif', 'ec9.gif', 'f46.gif', 'f56.gif', 'f66.gif', 'f99.gif', 'faf.gif', 'fb0.gif']
+    /* how to generate list
     * import os
     * files = [f for f in os.listdir('.') if os.path.isfile(f)]
     * a = []
     * for f in files:
     *     a.append(f)
-    * print(a)
+    * print(a)  // make sure to remove bear.py
     */
     var num = Math.floor( Math.random() * imgAr.length );
     var img = imgAr[ num ];
