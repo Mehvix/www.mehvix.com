@@ -87,6 +87,18 @@ a.inverse-bg:hover::selection {
 	background-color: 		white !important;
 }
 
+a.no-custom{
+	box-shadow:		none;
+}
+a.no-custom:hover {
+	background-color: 		transparent;
+	box-shadow: 			none;
+}
+
+img.album{
+	width: 32%;
+}
+
 .hljs, code {
     padding: 				2px 4px;
     font-size: 				90%;
@@ -114,21 +126,25 @@ td.projects-text {
 	vertical-align: 		top;
 }
 
-code.tags-py {
-	color: #00f8ff;
-}
+/*https://github.com/ozh/github-colors*/
+code.tags-py {color: #3caaff;}  /*original:  #3572A5*/
+code.tags-javascript {color: #f1e05a;}
+code.tags-html {color: #e34c26;}
+code.tags-css {color: #563d7c;}
+code.tags-php {color: #5374de;}  /*original:  #4f5d95*/
+code.tags-java {color: #b07219;}
+code.tags-cpp {color: #f34b7d;}
+code.tags-shell {color: #89e051;}
+code.tags-go {color: #00ADD8;}
+code.tags-bf {color: #2F2530;}
+code.tags-matlab {color: #e16737;}
+code.tags-ahk {color: #6594b9;}
+code.tags-gcode {color: #D08CF2;}
+code.tags-latex {color: #3D6117;}
 
-code.tags-sheet {
-	color: #00d800;
-}
-
-code.tags-misc {
-	color: #fb00ff;
-}
-
-code.tags-webdev {
-	color: #fff41d;
-}
+code.tags-apache {color: #d80044;}
+code.tags-sheet {color: #00d800;}
+code.tags-misc {color: #fb00ff;}
 
 td.projects-image img {
 	width: 100%;
