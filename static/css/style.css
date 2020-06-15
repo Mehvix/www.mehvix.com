@@ -31,6 +31,7 @@ body{
 	padding:			1.5em;
 	background: 		var(--inside-bg-color);
 	overflow-wrap:		break-word;
+	vertical-align: middle
 }
 
 .footer {
@@ -69,16 +70,6 @@ a.inverse-bg {
 	transition-duration:	400ms;
 	color: 					white;
 	filter: 				invert(100%);
-}
-
-a.inverse-bg:hover {
-	transition-duration:    400ms;
-	color: 					black;
-}
-
-a.inverse-bg::selection {
-	transition-duration:    400ms;
-	color: 					black;
 }
 
 a.inverse-bg:hover::selection {
@@ -148,4 +139,23 @@ code.tags-misc {color: #fb00ff;}
 
 td.projects-image img {
 	width: 100%;
+}
+
+.nav{
+	margin-top: 0;
+}
+
+span.tab {
+	display:inline-block;
+	margin-left: 40px;
+}
+
+span.tab p{
+	margin-top: 0;
+	margin-bottom: 3%;
+
+}
+
+hr {
+	border-top: 1px dashed #171717
 }

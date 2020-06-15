@@ -14,9 +14,9 @@
 		</style>
 	</head>
 	<body>
-		<br>  <!--I don't know how add a space in css here and not have it fuck up other things, so this works for now-->
+		<br>
 		<div class="box">
-			<b><a href="../index.html">About</a> / <a href="../posts/index.html">Posts</a> / <a href="#" class="inverse-bg">NC Guide</a></b><br>
+			<p class="nav"><b><a href="../index.html">About</a> / <a href="../posts/index.html">Posts</a> / <a href="#" class="inverse-bg">NC Guide</a></b></b></p><br>
 
 			<article>
 				<h4>Getting the machine up-to-date</h4>
@@ -147,7 +147,7 @@ quit;</code></pre>
 
 				<p>Now you’ve got yourself a Nextcloud Server! However, there are still a couple things that you still need to configure which I’ll cover in the following section.<br><br></p>
 
-				<hr>
+				---
 
 				<h2>Securing Nextcloud</h2>
 
@@ -259,7 +259,7 @@ quit;</code></pre>
 					<code>sudo -u www-data php /var/www/html/occ maintenance:repair</code><br><br></p>
 					</blockquote>
 
-				<hr>
+				---
 
 				<h2>Further Securing / Optimization</h2>
 
@@ -300,7 +300,7 @@ pm.max_requests = 1000</code></pre>
 					Note that these are the recommended settings for 4gb total/1 gb database and should be modified for your system.<br><br></p>
 					</blockquote>
 
-				<hr>
+				---
 
 				<h2>Quality of Life Changes + Apps</h2>
 
@@ -439,7 +439,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
 					<p>All files that are created for a user can be found in <code>/var/www/html/core/skeleton/</code><br><br></p>
 					</blockquote>
 
-				<hr>
+				---
 
 				<h2>Trouble shooting</h2>
 
@@ -468,7 +468,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
 					<p><code>sudo chown -R www-data:www-data [data mount location]/[user]</code></p>
 					</blockquote>
 
-				<hr>
+				---
 
 				<h2>Updating</h2>
 
@@ -511,7 +511,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
 
 			</article>
 
-			---<br>
+			---
 			<p class="footer">
 				BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
 				ETH / <a href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
@@ -519,7 +519,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
 				<script>
 					document.write("" + new Date().getFullYear())
 				</script>
-				- Max Vogel<br>
+				- Max Vogel
 			</p>
 		</div>
 	</body>
