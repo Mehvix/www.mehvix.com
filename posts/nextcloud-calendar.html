@@ -48,14 +48,14 @@
 
                 <h2>Automatically Updating External Calendars</h2>
 
-                <p>Create a cron job: <code>sudo crontab -e</code><br>
-                Then, add the following to the bottom of the file:</p>
+				<p>The default subscription refreshing interval is of one week (unless the subscription itself asks for a different rate).</p>
+				<p>You may override it with something like:</p>
 
-                <pre><code class="php">0 0 * * * su -m www-data -c "php -f /var/www/html/cron.php"</code></pre>
+				<code>sudo -u www-data php /var/www/html/occ config:app:set dav calendarSubscriptionRefreshRate --value "P1D"</code>
 
-                <p>This will result at 0 hours and 0 minutes every day cron being ran, which should update the calendars.</p>
+				<p>which would set the interval to 1 day. The <code>--value</code> data type is <a href="https://www.php.net/manual/en/dateinterval.construct.php">DataInterval</a>.</p>
 
-                      </article>
+		    </article>
 			---
 			<p class="footer">
 				BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
