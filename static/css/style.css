@@ -11,7 +11,6 @@
 	letter-spacing:		0;
 	line-height:    	1.44;
 
-
 }
 
 body{
@@ -158,4 +157,8 @@ span.tab p{
 
 hr {
 	border-top: 1px dashed #171717
+}
+
+blockquote>p{
+	font-size: 90%;
 }

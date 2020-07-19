@@ -1,26 +1,27 @@
-<html>
-	<head>
-		<link type="text/css" rel="stylesheet" href="static/css/style.css" >
-		<link type="text/css" rel="stylesheet" href="static/css/atom-one-dark-reasonable.css">
-		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+    <link type="text/css" rel="stylesheet" href="static/css/atom-one-dark-reasonable.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="static/js/include.js"></script>
 
-		<meta charset="utf-8">
-		<title>Mehvix | pgp</title>
-		<style>
-			:root{
-				--code-bg-color: 		#210124;
-				--outside-bg-color: 	var(--code-bg-color);
-			}
-		</style>
-	</head>
-	<body>
-		<br>
-		<div class="box">
-			<p class="nav"><b><a href="./index.html">About</a> / <a href="pgp.html" class="inverse-bg">PGP</a></b><br>
-				<p>---</p>
-				<a href="./static/media/publickey.mehvix@protonmail.com.asc">Download</a><br>
-				<a href="#" onclick="var copyText = '-----BEGIN PGP PUBLIC KEY BLOCK-----\n'+
+    <meta charset="utf-8">
+    <title>Mehvix | pgp</title>
+    <style>
+        :root {
+            --code-bg-color: #210124;
+            --outside-bg-color: var(--code-bg-color);
+        }
+    </style>
+</head>
+<body>
+<br>
+<div class="box">
+    <p class="nav"><b><a href="./index.html">About</a> / <a href="pgp.html" class="inverse-bg">PGP</a></b><br>
+    <p>---</p>
+    <a href="./static/media/publickey.mehvix@protonmail.com.asc">Download</a><br>
+    <a href="#" onclick="var copyText = '-----BEGIN PGP PUBLIC KEY BLOCK-----\n'+
 					'Version: OpenPGP.js v4.6.2\n'+
 					'Comment: https://openpgpjs.org\n'+
 					'\n'+
@@ -59,7 +60,7 @@
 					/* Copy the text inside the text field */
 					document.execCommand('copy');">Copy</a>
 
-				<pre><code id="pgp" class="diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
+    <pre><code id="pgp" class="diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: OpenPGP.js v4.6.2
 Comment: https://openpgpjs.org
 
@@ -92,7 +93,18 @@ DgDijjaudFqQR/3Vt18G2rMYIgvs0Se184IyAWkFnbZae+e0aBBxRjK+K84B
 LKutr+KwFwaJLLcqxjciyMueRAnPoKrodbIZ+ALMR2GMhJD6y7RuDBm1ll7c
 =SbG5
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
-			</p><br>
-		</div>
-	</body>
+
+    ---
+    <p class="footer">
+        BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
+        ETH / <a
+            href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
+        ©
+        <script>
+            document.write("" + new Date().getFullYear())
+        </script>
+        - Max Vogel
+    </p>
+</div>
+</body>
 </html>
