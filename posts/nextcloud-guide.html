@@ -2,6 +2,8 @@
 <head>
     <link type="text/css" rel="stylesheet" href="../static/css/style.css">
     <link type="text/css" rel="stylesheet" href="../static/css/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="../static/css/guide.css">
+
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="../static/js/include.js"></script>
@@ -19,7 +21,7 @@
 <div class="box">
     <p class="nav"><b><a href="../index.html">About</a> /
         <a href="../posts/index.html">Posts</a> /
-        <a href="#"class="inverse-bg">NC Guide</a></b></p><br>
+        <a href="#" class="inverse-bg">NC Guide</a></b></p><br>
 
     <article>
         <h4>Getting the machine up-to-date</h4>
@@ -40,18 +42,18 @@
                 <code>systemctl start apache2</code><br>
                 <code>systemctl enable apache2</code> - start apache2 on boot
             </p>
-
+            <br>
+            <br>
             <p>If you’ve configured the server right, you should be able to go to your machine’s IP (you can get this
                 via <code>hostname -I</code>) in the webbrowser of your choice and see the <a
                         href="../static/media/apache2page.png">“Apache2 Ubuntu Default Page”</a></p>
         </blockquote>
 
         <h4>Installing MariaDB - the database</h4>
-
         <blockquote>
             <p><code>sudo apt install mariadb-server</code><br>
                 <code>mysql_secure_installation</code></p>
-
+            <br><br>
             <p>This will prompt you to login to MariaDB. Since we don’t have a password, just hit enter to set one up.
                 After that, just accept all of the prompts and you’re set.</p>
         </blockquote>
@@ -61,21 +63,20 @@
         <blockquote>
             <p><code>sudo apt install php libapache2-mod-php php-mysql</code><br>
                 <code>sudo apt install phpmyadmin</code><br></p>
-
+            <br>
             <p>You should follow all of the default steps, just make sure that you set the webserver as
                 <code>apache2</code> and you’ll be good</p>
-
+            <br><br>
             <p><code>sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf</code><br>
                 <code>a2enconf phpmyadmin</code><br>
                 <code>service apache2 reload</code><br>
                 <code>systemctl reload apache2</code><br></p>
-
+            <br>
             <p>Now, if you go to <code>192.168.something.whatever/phpmyadmin/</code> (your computer’s IP) you should see
                 the phpMyAdmin login page; <strong>however, you should not login yet.</strong></p>
         </blockquote>
 
         <h4>Configuring MariaDB</h4>
-
         <blockquote>
             <p><code>mariadb</code><br></p>
 
@@ -100,18 +101,16 @@ quit;</code></pre>
         <h4>Installing Nextcloud</h4>
 
         <blockquote>
-            <p>I’m going to install Nextcloud 15 because 16 doesn’t work with <a
-                    href="https://nextcloud.com/collaboraonline/">Collabora Online</a> (at the time of writing this)<br>
-                <code>wget https://download.nextcloud.com/server/releases/nextcloud-15.0.7.tar.bz2</code><br>
-                <code>tar -xvf nextcloud-15.0.7.tar.bz2</code><br>
-                <code>cd nextcloud</code><br>
-                <code>mv ./* /var/www/html/</code><br>
-                <code>mv ./.htaccess /var/www/html</code><br>
-                <code>mv ./.user.ini /var/www/html</code><br>
-                <code>cd /var/www/html</code><br>
-                <code>chown -R www-data:www-data ./*</code><br>
-                <code>chown www-data:www-data .htaccess</code><br>
-                <code>chown www-data:www-data .user.ini</code><br></p>
+            <code>wget https://download.nextcloud.com/server/releases/nextcloud-15.0.7.tar.bz2</code><br>
+            <code>tar -xvf nextcloud-15.0.7.tar.bz2</code><br>
+            <code>cd nextcloud</code><br>
+            <code>mv ./* /var/www/html/</code><br>
+            <code>mv ./.htaccess /var/www/html</code><br>
+            <code>mv ./.user.ini /var/www/html</code><br>
+            <code>cd /var/www/html</code><br>
+            <code>chown -R www-data:www-data ./*</code><br>
+            <code>chown www-data:www-data .htaccess</code><br>
+            <code>chown www-data:www-data .user.ini</code><br></p>
 
             <p>Now if you go to <code>192.168.something.whatever</code> you’ll get the Nextcloud page <strong>BUT DO NOT
                 LOGIN / CREATE ACCOUNT</strong>. You need to set up encryption.</p>
@@ -125,24 +124,22 @@ quit;</code></pre>
 
             <p><code>nano /etc/apache2/sites-available/000-default.conf</code> and uncomment and change
                 <code>ServerName</code> to whatever domain you’re using, e.g. <code>cloud.mehvix.com</code></p>
-
+            <br><br>
             <p>Then you need to point your domain at your server and open your server to the external access. You’ll
                 first need to port forward your server (you can find the ip via <code>hostname -I</code>) to port <code>443</code>,
                 and then create an A record under your domain’s DNS settings pointing at your external IP (found via
                 <code>dig +short myip.opendns.com @resolver1.opendns.com</code>)</p>
-
+            <br><br>
             <p><strong>NOTE:</strong> If you’re using Cloudflare, you have to disable Universal SSL for Nextcloud to
                 work</p>
-
+            <br><br>
             <p><code>systemctl restart apache2</code><br>
                 <code>certbot --apache</code><br></p>
-
             <p>This will prompt you to autoredirect from http to https. Your choice, but I'd go ahead and choose
                 redirect.</p>
         </blockquote>
 
         <h4>Setting up Storage/Login</h4>
-
         <blockquote>
             <p>For security reasons, it’s a good idea to have the data folder outside of the web root
                 (<code>/var/www/</code>)
@@ -156,9 +153,7 @@ quit;</code></pre>
                 <code>sudo nano /etc/fstab</code><br>
                 and add<br></p>
 
-            <pre><code class="ini">UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0</code></pre>
-            <br>
-
+            <pre style="margin: 0"><code class="ini">UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0</code></pre>
         </blockquote>
 
         <p>After that, you can go ahead to the Nextcloud page, create an account (you will use this for all Nextcloud
@@ -283,7 +278,7 @@ quit;</code></pre>
             <p>Then, update Nextcloud:<br>
                 <code>sudo -u www-data php /var/www/html/occ config:system:set mysql.utf8mb4 --type boolean
                     --value="true"</code><br>
-                <code>sudo -u www-data php /var/www/html/occ maintenance:repair</code><br><br></p>
+                <code>sudo -u www-data php /var/www/html/occ maintenance:repair</code><br></p>
         </blockquote>
 
         ---
@@ -331,7 +326,7 @@ pm.max_requests = 1000</code></pre>
 
             <p><br>
                 Note that these are the recommended settings for 4gb total/1 gb database and should be modified for your
-                system.<br><br></p>
+                system.</p>
         </blockquote>
 
         ---
@@ -473,13 +468,13 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
 
             <p><code>nano /etc/php/7.2/apache2/php.ini</code><br></p>
 
-            <pre><code>date.timezone = America/Chicago,</code></pre>
+            <pre style="margin-bottom: 0"><code>date.timezone = America/Chicago,</code></pre>
         </blockquote>
 
         <h4>Change default files for new users</h4>
 
         <blockquote>
-            <p>All files that are created for a user can be found in <code>/var/www/html/core/skeleton/</code><br><br>
+            <p>All files that are created for a user can be found in <code>/var/www/html/core/skeleton/</code>
             </p>
         </blockquote>
 
@@ -540,7 +535,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
 
         <blockquote>
             <p><code>cd /var/www/html/</code><br>
-                <code>sudo -u www-data php occ maintenance:mode --off</code><br><br></p>
+                <code>sudo -u www-data php occ maintenance:mode --off</code><br></p>
         </blockquote>
 
         <h3>Updating<br></h3>

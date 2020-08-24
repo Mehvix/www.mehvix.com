@@ -163,6 +163,31 @@ hr {
 	border-top: 1px dashed #171717
 }
 
-blockquote>p{
-	font-size: 90%;
+blockquote>code{
+	font-size: 90% !important;
+	white-space: normal;
 }
+
+div>code {
+	width: 100%;
+	margin-right: 100%;
+	white-space: pre;
+}
+
+blockquote > div > p {
+	margin-top: 1em;
+	margin-bottom: 0;
+	display: block;
+}
+
+blockquote {
+	border-left: 10px solid var(--inside-bg-color);
+	filter: brightness(95%);  /*botched way to darken the color*/
+	margin: 1em 10px 1.5em;
+	padding: 0.5em 10px;
+}
+
+blockquote p {
+	display: inline;
+}
+

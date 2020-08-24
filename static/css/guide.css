@@ -1,0 +1,12 @@
+h4 {
+    margin: 0;
+    font-size: 115%;
+}
+
+blockquote {
+    margin-top: .5em;
+}
+
+blockquote>p{
+    padding-top: 2em !important;
+}
