@@ -33,8 +33,13 @@ body{
 	vertical-align: middle
 }
 
-.footer {
-	margin:		0;
+#footer {
+	padding-top: 1em;
+}
+
+#footer::before {
+	content: "---\00000a"; /*\00000a = newline*/
+	white-space: pre;
 }
 
 b{
@@ -97,9 +102,9 @@ img.album{
 	border-radius: 			4px;
 }
 
-.hljs-comment::selection, code::selection{
-	color: 						#00fb10;
-    background: 				black;
+.hljs::selection, code::selection, .hljs>span::selection{
+	color: 						#00fb10 !important;
+    background: 				black !important;
 }
 
 td.posts {
@@ -131,7 +136,6 @@ code.tags-matlab {color: #e16737;}
 code.tags-ahk {color: #6594b9;}
 code.tags-gcode {color: #D08CF2;}
 code.tags-latex {color: #3D6117;}
-
 code.tags-apache {color: #d80044;}
 code.tags-sheet {color: #00d800;}
 code.tags-misc {color: #fb00ff;}
