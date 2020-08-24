@@ -165,14 +165,14 @@ hr {
 
 blockquote>code{
 	font-size: 90% !important;
-	white-space: normal;
+	/*white-space: normal;*/
 }
 
-div>code {
+/*div>code {
 	width: 100%;
 	margin-right: 100%;
 	white-space: pre;
-}
+}*/
 
 blockquote > div > p {
 	margin-top: 1em;
