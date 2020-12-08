@@ -2,7 +2,7 @@
 
 :root{
 	/*Defaults -- these should be overwritten*/
- --inside-bg-color: #e2e5e2;
+	--inside-bg-color: #e2e5e2;
 	--outside-bg-color: #008300;
 	--code-bg-color: #282c34;
 }
@@ -11,22 +11,12 @@
 	letter-spacing: 0;
 	line-height: 1.44;
 	scrollbar-width: auto; /* "auto" or "thin" */
- scrollbar-color: var(--outside-bg-color) var(--inside-bg-color);
+	scrollbar-color: var(--outside-bg-color) var(--inside-bg-color);
 }
 
-body::-webkit-scrollbar {
-	width: 12px; /* width of the entire scrollbar */
- }
-
- body::-webkit-scrollbar-track {
-	background: var(--inside-bg-color); /* color of the tracking area */
- }
-
- body::-webkit-scrollbar-thumb {
-	background-color: var(--outside-bg-color); /* color of the scroll thumb */
- border-radius: 10px; /* roundness of the scroll thumb */
- border: 3px solid var(--inside-bg-color); /* creates padding around scroll thumb */
- }
+html {
+	overflow-y: scroll; /*https://stackoverflow.com/a/7607206/7833617*/
+}
 
 body{
 	font-family: "Roboto Mono", monospace;
@@ -36,6 +26,20 @@ body{
 	margin: auto;
 	color: #2b2b2b;
 	background-color: var(--outside-bg-color);
+}
+
+body::-webkit-scrollbar {
+	width: 12px; /* width of the entire scrollbar */
+}
+
+ body::-webkit-scrollbar-track {
+	background: var(--inside-bg-color); /* color of the tracking area */
+}
+
+ body::-webkit-scrollbar-thumb {
+	background-color: var(--outside-bg-color); /* color of the scroll thumb */
+	border-radius: 10px; /* roundness of the scroll thumb */
+	border: 3px solid var(--inside-bg-color); /* creates padding around scroll thumb */
 }
 
 .box{
@@ -54,7 +58,7 @@ body{
 
 #footer::before {
 	content: "---\00000a"; /*\00000a = newline*/
- white-space: pre;
+ 	white-space: pre;
 }
 
 b{
@@ -159,12 +163,16 @@ td.projects-image img {
 	width: 100%;
 }
 
-.nav{
-	margin-top: 0;
+
+div.nav{
+	display: contents;
+}
+
+div:nth-of-type(2){ /* this is bad! */
+	margin-top: 1em;
 }
 
 span.tab {
-	display:inline-block;
 	margin-left: 40px;
 }
 
@@ -198,7 +206,7 @@ blockquote > div > p {
 blockquote {
 	border-left: 10px solid var(--inside-bg-color);
 	filter: brightness(95%); /*botched way to darken the color*/
- margin: 1em 10px 1.5em;
+ 	margin: 1em 10px 1.5em;
 	padding: 0.5em 10px;
 }
 

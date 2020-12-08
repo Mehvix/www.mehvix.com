@@ -1,25 +1,5 @@
 <html lang="en">
 <head>
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    MMMMMMMM               MMMMMMMM                   hhhhhhh                                    iiii
-    M:::::::M             M:::::::M                   h:::::h                                   i::::i
-    M::::::::M           M::::::::M                   h:::::h                                    iiii
-    M:::::::::M         M:::::::::M                   h:::::h
-    M::::::::::M       M::::::::::M    eeeeeeeeeeee    h::::h hhhhh   vvvvvvv           vvvvvvviiiiiii xxxxxxx      xxxxxxx
-    M:::::::::::M     M:::::::::::M  ee::::::::::::ee  h::::hh:::::hhh v:::::v         v:::::v i:::::i  x:::::x    x:::::x
-    M:::::::M::::M   M::::M:::::::M e::::::eeeee:::::eeh::::::::::::::hhv:::::v       v:::::v   i::::i   x:::::x  x:::::x
-    M::::::M M::::M M::::M M::::::Me::::::e     e:::::eh:::::::hhh::::::hv:::::v     v:::::v    i::::i    x:::::xx:::::x
-    M::::::M  M::::M::::M  M::::::Me:::::::eeeee::::::eh::::::h   h::::::hv:::::v   v:::::v     i::::i     x::::::::::x
-    M::::::M   M:::::::M   M::::::Me:::::::::::::::::e h:::::h     h:::::h v:::::v v:::::v      i::::i      x::::::::x
-    M::::::M    M:::::M    M::::::Me::::::eeeeeeeeeee  h:::::h     h:::::h  v:::::v:::::v       i::::i      x::::::::x
-    M::::::M     MMMMM     M::::::Me:::::::e           h:::::h     h:::::h   v:::::::::v        i::::i     x::::::::::x
-    M::::::M               M::::::Me::::::::e          h:::::h     h:::::h    v:::::::v        i::::::i   x:::::xx:::::x
-    M::::::M               M::::::M e::::::::eeeeeeee  h:::::h     h:::::h     v:::::v         i::::::i  x:::::x  x:::::x
-    M::::::M               M::::::M  ee:::::::::::::e  h:::::h     h:::::h      v:::v          i::::::i x:::::x    x:::::x
-    MMMMMMMM               MMMMMMMM    eeeeeeeeeeeeee  hhhhhhh     hhhhhhh       vvv           iiiiiiiixxxxxxx      xxxxxxx
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
     <link type="text/css" rel="stylesheet" href="static/css/style.css">
     <link type="text/css" rel="stylesheet" href="static/css/atom-one-dark-reasonable.css">
@@ -28,12 +8,27 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="static/js/include.js"></script>
     <meta charset="utf-8">
-    <title>Mehvix | home</title>
+    <title>Mehvix | Home</title>
     <style>
         :root {
             --outside-bg-color: #920909;
         }
+
+
+        /* For dropdown img */
+        .visible {
+            display: block;
+        }
+        .hidden {
+            display: none;
+        }
     </style>
+
+    <script>
+        function toggleImage() {
+        document.getElementById('toggleImage').classList.toggle('hidden');
+    }
+    </script>
 </head>
 <body>
 <br>
@@ -54,8 +49,8 @@
             document.write("" + Math.floor(timeDiff / ((1000 * 60 * 60 * 24 * 365))));  // ceil time in years ([milliseconds] * [seconds] * [min] * [hours] * [days])
         </script>
 
-        and live in Middleton, WI. <a href="./static/media/IMG_20191020_011042.jpg">Here’s a
-        photo of me at UW’s 2019 Madhacks</a>. In my free time I enjoy fencing, coding, CADing, and working on
+        and live in Middleton, WI.<a href="./static/media/IMG_20191020_011042.jpg">Here’s a
+        photo of me at UW’s 2019 Madhacks</a><img src="./static/media/expandoImage.svg" style="height: 1.4%;" onclick="toggleImage()"><img id='toggleImage' src="./static/media/IMG_20191020_011042.jpg" style="width: 100%; margin: 3% 0" class="hidden">. In my free time I enjoy fencing, coding, CADing, and working on
         stuff <a href="https://www.team1306.com">1306</a> related.
     </div>
 
@@ -63,9 +58,8 @@
         <b>Me</b><br>
 
         <div>
-            - Email&emsp;&emsp;&emsp;&emsp;/ mehvix <code>at</code> protonmail <code>dot</code> com -- <a
-                href="pgp.html">PGP
-            key</a><br>
+            - Email&emsp;&emsp;&emsp;&emsp;/ <wbr>mehvix <code>at</code> protonmail <code>dot</code> com (<a
+                href="pgp.html">PGP</a>)<br>
             - Github&emsp;&emsp;&emsp;/ <a href="https://github.com/mehvix">Mehvix</a><br>
             - Discord &emsp;/ Mehvix#7966<br>
             - Linkedin&emsp;/ <a href="https://www.linkedin.com/in/mehvix/">Max Vogel</a><br>
