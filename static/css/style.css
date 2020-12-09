@@ -3,7 +3,7 @@
 :root{
 	/*Defaults -- these should be overwritten*/
 	--inside-bg-color: #e2e5e2;
-	--outside-bg-color: #008300;
+	--outside-bg-color: #006b75;
 	--code-bg-color: #282c34;
 }
 
@@ -11,7 +11,6 @@
 	letter-spacing: 0;
 	line-height: 1.44;
 	scrollbar-width: auto; /* "auto" or "thin" */
-	scrollbar-color: var(--outside-bg-color) var(--inside-bg-color);
 }
 
 html {
@@ -33,13 +32,13 @@ body::-webkit-scrollbar {
 }
 
  body::-webkit-scrollbar-track {
-	background: var(--inside-bg-color); /* color of the tracking area */
+	background: var(--outside-bg-color); /* color of the tracking area */
 }
 
  body::-webkit-scrollbar-thumb {
 	background-color: var(--outside-bg-color); /* color of the scroll thumb */
-	border-radius: 10px; /* roundness of the scroll thumb */
-	border: 3px solid var(--inside-bg-color); /* creates padding around scroll thumb */
+	border-radius: 12px; /* roundness of the scroll thumb */
+	border: 2px solid var(--inside-bg-color); /* creates padding around scroll thumb */
 }
 
 .box{
