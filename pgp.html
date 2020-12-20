@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <link type="text/css" rel="stylesheet" href="static/css/style.css">
     <link type="text/css" rel="stylesheet" href="static/css/atom-one-dark-reasonable.css">
@@ -6,11 +7,11 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="static/js/include.js"></script>
     <script>
-        function copyText(){
+        function copyText() {
             var textToCopy = document.getElementById("pgp");
 
             var currentRange;
-            if(document.getSelection().rangeCount > 0) {
+            if (document.getSelection().rangeCount > 0) {
                 currentRange = document.getSelection().getRangeAt(0);
                 window.getSelection().removeRange(currentRange);
             } else {
@@ -24,7 +25,7 @@
 
             window.getSelection().removeRange(CopyRange);
 
-            if(currentRange) {
+            if (currentRange) {
                 window.getSelection().addRange(currentRange);
             }
         }
@@ -39,15 +40,16 @@
         }
     </style>
 </head>
-<body>
-<br>
-<div class="box">
-    <div class="nav"><b><a href="./index.html">About</a> / <a href="pgp.html" class="inverse-bg">PGP</a></b><br>
-    <p>---</p>
-    <a href="./static/media/publickey.mehvix@protonmail.com.asc">Download</a><br>
-    <a href="#" onclick="copyText()">Copy</a>
 
-    <pre><code id="pgp" class="diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
+<body>
+    <br>
+    <div class="box">
+        <div class="nav"><b><a href="./index.html">About</a> / <a href="pgp.html" class="inverse-bg">PGP</a></b><br>
+            <p>---</p>
+            <a href="./static/media/publickey.mehvix@protonmail.com.asc">Download</a><br>
+            <a href="#" onclick="copyText()">Copy</a>
+
+            <pre><code id="pgp" class="diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: OpenPGP.js v4.6.2
 Comment: https://openpgpjs.org
 
@@ -82,16 +84,17 @@ LKutr+KwFwaJLLcqxjciyMueRAnPoKrodbIZ+ALMR2GMhJD6y7RuDBm1ll7c
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
 
 
-    <div id="footer">
-        BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
-        ETH / <a
-            href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
-        ©
-        <script>
-            document.write("" + new Date().getFullYear())
-        </script>
-        - Max Vogel
-    </div>
-</div>
+            <div id="footer">
+                BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
+                ETH / <a
+                    href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
+
+                <script>
+                    document.write("" + new Date().getFullYear())
+                </script>
+                - Max Vogel
+            </div>
+        </div>
 </body>
+
 </html>

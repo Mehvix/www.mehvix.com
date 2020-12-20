@@ -6,6 +6,6 @@
 //     var footer = templates.content.querySelector('#footer')
 //
 //     document.getElementById("footer").insertAdjacentHTML('afterbegin', footer.innerHTML)
-//     document.getElementById("copy").insertAdjacentHTML("afterbegin", "© " + new Date().getFullYear() + " - Max Vogel")
+//     document.getElementById("copy").insertAdjacentHTML("afterbegin", " " + new Date().getFullYear() + " - Max Vogel")
 // } ()
 // /*todo work on this^*/
