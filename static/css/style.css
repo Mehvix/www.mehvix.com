@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 :root {
 	/*Defaults -- these should be overwritten*/
 	--inside-bg-color: #e2e5e2;
@@ -207,8 +207,21 @@ img.dropdown {
 	vertical-align: middle;
 }
 
+table.about>tbody>tr>td:nth-of-type(1)::before{
+	content: "- ";
+}
+
+table.about>tbody>tr>td:nth-of-type(2)::before{
+	content: "    / ";
+}
+
+table.about{
+	font-size: 20px;
+}
+
 
 /*https://github.com/ozh/github-colors*/
+
 code.tags-py {
 	color: #3caaff;
 }
