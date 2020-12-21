@@ -1,0 +1,31 @@
+<rss>
+	<channel>
+		<title>mehvix.com</title>
+		<description>Updates from mehvix.com (Max Vogel)</description>
+		<lastBuildDate>Mon, 21 Dec 2020 23:47:08 -0000</lastBuildDate>
+		<language>en-us</language>
+		<link>https://www.mehvix.com</link>
+		<category>Blog</category>
+		<item>
+			<author>Max Vogel</author>
+			<title>Make Twitter Suckless</title>
+			<pubDate>Mon, 07 Dec 2020 06:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/twitter.html</link>
+			<guid>https://mehvix.com/posts/twitter.html</guid>
+		</item>
+		<item>
+			<author>Max Vogel</author>
+			<title>Nextcloud: Importing Calendars + Automation</title>
+			<pubDate>Wed, 08 Apr 2020 05:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/nextcloud-calendar.html</link>
+			<guid>https://mehvix.com/posts/nextcloud-calendar.html</guid>
+		</item>
+		<item>
+			<author>Max Vogel</author>
+			<title>Nextcloud Install Guide</title>
+			<pubDate>Tue, 03 Sep 2019 05:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/nextcloud-guide.html</link>
+			<guid>https://mehvix.com/posts/nextcloud-guide.html</guid>
+		</item>
+	</channel>
+</rss>

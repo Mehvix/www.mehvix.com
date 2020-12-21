@@ -14,6 +14,14 @@
         :root {
             --outside-bg-color: #005f4f;
         }
+
+        tr>td:nth-of-type(1)::before {
+            content: "* ";
+        }
+
+        tr>td:nth-of-type(1)::after {
+            content: " ::";
+        }
     </style>
 </head>
 
@@ -24,27 +32,22 @@
                 <a href="../posts/index.html" class="inverse-bg">Posts</a></b>
             </p>
 
-            Blog posts<br>
+            <a href="rss.xml">RSS feed</a><br>
             ---
-            <!--YYYY-MM-DD :: Title-->
-            <table style="">
-                <!--<tr>
-            <th scope="col" >Date</th>
-            <th scope="col">Title</th>
-        </tr>-->
+            <table>
 
                 <tr>
-                    <td class="posts">* 2020-12-07 ::</td>
+                    <td class="posts">20-12-07</td>
                     <td><a href="twitter.html">Make Twitter Suckless</a></td>
                 </tr>
 
                 <tr>
-                    <td class="posts">* 2020-04-08 ::</td>
+                    <td class="posts">20-04-08</td>
                     <td><a href="nextcloud-calendar.html">Nextcloud: Importing Calendars + Automation</a></td>
                 </tr>
 
                 <tr>
-                    <td class="posts">* 2019-09-03 ::</td>
+                    <td class="posts">19-09-03</td>
                     <td><a href="nextcloud-guide.html">Nextcloud Install Guide</a></td>
                 </tr>
             </table>
