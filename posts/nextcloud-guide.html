@@ -15,19 +15,27 @@
         :root {
             --outside-bg-color: #003354;
         }
+
+        h4 {
+            font-size: 100%;
+            font-weight: 500;
+        }
+
+        blockquote {
+            font-size: 90%;
+        }
     </style>
 </head>
 
 <body>
-    <br>
     <div class="box">
-        <div class="nav"><b><a href="../index.html">About</a> /
+        <div class="nav"><b><a href="../index.html">~</a> /
                 <a href="../posts/index.html">Posts</a> /
                 <a href="#" class="inverse-bg">NC Guide</a></b>
             </p>
-            <br>
 
             <article>
+                <h1>Basic Installation Step</h1>
                 <h4>Getting the machine up-to-date</h4>
 
                 <blockquote>
@@ -191,7 +199,7 @@ quit;</code></pre>
 
                 ---
 
-                <h2>Securing Nextcloud</h2>
+                <h1>Securing Nextcloud</h1>
 
                 <p>If you head to <code>https://yournextcloud.com/settings/admin/overview</code> you’ll see all security
                     and
@@ -317,7 +325,7 @@ quit;</code></pre>
 
                 ---
 
-                <h2>Further Securing / Optimization</h2>
+                <h1>Further Securing / Optimization</h1>
 
                 <p>There are various other actions you can take to ensure that both your os and nextcloud are secure.
                     I’ll be
@@ -370,7 +378,7 @@ pm.max_requests = 1000</code></pre>
 
                 ---
 
-                <h2>Quality of Life Changes + Apps</h2>
+                <h1>Quality of Life Changes + Apps</h1>
 
                 <p>While theses tips aren’t needed for security, they’re nice to have.</p>
 
@@ -527,7 +535,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
 
                 ---
 
-                <h2>Trouble shooting</h2>
+                <h1>Trouble shooting</h1>
 
                 <h4>Transering [file] - server replied: [nothing]</h4>
 
@@ -557,9 +565,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
 
                 ---
 
-                <h2>Updating</h2>
-
-                <h3>Backup</h3>
+                <h1>Backing Up</h1>
 
                 <h4>Turn on maintenance<br></h4>
 
@@ -569,7 +575,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
                     </p>
                 </blockquote>
 
-                <h4>Backup Nextcloud files<br></h4>
+                <h4>Copy files<br></h4>
 
                 <blockquote>
                     <p><code>cd /var/www/</code><br>
@@ -590,7 +596,9 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
                     </p>
                 </blockquote>
 
-                <h3>Updating<br></h3>
+                ---
+
+                <h1>Updating</h1>
 
                 <ul>
                     <li>Go to <code>https://cloud.dns.com/settings/admin/overview</code> and select the version you
@@ -599,7 +607,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
                     <li>Follow the steps, make sure not to touch anything while updating<br></li>
                     <li><code>systemctl restart apache2</code></li>
                     <li>Double check the ‘Security &amp; setup warnings’ (also on <code>/admin/overview</code>)<br></li>
-                    <li><a href="https://scan.nextcloud.com/">Test your server</a><br></li>
+                    <li><a href="https://scan.nextcloud.com/">Verify your server's security</a><br></li>
                     <li>Congrads!</li>
                 </ul>
 

@@ -13,99 +13,97 @@
             --outside-bg-color: #306a4a;
             --inside-bg-color: #cdd8df;
         }
+
+        article>p {
+            margin: 0;
+        }
+
+        article>p::before {
+            content: "- ";
+        }
+
+        h1 {
+            font-size: 105%;
+            margin-bottom: .1em;
+            margin-top: 1em;
+        }
     </style>
 </head>
 
 <body>
-    <br>
     <div class="box">
-        <div class="nav"><b><a href="./index.html">About</a> / <a href="todo.html" class="inverse-bg">#TODO</a></b></p>
-            <p>My mostly up-to-date list of future projects I haven't gotten around to yet.</p>
-            ---
-            </p>
-
-            <article>
-
-                <p>- Program to automatically download videos from a creator as they're uploaded</p>
-                <blockquote>
-                    <p>- Prevents <a
-                            href="https://old.reddit.com/r/Jon_Bois/comments/ab6930/does_anyone_happen_to_have_pretty_good_episode_4/">this</a>
-                        from happening again.
-                    <p>- Possible with <a href="https://zapier.com">zapier</a> and <a
-                            href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a></p>
-                </blockquote>
-
-                <p>- Visualize <a href="https://play.typeracer.com/">Typeracer</a> data</p>
-                <blockquote>
-                    <p>- I did something <a
-                            href="https://github.com/Mehvix/synapsBotRW/blob/master/typeracer.py">similar
-                            already</a>
-                    <p>- Should be possible to scrap <a
-                            href="https://data.typeracer.com/pit/race_history?user=mehvix&amp;n=9999&amp;startDate=">this
-                            webpage</a> and save it as a <code>.csv</code></p>
-                </blockquote>
-
-                <p>- Create a <a href="https://old.reddit.com/r/startpages">Startpage</a></p>
-
-                <p>- Script to disables the windows key when a game is launched</p>
-
-                <p>- Software to monitor desktop app usage</p>
-                <blockquote>
-                    <p>- Similar to <a href="https://www.getintention.com/"> Intention</a></p>
-                </blockquote>
-
-                <p>- Design / 3D print a custom mouse using G305 internals</p>
-                <blockquote>
-                    <p>- <a href="https://www.reddit.com/r/MouseReview/">/r/MouseReview</a> has some good resources</p>
-                </blockquote>
-
-                <p>- Remote car starter for the winter</p>
-
-                <p>- Custom drone with 3D print parts</p>
-
-                <p>- Successfully 3D print a key</p>
-                <blockquote>
-                    <p>- <a href="https://youtu.be/7kJnGZlirpI">Interesting talk on 3D printing keys</a></p>
-                </blockquote>
-
-                <p>- Software + Hardware keylogger</p>
-
-                <p>- Crypto address replacer</p>
-                <blockquote>
-                    <p>- Replaces copied crypto address with a different address<br>
-                </blockquote>
-
-                <p>- Soundcloud Downloader with Metadata Scraper</p>
-
-                <p>- Logs.tf scrapper + leaderboard</p>
-                <blockquote>
-                    <p>- Integrate with <a href="https://github.com/Mehvix/Equalizer">Equalizer?</a></p>
-                </blockquote>
-
-                <p>- "Jon Bois" style video about Richard Russel</p>
-                <blockquote>
-                    <p>- <a href="https://en.wikipedia.org/wiki/2018_Horizon_Air_Q400_incident">Wikipedia Article</a>
-                    </p>
-                    <p>- <a href="https://www.youtube.com/playlist?list=PLUXSZMIiUfFSCYW1o-4whWtepyVlsfuCC">Jon Bois's
-                            Pretty
-                            Good Series</a></p>
-                </blockquote>
-            </article>
-
-            <!--			<h3 style="text-align: center"><a href="./index.html">Return home.</a></h3>-->
-            <!--			<h3 style="text-align: center"><a href="#" onClick="history.go(-1); return false;">Previous page.</a></h3>-->
-
-            <div id="footer">
-                BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
-                ETH / <a
-                    href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
-
-                <script>
-                    document.write("" + new Date().getFullYear())
-                </script>
-                - Max Vogel
-            </div>
+        <div class="nav">
+            <a href="./index.html">~</a> /
+            <strong><a href="todo.html" class="inverse-bg">#TODO</a></strong>
         </div>
+        <p>My mostly up-to-date list of future projects I haven't gotten around to yet.</p>
+        ---
+        </p>
+
+        <article>
+            <h1>Program to automatically download videos from a creator as they're uploaded</h1>
+            <p>Prevents <a
+                    href="https://old.reddit.com/r/Jon_Bois/comments/ab6930/does_anyone_happen_to_have_pretty_good_episode_4/">this</a>
+                from happening again.
+            <p>Possible with <a href="https://zapier.com">zapier</a> and <a
+                    href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a></p>
+
+            <h1>Visualize <a href="https://play.typeracer.com/">Typeracer</a> data</h1>
+            <p>I did something <a href="https://github.com/Mehvix/synapsBotRW/blob/master/typeracer.py">similar
+                    already</a>
+            <p>Should be possible to scrap <a
+                    href="https://data.typeracer.com/pit/race_history?user=mehvix&amp;n=9999&amp;startDate=">this
+                    webpage</a> and save it as a <code>.csv</code></p>
+
+            <h1>Create a <a href="https://old.reddit.com/r/startpages">Startpage</a></h1>
+
+            <h1>Script to disables the windows key when a game is launched</h1>
+
+            <h1>Software to monitor desktop app usage</h1>
+            <p>Similar to <a href="https://www.getintention.com/"> Intention</a></p>
+
+            <h1>Design / 3D print a custom mouse using G305 internals</h1>
+            <p><a href="https://www.reddit.com/r/MouseReview/">/r/MouseReview</a> has some good resources</p>
+
+            <h1>Remote car starter for the winter</h1>
+
+            <h1>Custom drone with 3D print parts</h1>
+
+            <h1>Successfully 3D print a key</h1>
+            <p><a href="https://youtu.be/7kJnGZlirpI">Interesting talk on 3D printing keys</a></p>
+
+            <h1><strike>Software + </strike>Hardware keylogger</h1>
+
+            <h1>Crypto address replacer</h1>
+            <p>Replaces copied crypto address with a different address<br>
+
+            <h1>Soundcloud Downloader with Metadata Scraper</h1>
+
+            <h1>Logs.tf scrapper + leaderboard</h1>
+            <p>Integrate with <a href="https://github.com/Mehvix/Equalizer">Equalizer?</a></p>
+
+            <h1>"Jon Bois" style video about Richard Russel</h1>
+            <p><a href="https://en.wikipedia.org/wiki/2018_Horizon_Air_Q400_incident">Wikipedia Article</a>
+            </p>
+            <p><a href="https://www.youtube.com/playlist?list=PLUXSZMIiUfFSCYW1o-4whWtepyVlsfuCC">Jon Bois's
+                    Pretty
+                    Good Series</a></p>
+        </article>
+
+        <!--			<h3 style="text-align: center"><a href="./index.html">Return home.</a></h3>-->
+        <!--			<h3 style="text-align: center"><a href="#" onClick="history.go(-1); return false;">Previous page.</a></h3>-->
+
+        <div id="footer">
+            BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
+            ETH / <a
+                href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
+
+            <script>
+                document.write("" + new Date().getFullYear())
+            </script>
+            - Max Vogel
+        </div>
+    </div>
 </body>
 
 </html>

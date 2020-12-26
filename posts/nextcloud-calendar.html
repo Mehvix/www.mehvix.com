@@ -17,11 +17,11 @@
 </head>
 
 <body>
-    <br>
     <div class="box">
-        <div class="nav"><b><a href="../index.html">About</a> /
-                <a href="../posts/index.html">Posts</a> /
-                <a href="#" class="inverse-bg">NC Cal</a></b></div><br>
+        <div class="nav"><a href="../index.html">~</a> /
+            <a href="../posts/index.html">Posts</a> /
+            <strong><a href="#" class="inverse-bg">NC Cal</a></strong>
+        </div>
 
         <article id="content">
             <p>Upgrading to Nextcloud 18 broke both importing public Google calendars and external calendars so that
@@ -30,7 +30,7 @@
 
             ---
 
-            <h3>Importing Google Calendars</h3>
+            <h1>Importing Google Calendars</h1>
 
             <p>Nextcloud needs a <code>.ics</code> or <code>.ical</code> file. To get a public Google calendar’s
                 <code>.ics</code> location (as of 5/8/20), you need to get the <code>src</code>/<code>cid</code> of the
@@ -55,21 +55,22 @@
                 and
                 up to the next <code>&</code> sign, oftentimes this will look something like
                 <code>[id]@group.calendar.google.com</code>.
-                Then, take this string and add it to the following:</p>
+                Then, take this string and add it to the following:
+            </p>
 
             <pre><code class="ini">https://calendar.google.com/calendar/ical/[add here!]/public/basic.ics</code></pre>
 
             <p>For example, using the Codeforces calendar you'd grab
                 <code>k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com</code>
-                and add get the following:</p>
+                and add get the following:
+            </p>
 
             <pre><code class="ini">https://calendar.google.com/calendar/ical/k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com/public/basic.ics</code></pre>
 
             <p>You can then use this URL to as the external URL in the Nextcloud Calendar app.</p>
 
-            ---
 
-            <h3>Automatically Updating External Calendars</h3>
+            <h1>Automatically Updating Calendars</h1>
 
             <p>The default subscription refreshing interval is of one week (unless the subscription itself asks for a
                 different rate).</p>

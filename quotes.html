@@ -17,45 +17,52 @@
     </style>
 
     <style>
-        div.main>div {
+        div.main>article>div {
             margin-bottom: 3em
         }
 
-        div.main>div>blockquote {
+        div.main>article>div>blockquote {
             margin: 1.5% 0 0 0;
         }
 
-        div.main>div>p,
-        div.main>div>a {
+        div.main>article>div>p,
+        div.main>article>div>a {
             margin-top: .5em
         }
 
 
-        div.main>div>p:before,
-        div.main>div>a:before {
+        div.main>article>div>p:before,
+        div.main>article>div>a:before {
             content: '— ';
         }
 
+        h1 {
+            font-size: 100%;
+        }
     </style>
 </head>
 
 <body>
-    <br>
     <div class="box">
-        <div class="nav"><b>
-                <a href="./index.html">About</a> /
-                <!--        <a href="./folder/index.html">folder</a> /-->
-                <a href="#" class="inverse-bg">Quotes</a>
-            </b></p><br>
+        <div class="nav">
+            <a href="./index.html">~</a> /
+            <a href="#" class="inverse-bg">Quotes</a>
+        </div>
+        <div class="main">
 
-            <div class="main">
-
+            <article>
                 <div>
                     <b>All of humanity's problems stem from man's inability to sit quietly in a room alone</b>
                     <blockquote>
-                        "That is why we like noise and activity so much. That is why imprisonment is such a horrific punishment. That is why the pleasure of being alone is incomprehensible. That is, in fact, the main joy of the condition of kingship, because people are constantly trying to amuse kings and provide them with all sorts of distraction.—The king is surrounded by people whose only thought is to entertain him and prevent him from thinking about himself. King though he may be, he is unhappy if he thinks about it"
+                        "That is why we like noise and activity so much. That is why imprisonment is such a horrific
+                        punishment. That is why the pleasure of being alone is incomprehensible. That is, in fact, the
+                        main joy of the condition of kingship, because people are constantly trying to amuse kings and
+                        provide them with all sorts of distraction.—The king is surrounded by people whose only thought
+                        is to entertain him and prevent him from thinking about himself. King though he may be, he is
+                        unhappy if he thinks about it"
                     </blockquote>
-                    <p><a href="http://libgen.rs/book/index.php?md5=1FC7013AAB99E7BF73BB2104C1A798EE">Blaise Pascal</a></p>
+                    <p><a href="http://libgen.rs/book/index.php?md5=1FC7013AAB99E7BF73BB2104C1A798EE">Blaise Pascal</a>
+                    </p>
                 </div>
 
 
@@ -264,21 +271,22 @@
                     </blockquote>
                     <p><a href="https://youtu.be/9l5C8cGMueY?t=1198">Jon Bois</a></p>
                 </div>
+            </article>
 
 
-            </div>
-
-            <div id="footer">
-                BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
-                ETH / <a
-                    href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
-
-                <script>
-                    document.write("" + new Date().getFullYear())
-                </script>
-                - Max Vogel
-            </div>
         </div>
+
+        <div id="footer">
+            BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
+            ETH / <a
+                href="eth:0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA">0x7aB5aF122F0f09e9cb7d141ba04b1ce14F18D3bA</a><br>
+
+            <script>
+                document.write("" + new Date().getFullYear())
+            </script>
+            - Max Vogel
+        </div>
+    </div>
 </body>
 
 </html>

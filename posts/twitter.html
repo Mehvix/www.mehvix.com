@@ -27,60 +27,61 @@
 </head>
 
 <body>
-    <br>
     <div class="box">
         <div class="nav">
-            <b>
-                <a href="../index.html">About</a> / <wbr>
-                <a href="../posts/index.html">Posts</a> / <wbr>
-                <a href="" class="inverse-bg">Twitter Suckless</a>
-            </b>
-        </div>
-        <br>
-
-        <div>
-            Twitter is pretty bad. But, it's the only place with <a href="https://twitter.com/jon_bois">Jon Bois
-                tweets</a>. Here are a couple ways you can make Twitter Suckless.
+            <a href="../index.html">~</a> / <wbr>
+            <a href="../posts/index.html">Posts</a> / <wbr>
+            <strong><a href="" class="inverse-bg">Twitter Suckless</a></strong>
         </div>
 
-        ---
+        <article id="content">
+            <p>Twitter is pretty bad. But, it's the only place with <a href="https://twitter.com/jon_bois">Jon Bois
+                    tweets</a>. Here are a couple ways you can make Twitter Suckless.</p>
 
-        <div>
-            <h3># Remove Homepage Crap</h3>
-            The Twitter "What's Happening" sidebar is dedicated to drama and stuff intended to make you angry. To remove
-            this, you'll need <a href="https://github.com/gorhill/uBlock">uBlock origin</a> (which is something you
-            should have installed if you want a more suckless internet in general). Once you have it installed, go to
-            the <a href="chrome-extension://cjpalhdlnbpafiamejdnhcphjbkeiagm/dashboard.html">dashboard</a> add the
-            following under the "My filters" tab:
-            <pre><code class="css">twitter.com##.r-1hycxz.r-zso239.r-aqfbo4.css-1dbjc4n</code></pre>
-        </div>
+            ---
+            <div>
+                <h1>Remove Homepage Crap</h1>
+                The Twitter "What's Happening" sidebar is dedicated to drama and stuff intended to make you angry. To
+                remove
+                this, you'll need <a href="https://github.com/gorhill/uBlock">uBlock origin</a> (which is something you
+                should have installed if you want a more suckless internet in general). Once you have it installed, go
+                to
+                the <a href="chrome-extension://cjpalhdlnbpafiamejdnhcphjbkeiagm/dashboard.html">dashboard</a> add the
+                following under the "My filters" tab:
+                <pre><code class="css">twitter.com##.r-1hycxz.r-zso239.r-aqfbo4.css-1dbjc4n</code></pre>
+            </div>
 
 
-        <div>
-            <h3># Denumerate</h3>
-            As <a href="https://bengrosser.com/projects/twitter-demetricator/">Ben Grosser</a> writes:
-            <blockquote>
-                Visible metrics can make us feel more compulsive, competitive, and anxious. Further—without realizing
-                it, we craft rules for ourselves based on what the numbers say, and these rules affect what we post, who
-                we friend, and which posts we “like.”
-            </blockquote>
+            <div>
+                <h1>Denumerate</h1>
+                As <a href="https://bengrosser.com/projects/twitter-demetricator/">Ben Grosser</a> writes:
+                <blockquote>
+                    Visible metrics can make us feel more compulsive, competitive, and anxious. Further—without
+                    realizing
+                    it, we craft rules for ourselves based on what the numbers say, and these rules affect what we post,
+                    who
+                    we friend, and which posts we “like.”
+                </blockquote>
 
-            He's written a tool to remove all metrics (likes, retweets, replies, followers, etc.) which you can install
-            through one sources <a
-                href="https://bengrosser.com/projects/twitter-demetricator/install-twitter-demetricator/">linked
-                here</a>. I am personally using <a href="https://www.tampermonkey.net/">Tapermonkey</a>.
-        </div>
+                He's written a tool to remove all metrics (likes, retweets, replies, followers, etc.) which you can
+                install
+                through one sources <a
+                    href="https://bengrosser.com/projects/twitter-demetricator/install-twitter-demetricator/">linked
+                    here</a>. I am personally using <a href="https://www.tampermonkey.net/">Tapermonkey</a>.
+            </div>
 
-        <div>
-            <h3># Remove Interests</h3>
-            Twitter keeps track of what it think's you're interesting in, then uses it to show you "relevant" tweets
-            (and ads). You can manually prune these <a
-                href="https://twitter.com/settings/your_twitter_data/twitter_interests">here</a>, but the list can get
-            very long, very quick. You can automate "un-intersting" all topics by pasting <a
-                href="https://gist.github.com/edjw/61cda68535b237fa7fa8db23842c1b6d/">Ed Johnson-Williams'</a> script in
-            console:
+            <div>
+                <h1>Remove Interests</h1>
+                Twitter keeps track of what it think's you're interesting in, then uses it to show you "relevant" tweets
+                (and ads). You can manually prune these <a
+                    href="https://twitter.com/settings/your_twitter_data/twitter_interests">here</a>, but the list can
+                get
+                very long, very quick. You can automate "un-intersting" all topics by pasting <a
+                    href="https://gist.github.com/edjw/61cda68535b237fa7fa8db23842c1b6d/">Ed Johnson-Williams'</a>
+                script in
+                console:
 
-            <pre><code class="js">"use strict;"
+                <pre><code class="js">"use strict;"
 var labelSelector = ".r-1p0dtai.r-1ei5mc7.r-1pi2tsx.r-1d2f490.r-crgep1.r-orgf3d.r-t60dpp.r-u8s1d.r-zchlnj.r-ipm5af.r-13qz1uu"
 
 // Get all the interests that Twitter has inferred about your account
@@ -99,16 +100,17 @@ interests.forEach((interest) => {
 });
 
 console.log(`Finished`);</code></pre>
-        </div>
+            </div>
 
-        <div>
-            <h3># Remove Sugguested Content</h3>
+            <div>
+                <h1>Remove Sugguested Content</h1>
 
-            Under the <a href="https://twitter.com/settings/add_muted_keyword">muted keywords</a> section, you paste <a
-                href="https://gist.github.com/IanColdwater/88b3341a7c4c0cf71c73ac56f9bd36ec#gistcomment-3153196">Jake
-                Bellacera's</a> script to automatically add sugguest content keywords to the blocklist, cleaning up your
-            timeline.
-            <pre><code class="js">const delayMs = 500; // change this if you feel like its running too fast
+                Under the <a href="https://twitter.com/settings/add_muted_keyword">muted keywords</a> section, you paste
+                <a href="https://gist.github.com/IanColdwater/88b3341a7c4c0cf71c73ac56f9bd36ec#gistcomment-3153196">Jake
+                    Bellacera's</a> script to automatically add sugguest content keywords to the blocklist, cleaning up
+                your
+                timeline.
+                <pre><code class="js">const delayMs = 500; // change this if you feel like its running too fast
 const keywords = `ActivityTweet
 generic_activity_highlights
 generic_activity_momentsbreaking
@@ -151,17 +153,18 @@ keywords.reduce(async (prev, keyword) => {
     addMutedKeyword(keyword);
     return delay();
 }, Promise.resolve());</code></pre>
-        </div>
+            </div>
 
 
-        ---
+            ---
 
-        <div>
-            In the end, you should get something less distracting and more focused on the content you enjoy. For
-            example, here's my new homepage:
+            <div>
+                In the end, you should get something less distracting and more focused on the content you enjoy. For
+                example, here's my new homepage:
 
-            <img src="../static/media/posts/suckless-twitter-result.JPG" style="width: 100%; margin-top: 1em;">
-        </div>
+                <img src="../static/media/posts/suckless-twitter-result.JPG" style="width: 100%; margin-top: 1em;">
+            </div>
+        </article>
 
         <div id="footer">
             BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>

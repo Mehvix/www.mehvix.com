@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700;800&display=swap');
 :root {
 	/*Defaults -- these should be overwritten*/
 	--inside-bg-color: #e2e5e2;
@@ -54,7 +54,8 @@ body::-webkit-scrollbar-thumb {
 	padding: 1.5em;
 	background: var(--inside-bg-color);
 	overflow-wrap: break-word;
-	vertical-align: middle
+	vertical-align: middle;
+	margin-top: 3em;
 }
 
 #footer {
@@ -62,14 +63,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 #footer::before {
-	content: "---\00000a";
-	/*\00000a = newline*/
+	content: "---\00000a";/*\00000a = newline*/
 	white-space: pre;
 }
 
-b {
+/* b {
 	font-size: 115%;
-}
+} */
 
 a:link, a:visited {
 	text-decoration: none;
@@ -92,6 +92,10 @@ a:hover::selection {
 	background-color: black;
 	color: var(--inside-bg-color);
 	box-shadow: none;
+}
+
+strong {
+	font-weight: 500;
 }
 
 a.inverse-bg {
@@ -152,8 +156,14 @@ td.projects-image img {
 }
 
 div.nav {
-	display: contents;
+	font-size: 115%;
+	margin-bottom: 1em;
 }
+
+/* div.nav::after {
+	content: '\00000a---\00000a';
+	white-space: pre;
+} */
 
 div:nth-of-type(2) {
 	/* this is bad! */
@@ -196,6 +206,7 @@ blockquote {
 	/*botched way to darken the color*/
 	margin: 1em 10px 1.5em;
 	padding: 0.5em 10px;
+	font-size: 90%;
 }
 
 blockquote p {
@@ -207,17 +218,48 @@ img.dropdown {
 	vertical-align: middle;
 }
 
-table.about>tbody>tr>td:nth-of-type(1)::before{
+table.about>tbody>tr>td:nth-of-type(1)::before {
 	content: "- ";
 }
 
-table.about>tbody>tr>td:nth-of-type(2)::before{
+table.about>tbody>tr>td:nth-of-type(2)::before {
 	content: "    / ";
 }
 
-table.about{
+table.about {
 	font-size: 20px;
 }
+
+h1, h2, h3 {
+	font-weight: 700;
+	margin-top: 2em;
+	margin-bottom: .5em;
+}
+
+h1 {
+	font-size: 125%;
+}
+h2 {
+	font-size: 115%;
+}
+
+h3 {
+	font-size: 100%;
+}
+
+h1::before {
+	content: "# ";
+}
+
+h2::before {
+	content: "## ";
+}
+
+h3::before {
+	content: "### ";
+}
+
+
 
 
 /*https://github.com/ozh/github-colors*/
