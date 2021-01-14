@@ -82,7 +82,6 @@ for i in soup.find_all("tr"):
     guidElement.appendChild(guidContent)
     itemElement.appendChild(guidElement)
 
-
     channel.appendChild(itemElement)
 
 
