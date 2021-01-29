@@ -6,7 +6,9 @@ import time
 from email import utils
 
 
-fin = open('index.html').read()
+# idk why this is wack
+fin = open('posts/index.html').read()
+fout = 'posts/rss.xml'
 soup = BeautifulSoup(fin, 'html.parser')
 
 
@@ -48,6 +50,7 @@ channel.appendChild(catElement)
 
 
 for i in soup.find_all("tr"):
+
     title = i.find("a").string
     url = i.find("a")['href']
     date = "20" + i.find("td").string
@@ -88,5 +91,5 @@ for i in soup.find_all("tr"):
 content = content.toprettyxml(indent="\t")
 
 
-with open("rss.xml", "w") as f:
+with open(fout, "w") as f:
     f.write(content)

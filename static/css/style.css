@@ -1,163 +1,167 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700;800&display=swap");
 :root {
-	/*Defaults -- these should be overwritten*/
-	--inside-bg-color: #e2e5e2;
-	--outside-bg-color: #006b75;
-	--code-bg-color: #282c34;
+    /*Defaults -- these should be overwritten*/
+    --inside-bg-color: #e2e5e2;
+    --outside-bg-color: #006b75;
+    --code-bg-color: #282c34;
 }
 
 * {
-	letter-spacing: 0;
-	line-height: 1.44;
-	scrollbar-width: auto;
-	/* "auto" or "thin" */
+    letter-spacing: 0;
+    line-height: 1.44;
+    scrollbar-width: auto;
+    /* "auto" or "thin" */
 }
 
 html {
-	overflow-y: scroll;
-	/*https://stackoverflow.com/a/7607206/7833617*/
+    overflow-y: scroll;
+    /*https://stackoverflow.com/a/7607206/7833617*/
 }
 
 body {
-	font-family: "Roboto Mono", monospace;
-	font-weight: 400;
-	font-size: 20px;
-	max-width: 42em;
-	margin: auto;
-	color: #2b2b2b;
-	background-color: var(--outside-bg-color);
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-size: 20px;
+    max-width: 42em;
+    margin: auto;
+    color: #2b2b2b;
+    background-color: var(--outside-bg-color);
 }
 
 body::-webkit-scrollbar {
-	width: 12px;
-	/* width of the entire scrollbar */
+    width: 12px;
+    /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-	background: var(--outside-bg-color);
-	/* color of the tracking area */
+    background: var(--outside-bg-color);
+    /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: var(--outside-bg-color);
-	/* color of the scroll thumb */
-	border-radius: 12px;
-	/* roundness of the scroll thumb */
-	border: 2px solid var(--inside-bg-color);
-	/* creates padding around scroll thumb */
+    background-color: var(--outside-bg-color);
+    /* color of the scroll thumb */
+    border-radius: 12px;
+    /* roundness of the scroll thumb */
+    border: 2px solid var(--inside-bg-color);
+    /* creates padding around scroll thumb */
 }
 
 .box {
-	max-width: 50em;
-	margin: 2em;
-	border: 3px solid black;
-	padding: 1.5em;
-	background: var(--inside-bg-color);
-	overflow-wrap: break-word;
-	vertical-align: middle;
-	margin-top: 3em;
+    max-width: 50em;
+    margin: 2em;
+    border: 3px solid black;
+    padding: 1.5em;
+    background: var(--inside-bg-color);
+    overflow-wrap: break-word;
+    vertical-align: middle;
+    margin-top: 3em;
 }
 
 #footer {
-	padding-top: 1em;
+    padding-top: 1em;
 }
 
 #footer::before {
-	content: "---\00000a";/*\00000a = newline*/
-	white-space: pre;
+    content: "---\00000a"; /*\00000a = newline*/
+    white-space: pre;
 }
 
 /* b {
 	font-size: 115%;
 } */
 
-a:link, a:visited {
-	text-decoration: none;
-	box-shadow: inset 0 -0.14em 0 var(--outside-bg-color);
-	color: #000000;
-	transition-property: background-color;
-	transition-timing-function: ease-in-out;
-	transition-duration: 400ms;
+a:link,
+a:visited {
+    text-decoration: none;
+    box-shadow: inset 0 -0.14em 0 var(--outside-bg-color);
+    color: #000000;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 400ms;
 }
 
 a:hover {
-	background-color: var(--outside-bg-color);
-	color: var(--inside-bg-color);
-	box-shadow: none;
-	transition-duration: 400ms;
+    background-color: var(--outside-bg-color);
+    color: var(--inside-bg-color);
+    box-shadow: none;
+    transition-duration: 400ms;
 }
 
 a:hover::selection {
-	transition-duration: 400ms;
-	background-color: black;
-	color: var(--inside-bg-color);
-	box-shadow: none;
+    background-color: black;
+    color: var(--inside-bg-color);
+    box-shadow: none;
+    transition-duration: 400ms;
 }
 
 strong {
-	font-weight: 500;
+    font-weight: 500;
 }
 
 a.inverse-bg {
-	transition-duration: 400ms;
-	color: white;
-	filter: invert(100%);
+    transition-duration: 400ms;
+    color: white;
+    filter: invert(100%);
 }
 
 a.inverse-bg:hover::selection {
-	transition-duration: 400ms;
-	color: black !important;
-	background-color: white !important;
+    transition-duration: 400ms;
+    color: black !important;
+    background-color: white !important;
 }
 
 a.no-custom {
-	box-shadow: none;
+    box-shadow: none;
 }
 
 a.no-custom:hover {
-	background-color: transparent;
-	box-shadow: none;
+    background-color: transparent;
+    box-shadow: none;
 }
 
 img.album {
-	width: 32%;
+    width: 32%;
 }
 
-.hljs, code {
-	padding: 2px 4px;
-	font-size: 90%;
-	background-color: var(--code-bg-color) !important;
-	color: seashell;
-	border-radius: 4px;
+.hljs,
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    background-color: var(--code-bg-color) !important;
+    color: seashell;
+    border-radius: 4px;
 }
 
-.hljs::selection, code::selection, .hljs>span::selection {
-	color: #00fb10 !important;
-	background: black !important;
+.hljs::selection,
+code::selection,
+.hljs > span::selection {
+    color: #00fb10 !important;
+    background: black !important;
 }
 
 td.posts {
-	width: fit-content;
-	vertical-align: top;
+    width: fit-content;
+    vertical-align: top;
 }
 
 td.projects-image {
-	width: 35%;
-	vertical-align: top;
-	padding-right: 1em;
+    width: 35%;
+    vertical-align: top;
+    padding-right: 1em;
 }
 
 td.projects-text {
-	vertical-align: top;
+    vertical-align: top;
 }
 
 td.projects-image img {
-	width: 100%;
+    width: 100%;
 }
 
 div.nav {
-	font-size: 115%;
-	margin-bottom: 1em;
+    font-size: 115%;
+    margin-bottom: 1em;
 }
 
 /* div.nav::after {
@@ -166,26 +170,26 @@ div.nav {
 } */
 
 div:nth-of-type(2) {
-	/* this is bad! */
-	margin-top: 1em;
+    /* this is bad! */
+    margin-top: 1em;
 }
 
 span.tab {
-	margin-left: 40px;
+    margin-left: 40px;
 }
 
 span.tab p {
-	margin-top: 0;
-	margin-bottom: 3%;
+    margin-top: 0;
+    margin-bottom: 3%;
 }
 
 hr {
-	border-top: 1px dashed #171717
+    border-top: 1px dashed #171717;
 }
 
-blockquote>code {
-	font-size: 90% !important;
-	/*white-space: normal;*/
+blockquote > code {
+    font-size: 90% !important;
+    /*white-space: normal;*/
 }
 
 /*div>code {
@@ -194,144 +198,143 @@ blockquote>code {
 	white-space: pre;
 }*/
 
-blockquote>div>p {
-	margin-top: 1em;
-	margin-bottom: 0;
-	display: block;
+blockquote > div > p {
+    margin-top: 1em;
+    margin-bottom: 0;
+    display: block;
 }
 
 blockquote {
-	border-left: 10px solid var(--inside-bg-color);
-	filter: brightness(95%);
-	/*botched way to darken the color*/
-	margin: 1em 10px 1.5em;
-	padding: 0.5em 10px;
-	font-size: 90%;
+    border-left: 10px solid var(--inside-bg-color);
+    filter: brightness(95%);
+    /*botched way to darken the color*/
+    margin: 1em 10px 1.5em;
+    padding: 0.5em 10px;
+    font-size: 90%;
 }
 
 blockquote p {
-	display: inline;
+    display: inline;
 }
 
 img.dropdown {
-	height: 1.08em;
-	vertical-align: middle;
+    height: 1.08em;
+    vertical-align: middle;
 }
 
-table.about>tbody>tr>td:nth-of-type(1)::before {
-	content: "- ";
+table.about > tbody > tr > td:nth-of-type(1)::before {
+    content: "- ";
 }
 
-table.about>tbody>tr>td:nth-of-type(2)::before {
-	content: "    / ";
+table.about > tbody > tr > td:nth-of-type(2)::before {
+    content: "    / ";
 }
 
 table.about {
-	font-size: 20px;
+    font-size: 20px;
 }
 
-h1, h2, h3 {
-	font-weight: 700;
-	margin-top: 2em;
-	margin-bottom: .5em;
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
 }
 
 h1 {
-	font-size: 125%;
+    font-size: 125%;
 }
 h2 {
-	font-size: 115%;
+    font-size: 115%;
 }
 
 h3 {
-	font-size: 100%;
+    font-size: 100%;
 }
 
 h1::before {
-	content: "# ";
+    content: "# ";
 }
 
 h2::before {
-	content: "## ";
+    content: "## ";
 }
 
 h3::before {
-	content: "### ";
+    content: "### ";
 }
-
-
-
 
 /*https://github.com/ozh/github-colors*/
 
 code.tags-py {
-	color: #3caaff;
+    color: #3caaff;
 }
 
 /*original: #3572A5*/
 
 code.tags-javascript {
-	color: #f1e05a;
+    color: #f1e05a;
 }
 
 code.tags-html {
-	color: #e34c26;
+    color: #e34c26;
 }
 
 code.tags-css {
-	color: #563d7c;
+    color: #563d7c;
 }
 
 code.tags-php {
-	color: #5374de;
+    color: #5374de;
 }
 
 /*original: #4f5d95*/
 
 code.tags-java {
-	color: #b07219;
+    color: #b07219;
 }
 
 code.tags-cpp {
-	color: #f34b7d;
+    color: #f34b7d;
 }
 
 code.tags-shell {
-	color: #89e051;
+    color: #89e051;
 }
 
 code.tags-go {
-	color: #00ADD8;
+    color: #00add8;
 }
 
 code.tags-bf {
-	color: #2F2530;
+    color: #2f2530;
 }
 
 code.tags-matlab {
-	color: #e16737;
+    color: #e16737;
 }
 
 code.tags-ahk {
-	color: #6594b9;
+    color: #6594b9;
 }
 
 code.tags-gcode {
-	color: #D08CF2;
+    color: #d08cf2;
 }
 
 code.tags-latex {
-	color: #3D6117;
+    color: #3d6117;
 }
 
 code.tags-apache {
-	color: #d80044;
+    color: #d80044;
 }
 
 code.tags-sheet {
-	color: #00d800;
+    color: #00d800;
 }
 
 code.tags-misc {
-	color: #fb00ff;
+    color: #fb00ff;
 }

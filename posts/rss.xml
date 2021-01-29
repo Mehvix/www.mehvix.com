@@ -2,10 +2,17 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Mon, 21 Dec 2020 23:47:08 -0000</lastBuildDate>
+		<lastBuildDate>Fri, 29 Jan 2021 21:31:28 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
+		<item>
+			<author>Max Vogel</author>
+			<title>CalyxOS Install Guide</title>
+			<pubDate>Fri, 29 Jan 2021 06:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/calyx.html</link>
+			<guid>https://mehvix.com/posts/calyx.html</guid>
+		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Make Twitter Suckless</title>
