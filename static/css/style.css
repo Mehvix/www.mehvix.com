@@ -234,6 +234,10 @@ table.about {
     font-size: 20px;
 }
 
+ul li::marker {
+    content: "- ";
+}
+
 h1,
 h2,
 h3 {

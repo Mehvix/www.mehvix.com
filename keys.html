@@ -32,7 +32,7 @@
     </script>
 
     <meta charset="utf-8">
-    <title>Mehvix | PGP</title>
+    <title>Mehvix | Keys</title>
     <style>
         :root {
             --code-bg-color: #210124;
@@ -45,13 +45,61 @@
     <div class="box">
         <div class="nav">
             <a href="./index.html">~</a> /
-            <strong><a href="pgp.html" class="inverse-bg">PGP</a></strong>
+            <strong><a href="keys.html" class="inverse-bg">Keys</a></strong>
         </div>
-        <a href="./static/media/publickey.mehvix@protonmail.com.asc">Download from mehvix.com</a><br>
-        <a href="https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com">Download from Protonmail API</a><br>
-        <a href="#" onclick="copyText()">Copy</a>
-        <pre><code class="Makefile">curl -L https://mehvix.com/static/media/publickey.mehvix@protonmail.com.asc | gpg --import</code></pre>
-        <p>---</p>
+
+        <h1>Matrix</h1>
+        <ul>
+            <li style="font-weight: 500">Element Desktop (Windows)</li>
+            <ul style="margin-bottom: .5em;">
+                <li>
+                    <table>
+                        <tr>
+                            <td>Session ID:</td>
+                            <td><code>RQHVDPLNIL</code></td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <table>
+                        <tr>
+                            <td>Session key:</td>
+                            <td><code>eot8ABn0IVILojXdGFqbnBSTCnGSa+ud/u490xOo3y8</code></td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+            <li style="font-weight: 500;">Element Android</li>
+            <ul>
+                <li>
+                    <table>
+                        <tr>
+                            <td>Session ID:</td>
+                            <td><code>FEFMLLUFCI</code></td>
+                        </tr>
+                    </table>
+
+                </li>
+                <li>
+                    <table>
+                        <tr>
+                            <td>Session key:</td>
+                            <td><code>N4vu992cIgb7WJmc2MYlyGHrE+QddJV2ByxBElmZJRM</code></td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </ul>
+
+        <h1>ProtonMail PGP</h1>
+        <ul>
+            <li> <a href="./static/media/mehvix@protonmail.com.asc">Download from mehvix.com</a><br></li>
+            <li> <a href="https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com">Download from
+                    Protonmail API</a><br></li>
+            <li> <a href="#" onclick="copyText()">Copy (mehvix.com) to clipboard</a></li>
+        </ul>
+        <pre><code class="pgp">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
+        <pre><code class="pgp">curl -L https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com | gpg --import</code></pre>
         <pre><code id="pgp" class="diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: ProtonMail
 
