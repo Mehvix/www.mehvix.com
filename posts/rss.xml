@@ -2,17 +2,10 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Wed, 10 Feb 2021 03:12:37 -0000</lastBuildDate>
+		<lastBuildDate>Wed, 10 Feb 2021 05:28:23 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
-		<item>
-			<author>Max Vogel</author>
-			<title>WallStreetBets Aftermath</title>
-			<pubDate>Fri, 05 Feb 2021 06:00:00 -0000</pubDate>
-			<link>https://mehvix.com/posts/wsb-aftermath.html</link>
-			<guid>https://mehvix.com/posts/wsb-aftermath.html</guid>
-		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>CalyxOS Install Guide</title>
@@ -22,7 +15,7 @@
 		</item>
 		<item>
 			<author>Max Vogel</author>
-			<title>Make Twitter Suckless</title>
+			<title>Make Twitter Suck Less</title>
 			<pubDate>Mon, 07 Dec 2020 06:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/twitter.html</link>
 			<guid>https://mehvix.com/posts/twitter.html</guid>
