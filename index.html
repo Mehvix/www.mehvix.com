@@ -15,6 +15,26 @@
             --outside-bg-color: #920909;
         }
 
+        h3 {
+            margin-bottom: 0%;
+        }
+
+        code {
+            margin: auto .5ch;
+        }
+
+
+        table.about>tbody>tr>td:nth-of-type(1)::before {
+            content: "- ";
+        }
+
+        table.about>tbody>tr>td:nth-of-type(2)::before {
+            content: "    / ";
+        }
+
+        table.about {
+            font-size: 20px;
+        }
 
         /* For dropdown img */
         .visible {
@@ -23,11 +43,6 @@
 
         .hidden {
             display: none;
-        }
-
-
-        h3 {
-            margin-bottom: 0%;
         }
     </style>
 
@@ -59,7 +74,7 @@
             Hello! I’m Max Vogel and live in Middleton, WI. Here’s a <a
                 href="./static/media/IMG_20191020_011042.jpg">photo of me</a><img src="./static/media/expandoImage.svg"
                 class="dropdown" onclick="toggleImage()"><img id='toggleImage'
-                src="./static/media/IMG_20191020_011042.jpg" style="width: 100%; margin: 3% 0" class="hidden"> at
+                src="./static/media/IMG_20191020_011042.jpg" style="width: 100%; margin: 1% 0" class="hidden"> at
             UW-Madhacks 2019. I'm interested in studying engineering and passionate about privacy and security. In my
             free time I enjoy fencing, coding, CADing, <a
                 href="https://open.spotify.com/playlist/2uEoR9SXgtMSgjIjgohVnz?si=H0eRZQD_SW-AM0F1BCxEEQ">listening
@@ -74,13 +89,12 @@
                     <tbody>
                         <tr>
                             <td>Email</td>
-                            <td>mehvix <code>at</code> protonmail <code>dot</code> com (<a href="keys.html">Keys</a>)
+                            <td>mehvix<code>at</code>protonmail<code>dot</code>com<wbr> (<a href="keys.html">Keys</a>)
                             </td>
                         </tr>
                         <tr>
                             <td>Matrix</td>
-                            <td>@mehvix:matrix.org (<a
-                                    href="keys.html">Keys</a>)
+                            <td>@mehvix:matrix.org (<a href="keys.html">Keys</a>)
                             </td>
                         </tr>
                         <tr>
@@ -96,12 +110,12 @@
                             <td><a href="https://stackoverflow.com/users/7833617/">Mehvix</a></td>
                         </tr>
                         <tr>
-                            <td>Resumé</td>
-                            <td><a href="https://cloud.mehvix.com/s/9oXaWqbLR4amMmz">Link</a></td>
-                        </tr>
-                        <tr>
                             <td>LinkedIn</td>
                             <td><a href="https://www.linkedin.com/in/mehvix/">Max Vogel</a></td>
+                        </tr>
+                        <tr>
+                            <td>Resumé</td>
+                            <td><a href="https://cloud.mehvix.com/s/9oXaWqbLR4amMmz">Link</a></td>
                         </tr>
                     </tbody>
                 </table>

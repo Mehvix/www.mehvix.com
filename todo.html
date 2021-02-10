@@ -11,22 +11,24 @@
     <style>
         :root {
             --outside-bg-color: #306a4a;
-            --inside-bg-color: #cdd8df;
+            --inside-bg-color: #dbe2e5;
         }
 
-        article>p {
+        article > li {
             margin: 0;
+            margin-left: 2ch;
+            list-style: none;
         }
 
-        article>p::before {
-            content: "- ";
+        h1+li {
+            margin-top: .5em;
         }
 
         h1 {
             font-size: 105%;
             font-weight: 500;
-            margin-bottom: .1em;
-            margin-top: 1em;
+            margin-bottom: 0;
+            margin-top: .5em;
         }
     </style>
 </head>
@@ -37,73 +39,77 @@
             <a href="./index.html">~</a> /
             <strong><a href="todo.html" class="inverse-bg">#TODO</a></strong>
         </div>
-        <p>A backlog of future projects I haven't gotten around to yet.</p>
+        <li>A backlog of future projects I haven't gotten around to yet.</li>
         ---
-        </p>
+        </li>
 
         <article>
             <h1>Program to automatically download videos from YouTube as they're uploaded</h1>
-            <p>Prevents <a
+            <li>Prevents <a
                     href="https://old.reddit.com/r/Jon_Bois/comments/ab6930/does_anyone_happen_to_have_pretty_good_episode_4/">this</a>
                 from happening again.
-            <p>Possible with <a href="https://zapier.com">zapier</a> and <a
-                    href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a></p>
+            <li>Possible with <a href="https://zapier.com">zapier</a> and <a
+                    href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a></li>
 
             <h1>Visualize <a href="https://play.typeracer.com/">Typeracer</a> data</h1>
-            <p>I did something <a href="https://github.com/Mehvix/synapsBotRW/blob/master/typeracer.py">similar
+            <li>I did something <a href="https://github.com/Mehvix/synapsBotRW/blob/master/typeracer.py">similar
                     already</a>
-            <p>Should be possible to scrap <a
+            <li>Should be possible to scrap <a
                     href="https://data.typeracer.com/pit/race_history?user=mehvix&amp;n=9999&amp;startDate=">this
-                    webpage</a> and save it as a <code>.csv</code></p>
+                    webpage</a> and save it as a <code>.csv</code></li>
 
             <h1>Create a <a href="https://old.reddit.com/r/startpages">Startpage</a></h1>
 
             <h1>Script to disables the windows key when a game is launched</h1>
 
             <h1>Software to monitor desktop app usage</h1>
-            <p>Similar to <a href="https://www.getintention.com/"> Intention</a></p>
+            <li>Similar to <a href="https://www.getintention.com/"> Intention</a></li>
 
             <h1>Design / 3D print a custom mouse using G305 internals</h1>
-            <p><a href="https://www.reddit.com/r/MouseReview/">/r/MouseReview</a> has some good resources</p>
+            <li><a href="https://www.reddit.com/r/MouseReview/">/r/MouseReview</a> has some good resources</li>
 
             <h1>Remote car starter for the winter</h1>
 
             <h1>Custom drone with 3D print parts</h1>
 
             <h1>Successfully 3D print a key</h1>
-            <p><a href="https://youtu.be/7kJnGZlirpI">Interesting talk on 3D printing keys</a></p>
+            <li><a href="https://youtu.be/7kJnGZlirpI">Interesting talk on 3D printing keys</a></li>
 
             <h1>Hardware keylogger</h1>
 
             <h1>Crypto address replacer</h1>
-            <p>Replaces copied crypto address with a different address<br>
+            <li>Replaces copied crypto address with a different address<br>
 
             <h1>Soundcloud Downloader with Metadata Scraper</h1>
 
             <h1>Logs.tf scrapper + leaderboard</h1>
-            <p>Integrate with <a href="https://github.com/Mehvix/Equalizer">Equalizer?</a></p>
+            <li>Integrate with <a href="https://github.com/Mehvix/Equalizer">Equalizer?</a></li>
 
             <h1>"Jon Bois" style video about Richard Russel</h1>
-            <p><a href="https://en.wikipedia.org/wiki/2018_Horizon_Air_Q400_incident">Wikipedia Article</a></p>
-            <p><a href="https://www.youtube.com/playlist?list=PLUXSZMIiUfFSCYW1o-4whWtepyVlsfuCC">Jon Bois's Pretty Good
-                    Series</a></p>
+            <li><a href="https://en.wikipedia.org/wiki/2018_Horizon_Air_Q400_incident">Wikipedia Article</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLUXSZMIiUfFSCYW1o-4whWtepyVlsfuCC">Jon Bois's Pretty Good
+                    Series</a></li>
 
-            <h1>Righ to Repair cite</h1>
-            <p>Similas to net neutrality site concept</p>
+            <h1>Right to Repair cite</h1>
+            <li>Similars to net neutrality site concept</li>
 
             <h1>Typeracer bot</h1>
 
             <h1>Chess / Poker AI</h1>
 
+            <h1>Elon Musk Trading Bot</h1>
+            <li>Buys coins/stocks Elon Tweets about</li>
+            <li>Pretty sure I saw someone do this with Trump's Twitter</li>
+
+            <h1>Learn Vim</h1>
+
             <h1>Write about completed projects and other topics</h1>
-            <p>How and why to learn Colemak</p>
-            <p>How and why to learn morse code</p>
-            <p>Instagram login "lock" exploit</p>
-            <p>Why to care about privacy</p>
-            <p>Why to care about Right to Repair</p>
-            <p>How to protect your digital privacy</p>
-            <p>CalyxOS</p>
-            <p></p>
+            <li>How and why to learn Colemak</li>
+            <li>How and why to learn morse code</li>
+            <li>Instagram login "lock" exploit</li>
+            <li>Why to care about privacy</li>
+            <li>Why to care about Right to Repair</li>
+            <li>How to protect your digital privacy</li>
 
         </article>
 
