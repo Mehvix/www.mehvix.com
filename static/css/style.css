@@ -9,8 +9,14 @@
 * {
     letter-spacing: 0;
     line-height: 1.44;
-    scrollbar-width: auto;
-    /* "auto" or "thin" */
+    scrollbar-width: auto; /* "auto" or "thin" */
+
+    transition-duration: 400ms;
+}
+
+*::selection {
+    background-color: var(--outside-bg-color);
+    color: var(--inside-bg-color);
 }
 
 html {
@@ -71,14 +77,13 @@ body::-webkit-scrollbar-thumb {
 	font-size: 115%;
 } */
 
-a:link,
+a,
 a:visited {
     text-decoration: none;
     box-shadow: inset 0 -0.14em 0 var(--outside-bg-color);
     color: #000000;
     transition-property: background-color;
     transition-timing-function: ease-in-out;
-    transition-duration: 400ms;
 }
 
 a:hover {
@@ -88,11 +93,10 @@ a:hover {
     transition-duration: 400ms;
 }
 
-a:hover::selection {
-    background-color: black;
-    color: var(--inside-bg-color);
-    box-shadow: none;
-    transition-duration: 400ms;
+a:not(.inverse-bg)::selection {
+    background-color: var(
+        --inside-bg-color
+    ) !important; /* this is always black?? */
 }
 
 strong {
@@ -100,13 +104,11 @@ strong {
 }
 
 a.inverse-bg {
-    transition-duration: 400ms;
     color: white;
     filter: invert(100%);
 }
 
 a.inverse-bg:hover::selection {
-    transition-duration: 400ms;
     color: black !important;
     background-color: white !important;
 }

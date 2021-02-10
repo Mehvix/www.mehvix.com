@@ -8,4 +8,4 @@
 //     document.getElementById("footer").insertAdjacentHTML('afterbegin', footer.innerHTML)
 //     document.getElementById("copy").insertAdjacentHTML("afterbegin", " " + new Date().getFullYear() + " - Max Vogel")
 // } ()
-// /*todo work on this^*/
+// todo work on this^

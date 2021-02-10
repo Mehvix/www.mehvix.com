@@ -2,10 +2,17 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Fri, 29 Jan 2021 21:31:28 -0000</lastBuildDate>
+		<lastBuildDate>Wed, 10 Feb 2021 03:12:37 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
+		<item>
+			<author>Max Vogel</author>
+			<title>WallStreetBets Aftermath</title>
+			<pubDate>Fri, 05 Feb 2021 06:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/wsb-aftermath.html</link>
+			<guid>https://mehvix.com/posts/wsb-aftermath.html</guid>
+		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>CalyxOS Install Guide</title>
@@ -22,7 +29,7 @@
 		</item>
 		<item>
 			<author>Max Vogel</author>
-			<title>Nextcloud: Importing Calendars + Automation</title>
+			<title>NC Importing &amp; Automating Calendars</title>
 			<pubDate>Wed, 08 Apr 2020 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/nextcloud-calendar.html</link>
 			<guid>https://mehvix.com/posts/nextcloud-calendar.html</guid>
