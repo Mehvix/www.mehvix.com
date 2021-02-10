@@ -82,7 +82,6 @@ a:visited {
     color: #000000;
     transition-property: background-color;
     transition-timing-function: ease-in-out;
-    transition-duration: 400ms;
 }
 
 a:hover {
