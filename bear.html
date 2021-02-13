@@ -1,3 +1,5 @@
+<html>
+
 <script>
     function getRandomImage() {
         path = './static/media/bears/'; // default path here
@@ -20,6 +22,17 @@
 
 <script type="text/javascript">getRandomImage();</script>
 
-<audio autoplay loop>
-    <source src="./static/media/bears/catsonmars.mp3" type="audio/mpeg">
-</audio>
+<script>
+    window.onload = function () {
+        var context = new AudioContext();
+    }
+</script>
+
+
+<body>
+    <audio autoplay loop>
+        <source src="./static/media/bears/catsonmars.mp3">
+    </audio>
+</body>
+
+</html>
