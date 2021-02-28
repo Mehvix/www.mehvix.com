@@ -93,6 +93,7 @@ a:not(.inverse-bg)::selection {
     ) !important; /* this is always black?? */
 }
 
+div.nav a[href=""],
 strong {
     font-weight: 500;
 }
@@ -161,6 +162,19 @@ div.nav {
 	white-space: pre;
 } */
 
+div.nav a {
+    margin: 0 .25em;
+}
+
+div.nav > a:first-child {
+    margin-left: 0 !important;
+}
+
+/* doesn't work -- underline from <a> carries */
+/* div.nav a:not(:last-child)::after {
+    content: "/";
+} */
+
 div:nth-of-type(2) {
     /* this is bad! */
     margin-top: 1em;
@@ -222,8 +236,8 @@ h1,
 h2,
 h3 {
     font-weight: 700;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0.25em;
 }
 
 h1 {
