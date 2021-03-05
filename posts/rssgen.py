@@ -5,6 +5,7 @@ import datetime
 import time
 from email import utils
 
+# todo append <article> tag contents
 
 # idk why this is wack
 fin = open('posts/index.html').read()
