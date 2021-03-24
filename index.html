@@ -1,160 +1,225 @@
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <link type="text/css" rel="stylesheet" href="static/css/style.css" />
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="static/css/atom-one-dark-reasonable.css"
+        />
 
-<head>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
+        <script src="static/js/include.js"></script>
+        <meta charset="utf-8" />
+        <title>Mehvix | Home</title>
+        <style>
+            :root {
+                --outside-bg-color: #920909;
+            }
 
-    <link type="text/css" rel="stylesheet" href="static/css/style.css">
-    <link type="text/css" rel="stylesheet" href="static/css/atom-one-dark-reasonable.css">
+            h3 {
+                margin-bottom: 0%;
+            }
 
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="static/js/include.js"></script>
-    <meta charset="utf-8">
-    <title>Mehvix | Home</title>
-    <style>
-        :root {
-            --outside-bg-color: #920909;
-        }
+            code {
+                margin: auto 0.5ch;
+            }
 
-        h3 {
-            margin-bottom: 0%;
-        }
+            table.about > tbody > tr > td:nth-of-type(1)::before {
+                content: "- ";
+            }
 
-        code {
-            margin: auto .5ch;
-        }
+            table.about > tbody > tr > td:nth-of-type(2)::before {
+                content: "    / ";
+            }
 
+            table.about {
+                font-size: 20px;
+            }
 
-        table.about>tbody>tr>td:nth-of-type(1)::before {
-            content: "- ";
-        }
+            /* For dropdown img */
+            .visible {
+                display: block;
+            }
 
-        table.about>tbody>tr>td:nth-of-type(2)::before {
-            content: "    / ";
-        }
+            .hidden {
+                display: none;
+            }
+        </style>
 
-        table.about {
-            font-size: 20px;
-        }
+        <script>
+            function toggleImage() {
+                document
+                    .getElementById("toggleImage")
+                    .classList.toggle("hidden");
+            }
 
-        /* For dropdown img */
-        .visible {
-            display: block;
-        }
+            // window.onload = function () {
+            //     var today = new Date();  //initializes to current date
+            //     var bday = new Date();
+            //     bday.setFullYear(2002);
+            //     bday.setMonth(7 - 1);  //January is 0
+            //     bday.setDate(27);
+            //     bday.setHours(0);
+            //     bday.setMinutes(0);
+            //     var timeDiff = Math.abs(bday.getTime() - today.getTime());
+            //     document.getElementById("age").innerHTML = "" + Math.floor(timeDiff / ((1000 * 60 * 60 * 24 * 365)));  // ceil time in years ([milliseconds] * [seconds] * [min] * [hours] * [days])
+            // }
+        </script>
+    </head>
 
-        .hidden {
-            display: none;
-        }
-    </style>
-
-    <script>
-        function toggleImage() {
-            document.getElementById('toggleImage').classList.toggle('hidden');
-        }
-
-        // window.onload = function () {
-        //     var today = new Date();  //initializes to current date
-        //     var bday = new Date();
-        //     bday.setFullYear(2002);
-        //     bday.setMonth(7 - 1);  //January is 0
-        //     bday.setDate(27);
-        //     bday.setHours(0);
-        //     bday.setMinutes(0);
-        //     var timeDiff = Math.abs(bday.getTime() - today.getTime());
-        //     document.getElementById("age").innerHTML = "" + Math.floor(timeDiff / ((1000 * 60 * 60 * 24 * 365)));  // ceil time in years ([milliseconds] * [seconds] * [min] * [hours] * [days])
-        // }
-    </script>
-</head>
-
-<body>
-    <div class="box">
-        <div class="nav">
-            <a href="" class="inverse-bg">~</a>/
-        </div>
-        <div>
-            Hello! My name is Max Vogel, but I go by Mehvix online. Here’s a <a
-                href="./static/media/IMG_20191020_011042.jpg">photo of me</a><img src="./static/media/expandoImage.svg"
-                class="dropdown" onclick="toggleImage()"><img id='toggleImage'
-                src="./static/media/IMG_20191020_011042.jpg" style="width: 100%; margin: 1% 0" class="hidden"> at
-            UW-Madhacks 2019. I'm interested in studying engineering and passionate about privacy and security. In my
-            free time I enjoy fencing, coding, CADing, <a
-                href="https://open.spotify.com/playlist/2uEoR9SXgtMSgjIjgohVnz?si=H0eRZQD_SW-AM0F1BCxEEQ">listening
-                to music</a>, and working on <a href="https://www.team1306.com">1306</a> stuff.
-        </div>
-
-        <div>
-            <h1>Me</h1>
+    <body>
+        <div class="box">
+            <div class="nav"><a href="" class="inverse-bg">~</a>/</div>
+            <div>
+                Hello! My name is Max Vogel, but I go by Mehvix online. Here’s a
+                <a href="./static/media/IMG_20191020_011042.jpg">photo of me</a
+                ><img
+                    src="./static/media/expandoImage.svg"
+                    class="dropdown"
+                    onclick="toggleImage()"
+                /><img
+                    id="toggleImage"
+                    src="./static/media/IMG_20191020_011042.jpg"
+                    style="width: 100%; margin: 1% 0"
+                    class="hidden"
+                />
+                at UW-Madhacks 2019. I'm interested in studying engineering and
+                passionate about privacy and security. In my free time I enjoy
+                fencing, snowboarding, coding, CADing,
+                <a
+                    href="https://open.spotify.com/playlist/2uEoR9SXgtMSgjIjgohVnz?si=H0eRZQD_SW-AM0F1BCxEEQ"
+                    >listening to music</a
+                >, and working on
+                <a href="https://www.team1306.com">1306</a> stuff.
+            </div>
 
             <div>
+                <h1>Contact</h1>
+
+                <div>
+                    <table class="about">
+                        <tbody>
+                            <tr>
+                                <td>Email</td>
+                                <td>
+                                    mehvix<code>at</code>protonmail<code>dot</code>com
+                                    <wbr /> (<a href="keys.html">Keys</a>)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Signal</td>
+                                <td>[private — contact me]</td>
+                            </tr>
+                            <tr>
+                                <td>Matrix</td>
+                                <td>
+                                    @mehvix:matrix.org (<a href="keys.html"
+                                        >Keys</a
+                                    >)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Discord</td>
+                                <td>Mehvix#7966 (if possible, don't use)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div>
+                <h1>Me</h1>
+
+                <div>
+                    <table class="about">
+                        <tbody>
+                            <tr>
+                                <td>GitHub</td>
+                                <td>
+                                    <a href="https://github.com/mehvix"
+                                        >Mehvix</a
+                                    >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Stack Overflow</td>
+                                <td>
+                                    <a
+                                        href="https://stackoverflow.com/users/7833617/"
+                                        >Mehvix</a
+                                    >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LinkedIn</td>
+                                <td>
+                                    <a
+                                        href="https://www.linkedin.com/in/mehvix/"
+                                        >Max Vogel</a
+                                    >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Resumé</td>
+                                <td>
+                                    <a
+                                        href="https://cloud.mehvix.com/s/9oXaWqbLR4amMmz"
+                                        >Link</a
+                                    >
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div>
+                <h1>Pages</h1>
+
                 <table class="about">
                     <tbody>
                         <tr>
-                            <td>Email</td>
-                            <td>mehvix<code>at</code>protonmail<code>dot</code>com<wbr> (<a href="keys.html">Keys</a>)
+                            <td>
+                                <a href="posts">Blog</a> (<a
+                                    href="posts/rss.xml"
+                                    >RSS</a
+                                >)
+
+                                <!-- todo generate sublist of blog posts -->
                             </td>
                         </tr>
                         <tr>
-                            <td>Matrix</td>
-                            <td>@mehvix:matrix.org (<a href="keys.html">Keys</a>)
-                            </td>
+                            <td><a href="quotes.html">Quotes</a></td>
                         </tr>
                         <tr>
-                            <td>Discord</td>
-                            <td>Mehvix#7966</td>
+                            <td><a href="todo.html">Projects TODO</a></td>
                         </tr>
                         <tr>
-                            <td>GitHub</td>
-                            <td><a href="https://github.com/mehvix">Mehvix</a></td>
-                        </tr>
-                        <tr>
-                            <td>Stack Overflow</td>
-                            <td><a href="https://stackoverflow.com/users/7833617/">Mehvix</a></td>
-                        </tr>
-                        <tr>
-                            <td>LinkedIn</td>
-                            <td><a href="https://www.linkedin.com/in/mehvix/">Max Vogel</a></td>
-                        </tr>
-                        <tr>
-                            <td>Resumé</td>
-                            <td><a href="https://cloud.mehvix.com/s/9oXaWqbLR4amMmz">Link</a></td>
+                            <td><a href="serverservices.html">Server</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+            <div id="footer">
+                BTC /
+                <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1"
+                    >15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a
+                ><br />
+                ETH /
+                <a href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74"
+                    >0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a
+                ><br />
+
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                - Max Vogel
+            </div>
         </div>
-
-        <div>
-            <h1>Pages</h1>
-
-            <table class="about">
-                <tbody>
-                    <tr>
-                        <td><a href="posts">Blog</a> (<a href="posts/rss.xml">RSS</a>)</td>
-                    </tr>
-                    <tr>
-                        <td><a href="quotes.html">Quotes</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="todo.html">Projects TODO</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="serverservices.html">Server</a></td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-
-        <div id="footer">
-            BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
-            ETH / <a
-                href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74">0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a><br>
-
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
-            - Max Vogel
-        </div>
-    </div>
-</body>
-
+    </body>
 </html>
