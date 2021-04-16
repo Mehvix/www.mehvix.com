@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700;800&display=swap');
 :root {
     /*Defaults -- these should be overwritten*/
     --inside-bg-color: #e2e5e2;
@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    font-family: "Roboto Mono", monospace;
+    font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     font-size: 20px;
     max-width: 42em;
@@ -68,7 +68,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #footer::before {
-    content: "---\00000a"; /*\00000a = newline*/
+    content: '---\00000a'; /*\00000a = newline*/
     white-space: pre;
 }
 
@@ -94,7 +94,7 @@ a:not(.inverse-bg)::selection {
     ) !important; /* this is always black?? */
 }
 
-div.nav a[href=""],
+div.nav a[href=''],
 strong {
     font-weight: 500;
 }
@@ -164,7 +164,7 @@ div.nav {
 } */
 
 div.nav a {
-    margin: 0 .25em;
+    margin: 0 0.25em;
 }
 
 div.nav > a:first-child {
@@ -230,7 +230,7 @@ img.dropdown {
 }
 
 li::marker {
-    content: "- ";
+    content: '- ';
 }
 
 h1,
@@ -253,15 +253,15 @@ h3 {
 }
 
 h1::before {
-    content: "# ";
+    content: '# ';
 }
 
 h2::before {
-    content: "## ";
+    content: '## ';
 }
 
 h3::before {
-    content: "### ";
+    content: '### ';
 }
 
 /*modified from https://github.com/ozh/github-colors*/

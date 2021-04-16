@@ -1,99 +1,138 @@
 <html lang="en">
+    <head>
+        <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="../static/css/atom-one-dark-reasonable.css"
+        />
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad()
+        </script>
+        <script src="../static/js/include.js"></script>
 
-<head>
-    <link type="text/css" rel="stylesheet" href="../static/css/style.css">
-    <link type="text/css" rel="stylesheet" href="../static/css/atom-one-dark-reasonable.css">
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../static/js/include.js"></script>
+        <meta charset="utf-8" />
+        <title>Mehvix | NC Cal</title>
+        <style>
+            :root {
+                --outside-bg-color: #d06500;
+            }
+        </style>
+    </head>
 
-    <meta charset="utf-8">
-    <title>Mehvix | NC Cal</title>
-    <style>
-        :root {
-            --outside-bg-color: #d06500;
-        }
-    </style>
-</head>
+    <body>
+        <div class="box">
+            <div class="nav">
+                <a href="../index.html">~</a>/<a href="../posts/index.html"
+                    >Posts</a
+                >/<a href="" class="inverse-bg">NC Cal</a>
+            </div>
 
-<body>
-    <div class="box">
-        <div class="nav"><a href="../index.html">~</a>/<a href="../posts/index.html">Posts</a>/<a href="" class="inverse-bg">NC Cal</a>
+            <article id="content">
+                <p>
+                    Upgrading to Nextcloud 18 broke both importing public Google
+                    calendars and external calendars so that they don’t update
+                    automatically. Fortunately, both of these issues have
+                    workarounds<br />
+                </p>
+
+                ---
+
+                <h1>Importing Google Calendars</h1>
+
+                <p>
+                    Nextcloud needs a <code>.ics</code> or
+                    <code>.ical</code> file. To get a public Google calendar’s
+                    <code>.ics</code> location (as of 5/8/20), you need to get
+                    the <code>src</code>/<code>cid</code> of the Google
+                    calendar. All Google calendars have this in the external
+                    URL.
+                </p>
+
+                <p>
+                    For example, for embedded calendars (in this example the
+                    <a href="https://codeforces.com/calendar"
+                        >Codeforces calendar</a
+                    >) you can find the <code>cid</code> by clicking on the plus
+                    button in the bottom right corner which will open the
+                    following URL:
+                </p>
+
+                <pre><code class="ini">https://calendar.google.com/calendar/render?cid=k23j233gtcvau7a8ulk2p360m4%40group.calendar.google.com&amp;ctz=America/Chicago</code></pre>
+
+                <p>
+                    Alternatively, you can get also use inspect element which
+                    will yield the following URL containing the
+                    <code>src</code>:
+                </p>
+
+                <pre><code class="ini">https://calendar.google.com/calendar/embed?src=k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com&amp;ctz=America/Chicago&amp;hl=en&amp;wkst=1</code></pre>
+
+                <p>
+                    Then take everything <strong>after</strong>
+                    <code>src=</code>, <code>cid=</code>, or
+                    <code>/ical/</code> and up to the next <code>&</code> sign,
+                    oftentimes this will look something like
+                    <code>[id]@group.calendar.google.com</code>. Then, take this
+                    string and add it to the following:
+                </p>
+
+                <pre><code class="ini">https://calendar.google.com/calendar/ical/[add here!]/public/basic.ics</code></pre>
+
+                <p>
+                    For example, using the Codeforces calendar you'd grab
+                    <code
+                        >k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com</code
+                    >
+                    and add get the following:
+                </p>
+
+                <pre><code class="ini">https://calendar.google.com/calendar/ical/k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com/public/basic.ics</code></pre>
+
+                <p>
+                    You can then use this URL to as the external URL in the
+                    Nextcloud Calendar app.
+                </p>
+
+                <h1>Automatically Updating Calendars</h1>
+
+                <p>
+                    The default subscription refreshing interval is of one week
+                    (unless the subscription itself asks for a different rate).
+                </p>
+                <p>You may override it with something like:</p>
+
+                <code
+                    >sudo -u www-data php /var/www/html/occ config:app:set dav
+                    calendarSubscriptionRefreshRate --value "P1D"</code
+                >
+
+                <p>
+                    which would set the interval to 1 day. The
+                    <code>--value</code> data type is
+                    <a
+                        href="https://www.php.net/manual/en/dateinterval.construct.php"
+                        >DataInterval</a
+                    >.
+                </p>
+            </article>
+
+            <div id="footer">
+                BTC /
+                <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1"
+                    >15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a
+                ><br />
+                ETH /
+                <a href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74"
+                    >0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a
+                ><br />
+
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                - Max Vogel
+            </div>
         </div>
-
-        <article id="content">
-            <p>Upgrading to Nextcloud 18 broke both importing public Google calendars and external calendars so that
-                they
-                don’t update automatically. Fortunately, both of these issues have workarounds<br></p>
-
-            ---
-
-            <h1>Importing Google Calendars</h1>
-
-            <p>Nextcloud needs a <code>.ics</code> or <code>.ical</code> file. To get a public Google calendar’s
-                <code>.ics</code> location (as of 5/8/20), you need to get the <code>src</code>/<code>cid</code> of the
-                Google calendar. All Google calendars have this in the external URL.
-            </p>
-
-            <p>For example, for embedded calendars (in this example the <a
-                    href="https://codeforces.com/calendar">Codeforces
-                    calendar</a>) you can find the <code>cid</code> by clicking on the plus button in the bottom right
-                corner
-                which will open the following URL:</p>
-
-            <pre><code class="ini">https://calendar.google.com/calendar/render?cid=k23j233gtcvau7a8ulk2p360m4%40group.calendar.google.com&amp;ctz=America/Chicago</code></pre>
-
-            <p>Alternatively, you can get also use inspect element which will yield the following URL containing the
-                <code>src</code>:
-            </p>
-
-            <pre><code class="ini">https://calendar.google.com/calendar/embed?src=k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com&amp;ctz=America/Chicago&amp;hl=en&amp;wkst=1</code></pre>
-
-            <p>Then take everything <strong>after</strong> <code>src=</code>, <code>cid=</code>, or <code>/ical/</code>
-                and
-                up to the next <code>&</code> sign, oftentimes this will look something like
-                <code>[id]@group.calendar.google.com</code>.
-                Then, take this string and add it to the following:
-            </p>
-
-            <pre><code class="ini">https://calendar.google.com/calendar/ical/[add here!]/public/basic.ics</code></pre>
-
-            <p>For example, using the Codeforces calendar you'd grab
-                <code>k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com</code>
-                and add get the following:
-            </p>
-
-            <pre><code class="ini">https://calendar.google.com/calendar/ical/k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com/public/basic.ics</code></pre>
-
-            <p>You can then use this URL to as the external URL in the Nextcloud Calendar app.</p>
-
-
-            <h1>Automatically Updating Calendars</h1>
-
-            <p>The default subscription refreshing interval is of one week (unless the subscription itself asks for a
-                different rate).</p>
-            <p>You may override it with something like:</p>
-
-            <code>sudo -u www-data php /var/www/html/occ config:app:set dav calendarSubscriptionRefreshRate --value
-            "P1D"</code>
-
-            <p>which would set the interval to 1 day. The <code>--value</code> data type is <a
-                    href="https://www.php.net/manual/en/dateinterval.construct.php">DataInterval</a>.</p>
-
-        </article>
-
-        <div id="footer">
-            BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
-            ETH / <a
-                href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74">0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a><br>
-
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
-            - Max Vogel
-        </div>
-
-    </div>
-</body>
-
+    </body>
 </html>

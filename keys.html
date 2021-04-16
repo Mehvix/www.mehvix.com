@@ -1,105 +1,131 @@
 <html lang="en">
+    <head>
+        <link type="text/css" rel="stylesheet" href="static/css/style.css" />
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="static/css/atom-one-dark-reasonable.css"
+        />
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad()
+        </script>
+        <script src="static/js/include.js"></script>
+        <script>
+            function copyText() {
+                var textToCopy = document.getElementById('pgp')
 
-<head>
-    <link type="text/css" rel="stylesheet" href="static/css/style.css">
-    <link type="text/css" rel="stylesheet" href="static/css/atom-one-dark-reasonable.css">
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="static/js/include.js"></script>
-    <script>
-        function copyText() {
-            var textToCopy = document.getElementById("pgp");
+                var currentRange
+                if (document.getSelection().rangeCount > 0) {
+                    currentRange = document.getSelection().getRangeAt(0)
+                    window.getSelection().removeRange(currentRange)
+                } else {
+                    currentRange = false
+                }
 
-            var currentRange;
-            if (document.getSelection().rangeCount > 0) {
-                currentRange = document.getSelection().getRangeAt(0);
-                window.getSelection().removeRange(currentRange);
-            } else {
-                currentRange = false;
+                var CopyRange = document.createRange()
+                CopyRange.selectNode(textToCopy)
+                window.getSelection().addRange(CopyRange)
+                document.execCommand('copy')
+
+                window.getSelection().removeRange(CopyRange)
+
+                if (currentRange) {
+                    window.getSelection().addRange(currentRange)
+                }
             }
+        </script>
 
-            var CopyRange = document.createRange();
-            CopyRange.selectNode(textToCopy);
-            window.getSelection().addRange(CopyRange);
-            document.execCommand("copy");
-
-            window.getSelection().removeRange(CopyRange);
-
-            if (currentRange) {
-                window.getSelection().addRange(currentRange);
+        <meta charset="utf-8" />
+        <title>Mehvix | Keys</title>
+        <style>
+            :root {
+                --code-bg-color: #210124;
+                --outside-bg-color: var(--code-bg-color);
             }
-        }
-    </script>
+        </style>
+    </head>
 
-    <meta charset="utf-8">
-    <title>Mehvix | Keys</title>
-    <style>
-        :root {
-            --code-bg-color: #210124;
-            --outside-bg-color: var(--code-bg-color);
-        }
-    </style>
-</head>
+    <body>
+        <div class="box">
+            <div class="nav">
+                <a href="./index.html">~</a>/<a href="" class="inverse-bg"
+                    >Keys</a
+                >
+            </div>
 
-<body>
-    <div class="box">
-        <div class="nav">
-            <a href="./index.html">~</a>/<a href="" class="inverse-bg">Keys</a>
-        </div>
-
-        <h1>Matrix</h1>
-        <ul>
-            <li style="font-weight: 500">Element Desktop (Windows)</li>
-            <ul style="margin-bottom: .5em;">
-                <li>
-                    <table>
-                        <tr>
-                            <td>Session ID:</td>
-                            <td><code>RQHVDPLNIL</code></td>
-                        </tr>
-                    </table>
-                </li>
-                <li>
-                    <table>
-                        <tr>
-                            <td>Session key:</td>
-                            <td><code>eot8ABn0IVILojXdGFqbnBSTCnGSa+ud/u490xOo3y8</code></td>
-                        </tr>
-                    </table>
-                </li>
+            <h1>Matrix</h1>
+            <ul>
+                <li style="font-weight: 500">Element Desktop (Windows)</li>
+                <ul style="margin-bottom: 0.5em">
+                    <li>
+                        <table>
+                            <tr>
+                                <td>Session ID:</td>
+                                <td><code>RQHVDPLNIL</code></td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <tr>
+                                <td>Session key:</td>
+                                <td>
+                                    <code
+                                        >eot8ABn0IVILojXdGFqbnBSTCnGSa+ud/u490xOo3y8</code
+                                    >
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
+                <li style="font-weight: 500">Element Android</li>
+                <ul>
+                    <li>
+                        <table>
+                            <tr>
+                                <td>Session ID:</td>
+                                <td><code>NUOPAMGSIG</code></td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <tr>
+                                <td>Session key:</td>
+                                <td>
+                                    <code
+                                        >on33XcKux5jqV9sZf+CjFUXr31BZ3bsZzUW8SkDwuoQ</code
+                                    >
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
             </ul>
-            <li style="font-weight: 500;">Element Android</li>
+
+            <h1>ProtonMail PGP</h1>
             <ul>
                 <li>
-                    <table>
-                        <tr>
-                            <td>Session ID:</td>
-                            <td><code>NUOPAMGSIG</code></td>
-                        </tr>
-                    </table>
-
+                    <a href="./static/media/mehvix@protonmail.com.asc"
+                        >Download from mehvix.com</a
+                    ><br />
                 </li>
                 <li>
-                    <table>
-                        <tr>
-                            <td>Session key:</td>
-                            <td><code>on33XcKux5jqV9sZf+CjFUXr31BZ3bsZzUW8SkDwuoQ</code></td>
-                        </tr>
-                    </table>
+                    <a
+                        href="https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com"
+                        >Download from ProtonMail API</a
+                    ><br />
+                </li>
+                <li>
+                    <a href="#" onclick="copyText()"
+                        >Copy (mehvix.com) to clipboard</a
+                    >
                 </li>
             </ul>
-        </ul>
-
-        <h1>ProtonMail PGP</h1>
-        <ul>
-            <li> <a href="./static/media/mehvix@protonmail.com.asc">Download from mehvix.com</a><br></li>
-            <li> <a href="https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com">Download from
-                    ProtonMail API</a><br></li>
-            <li> <a href="#" onclick="copyText()">Copy (mehvix.com) to clipboard</a></li>
-        </ul>
-        <pre><code class="pgp">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
-        <pre><code class="pgp">curl -L https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com | gpg --import</code></pre>
-        <pre><code id="pgp" class="diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
+            <pre><code class="pgp">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
+            <pre><code class="pgp">curl -L https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com | gpg --import</code></pre>
+            <pre><code id="pgp" class="diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: ProtonMail
 
 xsBNBFwGCl4BCACpgPGL6hTyM+t9CloUGX8e2SLPAxtvLPlsrPoDS81cMEhQ
@@ -132,18 +158,21 @@ LKutr+KwFwaJLLcqxjciyMueRAnPoKrodbIZ+ALMR2GMhJD6y7RuDBm1ll7c
 =SbG5
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
 
+            <div id="footer">
+                BTC /
+                <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1"
+                    >15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a
+                ><br />
+                ETH /
+                <a href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74"
+                    >0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a
+                ><br />
 
-        <div id="footer">
-            BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
-            ETH / <a
-                href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74">0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a><br>
-
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
-            - Max Vogel
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                - Max Vogel
+            </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

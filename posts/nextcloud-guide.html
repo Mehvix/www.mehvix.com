@@ -1,287 +1,393 @@
 <html lang="en">
+    <head>
+        <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="../static/css/atom-one-dark-reasonable.css"
+        />
 
-<head>
-    <link type="text/css" rel="stylesheet" href="../static/css/style.css">
-    <link type="text/css" rel="stylesheet" href="../static/css/atom-one-dark-reasonable.css">
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad()
+        </script>
+        <script src="../static/js/include.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../static/js/include.js"></script>
+        <meta charset="utf-8" />
+        <title>Mehvix | NC Guide</title>
+        <style>
+            :root {
+                --outside-bg-color: #003354;
+            }
 
-    <meta charset="utf-8">
-    <title>Mehvix | NC Guide</title>
-    <style>
-        :root {
-            --outside-bg-color: #003354;
-        }
+            h2 {
+                font-size: 105%;
+                font-weight: 500;
+                margin-top: 0.75em;
+            }
 
-        h2 {
-            font-size: 105%;
-            font-weight: 500;
-            margin-top: .75em;
-        }
+            blockquote {
+                font-size: 90%;
+                margin-top: 0.5em;
+            }
 
-        blockquote {
-            font-size: 90%;
-            margin-top: .5em;
-        }
+            h4 {
+                margin: 0;
+                font-size: 115%;
+            }
 
-        h4 {
-            margin: 0;
-            font-size: 115%;
-        }
+            blockquote > p {
+                padding-top: 2em !important;
+            }
+        </style>
+    </head>
 
-        blockquote>p {
-            padding-top: 2em !important;
-        }
-    </style>
-</head>
+    <body>
+        <div class="box">
+            <div class="nav">
+                <a href="../index.html">~</a>/<a href="../posts/index.html"
+                    >Posts</a
+                >/<a href="" class="inverse-bg">NC Guide</a>
+            </div>
 
-<body>
-    <div class="box">
-        <div class="nav"><a href="../index.html">~</a>/<a href="../posts/index.html">Posts</a>/<a href=""
-                    class="inverse-bg">NC Guide</a>
-        </div>
+            <article>
+                <h1>Basic Installation Step</h1>
+                <h2 style="margin-top: 0">Getting the machine up-to-date</h2>
 
-        <article>
-            <h1>Basic Installation Step</h1>
-            <h2 style="margin-top: 0;">Getting the machine up-to-date</h2>
+                <blockquote>
+                    <p>
+                        <code>sudo apt autoremove</code> (removes unused apps)
+                        <br />
+                        <code>sudo apt update</code><br />
+                        <code>sudo apt upgrade</code><br />
+                    </p>
+                </blockquote>
 
-            <blockquote>
-                <p>
-                    <code>sudo apt autoremove</code> (removes unused apps) <br>
-                    <code>sudo apt update</code><br>
-                    <code>sudo apt upgrade</code><br>
-                </p>
-            </blockquote>
+                <h2>Installing Apache - the webserver</h2>
 
-            <h2>Installing Apache - the webserver</h2>
+                <blockquote>
+                    <p>
+                        <code>sudo apt install apache2</code><br />
+                        <code>systemctl start apache2</code><br />
+                        <code>systemctl enable apache2</code> (start apache2 on
+                        boot)
+                    </p>
+                    <br />
+                    <br />
+                    <p>
+                        If you’ve configured the server right, you should be
+                        able to go to your machine’s IP (you can get this via
+                        <code>hostname -I</code>) in the browser of your choice
+                        and see the
+                        <a href="../static/media/posts/apache2page.png"
+                            >“Apache2 Ubuntu Default Page”</a
+                        >
+                    </p>
+                </blockquote>
 
-            <blockquote>
-                <p>
-                    <code>sudo apt install apache2</code><br>
-                    <code>systemctl start apache2</code><br>
-                    <code>systemctl enable apache2</code> (start apache2 on boot)
-                </p>
-                <br>
-                <br>
-                <p>If you’ve configured the server right, you should be able to go to your machine’s IP (you can get
-                    this
-                    via <code>hostname -I</code>) in the browser of your choice and see the <a
-                        href="../static/media/apache2page.png">“Apache2 Ubuntu Default Page”</a></p>
-            </blockquote>
+                <h2>Installing MariaDB - the database</h2>
+                <blockquote>
+                    <p>
+                        <code>sudo apt install mariadb-server</code><br />
+                        <code>mysql_secure_installation</code>
+                    </p>
+                    <br /><br />
+                    <p>
+                        This will prompt you to login to MariaDB. Since we don’t
+                        have a password, just hit enter to set one up. After
+                        that, just accept all of the prompts and you’re set.
+                    </p>
+                </blockquote>
 
-            <h2>Installing MariaDB - the database</h2>
-            <blockquote>
-                <p><code>sudo apt install mariadb-server</code><br>
-                    <code>mysql_secure_installation</code>
-                </p>
-                <br><br>
-                <p>This will prompt you to login to MariaDB. Since we don’t have a password, just hit enter to set
-                    one up.
-                    After that, just accept all of the prompts and you’re set.</p>
-            </blockquote>
+                <h2>Installing phpMyAdmin</h2>
 
-            <h2>Installing phpMyAdmin</h2>
+                <blockquote>
+                    <p>
+                        <code
+                            >sudo apt install php libapache2-mod-php
+                            php-mysql</code
+                        ><br />
+                        <code>sudo apt install phpmyadmin</code><br />
+                    </p>
+                    <br />
+                    <p>
+                        You should follow all of the default steps, just make
+                        sure that you set the webserver as
+                        <code>apache2</code> and you’ll be good
+                    </p>
+                    <br /><br />
+                    <p>
+                        <code
+                            >sudo ln -s /etc/phpmyadmin/apache.conf
+                            /etc/apache2/conf-available/phpmyadmin.conf</code
+                        ><br />
+                        <code>a2enconf phpmyadmin</code><br />
+                        <code>service apache2 reload</code><br />
+                        <code>systemctl reload apache2</code><br />
+                    </p>
+                    <br />
+                    <p>
+                        Now, if you go to
+                        <code>192.168.something.whatever/phpmyadmin/</code>
+                        (your computer’s IP) you should see the phpMyAdmin login
+                        page;
+                        <strong>however, you should not login yet.</strong>
+                    </p>
+                </blockquote>
 
-            <blockquote>
-                <p><code>sudo apt install php libapache2-mod-php php-mysql</code><br>
-                    <code>sudo apt install phpmyadmin</code><br>
-                </p>
-                <br>
-                <p>You should follow all of the default steps, just make sure that you set the webserver as
-                    <code>apache2</code> and you’ll be good
-                </p>
-                <br><br>
-                <p><code>sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf</code><br>
-                    <code>a2enconf phpmyadmin</code><br>
-                    <code>service apache2 reload</code><br>
-                    <code>systemctl reload apache2</code><br>
-                </p>
-                <br>
-                <p>Now, if you go to <code>192.168.something.whatever/phpmyadmin/</code> (your computer’s IP) you
-                    should see
-                    the phpMyAdmin login page; <strong>however, you should not login yet.</strong></p>
-            </blockquote>
+                <h2>Configuring MariaDB</h2>
+                <blockquote>
+                    <p><code>mariadb</code><br /></p>
 
-            <h2>Configuring MariaDB</h2>
-            <blockquote>
-                <p><code>mariadb</code><br></p>
-
-                <pre><code class="mariadb">CREATE DATABASE nextcloud;
+                    <pre><code class="mariadb">CREATE DATABASE nextcloud;
 CREATE USER nextcloud IDENTIFIED BY 'Password'; # but with your password
 GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password'; # again, your password
 GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;
 FLUSH PRIVILEGES;
 quit;</code></pre>
 
-                <p>Now you should be able to login on the myphpadmin forum with the <code>nextcloud</code> as the
-                    username,
-                    and the password you just set up as the password.</p>
-            </blockquote>
+                    <p>
+                        Now you should be able to login on the myphpadmin forum
+                        with the <code>nextcloud</code> as the username, and the
+                        password you just set up as the password.
+                    </p>
+                </blockquote>
 
-            <h2>Installing PHP & Libraries</h2>
+                <h2>Installing PHP & Libraries</h2>
 
-            <blockquote>
-                <p><code>sudo apt install php-gd php-json php-mysql php-curl php-mbstring php-intl php-imagick php-xml php-zip</code><br>
+                <blockquote>
+                    <p>
+                        <code
+                            >sudo apt install php-gd php-json php-mysql php-curl
+                            php-mbstring php-intl php-imagick php-xml
+                            php-zip</code
+                        ><br />
+                    </p>
+                </blockquote>
+
+                <h2>Installing Nextcloud</h2>
+
+                <blockquote>
+                    <code
+                        >wget
+                        https://download.nextcloud.com/server/releases/latest.tar.bz2</code
+                    ><br />
+                    <code>tar -xvf latest.tar.bz2</code><br />
+                    <code>cd nextcloud</code><br />
+                    <code>mv ./* /var/www/html/</code><br />
+                    <code>mv ./.htaccess /var/www/html</code><br />
+                    <code>mv ./.user.ini /var/www/html</code><br />
+                    <code>cd /var/www/html</code><br />
+                    <code>chown -R www-data:www-data ./*</code><br />
+                    <code>chown www-data:www-data .htaccess</code><br />
+                    <code>chown www-data:www-data .user.ini</code><br />
+
+                    <p>
+                        Now if you go to
+                        <code>192.168.something.whatever</code> you’ll get the
+                        Nextcloud page
+                        <strong>BUT DO NOT LOGIN / CREATE ACCOUNT</strong>. You
+                        need to set up encryption.
+                    </p>
+                </blockquote>
+
+                <h2>Setting up Encryption</h2>
+
+                <blockquote>
+                    <p>
+                        <code>sudo apt install certbot</code><br />
+                        <code>sudo apt install python-certbot-apache</code
+                        ><br />
+                    </p>
+
+                    <p>
+                        <code
+                            >nano
+                            /etc/apache2/sites-available/000-default.conf</code
+                        >
+                        and uncomment and change <code>ServerName</code> to
+                        whatever domain you’re using, e.g.
+                        <code>cloud.mehvix.com</code>
+                    </p>
+                    <br /><br />
+                    <p>
+                        Then you need to point your domain at your server and
+                        open your server to the external access. You’ll first
+                        need to port forward your server (you can find the ip
+                        via <code>hostname -I</code>) to port <code>443</code>,
+                        and then create an A record under your domain’s DNS
+                        settings pointing at your external IP (found via
+                        <code
+                            >dig +short myip.opendns.com
+                            @resolver1.opendns.com</code
+                        >)
+                    </p>
+                    <br /><br />
+                    <p>
+                        <strong>NOTE:</strong> If you’re using Cloudflare, you
+                        have to disable Universal SSL for Nextcloud to work
+                    </p>
+                    <br /><br />
+                    <p>
+                        <code>systemctl restart apache2</code><br />
+                        <code>certbot --apache</code><br />
+                    </p>
+                    <p>
+                        This will prompt you to autoredirect from http to https.
+                        Your choice, but I'd go ahead and choose redirect.
+                    </p>
+                </blockquote>
+
+                <h2>Setting up Storage/Login</h2>
+                <blockquote>
+                    <p>
+                        For security reasons, it’s a good idea to have the data
+                        folder outside of the web root (<code>/var/www/</code>)
+                        I already set up my drives/raid config, so all I had to
+                        do was create and mount a partition:<br />
+                        <code>mkdir /media/nextcloud-data/</code><br />
+                        <code
+                            >chown www-data:www-data
+                            /media/nextcloud-data/</code
+                        ><br />
+                        <code>mkfs.ext4 /dev/sda</code><br />
+                        <code>mount /dev/sda /media/nextcloud-data/</code
+                        ><br /><br />
+                        Then to set up automount, <code>sudo blkid</code> and
+                        grab the UUID of the partition,
+                        <code>sudo nano /etc/fstab</code>
+                        and add<br />
+                    </p>
+
+                    <pre><code class="ini">UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0</code></pre>
+                </blockquote>
+
+                <p>
+                    After that, you can go ahead to the Nextcloud page, create
+                    an account (you will use this for all Nextcloud logins).
+                    Make sure to change the data folder to
+                    <code>/media/nextcloud-data/</code> or whatever dir you are
+                    using, then enter the MariaDB user/password.<br /><br />
                 </p>
-            </blockquote>
 
-            <h2>Installing Nextcloud</h2>
-
-            <blockquote>
-                <code>wget https://download.nextcloud.com/server/releases/latest.tar.bz2</code><br>
-                <code>tar -xvf latest.tar.bz2</code><br>
-                <code>cd nextcloud</code><br>
-                <code>mv ./* /var/www/html/</code><br>
-                <code>mv ./.htaccess /var/www/html</code><br>
-                <code>mv ./.user.ini /var/www/html</code><br>
-                <code>cd /var/www/html</code><br>
-                <code>chown -R www-data:www-data ./*</code><br>
-                <code>chown www-data:www-data .htaccess</code><br>
-                <code>chown www-data:www-data .user.ini</code><br></p>
-
-                <p>Now if you go to <code>192.168.something.whatever</code> you’ll get the Nextcloud page
-                    <strong>BUT DO NOT
-                        LOGIN / CREATE ACCOUNT</strong>. You need to set up encryption.
-                </p>
-            </blockquote>
-
-            <h2>Setting up Encryption</h2>
-
-            <blockquote>
-                <p><code>sudo apt install certbot</code><br>
-                    <code>sudo apt install python-certbot-apache</code><br>
+                <p>
+                    Now you’ve got yourself a Nextcloud Server! However, there
+                    are still a couple things that you still need to configure
+                    which I’ll cover in the following section.<br /><br />
                 </p>
 
-                <p><code>nano /etc/apache2/sites-available/000-default.conf</code> and uncomment and change
-                    <code>ServerName</code> to whatever domain you’re using, e.g. <code>cloud.mehvix.com</code>
+                <h1>Securing Nextcloud</h1>
+
+                <p>
+                    If you head to
+                    <code
+                        >https://yournextcloud.com/settings/admin/overview</code
+                    >
+                    you’ll see all security and setup warnings. Here’s how you
+                    fix the ones that I encountered:
                 </p>
-                <br><br>
-                <p>Then you need to point your domain at your server and open your server to the external access.
-                    You’ll
-                    first need to port forward your server (you can find the ip via <code>hostname -I</code>) to
-                    port <code>443</code>,
-                    and then create an A record under your domain’s DNS settings pointing at your external IP (found
-                    via
-                    <code>dig +short myip.opendns.com @resolver1.opendns.com</code>)
-                </p>
-                <br><br>
-                <p><strong>NOTE:</strong> If you’re using Cloudflare, you have to disable Universal SSL for
-                    Nextcloud to
-                    work</p>
-                <br><br>
-                <p><code>systemctl restart apache2</code><br>
-                    <code>certbot --apache</code><br>
-                </p>
-                <p>This will prompt you to autoredirect from http to https. Your choice, but I'd go ahead and choose
-                    redirect.</p>
-            </blockquote>
 
-            <h2>Setting up Storage/Login</h2>
-            <blockquote>
-                <p>For security reasons, it’s a good idea to have the data folder outside of the web root
-                    (<code>/var/www/</code>)
-                    I already set up my drives/raid config, so all I had to do was create and mount a partition:<br>
-                    <code>mkdir /media/nextcloud-data/</code><br>
-                    <code>chown www-data:www-data /media/nextcloud-data/</code><br>
-                    <code>mkfs.ext4 /dev/sda</code><br>
-                    <code>mount /dev/sda /media/nextcloud-data/</code><br><br>
-                    Then to set up automount, <code>sudo blkid</code> and grab the UUID of the partition,
-                    <code>sudo nano /etc/fstab</code>
-                    and add<br>
+                <h2>
+                    The PHP memory limit is below the recommended value of
+                    512MB.
+                </h2>
 
-                <pre><code class="ini">UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0</code></pre>
-                </p>
-            </blockquote>
+                <blockquote>
+                    <p><code>nano /etc/php/7.4/apache2/php.ini</code><br /></p>
 
-            <p>After that, you can go ahead to the Nextcloud page, create an account (you will use this for all
-                Nextcloud
-                logins). Make sure to change the data folder to <code>/media/nextcloud-data/</code>
-                or whatever dir you are using, then enter the MariaDB user/password.<br><br></p>
-
-            <p>Now you’ve got yourself a Nextcloud Server! However, there are still a couple things that you still
-                need to
-                configure which I’ll cover in the following section.<br><br></p>
-
-
-            <h1>Securing Nextcloud</h1>
-
-            <p>If you head to <code>https://yournextcloud.com/settings/admin/overview</code> you’ll see all security
-                and
-                setup warnings. Here’s how you fix the ones that I encountered:</p>
-
-            <h2>The PHP memory limit is below the recommended value of 512MB.</h2>
-
-            <blockquote>
-                <p><code>nano /etc/php/7.4/apache2/php.ini</code><br></p>
-
-                <pre><code class="ini">upload_max_filesize = 512M
+                    <pre><code class="ini">upload_max_filesize = 512M
 memory_limit = 512M
 post_max_size = 512M</code></pre>
 
-                <p><code>systemctl restart apache2</code></p>
-            </blockquote>
+                    <p><code>systemctl restart apache2</code></p>
+                </blockquote>
 
-            <h2>The “Strict-Transport-Security” HTTP header is not set to at least “15552000” seconds. For enhanced
-                security, it is recommended to enable HSTS as described in the security tips.</h2>
+                <h2>
+                    The “Strict-Transport-Security” HTTP header is not set to at
+                    least “15552000” seconds. For enhanced security, it is
+                    recommended to enable HSTS as described in the security
+                    tips.
+                </h2>
 
-            <blockquote>
-                <p><code>nano /etc/apache2/sites-available/000-default-le-ssl.conf</code><br></p>
+                <blockquote>
+                    <p>
+                        <code
+                            >nano
+                            /etc/apache2/sites-available/000-default-le-ssl.conf</code
+                        ><br />
+                    </p>
 
-                <p>Add the following under <code>ServerName</code>:</p>
+                    <p>Add the following under <code>ServerName</code>:</p>
 
-                <pre><code class="apache">&lt;IfModule mod_headers.c&gt;
+                    <pre><code class="apache">&lt;IfModule mod_headers.c&gt;
     Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
 &lt;/IfModule&gt;</code></pre>
 
-                <p><code>a2enmod headers</code><br>
-                    <code>systemctl restart apache2</code>
-                </p>
-            </blockquote>
+                    <p>
+                        <code>a2enmod headers</code><br />
+                        <code>systemctl restart apache2</code>
+                    </p>
+                </blockquote>
 
-            <h2>Your web server is not properly set up to resolve “/.well-known/[caldav][carddav]“. Further
-                information can
-                be found in the documentation</h2>
+                <h2>
+                    Your web server is not properly set up to resolve
+                    “/.well-known/[caldav][carddav]“. Further information can be
+                    found in the documentation
+                </h2>
 
-            <blockquote>
-                <p><code>nano /etc/apache2/sites-available/000-default-le-ssl.conf</code><br></p>
+                <blockquote>
+                    <p>
+                        <code
+                            >nano
+                            /etc/apache2/sites-available/000-default-le-ssl.conf</code
+                        ><br />
+                    </p>
 
-                <p>Add the following under <code>ServerName</code>:</p>
+                    <p>Add the following under <code>ServerName</code>:</p>
 
-                <pre><code>&lt;Directory /var/www/html/>
+                    <pre><code>&lt;Directory /var/www/html/>
 	Options +FollowSymLinks
 	AllowOverride All
 &lt;/Directory></code></pre>
 
-                <p><code>systemctl restart apache2</code></p>
-            </blockquote>
+                    <p><code>systemctl restart apache2</code></p>
+                </blockquote>
 
-            <h2>No memory cache has been configured. To enhance performance, please configure a memcache, if
-                available.
-                Further information can be found in the documentation</h2>
+                <h2>
+                    No memory cache has been configured. To enhance performance,
+                    please configure a memcache, if available. Further
+                    information can be found in the documentation
+                </h2>
 
-            <blockquote>
-                <code>sudo apt install php-apcu</code><br>
-                <code>nano /var/www/html/config/config.php</code><br>
+                <blockquote>
+                    <code>sudo apt install php-apcu</code><br />
+                    <code>nano /var/www/html/config/config.php</code><br />
 
-                <pre><code style="margin: 0;">'memcache.local' => '\OC\Memcache\APCu'</code></pre><br>
+                    <pre><code style="margin: 0;">'memcache.local' => '\OC\Memcache\APCu'</code></pre>
+                    <br />
 
-                <code>sudo nano /etc/php/7./mods-available/apcu.ini</code>
-                <pre><code>apc.enable_cli=1</code></pre> <br>
+                    <code>sudo nano /etc/php/7./mods-available/apcu.ini</code>
+                    <pre><code>apc.enable_cli=1</code></pre>
+                    <br />
 
-                <code style="margin: 0;">systemctl restart apache2</code>
-            </blockquote>
+                    <code style="margin: 0">systemctl restart apache2</code>
+                </blockquote>
 
-            <h2>The PHP OPcache is not properly configured</h2>
+                <h2>The PHP OPcache is not properly configured</h2>
 
-            <blockquote>
-                <p><code>nano /etc/php/7.4/apache2/php.ini</code><br>
-                    The following are default settings, consider checking out <a
-                        href="https://www.scalingphpbook.com/blog/2014/02/14/best-zend-opcache-settings.html">this
-                        blog</a> for information on what each parameter means<br></p>
+                <blockquote>
+                    <p>
+                        <code>nano /etc/php/7.4/apache2/php.ini</code><br />
+                        The following are default settings, consider checking
+                        out
+                        <a
+                            href="https://www.scalingphpbook.com/blog/2014/02/14/best-zend-opcache-settings.html"
+                            >this blog</a
+                        >
+                        for information on what each parameter means<br />
+                    </p>
 
-                <pre><code class="apache">opcache.enable=1
+                    <pre><code class="apache">opcache.enable=1
 opcache.enable_cli=1
 opcache.memory_consumption=128
 opcache.interned_strings_buffer=8
@@ -289,279 +395,383 @@ opcache.max_accelerated_files=10000
 opcache.revalidate_freq=1
 opcache.save_comments=1</code></pre>
 
-                <p><code>systemctl restart apache2</code></p>
-            </blockquote>
+                    <p><code>systemctl restart apache2</code></p>
+                </blockquote>
 
-            <h2>Some columns in the database are missing a conversion to big int</h2>
+                <h2>
+                    Some columns in the database are missing a conversion to big
+                    int
+                </h2>
 
-            <blockquote>
-                <p><code>sudo -u www-data php /var/www/html/occ db:convert-filecache-bigint</code></p>
-            </blockquote>
+                <blockquote>
+                    <p>
+                        <code
+                            >sudo -u www-data php /var/www/html/occ
+                            db:convert-filecache-bigint</code
+                        >
+                    </p>
+                </blockquote>
 
-            <h2>The database is missing some indexes</h2>
+                <h2>The database is missing some indexes</h2>
 
-            <blockquote>
-                <p><code>sudo -u www-data php /var/www/html/occ db:add-missing-indices</code></p>
-            </blockquote>
+                <blockquote>
+                    <p>
+                        <code
+                            >sudo -u www-data php /var/www/html/occ
+                            db:add-missing-indices</code
+                        >
+                    </p>
+                </blockquote>
 
-            <h2>MySQL is used as database but does not support 4-byte characters</h2>
+                <h2>
+                    MySQL is used as database but does not support 4-byte
+                    characters
+                </h2>
 
-            <blockquote>
-                <p>First, update MariaDB:<br>
-                    <code>nano /etc/mysql/my.cnf</code>
-                </p>
+                <blockquote>
+                    <p>
+                        First, update MariaDB:<br />
+                        <code>nano /etc/mysql/my.cnf</code>
+                    </p>
 
-                <pre><code>[mysqld]
+                    <pre><code>[mysqld]
 innodb_file_per_table=1</code></pre>
 
-                <p><code>systemctl restart mariadb</code><br>
-                    <code>mariadb</code><br>
-                </p>
+                    <p>
+                        <code>systemctl restart mariadb</code><br />
+                        <code>mariadb</code><br />
+                    </p>
 
-                <pre><code class="mariadb">ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+                    <pre><code class="mariadb">ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 use nextcloud;
 set global innodb_large_prefix=on;
 set global innodb_file_format=Barracuda;
 quit;</code></pre>
 
-                <p>Then, update Nextcloud:<br>
-                    <code>sudo -u www-data php /var/www/html/occ config:system:set mysql.utf8mb4 --type boolean
-                    --value="true"</code><br>
-                    <code>sudo -u www-data php /var/www/html/occ maintenance:repair</code><br>
-                </p>
-            </blockquote>
+                    <p>
+                        Then, update Nextcloud:<br />
+                        <code
+                            >sudo -u www-data php /var/www/html/occ
+                            config:system:set mysql.utf8mb4 --type boolean
+                            --value="true"</code
+                        ><br />
+                        <code
+                            >sudo -u www-data php /var/www/html/occ
+                            maintenance:repair</code
+                        ><br />
+                    </p>
+                </blockquote>
 
+                <h1>Further Securing & Optimization</h1>
 
-            <h1>Further Securing & Optimization</h1>
-
-            <p>There are various other actions you can take to ensure that both your os and nextcloud are secure.
-                I’ll be
-                covering the one’s found on <a
-                    href="https://docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html">this
-                    wiki page</a>.</p>
-
-            <h2>Give PHP read access to <code>/dev/urandom</code></h2>
-
-            <blockquote>
-                <p>On my system this ended up breaking Nextcloud, but I’ll keep it in here because it’s in the
-                    Nextcloud
-                    docs. If you’re site breaks, you should try commenting out <code>open_basedir</code><br>
-                    <code>sudo nano /etc/php/7.4/apache2/php.ini</code><br>
-                    Add <code>open_basedir = /dev/urandom</code><br>
-                    <code>systemctl restart apache2</code><br>
-                </p>
-            </blockquote>
-
-
-            <h2>Install and Tune PHP-FPM</h2>
-
-            <blockquote>
-                <p><code>sudo apt-get install php-fpm</code><br>
-                    <code>a2enmod proxy_fcgi setenvif</code><br>
-                    <code>a2enconf php7.4-fpm</code><br>
-                    <code>systemctl reload apache2</code><br>
-                    <code>nano /etc/php/7.4/fpm/pool.d/www.conf</code> and add the following:<br>
+                <p>
+                    There are various other actions you can take to ensure that
+                    both your os and nextcloud are secure. I’ll be covering the
+                    one’s found on
+                    <a
+                        href="https://docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html"
+                        >this wiki page</a
+                    >.
                 </p>
 
-                <pre><code>pm = dynamic
+                <h2>Give PHP read access to <code>/dev/urandom</code></h2>
+
+                <blockquote>
+                    <p>
+                        On my system this ended up breaking Nextcloud, but I’ll
+                        keep it in here because it’s in the Nextcloud docs. If
+                        you’re site breaks, you should try commenting out
+                        <code>open_basedir</code><br />
+                        <code>sudo nano /etc/php/7.4/apache2/php.ini</code
+                        ><br />
+                        Add <code>open_basedir = /dev/urandom</code><br />
+                        <code>systemctl restart apache2</code><br />
+                    </p>
+                </blockquote>
+
+                <h2>Install and Tune PHP-FPM</h2>
+
+                <blockquote>
+                    <p>
+                        <code>sudo apt-get install php-fpm</code><br />
+                        <code>a2enmod proxy_fcgi setenvif</code><br />
+                        <code>a2enconf php7.4-fpm</code><br />
+                        <code>systemctl reload apache2</code><br />
+                        <code>nano /etc/php/7.4/fpm/pool.d/www.conf</code> and
+                        add the following:<br />
+                    </p>
+
+                    <pre><code>pm = dynamic
 pm.max_children = 120
 pm.start_servers = 12
 pm.min_spare_servers = 6
 pm.max_spare_servers = 18
 pm.max_requests = 1000</code></pre>
 
-                <p><br>
-                    Note that these are the recommended settings for 4GB total/1GB database and should be modified
-                    for your system.</p>
-            </blockquote>
+                    <p>
+                        <br />
+                        Note that these are the recommended settings for 4GB
+                        total/1GB database and should be modified for your
+                        system.
+                    </p>
+                </blockquote>
 
+                <h1>Quality of Life Changes + Apps</h1>
 
-            <h1>Quality of Life Changes + Apps</h1>
-
-            <p>While theses tips aren’t needed for security, they’re nice to have.</p>
-
-            <h2>Removing <code>/index.php</code> from every URL</h2>
-
-            <blockquote>
-                <p><code>nano /var/www/html/config/config.php</code></p>
-
-                <pre><code>'htaccess.RewriteBase' => '/'</code></pre>
-
-                <p><code>sudo -u www-data php /var/www/html/occ maintenance:update:htaccess</code><br>
-                    <code>systemctl restart apache2</code><br>
+                <p>
+                    While theses tips aren’t needed for security, they’re nice
+                    to have.
                 </p>
-            </blockquote>
 
-            <h2>Increasing the max file size</h2>
+                <h2>Removing <code>/index.php</code> from every URL</h2>
 
-            <blockquote>
-                <p><code>nano /etc/php/7.4/apache2/php.ini</code><br></p>
+                <blockquote>
+                    <p><code>nano /var/www/html/config/config.php</code></p>
 
-                <pre><code>upload_max_filesize = 16G
+                    <pre><code>'htaccess.RewriteBase' => '/'</code></pre>
+
+                    <p>
+                        <code
+                            >sudo -u www-data php /var/www/html/occ
+                            maintenance:update:htaccess</code
+                        ><br />
+                        <code>systemctl restart apache2</code><br />
+                    </p>
+                </blockquote>
+
+                <h2>Increasing the max file size</h2>
+
+                <blockquote>
+                    <p><code>nano /etc/php/7.4/apache2/php.ini</code><br /></p>
+
+                    <pre><code>upload_max_filesize = 16G
 post_max_size = 16G
 max_input_time = 3600
 max_execution_time = 3600
 upload_tmp_dir = /var/big_temp_files/</code></pre>
 
-                <p><code>nano /var/www/html/.user.ini</code><br></p>
+                    <p><code>nano /var/www/html/.user.ini</code><br /></p>
 
-                <pre><code>upload_max_filesize = 16G
+                    <pre><code>upload_max_filesize = 16G
 post_max_size = 16G</code></pre>
 
-                <p><code>chown www-data:www-data /media/big_temp_files/</code></p>
-            </blockquote>
+                    <p>
+                        <code
+                            >chown www-data:www-data
+                            /media/big_temp_files/</code
+                        >
+                    </p>
+                </blockquote>
 
+                <h2>
+                    Solving “Index column size too large. The maximum column
+                    size is 767 bytes.”
+                </h2>
 
-            </blockquote>
+                <blockquote>
+                    <p><code>mariadb</code><br /></p>
 
-            <h2>Solving “Index column size too large. The maximum column size is 767 bytes.”</h2>
-
-            <blockquote>
-                <p><code>mariadb</code><br></p>
-
-                <pre><code>set global innodb_file_format = BARRACUDA
+                    <pre><code>set global innodb_file_format = BARRACUDA
 set global innodb_large_prefix = ON
 set global innodb_file_per_table = ON
 set global innodb_default_row_format = 'DYNAMIC'
 quit</code></pre>
 
-                <p><code>nano /etc/mysql/my.cnf</code><br></p>
+                    <p><code>nano /etc/mysql/my.cnf</code><br /></p>
 
-                <pre><code>innodb_file_per_table=1
+                    <pre><code>innodb_file_per_table=1
 innodb-file-format=barracuda
 innodb-file-per-table=ON
 innodb-large-prefix=ON
 innodb_default_row_format = 'DYNAMIC'</code></pre>
 
-                <p><code>systemctl restart mariadb</code></p>
-            </blockquote>
+                    <p><code>systemctl restart mariadb</code></p>
+                </blockquote>
 
-            <h2>Fixing right click not working (How to manually install an addon)</h2>
+                <h2>
+                    Fixing right click not working (How to manually install an
+                    addon)
+                </h2>
 
-            <blockquote>
-                <a href="https://github.com/nextcloud/files_rightclick/issues/83#issuecomment-525592831">This is fixed,
-                    but I figured I'd keep it in anyways</a><br><br>
-                <code>cd /var/www/html/apps/</code><br>
-                <code>wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&amp;confirm=$(wget
-                    --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate
-                    'https://docs.google.com/uc?export=download&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j' -O- | sed -rn
-                    's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j" -O rclick &amp;&amp;
-                    rm -rf /tmp/cookies.txt</code><br>
-                <code>rm -rf files_rightclick/</code><br>
-                <code>unzip rclick</code><br>
-                <code>rm rclick</code><br>
-                <code>systemctl restart apache2</code><br><br>
-                Then make sure that you re-enable the right click app too. If that doesn’t work, try
-                <code>sudo apt-get install php-ldap</code><br><br>
-                <code>systemctl restart apache2</code>
-            </blockquote>
+                <blockquote>
+                    <a
+                        href="https://github.com/nextcloud/files_rightclick/issues/83#issuecomment-525592831"
+                        >This is fixed, but I figured I'd keep it in anyways</a
+                    ><br /><br />
+                    <code>cd /var/www/html/apps/</code><br />
+                    <code
+                        >wget --load-cookies /tmp/cookies.txt
+                        "https://docs.google.com/uc?export=download&amp;confirm=$(wget
+                        --quiet --save-cookies /tmp/cookies.txt
+                        --keep-session-cookies --no-check-certificate
+                        'https://docs.google.com/uc?export=download&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j'
+                        -O- | sed -rn
+                        's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j"
+                        -O rclick &amp;&amp; rm -rf /tmp/cookies.txt</code
+                    ><br />
+                    <code>rm -rf files_rightclick/</code><br />
+                    <code>unzip rclick</code><br />
+                    <code>rm rclick</code><br />
+                    <code>systemctl restart apache2</code><br /><br />
+                    Then make sure that you re-enable the right click app too.
+                    If that doesn’t work, try
+                    <code>sudo apt-get install php-ldap</code><br /><br />
+                    <code>systemctl restart apache2</code>
+                </blockquote>
 
-            <h2>Set timezone</h2>
+                <h2>Set timezone</h2>
 
-            <blockquote>
-                <p><code>nano /var/www/html/config/config.php</code><br>
-                    Find your timezone in the ones avaliabe <a
-                        href="https://www.php.net/manual/en/timezones.php">here</a><br></p>
+                <blockquote>
+                    <p>
+                        <code>nano /var/www/html/config/config.php</code><br />
+                        Find your timezone in the ones avaliabe
+                        <a href="https://www.php.net/manual/en/timezones.php"
+                            >here</a
+                        ><br />
+                    </p>
 
-                <pre><code>'logtimezone' => 'America/Chicago',</code></pre>
+                    <pre><code>'logtimezone' => 'America/Chicago',</code></pre>
 
-                <p><code>nano /etc/php/7.4/apache2/php.ini</code><br></p>
+                    <p><code>nano /etc/php/7.4/apache2/php.ini</code><br /></p>
 
-                <pre style="margin-bottom: 0"><code>date.timezone = America/Chicago,</code></pre>
-            </blockquote>
+                    <pre
+                        style="margin-bottom: 0"
+                    ><code>date.timezone = America/Chicago,</code></pre>
+                </blockquote>
 
-            <h2>Change default files for new users</h2>
+                <h2>Change default files for new users</h2>
 
-            <blockquote>
-                <p>All files that are created for a user can be found in <code>/var/www/html/core/skeleton/</code>
-                </p>
-            </blockquote>
+                <blockquote>
+                    <p>
+                        All files that are created for a user can be found in
+                        <code>/var/www/html/core/skeleton/</code>
+                    </p>
+                </blockquote>
 
+                <h1>Common Issues & Fixes</h1>
 
-            <h1>Common Issues & Fixes</h1>
+                <h2>Transering [file] - server replied: [nothing]</h2>
 
-            <h2>Transering [file] - server replied: [nothing]</h2>
+                <blockquote>
+                    <p>
+                        <code
+                            >sudo -u www-data php /var/www/html/occ files:scan
+                            --all</code
+                        ><br />
+                    </p>
+                </blockquote>
 
-            <blockquote>
-                <p><code>sudo -u www-data php /var/www/html/occ files:scan --all</code><br></p>
-            </blockquote>
+                <h2>Files aren’t showing up for [user]</h2>
 
-            <h2>Files aren’t showing up for [user]</h2>
+                <blockquote>
+                    <p>
+                        <code
+                            >sudo chown -R www-data:www-data [data mount
+                            location]/[user]</code
+                        ><br />
+                        <code
+                            >sudo -u www-data php /var/www/html/occ files:scan
+                            --[user]</code
+                        ><br />
+                    </p>
+                </blockquote>
 
-            <blockquote>
-                <p><code>sudo chown -R www-data:www-data [data mount location]/[user]</code><br>
-                    <code>sudo -u www-data php /var/www/html/occ files:scan --[user]</code><br>
-                </p>
-            </blockquote>
+                <h2>
+                    Transfeing [file] - server replied: Forbidden
+                    (Sabre\DAV\Exception\Forbidden)
+                </h2>
 
-            <h2>Transfeing [file] - server replied: Forbidden (Sabre\DAV\Exception\Forbidden)</h2>
+                <blockquote>
+                    <p><code>sudo rm [username]/uploads</code><br /></p>
+                </blockquote>
 
-            <blockquote>
-                <p><code>sudo rm [username]/uploads</code><br></p>
-            </blockquote>
+                <h2>Home storage for user [user] not writable</h2>
 
-            <h2>Home storage for user [user] not writable</h2>
+                <blockquote>
+                    <p>
+                        <code
+                            >sudo chown -R www-data:www-data [data mount
+                            location]/[user]</code
+                        >
+                    </p>
+                </blockquote>
 
-            <blockquote>
-                <p><code>sudo chown -R www-data:www-data [data mount location]/[user]</code></p>
-            </blockquote>
+                ---
 
-            ---
+                <h1>Backing Up</h1>
+                <blockquote>
+                    Turn on maintenance: <br />
 
-            <h1>Backing Up</h1>
-            <blockquote>
+                    <code>cd /var/www/html/</code><br />
+                    <code>sudo -u www-data php occ maintenance:mode --on</code>
 
-                Turn on maintenance: <br>
+                    <br /><br />
+                    Copy Files:<br />
 
-                <code>cd /var/www/html/</code><br>
-                <code>sudo -u www-data php occ maintenance:mode --on</code>
+                    <code>cd /var/www/</code><br />
+                    <code
+                        >rsync -Aavx html/ backupdir/html_bkup_`date
+                        +"%Y%m%d"`/</code
+                    ><br />
 
-                <br><br>
-                Copy Files:<br>
+                    <br /><br />
+                    Backup MariaDB:<br />
+                    <code
+                        >mysqldump --single-transaction -u [nextcloud]
+                        -p[password] nextcloud &gt; backupdir/sqlbkp_`date
+                        +"%Y%m%d"`.bak</code
+                    ><br />
 
-                <code>cd /var/www/</code><br>
-                <code>rsync -Aavx html/ backupdir/html_bkup_`date +"%Y%m%d"`/</code><br>
+                    <br /><br />
+                    Turn off maintenance:<br />
 
-                <br><br>
-                Backup MariaDB:<br>
-                <code>mysqldump --single-transaction -u [nextcloud] -p[password] nextcloud &gt; backupdir/sqlbkp_`date
-                    +"%Y%m%d"`.bak</code><br>
+                    <code>cd /var/www/html/</code><br />
+                    <code>sudo -u www-data php occ maintenance:mode --off</code
+                    ><br />
+                </blockquote>
 
-                <br><br>
-                Turn off maintenance:<br>
+                <h1>Updating</h1>
+                <blockquote>
+                    <li>
+                        Go to
+                        <code
+                            >https://cloud.dns.com/settings/admin/overview</code
+                        >
+                        and select the version you want<br />
+                    </li>
+                    <li>
+                        Follow the steps, make sure not to touch anything while
+                        updating<br />
+                    </li>
+                    <li><code>systemctl restart apache2</code></li>
+                    <li>
+                        Double check the ‘Security &amp; setup warnings’ (also
+                        on <code>/admin/overview</code>)<br />
+                    </li>
+                    <li>
+                        <a href="https://scan.nextcloud.com/"
+                            >Verify your server's security</a
+                        ><br />
+                    </li>
+                    <li>Congrads!</li>
+                </blockquote>
+            </article>
 
-                <code>cd /var/www/html/</code><br>
-                <code>sudo -u www-data php occ maintenance:mode --off</code><br>
+            <div id="footer">
+                BTC /
+                <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1"
+                    >15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a
+                ><br />
+                ETH /
+                <a href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74"
+                    >0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a
+                ><br />
 
-            </blockquote>
-
-
-            <h1>Updating</h1>
-            <blockquote>
-                <li>Go to <code>https://cloud.dns.com/settings/admin/overview</code> and select the version you
-                    want<br>
-                </li>
-                <li>Follow the steps, make sure not to touch anything while updating<br></li>
-                <li><code>systemctl restart apache2</code></li>
-                <li>Double check the ‘Security &amp; setup warnings’ (also on <code>/admin/overview</code>)<br></li>
-                <li><a href="https://scan.nextcloud.com/">Verify your server's security</a><br></li>
-                <li>Congrads!</li>
-            </blockquote>
-
-        </article>
-
-
-        <div id="footer">
-            BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
-            ETH / <a
-                href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74">0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a><br>
-
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
-            - Max Vogel
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                - Max Vogel
+            </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

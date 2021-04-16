@@ -1,136 +1,204 @@
 <html lang="en">
+    <head>
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="static/css/atom-one-dark-reasonable.css"
+        />
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="static/css/style.css" />
+        <script>
+            hljs.initHighlightingOnLoad()
+        </script>
+        <script src="static/js/include.js"></script>
+        <meta charset="utf-8" />
+        <title>Mehvix | #todo</title>
+        <style>
+            :root {
+                --outside-bg-color: #306a4a;
+                --inside-bg-color: #dbe2e5;
+            }
 
-<head>
-    <link type="text/css" rel="stylesheet" href="static/css/atom-one-dark-reasonable.css">
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="static/css/style.css">
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="static/js/include.js"></script>
-    <meta charset="utf-8">
-    <title>Mehvix | #todo</title>
-    <style>
-        :root {
-            --outside-bg-color: #306a4a;
-            --inside-bg-color: #dbe2e5;
-        }
+            article > li {
+                margin: 0;
+                margin-left: 2ch;
+                list-style: none;
+            }
 
-        article > li {
-            margin: 0;
-            margin-left: 2ch;
-            list-style: none;
-        }
+            h1 + li {
+                margin-top: 0.25em;
+                margin-bottom: 0;
+            }
 
-        h1+li {
-            margin-top: .25em;
-            margin-bottom: 0;
-        }
+            h1 {
+                font-size: 105%;
+                font-weight: 500;
+                margin-bottom: 0;
+                margin-top: 0.5em;
+            }
+        </style>
+    </head>
 
-        h1 {
-            font-size: 105%;
-            font-weight: 500;
-            margin-bottom: 0;
-            margin-top: .5em;
-        }
-    </style>
-</head>
+    <body>
+        <div class="box">
+            <div class="nav">
+                <a href="./index.html">~</a>/<a href="" class="inverse-bg"
+                    >#TODO</a
+                >
+            </div>
+            A backlog of future projects I haven't gotten around to yet.
+            <br />
+            ---
 
-<body>
-    <div class="box">
-        <div class="nav">
-            <a href="./index.html">~</a>/<a href="" class="inverse-bg">#TODO</a>
+            <article>
+                <h1>
+                    Program to automatically download videos from YouTube as
+                    they're uploaded
+                </h1>
+                <li>
+                    Prevents
+                    <a
+                        href="https://old.reddit.com/r/Jon_Bois/comments/ab6930/does_anyone_happen_to_have_pretty_good_episode_4/"
+                        >this</a
+                    >
+                    from happening again.
+                </li>
+
+                <li>
+                    Possible with <a href="https://zapier.com">zapier</a> and
+                    <a href="https://github.com/ytdl-org/youtube-dl"
+                        >youtube-dl</a
+                    >
+                </li>
+
+                <h1>
+                    Visualize
+                    <a href="https://play.typeracer.com/">Typeracer</a> data
+                </h1>
+                <li>
+                    I did something
+                    <a
+                        href="https://github.com/Mehvix/synapsBotRW/blob/master/typeracer.py"
+                        >similar already</a
+                    >
+                </li>
+
+                <li>
+                    Should be possible to scrap
+                    <a
+                        href="https://data.typeracer.com/pit/race_history?user=mehvix&amp;n=9999&amp;startDate="
+                        >this webpage</a
+                    >
+                    and save it as a <code>.csv</code>
+                </li>
+
+                <h1>
+                    Create a
+                    <a href="https://old.reddit.com/r/startpages">Startpage</a>
+                </h1>
+
+                <h1>
+                    Script to disables the windows key when a game is launched
+                </h1>
+
+                <h1>Software to monitor desktop app usage</h1>
+                <li>
+                    Similar to
+                    <a href="https://www.getintention.com/"> Intention</a>
+                </li>
+
+                <h1>Design / 3D print a custom mouse using G305 internals</h1>
+                <li>
+                    <a href="https://www.reddit.com/r/MouseReview/"
+                        >/r/MouseReview</a
+                    >
+                    has some good resources
+                </li>
+
+                <h1>Remote car starter for the winter</h1>
+
+                <h1>Custom drone with 3D print parts</h1>
+
+                <h1>Successfully 3D print a key</h1>
+                <li>
+                    <a href="https://youtu.be/7kJnGZlirpI"
+                        >Interesting talk on 3D printing keys</a
+                    >
+                </li>
+
+                <h1>Hardware keylogger</h1>
+
+                <h1>Crypto address replacer</h1>
+                <li>Replaces copied crypto address with a different address</li>
+
+                <h1>Soundcloud Downloader with Metadata Scraper</h1>
+
+                <h1>Logs.tf scrapper + leaderboard</h1>
+                <li>
+                    Integrate with
+                    <a href="https://github.com/Mehvix/Equalizer">Equalizer?</a>
+                </li>
+
+                <h1>"Jon Bois" style video about Richard Russel</h1>
+                <li>
+                    <a
+                        href="https://en.wikipedia.org/wiki/2018_Horizon_Air_Q400_incident"
+                        >Wikipedia Article</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://www.youtube.com/playlist?list=PLUXSZMIiUfFSCYW1o-4whWtepyVlsfuCC"
+                        >Jon Bois's Pretty Good Series</a
+                    >
+                </li>
+
+                <h1>Right to Repair site</h1>
+                <li>Similar to net neutrality site concept</li>
+
+                <h1>Typeracer bot</h1>
+
+                <h1>Chess / Poker AI</h1>
+
+                <h1>Elon Musk Trading Bot</h1>
+                <li>Buys coins/stocks Elon Tweets about</li>
+                <li>Pretty sure I saw someone do this with Trump's Twitter</li>
+
+                <h1>Learn Vim</h1>
+
+                <h1>Learn Regex</h1>
+
+                <h1>Learn git cli</h1>
+
+                <h1>Resistor color code calculator</h1>
+
+                <h1>Write about completed projects and other topics</h1>
+                <li>How and why to learn Colemak</li>
+                <li>How and why to learn morse code</li>
+                <li>Instagram login "lock" exploit</li>
+                <li>Why to care about privacy</li>
+                <li>Why to care about Right to Repair</li>
+                <li>How to protect your digital privacy</li>
+            </article>
+
+            <!--			<h3 style="text-align: center"><a href="./index.html">Return home.</a></h3>-->
+            <!--			<h3 style="text-align: center"><a href="#" onClick="history.go(-1); return false;">Previous page.</a></h3>-->
+
+            <div id="footer">
+                BTC /
+                <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1"
+                    >15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a
+                ><br />
+                ETH /
+                <a href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74"
+                    >0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a
+                ><br />
+
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                - Max Vogel
+            </div>
         </div>
-        A backlog of future projects I haven't gotten around to yet.
-        <br>
-        ---
-
-        <article>
-            <h1>Program to automatically download videos from YouTube as they're uploaded</h1>
-            <li>Prevents <a
-                    href="https://old.reddit.com/r/Jon_Bois/comments/ab6930/does_anyone_happen_to_have_pretty_good_episode_4/">this</a>
-                from happening again.
-            <li>Possible with <a href="https://zapier.com">zapier</a> and <a
-                    href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a></li>
-
-            <h1>Visualize <a href="https://play.typeracer.com/">Typeracer</a> data</h1>
-            <li>I did something <a href="https://github.com/Mehvix/synapsBotRW/blob/master/typeracer.py">similar
-                    already</a>
-            <li>Should be possible to scrap <a
-                    href="https://data.typeracer.com/pit/race_history?user=mehvix&amp;n=9999&amp;startDate=">this
-                    webpage</a> and save it as a <code>.csv</code></li>
-
-            <h1>Create a <a href="https://old.reddit.com/r/startpages">Startpage</a></h1>
-
-            <h1>Script to disables the windows key when a game is launched</h1>
-
-            <h1>Software to monitor desktop app usage</h1>
-            <li>Similar to <a href="https://www.getintention.com/"> Intention</a></li>
-
-            <h1>Design / 3D print a custom mouse using G305 internals</h1>
-            <li><a href="https://www.reddit.com/r/MouseReview/">/r/MouseReview</a> has some good resources</li>
-
-            <h1>Remote car starter for the winter</h1>
-
-            <h1>Custom drone with 3D print parts</h1>
-
-            <h1>Successfully 3D print a key</h1>
-            <li><a href="https://youtu.be/7kJnGZlirpI">Interesting talk on 3D printing keys</a></li>
-
-            <h1>Hardware keylogger</h1>
-
-            <h1>Crypto address replacer</h1>
-            <li>Replaces copied crypto address with a different address</li>
-
-            <h1>Soundcloud Downloader with Metadata Scraper</h1>
-
-            <h1>Logs.tf scrapper + leaderboard</h1>
-            <li>Integrate with <a href="https://github.com/Mehvix/Equalizer">Equalizer?</a></li>
-
-            <h1>"Jon Bois" style video about Richard Russel</h1>
-            <li><a href="https://en.wikipedia.org/wiki/2018_Horizon_Air_Q400_incident">Wikipedia Article</a></li>
-            <li><a href="https://www.youtube.com/playlist?list=PLUXSZMIiUfFSCYW1o-4whWtepyVlsfuCC">Jon Bois's Pretty
-                    Good Series</a></li>
-
-            <h1>Right to Repair site</h1>
-            <li>Similar to net neutrality site concept</li>
-
-            <h1>Typeracer bot</h1>
-
-            <h1>Chess / Poker AI</h1>
-
-            <h1>Elon Musk Trading Bot</h1>
-            <li>Buys coins/stocks Elon Tweets about</li>
-            <li>Pretty sure I saw someone do this with Trump's Twitter</li>
-
-            <h1>Learn Vim</h1>
-
-            <h1>Learn Regex</h1>
-
-            <h1>Resistor color code calculator</h1>
-
-            <h1>Write about completed projects and other topics</h1>
-            <li>How and why to learn Colemak</li>
-            <li>How and why to learn morse code</li>
-            <li>Instagram login "lock" exploit</li>
-            <li>Why to care about privacy</li>
-            <li>Why to care about Right to Repair</li>
-            <li>How to protect your digital privacy</li>
-
-        </article>
-
-        <!--			<h3 style="text-align: center"><a href="./index.html">Return home.</a></h3>-->
-        <!--			<h3 style="text-align: center"><a href="#" onClick="history.go(-1); return false;">Previous page.</a></h3>-->
-
-        <div id="footer">
-            BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
-            ETH / <a
-                href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74">0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a><br>
-
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
-            - Max Vogel
-        </div>
-    </div>
-</body>
-
+    </body>
 </html>

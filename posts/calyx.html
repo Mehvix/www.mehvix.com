@@ -1,84 +1,124 @@
 <html lang="en">
+    <head>
+        <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="../static/css/atom-one-dark-reasonable.css"
+        />
 
-<head>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad()
+        </script>
+        <script src="static/js/include.js"></script>
+        <meta charset="utf-8" />
+        <title>Mehvix | CalyxOS</title>
+        <!--todo change-->
+        <style>
+            :root {
+                --outside-bg-color: #7cab2b;
+            }
+        </style>
+    </head>
 
-    <link type="text/css" rel="stylesheet" href="../static/css/style.css">
-    <link type="text/css" rel="stylesheet" href="../static/css/atom-one-dark-reasonable.css">
+    <body>
+        <div class="box">
+            <div class="nav">
+                <a href="../index.html">~</a>/<a href="./index.html">Posts</a
+                >/<a href="" class="inverse-bg">CalyxOS Install</a>
+            </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="static/js/include.js"></script>
-    <meta charset="utf-8">
-    <title>Mehvix | CalyxOS</title>
-    <!--todo change-->
-    <style>
-        :root {
-            --outside-bg-color: #7CAB2B;
-        }
-    </style>
-</head>
+            <article>
+                <p>
+                    This blog goes over how to install CalyxOS — a custom
+                    Android ROM for (somewhat ironically) Google's Pixel phones.
+                    It's built with "Privacy by Design"; minimizing tracking
+                    done by phone manufacturers, cell providers, ISPs,
+                    advertising companies, etc. That being said, it's not as
+                    extreme as alternatives, notably
+                    <a href="https://grapheneos.org/">GrapheneOS</a>, and seeks
+                    to maintain a balance between usability and privacy. You can
+                    check (and contribute) app compatibility
+                    <a href="https://plexus.techlore.tech/">here</a>.
+                </p>
+                ---
 
-<body>
-    <div class="box">
-        <div class="nav">
-            <a href="../index.html">~</a>/<a href="./index.html">Posts</a>/<a href="" class="inverse-bg">CalyxOS Install</a>
+                <h1>Backup</h1>
+                <p>
+                    You will loose all of your data so backup stuff you want to
+                    keep. You won't be using Google to backup/restore once you
+                    get CalyxOS installed, so you're best bet is probably to
+                    transfer files directly to your computer. You can do so by
+                    enabling "Data Transfer through USB" so your files can be
+                    viewed & copied from your PC File Explorer.
+                </p>
+
+                <h1>Unlock Bootloader</h1>
+                <p>
+                    Go into your device's settings, <code>About phone</code>,
+                    and down to <code>Build number</code>. Spam the button 10
+                    times until you get developer. Then, go back and to
+                    <code>System</code> > <code>Advanced</code> >
+                    <code>Developer options</code> and enable
+                    <code>USB debugging</code> and
+                    <code>OEM unlocking</code>
+                </p>
+
+                <h1>Update Drivers</h1>
+                <p>
+                    Download the
+                    <a href="https://developer.android.com/studio/run/win-usb"
+                        >Google USB Drivers</a
+                    >
+                    and extract the files somewhere on your PC. Then, showdown
+                    the phone, press and hold the power and volume down until
+                    the bootloader (black screen with a red triangle) appears.
+                    You can then connect the phone to your PC if you haven't
+                    already and go to Device Manager in Windows. Then, navigate
+                    to <code>Other Devices</code>, find your phone, right-click,
+                    and go to <code>Update drivers</code> >
+                    <code>Browse...</code> > point to where you extract the USB
+                    drivers, and Windows should do the rest.
+                </p>
+
+                <h1>Flash CalyxOS</h1>
+                <p>
+                    Create a new folder and download the
+                    <a href="https://calyxos.org/get"
+                        >CalyxOS release for your device</a
+                    >
+                    (don't unzip it though!) as well as the
+                    <a
+                        href="https://github.com/AOSPAlliance/device-flasher/releases/"
+                        >device flasher</a
+                    >
+                    (which may be falsely flagged as a virus). From there, you
+                    can run the
+                    <code>device-flasher.exe</code> and follow along the
+                    instructions. If you've followed the steps this far, the
+                    only step not done is to remove the SIM card. Once you hit
+                    enter to begin the flash, you can just sit back and wait for
+                    it to install. Once it has, all you have to do is re-lock
+                    the bootloader and you're set!
+                </p>
+            </article>
+
+            <div id="footer">
+                BTC /
+                <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1"
+                    >15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a
+                ><br />
+                ETH /
+                <a href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74"
+                    >0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a
+                ><br />
+
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                - Max Vogel
+            </div>
         </div>
-
-        <article>
-            <p>This blog goes over how to install CalyxOS — a custom Android ROM for (somewhat ironically) Google's Pixel
-                phones. It's built with "Privacy by Design"; minimizing tracking done by phone manufacturers, cell
-                providers, ISPs, advertising companies, etc. That being said, it's not as extreme as alternatives,
-                notably <a href="https://grapheneos.org/">GrapheneOS</a>, and seeks to maintain a balance between
-                usability and privacy. You can check (and contribute) app compatibility <a
-                    href="https://plexus.techlore.tech/">here</a>.
-            </p>
-            ---
-
-            <h1>Backup</h1>
-            <p>You will loose all of your data so backup stuff you want to keep. You won't be using Google to
-                backup/restore once you get CalyxOS installed, so you're best bet is probably to transfer files directly
-                to your computer. You can do so by enabling "Data Transfer through USB" so your files can be viewed &
-                copied from your PC File Explorer.
-            </p>
-
-            <h1>Unlock Bootloader</h1>
-            <p>Go into your device's settings, <code>About phone</code>, and down to <code>Build number</code>. Spam the
-                button 10 times until you get developer. Then, go back and to <code>System</code> >
-                <code>Advanced</code> > <code>Developer options</code> and enable <code>USB debugging</code> and
-                <code>OEM unlocking</code>
-            </p>
-
-            <h1>Update Drivers</h1>
-            <p>Download the <a href="https://developer.android.com/studio/run/win-usb">Google USB Drivers</a> and
-                extract the files somewhere on your PC. Then, showdown the phone, press and hold the power and volume
-                down until the bootloader (black screen with a red triangle) appears. You can then connect the phone to
-                your PC if you haven't already and go to Device Manager in Windows. Then, navigate to
-                <code>Other Devices</code>, find your phone, right-click, and go to <code>Update drivers</code> >
-                <code>Browse...</code> > point to where you extract the USB drivers, and Windows should do the rest.
-            </p>
-
-
-            <h1>Flash CalyxOS</h1>
-            <p>Create a new folder and download the <a href="https://calyxos.org/get">CalyxOS release for your
-                    device</a> (don't unzip it though!) as well as the <a
-                    href="https://github.com/AOSPAlliance/device-flasher/releases/">device flasher</a> (which may be
-                falsely flagged as a virus). From there, you can run the <code>device-flasher.exe</code> and follow
-                along the instructions. If you've followed the steps this far, the only step not done is to remove the
-                SIM card. Once you hit enter to begin the flash, you can just sit back and wait for it to install. Once
-                it has, all you have to do is re-lock the bootloader and you're set!
-        </article>
-
-        <div id="footer">
-            BTC / <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a><br>
-            ETH / <a
-                href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74">0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a><br>
-
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
-            - Max Vogel
-        </div>
-    </div>
-</body>
-
+    </body>
 </html>
