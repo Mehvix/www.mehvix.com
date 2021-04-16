@@ -1,90 +1,97 @@
-<script>
-    function getRandomImage() {
-        path = '/static/media/bears/' // default path here
-        imgAr = [
-            '2.gif',
-            'Rabid.gif',
-            '1534360907656.gif',
-            '021.gif',
-            '028.gif',
-            '043.gif',
-            '076.gif',
-            '09f.gif',
-            '0de.gif',
-            '10d.gif',
-            '22c.gif',
-            '281.gif',
-            '28b.gif',
-            '2a0.gif',
-            '34b.gif',
-            '41e.gif',
-            '538.gif',
-            '57f.gif',
-            '5ca.gif',
-            '652.gif',
-            '6a1.gif',
-            '6a3.gif',
-            '6e5.gif',
-            '6fd.gif',
-            '71d.gif',
-            '720.gif',
-            '755.gif',
-            '814.gif',
-            '82f.gif',
-            '894.gif',
-            '8ab.gif',
-            '8e9.gif',
-            '8ec.gif',
-            '92a.gif',
-            '949.gif',
-            '9c8.gif',
-            '9ec.gif',
-            'a61.gif',
-            'a72.gif',
-            'ad9.gif',
-            'af0.gif',
-            'b23.gif',
-            'b5a.gif',
-            'c09.gif',
-            'c0e.gif',
-            'c1b.gif',
-            'c9b.gif',
-            'd09.gif',
-            'd0d.gif',
-            'd31.gif',
-            'd47.gif',
-            'd4f.gif',
-            'd66.gif',
-            'd68.gif',
-            'd6f.gif',
-            'e3b.gif',
-            'e49.gif',
-            'e66.gif',
-            'e6a.gif',
-            'e7f.gif',
-            'e8b.gif',
-            'ec6.gif',
-            'ec9.gif',
-            'f46.gif',
-            'f56.gif',
-            'f66.gif',
-            'faf.gif',
-            'fb0.gif',
-        ]
-        /* how to generate list
-         * import os
-         * files = [f for f in os.listdir('.') if os.path.isfile(f)]
-         * a = []
-         * for f in files:
-         *     a.append(f)
-         * print(a)  // make sure to remove bear.py + catsonmars.mp3
-         */
-        var num = Math.floor(Math.random() * imgAr.length)
-        var img = imgAr[num]
-        document.write('{"url": "mehvix.com' + path + img + '"}')
-        document.close()
-    }
-</script>
-<pre
-    style="word-wrap: break-word; white-space: pre-wrap"
-><script type="text/javascript">getRandomImage();</script></pre>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bear "api"</title>
+
+        <script>
+            function getRandomImage() {
+                path = '/static/media/bears/' // default path here
+                imgAr = [
+                    '2.gif',
+                    'Rabid.gif',
+                    '1534360907656.gif',
+                    '021.gif',
+                    '028.gif',
+                    '043.gif',
+                    '076.gif',
+                    '09f.gif',
+                    '0de.gif',
+                    '10d.gif',
+                    '22c.gif',
+                    '281.gif',
+                    '28b.gif',
+                    '2a0.gif',
+                    '34b.gif',
+                    '41e.gif',
+                    '538.gif',
+                    '57f.gif',
+                    '5ca.gif',
+                    '652.gif',
+                    '6a1.gif',
+                    '6a3.gif',
+                    '6e5.gif',
+                    '6fd.gif',
+                    '71d.gif',
+                    '720.gif',
+                    '755.gif',
+                    '814.gif',
+                    '82f.gif',
+                    '894.gif',
+                    '8ab.gif',
+                    '8e9.gif',
+                    '8ec.gif',
+                    '92a.gif',
+                    '949.gif',
+                    '9c8.gif',
+                    '9ec.gif',
+                    'a61.gif',
+                    'a72.gif',
+                    'ad9.gif',
+                    'af0.gif',
+                    'b23.gif',
+                    'b5a.gif',
+                    'c09.gif',
+                    'c0e.gif',
+                    'c1b.gif',
+                    'c9b.gif',
+                    'd09.gif',
+                    'd0d.gif',
+                    'd31.gif',
+                    'd47.gif',
+                    'd4f.gif',
+                    'd66.gif',
+                    'd68.gif',
+                    'd6f.gif',
+                    'e3b.gif',
+                    'e49.gif',
+                    'e66.gif',
+                    'e6a.gif',
+                    'e7f.gif',
+                    'e8b.gif',
+                    'ec6.gif',
+                    'ec9.gif',
+                    'f46.gif',
+                    'f56.gif',
+                    'f66.gif',
+                    'faf.gif',
+                    'fb0.gif',
+                ]
+                /* how to generate list
+                 * import os
+                 * files = [f for f in os.listdir('.') if os.path.isfile(f)]
+                 * a = []
+                 * for f in files:
+                 *     a.append(f)
+                 * print(a)  // make sure to remove bear.py + catsonmars.mp3
+                 */
+                var num = Math.floor(Math.random() * imgAr.length)
+                var img = imgAr[num]
+                document.write('{"url": "mehvix.com' + path + img + '"}')
+                document.close()
+            }
+        </script>
+    </head>
+    <pre
+        style="word-wrap: break-word; white-space: pre-wrap"
+    ><script>getRandomImage();</script></pre>
+</html>
