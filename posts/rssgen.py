@@ -18,6 +18,9 @@ soup = BeautifulSoup(fin, 'html.parser')
 mini = minidom.Document()
 content = mini.createElement('rss')
 content.setAttribute('version', '2.0')
+content.setAttribute('xmlns:media', 'http://search.yahoo.com/mrss/')
+content.setAttribute(
+    'xmlns:content', 'http://purl.org/rss/1.0/modules/content/')
 mini.appendChild(content)
 
 channel = content.appendChild(mini.createElement('channel'))
@@ -96,7 +99,7 @@ for i in soup.find_all("tr"):
     itemElement.appendChild(guidElement)
 
     contElement = mini.createElement('content:encoded')
-    contContent = mini.createTextNode(cont)
+    contContent = mini.createTextNode("<![CDATA["+cont+"]]>")
     contElement.appendChild(contContent)
     itemElement.appendChild(contElement)
 
