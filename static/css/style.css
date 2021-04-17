@@ -72,6 +72,10 @@ body::-webkit-scrollbar-thumb {
     white-space: pre;
 }
 
+#footer #footerDateYear {
+    display: contents;
+}
+
 a,
 a:visited {
     text-decoration: none;

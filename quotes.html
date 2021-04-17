@@ -415,19 +415,22 @@
             </div>
 
             <div id="footer">
-                BTC /
+                $BTC /
                 <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1"
                     >15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a
                 ><br />
-                ETH /
+                $ETH /
                 <a href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74"
                     >0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a
                 ><br />
 
+                <div id="footerDateYear">2021</div>
                 <script>
-                    document.write(new Date().getFullYear())
+                    document.getElementById(
+                        'footerDateYear'
+                    ).innerText = new Date().getFullYear()
                 </script>
-                - Max Vogel
+                / Max Vogel
             </div>
         </div>
     </body>
