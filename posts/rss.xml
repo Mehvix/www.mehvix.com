@@ -1,17 +1,138 @@
-<rss>
+<?xml version="1.0"?>
+<rss version="2.0">
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Wed, 10 Feb 2021 05:28:23 -0000</lastBuildDate>
+		<lastBuildDate>Sat, 17 Apr 2021 04:48:05 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
+		<item>
+			<author>Max Vogel</author>
+			<title>What is this site?</title>
+			<pubDate>Fri, 16 Apr 2021 05:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/what-is-this.html</link>
+			<guid>https://mehvix.com/posts/what-is-this.html</guid>
+			<content:encoded>
+				<article>
+					<p>
+                    Answering the title: I'm not really sure (yet)! Right now,
+                    it's really just a list of ways to contact me, my todo-list
+                    of projects I haven't gotten around to, and a few &quot;blog
+                    posts&quot; that are really just guides I can link others to.
+                    I've got a few other guide ideas I've jotted down, but
+                    haven't gotten around to. Now that school is winding down,
+                    I'm hoping to get around to those.
+                </p>
+					<p>
+						Beyond guides, I've got a few other actual &quot;blog&quot; type ideas
+                    but (1) I'm not sure people want to read some high school
+                    student's ramblings and (2) I've realized that I suck at
+                    writing just for the sake of writing. The past four years of
+                    High School English have drilled in not much more than 1-3-1
+                    essays (one intro paragraph, three body paragraphs, one
+                    conclusion paragraph for those outside of American public
+                    education). While, sure, this works for AP Exams, beyond
+                    that it's been negligible -- college apps took waaayyyy
+                    longer than they should have, I've got a bad case of staring
+                    at emails for 10 minutes before hitting send, and even just
+                    writing casually like this is
+						<i>weird</i>
+						(?). Maybe I'll
+                    try just writing my ideas down for the hell of it and I can
+                    look back in a few years and make fun of my self.
+					</p>
+				</article>
+			</content:encoded>
+		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>CalyxOS Install Guide</title>
 			<pubDate>Fri, 29 Jan 2021 06:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/calyx.html</link>
 			<guid>https://mehvix.com/posts/calyx.html</guid>
+			<content:encoded>
+				<article>
+					<p>
+						This blog goes over how to install CalyxOS — a custom
+                    Android ROM for (somewhat ironically) Google's Pixel phones.
+                    It's built with &quot;Privacy by Design&quot;; minimizing tracking
+                    done by phone manufacturers, cell providers, ISPs,
+                    advertising companies, etc. That being said, it's not as
+                    extreme as alternatives, notably
+						<a href= &quot;https: grapheneos.org &quot;>GrapheneOS</a>
+						, and seeks
+                    to maintain a balance between usability and privacy. You can
+                    check (and contribute) app compatibility
+						<a href= &quot;https: plexus.techlore.tech &quot;>here</a>
+						.
+					</p>
+					---
+					<h1>Backup</h1>
+					<p>
+                    You will loose all of your data so backup stuff you want to
+                    keep. You won't be using Google to backup/restore once you
+                    get CalyxOS installed, so you're best bet is probably to
+                    transfer files directly to your computer. You can do so by
+                    enabling &quot;Data Transfer through USB&quot; so your files can be
+                    viewed &amp; copied from your PC File Explorer.
+                </p>
+					<h1>Unlock Bootloader</h1>
+					<p>
+						Go into your device's settings,
+						<code>About phone</code>
+						,
+                    and down to
+						<code>Build number</code>
+						. Spam the button 10
+                    times until you get developer. Then, go back and to
+						<code>System</code>
+						&gt;
+						<code>Advanced</code>
+						&gt;
+						<code>Developer options</code>
+						and enable
+						<code>USB debugging</code>
+						and
+						<code>OEM unlocking</code>
+					</p>
+					<h1>Update Drivers</h1>
+					<p>
+						Download the
+						<a href= &quot;https: developer.android.com studio run win-usb&quot;>Google USB Drivers</a>
+						and extract the files somewhere on your PC. Then, showdown
+                    the phone, press and hold the power and volume down until
+                    the bootloader (black screen with a red triangle) appears.
+                    You can then connect the phone to your PC if you haven't
+                    already and go to Device Manager in Windows. Then, navigate
+                    to
+						<code>Other Devices</code>
+						, find your phone, right-click,
+                    and go to
+						<code>Update drivers</code>
+						&gt;
+						<code>Browse...</code>
+						&gt; point to where you extract the USB
+                    drivers, and Windows should do the rest.
+					</p>
+					<h1>Flash CalyxOS</h1>
+					<p>
+						Create a new folder and download the
+						<a href= &quot;https: calyxos.org get&quot;>CalyxOS release for your device</a>
+						(don't unzip it though!) as well as the
+						<a href= &quot;https: github.com AOSPAlliance device-flasher releases &quot;>device flasher</a>
+						(which may be falsely flagged as a virus). From there, you
+                    can run the
+						<code>device-flasher.exe</code>
+						and follow along the
+                    instructions. If you've followed the steps this far, the
+                    only step not done is to remove the SIM card. Once you hit
+                    enter to begin the flash, you can just sit back and wait for
+                    it to install. Once it has, all you have to do is re-lock
+                    the bootloader and you're set!
+					</p>
+				</article>
+			</content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
@@ -19,13 +140,256 @@
 			<pubDate>Mon, 07 Dec 2020 06:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/twitter.html</link>
 			<guid>https://mehvix.com/posts/twitter.html</guid>
+			<content:encoded>
+				<article id= &quot;content&quot;>
+					<p>
+						Twitter is pretty bad. But, it's the only place with
+						<a href= &quot;https: twitter.com jon_bois&quot;>Jon Bois tweets</a>
+						.
+                    Here are a couple ways you can make Twitter suck less.
+					</p>
+					<p>
+						<strong>2/2/2021 Update:</strong>
+						I've came across
+						<a href= &quot;https: github.com zedeus nitter&quot;>nitter</a>
+						, which
+                    is a FOSS alternative to the Twitter front-end. Currently,
+                    you can only view certain profiles so it's limited in uses.
+					</p>
+					---
+					<div>
+						<h1>Remove Homepage Crap</h1>
+						The Twitter &quot;What's Happening&quot; sidebar is dedicated to drama
+                    and stuff intended to make you angry. To remove this, you'll
+                    need
+						<a href= &quot;https: github.com gorhill uBlock&quot;>uBlock origin</a>
+						(which is something you should have installed if you want a
+                    more suck less internet in general). Once you have it
+                    installed, go to the
+						<a href= &quot;chrome-extension: cjpalhdlnbpafiamejdnhcphjbkeiagm dashboard.html&quot;>dashboard</a>
+						add the following under the &quot;My filters&quot; tab:
+						<pre>
+							<code class= &quot;css&quot;>twitter.com##.r-1hycxz.r-zso239.r-aqfbo4.css-1dbjc4n</code>
+						</pre>
+					</div>
+					<div>
+						<h1>De-numerate</h1>
+						As
+						<a href= &quot;https: bengrosser.com projects twitter-demetricator &quot;>Ben Grosser</a>
+						writes:
+						<blockquote>
+                        Visible metrics can make us feel more compulsive,
+                        competitive, and anxious. Further—without realizing it,
+                        we craft rules for ourselves based on what the numbers
+                        say, and these rules affect what we post, who we friend,
+                        and which posts we “like.”
+                    </blockquote>
+						He's written a tool to remove all metrics (likes, retweets,
+                    replies, followers, etc.) which you can install through one
+                    sources
+						<a href= &quot;https: bengrosser.com projects twitter-demetricator install-twitter-demetricator &quot;>linked here</a>
+						. I am personally using
+						<a href= &quot;https: github.com violentmonkey violentmonkey&quot;>Violentmonkey</a>
+						.
+					</div>
+					<div>
+						<h1>Remove Interests</h1>
+						Twitter keeps track of what it think's you're interesting
+                    in, then uses it to show you &quot;relevant&quot; tweets (and ads).
+                    You can manually prune these
+						<a href= &quot;https: twitter.com settings your_twitter_data twitter_interests&quot;>here</a>
+						, but the list can get very long, very quick. You can
+                    automate &quot;un-interesting&quot; all topics by pasting
+						<a href= &quot;https: gist.github.com edjw 61cda68535b237fa7fa8db23842c1b6d &quot;>Ed Johnson-Williams'</a>
+						script in console:
+						<pre>
+							<code class= &quot;js&quot;>&quot;use strict;&quot;
+var labelSelector = &quot;.r-1p0dtai.r-1ei5mc7.r-1pi2tsx.r-1d2f490.r-crgep1.r-orgf3d.r-t60dpp.r-u8s1d.r-zchlnj.r-ipm5af.r-13qz1uu&quot;
+
+// Get all the interests that Twitter has inferred about your account
+var interests = Array.from(document.querySelectorAll(labelSelector));
+console.log(`${interests.length} total interests found`);
+var checkedInterests = 0;
+console.log(`Starting…`);
+
+// For each of those interests, if it's selected, uncheck the checkbox 
+interests.forEach((interest) =&gt; {
+    if (interest.checked) {
+        checkedInterests++
+        interest.click();
+        console.log(`${checkedInterests} of ${interests.length}`)
+    }
+});
+
+console.log(`Finished`);</code>
+						</pre>
+					</div>
+					<div>
+						<h1>Remove Sugguested Content</h1>
+						Under the
+						<a href= &quot;https: twitter.com settings add_muted_keyword&quot;>muted keywords</a>
+						section, you paste
+						<a href= &quot;https: gist.github.com IanColdwater 88b3341a7c4c0cf71c73ac56f9bd36ec#gistcomment-3153196&quot;>Jake Bellacera's</a>
+						script to automatically add sugguest content keywords to the
+                    blocklist, cleaning up your timeline.
+						<pre>
+							<code class= &quot;js&quot;>const delayMs = 500; // change this if you feel like its running too fast
+const keywords = `ActivityTweet
+generic_activity_highlights
+generic_activity_momentsbreaking
+RankedOrganicTweet
+suggest_activity
+suggest_activity_feed
+suggest_activity_highlights
+suggest_activity_tweet
+suggest_grouped_tweet_hashtag
+suggest_pyle_tweet
+suggest_ranked_organic_tweet
+suggest_ranked_timeline_tweet
+suggest_recap
+suggest_recycled_tweet
+suggest_recycled_tweet_inline
+suggest_sc_tweet
+suggest_timeline_tweet
+suggest_who_to_follow
+suggestactivitytweet
+suggestpyletweet
+suggestrecycledtweet_inline`.split(/\W+/);
+
+const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, &quot;value&quot;).set;
+
+const addMutedKeyword = keyword =&gt; {
+    const input = document.querySelector(&quot;[name='keyword']&quot;);
+    nativeInputValueSetter.call(input, keyword);
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    document.querySelector(&quot;[data-testid='settingsDetailSave']&quot;).click();
+}
+
+const delay = () =&gt; {
+    return new Promise(res =&gt; setTimeout(res, delayMs));
+};
+
+keywords.reduce(async (prev, keyword) =&gt; {
+    await prev;
+    document.querySelector(&quot;a[href='/settings/add_muted_keyword']&quot;).click();
+    await delay();
+    addMutedKeyword(keyword);
+    return delay();
+}, Promise.resolve());</code>
+						</pre>
+					</div>
+					---
+					<div>
+						In the end, you should get something less distracting and
+                    more focused on the content you enjoy. For example, here's
+                    my new homepage:
+						<img alt= &quot;End result&quot; src= &quot;.. static media posts suckless-twitter-result.JPG&quot; style= &quot;width: 100%; margin-top: 1em&quot; />
+					</div>
+				</article>
+			</content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
-			<title>NC Importing &amp; Automating Calendars</title>
+			<title>NC Importing & Automating Calendars</title>
 			<pubDate>Wed, 08 Apr 2020 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/nextcloud-calendar.html</link>
 			<guid>https://mehvix.com/posts/nextcloud-calendar.html</guid>
+			<content:encoded>
+				<article id= &quot;content&quot;>
+					<p>
+						Upgrading to Nextcloud 18 broke both importing public Google
+                    calendars and external calendars so that they don’t update
+                    automatically. Fortunately, both of these issues have
+                    workarounds
+						<br />
+					</p>
+					---
+					<h1>Importing Google Calendars</h1>
+					<p>
+						Nextcloud needs a
+						<code>.ics</code>
+						or
+						<code>.ical</code>
+						file. To get a public Google calendar’s
+						<code>.ics</code>
+						location (as of 5/8/20), you need to get
+                    the
+						<code>src</code>
+						/
+						<code>cid</code>
+						of the Google
+                    calendar. All Google calendars have this in the external
+                    URL.
+					</p>
+					<p>
+						For example, for embedded calendars (in this example the
+						<a href= &quot;https: codeforces.com calendar&quot;>Codeforces calendar</a>
+						) you can find the
+						<code>cid</code>
+						by clicking on the plus
+                    button in the bottom right corner which will open the
+                    following URL:
+					</p>
+					<pre>
+						<code class= &quot;ini&quot;>https://calendar.google.com/calendar/render?cid=k23j233gtcvau7a8ulk2p360m4%40group.calendar.google.com&amp;ctz=America/Chicago</code>
+					</pre>
+					<p>
+						Alternatively, you can get also use inspect element which
+                    will yield the following URL containing the
+						<code>src</code>
+						:
+					</p>
+					<pre>
+						<code class= &quot;ini&quot;>https://calendar.google.com/calendar/embed?src=k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com&amp;ctz=America/Chicago&amp;hl=en&amp;wkst=1</code>
+					</pre>
+					<p>
+						Then take everything
+						<strong>after</strong>
+						<code>src=</code>
+						,
+						<code>cid=</code>
+						, or
+						<code>/ical/</code>
+						and up to the next
+						<code>&amp;</code>
+						sign,
+                    oftentimes this will look something like
+						<code>[id]@group.calendar.google.com</code>
+						. Then, take this
+                    string and add it to the following:
+					</p>
+					<pre>
+						<code class= &quot;ini&quot;>https://calendar.google.com/calendar/ical/[add here!]/public/basic.ics</code>
+					</pre>
+					<p>
+						For example, using the Codeforces calendar you'd grab
+						<code>k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com</code>
+						and add get the following:
+					</p>
+					<pre>
+						<code class= &quot;ini&quot;>https://calendar.google.com/calendar/ical/k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com/public/basic.ics</code>
+					</pre>
+					<p>
+                    You can then use this URL to as the external URL in the
+                    Nextcloud Calendar app.
+                </p>
+					<h1>Automatically Updating Calendars</h1>
+					<p>
+                    The default subscription refreshing interval is of one week
+                    (unless the subscription itself asks for a different rate).
+                </p>
+					<p>You may override it with something like:</p>
+					<code>sudo -u www-data php /var/www/html/occ config:app:set dav
+                    calendarSubscriptionRefreshRate --value &quot;P1DT6H&quot;</code>
+					<p>
+						which would set the interval to 1 day and 6 hours. The
+						<code>--value</code>
+						data type is
+						<a href= &quot;https: www.php.net manual en dateinterval.construct.php&quot;>DataInterval</a>
+						.
+					</p>
+				</article>
+			</content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
@@ -33,6 +397,740 @@
 			<pubDate>Tue, 03 Sep 2019 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/nextcloud-guide.html</link>
 			<guid>https://mehvix.com/posts/nextcloud-guide.html</guid>
+			<content:encoded>
+				<article>
+					<h1>Basic Installation Step</h1>
+					<h2 style= &quot;margin-top: 0&quot;>Getting the machine up-to-date</h2>
+					<blockquote>
+						<p>
+							<code>sudo apt autoremove</code>
+							(removes unused apps)
+							<br />
+							<code>sudo apt update</code>
+							<br />
+							<code>sudo apt upgrade</code>
+							<br />
+						</p>
+					</blockquote>
+					<h2>Installing Apache - the webserver</h2>
+					<blockquote>
+						<p>
+							<code>sudo apt install apache2</code>
+							<br />
+							<code>systemctl start apache2</code>
+							<br />
+							<code>systemctl enable apache2</code>
+							(start apache2 on
+                        boot)
+						</p>
+						<br />
+						<br />
+						<p>
+							If you’ve configured the server right, you should be
+                        able to go to your machine’s IP (you can get this via
+							<code>hostname -I</code>
+							) in the browser of your choice
+                        and see the
+							<a href= &quot;.. static media posts apache2page.png&quot;>“Apache2 Ubuntu Default Page”</a>
+						</p>
+					</blockquote>
+					<h2>Installing MariaDB - the database</h2>
+					<blockquote>
+						<p>
+							<code>sudo apt install mariadb-server</code>
+							<br />
+							<code>mysql_secure_installation</code>
+						</p>
+						<br />
+						<br />
+						<p>
+                        This will prompt you to login to MariaDB. Since we don’t
+                        have a password, just hit enter to set one up. After
+                        that, just accept all of the prompts and you’re set.
+                    </p>
+					</blockquote>
+					<h2>Installing phpMyAdmin</h2>
+					<blockquote>
+						<p>
+							<code>sudo apt install php libapache2-mod-php
+                            php-mysql</code>
+							<br />
+							<code>sudo apt install phpmyadmin</code>
+							<br />
+						</p>
+						<br />
+						<p>
+							You should follow all of the default steps, just make
+                        sure that you set the webserver as
+							<code>apache2</code>
+							and you’ll be good
+						</p>
+						<br />
+						<br />
+						<p>
+							<code>sudo ln -s /etc/phpmyadmin/apache.conf
+                            /etc/apache2/conf-available/phpmyadmin.conf</code>
+							<br />
+							<code>a2enconf phpmyadmin</code>
+							<br />
+							<code>service apache2 reload</code>
+							<br />
+							<code>systemctl reload apache2</code>
+							<br />
+						</p>
+						<br />
+						<p>
+							Now, if you go to
+							<code>192.168.something.whatever/phpmyadmin/</code>
+							(your computer’s IP) you should see the phpMyAdmin login
+                        page;
+							<strong>however, you should not login yet.</strong>
+						</p>
+					</blockquote>
+					<h2>Configuring MariaDB</h2>
+					<blockquote>
+						<p>
+							<code>mariadb</code>
+							<br />
+						</p>
+						<pre>
+							<code class= &quot;mariadb&quot;>CREATE DATABASE nextcloud;
+CREATE USER nextcloud IDENTIFIED BY 'Password'; # but with your password
+GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password'; # again, your password
+GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;
+FLUSH PRIVILEGES;
+quit;</code>
+						</pre>
+						<p>
+							Now you should be able to login on the myphpadmin forum
+                        with the
+							<code>nextcloud</code>
+							as the username, and the
+                        password you just set up as the password.
+						</p>
+					</blockquote>
+					<h2>Installing PHP &amp; Libraries</h2>
+					<blockquote>
+						<p>
+							<code>sudo apt install php-gd php-json php-mysql php-curl
+                            php-mbstring php-intl php-imagick php-xml
+                            php-zip</code>
+							<br />
+						</p>
+					</blockquote>
+					<h2>Installing Nextcloud</h2>
+					<blockquote>
+						<code>wget
+                        https://download.nextcloud.com/server/releases/latest.tar.bz2</code>
+						<br />
+						<code>tar -xvf latest.tar.bz2</code>
+						<br />
+						<code>cd nextcloud</code>
+						<br />
+						<code>mv ./* /var/www/html/</code>
+						<br />
+						<code>mv ./.htaccess /var/www/html</code>
+						<br />
+						<code>mv ./.user.ini /var/www/html</code>
+						<br />
+						<code>cd /var/www/html</code>
+						<br />
+						<code>chown -R www-data:www-data ./*</code>
+						<br />
+						<code>chown www-data:www-data .htaccess</code>
+						<br />
+						<code>chown www-data:www-data .user.ini</code>
+						<br />
+						<p>
+							Now if you go to
+							<code>192.168.something.whatever</code>
+							you’ll get the
+                        Nextcloud page
+							<strong>BUT DO NOT LOGIN / CREATE ACCOUNT</strong>
+							. You
+                        need to set up encryption.
+						</p>
+					</blockquote>
+					<h2>Setting up Encryption</h2>
+					<blockquote>
+						<p>
+							<code>sudo apt install certbot</code>
+							<br />
+							<code>sudo apt install python-certbot-apache</code>
+							<br />
+						</p>
+						<p>
+							<code>nano
+                            /etc/apache2/sites-available/000-default.conf</code>
+							and uncomment and change
+							<code>ServerName</code>
+							to
+                        whatever domain you’re using, e.g.
+							<code>cloud.mehvix.com</code>
+						</p>
+						<br />
+						<br />
+						<p>
+							Then you need to point your domain at your server and
+                        open your server to the external access. You’ll first
+                        need to port forward your server (you can find the ip
+                        via
+							<code>hostname -I</code>
+							) to port
+							<code>443</code>
+							,
+                        and then create an A record under your domain’s DNS
+                        settings pointing at your external IP (found via
+							<code>dig +short myip.opendns.com
+                            @resolver1.opendns.com</code>
+							)
+						</p>
+						<br />
+						<br />
+						<p>
+							<strong>NOTE:</strong>
+							If you’re using Cloudflare, you
+                        have to disable Universal SSL for Nextcloud to work
+						</p>
+						<br />
+						<br />
+						<p>
+							<code>systemctl restart apache2</code>
+							<br />
+							<code>certbot --apache</code>
+							<br />
+						</p>
+						<p>
+                        This will prompt you to autoredirect from http to https.
+                        Your choice, but I'd go ahead and choose redirect.
+                    </p>
+					</blockquote>
+					<h2>Setting up Storage/Login</h2>
+					<blockquote>
+						<p>
+							For security reasons, it’s a good idea to have the data
+                        folder outside of the web root (
+							<code>/var/www/</code>
+							)
+                        I already set up my drives/raid config, so all I had to
+                        do was create and mount a partition:
+							<br />
+							<code>mkdir /media/nextcloud-data/</code>
+							<br />
+							<code>chown www-data:www-data
+                            /media/nextcloud-data/</code>
+							<br />
+							<code>mkfs.ext4 /dev/sda</code>
+							<br />
+							<code>mount /dev/sda /media/nextcloud-data/</code>
+							<br />
+							<br />
+							Then to set up automount,
+							<code>sudo blkid</code>
+							and
+                        grab the UUID of the partition,
+							<code>sudo nano /etc/fstab</code>
+							and add
+							<br />
+						</p>
+						<pre>
+							<code class= &quot;ini&quot;>UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0</code>
+						</pre>
+					</blockquote>
+					<p>
+						After that, you can go ahead to the Nextcloud page, create
+                    an account (you will use this for all Nextcloud logins).
+                    Make sure to change the data folder to
+						<code>/media/nextcloud-data/</code>
+						or whatever dir you are
+                    using, then enter the MariaDB user/password.
+						<br />
+						<br />
+					</p>
+					<p>
+						Now you’ve got yourself a Nextcloud Server! However, there
+                    are still a couple things that you still need to configure
+                    which I’ll cover in the following section.
+						<br />
+						<br />
+					</p>
+					<h1>Securing Nextcloud</h1>
+					<p>
+						If you head to
+						<code>https://yournextcloud.com/settings/admin/overview</code>
+						you’ll see all security and setup warnings. Here’s how you
+                    fix the ones that I encountered:
+					</p>
+					<h2>
+                    The PHP memory limit is below the recommended value of
+                    512MB.
+                </h2>
+					<blockquote>
+						<p>
+							<code>nano /etc/php/7.4/apache2/php.ini</code>
+							<br />
+						</p>
+						<pre>
+							<code class= &quot;ini&quot;>upload_max_filesize = 512M
+memory_limit = 512M
+post_max_size = 512M</code>
+						</pre>
+						<p>
+							<code>systemctl restart apache2</code>
+						</p>
+					</blockquote>
+					<h2>
+                    The “Strict-Transport-Security” HTTP header is not set to at
+                    least “15552000” seconds. For enhanced security, it is
+                    recommended to enable HSTS as described in the security
+                    tips.
+                </h2>
+					<blockquote>
+						<p>
+							<code>nano
+                            /etc/apache2/sites-available/000-default-le-ssl.conf</code>
+							<br />
+						</p>
+						<p>
+							Add the following under
+							<code>ServerName</code>
+							:
+						</p>
+						<pre>
+							<code class= &quot;apache&quot;>&lt;IfModule mod_headers.c&gt;
+    Header always set Strict-Transport-Security &quot;max-age=15552000; includeSubDomains; preload&quot;
+&lt;/IfModule&gt;</code>
+						</pre>
+						<p>
+							<code>a2enmod headers</code>
+							<br />
+							<code>systemctl restart apache2</code>
+						</p>
+					</blockquote>
+					<h2>
+                    Your web server is not properly set up to resolve
+                    “/.well-known/[caldav][carddav]“. Further information can be
+                    found in the documentation
+                </h2>
+					<blockquote>
+						<p>
+							<code>nano
+                            /etc/apache2/sites-available/000-default-le-ssl.conf</code>
+							<br />
+						</p>
+						<p>
+							Add the following under
+							<code>ServerName</code>
+							:
+						</p>
+						<pre>
+							<code>&lt;Directory /var/www/html/&gt;
+	Options +FollowSymLinks
+	AllowOverride All
+&lt;/Directory&gt;</code>
+						</pre>
+						<p>
+							<code>systemctl restart apache2</code>
+						</p>
+					</blockquote>
+					<h2>
+                    No memory cache has been configured. To enhance performance,
+                    please configure a memcache, if available. Further
+                    information can be found in the documentation
+                </h2>
+					<blockquote>
+						<code>sudo apt install php-apcu</code>
+						<br />
+						<code>nano /var/www/html/config/config.php</code>
+						<br />
+						<pre>
+							<code style= &quot;margin: 0;&quot;>'memcache.local' =&gt; '\OC\Memcache\APCu'</code>
+						</pre>
+						<br />
+						<code>sudo nano /etc/php/7./mods-available/apcu.ini</code>
+						<pre>
+							<code>apc.enable_cli=1</code>
+						</pre>
+						<br />
+						<code style= &quot;margin: 0&quot;>systemctl restart apache2</code>
+					</blockquote>
+					<h2>The PHP OPcache is not properly configured</h2>
+					<blockquote>
+						<p>
+							<code>nano /etc/php/7.4/apache2/php.ini</code>
+							<br />
+							The following are default settings, consider checking
+                        out
+							<a href= &quot;https: www.scalingphpbook.com blog 2014 02 14 best-zend-opcache-settings.html&quot;>this blog</a>
+							for information on what each parameter means
+							<br />
+						</p>
+						<pre>
+							<code class= &quot;apache&quot;>opcache.enable=1
+opcache.enable_cli=1
+opcache.memory_consumption=128
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=10000
+opcache.revalidate_freq=1
+opcache.save_comments=1</code>
+						</pre>
+						<p>
+							<code>systemctl restart apache2</code>
+						</p>
+					</blockquote>
+					<h2>
+                    Some columns in the database are missing a conversion to big
+                    int
+                </h2>
+					<blockquote>
+						<p>
+							<code>sudo -u www-data php /var/www/html/occ
+                            db:convert-filecache-bigint</code>
+						</p>
+					</blockquote>
+					<h2>The database is missing some indexes</h2>
+					<blockquote>
+						<p>
+							<code>sudo -u www-data php /var/www/html/occ
+                            db:add-missing-indices</code>
+						</p>
+					</blockquote>
+					<h2>
+                    MySQL is used as database but does not support 4-byte
+                    characters
+                </h2>
+					<blockquote>
+						<p>
+							First, update MariaDB:
+							<br />
+							<code>nano /etc/mysql/my.cnf</code>
+						</p>
+						<pre>
+							<code>[mysqld]
+innodb_file_per_table=1</code>
+						</pre>
+						<p>
+							<code>systemctl restart mariadb</code>
+							<br />
+							<code>mariadb</code>
+							<br />
+						</p>
+						<pre>
+							<code class= &quot;mariadb&quot;>ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+use nextcloud;
+set global innodb_large_prefix=on;
+set global innodb_file_format=Barracuda;
+quit;</code>
+						</pre>
+						<p>
+							Then, update Nextcloud:
+							<br />
+							<code>sudo -u www-data php /var/www/html/occ
+                            config:system:set mysql.utf8mb4 --type boolean
+                            --value=&quot;true&quot;</code>
+							<br />
+							<code>sudo -u www-data php /var/www/html/occ
+                            maintenance:repair</code>
+							<br />
+						</p>
+					</blockquote>
+					<h1>Further Securing &amp; Optimization</h1>
+					<p>
+						There are various other actions you can take to ensure that
+                    both your os and nextcloud are secure. I’ll be covering the
+                    one’s found on
+						<a href= &quot;https: docs.nextcloud.com server 14 admin_manual configuration_server harden_server.html&quot;>this wiki page</a>
+						.
+					</p>
+					<h2>
+						Give PHP read access to
+						<code>/dev/urandom</code>
+					</h2>
+					<blockquote>
+						<p>
+							On my system this ended up breaking Nextcloud, but I’ll
+                        keep it in here because it’s in the Nextcloud docs. If
+                        you’re site breaks, you should try commenting out
+							<code>open_basedir</code>
+							<br />
+							<code>sudo nano /etc/php/7.4/apache2/php.ini</code>
+							<br />
+							Add
+							<code>open_basedir = /dev/urandom</code>
+							<br />
+							<code>systemctl restart apache2</code>
+							<br />
+						</p>
+					</blockquote>
+					<h2>Install and Tune PHP-FPM</h2>
+					<blockquote>
+						<p>
+							<code>sudo apt-get install php-fpm</code>
+							<br />
+							<code>a2enmod proxy_fcgi setenvif</code>
+							<br />
+							<code>a2enconf php7.4-fpm</code>
+							<br />
+							<code>systemctl reload apache2</code>
+							<br />
+							<code>nano /etc/php/7.4/fpm/pool.d/www.conf</code>
+							and
+                        add the following:
+							<br />
+						</p>
+						<pre>
+							<code>pm = dynamic
+pm.max_children = 120
+pm.start_servers = 12
+pm.min_spare_servers = 6
+pm.max_spare_servers = 18
+pm.max_requests = 1000</code>
+						</pre>
+						<p>
+							<br />
+							Note that these are the recommended settings for 4GB
+                        total/1GB database and should be modified for your
+                        system.
+						</p>
+					</blockquote>
+					<h1>Quality of Life Changes + Apps</h1>
+					<p>
+                    While theses tips aren’t needed for security, they’re nice
+                    to have.
+                </p>
+					<h2>
+						Removing
+						<code>/index.php</code>
+						from every URL
+					</h2>
+					<blockquote>
+						<p>
+							<code>nano /var/www/html/config/config.php</code>
+						</p>
+						<pre>
+							<code>'htaccess.RewriteBase' =&gt; '/'</code>
+						</pre>
+						<p>
+							<code>sudo -u www-data php /var/www/html/occ
+                            maintenance:update:htaccess</code>
+							<br />
+							<code>systemctl restart apache2</code>
+							<br />
+						</p>
+					</blockquote>
+					<h2>Increasing the max file size</h2>
+					<blockquote>
+						<p>
+							<code>nano /etc/php/7.4/apache2/php.ini</code>
+							<br />
+						</p>
+						<pre>
+							<code>upload_max_filesize = 16G
+post_max_size = 16G
+max_input_time = 3600
+max_execution_time = 3600
+upload_tmp_dir = /var/big_temp_files/</code>
+						</pre>
+						<p>
+							<code>nano /var/www/html/.user.ini</code>
+							<br />
+						</p>
+						<pre>
+							<code>upload_max_filesize = 16G
+post_max_size = 16G</code>
+						</pre>
+						<p>
+							<code>chown www-data:www-data
+                            /media/big_temp_files/</code>
+						</p>
+					</blockquote>
+					<h2>
+                    Solving “Index column size too large. The maximum column
+                    size is 767 bytes.”
+                </h2>
+					<blockquote>
+						<p>
+							<code>mariadb</code>
+							<br />
+						</p>
+						<pre>
+							<code>set global innodb_file_format = BARRACUDA
+set global innodb_large_prefix = ON
+set global innodb_file_per_table = ON
+set global innodb_default_row_format = 'DYNAMIC'
+quit</code>
+						</pre>
+						<p>
+							<code>nano /etc/mysql/my.cnf</code>
+							<br />
+						</p>
+						<pre>
+							<code>innodb_file_per_table=1
+innodb-file-format=barracuda
+innodb-file-per-table=ON
+innodb-large-prefix=ON
+innodb_default_row_format = 'DYNAMIC'</code>
+						</pre>
+						<p>
+							<code>systemctl restart mariadb</code>
+						</p>
+					</blockquote>
+					<h2>
+                    Fixing right click not working (How to manually install an
+                    addon)
+                </h2>
+					<blockquote>
+						<a href= &quot;https: github.com nextcloud files_rightclick issues 83#issuecomment-525592831&quot;>This is fixed, but I figured I'd keep it in anyways</a>
+						<br />
+						<br />
+						<code>cd /var/www/html/apps/</code>
+						<br />
+						<code>wget --load-cookies /tmp/cookies.txt
+                        &quot;https://docs.google.com/uc?export=download&amp;confirm=$(wget
+                        --quiet --save-cookies /tmp/cookies.txt
+                        --keep-session-cookies --no-check-certificate
+                        'https://docs.google.com/uc?export=download&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j'
+                        -O- | sed -rn
+                        's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j&quot;
+                        -O rclick &amp;&amp; rm -rf /tmp/cookies.txt</code>
+						<br />
+						<code>rm -rf files_rightclick/</code>
+						<br />
+						<code>unzip rclick</code>
+						<br />
+						<code>rm rclick</code>
+						<br />
+						<code>systemctl restart apache2</code>
+						<br />
+						<br />
+						Then make sure that you re-enable the right click app too.
+                    If that doesn’t work, try
+						<code>sudo apt-get install php-ldap</code>
+						<br />
+						<br />
+						<code>systemctl restart apache2</code>
+					</blockquote>
+					<h2>Set timezone</h2>
+					<blockquote>
+						<p>
+							<code>nano /var/www/html/config/config.php</code>
+							<br />
+							Find your timezone in the ones avaliabe
+							<a href= &quot;https: www.php.net manual en timezones.php&quot;>here</a>
+							<br />
+						</p>
+						<pre>
+							<code>'logtimezone' =&gt; 'America/Chicago',</code>
+						</pre>
+						<p>
+							<code>nano /etc/php/7.4/apache2/php.ini</code>
+							<br />
+						</p>
+						<pre style= &quot;margin-bottom: 0&quot;>
+							<code>date.timezone = America/Chicago,</code>
+						</pre>
+					</blockquote>
+					<h2>Change default files for new users</h2>
+					<blockquote>
+						<p>
+							All files that are created for a user can be found in
+							<code>/var/www/html/core/skeleton/</code>
+						</p>
+					</blockquote>
+					<h1>Common Issues &amp; Fixes</h1>
+					<h2>Transering [file] - server replied: [nothing]</h2>
+					<blockquote>
+						<p>
+							<code>sudo -u www-data php /var/www/html/occ files:scan
+                            --all</code>
+							<br />
+						</p>
+					</blockquote>
+					<h2>Files aren’t showing up for [user]</h2>
+					<blockquote>
+						<p>
+							<code>sudo chown -R www-data:www-data [data mount
+                            location]/[user]</code>
+							<br />
+							<code>sudo -u www-data php /var/www/html/occ files:scan
+                            --[user]</code>
+							<br />
+						</p>
+					</blockquote>
+					<h2>
+                    Transfeing [file] - server replied: Forbidden
+                    (Sabre\DAV\Exception\Forbidden)
+                </h2>
+					<blockquote>
+						<p>
+							<code>sudo rm [username]/uploads</code>
+							<br />
+						</p>
+					</blockquote>
+					<h2>Home storage for user [user] not writable</h2>
+					<blockquote>
+						<p>
+							<code>sudo chown -R www-data:www-data [data mount
+                            location]/[user]</code>
+						</p>
+					</blockquote>
+					---
+					<h1>Backing Up</h1>
+					<blockquote>
+						Turn on maintenance:
+						<br />
+						<code>cd /var/www/html/</code>
+						<br />
+						<code>sudo -u www-data php occ maintenance:mode --on</code>
+						<br />
+						<br />
+						Copy Files:
+						<br />
+						<code>cd /var/www/</code>
+						<br />
+						<code>rsync -Aavx html/ backupdir/html_bkup_`date
+                        +&quot;%Y%m%d&quot;`/</code>
+						<br />
+						<br />
+						<br />
+						Backup MariaDB:
+						<br />
+						<code>mysqldump --single-transaction -u [nextcloud]
+                        -p[password] nextcloud &gt; backupdir/sqlbkp_`date
+                        +&quot;%Y%m%d&quot;`.bak</code>
+						<br />
+						<br />
+						<br />
+						Turn off maintenance:
+						<br />
+						<code>cd /var/www/html/</code>
+						<br />
+						<code>sudo -u www-data php occ maintenance:mode --off</code>
+						<br />
+					</blockquote>
+					<h1>Updating</h1>
+					<blockquote>
+						- Go to
+						<code>https://cloud.dns.com/settings/admin/overview</code>
+						and select the version you want
+						<br />
+						- Follow the steps, make sure not to touch anything while
+                    updating
+						<br />
+						-
+						<code>systemctl restart apache2</code>
+						<br />
+						- Double check the ‘Security &amp; setup warnings’ (also on
+						<code>.../admin/overview</code>
+						)
+						<br />
+						-
+						<a href= &quot;https: scan.nextcloud.com &quot;>Verify your server's security</a>
+						<br />
+						- Congrads!
+					</blockquote>
+				</article>
+			</content:encoded>
 		</item>
 	</channel>
 </rss>
