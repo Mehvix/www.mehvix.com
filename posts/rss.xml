@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
-	<channel>
-		<title>mehvix.com</title>
-		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Sat, 17 Apr 2021 05:34:45 -0000</lastBuildDate>
-		<language>en-us</language>
-		<link>https://www.mehvix.com</link>
-		<category>Blog</category>
-		<item>
-			<author>Max Vogel</author>
-			<title>What is this site?</title>
-			<pubDate>Fri, 16 Apr 2021 05:00:00 -0000</pubDate>
-			<link>https://mehvix.com/posts/what-is-this.html</link>
-			<guid>https://mehvix.com/posts/what-is-this.html</guid>
-			<content:encoded>
-				<![CDATA[<article>
+    <channel>
+        <title>mehvix.com</title>
+        <description>Updates from mehvix.com (Max Vogel)</description>
+        <lastBuildDate>Sat, 17 Apr 2021 05:34:45 -0000</lastBuildDate>
+        <language>en-us</language>
+        <link>https://www.mehvix.com</link>
+        <category>Blog</category>
+        <item>
+            <author>Max Vogel</author>
+            <title>What is this site?</title>
+            <pubDate>Fri, 16 Apr 2021 05:00:00 -0000</pubDate>
+            <link>https://mehvix.com/posts/what-is-this.html</link>
+            <guid>https://mehvix.com/posts/what-is-this.html</guid>
+            <content:encoded>
+                <![CDATA[<article>
 <p>
                     Answering the title: I'm not really sure (yet)! Right now,
                     it's really just a list of ways to contact me, my todo-list
@@ -41,16 +41,16 @@
                     look back in a few years and make fun of my self.
                 </p>
 </article>]]>
-			</content:encoded>
-		</item>
-		<item>
-			<author>Max Vogel</author>
-			<title>CalyxOS Install Guide</title>
-			<pubDate>Fri, 29 Jan 2021 06:00:00 -0000</pubDate>
-			<link>https://mehvix.com/posts/calyx.html</link>
-			<guid>https://mehvix.com/posts/calyx.html</guid>
-			<content:encoded>
-				<![CDATA[<article>
+            </content:encoded>
+        </item>
+        <item>
+            <author>Max Vogel</author>
+            <title>CalyxOS Install Guide</title>
+            <pubDate>Fri, 29 Jan 2021 06:00:00 -0000</pubDate>
+            <link>https://mehvix.com/posts/calyx.html</link>
+            <guid>https://mehvix.com/posts/calyx.html</guid>
+            <content:encoded>
+                <![CDATA[<article>
 <p>
                     This blog goes over how to install CalyxOS — a custom
                     Android ROM for (somewhat ironically) Google's Pixel phones.
@@ -114,16 +114,16 @@
                     the bootloader and you're set!
                 </p>
 </article>]]>
-			</content:encoded>
-		</item>
-		<item>
-			<author>Max Vogel</author>
-			<title>Make Twitter Suck Less</title>
-			<pubDate>Mon, 07 Dec 2020 06:00:00 -0000</pubDate>
-			<link>https://mehvix.com/posts/twitter.html</link>
-			<guid>https://mehvix.com/posts/twitter.html</guid>
-			<content:encoded>
-				<![CDATA[<article id=&quot;content&quot;>
+            </content:encoded>
+        </item>
+        <item>
+            <author>Max Vogel</author>
+            <title>Make Twitter Suck Less</title>
+            <pubDate>Mon, 07 Dec 2020 06:00:00 -0000</pubDate>
+            <link>https://mehvix.com/posts/twitter.html</link>
+            <guid>https://mehvix.com/posts/twitter.html</guid>
+            <content:encoded>
+                <![CDATA[<article id=&quot;content&quot;>
 <p>
                     Twitter is pretty bad. But, it's the only place with
                     <a href=&quot;https://twitter.com/jon_bois&quot;>Jon Bois tweets</a>.
@@ -260,19 +260,19 @@ keywords.reduce(async (prev, keyword) =&gt; {
                     more focused on the content you enjoy. For example, here's
                     my new homepage:
 
-                    <img alt=&quot;End result&quot; src=&quot;../static/media/posts/suckless-twitter-result.JPG&quot; style=&quot;width: 100%; margin-top: 1em&quot;/>
+                    <img alt=&quot;End result&quot; src=&quot;/static/media/posts/suckless-twitter-result.JPG&quot; style=&quot;width: 100%; margin-top: 1em&quot;/>
 </div>
 </article>]]>
-			</content:encoded>
-		</item>
-		<item>
-			<author>Max Vogel</author>
-			<title>NC Importing + Automating Calendars</title>
-			<pubDate>Wed, 08 Apr 2020 05:00:00 -0000</pubDate>
-			<link>https://mehvix.com/posts/nextcloud-calendar.html</link>
-			<guid>https://mehvix.com/posts/nextcloud-calendar.html</guid>
-			<content:encoded>
-				<![CDATA[<article id=&quot;content&quot;>
+            </content:encoded>
+        </item>
+        <item>
+            <author>Max Vogel</author>
+            <title>NC Importing + Automating Calendars</title>
+            <pubDate>Wed, 08 Apr 2020 05:00:00 -0000</pubDate>
+            <link>https://mehvix.com/posts/nextcloud-calendar.html</link>
+            <guid>https://mehvix.com/posts/nextcloud-calendar.html</guid>
+            <content:encoded>
+                <![CDATA[<article id=&quot;content&quot;>
 <p>
                     Upgrading to Nextcloud 18 broke both importing public Google
                     calendars and external calendars so that they don’t update
@@ -337,16 +337,16 @@ keywords.reduce(async (prev, keyword) =&gt; {
                     <a href=&quot;https://www.php.net/manual/en/dateinterval.construct.php&quot;>DataInterval</a>.
                 </p>
 </article>]]>
-			</content:encoded>
-		</item>
-		<item>
-			<author>Max Vogel</author>
-			<title>Nextcloud Install Guide</title>
-			<pubDate>Tue, 03 Sep 2019 05:00:00 -0000</pubDate>
-			<link>https://mehvix.com/posts/nextcloud-guide.html</link>
-			<guid>https://mehvix.com/posts/nextcloud-guide.html</guid>
-			<content:encoded>
-				<![CDATA[<article>
+            </content:encoded>
+        </item>
+        <item>
+            <author>Max Vogel</author>
+            <title>Nextcloud Install Guide</title>
+            <pubDate>Tue, 03 Sep 2019 05:00:00 -0000</pubDate>
+            <link>https://mehvix.com/posts/nextcloud-guide.html</link>
+            <guid>https://mehvix.com/posts/nextcloud-guide.html</guid>
+            <content:encoded>
+                <![CDATA[<article>
 <h1>Basic Installation Step</h1>
 <h2 style=&quot;margin-top: 0&quot;>Getting the machine up-to-date</h2>
 <blockquote>
@@ -372,7 +372,7 @@ keywords.reduce(async (prev, keyword) =&gt; {
                         able to go to your machine’s IP (you can get this via
                         <code>hostname -I</code>) in the browser of your choice
                         and see the
-                        <a href=&quot;../static/media/posts/apache2page.png&quot;>“Apache2 Ubuntu Default Page”</a>
+                        <a href=&quot;/static/media/posts/apache2page.png&quot;>“Apache2 Ubuntu Default Page”</a>
 </p>
 </blockquote>
 <h2>Installing MariaDB - the database</h2>
@@ -869,8 +869,8 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
                     - Congrads!
                 </blockquote>
 </article>]]>
-			</content:encoded>
-		</item>
-		<atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml" />
-	</channel>
+            </content:encoded>
+        </item>
+        <atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml" />
+    </channel>
 </rss>
