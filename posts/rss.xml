@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Sat, 17 Apr 2021 05:23:48 -0000</lastBuildDate>
+		<lastBuildDate>Sat, 17 Apr 2021 05:34:45 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
@@ -871,5 +871,6 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
 </article>]]>
 			</content:encoded>
 		</item>
+		<atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml" />
 	</channel>
 </rss>

@@ -128,23 +128,46 @@
             <br />
             <p>This color's page is <i>Cocoa Brown</i></p>
             <div id="footer">
-                $BTC /
-                <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1"
-                    >15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</a
-                ><br />
-                $ETH /
-                <a href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74"
-                    >0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</a
-                ><br />
+                <table id="footerTable">
+                    <tr>
+                        <td style="width: 80%">$BTC</td>
+                        <td>
+                            <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">
+                                15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>$ETH</td>
+                        <td>
+                            <a
+                                href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74"
+                                >0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>$XMR</td>
+                        <td class="cryptoaddy" style="max-width: inherit">
+                            <a
+                                href="xmr:45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ"
+                                class="cryptoaddy"
+                            >
+                                45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="footerDateYear">2021</td>
+                        <td>Max Vogel</td>
+                    </tr>
+                </table>
 
-                <div id="footerDateYear">2021</div>
                 <script>
                     document.getElementById(
                         'footerDateYear'
                     ).innerText = new Date().getFullYear()
                 </script>
-                / Max Vogel
             </div>
-        </div>
     </body>
 </html>

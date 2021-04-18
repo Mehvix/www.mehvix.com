@@ -76,8 +76,27 @@ p {
     white-space: pre;
 }
 
-#footer #footerDateYear {
-    display: contents;
+#footerTable {
+    width: 100%;
+}
+#footerTable tr {
+    max-width: 50ch;
+    /* todo this isn't great^ */
+}
+
+#footerTable td:nth-of-type(1)::after {
+    content: '  / ';
+}
+
+#footerTable td:nth-of-type(2) {
+    overflow: auto;
+    display: flex;
+}
+
+#footerTable td:nth-of-type(2)::-webkit-scrollbar,
+#footerTable td:nth-of-type(2)::-webkit-scrollbar-thumb {
+    width: 0;
+    height: 0;
 }
 
 a,

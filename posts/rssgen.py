@@ -19,6 +19,7 @@ mini = minidom.Document()
 content = mini.createElement('rss')
 content.setAttribute('version', '2.0')
 content.setAttribute('xmlns:media', 'http://search.yahoo.com/mrss/')
+content.setAttribute('xmlns:atom', 'http://www.w3.org/2005/Atom')
 content.setAttribute(
     'xmlns:content', 'http://purl.org/rss/1.0/modules/content/')
 mini.appendChild(content)
@@ -104,6 +105,13 @@ for i in soup.find_all("tr"):
     itemElement.appendChild(contElement)
 
     channel.appendChild(itemElement)
+
+atomElement = mini.createElement('atom:link')
+atomElement.setAttribute('href', 'http://dallas.example.com/rss.xml')
+atomElement.setAttribute('rel', 'self')
+atomElement.setAttribute('type', 'application/rss+xml')
+channel.appendChild(atomElement)
+
 
 # with codecs.open(mini.toxml(), "r", "utf-8") as inp:
 #     xml = minidom.parseString(inp.read().encode("utf-8"))
