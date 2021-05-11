@@ -26,6 +26,19 @@
             :root {
                 --outside-bg-color: #d2691e;
             }
+
+            #autobox div {
+                width: 100%;
+            }
+
+            #autolink {
+                width: 100%;
+                padding: 0.5em 0 !important;
+                color: #abb2bf;
+                font-size: 90%;
+                background-color: var(--code-bg-color) !important;
+                border-radius: 4px;
+            }
         </style>
     </head>
 
@@ -97,6 +110,23 @@
 
                 <pre><code class="ini">https://calendar.google.com/calendar/ical/k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com/public/basic.ics</code></pre>
 
+                <br />
+                <p>
+                    Alternatively, you can enter in the calendar link in the
+                    following textbox and it should spit out the correct iCal
+                    link:
+                </p>
+
+                <div id="autobox">
+                    <div>
+                        <pre style="margin: 0.5em"><input id="autolink" /></pre>
+                        <pre
+                            style="margin: 0 0.5em"
+                        ><code id="autout"> </code></pre>
+                    </div>
+                </div>
+                <script src="/static/js/nextcloud-calendar.js"></script>
+
                 <p>
                     You can then use this URL to as the external URL in the
                     Nextcloud Calendar app.
@@ -163,9 +193,8 @@
                 </table>
 
                 <script>
-                    document.getElementById(
-                        'footerDateYear'
-                    ).innerText = new Date().getFullYear()
+                    document.getElementById('footerDateYear').innerText =
+                        new Date().getFullYear()
                 </script>
             </div>
         </div>
