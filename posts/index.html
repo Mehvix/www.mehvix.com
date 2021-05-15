@@ -44,6 +44,13 @@
 
             /* BG Shadow CSS */
             /* todo this sucks but is okay atm */
+            #win-insecure-files {
+                box-shadow: inherit;
+                box-shadow: inset 0 -0.14em 0 #0072c6;
+            }
+            #win-insecure-files:hover {
+                background-color: #0072c6;
+            }
             #what-is-this {
                 box-shadow: inherit;
                 box-shadow: inset 0 -0.14em 0 #093e92;
@@ -93,6 +100,17 @@
             <a href="rss.xml">RSS feed</a>
 
             <table style="margin-top: 1.5em" id="blogs">
+                <tr>
+                    <td class="posts">21-05-13</td>
+                    <td>
+                        <a
+                            href="win-insecure-files.html"
+                            id="win-insecure-files"
+                            >Windows: Your files are insecure</a
+                        >
+                    </td>
+                </tr>
+
                 <tr>
                     <td class="posts">21-04-16</td>
                     <td>
@@ -145,7 +163,7 @@
             <div id="footer">
                 <table id="footerTable">
                     <tr>
-                        <td style="width: 80%">$BTC</td>
+                        <td>$BTC</td>
                         <td>
                             <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">
                                 15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1
@@ -178,11 +196,7 @@
                     </tr>
                 </table>
 
-                <script>
-                    document.getElementById(
-                        'footerDateYear'
-                    ).innerText = new Date().getFullYear()
-                </script>
+                <script src="/static/js/include.js"></script>
             </div>
         </div>
     </body>

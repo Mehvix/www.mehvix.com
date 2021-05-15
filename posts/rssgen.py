@@ -58,11 +58,12 @@ catContent = mini.createTextNode('Blog')
 catElement.appendChild(catContent)
 channel.appendChild(catElement)
 
-
-for i in soup.find_all("tr"):
-    title = i.find("a").string.strip()
-    url = i.find("a")['href']
-    date = "20" + i.find("td").string
+blog = soup.find("table", {"id": "blogs"})
+posts = blog.find_all("tr")
+for post in posts:
+    title = post.find("a").string.strip()
+    url = post.find("a")['href']
+    date = "20" + post.find("td").string
 
     contPath = 'posts/' + url.split("/")[-1]
     contFile = open(contPath, encoding='utf-8').read()

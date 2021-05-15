@@ -5,7 +5,6 @@ input.addEventListener('input', updateValue)
 
 function updateValue(e) {
     var val = e.target.value
-    console.log(val)
     if (val == '') {
         out.textContent = ' '
     } else if (RegExp('src').test(val)) {

@@ -1,5 +1,5 @@
 :root {
-    /*Defaults -- these should be overwritten*/
+    /*Defaults — these should be overwritten*/
     --inside-bg-color: #e2e5e2;
     --outside-bg-color: #006b75;
     --code-bg-color: #282c34;
@@ -75,6 +75,10 @@ p {
     margin: 0.5em 0;
 }
 
+article p {
+    margin: 0.25em 0 1em;
+}
+
 .box {
     max-width: 50rem;
     margin: 2em;
@@ -104,8 +108,12 @@ p {
     /* todo this isn't great^ */
 }
 
+#footer #footerTable > tr > td {
+    width: 5ch !important;
+}
+
 #footerTable td:nth-of-type(1)::after {
-    content: ' /';
+    content: ' / ';
 }
 
 #footerTable td:nth-of-type(2) {
@@ -218,7 +226,7 @@ div.nav > a:first-child {
     margin-left: 0 !important;
 }
 
-/* doesn't work -- underline from <a> carries */
+/* doesn't work — underline from <a> carries */
 /* div.nav a:not(:last-child)::after {
     content: "/";
 } */
@@ -284,7 +292,7 @@ h1,
 h2,
 h3 {
     font-weight: 700;
-    margin-top: 1.5em;
+    margin-top: 2em;
     margin-bottom: 0.25em;
 }
 
