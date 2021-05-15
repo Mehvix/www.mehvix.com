@@ -52,6 +52,16 @@ input {
     background-color: var(--outside-bg-color);
 }
 
+/* https://stackoverflow.com/a/43783066/7833617 */
+.select-all {
+    -webkit-touch-callout: all; /* iOS Safari */
+    -webkit-user-select: all; /* Safari */
+    -khtml-user-select: all; /* Konqueror HTML */
+    -moz-user-select: all; /* Firefox */
+    -ms-user-select: all; /* Internet Explorer/Edge */
+    user-select: all; /* Chrome and Opera */
+}
+
 body::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */
