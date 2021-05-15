@@ -9,3 +9,5 @@
 //     document.getElementById("copy").insertAdjacentHTML("afterbegin", " " + new Date().getFullYear() + " - Max Vogel")
 // } ()
 // todo work on this^
+
+document.getElementById('footerDateYear').innerText = new Date().getFullYear()
