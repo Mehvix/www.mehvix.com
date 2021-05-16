@@ -52,6 +52,26 @@ input {
     background-color: var(--outside-bg-color);
 }
 
+.input {
+    background-color: var(--code-bg-color);
+    color: var(--inside-bg-color);
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    height: 2.5em;
+    padding: 0.5ch;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.output {
+    text-align: left;
+    color: var(--inside-bg-color) !important;
+}
+
 /* https://stackoverflow.com/a/43783066/7833617 */
 .select-all {
     -webkit-touch-callout: all; /* iOS Safari */

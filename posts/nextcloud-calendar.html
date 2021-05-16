@@ -30,15 +30,6 @@
             #autobox div {
                 width: 100%;
             }
-
-            #autolink {
-                width: 100%;
-                padding: 0.5em 0 !important;
-                color: #abb2bf;
-                font-size: 90%;
-                background-color: var(--code-bg-color) !important;
-                border-radius: 4px;
-            }
         </style>
     </head>
 
@@ -119,10 +110,12 @@
 
                 <div id="autobox">
                     <div>
-                        <pre style="margin: 0.5em"><input id="autolink" /></pre>
+                        <pre
+                            style="margin: 0.5em"
+                        ><input id="autolink" class="input" /></pre>
                         <pre
                             style="margin: 0 0.5em"
-                        ><code id="autout" class="select-all"> </code></pre>
+                        ><code id="autout" class="select-all output"> </code></pre>
                     </div>
                 </div>
                 <script src="/static/js/nextcloud-calendar.js"></script>

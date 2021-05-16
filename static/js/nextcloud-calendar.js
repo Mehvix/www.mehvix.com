@@ -2,7 +2,6 @@ const input = document.getElementById('autolink')
 const out = document.getElementById('autout')
 
 input.addEventListener('input', updateValue)
-
 function updateValue(e) {
     var val = e.target.value
     if (val == '') {
