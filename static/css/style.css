@@ -68,6 +68,10 @@ input {
     border: none;
 }
 
+code {
+    font-family: 'PT Mono', monospace !important;
+}
+
 .output {
     text-align: left;
     color: var(--inside-bg-color) !important;
