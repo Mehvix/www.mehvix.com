@@ -3,10 +3,61 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Sat, 15 May 2021 05:05:25 -0000</lastBuildDate>
+		<lastBuildDate>Tue, 18 May 2021 04:14:54 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
+		<item>
+			<author>Max Vogel</author>
+			<title>Use www</title>
+			<pubDate>Mon, 17 May 2021 05:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/use-www.html</link>
+			<guid>https://mehvix.com/posts/use-www.html</guid>
+			<content:encoded><![CDATA[<article>
+<p>
+                    I have a <i>yuuuug</i> bookmarks folder of assorted articles
+                    I've come across but haven't had the time to delve into. Now
+                    that I'm through my UW classwork I've finally been able to
+                    chunk through some of them and today and I came across the
+                    (mostly-irrelevant, website-related decision) debate between
+                    <a href=&quot;http://no-www.org/&quot;>no-www</a> and
+                    <a href=&quot;https://www.yes-www.org/&quot;><b>www</b>.yes-www</a>.
+                </p>
+<h1>The debate</h1>
+<p>
+                    The argument by <a href=&quot;http://no-www.org/&quot;>no-www</a> is
+                    that <code>www</code> is supposedly “deprecated” in that
+                    it's redundant to type. But, if you look at our tech
+                    overlords like <a href=&quot;http://google.com&quot;>Google</a>,
+                    <a href=&quot;http://amazon.com&quot;>Amazon</a>,
+                    <a href=&quot;http://apple.com&quot;>Apple</a>, etc. you'll see that
+                    they redirect no-www to www (more on why later). For what
+                    it's worth though, having no <code>www</code> has its
+                    <i>minimalism aesthetic</i> and anecdotaly most smaller
+                    sites seem to have no www.
+                </p>
+<p>
+<a href=&quot;https://www.yes-www.org/&quot;>yes-www</a>
+                    has actual
+                    <a href=&quot;https://www.yes-www.org/why-use-www/&quot;>technical arguments</a>: (1) you can’t use a CNAME record on a &quot;naked domain&quot;
+                    (that is, sites with no <code>www</code>) and (2) cookies on
+                    the naked domain get sent to all subdomains (so all
+                    <code>*.mehvix.com</code> domains) which can mess up caching
+                    for static files.
+                </p>
+<h1>Changing</h1>
+<p>
+                    Both of the pro-<code>www</code> points aren't an issue for
+                    me now, but best not to limit myself later down the line. To
+                    swap, I prefaced the domain with <code>www</code> on this
+                    site's
+                    <a href=&quot;https://github.com/Mehvix/mehvix.com/commit/037e1dde90bc5a4e43adfe72dfeeb0e49d73d898&quot;>CNAME on the GitHub</a>
+                    , changed my <code>CNAME</code> and <code>A</code> DNS
+                    records so that all prior non-<code>www</code> links would
+                    go to the new <code>www</code> version.
+                </p>
+</article>]]></content:encoded>
+		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Windows: Your files are insecure</title>
@@ -449,8 +500,8 @@ keywords.reduce(async (prev, keyword) =&gt; {
                 </p>
 <div id=&quot;autobox&quot;>
 <div>
-<pre style=&quot;margin: 0.5em&quot;><input id=&quot;autolink&quot;/></pre>
-<pre style=&quot;margin: 0 0.5em&quot;><code id=&quot;autout&quot;> </code></pre>
+<pre style=&quot;margin: 0.5em&quot;><input class=&quot;input&quot; id=&quot;autolink&quot;/></pre>
+<pre style=&quot;margin: 0 0.5em&quot;><code class=&quot;select-all output&quot; id=&quot;autout&quot;> </code></pre>
 </div>
 </div>
 <script src=&quot;/static/js/nextcloud-calendar.js&quot;></script>

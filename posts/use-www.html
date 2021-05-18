@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link type="text/css" rel="stylesheet" href="/static/css/style.css" />
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="/static/css/atom-one-dark-reasonable.css"
+        />
+
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Blog RSS"
+            href="https://mehvix.com/posts/rss.xml"
+        />
+
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad()
+        </script>
+        <script src="static/js/include.js"></script>
+        <meta charset="utf-8" />
+        <title>Mehvix | Use www</title>
+        <style>
+            :root {
+                --outside-bg-color: #199209;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="box">
+            <div class="nav">
+                <a href="/index.html">~</a>/<a href="/posts/index.html">Posts</a
+                >/<a href="" class="inverse-bg">Use www</a>
+            </div>
+            <article>
+                <p>
+                    I have a <i>yuuuug</i> bookmarks folder of assorted articles
+                    I've come across but haven't had the time to delve into. Now
+                    that I'm through my UW classwork I've finally been able to
+                    chunk through some of them and today and I came across the
+                    (mostly-irrelevant, website-related decision) debate between
+                    <a href="http://no-www.org/">no-www</a> and
+                    <a href="https://www.yes-www.org/"><b>www</b>.yes-www</a>.
+                </p>
+
+                <h1>The debate</h1>
+                <p>
+                    The argument by <a href="http://no-www.org/">no-www</a> is
+                    that <code>www</code> is supposedly “deprecated” in that
+                    it's redundant to type. But, if you look at our tech
+                    overlords like <a href="http://google.com">Google</a>,
+                    <a href="http://amazon.com">Amazon</a>,
+                    <a href="http://apple.com">Apple</a>, etc. you'll see that
+                    they redirect no-www to www (more on why later). For what
+                    it's worth though, having no <code>www</code> has its
+                    <i>minimalism aesthetic</i> and anecdotaly most smaller
+                    sites seem to have no www.
+                </p>
+                <p>
+                    <a href="https://www.yes-www.org/">yes-www</a>
+                    has actual
+                    <a href="https://www.yes-www.org/why-use-www/"
+                        >technical arguments</a
+                    >: (1) you can’t use a CNAME record on a "naked domain"
+                    (that is, sites with no <code>www</code>) and (2) cookies on
+                    the naked domain get sent to all subdomains (so all
+                    <code>*.mehvix.com</code> domains) which can mess up caching
+                    for static files.
+                </p>
+
+                <h1>Changing</h1>
+                <p>
+                    Both of the pro-<code>www</code> points aren't an issue for
+                    me now, but best not to limit myself later down the line. To
+                    swap, I prefaced the domain with <code>www</code> on this
+                    site's
+                    <a
+                        href="https://github.com/Mehvix/mehvix.com/commit/037e1dde90bc5a4e43adfe72dfeeb0e49d73d898"
+                        >CNAME on the GitHub</a
+                    >
+                    , changed my <code>CNAME</code> and <code>A</code> DNS
+                    records so that all prior non-<code>www</code> links would
+                    go to the new <code>www</code> version.
+                </p>
+            </article>
+
+            <div id="footer">
+                <table id="footerTable">
+                    <tr>
+                        <td>$BTC</td>
+                        <td>
+                            <a href="btc:15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1">
+                                15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>$ETH</td>
+                        <td>
+                            <a
+                                href="eth:0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74"
+                                >0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>$XMR</td>
+                        <td class="cryptoaddy" style="max-width: inherit">
+                            <a
+                                href="xmr:45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ"
+                                class="cryptoaddy"
+                            >
+                                45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="footerDateYear">2021</td>
+                        <td>Max Vogel</td>
+                    </tr>
+                </table>
+
+                <script src="/static/js/include.js"></script>
+            </div>
+        </div>
+    </body>
+</html>
