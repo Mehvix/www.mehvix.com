@@ -3,13 +3,55 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Tue, 18 May 2021 04:14:54 -0000</lastBuildDate>
+		<lastBuildDate>Tue, 18 May 2021 19:45:16 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
 		<item>
 			<author>Max Vogel</author>
-			<title>Use www</title>
+			<title>AoPS Blogs + RSS</title>
+			<pubDate>Tue, 18 May 2021 05:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/aops-rss.html</link>
+			<guid>https://mehvix.com/posts/aops-rss.html</guid>
+			<content:encoded><![CDATA[<article>
+<p>
+                    Hey math monke(s), do you use
+                    <a href=&quot;https://en.wikipedia.org/wiki/RSS&quot;>RSS</a> (bonus
+                    if you are cool enough to have a
+                    <a href=&quot;http://cloud.mehvix.com&quot;>cloud.mehvix.com</a>
+                    account and use the News app) and read AoPS blogs? If so,
+                    you should checkout
+                    <a href=&quot;http://aops-rss.mehvix.com&quot;>aops-rss.mehvix.com</a>
+                    — plug in a blog's URL like
+                    <a href=&quot;https://artofproblemsolving.com/community/c1273888&quot;>Dan's</a>
+                    (kiss_mm) and it should spit out a
+                    <a href=&quot;https://aops-rss.herokuapp.com/1273888&quot;>RSS feed</a>. Prior to this project, I haven't used Ruby so there may
+                    be kinks and edge case errors — if you run into any,
+                    <a href=&quot;https://github.com/Mehvix/aops-blog-rss/issues&quot;>create an issue on Github</a>
+                    or reach out :)
+                </p>
+<p>
+                    If you haven't heard of RSS, you should check it out. In
+                    essence, it lets you keep up with online feeds (blogs /
+                    forums posts, news sites, podcasts, etc.) without having to
+                    manually check webpages for updates. Plus, with
+                    <a href=&quot;https://nitter.net/&quot;>Nitter</a> and
+                    <a href=&quot;https://bibliogram.art/&quot;>Bibliogram</a> you can
+                    create proxied RSS feeds for Twitter and Instagram accounts
+                    so you don't have to deal with the bullshit spying + ads. If
+                    you don't have a
+                    <a href=&quot;http://cloud.mehvix.com&quot;>cloud.mehvix.com</a>
+                    account, there's lots of RSS Readers out there. I've heard
+                    alright things about
+                    <a href=&quot;https://feedly.com/&quot;>Feedly</a> and
+                    <a href=&quot;https://www.newsblur.com/&quot;>NewsBlur</a> but do your
+                    own due diligence.
+                </p>
+</article>]]></content:encoded>
+		</item>
+		<item>
+			<author>Max Vogel</author>
+			<title>Webmonkeys: Use www</title>
 			<pubDate>Mon, 17 May 2021 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/use-www.html</link>
 			<guid>https://mehvix.com/posts/use-www.html</guid>

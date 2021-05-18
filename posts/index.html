@@ -44,11 +44,18 @@
 
             /* BG Shadow CSS */
             /* todo this sucks but is okay atm */
+            #aops-rss {
+                box-shadow: inherit;
+                box-shadow: inset 0 -0.14em 0 #42c2cb;
+            }
+            #aops-rss:hover {
+                background-color: #42c2cb;
+            }
             #use-www {
                 box-shadow: inherit;
                 box-shadow: inset 0 -0.14em 0 #199209;
             }
-            #win-insecure-files:hover {
+            #use-www:hover {
                 background-color: #199209;
             }
             #win-insecure-files {
@@ -108,9 +115,19 @@
 
             <table style="margin-top: 1.5em" id="blogs">
                 <tr>
+                    <td class="posts">21-05-18</td>
+                    <td>
+                        <a href="aops-rss.html" id="aops-rss"
+                            >AoPS Blogs + RSS</a
+                        >
+                    </td>
+                </tr>
+                <tr>
                     <td class="posts">21-05-17</td>
                     <td>
-                        <a href="use-www.html" id="use-www">Use www</a>
+                        <a href="use-www.html" id="use-www"
+                            >Webmonkeys: Use www</a
+                        >
                     </td>
                 </tr>
                 <tr>

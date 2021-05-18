@@ -143,12 +143,12 @@ article p {
     /* todo this isn't great^ */
 }
 
-#footer #footerTable > tr > td {
-    width: 5ch !important;
+#footerTable td:nth-of-type(1) {
+    min-width: 7ch !important;
 }
 
 #footerTable td:nth-of-type(1)::after {
-    content: ' / ';
+    content: '  / ';
 }
 
 #footerTable td:nth-of-type(2) {
