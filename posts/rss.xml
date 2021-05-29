@@ -3,7 +3,7 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Tue, 18 May 2021 19:45:16 -0000</lastBuildDate>
+		<lastBuildDate>Sat, 29 May 2021 23:05:40 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
@@ -19,8 +19,9 @@
                     <a href=&quot;https://en.wikipedia.org/wiki/RSS&quot;>RSS</a> (bonus
                     if you are cool enough to have a
                     <a href=&quot;http://cloud.mehvix.com&quot;>cloud.mehvix.com</a>
-                    account and use the News app) and read AoPS blogs? If so,
-                    you should checkout
+                    account and use the
+                    <a href=&quot;https://apps.nextcloud.com/apps/news&quot;>News app</a>)
+                    and read AoPS blogs? If so, you should checkout
                     <a href=&quot;http://aops-rss.mehvix.com&quot;>aops-rss.mehvix.com</a>
                     — plug in a blog's URL like
                     <a href=&quot;https://artofproblemsolving.com/community/c1273888&quot;>Dan's</a>
@@ -33,9 +34,12 @@
 <p>
                     If you haven't heard of RSS, you should check it out. In
                     essence, it lets you keep up with online feeds (blogs /
-                    forums posts, news sites, podcasts, etc.) without having to
-                    manually check webpages for updates. Plus, with
-                    <a href=&quot;https://nitter.net/&quot;>Nitter</a> and
+                    forums posts, news sites, podcasts,
+                    <a href=&quot;https://www.comicsrss.com/rss/calvinandhobbes.rss&quot;>Calvin and Hobbes</a>, etc.) without having to manually check webpages for
+                    updates. I'd reccomend using
+                    <a href=&quot;https://chrome.google.com/webstore/detail/get-rss-feed-url/kfghpdldaipanmkhfpdcjglncmilendn&quot;>this extension</a>
+                    for Chrome-based browsers to see if a site has an RSS feed.
+                    Plus, with <a href=&quot;https://nitter.net/&quot;>Nitter</a> and
                     <a href=&quot;https://bibliogram.art/&quot;>Bibliogram</a> you can
                     create proxied RSS feeds for Twitter and Instagram accounts
                     so you don't have to deal with the bullshit spying + ads. If
