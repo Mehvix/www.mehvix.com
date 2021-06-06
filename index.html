@@ -14,7 +14,7 @@
             title="Blog RSS"
             href="https://mehvix.com/posts/rss.xml"
         />
-
+        <script src="/static/js/attributes.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
         <script>
             hljs.initHighlightingOnLoad()
@@ -41,10 +41,6 @@
 
             table.about > tbody > tr > td:nth-of-type(2)::before {
                 content: '    / ';
-            }
-
-            table.about {
-                font-size: 20px;
             }
 
             /* For dropdown img */
@@ -84,10 +80,7 @@
             <div>
                 <p>
                     Hello! My name is Max Vogel and Mehvix is my username
-                    online.
-                </p>
-                <p>
-                    Here’s a
+                    online. Here’s a
                     <a href="./static/media/IMG_20191020_011042.jpg"
                         >photo of me</a
                     ><img
@@ -102,25 +95,12 @@
                         style="width: 100%; margin: 1% 0"
                         class="hidden"
                     />
-                    at UW-Madhacks 2019.
-                </p>
-                <p>
-                    I'm an incoming freshmen at
+                    at UW-Madhacks 2019. I'm an incoming freshmen at
                     <a href="https://www.berkeley.edu/">UC Berkeley</a> studying
                     <a href="https://eecs.berkeley.edu/">EECS</a>.
-                </p>
-                <p>
-                    I like the
-                    <a href="https://github.com/one-dark">OneDark</a> color
-                    scheme,
-                    <a href="https://colemakmods.github.io/mod-dh/"
-                        >Colemak Mod-DH</a
-                    >
-                    keyboard layout, and
-                    <a href="https://fonts.adobe.com/fonts/pt-mono">PT Mono</a>
-                    as a font.
-                </p>
-                <p>
+                    <script>
+                        document.write(attr_selected)
+                    </script>
                     In my free time I enjoy
                     <a href="http://www.cracoviafoilfencing.com/">fencing</a>,
                     <a href="https://www.instagram.com/tyrolbasinparks/"
@@ -131,6 +111,12 @@
                         >listening to music</a
                     >, and working on
                     <a href="https://www.team1306.com">1306</a> stuff.
+                </p>
+                <p>
+                    I created this website because I believe the web is better
+                    decentralized and to also force myself into writting more
+                    often so that I can improve communicating ideas through my
+                    <a href="/posts/index.html">blog</a>.
                 </p>
             </div>
 

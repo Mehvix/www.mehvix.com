@@ -3,6 +3,9 @@
     --inside-bg-color: #e2e5e2;
     --outside-bg-color: #006b75;
     --code-bg-color: #282c34;
+    --text-color: #2b2b2b;
+    --text-color-inverse: #d4d4d4;
+    --font-size: 14px;
 }
 
 * {
@@ -13,12 +16,13 @@
 
 *::selection {
     background-color: var(--outside-bg-color);
-    color: var(--inside-bg-color);
+    color: var(--text-color-inverse);
 }
 
 html {
     overflow-y: scroll;
     /*https://stackoverflow.com/a/7607206/7833617*/
+    scroll-behavior: smooth;
 }
 
 /* pt-mono-regular - latin */
@@ -45,10 +49,10 @@ body,
 input {
     font-family: 'PT Mono', monospace !important;
     font-weight: 400;
-    font-size: 20px;
+    font-size: var(--font-size);
     max-width: 42em;
     margin: auto;
-    color: #2b2b2b;
+    color: var(--text-color);
     background-color: var(--outside-bg-color);
 }
 
@@ -57,7 +61,7 @@ input {
     color: var(--inside-bg-color);
     border-radius: 5px;
     width: 100%;
-    font-size: 18px;
+    font-size: var(--font-size);
     height: 2.5em;
     padding: 0.5ch 0.5ch 0.5ch 0.75ch;
     -webkit-box-sizing: border-box;
@@ -78,7 +82,8 @@ code {
 }
 
 /* https://stackoverflow.com/a/43783066/7833617 */
-.select-all {
+.select-all,
+.cryptoaddy {
     -webkit-touch-callout: all; /* iOS Safari */
     -webkit-user-select: all; /* Safari */
     -khtml-user-select: all; /* Konqueror HTML */
@@ -154,10 +159,11 @@ article p {
 #footerTable td:nth-of-type(2) {
     overflow: auto;
     display: flex;
+    scrollbar-width: none; /* remove scroller in FF */
 }
 
-#footerTable td:nth-of-type(2)::-webkit-scrollbar,
-#footerTable td:nth-of-type(2)::-webkit-scrollbar-thumb {
+/* remove scroller in chrome */
+#footerTable td:nth-of-type(2)::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
@@ -166,37 +172,35 @@ a,
 a:visited {
     text-decoration: none;
     box-shadow: inset 0 -0.14em 0 var(--outside-bg-color);
-    color: #000000;
+    color: black;
     transition-property: background-color;
     transition-timing-function: ease-in-out;
+    transition-duration: 400ms; /* hover off */
 }
 
 a:hover {
     background-color: var(--outside-bg-color);
     color: var(--inside-bg-color);
     box-shadow: none;
-    transition-duration: 400ms;
 }
 
-a:not(.inverse-bg)::selection {
-    background-color: var(
-        --inside-bg-color
-    ) !important; /* this is always black?? */
+a::selection {
+    background-color: var(--text-color);
 }
 
-div.nav a[href=''],
-strong {
-    font-weight: 500;
+a:hover::selection {
+    background-color: var(--text-color-inverse);
+    color: var(--text-color);
 }
 
 a.inverse-bg {
-    color: white;
+    color: var(--text-color-inverse);
     filter: invert(100%);
 }
 
 a.inverse-bg:hover::selection {
-    color: black !important;
-    background-color: white !important;
+    color: var(--text-color) !important;
+    background-color: var(--text-color-inverse) !important;
 }
 
 a.no-custom {
@@ -206,6 +210,11 @@ a.no-custom {
 a.no-custom:hover {
     background-color: transparent;
     box-shadow: none;
+}
+
+div.nav a[href=''],
+strong {
+    font-weight: 500;
 }
 
 .hljs,
@@ -220,7 +229,7 @@ code {
 .hljs::selection,
 code::selection,
 .hljs > span::selection {
-    color: #00fb10 !important;
+    color: limegreen !important;
     background: black !important;
 }
 
@@ -332,14 +341,14 @@ h3 {
 }
 
 h1 {
-    font-size: 125%;
+    font-size: 123%;
 }
 h2 {
-    font-size: 115%;
+    font-size: 112%;
 }
 
 h3 {
-    font-size: 100%;
+    font-size: 105%;
 }
 
 h1::before {
