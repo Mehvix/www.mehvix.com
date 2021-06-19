@@ -22,7 +22,8 @@
 html {
     overflow-y: scroll;
     /*https://stackoverflow.com/a/7607206/7833617*/
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
+    /* todo this breaks fast scroll, find workaround */
 }
 
 /* pt-mono-regular - latin */
