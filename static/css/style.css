@@ -73,6 +73,10 @@ input {
     border: none;
 }
 
+img {
+    width: 100%;
+}
+
 code {
     font-family: 'PT Mono', monospace !important;
 }
@@ -249,10 +253,6 @@ td.projects-text {
     vertical-align: top;
 }
 
-td.projects-image img {
-    width: 100%;
-}
-
 div.nav {
     font-size: 115%;
     margin-bottom: 1em;
@@ -327,6 +327,7 @@ blockquote p {
 img.dropdown {
     height: 1.08em;
     vertical-align: middle;
+    width: initial;
 }
 
 li::marker {
