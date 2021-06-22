@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap')
+
+//Variables
+$font-size: 14px
+
+\:root
+    --inside-bg-color: #e2e5e2
+    --outside-bg-color: #006b75
+    --code-bg-color: #282c34
+    --text-color: #2b2b2b
+    --text-color-inverse: #d4d4d4
+
+@function css-var($color-name)
+    @return var(--#{$color-name})
+
+*
+    letter-spacing: 0
+    line-height: 1.44
+    scrollbar-width: auto // "auto" or "thin"
+
+    &::selection
+        background-color: css-var(outside-bg-color)
+        color: css-var(text-color-inverse)
+
+html
+    overflow-y: scroll //https://stackoverflow.com/a/7607206/7833617
+    /** scroll-behavior: smooth **/ // todo this breaks fast scroll, find workaround
+
+body,
+input
+    font-family: 'PT Mono', monospace !important
+    font-weight: 400
+    font-size: $font-size
+    max-width: 42em
+    margin: auto
+    color: css-var(text-color)
+    background-color: css-var(outside-bg-color)
+
+    &::-webkit-scrollbar
+        width: 12px // width of the entire scrollbar
+
+    &::-webkit-scrollbar-track
+        background: css-var(outside-bg-color) // color of the tracking area
+
+    &::-webkit-scrollbar-thumb
+        background-color: css-var(outside-bg-color) // color of the scroll thumb
+        border-radius: 12px // roundness of the scroll thumb
+        border: 2px solid css-var(inside-bg-color) // creates padding around scroll thumb
+
+.input
+    background-color: css-var(code-bg-color)
+    color: css-var(inside-bg-color)
+    border-radius: 5px
+    width: 100%
+    font-size: $font-size
+    height: 2.5em
+    padding: 0.5ch 0.5ch 0.5ch 0.75ch
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    -o-box-sizing: border-box
+    -ms-box-sizing: border-box
+    box-sizing: border-box
+    border: none
+
+div
+    &.box
+        max-width: 50rem
+        margin: 2em
+        border: 3px solid black
+        padding: 3ch
+        background: css-var(inside-bg-color)
+        overflow-wrap: break-word
+        vertical-align: middle
+        margin-top: 3em
+        box-shadow: 10px 10px black
+
+    &.nav
+        font-size: 115%
+        margin-bottom: 1em
+
+        & a
+            margin: 0 0.25em
+
+        & > a:first-child
+            margin-left: 0 !important
+
+        & > a:last-child,
+        strong
+            font-weight: 600
+
+    // this is bad!
+    &:nth-of-type(2)
+        margin-top: 1em
+
+img
+    width: 100%
+
+.output
+    text-align: left
+    color: css-var(inside-bg-color) !important
+
+// https://stackoverflow.com/a/43783066/7833617 
+.select-all,
+.cryptoaddy
+    -webkit-touch-callout: all // iOS Safari
+    -webkit-user-select: all // Safari
+    -khtml-user-select: all // Konqueror HTML
+    -moz-user-select: all // Firefox
+    -ms-user-select: all // Internet Explorer/Edge
+    user-select: all // Chrome and Opera
+
+p
+    margin: 0.5em 0
+
+    article &
+        margin: 0.25em 0 1em
+
+#footer
+    padding-top: 1em
+
+    &::before
+        content: '---\00000a' //\00000a = newline
+        white-space: pre
+
+    &Table
+        width: 100%
+
+        tr
+            max-width: 50ch // todo this isn't great
+
+        td
+            &:nth-of-type(1)
+                min-width: 7ch !important
+
+            &:nth-of-type(1)::after
+                content: '  / '
+
+            &:nth-of-type(2)
+                overflow: auto
+                display: flex
+                scrollbar-width: none // remove scroller in FF
+
+            // remove scroller in chrome
+            &:nth-of-type(2)::-webkit-scrollbar
+                width: 0
+                height: 0
+
+a,
+a:visited
+    text-decoration: none
+    box-shadow: inset 0 -0.14em 0 css-var(outside-bg-color)
+    color: black
+    transition-property: background-color
+    transition-timing-function: ease-in-out
+    transition-duration: 400ms // hover off
+
+    &.inverse-bg
+        color: css-var(text-color-inverse)
+        filter: invert(100%)
+
+    &.inverse-bg:hover::selection
+        color: css-var(text-color) !important
+        background-color: css-var(text-color-inverse) !important
+
+    &.no-custom
+        box-shadow: none
+
+    &.no-custom:hover
+        background-color: transparent
+        box-shadow: none
+
+    &:hover
+        background-color: css-var(outside-bg-color)
+        color: css-var(inside-bg-color)
+        box-shadow: none
+
+    &::selection
+        background-color: css-var(text-color)
+
+    &:hover::selection
+        background-color: css-var(text-color-inverse)
+        color: css-var(text-color)
+
+.hljs,
+code
+    font-family: 'PT Mono', monospace !important
+    padding: 2px 4px
+    font-size: 90%
+    background-color: css-var(code-bg-color) !important
+    color: seashell
+    border-radius: 4px
+
+    &::selection,
+    &::selection,
+    & > span::selection
+        color: limegreen !important
+        background: black !important
+
+td
+    &.posts
+        width: fit-content
+        vertical-align: top
+
+    &.projects-image
+        width: 35%
+        vertical-align: top
+        padding-right: 1em
+
+    &.projects-text
+        vertical-align: top
+
+span.tab
+    margin-left: 40px
+
+    p
+        margin-top: 0
+        margin-bottom: 3%
+
+hr
+    border-top: 1px dashed css-var(text-color)
+
+blockquote
+    border-left: 10px solid css-var(inside-bg-color)
+    filter: brightness(95%) // botched way to darken the color
+    margin: 1em 10px 1.5em
+    padding: 0.5em 10px
+    font-size: 90%
+
+    & > code
+        font-size: 90% !important
+        /**white-space: normal;**/
+
+    & > div > p
+        margin-top: 1em
+        margin-bottom: 0
+        display: block
+
+    p
+        display: inline
+
+img.dropdown
+    height: 1.08em
+    vertical-align: middle
+    width: initial
+
+li::marker
+    content: '- '
+
+h1,
+h2,
+h3
+    font-weight: 700
+    margin-top: 2em
+    margin-bottom: 0.25em
+
+h1
+    font-size: 123%
+
+h2
+    font-size: 112%
+
+h3
+    font-size: 105%
+
+h1::before
+    content: '# '
+
+h2::before
+    content: '## '
+
+h3::before
+    content: '### '
+
+// Modified from https://github.com/ozh/github-colors
+code
+    &.tags-py
+        color: #3caaff
+
+    &.tags-javascript
+        color: #f1e05a
+
+    &.tags-html
+        color: #e34c26
+
+    &.tags-css
+        color: #563d7c
+
+    &.tags-php
+        color: #5374de
+
+    &.tags-java
+        color: #b07219
+
+    &.tags-cpp
+        color: #f34b7d
+
+    &.tags-shell
+        color: #89e051
+
+    &.tags-go
+        color: #00add8
+
+    &.tags-bf
+        color: #2f2530
+
+    &.tags-matlab
+        color: #e16737
+
+    &.tags-ahk
+        color: #6594b9
+
+    &.tags-gcode
+        color: #d08cf2
+
+    &.tags-latex
+        color: #3d6117
+
+    &.tags-apache
+        color: #d80044
+
+    &.tags-sheet
+        color: #00d800
+
+    &.tags-misc
+        color: #fb00ff
