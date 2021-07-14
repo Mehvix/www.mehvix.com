@@ -22,7 +22,7 @@
         <script src="/static/js/nextcloud-calendar.js"></script>
 
         <meta charset="utf-8" />
-        <title>Mehvix | NC Cal</title>
+        <title>Mehvix | NC Calendar</title>
         <style>
             :root {
                 --outside-bg-color: #d2691e;
@@ -38,7 +38,7 @@
         <div class="box">
             <div class="nav">
                 <a href="/index.html">~</a>/<a href="/posts/index.html">Posts</a
-                >/<a href="" class="inverse-bg">NC Cal</a>
+                >/<a href="" class="inverse-bg">Nextcloud Calendar</a>
             </div>
 
             <article id="content">
@@ -49,21 +49,20 @@
                     workarounds<br />
                 </p>
 
-                ---
-
                 <h1>Importing Google Calendars</h1>
 
                 <p>
-                    Nextcloud needs a <code>.ics</code> or
-                    <code>.ical</code> file. To get a public Google calendar’s
-                    <code>.ics</code> location (as of 5/8/20), you need to get
-                    the <code>src</code>/<code>cid</code> of the Google
-                    calendar. All Google calendars have this in the external
-                    URL.
+                    For external calendars, Nextcloud needs a
+                    <code>.ics</code> or <code>.ical</code> file. To add a
+                    Google Calendar, we just have to adjust the URL's formatting
+                    which you can do automatically using
+                    <a href="https://toolbox.mehvix.com/ical-generator/"
+                        >this online tool</a
+                    >. Alternatively, you can follow the manual method below.
                 </p>
 
                 <p>
-                    For example, for embedded calendars (in this example the
+                    For embedded calendars (in this example the
                     <a href="https://codeforces.com/calendar"
                         >Codeforces calendar</a
                     >) you can find the <code>cid</code> by clicking on the plus
@@ -86,8 +85,8 @@
                     <code>src=</code>, <code>cid=</code>, or
                     <code>/ical/</code> and up to the next <code>&</code> sign,
                     oftentimes this will look something like
-                    <code>[id]@group.calendar.google.com</code>. Then, take this
-                    string and add it to the following:
+                    <code>[id]@[group].calendar.google.com</code>. Then, take
+                    this string and add it to the following:
                 </p>
 
                 <pre><code class="ini">https://calendar.google.com/calendar/ical/[add here!]/public/basic.ics</code></pre>
@@ -97,28 +96,11 @@
                     <code
                         >k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com</code
                     >
-                    and add get the following:
+                    and get the following:
                 </p>
 
                 <pre><code class="ini">https://calendar.google.com/calendar/ical/k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com/public/basic.ics</code></pre>
 
-                <h2>Automatic iCal link creator</h2>
-                <p>
-                    Alternatively, you can enter in the calendar link in the
-                    following textbox and it should spit out the correct iCal
-                    link:
-                </p>
-
-                <div id="autobox">
-                    <div>
-                        <pre
-                            style="margin: 0.5em"
-                        ><input id="autolink" class="input" /></pre>
-                        <pre
-                            style="margin: 0 0.5em"
-                        ><code id="autout" class="select-all output"> </code></pre>
-                    </div>
-                </div>
                 <p>
                     You can then use this URL to as the external URL in the
                     Nextcloud Calendar app.
