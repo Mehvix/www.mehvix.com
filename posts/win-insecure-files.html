@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link type="text/css" rel="stylesheet" href="/static/css/style.css" />
-        <link
-            type="text/css"
-            rel="stylesheet"
-            href="/static/css/atom-one-dark-reasonable.css"
-        />
-
+        <!-- Default Required Resources -->
+        <meta charset="utf-8" />
         <link
             rel="alternate"
             type="application/rss+xml"
             title="Blog RSS"
-            href="https://mehvix.com/posts/rss.xml"
+            href="//mehvix.com/posts/rss.xml"
         />
-
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-        <script>
-            hljs.initHighlightingOnLoad()
-        </script>
+        <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
         <script src="/static/js/include.js"></script>
-        <meta charset="utf-8" />
+
+        <!-- HLJS (try and remove if not used) -->
+        <!-- https://cdnjs.com/libraries/highlight.js -->
+        <!-- <link
+            type="text/css"
+            rel="stylesheet"
+            href="/static/css/atom-one-dark.css"
+        />
+        <script
+            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
+            integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            hljs.highlightAll()
+        </script> -->
+
         <title>Mehvix | Windows: Your files are insecure</title>
         <style>
             :root {
@@ -51,36 +59,33 @@
                 <p>
                     Microsoft doesn't value your security. Their proprietary
                     encryption software
-                    <a href="https://en.wikipedia.org/wiki/BitLocker"
-                        >BitLocker</a
-                    >
+                    <a href="//en.wikipedia.org/wiki/BitLocker">BitLocker</a>
                     is only available for paying Windows Pro and Enterprise
                     users (and even then, it isn't enabled by default 🤔). And,
                     if for some reason you're paying (extra) for Windows, you
                     still shouldn't use BitLocker. Microsoft practice
-                    <a
-                        href="https://en.wikipedia.org/wiki/Security_through_obscurity"
+                    <a href="//en.wikipedia.org/wiki/Security_through_obscurity"
                         >security through obscurity</a
                     >: like Windows, BitLocker code is proprietary meaning
                     there's no way to vet it's security or verify there are not
                     backdoors for any of the
                     <a
-                        href="https://en.wikipedia.org/wiki/Alphabet_agencies#Modern_era"
+                        href="//en.wikipedia.org/wiki/Alphabet_agencies#Modern_era"
                         >alphabet boys</a
                     >
                     which Microsoft has done before — from what's been made
                     <i>public</i>, Microsoft has
-                    <a href="https://archive.ph/Y3hsk"
+                    <a href="//archive.ph/Y3hsk"
                         >helped the NSA to circumvent their own encryption</a
                     >,
-                    <a href="https://archive.ph/ETUkp"
+                    <a href="//archive.ph/ETUkp"
                         >backdoored pre-installed disk encryption</a
                     >,
-                    <a href="https://archive.ph/sX5dY"
+                    <a href="//archive.ph/sX5dY"
                         >informed the NSA of bugs in Windows before fixing
                         them</a
                     >, and
-                    <a href="https://archive.is/ZW77o"
+                    <a href="//archive.is/ZW77o"
                         >there's a secret NSA key in Windows, whose functions we
                         don't know</a
                     >.
@@ -92,16 +97,16 @@
                     legitimacy and contribute improvements of their own. For
                     Windows, the open source encryption software I'd recommend
                     is
-                    <a href="https://veracrypt.fr/en/Home.html">VeraCrypt</a>.
+                    <a href="//veracrypt.fr/en/Home.html">VeraCrypt</a>.
                 </p>
 
                 <h1>VeraCrypt</h1>
                 <p>
                     You can download the latest installer of VeraCrypt
-                    <a href="https://veracrypt.fr/en/Downloads.html">here</a>.
-                    Once you install it, the process of encrypting your drive(s)
-                    is fairly trivial. For encrypting your storage device with
-                    the operating system, you start by going selecting
+                    <a href="//veracrypt.fr/en/Downloads.html">here</a>. Once
+                    you install it, the process of encrypting your drive(s) is
+                    fairly trivial. For encrypting your storage device with the
+                    operating system, you start by going selecting
                     <code>System</code> >
                     <code>Encrypt System Partition/Drive...</code> and following
                     the creation wizard. The default AES + SHA-512 is more than
@@ -109,7 +114,7 @@
                     mouse around — VeraCrypt gathers random data from your
                     mouse's position because (somewhat unintuitively)
                     <a
-                        href="https://www.howtogeek.com/183051/htg-explains-how-computers-generate-random-numbers/"
+                        href="//www.howtogeek.com/183051/htg-explains-how-computers-generate-random-numbers/"
                         >it's hard for computers to generate unpredictable
                         random numbers on their own</a
                     >.

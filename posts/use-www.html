@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link type="text/css" rel="stylesheet" href="/static/css/style.css" />
-        <link
-            type="text/css"
-            rel="stylesheet"
-            href="/static/css/atom-one-dark-reasonable.css"
-        />
-
+        <!-- Default Required Resources -->
+        <meta charset="utf-8" />
         <link
             rel="alternate"
             type="application/rss+xml"
             title="Blog RSS"
-            href="https://mehvix.com/posts/rss.xml"
+            href="//mehvix.com/posts/rss.xml"
         />
-
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-        <script>
-            hljs.initHighlightingOnLoad()
-        </script>
+        <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
         <script src="/static/js/include.js"></script>
-        <meta charset="utf-8" />
+
+        <!-- HLJS (try and remove if not used) -->
+        <!-- https://cdnjs.com/libraries/highlight.js -->
+        <!-- <link
+            type="text/css"
+            rel="stylesheet"
+            href="/static/css/atom-one-dark.css"
+        />
+        <script
+            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
+            integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            hljs.highlightAll()
+        </script> -->
+
         <title>Mehvix | Use www</title>
         <style>
             :root {
@@ -43,7 +51,7 @@
                     chunk through some of them and today and I came across the
                     (mostly-irrelevant, website-related decision) debate between
                     <a href="http://no-www.org/">no-www</a> and
-                    <a href="https://www.yes-www.org/"><b>www</b>.yes-www</a>.
+                    <a href="//www.yes-www.org/"><b>www</b>.yes-www</a>.
                 </p>
 
                 <h1>The debate</h1>
@@ -60,9 +68,9 @@
                     sites seem to have no www.
                 </p>
                 <p>
-                    <a href="https://www.yes-www.org/">yes-www</a>
+                    <a href="//www.yes-www.org/">yes-www</a>
                     has actual
-                    <a href="https://www.yes-www.org/why-use-www/"
+                    <a href="//www.yes-www.org/why-use-www/"
                         >technical arguments</a
                     >: (1) you can’t use a CNAME record on a "naked domain"
                     (that is, sites with no <code>www</code>) and (2) cookies on
@@ -78,7 +86,7 @@
                     swap, I prefaced the domain with <code>www</code> on this
                     site's
                     <a
-                        href="https://github.com/Mehvix/mehvix.com/commit/037e1dde90bc5a4e43adfe72dfeeb0e49d73d898"
+                        href="//github.com/Mehvix/mehvix.com/commit/037e1dde90bc5a4e43adfe72dfeeb0e49d73d898"
                         >CNAME on the GitHub</a
                     >
                     , changed my <code>CNAME</code> and <code>A</code> DNS

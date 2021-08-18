@@ -14,3 +14,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
     // } ()
     // todo work on this^
 })
+
+
+// todo copy button 

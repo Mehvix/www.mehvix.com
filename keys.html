@@ -1,7 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Default Required Resources -->
         <meta charset="utf-8" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Blog RSS"
+            href="//mehvix.com/posts/rss.xml"
+        />
+        <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+        <script src="/static/js/include.js"></script>
+
+        <!-- HLJS (try and remove if not used) -->
+        <!-- https://cdnjs.com/libraries/highlight.js -->
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="/static/css/atom-one-dark.css"
+        />
+        <script
+            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
+            integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            hljs.highlightAll()
+        </script>
 
         <title>Mehvix | Keys</title>
         <style>
@@ -15,24 +41,6 @@
             }
         </style>
 
-        <link type="text/css" rel="stylesheet" href="static/css/style.css" />
-        <link
-            type="text/css"
-            rel="stylesheet"
-            href="static/css/atom-one-dark-reasonable.css"
-        />
-
-        <link
-            rel="alternate"
-            type="application/rss+xml"
-            title="Blog RSS"
-            href="https://mehvix.com/posts/rss.xml"
-        />
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-        <script>
-            hljs.initHighlightingOnLoad()
-        </script>
-        <script src="/static/js/include.js"></script>
         <script>
             function copyText() {
                 var textToCopy = document.getElementById('pgp')
@@ -76,10 +84,15 @@
 
             <h1>ProtonMail PGP</h1>
             <p>
-                This is for my ProtonMail and <code>@mehvix.com</code> email
-                accounts.
+                This is for my ProtonMail and any of my
+                <code>@mehvix.com</code> email accounts too.
             </p>
             <ul>
+                <li>
+                    <a href="#" onclick="copyText()"
+                        >Copy (mehvix.com) to clipboard</a
+                    >
+                </li>
                 <li>
                     <a href="./static/media/mehvix@protonmail.com.asc"
                         >Download from mehvix.com</a
@@ -87,19 +100,14 @@
                 </li>
                 <li>
                     <a
-                        href="https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com"
+                        href="//api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com"
                         >Download from ProtonMail API</a
                     ><br />
                 </li>
-                <li>
-                    <a href="#" onclick="copyText()"
-                        >Copy (mehvix.com) to clipboard</a
-                    >
-                </li>
             </ul>
-            <pre><code class="pgp">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
-            <pre><code class="pgp">curl -L https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com | gpg --import</code></pre>
-            <pre><code id="pgp" class="diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
+            <pre><code class="pgp select-all language-sh">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
+            <pre><code class="pgp select-all language-sh">curl -L https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com | gpg --import</code></pre>
+            <pre><code id="pgp" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: ProtonMail
 
 xsBNBFwGCl4BCACpgPGL6hTyM+t9CloUGX8e2SLPAxtvLPlsrPoDS81cMEhQ

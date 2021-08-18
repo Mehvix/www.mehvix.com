@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link type="text/css" rel="stylesheet" href="static/css/style.css" />
-        <link
-            type="text/css"
-            rel="stylesheet"
-            href="static/css/atom-one-dark-reasonable.css"
-        />
-
+        <!-- Default Required Resources -->
+        <meta charset="utf-8" />
         <link
             rel="alternate"
             type="application/rss+xml"
             title="Blog RSS"
-            href="https://mehvix.com/posts/rss.xml"
+            href="//mehvix.com/posts/rss.xml"
         />
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-        <script>
-            hljs.initHighlightingOnLoad()
-        </script>
+        <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
         <script src="/static/js/include.js"></script>
+
+        <!-- HLJS (try and remove if not used) -->
+        <!-- https://cdnjs.com/libraries/highlight.js -->
+        <!-- <link
+            type="text/css"
+            rel="stylesheet"
+            href="/static/css/atom-one-dark.css"
+        />
+        <script
+            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
+            integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            hljs.highlightAll()
+        </script> -->
+
+        <!-- Unique -->
         <script src="/static/js/attributes.js"></script>
-        <meta charset="utf-8" />
+
         <title>Mehvix | Home</title>
         <style>
             :root {
@@ -35,12 +46,24 @@
                 margin: auto 0.5ch;
             }
 
+            tr.no-line > td:nth-of-type(1)::before {
+                content: ' ' !important;
+            }
+
+            table.about {
+                width: 100%;
+            }
+
             table.about > tbody > tr > td:nth-of-type(1)::before {
                 content: '- ';
             }
 
-            table.about > tbody > tr > td:nth-of-type(2)::before {
-                content: '    / ';
+            table.about > tbody > tr > td:nth-of-type(2):before {
+                content: '/ ';
+            }
+
+            table.about > tbody > tr > td:nth-of-type(2) {
+                padding: 0 0 0 1ch;
             }
 
             /* For dropdown img */
@@ -54,23 +77,9 @@
         </style>
 
         <script>
-            function toggleImage() {
-                document
-                    .getElementById('toggleImage')
-                    .classList.toggle('hidden')
+            function toggleImage(id) {
+                id.classList.toggle('hidden')
             }
-
-            // window.onload = function () {
-            //     var today = new Date();  //initializes to current date
-            //     var bday = new Date();
-            //     bday.setFullYear(2002);
-            //     bday.setMonth(7 - 1);  //January is 0
-            //     bday.setDate(27);
-            //     bday.setHours(0);
-            //     bday.setMinutes(0);
-            //     var timeDiff = Math.abs(bday.getTime() - today.getTime());
-            //     document.getElementById("age").innerHTML = "" + Math.floor(timeDiff / ((1000 * 60 * 60 * 24 * 365)));  // ceil time in years ([milliseconds] * [seconds] * [min] * [hours] * [days])
-            // }
         </script>
     </head>
 
@@ -85,32 +94,33 @@
                         >photo of me</a
                     ><img
                         alt="Expand image"
-                        src="./static/media/expandoImage.svg"
+                        src="/static/media/expandoImage.svg"
                         class="dropdown"
-                        onclick="toggleImage()"
+                        onclick="toggleImage(me)"
+                        style="margin-left: 0.5ch"
                     /><img
                         alt="Me!"
-                        id="toggleImage"
-                        src="./static/media/IMG_20191020_011042.jpg"
+                        id="me"
+                        src="/static/media/IMG_20191020_011042.jpg"
                         style="width: 100%; margin: 1% 0"
                         class="hidden"
                     />
                     at UW-Madhacks 2019. I'm an incoming freshmen at
-                    <a href="https://www.berkeley.edu/">UC Berkeley</a> studying
-                    <a href="https://eecs.berkeley.edu/">EECS</a>.
+                    <a href="//www.berkeley.edu/">UC Berkeley</a> studying
+                    <a href="//eecs.berkeley.edu/">EECS</a>.
                     <script>
                         document.write(attr_selected)
                     </script>
                     In my free time I enjoy
                     <a href="http://www.cracoviafoilfencing.com/">fencing</a>,
-                    <a href="https://www.instagram.com/tyrolbasinparks/"
+                    <a href="//www.instagram.com/tyrolbasinparks/"
                         >snowboarding</a
                     >, coding, CADing,
                     <a
-                        href="https://open.spotify.com/playlist/2uEoR9SXgtMSgjIjgohVnz?si=H0eRZQD_SW-AM0F1BCxEEQ"
+                        href="//open.spotify.com/playlist/2uEoR9SXgtMSgjIjgohVnz?si=H0eRZQD_SW-AM0F1BCxEEQ"
                         >listening to music</a
                     >, and working on
-                    <a href="https://www.team1306.com">1306</a> stuff.
+                    <a href="//www.team1306.com">1306</a> stuff.
                 </p>
                 <p>
                     I created this website because I believe the web is better
@@ -129,7 +139,7 @@
                             <tr>
                                 <td>Email</td>
                                 <td>
-                                    max<code>at</code>mehvix<code>dot</code>com
+                                    [first name]<code>at</code>[this domain]
                                     <wbr /> (<a href="keys.html">keys</a>)
                                 </td>
                             </tr>
@@ -140,17 +150,59 @@
                             <tr>
                                 <td>Matrix</td>
                                 <td>
-                                    @mehvix:matrix.org (<a href="keys.html"
-                                        >keys</a
-                                    >)
+                                    <span class="select-all"
+                                        >@mehvix:matrix.org</span
+                                    >
+                                    (<a href="keys.html">keys</a>)
                                 </td>
                             </tr>
                             <tr>
                                 <td>Discord</td>
-                                <td>Mehvix#7966 (if possible, don't use)</td>
+                                <td>
+                                    <span class="select-all">Mehvix#7966</span>
+                                    (<a href="//stallman.org/discord.html"
+                                        >if possible, don't use</a
+                                    >)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Session</td>
+                                <td style="vertical-align: middle">
+                                    <pre
+                                        style="
+                                            margin: 0;
+                                            display: inline;
+                                            float: right;
+                                        "
+                                    ><code style="margin: 0; width: 42ch;" class="noscroll select-all">054d937b2d1395f1560551eeb1552e3e60308c0350623c92ad7f6f31e3411f161a</code></pre>
+                                    <img
+                                        alt="Expand image"
+                                        src="/static/media/expandoImage.svg"
+                                        class="dropdown"
+                                        onclick="toggleImage(session)"
+                                        style="
+                                            margin: 0.66ch;
+                                            height: 1.66em;
+                                            float: right;
+                                            display: inline;
+                                        "
+                                    />
+                                </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <img
+                        alt="Session QR"
+                        id="session"
+                        src="/static/media/session-qr.png"
+                        style="
+                            width: 25ch;
+                            margin-left: 32ch;
+                            position: absolute;
+                        "
+                        class="hidden"
+                    />
                 </div>
             </div>
 
@@ -160,16 +212,15 @@
                 <div>
                     <table class="about">
                         <tr>
-                            <td>GitHub</td>
+                            <td style="width: 16.5ch">GitHub</td>
                             <td>
-                                <a href="https://github.com/mehvix">Mehvix</a>
+                                <a href="//github.com/mehvix">Mehvix</a>
                             </td>
                         </tr>
                         <tr>
                             <td>Stack Overflow</td>
                             <td>
-                                <a
-                                    href="https://stackoverflow.com/users/7833617/"
+                                <a href="//stackoverflow.com/users/7833617/"
                                     >Mehvix</a
                                 >
                             </td>
@@ -177,7 +228,7 @@
                         <tr>
                             <td>LinkedIn</td>
                             <td>
-                                <a href="https://www.linkedin.com/in/mehvix/"
+                                <a href="//www.linkedin.com/in/mehvix/"
                                     >Max Vogel</a
                                 >
                             </td>
@@ -187,7 +238,7 @@
                             <td>Resumé</td>
                             <td>
                                 <a
-                                    href="https://cloud.mehvix.com/s/9oXaWqbLR4amMmz"
+                                    href="//cloud.mehvix.com/s/9oXaWqbLR4amMmz"
                                     >Link</a
                                 >
                             </td>
@@ -207,8 +258,7 @@
                                     href="posts/rss.xml"
                                     >RSS</a
                                 >)
-
-                                <!-- todo generate sublist of blog posts -->
+                                <!-- todo generate sublist of last 5 blog posts -->
                             </td>
                         </tr>
                         <tr>

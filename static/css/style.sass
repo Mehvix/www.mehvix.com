@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap')
+@import url('//fonts.googleapis.com/css2?family=PT+Mono&display=swap')
 
 //Variables
 $font-size: 14px
+$code-radius: 4px
 
 \:root
     --inside-bg-color: #e2e5e2
@@ -10,6 +11,7 @@ $font-size: 14px
     --text-color: #2b2b2b
     --text-color-inverse: #d4d4d4
 
+// botched way to have dynamic css variables (sass variables need reload to update :p)
 @function css-var($color-name)
     @return var(--#{$color-name})
 
@@ -23,7 +25,7 @@ $font-size: 14px
         color: css-var(text-color-inverse)
 
 html
-    overflow-y: scroll //https://stackoverflow.com/a/7607206/7833617
+    overflow-y: scroll ////stackoverflow.com/a/7607206/7833617
     /** scroll-behavior: smooth **/ // todo this breaks fast scroll, find workaround
 
 body,
@@ -37,14 +39,14 @@ input
     background-color: css-var(outside-bg-color)
 
     &::-webkit-scrollbar
-        width: 12px // width of the entire scrollbar
+        width: 10px // width of the entire scrollbar
 
     &::-webkit-scrollbar-track
         background: css-var(outside-bg-color) // color of the tracking area
 
     &::-webkit-scrollbar-thumb
         background-color: css-var(outside-bg-color) // color of the scroll thumb
-        border-radius: 12px // roundness of the scroll thumb
+        border-radius: 5px // roundness of the scroll thumb
         border: 2px solid css-var(inside-bg-color) // creates padding around scroll thumb
 
 .input
@@ -63,6 +65,18 @@ input
     box-sizing: border-box
     border: none
 
+.noscroll::-webkit-scrollbar
+    height: 0 !important
+    width: 0 !important
+    display: none !important
+
+
+s
+    // make strike line thicc
+    text-decoration: none
+    background-image: linear-gradient(transparent .5em,#000000 .5em,#000000 9px,transparent 9px)
+
+    
 select:focus,
 input:focus,
 datalist:focus 
@@ -101,7 +115,7 @@ img
     text-align: left
     color: css-var(inside-bg-color) !important
 
-// https://stackoverflow.com/a/43783066/7833617 
+// //stackoverflow.com/a/43783066/7833617 
 .select-all,
 .cryptoaddy
     -webkit-touch-callout: all // iOS Safari
@@ -128,7 +142,7 @@ p
         width: 100%
 
         tr
-            max-width: 50ch // todo this isn't great
+            max-width: 48ch // todo this isn't great
 
         td
             &:nth-of-type(1)
@@ -138,6 +152,13 @@ p
                 content: '  / '
 
             &:nth-of-type(2)
+                -webkit-touch-callout: all // iOS Safari
+                -webkit-user-select: all // Safari
+                -khtml-user-select: all // Konqueror HTML
+                -moz-user-select: all // Firefox
+                -ms-user-select: all // Internet Explorer/Edge
+                user-select: all // Chrome and Opera
+                
                 overflow: auto
                 display: flex
                 scrollbar-width: none // remove scroller in FF
@@ -189,14 +210,35 @@ code
     padding: 2px 4px
     font-size: 90%
     background-color: css-var(code-bg-color) !important
-    color: seashell
-    border-radius: 4px
+    color: css-var(text-color-inverse)
+    border-radius: $code-radius
 
-    &::selection,
     &::selection,
     & > span::selection
         color: limegreen !important
         background: black !important
+
+pre > code
+    // .hljs from atom-one-dark.css line 21
+    display: block
+    overflow-x: scroll
+    padding: 0.5em
+
+    color: css_var(text-color-inverse) 
+    background: css_var(code-bg-color)
+
+    &::-webkit-scrollbar
+        width: 1ch // width of the entire scrollbar
+
+    &::-webkit-scrollbar-track
+        background: css-var(code-bg-color) // color of the tracking area
+        border-radius: $code-radius // roundness of the track
+
+
+    &::-webkit-scrollbar-thumb
+        background-color: #484f5e // color of the scroll thumb
+        border-radius: $code-radius*2 // roundness of the scroll thumb
+
 
 td
     &.posts
@@ -273,7 +315,7 @@ h2::before
 h3::before
     content: '### '
 
-// Modified from https://github.com/ozh/github-colors
+// Modified from //github.com/ozh/github-colors
 code
     &.tags-py
         color: #3caaff
