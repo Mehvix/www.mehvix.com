@@ -115,7 +115,7 @@ $ mysql_secure_installation</code></pre>
                     During the installation you'll be prompted to login (but we
                     don't have an account setup yet!). Just hit enter and it'll
                     prompt you to create an account. After that, accept all of
-                    the reccomended prompt options and you’re set. After we've
+                    the recommended prompt options and you’re set. After we've
                     installed the database, we'll then configure it for
                     NextCloud. (note that "<code>Password</code>" will be your
                     own password created during the installation phase).
@@ -130,7 +130,7 @@ FLUSH PRIVILEGES;
 quit;</code></pre>
 
                 <p>
-                    While it's not necisary for NextCloud, we'll install
+                    While it's not necessary for NextCloud, we'll install
                     phpMyAdmin so that we have a GUI interface to our database.
                 </p>
 
@@ -221,9 +221,9 @@ $ vim /etc/apache2/sites-available/000-default.conf</code></pre>
                 <pre class="language-shell"><code>$ systemctl restart apache2
 $ certbot --apache</code></pre>
                 <p>
-                    Following the set up dialog will prompt you to autoredirect
+                    Following the set up dialog will prompt you to auto-redirect
                     from http to https. Your choice, but I'd go ahead and choose
-                    redirect. Now you can login on the myPhpAdmin/Nextcluod
+                    redirect. Now you can login on the myPhpAdmin/Nextcloud
                     securely!
                 </p>
 
@@ -445,7 +445,7 @@ quit;</code></pre>
                     </p>
                 </blockquote>
 
-                <h2>Transering [file] - server replied: [nothing]</h2>
+                <h2>Transferring [file] - server replied: [nothing]</h2>
 
                 <blockquote>
                     <p>
@@ -472,7 +472,7 @@ quit;</code></pre>
                 </blockquote>
 
                 <h2>
-                    Transfeing [file] - server replied: Forbidden
+                    Transferring [file] - server replied: Forbidden
                     (Sabre\DAV\Exception\Forbidden)
                 </h2>
 
@@ -640,7 +640,7 @@ $ systemctl restart apache2</code></pre>
                     <p>
                         <code>vim /var/www/html/config/config.php</code><br />
                         <br />
-                        Find your timezone in the ones avaliabe
+                        Find your timezone in the ones available
                         <a href="//www.php.net/manual/en/timezones.php">here</a
                         >.
                     </p>
@@ -652,6 +652,13 @@ $ systemctl restart apache2</code></pre>
                     <pre
                         style="margin-bottom: 0"
                     ><code>date.timezone = America/Chicago,</code></pre>
+
+                    <p>
+                        <code
+                            >sudo -u www-data php occ config:system:set
+                            logtimezone --value "Los_Angeles"</code
+                        >
+                    </p>
                 </blockquote>
 
                 <h2>Change default files for new users</h2>
