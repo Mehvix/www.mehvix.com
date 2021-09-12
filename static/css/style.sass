@@ -2,7 +2,7 @@
 
 //Variables
 $font-size: 14px
-$code-radius: 4px
+$code-radius: 5px
 
 \:root
     --inside-bg-color: #e2e5e2
@@ -231,13 +231,13 @@ pre > code
         width: 1ch // width of the entire scrollbar
 
     &::-webkit-scrollbar-track
-        background: css-var(code-bg-color) // color of the tracking area
-        border-radius: $code-radius // roundness of the track
+        background: css_var(code-bg-color) // color of the tracking area
+        border-radius: $code-radius*1.25 // roundness of the track
 
 
     &::-webkit-scrollbar-thumb
-        background-color: #484f5e // color of the scroll thumb
-        border-radius: $code-radius*2 // roundness of the scroll thumb
+        background-color: #323742 // color of the scroll thumb
+        border-radius: $code-radius // roundness of the scroll thumb
 
 
 td
