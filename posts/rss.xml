@@ -3,22 +3,194 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Sat, 19 Jun 2021 02:33:15 -0000</lastBuildDate>
+		<lastBuildDate>Sun, 31 Oct 2021 20:19:59 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
 		<item>
 			<author>Max Vogel</author>
+			<title>Tiling Distance Contradiction</title>
+			<pubDate>Sun, 31 Oct 2021 07:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/tiling-distance.html</link>
+			<guid>https://mehvix.com/posts/tiling-distance.html</guid>
+			<content:encoded><![CDATA[<article>
+<h1>Background</h1>
+<p>
+                    This past weekend I was walking around downtown Berkeley
+                    with my friends to get
+                    <i><a href=&quot;http://www.kingpindonuts.com/&quot;>Kingpin Donuts</a></i>
+                    when I thought of this contradiction involving the quickest
+                    way to traverses a square with infinitely small street
+                    blocks street blocks.
+                </p>
+<h1>Problem</h1>
+<h2>Setup</h2>
+<p>
+                    Consider a <code>1 x 1</code> unit square and a particle
+                    starting at the bottom left of the square:
+                    <code>(0,0)</code>. This particle wants to move to
+                    <code>(1,1)</code>
+                    [top right] as quickly as possible while moving only along
+                    the edges [streets] of the square. In the
+                    <code>1 x 1</code> case, you have two paths each involving
+                    two steps: (1) up, right and (2) right, up. Since these
+                    paths are symmetric, we'll treat them as a single path. In
+                    this single path, we clearly travel a distance of
+                    <code>2 units</code> [<code>1 unit per step</code> and
+                    <code>2 steps</code>].
+                </p>
+<h2>Smaller Blocks</h2>
+<p>
+                    Now, what if we divide our existing block into forths; that
+                    is, we have four <code>0.5 x 0.5</code> unit squares. Now,
+                    consider the following two paths that each take four steps:
+                    (1) right, right, up, up and (2) right, up, right, up. Just
+                    as the previous <code>1 x 1</code> case, both of these paths
+                    travel a total distance of <code>2 units</code> [each of the
+                    four steps travels <code>0.5 units</code>].
+                </p>
+<p>
+                    Say we repeat this dividing of the square
+                    <code>n</code> times so our original <code>1 x 1</code> unit
+                    block is split into <code>2^n x 2^n</code> sub-blocks, each
+                    with side length <code>1/2^n</code>. Now both the outermost
+                    and alternating paths each take <code>2 * 2^n</code> steps:
+                    (1) right <code>2^n</code> times followed by up
+                    <code>2^n</code> more times and (2) right, up
+                    <code>2^n</code> times. Again, both travel a total distance
+                    of <code>2 units</code> for all <code>n &gt; 0</code>.
+                </p>
+<h2>Contradiction</h2>
+<p>
+                    However, as we take <code>n</code> to infinity the
+                    alternating path looks more and more like particle is
+                    travelling along the hypotenuse line from
+                    <code>(0,0)</code> to <code>(1,1)</code>. But, we know that
+                    the distance traveled is always <code>2 units</code>. How
+                    can this be if the particle is travelling along the distance
+                    of the hypotenuse which has a distances of
+                    <code>√2 units</code>?!
+                </p>
+<h1>Explanation</h1>
+<p>
+                    This contradiction stumped me for a bit, but I thought of
+                    three different ways to explain this seeming contradiction
+                    while showering last night.
+                </p>
+<h2>1: Kinematics</h2>
+<p>
+                    We know that the particle takes a total of
+                    <code>2 * n^2</code> steps, each of which are at a constant
+                    speed [lets say <code>1 unit/second</code>]. In the original
+                    <code>1 x 1</code> case, we travel <code>2 units </code> so
+                    we take <code>2 seconds</code>. In each following case, we
+                    take just as long since both the speed and distance are
+                    constant so we know that the time we travel is constantly
+                    <code>2 seconds</code>. Therefore, in the
+                    <code>2^n x 2^n</code> sub-blocks case, since we know that
+                    we're traveling at a constant <code>1 unit/sec</code> and
+                    taking <code>2 seconds</code> meaning we're traveling
+                    <code>2 units</code>.
+                </p>
+<p>
+                    If we watched this scenario play out, we would see the
+                    particle appearing to move at a speed of
+                    <code>1/√2 units/sec</code>. That is, even though the line
+                    <i>looks</i> like the hypotenuse, it isn't. This makes sense
+                    because we cannot travel along the hypotenuse, no matter how
+                    small we get: At the very beginning we said the particle can
+                    only move along the edges [streets] of the square, meaning
+                    only travel right and up. So when we see the particle travel
+                    along the hypotenuse at <code>1/√2 units/sec</code>, we're
+                    actually seeing the particle move right and up [or up and
+                    right] a tiny amount that we only <i>assume</i> to be along
+                    the hypotenuse.
+                </p>
+<p>
+                    Again, the time staying constant because our speed and
+                    distance stay the same: we keep moving
+                    <code>1 unit/sec</code> and we travel a distance [2 for
+                    up/right] * [paths] * [distance/path] =
+                    <code>2 * 2^n * 1/2^n = 2</code> so we take
+                    <code>2 seconds</code> to traverse the grid even as we push
+                    <code>n</code> to infinity.
+                </p>
+<h2>2: Additive</h2>
+<p>
+                    Instead of dividing the square into sub-squares, what if we
+                    tiled instead so that we doubled each existing square. That
+                    is, we'd start with a single <code>1 x 1</code> unit block,
+                    then grow to <code>2 x 2, 4 x 4, 8 x 8, ...</code> etc.
+                    However, while we exponentially increase perimeter, we'll
+                    also increased our speed proportionally [starting at
+                    <code>1</code> unit/sec, then
+                    <code>2, 4, 8, ...</code> units/sec]. That way, the particle
+                    will always take 2 seconds to complete the square.
+                </p>
+<p>
+                    In addition to seeing that this 2 seconds is a constant for
+                    any resolution, we can also see that the two steps of both
+                    right and up movements are finite distances. That means that
+                    both the up and right movements are not, and cannot ever, be
+                    treated as a single move diagonally [this is what we
+                    implicitly assumed was happening when the sub-square sides
+                    were of length
+                    <code>1/2^n x 1/2^n</code>].
+                </p>
+<h2>3: Limit</h2>
+<p>
+                    Adding on to the explanation involving tiling above, we can
+                    write an equation to relate the total distance traveled
+                    [units] per speed [in units/sec]: <code>2n/n</code>. With
+                    this, we can take the limit of <code>n</code> to infinity
+                    and clearly this ends up as <code>2</code>. This result has
+                    the units <code>seconds</code> which is consistent with our
+                    other for the particle to travel all paths.
+                </p>
+<h1>What does this mean and what are the limits?</h1>
+<p>
+                    With that being said, this seems to say that travelling
+                    eight blocks east and eight blocks north should take the
+                    same time as travelling east then north eight times (eight
+                    is arbitrary). In the real world, this isn't true however
+                    since streets aren't totally parallel and orthogonal to one
+                    another but I think it's at least an interesting thought
+                    puzzle.
+                </p>
+<!-- <p>---</p>
+                <p>
+                    <sup><a href=&quot;#0-ref&quot; id=&quot;0-exp&quot;>0</a></sup> Considering
+                    &quot;optimal&quot; paths that always progress (no paths that consider
+                    a left or down move).
+                </p>
+                <p>
+                    <sup><a href=&quot;#1-ref&quot; id=&quot;1-exp&quot;>1</a></sup> This isn't
+                    important to the core question, but notice the sub series
+                    [up, left] from the series [up, left, up, left] is
+                    equivalent to [left, up] since they're symmetric, so [left,
+                    up, ...] is equivalent to [up, left, ...].
+                </p> -->
+<p>---</p>
+<p>
+                    Shout out to David Jiang + Jack Guerrisi for helping me wrap
+                    my head around this problem and to Frank Liu and Phoebe Chen
+                    for listening to me try to explain this while toasted on the
+                    way to Asian Ghetto! :)
+                </p>
+</article>]]></content:encoded>
+		</item>
+		<item>
+			<author>Max Vogel</author>
 			<title>Current Plans</title>
-			<pubDate>Fri, 18 Jun 2021 05:00:00 -0000</pubDate>
+			<pubDate>Fri, 18 Jun 2021 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/plans-2021.html</link>
 			<guid>https://mehvix.com/posts/plans-2021.html</guid>
 			<content:encoded><![CDATA[<article>
 <p>
                     Okay so for the past month I wasted a lot of my time
                     (binging
-                    <a href=&quot;https://yewtu.be/channel/UCYwVxWpjeKFWwu8TML-Te9A&quot;>JCS</a>, playing
-                    <a href=&quot;https://store.steampowered.com/app/629760/MORDHAU/&quot;>Mordhau</a>, doomscrolling) and I think writing out my general summer
+                    <a href=&quot;//yewtu.be/channel/UCYwVxWpjeKFWwu8TML-Te9A&quot;>JCS</a>, playing
+                    <a href=&quot;//store.steampowered.com/app/629760/MORDHAU/&quot;>Mordhau</a>, doomscrolling) and I think writing out my general summer
                     goals will be helpful for a couple reasons: (1) even though
                     few people I know read this blog, I hope I'll feel some
                     amount of accountability to follow through, (2) when people
@@ -48,8 +220,8 @@
                     past week I've been working through puzzles on LiChess, but
                     I don't think I have a (strong) foundation. I know control
                     middle, don't fuck up your pawn structure, and don't do
-                    <a href=&quot;https://youtu.be/e91M0XLX7Jw&quot;>this</a>. I've got
-                    <a href=&quot;https://www.masterclass.com/classes/garry-kasparov-teaches-chess&quot;>Kasparov's Masterclass</a>
+                    <a href=&quot;//youtu.be/e91M0XLX7Jw&quot;>this</a>. I've got
+                    <a href=&quot;//www.masterclass.com/classes/garry-kasparov-teaches-chess&quot;>Kasparov's Masterclass</a>
                     downloaded which I may binge through to get a sense of where
                     to start. I've also got friends who already play and are
                     very good (at least seem very good to me, probably how I
@@ -77,17 +249,17 @@
                     nearly every day).
                 </p>
 <p>
-<a href=&quot;https://artofproblemsolving.com/community/c1080751h2594496&quot;>David and I have been hiking twice this week</a>
+<a href=&quot;//artofproblemsolving.com/community/c1080751h2594496&quot;>David and I have been hiking twice this week</a>
                     which has been fun (and I can sub in hiking for running in
                     my workout, I hate running). I've been using
-                    <a href=&quot;https://www.alltrails.com/&quot;>AllTrails</a> which has
-                    a big enough userbase near Madison that there are fairly
-                    accurate and up-to-date reviews and statistics of nearby
-                    places. Maybe I'll make a post later once we hit all the
-                    nearby places summarizing my thoughts. Also, Aidan's getting
-                    back from rowing competitions next week so I'm hoping we can
-                    wrap up our Pathfinder game and go fishing with the fellas
-                    like last summer.
+                    <a href=&quot;//www.alltrails.com/&quot;>AllTrails</a> which has a big
+                    enough userbase near Madison that there are fairly accurate
+                    and up-to-date reviews and statistics of nearby places.
+                    Maybe I'll make a post later once we hit all the nearby
+                    places summarizing my thoughts. Also, Aidan's getting back
+                    from rowing competitions next week so I'm hoping we can wrap
+                    up our Pathfinder game and go fishing with the fellas like
+                    last summer.
                 </p>
 <h1>Read</h1>
 <p>
@@ -104,11 +276,11 @@
                 </p>
 <p>
                     Anyways, last week I started
-                    <a href=&quot;https://www.goodreads.com/book/show/113537.Positively_Fifth_Street&quot;>Positively Fifth Street</a>
+                    <a href=&quot;//www.goodreads.com/book/show/113537.Positively_Fifth_Street&quot;>Positively Fifth Street</a>
                     and I have
-                    <a href=&quot;https://www.goodreads.com/book/show/662.Atlas_Shrugged&quot;>Atlas Shrugged</a>,
-                    <a href=&quot;https://www.goodreads.com/book/show/45363333-harassment-architecture&quot;>Harassment Architecture</a>, and
-                    <a href=&quot;https://www.goodreads.com/book/show/135479.Cat_s_Cradle&quot;>Cat's Cradle</a>
+                    <a href=&quot;//www.goodreads.com/book/show/662.Atlas_Shrugged&quot;>Atlas Shrugged</a>,
+                    <a href=&quot;//www.goodreads.com/book/show/45363333-harassment-architecture&quot;>Harassment Architecture</a>, and
+                    <a href=&quot;//www.goodreads.com/book/show/135479.Cat_s_Cradle&quot;>Cat's Cradle</a>
                     ready on my bookshelf. Using
                     <a href=&quot;http://wordcounters.com&quot;>this site</a> to figure
                     out word counts, it's around 500,000 words in all (for what
@@ -116,7 +288,7 @@
                     words a minute and I have six weeks left of summer. Doing
                     the math, I need to read about an hour a day. I know I do
                     anything best when I'm in
-                    <a href=&quot;https://en.wikipedia.org/wiki/Flow_(psychology)&quot;>flow</a>, so I think I'll try and read my seven hours in two
+                    <a href=&quot;//en.wikipedia.org/wiki/Flow_(psychology)&quot;>flow</a>, so I think I'll try and read my seven hours in two
                     sessions each week. I don't want to schedule reading down to
                     the hour, rather just set the expectation of
                     <i>&quot;I'm going to read this afternoon&quot;</i> so I avoid
@@ -128,9 +300,9 @@
                     nuances behind learning a programming language. I like
                     diving in head first. I learned my first language, Python,
                     by dicking around with
-                    <a href=&quot;https://github.com/Rapptz/discord.py&quot;>discord.py</a>
+                    <a href=&quot;//github.com/Rapptz/discord.py&quot;>discord.py</a>
                     and building a
-                    <a href=&quot;https://github.com/mehvix/synapsbot-rw&quot;>Discord bot</a>
+                    <a href=&quot;//github.com/mehvix/synapsbot-rw&quot;>Discord bot</a>
                     my freshmen summer. I doubt that I wouldn't have learned
                     nearly as much compared to if I had followed a course.
                     That's not to say that courses don't have good content, I
@@ -145,7 +317,7 @@
                     already knew while trying to pick out what knowledge I
                     didn't already know. Compare this to me learning Ruby a
                     month ago when I threw together an
-                    <a href=&quot;https://github.com/Mehvix/aops-blog-rss&quot;>RSS generator for AoPS</a>
+                    <a href=&quot;//github.com/Mehvix/aops-blog-rss&quot;>RSS generator for AoPS</a>
                     : I learned all sorts of stuff not only about Ruby, but also
                     about Heroku and the steps behind getting code from my PC to
                     a server.
@@ -167,53 +339,54 @@
 		<item>
 			<author>Max Vogel</author>
 			<title>AoPS Blogs + RSS</title>
-			<pubDate>Tue, 18 May 2021 05:00:00 -0000</pubDate>
+			<pubDate>Tue, 18 May 2021 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/aops-rss.html</link>
 			<guid>https://mehvix.com/posts/aops-rss.html</guid>
 			<content:encoded><![CDATA[<article>
 <p>
                     Hey math monke(s), do you use
-                    <a href=&quot;https://en.wikipedia.org/wiki/RSS&quot;>RSS</a> (bonus
-                    if you are cool enough to have a
+                    <a href=&quot;//en.wikipedia.org/wiki/RSS&quot;>RSS</a> (bonus if you
+                    are cool enough to have a
                     <a href=&quot;http://cloud.mehvix.com&quot;>cloud.mehvix.com</a>
                     account and use the
-                    <a href=&quot;https://apps.nextcloud.com/apps/news&quot;>News app</a>)
-                    and read AoPS blogs? If so, you should checkout
+                    <a href=&quot;//apps.nextcloud.com/apps/news&quot;>News app</a>) and
+                    read AoPS blogs? If so, you should checkout
                     <a href=&quot;http://aops-rss.mehvix.com&quot;>aops-rss.mehvix.com</a>
                     — plug in a blog's URL like
-                    <a href=&quot;https://artofproblemsolving.com/community/c1273888&quot;>Dan's</a>
+                    <a href=&quot;//artofproblemsolving.com/community/c1273888&quot;>Dan's</a>
                     (kiss_mm) and it should spit out a
-                    <a href=&quot;https://aops-rss.herokuapp.com/1273888&quot;>RSS feed</a>. Prior to this project, I haven't used Ruby so there may
-                    be kinks and edge case errors — if you run into any,
-                    <a href=&quot;https://github.com/Mehvix/aops-blog-rss/issues&quot;>create an issue on Github</a>
+                    <a href=&quot;//aops-rss.herokuapp.com/1273888&quot;>RSS feed</a>.
+                    Prior to this project, I haven't used Ruby so there may be
+                    kinks and edge case errors — if you run into any,
+                    <a href=&quot;//github.com/Mehvix/aops-blog-rss/issues&quot;>create an issue on Github</a>
                     or reach out :)
                 </p>
 <p>
                     If you haven't heard of RSS, you should check it out. In
                     essence, it lets you keep up with online feeds (blogs /
                     forums posts, news sites, podcasts,
-                    <a href=&quot;https://www.comicsrss.com/rss/calvinandhobbes.rss&quot;>Calvin and Hobbes</a>, etc.) without having to manually check webpages for
-                    updates. I'd reccomend using
-                    <a href=&quot;https://chrome.google.com/webstore/detail/get-rss-feed-url/kfghpdldaipanmkhfpdcjglncmilendn&quot;>this extension</a>
+                    <a href=&quot;//www.comicsrss.com/rss/calvinandhobbes.rss&quot;>Calvin and Hobbes</a>, etc.) without having to manually check webpages for
+                    updates. I'd recommend using
+                    <a href=&quot;//chrome.google.com/webstore/detail/get-rss-feed-url/kfghpdldaipanmkhfpdcjglncmilendn&quot;>this extension</a>
                     for Chrome-based browsers to see if a site has an RSS feed.
-                    Plus, with <a href=&quot;https://nitter.net/&quot;>Nitter</a> and
-                    <a href=&quot;https://bibliogram.art/&quot;>Bibliogram</a> you can
-                    create proxied RSS feeds for Twitter and Instagram accounts
-                    so you don't have to deal with the bullshit spying + ads. If
-                    you don't have a
-                    <a href=&quot;http://cloud.mehvix.com&quot;>cloud.mehvix.com</a>
+                    Plus, with <a href=&quot;//nitter.net/&quot;>Nitter</a> and
+                    <a href=&quot;//bibliogram.art/&quot;>Bibliogram</a> you can create
+                    proxied RSS feeds for Twitter and Instagram accounts so you
+                    don't have to deal with the bullshit spying + ads. If you
+                    don't have a
+                    <a href=&quot;//cloud.mehvix.com&quot;>cloud.mehvix.com</a>
                     account, there's lots of RSS Readers out there. I've heard
                     alright things about
-                    <a href=&quot;https://feedly.com/&quot;>Feedly</a> and
-                    <a href=&quot;https://www.newsblur.com/&quot;>NewsBlur</a> but do your
-                    own due diligence.
+                    <a href=&quot;//feedly.com/&quot;>Feedly</a> and
+                    <a href=&quot;//www.newsblur.com/&quot;>NewsBlur</a> but do your own
+                    due diligence.
                 </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Webmonkeys: Use www</title>
-			<pubDate>Mon, 17 May 2021 05:00:00 -0000</pubDate>
+			<pubDate>Mon, 17 May 2021 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/use-www.html</link>
 			<guid>https://mehvix.com/posts/use-www.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -224,7 +397,7 @@
                     chunk through some of them and today and I came across the
                     (mostly-irrelevant, website-related decision) debate between
                     <a href=&quot;http://no-www.org/&quot;>no-www</a> and
-                    <a href=&quot;https://www.yes-www.org/&quot;><b>www</b>.yes-www</a>.
+                    <a href=&quot;//www.yes-www.org/&quot;><b>www</b>.yes-www</a>.
                 </p>
 <h1>The debate</h1>
 <p>
@@ -236,13 +409,13 @@
                     <a href=&quot;http://apple.com&quot;>Apple</a>, etc. you'll see that
                     they redirect no-www to www (more on why later). For what
                     it's worth though, having no <code>www</code> has its
-                    <i>minimalism aesthetic</i> and anecdotaly most smaller
+                    <i>minimalism aesthetic</i> and anecdotally most smaller
                     sites seem to have no www.
                 </p>
 <p>
-<a href=&quot;https://www.yes-www.org/&quot;>yes-www</a>
+<a href=&quot;//www.yes-www.org/&quot;>yes-www</a>
                     has actual
-                    <a href=&quot;https://www.yes-www.org/why-use-www/&quot;>technical arguments</a>: (1) you can’t use a CNAME record on a &quot;naked domain&quot;
+                    <a href=&quot;//www.yes-www.org/why-use-www/&quot;>technical arguments</a>: (1) you can’t use a CNAME record on a &quot;naked domain&quot;
                     (that is, sites with no <code>www</code>) and (2) cookies on
                     the naked domain get sent to all subdomains (so all
                     <code>*.mehvix.com</code> domains) which can mess up caching
@@ -254,7 +427,7 @@
                     me now, but best not to limit myself later down the line. To
                     swap, I prefaced the domain with <code>www</code> on this
                     site's
-                    <a href=&quot;https://github.com/Mehvix/mehvix.com/commit/037e1dde90bc5a4e43adfe72dfeeb0e49d73d898&quot;>CNAME on the GitHub</a>
+                    <a href=&quot;//github.com/Mehvix/mehvix.com/commit/037e1dde90bc5a4e43adfe72dfeeb0e49d73d898&quot;>CNAME on the GitHub</a>
                     , changed my <code>CNAME</code> and <code>A</code> DNS
                     records so that all prior non-<code>www</code> links would
                     go to the new <code>www</code> version.
@@ -264,7 +437,7 @@
 		<item>
 			<author>Max Vogel</author>
 			<title>Windows: Your files are insecure</title>
-			<pubDate>Thu, 13 May 2021 05:00:00 -0000</pubDate>
+			<pubDate>Thu, 13 May 2021 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/win-insecure-files.html</link>
 			<guid>https://mehvix.com/posts/win-insecure-files.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -279,22 +452,22 @@
 <p>
                     Microsoft doesn't value your security. Their proprietary
                     encryption software
-                    <a href=&quot;https://en.wikipedia.org/wiki/BitLocker&quot;>BitLocker</a>
+                    <a href=&quot;//en.wikipedia.org/wiki/BitLocker&quot;>BitLocker</a>
                     is only available for paying Windows Pro and Enterprise
                     users (and even then, it isn't enabled by default 🤔). And,
                     if for some reason you're paying (extra) for Windows, you
                     still shouldn't use BitLocker. Microsoft practice
-                    <a href=&quot;https://en.wikipedia.org/wiki/Security_through_obscurity&quot;>security through obscurity</a>: like Windows, BitLocker code is proprietary meaning
+                    <a href=&quot;//en.wikipedia.org/wiki/Security_through_obscurity&quot;>security through obscurity</a>: like Windows, BitLocker code is proprietary meaning
                     there's no way to vet it's security or verify there are not
                     backdoors for any of the
-                    <a href=&quot;https://en.wikipedia.org/wiki/Alphabet_agencies#Modern_era&quot;>alphabet boys</a>
+                    <a href=&quot;//en.wikipedia.org/wiki/Alphabet_agencies#Modern_era&quot;>alphabet boys</a>
                     which Microsoft has done before — from what's been made
                     <i>public</i>, Microsoft has
-                    <a href=&quot;https://archive.ph/Y3hsk&quot;>helped the NSA to circumvent their own encryption</a>,
-                    <a href=&quot;https://archive.ph/ETUkp&quot;>backdoored pre-installed disk encryption</a>,
-                    <a href=&quot;https://archive.ph/sX5dY&quot;>informed the NSA of bugs in Windows before fixing
+                    <a href=&quot;//archive.ph/Y3hsk&quot;>helped the NSA to circumvent their own encryption</a>,
+                    <a href=&quot;//archive.ph/ETUkp&quot;>backdoored pre-installed disk encryption</a>,
+                    <a href=&quot;//archive.ph/sX5dY&quot;>informed the NSA of bugs in Windows before fixing
                         them</a>, and
-                    <a href=&quot;https://archive.is/ZW77o&quot;>there's a secret NSA key in Windows, whose functions we
+                    <a href=&quot;//archive.is/ZW77o&quot;>there's a secret NSA key in Windows, whose functions we
                         don't know</a>.
                 </p>
 <p>
@@ -303,22 +476,22 @@
                     legitimacy and contribute improvements of their own. For
                     Windows, the open source encryption software I'd recommend
                     is
-                    <a href=&quot;https://veracrypt.fr/en/Home.html&quot;>VeraCrypt</a>.
+                    <a href=&quot;//veracrypt.fr/en/Home.html&quot;>VeraCrypt</a>.
                 </p>
 <h1>VeraCrypt</h1>
 <p>
                     You can download the latest installer of VeraCrypt
-                    <a href=&quot;https://veracrypt.fr/en/Downloads.html&quot;>here</a>.
-                    Once you install it, the process of encrypting your drive(s)
-                    is fairly trivial. For encrypting your storage device with
-                    the operating system, you start by going selecting
+                    <a href=&quot;//veracrypt.fr/en/Downloads.html&quot;>here</a>. Once
+                    you install it, the process of encrypting your drive(s) is
+                    fairly trivial. For encrypting your storage device with the
+                    operating system, you start by going selecting
                     <code>System</code> &gt;
                     <code>Encrypt System Partition/Drive...</code> and following
                     the creation wizard. The default AES + SHA-512 is more than
                     enough. Once you get to &quot;Collecting Random Data&quot;, shake your
                     mouse around — VeraCrypt gathers random data from your
                     mouse's position because (somewhat unintuitively)
-                    <a href=&quot;https://www.howtogeek.com/183051/htg-explains-how-computers-generate-random-numbers/&quot;>it's hard for computers to generate unpredictable
+                    <a href=&quot;//www.howtogeek.com/183051/htg-explains-how-computers-generate-random-numbers/&quot;>it's hard for computers to generate unpredictable
                         random numbers on their own</a>.
                 </p>
 <h2>Rescue Disk</h2>
@@ -360,44 +533,8 @@
 		</item>
 		<item>
 			<author>Max Vogel</author>
-			<title>What is this site?</title>
-			<pubDate>Fri, 16 Apr 2021 05:00:00 -0000</pubDate>
-			<link>https://mehvix.com/posts/what-is-this.html</link>
-			<guid>https://mehvix.com/posts/what-is-this.html</guid>
-			<content:encoded><![CDATA[<article>
-<p>
-                    Answering the title: I'm not really sure (yet)! I bought the
-                    domain for my
-                    <a href=&quot;/serverservices.html&quot;>server service</a> and
-                    figured I may as well have a webpage for the primary domain.
-                    Right now, this site's main purpose is for hosting guides I
-                    can link friends and family to. Right now I've got a few
-                    other guide ideas I've jotted down but haven't gotten around
-                    to — now that school is winding down, I'm hoping to get
-                    around to those.
-                </p>
-<p>
-                    Beyond guides, I've got a few other actual &quot;blog&quot; type ideas
-                    but (1) I'm not sure people want to read some high school
-                    student's ramblings and (2) I've realized that I suck at
-                    writing just for the sake of writing. The past four years of
-                    High School English have drilled in not much more than 1-3-1
-                    essays (one intro paragraph, three body paragraphs, one
-                    conclusion paragraph for those outside of American public
-                    education). While, sure, this works for AP Exams, beyond
-                    that it's been negligible — college apps took waaayyyy
-                    longer than they should have, I've got a bad case of staring
-                    at emails for 10 minutes before hitting send, and even just
-                    writing casually like this is <i>weird</i>(?). Maybe I'll
-                    try just writing my ideas down for the hell of it and I can
-                    look back in a few years and make fun of my self.
-                </p>
-</article>]]></content:encoded>
-		</item>
-		<item>
-			<author>Max Vogel</author>
 			<title>CalyxOS Install Guide</title>
-			<pubDate>Fri, 29 Jan 2021 06:00:00 -0000</pubDate>
+			<pubDate>Fri, 29 Jan 2021 08:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/calyx.html</link>
 			<guid>https://mehvix.com/posts/calyx.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -408,10 +545,10 @@
                     done by phone manufacturers, cell providers, ISPs,
                     advertising companies, etc. That being said, it's not as
                     extreme as alternatives, notably
-                    <a href=&quot;https://grapheneos.org/&quot;>GrapheneOS</a>, and seeks
+                    <a href=&quot;//grapheneos.org/&quot;>GrapheneOS</a>, and seeks
                     to maintain a balance between usability and privacy. You can
                     check (and contribute) app compatibility
-                    <a href=&quot;https://plexus.techlore.tech/&quot;>here</a>.
+                    <a href=&quot;//plexus.techlore.tech/&quot;>here</a>.
                 </p>
                 ---
 
@@ -437,7 +574,7 @@
 <h1>Update Drivers</h1>
 <p>
                     Download the
-                    <a href=&quot;https://developer.android.com/studio/run/win-usb&quot;>Google USB Drivers</a>
+                    <a href=&quot;//developer.android.com/studio/run/win-usb&quot;>Google USB Drivers</a>
                     and extract the files somewhere on your PC. Then, showdown
                     the phone, press and hold the power and volume down until
                     the bootloader (black screen with a red triangle) appears.
@@ -451,9 +588,9 @@
 <h1>Flash CalyxOS</h1>
 <p>
                     Create a new folder and download the
-                    <a href=&quot;https://calyxos.org/get&quot;>CalyxOS release for your device</a>
+                    <a href=&quot;//calyxos.org/get&quot;>CalyxOS release for your device</a>
                     (don't unzip it though!) as well as the
-                    <a href=&quot;https://github.com/AOSPAlliance/device-flasher/releases/&quot;>device flasher</a>
+                    <a href=&quot;//github.com/AOSPAlliance/device-flasher/releases/&quot;>device flasher</a>
                     (which may be falsely flagged as a virus). From there, you
                     can run the
                     <code>device-flasher.exe</code> and follow along the
@@ -471,56 +608,56 @@
 <ul>
 <li>
                             Matrix:
-                            <a href=&quot;https://matrix.to/#/#CalyxOS:matrix.org&quot;>#CalyxOS:matrix.org</a>
+                            <a href=&quot;//matrix.to/#/#CalyxOS:matrix.org&quot;>#CalyxOS:matrix.org</a>
 </li>
 <li>
                             IRC:
-                            <a href=&quot;https://webchat.freenode.net/#calyxos&quot;>#calyxos</a>
+                            <a href=&quot;//webchat.freenode.net/#calyxos&quot;>#calyxos</a>
                             on Freenode
                         </li>
 <li>
                             Telegram:
-                            <a href=&quot;https://t.me/CalyxOSpublic&quot;>CalyxOSpublic</a>
+                            <a href=&quot;//t.me/CalyxOSpublic&quot;>CalyxOSpublic</a>
 </li>
-<li>Reddit: <a href=&quot;https://old.reddit.com/r/CalyxOS/&quot;>/r/CalyxOS</a></li>
+<li>Reddit: <a href=&quot;//old.reddit.com/r/CalyxOS/&quot;>/r/CalyxOS</a></li>
 </ul>
 </table>
                 All of the chat rooms are bridged so messages sent on one will show up on others and vice versa.
                 </p>
 <p>
                     Last, there's an
-                    <a href=&quot;https://calyxos.org/news/&quot;>blog</a> for updates +
+                    <a href=&quot;//calyxos.org/news/&quot;>blog</a> for updates +
                     known bugs (and fixes) that's got an
-                    <a href=&quot;https://calyxos.org/feed.xml&quot;>RSS feed</a> too.
+                    <a href=&quot;//calyxos.org/feed.xml&quot;>RSS feed</a> too.
                 </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Make Twitter Suck Less</title>
-			<pubDate>Mon, 07 Dec 2020 06:00:00 -0000</pubDate>
+			<pubDate>Mon, 07 Dec 2020 08:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/twitter.html</link>
 			<guid>https://mehvix.com/posts/twitter.html</guid>
 			<content:encoded><![CDATA[<article id=&quot;content&quot;>
 <p>
                     Twitter is pretty bad. But, it's the only place with
-                    <a href=&quot;https://twitter.com/jon_bois&quot;>Jon Bois tweets</a>.
-                    Here are a couple ways you can make Twitter suck less.
+                    <a href=&quot;//twitter.com/jon_bois&quot;>Jon Bois tweets</a>. Here
+                    are a couple ways you can make Twitter suck less.
                 </p>
 <p>
 <i>2/2/2021 Update:</i> I came across
-                    <a href=&quot;https://github.com/zedeus/nitter&quot;>nitter</a> which
-                    is a FOSS proxy to Twitter. Currently, you can only view
-                    certain profiles but is perfect for my use-case.
+                    <a href=&quot;//github.com/zedeus/nitter&quot;>nitter</a> which is a
+                    FOSS proxy to Twitter. Currently, you can only view certain
+                    profiles but is perfect for my use-case.
                 </p>
 
                 ---
                 <div>
-<h1>Remove Homepage Crap</h1>
+<h1 style=&quot;margin-top: 1em&quot;>Remove Homepage Crap</h1>
                     The Twitter &quot;What's Happening&quot; sidebar is dedicated to drama
                     and stuff intended to make you angry. To remove this, you'll
                     need
-                    <a href=&quot;https://github.com/gorhill/uBlock&quot;>uBlock origin</a>
+                    <a href=&quot;//github.com/gorhill/uBlock&quot;>uBlock origin</a>
                     (which is something you should have installed if you want a
                     more suck less internet in general). Once you have it
                     installed, go to the
@@ -531,7 +668,7 @@
 <div>
 <h1>De-numerate</h1>
                     As
-                    <a href=&quot;https://bengrosser.com/projects/twitter-demetricator/&quot;>Ben Grosser</a>
+                    <a href=&quot;//bengrosser.com/projects/twitter-demetricator/&quot;>Ben Grosser</a>
                     writes:
                     <blockquote>
                         Visible metrics can make us feel more compulsive,
@@ -544,17 +681,17 @@
                     He's written a tool to remove all metrics (likes, retweets,
                     replies, followers, etc.) which you can install through one
                     sources
-                    <a href=&quot;https://bengrosser.com/projects/twitter-demetricator/install-twitter-demetricator/&quot;>linked here</a>. I am personally using
-                    <a href=&quot;https://github.com/violentmonkey/violentmonkey&quot;>Violentmonkey</a>.
+                    <a href=&quot;//bengrosser.com/projects/twitter-demetricator/install-twitter-demetricator/&quot;>linked here</a>. I am personally using
+                    <a href=&quot;//github.com/violentmonkey/violentmonkey&quot;>Violentmonkey</a>.
                 </div>
 <div>
 <h1>Remove Interests</h1>
-                    Twitter keeps track of what it think's you're interesting
+                    Twitter keeps track of what it think is you're interesting
                     in, then uses it to show you &quot;relevant&quot; tweets (and ads).
                     You can manually prune these
-                    <a href=&quot;https://twitter.com/settings/your_twitter_data/twitter_interests&quot;>here</a>, but the list can get very long, very quick. You can
+                    <a href=&quot;//twitter.com/settings/your_twitter_data/twitter_interests&quot;>here</a>, but the list can get very long, very quick. You can
                     automate &quot;un-interesting&quot; all topics by pasting
-                    <a href=&quot;https://gist.github.com/edjw/61cda68535b237fa7fa8db23842c1b6d/&quot;>Ed Johnson-Williams'</a>
+                    <a href=&quot;//gist.github.com/edjw/61cda68535b237fa7fa8db23842c1b6d/&quot;>Ed Johnson-Williams'</a>
                     script in console:
 
                     <pre><code class=&quot;js&quot;>&quot;use strict;&quot;
@@ -578,13 +715,13 @@ interests.forEach((interest) =&gt; {
 console.log(`Finished`);</code></pre>
 </div>
 <div>
-<h1>Remove Sugguested Content</h1>
+<h1>Remove Suggested Content</h1>
 
                     Under the
-                    <a href=&quot;https://twitter.com/settings/add_muted_keyword&quot;>muted keywords</a>
+                    <a href=&quot;//twitter.com/settings/add_muted_keyword&quot;>muted keywords</a>
                     section, you paste
-                    <a href=&quot;https://gist.github.com/IanColdwater/88b3341a7c4c0cf71c73ac56f9bd36ec#gistcomment-3153196&quot;>Jake Bellacera's</a>
-                    script to automatically add sugguest content keywords to the
+                    <a href=&quot;//gist.github.com/IanColdwater/88b3341a7c4c0cf71c73ac56f9bd36ec#gistcomment-3153196&quot;>Jake Bellacera's</a>
+                    script to automatically add suggest content keywords to the
                     blocklist, cleaning up your timeline.
                     <pre><code class=&quot;js&quot;>const delayMs = 500; // change this if you feel like its running too fast
 const keywords = `ActivityTweet
@@ -645,7 +782,7 @@ keywords.reduce(async (prev, keyword) =&gt; {
 		<item>
 			<author>Max Vogel</author>
 			<title>NC Importing + Automating Calendars</title>
-			<pubDate>Wed, 08 Apr 2020 05:00:00 -0000</pubDate>
+			<pubDate>Wed, 08 Apr 2020 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/nextcloud-calendar.html</link>
 			<guid>https://mehvix.com/posts/nextcloud-calendar.html</guid>
 			<content:encoded><![CDATA[<article id=&quot;content&quot;>
@@ -655,25 +792,22 @@ keywords.reduce(async (prev, keyword) =&gt; {
                     automatically. Fortunately, both of these issues have
                     workarounds<br/>
 </p>
-
-                ---
-
-                <h1>Importing Google Calendars</h1>
+<h1>Importing Google Calendars</h1>
 <p>
-                    Nextcloud needs a <code>.ics</code> or
-                    <code>.ical</code> file. To get a public Google calendar’s
-                    <code>.ics</code> location (as of 5/8/20), you need to get
-                    the <code>src</code>/<code>cid</code> of the Google
-                    calendar. All Google calendars have this in the external
-                    URL.
+                    For external calendars, Nextcloud needs a
+                    <code>.ics</code> or <code>.ical</code> file. To add a
+                    Google Calendar, we just have to adjust the URL's formatting
+                    which you can do automatically using
+                    <a href=&quot;//toolbox.mehvix.com/ical-generator/&quot;>this online tool</a>. Alternatively, you can follow the manual method below.
                 </p>
 <p>
-                    For example, for embedded calendars (in this example the
-                    <a href=&quot;https://codeforces.com/calendar&quot;>Codeforces calendar</a>) you can find the <code>cid</code> by clicking on the plus
+                    For embedded calendars (in this example the
+                    <a href=&quot;//codeforces.com/calendar&quot;>Codeforces calendar</a>)
+                    you can find the <code>cid</code> by clicking on the plus
                     button in the bottom right corner which will open the
                     following URL:
                 </p>
-<pre><code class=&quot;ini&quot;>https://calendar.google.com/calendar/render?cid=k23j233gtcvau7a8ulk2p360m4%40group.calendar.google.com&amp;ctz=America/Chicago</code></pre>
+<pre><code class=&quot;ini&quot;>https://calendar.google.com/calendar/render?cid=k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com&amp;ctz=America/Chicago</code></pre>
 <p>
                     Alternatively, you can get also use inspect element which
                     will yield the following URL containing the
@@ -685,29 +819,16 @@ keywords.reduce(async (prev, keyword) =&gt; {
 <code>src=</code>, <code>cid=</code>, or
                     <code>/ical/</code> and up to the next <code>&amp;</code> sign,
                     oftentimes this will look something like
-                    <code>[id]@group.calendar.google.com</code>. Then, take this
-                    string and add it to the following:
+                    <code>[id]@[group].calendar.google.com</code>. Then, take
+                    this string and add it to the following:
                 </p>
 <pre><code class=&quot;ini&quot;>https://calendar.google.com/calendar/ical/[add here!]/public/basic.ics</code></pre>
 <p>
                     For example, using the Codeforces calendar you'd grab
                     <code>k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com</code>
-                    and add get the following:
+                    and get the following:
                 </p>
 <pre><code class=&quot;ini&quot;>https://calendar.google.com/calendar/ical/k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com/public/basic.ics</code></pre>
-<h2>Automatic iCal link creator</h2>
-<p>
-                    Alternatively, you can enter in the calendar link in the
-                    following textbox and it should spit out the correct iCal
-                    link:
-                </p>
-<div id=&quot;autobox&quot;>
-<div>
-<pre style=&quot;margin: 0.5em&quot;><input class=&quot;input&quot; id=&quot;autolink&quot;/></pre>
-<pre style=&quot;margin: 0 0.5em&quot;><code class=&quot;select-all output&quot; id=&quot;autout&quot;> </code></pre>
-</div>
-</div>
-<script src=&quot;/static/js/nextcloud-calendar.js&quot;></script>
 <p>
                     You can then use this URL to as the external URL in the
                     Nextcloud Calendar app.
@@ -723,216 +844,182 @@ keywords.reduce(async (prev, keyword) =&gt; {
 <p>
                     which would set the interval to 1 day and 6 hours. The
                     <code>--value</code> data type is
-                    <a href=&quot;https://www.php.net/manual/en/dateinterval.construct.php&quot;>DataInterval</a>.
+                    <a href=&quot;//www.php.net/manual/en/dateinterval.construct.php&quot;>DataInterval</a>.
                 </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Nextcloud Install Guide</title>
-			<pubDate>Tue, 03 Sep 2019 05:00:00 -0000</pubDate>
+			<pubDate>Tue, 03 Sep 2019 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/nextcloud-guide.html</link>
 			<guid>https://mehvix.com/posts/nextcloud-guide.html</guid>
 			<content:encoded><![CDATA[<article>
+<p>
+                    Nextcloud is a FOSS solution for cloud storage, among other
+                    capabilities such as email, notes, calender, tasks. Pretty
+                    much every thing that you can do with the Google suite, you
+                    can use Nextcloud for. For that reasoning,
+                </p>
 <h1>Basic Installation Step</h1>
-<h2 style=&quot;margin-top: 0&quot;>Getting the machine up-to-date</h2>
-<blockquote>
 <p>
-<code>sudo apt autoremove</code> (removes unused apps)
-                        <br/>
-<code>sudo apt update</code><br/>
-<code>sudo apt upgrade</code><br/>
-</p>
-</blockquote>
-<h2>Installing Apache - the webserver</h2>
-<blockquote>
+                    We'll start by getting the machine up-to-date and setting up
+                    our webserver, apache, with the following commands
+                </p>
+<pre class=&quot;language-shell&quot;><code>$ sudo apt update &amp;&amp; sudo apt upgrade
+$ sudo apt install apache2
+$ systemctl start apache2 # turns on apache now 
+$ systemctl enable apache2 # auto-start apache2 on boot</code></pre>
 <p>
-<code>sudo apt install apache2</code><br/>
-<code>systemctl start apache2</code><br/>
-<code>systemctl enable apache2</code> (start apache2 on
-                        boot)
-                    </p>
+                    If you’ve configured the server right, you should be able to
+                    go to the server’s IP (which you can find by running
+                    <code>hostname -I</code>) in the browser of your choice and
+                    see the &quot;<a href=&quot;/static/media/posts/apache2page.png&quot;>Apache2 Ubuntu Default Page</a>.&quot;
+                </p>
 <br/>
-<br/>
+<p>Next, we can install MariaDB — the database.</p>
+<pre class=&quot;language-shell&quot;><code>$ sudo apt install mariadb-server
+$ mysql_secure_installation</code></pre>
 <p>
-                        If you’ve configured the server right, you should be
-                        able to go to your machine’s IP (you can get this via
-                        <code>hostname -I</code>) in the browser of your choice
-                        and see the
-                        <a href=&quot;/static/media/posts/apache2page.png&quot;>“Apache2 Ubuntu Default Page”</a>
-</p>
-</blockquote>
-<h2>Installing MariaDB - the database</h2>
-<blockquote>
-<p>
-<code>sudo apt install mariadb-server</code><br/>
-<code>mysql_secure_installation</code>
-</p>
-<br/><br/>
-<p>
-                        This will prompt you to login to MariaDB. Since we don’t
-                        have a password, just hit enter to set one up. After
-                        that, just accept all of the prompts and you’re set.
-                    </p>
-</blockquote>
-<h2>Installing phpMyAdmin</h2>
-<blockquote>
-<p>
-<code>sudo apt install php libapache2-mod-php
-                            php-mysql</code><br/>
-<code>sudo apt install phpmyadmin</code><br/>
-</p>
-<br/>
-<p>
-                        You should follow all of the default steps, just make
-                        sure that you set the webserver as
-                        <code>apache2</code> and you’ll be good
-                    </p>
-<br/><br/>
-<p>
-<code>sudo ln -s /etc/phpmyadmin/apache.conf
-                            /etc/apache2/conf-available/phpmyadmin.conf</code><br/>
-<code>a2enconf phpmyadmin</code><br/>
-<code>service apache2 reload</code><br/>
-<code>systemctl reload apache2</code><br/>
-</p>
-<br/>
-<p>
-                        Now, if you go to
-                        <code>192.168.something.whatever/phpmyadmin/</code>
-                        (your computer’s IP) you should see the phpMyAdmin login
-                        page;
-                        <strong>however, you should not login yet.</strong>
-</p>
-</blockquote>
-<h2>Configuring MariaDB</h2>
-<blockquote>
-<p><code>mariadb</code><br/></p>
-<pre><code class=&quot;mariadb&quot;>CREATE DATABASE nextcloud;
-CREATE USER nextcloud IDENTIFIED BY 'Password'; # but with your password
-GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password'; # again, your password
+                    During the installation you'll be prompted to login (but we
+                    don't have an account setup yet!). Just hit enter and it'll
+                    prompt you to create an account. After that, accept all of
+                    the recommended prompt options and you’re set. After we've
+                    installed the database, we'll then configure it for
+                    NextCloud. (note that &quot;<code>Password</code>&quot; will be your
+                    own password created during the installation phase).
+                </p>
+<pre><code class=&quot;language-pgsql&quot;>$ mariadb 
+CREATE DATABASE nextcloud;
+CREATE USER nextcloud IDENTIFIED BY 'Password';
+GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password';
 GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;
 FLUSH PRIVILEGES;
 quit;</code></pre>
 <p>
-                        Now you should be able to login on the myphpadmin forum
-                        with the <code>nextcloud</code> as the username, and the
-                        password you just set up as the password.
-                    </p>
-</blockquote>
-<h2>Installing PHP &amp; Libraries</h2>
-<blockquote>
+                    While it's not necessary for NextCloud, we'll install
+                    phpMyAdmin so that we have a GUI interface to our database.
+                </p>
+<pre class=&quot;language-shell&quot;><code>$ sudo apt install php libapache2-mod-php php-mysql
+$ sudo apt install phpmyadmin</code></pre>
 <p>
-<code>sudo apt install php-gd php-json php-mysql php-curl
-                            php-mbstring php-intl php-imagick php-xml
-                            php-zip</code><br/>
-</p>
-</blockquote>
-<h2>Installing Nextcloud</h2>
-<blockquote>
-<code>wget
-                        https://download.nextcloud.com/server/releases/latest.tar.bz2</code><br/>
-<code>tar -xvf latest.tar.bz2</code><br/>
-<code>cd nextcloud</code><br/>
-<code>mv ./* /var/www/html/</code><br/>
-<code>mv ./.htaccess /var/www/html</code><br/>
-<code>mv ./.user.ini /var/www/html</code><br/>
-<code>cd /var/www/html</code><br/>
-<code>chown -R www-data:www-data ./*</code><br/>
-<code>chown www-data:www-data .htaccess</code><br/>
-<code>chown www-data:www-data .user.ini</code><br/>
+                    When running through the installation dialog, make sure to
+                    set the webserver as <code>apache2</code> and follow all of
+                    the default options. After the install, we will symlink the
+                    apache and phpMyAdmin configurations which, in tandem with
+                    the following commands, will enable phpMyAdmin.
+                </p>
+<pre class=&quot;language-shell&quot;><code>$ sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+$ a2enconf phpmyadmin
+$ service apache2 reload
+$ systemctl reload apache2</code></pre>
 <p>
-                        Now if you go to
-                        <code>192.168.something.whatever</code> you’ll get the
-                        Nextcloud page
-                        <strong>BUT DO NOT LOGIN / CREATE ACCOUNT</strong>. You
-                        need to set up encryption.
-                    </p>
-</blockquote>
-<h2>Setting up Encryption</h2>
-<blockquote>
+                    Now, (fingers crossed) if you go to
+                    <code>[server ip]/phpmyadmin/</code>
+                    you'll see the phpMyAdmin login page;
+                    <strong>however, do not login yet.</strong> We do not have
+                    encryption enabled on the web page yet so your ISP or server
+                    can theoretically see what you send. We'll setup encryption
+                    down the road in a bit.
+                </p>
+<p>But first, we'll install the required PHP (libraries)</p>
+<pre class=&quot;language-shell&quot;><code>$ sudo apt install php-gd php-json php-mysql php-curl php-mbstring php-intl php-imagick php-xml php-zip</code></pre>
+<p>as well as NextCloud itself</p>
+<pre class=&quot;language-shell&quot;><code>$ wget https://download.nextcloud.com/server/releases/latest.tar.bz2
+$ tar -xvf latest.tar.bz2 # unzip
+$ cd nextcloud
+$ mv ./* /var/www/html/ # move all files to webserver directory
+$ mv ./.htaccess /var/www/html # move hidden dot files
+$ mv ./.user.ini /var/www/html # ^
+$ cd /var/www/html
+$ chown -R www-data:www-data ./* # Recursively set www-data as owner of files
+$ chown www-data:www-data .htaccess # ^ for hidden dot files
+$ chown www-data:www-data .user.ini # ^</code></pre>
 <p>
-<code>sudo apt install certbot</code><br/>
-<code>sudo apt install python-certbot-apache</code><br/>
-</p>
+                    Now if you go to
+                    <code>[server ip]</code> you’ll get the Nextcloud page
+                    <strong>BUT DO NOT LOGIN / CREATE ACCOUNT</strong>. Again,
+                    we still need to set up encryption!
+                </p>
 <p>
-<code>nano
-                            /etc/apache2/sites-available/000-default.conf</code>
-                        and uncomment and change <code>ServerName</code> to
-                        whatever domain you’re using, e.g.
-                        <code>cloud.mehvix.com</code>
-</p>
-<br/><br/>
+                    To set up encryption, we'll use certbot which we'll install
+                    and configure like this:
+                </p>
+<pre class=&quot;language-shell&quot;><code>$ sudo apt install certbot
+$ sudo apt install python-certbot-apache
+$ vim /etc/apache2/sites-available/000-default.conf</code></pre>
 <p>
-                        Then you need to point your domain at your server and
-                        open your server to the external access. You’ll first
-                        need to port forward your server (you can find the ip
-                        via <code>hostname -I</code>) to port <code>443</code>,
-                        and then create an A record under your domain’s DNS
-                        settings pointing at your external IP (found via
-                        <code>dig +short myip.opendns.com
-                            @resolver1.opendns.com</code>)
-                    </p>
-<br/><br/>
+                    then uncomment and change <code>ServerName</code> to
+                    whatever domain you’re using, such as
+                    <code>cloud.mehvix.com</code>.
+                </p>
 <p>
-<strong>NOTE:</strong> If you’re using Cloudflare, you
-                        have to disable Universal SSL for Nextcloud to work
-                    </p>
-<br/><br/>
+                    Next, you need to point your domain at your server and open
+                    your server to the external access. You’ll first need to
+                    port forward your server (you can find the ip via
+                    <code>hostname -I</code>) to port <code>443</code>, and then
+                    create an A record under your domain’s DNS settings pointing
+                    at your external IP (found via
+                    <code>dig +short myip.opendns.com
+                        @resolver1.opendns.com</code>). <strong>Note</strong> that if you’re using Cloudflare,
+                    you have to disable Universal SSL for Nextcloud to work.
+                </p>
 <p>
-<code>systemctl restart apache2</code><br/>
-<code>certbot --apache</code><br/>
-</p>
+                    After making your server open to the WWW, you can finish
+                    setting up certbot by restarting the webserver and
+                    activating certbot
+                </p>
+<pre class=&quot;language-shell&quot;><code>$ systemctl restart apache2
+$ certbot --apache</code></pre>
 <p>
-                        This will prompt you to autoredirect from http to https.
-                        Your choice, but I'd go ahead and choose redirect.
-                    </p>
-</blockquote>
-<h2>Setting up Storage/Login</h2>
-<blockquote>
+                    Following the set up dialog will prompt you to auto-redirect
+                    from http to https. Your choice, but I'd go ahead and choose
+                    redirect. Now you can login on the myPhpAdmin/Nextcloud
+                    securely!
+                </p>
 <p>
-                        For security reasons, it’s a good idea to have the data
-                        folder outside of the web root (<code>/var/www/</code>)
-                        I already set up my drives/raid config, so all I had to
-                        do was create and mount a partition:<br/>
-<code>mkdir /media/nextcloud-data/</code><br/>
-<code>chown www-data:www-data
-                            /media/nextcloud-data/</code><br/>
-<code>mkfs.ext4 /dev/sda</code><br/>
-<code>mount /dev/sda /media/nextcloud-data/</code><br/><br/>
-                        Then to set up automount, <code>sudo blkid</code> and
-                        grab the UUID of the partition,
-                        <code>sudo nano /etc/fstab</code>
-                        and add<br/>
-</p>
-<pre><code class=&quot;ini&quot;>UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0</code></pre>
-</blockquote>
+                    We're not done yet though. For security reasons, it’s a good
+                    idea to have the data folder outside of the web root
+                    (<code>/var/www/</code>) I already set up my drives/raid
+                    config, so all I had to do was create and mount a partition:
+                </p>
+<pre class=&quot;language-shell&quot;><code>$ mkdir /media/nextcloud-data/
+$ chown www-data:www-data /media/nextcloud-data/
+$ mkfs.ext4 /dev/sda
+$ mount /dev/sda /media/nextcloud-data/</code></pre>
+                Then to set up automount, I did <code>sudo blkid</code> to grab
+                the UUID of the partition which I then appended to
+                <code>/etc/fstab</code>:
+                <pre><code class=&quot;language-plaintext&quot;>UUID=[YOUR UUID] /media/nextcloud-data ext4 defaults 0 0</code></pre>
 <p>
-                    After that, you can go ahead to the Nextcloud page, create
-                    an account (you will use this for all Nextcloud logins).
+                    From there, you can go ahead to the Nextcloud page, create
+                    an account (you will use this for all NextCloud logins).
                     Make sure to change the data folder to
                     <code>/media/nextcloud-data/</code> or whatever dir you are
-                    using, then enter the MariaDB user/password.<br/><br/>
+                    using, then enter the MariaDB username (nextcloud) and
+                    password.<br/><br/>
 </p>
 <p>
-                    Now you’ve got yourself a Nextcloud Server! However, there
-                    are still a couple things that you still need to configure
-                    which I’ll cover in the following section.<br/><br/>
+<strong>
+                        Now you’ve got yourself a working Nextcloud
+                        Server!</strong>
+                    However, there are still a couple things that you still need
+                    to configure which I’ll cover in the following section.<br/><br/>
 </p>
 <h1>Securing Nextcloud</h1>
 <p>
                     If you head to
                     <code>https://yournextcloud.com/settings/admin/overview</code>
                     you’ll see all security and setup warnings. Here’s how you
-                    fix the ones that I encountered:
+                    fix the most common:
                 </p>
 <h2>
                     The PHP memory limit is below the recommended value of
                     512MB.
                 </h2>
 <blockquote>
-<p><code>nano /etc/php/7.4/apache2/php.ini</code><br/></p>
-<pre><code class=&quot;ini&quot;>upload_max_filesize = 512M
+<p><code>vim /etc/php/7.4/apache2/php.ini</code><br/></p>
+<pre><code class=&quot;language-ini&quot;>upload_max_filesize = 512M
 memory_limit = 512M
 post_max_size = 512M</code></pre>
 <p><code>systemctl restart apache2</code></p>
@@ -945,7 +1032,7 @@ post_max_size = 512M</code></pre>
                 </h2>
 <blockquote>
 <p>
-<code>nano
+<code>vim
                             /etc/apache2/sites-available/000-default-le-ssl.conf</code><br/>
 </p>
 <p>Add the following under <code>ServerName</code>:</p>
@@ -964,7 +1051,7 @@ post_max_size = 512M</code></pre>
                 </h2>
 <blockquote>
 <p>
-<code>nano
+<code>vim
                             /etc/apache2/sites-available/000-default-le-ssl.conf</code><br/>
 </p>
 <p>Add the following under <code>ServerName</code>:</p>
@@ -981,21 +1068,19 @@ post_max_size = 512M</code></pre>
                 </h2>
 <blockquote>
 <code>sudo apt install php-apcu</code><br/>
-<code>nano /var/www/html/config/config.php</code><br/>
+<code>vim /var/www/html/config/config.php</code>
 <pre><code style=&quot;margin: 0;&quot;>'memcache.local' =&gt; '\OC\Memcache\APCu'</code></pre>
-<br/>
-<code>sudo nano /etc/php/7./mods-available/apcu.ini</code>
+<code>sudo vim /etc/php/7./mods-available/apcu.ini</code>
 <pre><code>apc.enable_cli=1</code></pre>
-<br/>
 <code style=&quot;margin: 0&quot;>systemctl restart apache2</code>
 </blockquote>
 <h2>The PHP OPcache is not properly configured</h2>
 <blockquote>
 <p>
-<code>nano /etc/php/7.4/apache2/php.ini</code><br/>
+<code>vim /etc/php/7.4/apache2/php.ini</code><br/>
                         The following are default settings, consider checking
                         out
-                        <a href=&quot;https://www.scalingphpbook.com/blog/2014/02/14/best-zend-opcache-settings.html&quot;>this blog</a>
+                        <a href=&quot;//www.scalingphpbook.com/blog/2014/02/14/best-zend-opcache-settings.html&quot;>this blog</a>
                         for information on what each parameter means<br/>
 </p>
 <pre><code class=&quot;apache&quot;>opcache.enable=1
@@ -1031,15 +1116,15 @@ opcache.save_comments=1</code></pre>
 <blockquote>
 <p>
                         First, update MariaDB:<br/>
-<code>nano /etc/mysql/my.cnf</code>
+<code>vim /etc/mysql/my.cnf</code>
 </p>
-<pre><code>[mysqld]
+<pre><code class=&quot;language-ini&quot;>[mysqld]
 innodb_file_per_table=1</code></pre>
 <p>
 <code>systemctl restart mariadb</code><br/>
 <code>mariadb</code><br/>
 </p>
-<pre><code class=&quot;mariadb&quot;>ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+<pre><code class=&quot;language-pgsql&quot;>ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 use nextcloud;
 set global innodb_large_prefix=on;
 set global innodb_file_format=Barracuda;
@@ -1053,12 +1138,42 @@ quit;</code></pre>
                             maintenance:repair</code><br/>
 </p>
 </blockquote>
+<h2>Transferring [file] - server replied: [nothing]</h2>
+<blockquote>
+<p>
+<code>sudo -u www-data php /var/www/html/occ files:scan
+                            --all</code><br/>
+</p>
+</blockquote>
+<h2>Files aren’t showing up for [user]</h2>
+<blockquote>
+<p>
+<code>sudo chown -R www-data:www-data [data mount
+                            location]/[user]</code><br/>
+<code>sudo -u www-data php /var/www/html/occ files:scan
+                            -- [user]</code><br/>
+</p>
+</blockquote>
+<h2>
+                    Transferring [file] - server replied: Forbidden
+                    (Sabre\DAV\Exception\Forbidden)
+                </h2>
+<blockquote>
+<p><code>sudo rm [username]/uploads</code><br/></p>
+</blockquote>
+<h2>Home storage for user [user] not writable</h2>
+<blockquote>
+<p>
+<code>sudo chown -R www-data:www-data [data mount
+                            location]/[user]</code>
+</p>
+</blockquote>
 <h1>Further Securing &amp; Optimization</h1>
 <p>
                     There are various other actions you can take to ensure that
                     both your os and nextcloud are secure. I’ll be covering the
                     one’s found on
-                    <a href=&quot;https://docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html&quot;>this wiki page</a>.
+                    <a href=&quot;//docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html&quot;>this wiki page</a>.
                 </p>
 <h2>Give PHP read access to <code>/dev/urandom</code></h2>
 <blockquote>
@@ -1067,7 +1182,7 @@ quit;</code></pre>
                         keep it in here because it’s in the Nextcloud docs. If
                         you’re site breaks, you should try commenting out
                         <code>open_basedir</code><br/>
-<code>sudo nano /etc/php/7.4/apache2/php.ini</code><br/>
+<code>sudo vim /etc/php/7.4/apache2/php.ini</code><br/>
                         Add <code>open_basedir = /dev/urandom</code><br/>
 <code>systemctl restart apache2</code><br/>
 </p>
@@ -1079,7 +1194,7 @@ quit;</code></pre>
 <code>a2enmod proxy_fcgi setenvif</code><br/>
 <code>a2enconf php7.4-fpm</code><br/>
 <code>systemctl reload apache2</code><br/>
-<code>nano /etc/php/7.4/fpm/pool.d/www.conf</code> and
+<code>vim /etc/php/7.4/fpm/pool.d/www.conf</code> and
                         add the following:<br/>
 </p>
 <pre><code>pm = dynamic
@@ -1102,7 +1217,7 @@ pm.max_requests = 1000</code></pre>
                 </p>
 <h2>Removing <code>/index.php</code> from every URL</h2>
 <blockquote>
-<p><code>nano /var/www/html/config/config.php</code></p>
+<p><code>vim /var/www/html/config/config.php</code></p>
 <pre><code>'htaccess.RewriteBase' =&gt; '/'</code></pre>
 <p>
 <code>sudo -u www-data php /var/www/html/occ
@@ -1112,13 +1227,13 @@ pm.max_requests = 1000</code></pre>
 </blockquote>
 <h2>Increasing the max file size</h2>
 <blockquote>
-<p><code>nano /etc/php/7.4/apache2/php.ini</code><br/></p>
+<p><code>vim /etc/php/7.4/apache2/php.ini</code><br/></p>
 <pre><code>upload_max_filesize = 16G
 post_max_size = 16G
 max_input_time = 3600
 max_execution_time = 3600
 upload_tmp_dir = /var/big_temp_files/</code></pre>
-<p><code>nano /var/www/html/.user.ini</code><br/></p>
+<p><code>vim /var/www/html/.user.ini</code><br/></p>
 <pre><code>upload_max_filesize = 16G
 post_max_size = 16G</code></pre>
 <p>
@@ -1132,13 +1247,13 @@ post_max_size = 16G</code></pre>
                 </h2>
 <blockquote>
 <p><code>mariadb</code><br/></p>
-<pre><code>set global innodb_file_format = BARRACUDA
+<pre><code class=&quot;language-pgsql&quot;>set global innodb_file_format = BARRACUDA
 set global innodb_large_prefix = ON
 set global innodb_file_per_table = ON
 set global innodb_default_row_format = 'DYNAMIC'
 quit</code></pre>
-<p><code>nano /etc/mysql/my.cnf</code><br/></p>
-<pre><code>innodb_file_per_table=1
+<p><code>vim /etc/mysql/my.cnf</code><br/></p>
+<pre><code class=&quot;language-ini&quot;>innodb_file_per_table=1
 innodb-file-format=barracuda
 innodb-file-per-table=ON
 innodb-large-prefix=ON
@@ -1150,35 +1265,30 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
                     addon)
                 </h2>
 <blockquote>
-<a href=&quot;https://github.com/nextcloud/files_rightclick/issues/83#issuecomment-525592831&quot;>This is fixed, but I figured I'd keep it in anyways</a><br/><br/>
-<code>cd /var/www/html/apps/</code><br/>
-<code>wget --load-cookies /tmp/cookies.txt
-                        &quot;https://docs.google.com/uc?export=download&amp;confirm=$(wget
-                        --quiet --save-cookies /tmp/cookies.txt
-                        --keep-session-cookies --no-check-certificate
-                        'https://docs.google.com/uc?export=download&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j'
-                        -O- | sed -rn
-                        's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j&quot;
-                        -O rclick &amp;&amp; rm -rf /tmp/cookies.txt</code><br/>
-<code>rm -rf files_rightclick/</code><br/>
-<code>unzip rclick</code><br/>
-<code>rm rclick</code><br/>
-<code>systemctl restart apache2</code><br/><br/>
-                    Then make sure that you re-enable the right click app too.
-                    If that doesn’t work, try
-                    <code>sudo apt-get install php-ldap</code><br/><br/>
+<a href=&quot;//github.com/nextcloud/files_rightclick/issues/83#issuecomment-525592831&quot;>This is fixed</a>, but I figured I'd keep it in anyways
+                    <pre><code>$ cd /var/www/html/apps/
+$ wget --load-cookies /tmp/cookies.txt &quot;https://docs.google.com/uc?export=download&amp;confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&amp; 1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j&quot; -O rclick &amp;&amp; rm -rf /tmp/cookies.txt
+$ rm -rf files_rightclick/
+$ unzip rclick      
+$ rm rclick
+$ systemctl restart apache2</code></pre>
 <code>systemctl restart apache2</code>
 </blockquote>
 <h2>Set timezone</h2>
 <blockquote>
 <p>
-<code>nano /var/www/html/config/config.php</code><br/>
-                        Find your timezone in the ones avaliabe
-                        <a href=&quot;https://www.php.net/manual/en/timezones.php&quot;>here</a><br/>
-</p>
+<code>vim /var/www/html/config/config.php</code><br/>
+<br/>
+                        Find your timezone in the ones available
+                        <a href=&quot;//www.php.net/manual/en/timezones.php&quot;>here</a>.
+                    </p>
 <pre><code>'logtimezone' =&gt; 'America/Chicago',</code></pre>
-<p><code>nano /etc/php/7.4/apache2/php.ini</code><br/></p>
+<p><code>vim /etc/php/7.4/apache2/php.ini</code><br/></p>
 <pre style=&quot;margin-bottom: 0&quot;><code>date.timezone = America/Chicago,</code></pre>
+<p>
+<code>sudo -u www-data php occ config:system:set
+                            logtimezone --value &quot;Los_Angeles&quot;</code>
+</p>
 </blockquote>
 <h2>Change default files for new users</h2>
 <blockquote>
@@ -1187,74 +1297,15 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
                         <code>/var/www/html/core/skeleton/</code>
 </p>
 </blockquote>
-<h1>Common Issues &amp; Fixes</h1>
-<h2>Transering [file] - server replied: [nothing]</h2>
-<blockquote>
-<p>
-<code>sudo -u www-data php /var/www/html/occ files:scan
-                            --all</code><br/>
-</p>
-</blockquote>
-<h2>Files aren’t showing up for [user]</h2>
-<blockquote>
-<p>
-<code>sudo chown -R www-data:www-data [data mount
-                            location]/[user]</code><br/>
-<code>sudo -u www-data php /var/www/html/occ files:scan
-                            -- [user]</code><br/>
-</p>
-</blockquote>
-<h2>
-                    Transfeing [file] - server replied: Forbidden
-                    (Sabre\DAV\Exception\Forbidden)
-                </h2>
-<blockquote>
-<p><code>sudo rm [username]/uploads</code><br/></p>
-</blockquote>
-<h2>Home storage for user [user] not writable</h2>
-<blockquote>
-<p>
-<code>sudo chown -R www-data:www-data [data mount
-                            location]/[user]</code>
-</p>
-</blockquote>
-
-                ---
-
-                <h1>Backing Up</h1>
-<blockquote>
-                    Turn on maintenance: <br/>
-<code>cd /var/www/html/</code><br/>
-<code>sudo -u www-data php occ maintenance:mode --on</code>
-<br/><br/>
-                    Copy Files:<br/>
-<code>cd /var/www/</code><br/>
-<code>rsync -Aavx html/ backupdir/html_bkup_`date
-                        +&quot;%Y%m%d&quot;`/</code><br/>
-<br/><br/>
-                    Backup MariaDB:<br/>
-<code>mysqldump --single-transaction -u [nextcloud]
-                        -p[password] nextcloud &gt; backupdir/sqlbkp_`date
-                        +&quot;%Y%m%d&quot;`.bak</code><br/>
-<br/><br/>
-                    Turn off maintenance:<br/>
-<code>cd /var/www/html/</code><br/>
-<code>sudo -u www-data php occ maintenance:mode --off</code><br/>
-</blockquote>
-<h1>Updating</h1>
-<blockquote>
-                    - Go to
-                    <code>https://cloud.dns.com/settings/admin/overview</code>
-                    and select the version you want<br/>
-                    - Follow the steps, make sure not to touch anything while
-                    updating<br/>
-                    - <code>systemctl restart apache2</code> <br/>
-                    - Double check the ‘Security &amp; setup warnings’ (also on
-                    <code>.../admin/overview</code>)<br/>
-                    -
-                    <a href=&quot;https://scan.nextcloud.com/&quot;>Verify your server's security</a><br/>
-                    - Congrads!
-                </blockquote>
+<h1>Backing Up</h1>
+<pre>
+                    <code>$ cd /var/www/html/
+$ sudo -u www-data php occ maintenance:mode --no-check-certificate
+$ cd /var/www/
+$ rsync -Aavx html/ backupdir/html_bkup_`date +&quot;%Y%m%d&quot;`/
+$ mysqldump --single-transaction -u [nextcloud] -p[password] nextcloud &gt; backupdir/sqlbkp_`date +&quot;%Y%m%d&quot;`.bak
+$ cd /var/www/html/
+$ sudo -u www-data php occ maintenance:mode --off</code></pre>
 </article>]]></content:encoded>
 		</item>
 		<atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml"/>

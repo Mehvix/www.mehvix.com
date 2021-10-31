@@ -47,8 +47,8 @@
         </style>
 
         <script>
-            function copyText() {
-                var textToCopy = document.getElementById('pgp')
+            function copyText(id) {
+                var textToCopy = document.getElementById(id)
 
                 var currentRange
                 if (document.getSelection().rangeCount > 0) {
@@ -94,7 +94,7 @@
             </p>
             <ul>
                 <li>
-                    <a href="#" onclick="copyText()"
+                    <a href="javascript:;" onclick="copyText('pgp-pm')"
                         >Copy (mehvix.com) to clipboard</a
                     >
                 </li>
@@ -109,10 +109,18 @@
                         >Download from ProtonMail API</a
                     ><br />
                 </li>
+                <li>
+                    Fingerprint:
+                    <code>A7969972931732460A6D49F7DA2E597476F671AA</code>
+                </li>
+                <li>
+                    Primary Key-ID:
+                    <code>DA2E 5974 76F6 71AA</code>
+                </li>
             </ul>
             <pre><code class="pgp select-all language-sh">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
             <pre><code class="pgp select-all language-sh">curl -L https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com | gpg --import</code></pre>
-            <pre><code id="pgp" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
+            <pre><code id="pgp-pm" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: ProtonMail
 
 xsBNBFwGCl4BCACpgPGL6hTyM+t9CloUGX8e2SLPAxtvLPlsrPoDS81cMEhQ
@@ -143,6 +151,86 @@ d9L92XqFE8JqFXtx00yMEKDU/asEbpAj15sp+x5PeqD8zzqqlhy17Mn/pOLS
 DgDijjaudFqQR/3Vt18G2rMYIgvs0Se184IyAWkFnbZae+e0aBBxRjK+K84B
 LKutr+KwFwaJLLcqxjciyMueRAnPoKrodbIZ+ALMR2GMhJD6y7RuDBm1ll7c
 =SbG5
+-----END PGP PUBLIC KEY BLOCK-----</code></pre>
+
+            <h1>Personal PGP</h1>
+            <p>
+                For if you don't trust ProtonMail or you're contacting me
+                through something other than email.
+            </p>
+            <ul>
+                <li>
+                    <a href="javascript:;" onclick="copyText('pgp-personal')"
+                        >Copy to clipboard</a
+                    >
+                </li>
+                <li>
+                    <a href="./static/media/Max Vogel_0x8DDCB0EF_public.asc"
+                        >Download from mehvix.com</a
+                    ><br />
+                </li>
+                <li>
+                    Fingerprint:
+                    <code>4C0719541B56135DDED18C86716AED528DDCB0EF</code>
+                </li>
+                <li>
+                    Primary Key-ID:
+                    <code>716A ED52 8DDC B0EF</code>
+                </li>
+            </ul>
+
+            <pre><code class="pgp select-all language-sh">curl -L https://mehvix.com/static/media/Max Vogel_0x8DDCB0EF_public.asc | gpg --import</code></pre>
+
+            <pre><code id="pgp-personal" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=nTuc
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
 
             <div id="footer">
