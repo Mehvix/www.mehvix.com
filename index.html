@@ -81,6 +81,12 @@
             }
         </style>
 
+        <link
+            href="/static/css/post-color.css"
+            type="text/css"
+            rel="stylesheet"
+        />
+
         <script>
             function toggleImage(id) {
                 id.classList.toggle('hidden')
@@ -235,87 +241,81 @@
             <div>
                 <h1>Me</h1>
 
-                <div>
-                    <table class="about">
-                        <tr>
-                            <td>
-                                Checkout my (personal) projects on
-                                <a href="//github.com/mehvix">GitHub</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Judge my
-                                <a href="//stackoverflow.com/users/7833617/"
-                                    >Stack Overflow</a
-                                >
-                                answers
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Jam out to my
-                                <a href="//open.spotify.com/user/mehvix"
-                                    >Spotify</a
-                                >
-                                playlists
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Connect on the corporate cesspool
-                                <a href="//www.linkedin.com/in/mehvix/"
-                                    >LinkedIn</a
-                                >
-                            </td>
-                        </tr>
-                        <!-- todo: uncomment when resume updated -->
-                        <!-- <tr>
-                            <td>Resumé</td>
-                            <td>
-                                <a
-                                    href="//cloud.mehvix.com/s/9oXaWqbLR4amMmz"
-                                    >Link</a
-                                >
-                            </td>
-                        </tr> -->
-                    </table>
-                </div>
+                <li>
+                    Peep my (personal) projects on
+                    <a href="//github.com/mehvix">GitHub</a>
+                </li>
+                <li>
+                    Judge my
+                    <a href="//stackoverflow.com/users/7833617/"
+                        >Stack Overflow</a
+                    >
+                    answers
+                </li>
+                <li>
+                    Jam out to my
+                    <a href="//open.spotify.com/user/mehvix">Spotify</a>
+                    playlists
+                </li>
+                <li>
+                    Connect on the corporate cesspool
+                    <a href="//www.linkedin.com/in/mehvix/">LinkedIn</a>
+                </li>
+                <!-- todo: uncomment when resume updated -->
+                <!-- <li>
+                    Resumé
+                    <a
+                        href="//cloud.mehvix.com/s/9oXaWqbLR4amMmz"
+                        >Link</a
+                    >
+                </li> -->
             </div>
 
             <div>
                 <h1>Pages</h1>
-
-                <table class="about">
-                    <tbody>
-                        <tr>
-                            <td><a href="//toolbox.mehvix.com">Toolbox</a></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="//notes.mehvix.com">Notes</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="posts">Blog</a> (<a
-                                    href="posts/rss.xml"
-                                    >RSS</a
-                                >)
-                                <!-- todo generate sublist of last 5 blog posts -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="/quotes">Quotes</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="/todo">Projects TODO</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="/serverservices">Server</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <li>
+                    <a href="//toolbox.mehvix.com">Toolbox</a>
+                </li>
+                <li>
+                    <a href="//pass.mehvix.com">Pass</a> (for Berkeley students)
+                </li>
+                <li>
+                    <a href="//notes.mehvix.com">Notes</a>
+                </li>
+                <li>
+                    <a href="posts">Blog</a> (<a href="posts/rss.xml">RSS</a>)
+                    -- three recent posts:
+                    <!-- todo automate this -->
+                    <ul id="sub-posts">
+                        <li>
+                            21-10-31 ::
+                            <a
+                                href="posts/tiling-distance.html"
+                                id="tiling-distance"
+                                >Tiling Distance Contradiction</a
+                            >
+                        </li>
+                        <li>
+                            21-06-18 ::
+                            <a href="posts/plans-2021.html" id="plans-2021"
+                                >Current Plans</a
+                            >
+                        </li>
+                        <li>
+                            21-05-18 ::
+                            <a href="posts/aops-rss.html" id="aops-rss"
+                                >AoPS Blogs + RSS</a
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/quotes">Quotes</a>
+                </li>
+                <li><a href="/todo">Projects TODO</a> (outdated)</li>
+                <li>
+                    <a href="/serverservices">Server</a>
+                </li>
             </div>
 
             <div id="footer">

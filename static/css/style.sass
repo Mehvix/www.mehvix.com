@@ -285,8 +285,20 @@ img.dropdown
     vertical-align: middle
     width: initial
 
+li
+    line-height: 1.44
+    vertical-align: inherit
+    margin: 5px 0px
+
 li::marker
     content: '- '
+
+#sub-posts
+    margin: 0.5ch 0
+
+    & li::marker
+        content: '* '
+            
 
 h1 + h2, h2 + h3, h3 + h4
     margin-top: .75em
