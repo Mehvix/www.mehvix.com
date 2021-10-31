@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Default Required Resources -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=569,
+    maximum-scale=1"
+        />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Blog RSS"
+            href="//mehvix.com/posts/rss.xml"
+        />
+        <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+        <script src="/static/js/include.js"></script>
+
+        <!-- HLJS (try and remove if not used) -->
+        <!-- https://cdnjs.com/libraries/highlight.js -->
+        <!-- <link
+            type="text/css"
+            rel="stylesheet"
+            href="/static/css/atom-one-dark.css"
+        />
+        <script
+            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
+            integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            hljs.highlightAll()
+        </script> -->
+
+        <!-- MATHJAX -->
+        <script
+            id="MathJax-script"
+            async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.min.js"
+            integrity="sha512-9DkJEmXbL/Tdj8b1SxJ4H2p3RCAXKsu8RqbznEjhFYw0cFIWlII+PnGDU2FX3keyE9Ev6eFaDPyEAyAL2cEX0Q=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                },
+            }
+        </script>
+
+        <title>Mehvix | Tiling Square Hypotenuse</title>
+        <style>
+            :root {
+                --outside-bg-color: #004a5d;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="box">
+            <div class="nav">
+                <a href="/">~</a>/<a href="/posts/">Posts</a>/<a
+                    href=""
+                    class="inverse-bg"
+                    >Tiling Square Hypotenuse</a
+                >
+            </div>
+
+            <article>
+                <h1>Background</h1>
+                <p>
+                    This past weekend I was walking around downtown Berkeley
+                    with my friends to get <i>Kingpen Donuts</i> when I came up
+                    with this contradiction involving street blocks and the
+                    quickest way to get somewhere.
+                </p>
+
+                <h1>Problem</h1>
+                <h2>Setup</h2>
+
+                <p>
+                    Consider a <code>1 x 1</code> unit square and a particle
+                    starting at the bottom left of the square: (0,0). This
+                    particle wants to move to (1,1) [top right] as quickly as
+                    possible while moving only along the edges [streets] of the
+                    square. In the <code>1 x 1</code> case, you have two paths:
+                    (1) up, right and (2) right, up. Since these paths are
+                    symmetric, we'll treat them as a single path. In this single
+                    path, we clearly travel a distance of <code>2</code> units.
+                </p>
+
+                <h2>Smaller Blocks</h2>
+                <p>
+                    Now, what if we divide our existing block into forths; that
+                    is, we have four <code>0.5 x 0.5</code> unit squares. Now,
+                    consider the following two paths that each take four steps:
+                    (1) right, right, up, up and (2) right, up, right, up. Just
+                    as the previous <code>1 x 1</code> case, both of these paths
+                    travel a total distance of <code>2</code> units [each of the
+                    four steps travels 0.5 unit].
+                </p>
+                <p>
+                    Say we repeat this dividing of the square
+                    <code>n</code> times so our original <code>1 x 1</code> unit
+                    block is split into <code>2^n x 2^n</code> sub-blocks, each
+                    of length <code>1/2^n</code>. Now both the outermost and
+                    alternating paths each take <code>2 * 2^n</code> steps: (1)
+                    right <code>2^n</code> times followed by up
+                    <code>2^n</code> more times and (2) right, up
+                    <code>2^n</code> times. Again, both travel a total distance
+                    of <code>2</code> units.
+                </p>
+
+                <p>
+                    However, as we take <code>n</code> to infinity the
+                    alternating path looks more and more like particle is
+                    travelling along the hypotenuse line from
+                    <code>(0,0)</code> to <code>(1,1)</code>. But, we know that
+                    the distance traveled is always <code>2</code> units. How
+                    can this be if the particle is travelling along the distance
+                    of the hypotenuse which has a distances of <code>√2</code>?!
+                </p>
+
+                <h1>Explanation</h1>
+                <p>
+                    This contradiction stumped me for a bit, but I thought of
+                    three different ways to explain this seeming contradiction
+                    while showering last night.
+                </p>
+
+                <h2>1: Kinematics</h2>
+                <p>
+                    We know that the particle takes a total of
+                    <code>2 * n^2</code> steps, each of which are at a constant
+                    speed [lets say 1 unit/second]. In the original
+                    <code>1 x 1</code> case, we travel 2 units so we take 2
+                    seconds. In each following case, we take just as long since
+                    both the speed and distance [always 2 units] is constant so
+                    we know that the time we travel is constantly 2 seconds.
+                    Therefore, in the <code>2^n x 2^n</code> sub-blocks case,
+                    since we know that we're traveling at the same 1 unit/second
+                    and take 2 seconds we're traveling 2 units.
+                </p>
+                <p>
+                    If we watched this scenario play out, we would see the
+                    particle appearing to move at a speed of
+                    <code>1/√2</code> units per second. That is, even though the
+                    line <i>looks</i> like the hypotenuse, it isn't. This makes
+                    sense because we cannot travel along the hypotenuse, no
+                    matter how small we get: At the very beginning we said the
+                    particle can only move along the edges [streets] of the
+                    square, meaning only travel right and up. So when we see the
+                    particle travel along the hypotenuse at
+                    <code>1/√2</code> units per second, we're actually seeing
+                    the particle move right and up [or up and right] a tiny
+                    amount that we assume to be along the hypotenuse.
+                </p>
+                <p>
+                    Again, the time staying constant because our speed and
+                    distance stay the same: we keep moving 1 unit/sec and we
+                    travel a distance [2 for up/right] * [paths] *
+                    [distance/path] =
+                    <code>2 * 2^n * 1/2^n = 2</code> so we take 2 seconds to
+                    traverse the grid even as we push <code>n</code> to
+                    infinity.
+                </p>
+
+                <h2>2: Additive</h2>
+                <p>
+                    Instead of dividing the square into sub-squares, what if we
+                    tiled instead so that we doubled each existing square. That
+                    is, we'd start with a single <code>1 x 1</code> unit block,
+                    then grow to <code>2 x 2, 4 x 4, 8 x 8, ...</code> etc.
+                    However, while we exponentially increase perimeter, we'll
+                    also increased our speed proportionally [starting at
+                    <code>1</code> unit/sec, then
+                    <code>2, 4, 8, ...</code> units/sec]. That way, the particle
+                    will always take 2 seconds to complete the square.
+                </p>
+                <p>
+                    From this, we can see that the paths right and up are both
+                    finite distances. That means that both the up and right
+                    movements are not, and cannot ever, be treated as a single
+                    move diagonally [this is what we implicitly assumed was
+                    happening when the sub-square sides were of length
+                    <code>1/2^n x 1/2^n</code>].
+                </p>
+
+                <h2>3: Limit</h2>
+                <p>
+                    Adding on to the explanation involving tiling above, we can
+                    write an equation to relate the total distance traveled
+                    [units] per speed [in units/sec]: <code>2n/n</code>. With
+                    this, we can take the limit of <code>n</code> to infinity
+                    and clearly this ends up as <code>2</code> which is the time
+                    it takes for the particle to travel all paths.
+                </p>
+
+                <h1>What does this mean and what are the limits?</h1>
+                <p>
+                    With that being said, this seems to say that travelling
+                    eight blocks east and eight blocks north should take the
+                    same time as travelling east then north eight times. In the
+                    real world, this isn't true however since streets aren't
+                    totally parallel and orthogonal to one another.
+                </p>
+
+                <!-- <p>---</p>
+                <p>
+                    <sup><a href="#0-ref" id="0-exp">0</a></sup> Considering
+                    "optimal" paths that always progress (no paths that consider
+                    a left or down move).
+                </p>
+                <p>
+                    <sup><a href="#1-ref" id="1-exp">1</a></sup> This isn't
+                    important to the core question, but notice the sub series
+                    [up, left] from the series [up, left, up, left] is
+                    equivalent to [left, up] since they're symmetric, so [left,
+                    up, ...] is equivalent to [up, left, ...].
+                </p> -->
+
+                <p>---</p>
+                <p>
+                    Shout out to David Jiang + Jack Guerrisi for helping me wrap
+                    my head around this problem and to Frank Liu and Phoebe Chen
+                    for listening to me try to explain this while toasted on the
+                    way to Asian Ghetto! :)
+                </p>
+            </article>
+
+            <div id="footer">
+                <table id="footerTable">
+                    <tr>
+                        <td>$BTC</td>
+                        <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
+                    </tr>
+                    <tr>
+                        <td>$XMR</td>
+                        <td>
+                            45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>$ETH</td>
+                        <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
+                    </tr>
+                    <tr>
+                        <td id="footerDateYear">2021</td>
+                        <td>Max Vogel</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
