@@ -42,7 +42,7 @@
             }
 
             ul {
-                padding-left: 4ch;
+                padding-left: 3sch;
             }
         </style>
 
@@ -87,27 +87,41 @@
                 <li>Element Android - <code>NUOPAMGSIG</code></li>
             </ul>
 
-            <h1>ProtonMail PGP</h1>
+            <h1>PGP Keys</h1>
+            <h2>Keybase</h2>
+            Grab all keys on my
+            <a href="https://keybase.io/mehvix">Keybase account</a>:
+            <pre><code class="pgp language-sh"># curl + gpg pro tip import mehvix's keys
+curl https://keybase.io/mehvix/pgp_keys.asc | gpg --import
+                
+# the Keybase app can push to gpg keychain, too
+keybase pgp pull mehvix</code></pre>
+
+            <h2>ProtonMail PGP</h2>
             <p>
-                This is for my ProtonMail and any of my
-                <code>@mehvix.com</code> email accounts too.
+                Most email sent to @[this domain] goes to ProtonMail. If you
+                trust ProtonMail, use this key. If you don't, use my
+                <a href="#pgp-personal">personal key</a> which is below.
             </p>
             <ul>
                 <li>
-                    <a href="javascript:;" onclick="copyText('pgp-pm')"
-                        >Copy (mehvix.com) to clipboard</a
-                    >
-                </li>
-                <li>
-                    <a href="./static/media/mehvix@protonmail.com.asc"
-                        >Download from mehvix.com</a
-                    ><br />
-                </li>
-                <li>
+                    ProtonMail API:
                     <a
                         href="//api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com"
-                        >Download from ProtonMail API</a
+                        >Download</a
                     ><br />
+                </li>
+                <li>
+                    mehvix.com:
+                    <a href="./static/media/mehvix@protonmail.com.asc"
+                        >Download</a
+                    ><br />
+                </li>
+                <li>
+                    mehvix.com:
+                    <a href="javascript:;" onclick="copyText('pgp-pm')"
+                        >Copy to clipboard</a
+                    >
                 </li>
                 <li>
                     Fingerprint:
@@ -119,7 +133,6 @@
                 </li>
             </ul>
             <pre><code class="pgp select-all language-sh">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
-            <pre><code class="pgp select-all language-sh">curl -L https://api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com | gpg --import</code></pre>
             <pre><code id="pgp-pm" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: ProtonMail
 
@@ -153,21 +166,24 @@ LKutr+KwFwaJLLcqxjciyMueRAnPoKrodbIZ+ALMR2GMhJD6y7RuDBm1ll7c
 =SbG5
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
 
-            <h1>Personal PGP</h1>
+            <br />
+            <h2>Personal PGP</h2>
             <p>
                 For if you don't trust ProtonMail or you're contacting me
                 through something other than email.
             </p>
             <ul>
                 <li>
+                    mehvix.com:
+                    <a href="./static/media/Max Vogel_0x8DDCB0EF_public.asc"
+                        >Download</a
+                    ><br />
+                </li>
+                <li>
+                    mehvix.com:
                     <a href="javascript:;" onclick="copyText('pgp-personal')"
                         >Copy to clipboard</a
                     >
-                </li>
-                <li>
-                    <a href="./static/media/Max Vogel_0x8DDCB0EF_public.asc"
-                        >Download from mehvix.com</a
-                    ><br />
                 </li>
                 <li>
                     Fingerprint:

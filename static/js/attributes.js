@@ -30,6 +30,7 @@ var attr_lst = [
     '<b>My Hand Dominance</b> is Left.',
     '<b>My Teeth Parity</b> is Odd.',
     'I have an irrational fear of eels.',
+    'My dad wanted to name me "Jimi" after Hendrix.',
     '<b>My Keyboard Layout</b> is <a href="//colemakmods.github.io/mod-dh/">Colemak Mod-DH</a>.',
 ]
 function randto(n) {
