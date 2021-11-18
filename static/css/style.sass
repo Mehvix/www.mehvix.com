@@ -31,7 +31,8 @@ $code-radius: 5px
 
 html
     overflow-y: scroll ////stackoverflow.com/a/7607206/7833617
-    /** scroll-behavior: smooth **/ // todo this breaks fast scroll, find workaround
+    // scroll-behavior: smooth  
+    // ^todo this breaks fast scroll, find workaround
 
 body,
 input
@@ -53,6 +54,24 @@ input
         background-color: css-var(outside-bg-color) // color of the scroll thumb
         border-radius: 5px // roundness of the scroll thumb
         border: 2px solid css-var(inside-bg-color) // creates padding around scroll thumb
+
+input
+    font-family: 'PT Mono', monospace !important
+    background-color: css-var(code-bg-color)
+    color: css-var(inside-bg-color)
+
+    border-radius: $code-radius
+    width: 100%
+    font-size: $font-size
+    height: 2.5em
+    padding: 0.5ch 0.5ch 0.5ch 0.75ch
+
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    -o-box-sizing: border-box
+    -ms-box-sizing: border-box
+    box-sizing: border-box
+    border: none
 
 a,
 a:visited
@@ -168,7 +187,6 @@ blockquote
 
     & > code
         font-size: 90% !important
-        /**white-space: normal;**/tex
 
     & > div > p
         margin-top: 1em

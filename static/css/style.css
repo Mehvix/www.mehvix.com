@@ -19,7 +19,6 @@
 
 html {
   overflow-y: scroll;
-  /** scroll-behavior: smooth **/ // todo this breaks fast scroll, find workaround */
 }
 
 body,
@@ -45,6 +44,23 @@ input::-webkit-scrollbar-thumb {
   background-color: var(--outside-bg-color);
   border-radius: 5px;
   border: 2px solid var(--inside-bg-color);
+}
+
+.input, input {
+  font-family: "PT Mono", monospace !important;
+  background-color: var(--code-bg-color);
+  color: var(--inside-bg-color);
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
+  height: 2.5em;
+  padding: 0.5ch 0.5ch 0.5ch 0.75ch;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
 }
 
 a,
@@ -175,7 +191,6 @@ blockquote {
 }
 blockquote > code {
   font-size: 90% !important;
-  /**white-space: normal;**/tex */
 }
 blockquote > div > p {
   margin-top: 1em;
