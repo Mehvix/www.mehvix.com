@@ -40,10 +40,6 @@
                 --code-bg-color: #210124 !important;
                 --outside-bg-color: #210124 !important;
             }
-
-            ul {
-                padding-left: 3sch;
-            }
         </style>
 
         <script>
@@ -82,9 +78,9 @@
 
             <h1>Matrix</h1>
             <ul style="font-weight: 500">
-                <li>Element Desktop (Windows) - <code>RQHVDPLNIL</code></li>
-                <li>Element Desktop (Linux) - <code>OLBDXYXCNV</code></li>
-                <li>Element Android - <code>NUOPAMGSIG</code></li>
+                <li>Element Desktop (Windows): <code>RQHVDPLNIL</code></li>
+                <li>Element Desktop (Linux): <code>OLBDXYXCNV</code></li>
+                <li>Element Android: <code>NUOPAMGSIG</code></li>
             </ul>
 
             <h1>PGP Keys</h1>
@@ -101,7 +97,7 @@ keybase pgp pull mehvix</code></pre>
             <p>
                 Most email sent to @[this domain] goes to ProtonMail. If you
                 trust ProtonMail, use this key. If you don't, use my
-                <a href="#pgp-personal">personal key</a> which is below.
+                <a href="#pgp-personal">personal key</a> below.
             </p>
             <ul>
                 <li>
@@ -132,8 +128,11 @@ keybase pgp pull mehvix</code></pre>
                     <code>DA2E 5974 76F6 71AA</code>
                 </li>
             </ul>
-            <pre><code class="pgp select-all language-sh">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
-            <pre><code id="pgp-pm" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
+            <pre><code class="pgp select-all language-sh no-scroll">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
+
+            <details>
+                <summary>Reveal ProtonMail Key</summary>
+                <pre><code id="pgp-pm" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: ProtonMail
 
 xsBNBFwGCl4BCACpgPGL6hTyM+t9CloUGX8e2SLPAxtvLPlsrPoDS81cMEhQ
@@ -165,6 +164,7 @@ DgDijjaudFqQR/3Vt18G2rMYIgvs0Se184IyAWkFnbZae+e0aBBxRjK+K84B
 LKutr+KwFwaJLLcqxjciyMueRAnPoKrodbIZ+ALMR2GMhJD6y7RuDBm1ll7c
 =SbG5
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
+            </details>
 
             <br />
             <h2>Personal PGP</h2>
@@ -194,10 +194,12 @@ LKutr+KwFwaJLLcqxjciyMueRAnPoKrodbIZ+ALMR2GMhJD6y7RuDBm1ll7c
                     <code>716A ED52 8DDC B0EF</code>
                 </li>
             </ul>
+            <pre><code class="pgp select-all language-sh no-scroll">curl -L https://mehvix.com/static/media/Max Vogel_0x8DDCB0EF_public.asc | gpg --import</code></pre>
 
-            <pre><code class="pgp select-all language-sh">curl -L https://mehvix.com/static/media/Max Vogel_0x8DDCB0EF_public.asc | gpg --import</code></pre>
+            <details>
+                <summary>Reveal Personal Key</summary>
 
-            <pre><code id="pgp-personal" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
+                <pre><code id="pgp-personal" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBGEQQXYBEACeHbxJ976g7UoZfhrklvWRsbPGknVzat9RwOGlej1Cld3WNGB+
 EJGLQRTtiraZaHo2Y3NW9wYT6sBBG+Ej10VOtY/LCkX3ZR62u3ttq6YSavsJUVzZ
@@ -248,6 +250,7 @@ Ooo2EjY2W9N6CwefkV5bYp8UM4iapYbZo24f8biRe9euPQx1qIuQNHnUVKeKGo+j
 BiuehVc+/HmZIyUt31m6fMLf191XIoUxjSBQE3uidRN0Kb5giuQ=
 =nTuc
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
+            </details>
 
             <div id="footer">
                 <table id="footerTable">

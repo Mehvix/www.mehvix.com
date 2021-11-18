@@ -1,1 +1,102 @@
-#colemak-experience{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #b9262e}#colemak-experience:hover{background-color:#b9262e}#tiling-distance{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #004a5d}#tiling-distance:hover{background-color:#004a5d}#plans-2021{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #ee3f8c}#plans-2021:hover{background-color:#ee3f8c}#aops-rss{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #42c2cb}#aops-rss:hover{background-color:#42c2cb}#use-www{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #199209}#use-www:hover{background-color:#199209}#win-insecure-files{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #0072c6}#win-insecure-files:hover{background-color:#0072c6}#what-is-this{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #093e92}#what-is-this:hover{background-color:#093e92}#calyx{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #7cab2b}#calyx:hover{background-color:#7cab2b}#twitter{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #15202b}#twitter:hover{background-color:#15202b}#nextcloud-calendar{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #d06500}#nextcloud-calendar:hover{background-color:#d06500}#nextcloud-guide{box-shadow:inherit;box-shadow:inset 0 -0.14em 0 #003354}#nextcloud-guide:hover{background-color:#003354}/*# sourceMappingURL=post-color.css.map */
+/* BG Shadow CSS */
+/* todo this sucks but is okay atm */
+#colemak-experience {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #b9262e;
+}
+
+#colemak-experience:hover {
+  background-color: #b9262e;
+}
+
+#tiling-distance {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #004a5d;
+}
+
+#tiling-distance:hover {
+  background-color: #004a5d;
+}
+
+#plans-2021 {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #ee3f8c;
+}
+
+#plans-2021:hover {
+  background-color: #ee3f8c;
+}
+
+#aops-rss {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #42c2cb;
+}
+
+#aops-rss:hover {
+  background-color: #42c2cb;
+}
+
+#use-www {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #199209;
+}
+
+#use-www:hover {
+  background-color: #199209;
+}
+
+#win-insecure-files {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #0072c6;
+}
+
+#win-insecure-files:hover {
+  background-color: #0072c6;
+}
+
+#what-is-this {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #093e92;
+}
+
+#what-is-this:hover {
+  background-color: #093e92;
+}
+
+#calyx {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #7cab2b;
+}
+
+#calyx:hover {
+  background-color: #7cab2b;
+}
+
+#twitter {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #15202b;
+}
+
+#twitter:hover {
+  background-color: #15202b;
+}
+
+#nextcloud-calendar {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #d06500;
+}
+
+#nextcloud-calendar:hover {
+  background-color: #d06500;
+}
+
+#nextcloud-guide {
+  box-shadow: inherit;
+  box-shadow: inset 0 -0.14em 0 #003354;
+}
+
+#nextcloud-guide:hover {
+  background-color: #003354;
+}
+
+/*# sourceMappingURL=post-color.css.map */

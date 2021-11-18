@@ -1,6 +1,8 @@
 @import url('//fonts.googleapis.com/css2?family=PT+Mono&display=swap')
 
-//Variables
+// =================
+// === Variables ===
+// =================
 $font-size: 14px
 $code-radius: 5px
 
@@ -15,10 +17,13 @@ $code-radius: 5px
 @function css-var($color-name)
     @return var(--#{$color-name})
 
+// ================
+// === Elements ===
+// ================
 *
     letter-spacing: 0
     line-height: 1.44
-    scrollbar-width: auto // "auto" or "thin"
+    scrollbar-width: thin // "auto" or "thin"
 
     &::selection
         background-color: css-var(outside-bg-color)
@@ -49,158 +54,47 @@ input
         border-radius: 5px // roundness of the scroll thumb
         border: 2px solid css-var(inside-bg-color) // creates padding around scroll thumb
 
-.input
-    font-family: 'PT Mono', monospace !important
-    background-color: css-var(code-bg-color)
-    color: css-var(inside-bg-color)
-    border-radius: 5px
-    width: 100%
-    font-size: $font-size
-    height: 2.5em
-    padding: 0.5ch 0.5ch 0.5ch 0.75ch
-    -webkit-box-sizing: border-box
-    -moz-box-sizing: border-box
-    -o-box-sizing: border-box
-    -ms-box-sizing: border-box
-    box-sizing: border-box
-    border: none
-
-.noscroll
-    scrollbar-width: none
-    &::-webkit-scrollbar
-        height: 0 !important
-        width: 0 !important
-        display: none !important
-
-
-s
-    // make strike line thicc
-    text-decoration: none
-    background-image: linear-gradient(transparent .5em,#000000 .5em,#000000 9px,transparent 9px)
-
-    
-select:focus,
-input:focus,
-datalist:focus 
-    outline: 0 solid transparent !important
-
-div
-    &.box
-        max-width: 50rem
-        margin: 2em
-        border: 3px solid black
-        padding: 3ch
-        background: css-var(inside-bg-color)
-        overflow-wrap: break-word
-        vertical-align: middle
-        margin-top: 3em
-        box-shadow: 10px 10px black
-
-    &.nav
-        font-size: 115%
-        margin-bottom: 1em
-
-        & a
-            margin: 0 0.25em
-
-        & > a:first-child
-            margin-left: 0 !important
-
-        & > a:last-child,
-        strong
-            font-weight: 600
-
-img
-    width: 100%
-
-.output
-    text-align: left
-    color: css-var(inside-bg-color) !important
-
-// stackoverflow.com/a/43783066/7833617 
-.select-all
-    -webkit-touch-callout: all // iOS Safari
-    -webkit-user-select: all // Safari
-    -khtml-user-select: all // Konqueror HTML
-    -moz-user-select: all // Firefox
-    -ms-user-select: all // Internet Explorer/Edge
-    user-select: all // Chrome and Opera
-
-p
-    margin: 0.5em 0
-
-    article &
-        margin: 0.25em 0 1em
-
-#footer
-    padding-top: 1em
-
-    &::before
-        content: '---\00000a' //\00000a = newline
-        white-space: pre
-
-    &Table
-        width: 100%
-
-        tr
-            max-width: 48ch // todo this isn't great
-
-        td
-            padding: 0
-
-            &:nth-of-type(1)
-                min-width: 7ch !important
-
-            &:nth-of-type(1)::after
-                content: '  /'
-
-            &:nth-of-type(2)
-                @extend .select-all
-                max-width: 46.5ch
-                overflow: auto
-                display: flex
-                scrollbar-width: none // remove scroller in FF
-
-            // remove scroller in chrome
-            &:nth-of-type(2)::-webkit-scrollbar
-                width: 0
-                height: 0
-
 a,
 a:visited
+    // I undestand this enough to know that it's good enuogh as is and that is alright
     text-decoration: none
     box-shadow: inset 0 -0.14em 0 css-var(outside-bg-color)
     color: black
-    transition-property: background-color !important
-    transition-timing-function: ease-in-out !important
-    transition-duration: 400ms !important
+    transition-property: background-color
+    transition-timing-function: ease-in-out
+    transition-duration: 250ms
+
+    & img
+        margin-bottom: 0
+
+    &:hover
+        background-color: css-var(outside-bg-color)
+        color: css-var(inside-bg-color)
+        box-shadow: none
+
+        &::selection,
+        & *::selection
+            background-color: css-var(text-color-inverse)
+            color: css-var(text-color)
+
+    &::selection,
+    & *::selection
+        background-color: css-var(text-color)
 
     &.inverse-bg
         color: css-var(text-color-inverse)
         filter: invert(100%)
 
-    &.inverse-bg:hover::selection
-        color: css-var(text-color) !important
-        background-color: css-var(text-color-inverse) !important
+        &:hover::selection,
+        &:hover *::selection
+            background-color: css-var(text-color-inverse)
+            color: css-var(text-color)
 
     &.no-custom
         box-shadow: none
 
-    &.no-custom:hover
-        background-color: transparent
-        box-shadow: none
-
-    &:hover
-        background-color: css-var(outside-bg-color) !important
-        color: css-var(inside-bg-color) !important
-        box-shadow: none 
-
-    &::selection
-        background-color: css-var(text-color) !important
-
-    &:hover::selection
-        background-color: css-var(text-color-inverse) !important
-        color: css-var(text-color) !important
+        &:hover
+            background-color: transparent
 
 .hljs,
 code
@@ -216,93 +110,85 @@ code
         color: limegreen !important
         background: black !important
 
-pre > code, .codecheat
+pre > code
     // .hljs from atom-one-dark.css line 21
     display: block
     overflow-x: scroll
     padding: 0.5em
 
-    color: css_var(text-color-inverse) 
+    color: css_var(text-color-inverse)
     background: css_var(code-bg-color)
 
     &::-webkit-scrollbar
-        width: 1ch // width of the entire scrollbar
-
+        width: .66ch // width of the entire scrollbar
     &::-webkit-scrollbar-track
         background: css_var(code-bg-color) // color of the tracking area
         border-radius: $code-radius*1.25 // roundness of the track
-
-
     &::-webkit-scrollbar-thumb
         background-color: #323742 // color of the scroll thumb
         border-radius: $code-radius // roundness of the scroll thumb
 
+details
+    padding: .4rem .75rem
+    background: css_var(code-bg-color)
+    border-radius: $code-radius
 
-td
-    &.posts
-        width: fit-content
-        vertical-align: top
+    &[open]
+        padding-bottom: .75rem
 
-    &.projects-image
-        width: 35%
-        vertical-align: top
-        padding-right: 1em
+        & summary
+            margin-bottom: 6px
 
-    &.projects-text
-        vertical-align: top
+        & >*:last-child
+            margin-bottom: 0
 
-span.tab
-    margin-left: 40px
+    & pre code
+        font-size: 87% !important
 
-    p
-        margin-top: 0
-        margin-bottom: 3%
+    summary
+        color: #bcc3cf
+        cursor: pointer
+        font-weight: bold
 
-hr
-    border-top: 1px dashed css-var(text-color)
+img
+    width: 100%
+
+p
+    margin: 0.5em 0
+
+    article &
+        margin: 0.25em 0 1em
 
 blockquote
-    border-left: 10px solid css-var(inside-bg-color)
+    border-left: 1.25ch solid css-var(inside-bg-color)
     filter: brightness(95%) // botched way to darken the color
-    margin: 1em 10px 1.5em
-    padding: 0.5em 10px
+    margin: 1em 1.25ch 1.5em
+    padding: 0.5em 1.25ch
     font-size: 90%
 
     & > code
         font-size: 90% !important
-        /**white-space: normal;**/
+        /**white-space: normal;**/tex
 
     & > div > p
         margin-top: 1em
         margin-bottom: 0
         display: block
 
-    p
-        display: inline
-
-img.dropdown
-    height: 1.08em
-    vertical-align: middle
-    width: initial
+    & *:last-child
+        padding-bottom: 0
+        margin-bottom: 0
 
 ul
     padding-left: 2ch
 
-
 li
     line-height: 1.44
     vertical-align: inherit
-    margin: 5px 0px
+    margin: .6ch 0
 
-li::marker
-    content: '- '
-
-#sub-posts
-    margin: 0.5ch 0
-
-    & li::marker
-        content: '* '
-            
+    &::marker
+        content: '- '
 
 h1 + h2, h2 + h3, h3 + h4
     margin-top: .75em
@@ -316,71 +202,125 @@ h3
 
 h1
     font-size: 123%
+    &::before
+        content: '# '
 
 h2
     font-size: 112%
+    &::before
+        content: '## '
 
 h3
     font-size: 105%
+    &::before
+        content: '### '
 
-h1::before
-    content: '# '
+select:focus,
+input:focus,
+datalist:focus
+    outline: 0 solid transparent !important
 
-h2::before
-    content: '## '
+hr
+    border-top: 1px dashed css-var(text-color)
 
-h3::before
-    content: '### '
+s
+    text-decoration: none
+    background-image: linear-gradient(transparent .5em,#000000 .5em,#000000 9px,transparent 9px)
+    // ^make strike line thicc
 
-// Modified from //github.com/ozh/github-colors
-code
-    &.tags-py
-        color: #3caaff
+div.box
+    max-width: 50rem
+    margin: 2em
+    border: .4ch solid black
+    padding: 3ch
+    background: css-var(inside-bg-color)
+    overflow-wrap: break-word
+    vertical-align: middle
+    margin-top: 3em
+    box-shadow: 1.5ch 1.5ch black
 
-    &.tags-javascript
-        color: #f1e05a
+a button[disabled],
+button[disabled],
+input[type="submit"][disabled],
+input[type="reset"][disabled],
+input[type="button"][disabled]
+    cursor: default
+    opacity: .5
+    cursor: not-allowed // Set the [X] cursor while hovering a disabled link
 
-    &.tags-html
-        color: #e34c26
+// ===========
+// === IDs ===
+// ===========
 
-    &.tags-css
-        color: #563d7c
+#footer
+    padding-top: 1em
+    width: 100%
 
-    &.tags-php
-        color: #5374de
+    &::before
+        content: '---\00000a' //\00000a = newline
+        white-space: pre
 
-    &.tags-java
-        color: #b07219
+    tr
+        &:not(:last-child) td:not(:first-child) // only crypto addy
+            @extend .select-all
 
-    &.tags-cpp
-        color: #f34b7d
+    td
+        @extend .no-scroll
+        padding: 0
 
-    &.tags-shell
-        color: #89e051
+        &:nth-of-type(1)
+            min-width: 7ch !important
 
-    &.tags-go
-        color: #00add8
+            &::after
+                content: ' /'
 
-    &.tags-bf
-        color: #2f2530
+        &:nth-of-type(2)
+            max-width: 46.5ch // todo this isn't great
+            overflow: auto
+            display: flex
 
-    &.tags-matlab
-        color: #e16737
+#sub-posts
+    margin: 0.5ch 0
 
-    &.tags-ahk
-        color: #6594b9
+    & li::marker
+        content: '* '
 
-    &.tags-gcode
-        color: #d08cf2
+// this should be an ID
+div.nav
+    font-size: 115%
+    margin-bottom: 1em
 
-    &.tags-latex
-        color: #3d6117
+    & > a
+        margin: 0 0.25em // adds padding between slashes
 
-    &.tags-apache
-        color: #d80044
+        &:first-child
+            margin-left: 0
 
-    &.tags-sheet
-        color: #00d800
+        &:last-child,
+        strong
+            font-weight: 600
 
-    &.tags-misc
-        color: #fb00ff
+// ===============
+// === Classes ===
+// ===============
+
+img.dropdown
+    height: 1.08em
+    vertical-align: middle
+    width: initial
+
+.no-scroll
+    scrollbar-width: none // remove scroller in FF
+    &::-webkit-scrollbar  // remove scroller in chrome
+        height: 0 !important
+        width: 0 !important
+        display: none !important
+
+// stackoverflow.com/a/43783066/7833617 
+.select-all
+    -webkit-touch-callout: all // iOS Safari
+    -webkit-user-select: all // Safari
+    -khtml-user-select: all // Konqueror HTML
+    -moz-user-select: all // Firefox
+    -ms-user-select: all // Internet Explorer/Edge
+    user-select: all // Chrome and Opera
