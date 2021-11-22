@@ -21,8 +21,7 @@ html {
   overflow-y: scroll;
 }
 
-body,
-input {
+body {
   font-family: "PT Mono", monospace !important;
   font-weight: 400;
   font-size: 14px;
@@ -31,22 +30,19 @@ input {
   color: var(--text-color);
   background-color: var(--outside-bg-color);
 }
-body::-webkit-scrollbar,
-input::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 10px;
 }
-body::-webkit-scrollbar-track,
-input::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   background: var(--outside-bg-color);
 }
-body::-webkit-scrollbar-thumb,
-input::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background-color: var(--outside-bg-color);
   border-radius: 5px;
   border: 2px solid var(--inside-bg-color);
 }
 
-.input, input {
+input {
   font-family: "PT Mono", monospace !important;
   background-color: var(--code-bg-color);
   color: var(--inside-bg-color);
@@ -61,6 +57,21 @@ input::-webkit-scrollbar-thumb {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   border: none;
+}
+
+button {
+  font-size: 16px;
+  font-family: inherit;
+  padding: 0.4ch 0.8ch;
+  margin: 0.4em 0.2em;
+  border-radius: 5px;
+  box-shadow: 4px 4px black;
+  background-color: var(--code-bg-color);
+  color: var(--inside-bg-color);
+}
+button:hover {
+  background-color: rgba(221, 221, 221, 0.712);
+  box-shadow: 4.5px 4.5px black;
 }
 
 a,
@@ -113,8 +124,8 @@ a:visited.no-custom:hover {
   background-color: transparent;
 }
 
-.hljs,
-code {
+code,
+.hljs {
   font-family: "PT Mono", monospace !important;
   padding: 2px 4px;
   font-size: 90%;
@@ -122,9 +133,9 @@ code {
   color: var(--text-color-inverse);
   border-radius: 5px;
 }
-.hljs::selection, .hljs > span::selection,
-code::selection,
-code > span::selection {
+code::selection, code > span::selection,
+.hljs::selection,
+.hljs > span::selection {
   color: limegreen !important;
   background: black !important;
 }

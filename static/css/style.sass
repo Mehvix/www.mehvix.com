@@ -34,8 +34,7 @@ html
     // scroll-behavior: smooth  
     // ^todo this breaks fast scroll, find workaround
 
-body,
-input
+body
     font-family: 'PT Mono', monospace !important
     font-weight: 400
     font-size: $font-size
@@ -72,6 +71,20 @@ input
     -ms-box-sizing: border-box
     box-sizing: border-box
     border: none
+
+button
+    font-size: 16px
+    font-family: inherit
+    padding: 0.4ch 0.8ch
+    margin: 0.4em 0.2em
+    border-radius: $code-radius
+    box-shadow: 4px 4px black
+    background-color: var(--code-bg-color)
+    color: var(--inside-bg-color)
+
+    &:hover
+        background-color: rgba(221, 221, 221, 0.712)
+        box-shadow: 4.5px 4.5px black
 
 a,
 a:visited
@@ -115,8 +128,8 @@ a:visited
         &:hover
             background-color: transparent
 
-.hljs,
-code
+code,
+.hljs
     font-family: 'PT Mono', monospace !important
     padding: 2px 4px
     font-size: 90%
@@ -303,7 +316,7 @@ input[type="button"][disabled]
     & li::marker
         content: '* '
 
-// this should be an ID
+// this should've been an ID
 div.nav
     font-size: 115%
     margin-bottom: 1em
