@@ -66,12 +66,31 @@ button {
   margin: 0.4em 0.2em;
   border-radius: 5px;
   box-shadow: 4px 4px black;
+  transition-duration: 250ms;
   background-color: var(--code-bg-color);
   color: var(--inside-bg-color);
 }
+@media (prefers-color-scheme: light) {
+  button {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+}
 button:hover {
-  background-color: rgba(221, 221, 221, 0.712);
-  box-shadow: 4.5px 4.5px black;
+  box-shadow: 5px 5px black;
+  background-color: var(--text-color);
+  color: var(--text-color-inverse);
+  filter: brightness(1.35);
+}
+@media (prefers-color-scheme: light) {
+  button:hover {
+    background-color: rgba(221, 221, 221, 0.7);
+    color: var(--code-bg-color);
+    filter: brightness(0.95);
+  }
+}
+button:active {
+  transform: translateY(2px);
 }
 
 a,
@@ -184,6 +203,9 @@ details summary {
 
 img {
   width: 100%;
+}
+article img {
+  margin: 1em 0 0 0;
 }
 
 p {
