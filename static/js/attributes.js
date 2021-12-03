@@ -13,7 +13,7 @@ var attr_lst = [
     'My favorite shell is zsh.',
     'My favorite mono font is <a href="//fonts.adobe.com/fonts/pt-mono">PT Mono</a>.',
     'My favorite color scheme is <a href="//github.com/one-dark">OneDark</a>.',
-    'My favorite movie is <span class="pulp-fiction">Pulp Fiction</span>.',
+    'My favorite movie is <span class="pulp-fiction">Pulp Fiction</span> (followed by The Grand Budapest Hotel).',
     'My favorite TV show is Sopranos',
     'My favorite Survivor season is Cagayan (28).',
     'My favorite Gatorade color is Orange.',
@@ -34,6 +34,10 @@ var attr_lst = [
     'I have an irrational fear of eels.',
     'My dad wanted to name me Jimi after Hendrix.',
     'I have projective <a href="//en.wikipedia.org/wiki/Synesthesia">synesthesia</a>.',
+    'I have projective <a href="//en.wikipedia.org/wiki/Photic_sneeze_reflex">ACHOO syndrome</a>.',
+    'This sentence contains exactly threee erors.',
+    'This sentence refers to all sentences that do not refer to themselves.',
+    'This sentence is false.',
 ]
 
 function randto(n) {
