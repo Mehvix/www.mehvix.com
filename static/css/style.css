@@ -176,21 +176,17 @@ pre > code::-webkit-scrollbar-thumb {
 }
 
 details {
+  color: var(--text-color-inverse);
   padding: 0.4rem 0.75rem;
   background: var(--code-bg-color);
   border-radius: 5px;
-}
-details[open] {
-  padding-bottom: 0.75rem;
+  font-size: 87% !important;
 }
 details[open] summary {
   margin-bottom: 6px;
 }
 details[open] > *:last-child {
   margin-bottom: 0;
-}
-details pre code {
-  font-size: 87% !important;
 }
 details summary {
   color: #bcc3cf;

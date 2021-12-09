@@ -177,22 +177,20 @@ pre > code
         border-radius: $code-radius // roundness of the scroll thumb
 
 details
+    color: css_var(text-color-inverse)
     padding: .4rem .75rem
     background: css_var(code-bg-color)
     border-radius: $code-radius
+    font-size: 87% !important
 
     &[open]
-        padding-bottom: .75rem
+        // padding-bottom: .75rem
 
         & summary
             margin-bottom: 6px
 
         & >*:last-child
             margin-bottom: 0
-
-    pre code
-        font-size: 87% !important
-
     summary
         color: #bcc3cf
         cursor: pointer
