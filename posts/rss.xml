@@ -3,10 +3,55 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Sun, 31 Oct 2021 20:19:59 -0000</lastBuildDate>
+		<lastBuildDate>Fri, 10 Dec 2021 01:14:13 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
+		<item>
+			<author>Max Vogel</author>
+			<title>Killing pass.mehvix.com</title>
+			<pubDate>Thu, 09 Dec 2021 08:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/pass.html</link>
+			<guid>https://mehvix.com/posts/pass.html</guid>
+			<content:encoded><![CDATA[<article>
+<p>I received an email threatening legal action against me:</p>
+<img alt=&quot;&quot; src=&quot;/static/media/posts/pass-email.png&quot; srcset=&quot;&quot;/>
+<p>
+                    After this blog post goes up, I am taking down
+                    pass.mehvix.com. But, given the nature of open source code,
+                    <b>I have no power over people
+                        <a href=&quot;https://github.com/Mehvix/pass/tree/2a9f0943c1de99367f638fcf27ccf8add635290f&quot;>forking</a>
+                        and running their own
+                        <a href=&quot;https://github.com/Mehvix/pass/network/members&quot;>instances</a></b>.
+                    <a href=&quot;https://www.eff.org/deeplinks/2015/04/remembering-case-established-code-speech&quot;>Code is free speech</a>.
+                    <a href=&quot;https://www.youtube.com/watch?v=PVF9lZ-i_ss&quot;>You can't stop the signal</a>.
+                </p>
+<p>
+                    It was a good run- I started pass for myself and roomies,
+                    then they told five people, and those people told five more,
+                    etc etc until it came full loop where people would tell me
+                    about pass.mehvix.com not knowing that I was mehvix.
+                </p>
+<p>Here's the cloudflare analytics for anyone interested:</p>
+<img alt=&quot;&quot; src=&quot;/static/media/posts/pass-stats.png&quot;/>
+<p>
+                    Try and see if you can infer when lunch and dinner are based
+                    on the spikes. Also, don't worry if you've used pass and are
+                    concerned about your privacy: I'm a privacy nut and have
+                    never collected any user information.
+                </p>
+<br/>
+<p>
+                    PS to UCB- If I can circumvent your &quot;campus safety feature&quot;
+                    in five minutes and you don't realize for two months, then
+                    maybe (just maybe!) it's an issue with the campus safety
+                    feature itself 🤔🤔. Also, how am I supposed to get food?
+                    I'm paying you guys for a meal plan that I cannot use
+                    because I cannot get into the dining halls because your app
+                    doesn't work.
+                </p>
+</article>]]></content:encoded>
+		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Tiling Distance Contradiction</title>
@@ -152,10 +197,14 @@
                     With that being said, this seems to say that travelling
                     eight blocks east and eight blocks north should take the
                     same time as travelling east then north eight times (eight
-                    is arbitrary). In the real world, this isn't true however
-                    since streets aren't totally parallel and orthogonal to one
-                    another but I think it's at least an interesting thought
-                    puzzle.
+                    is arbitrary).
+                </p>
+<p>
+                    In the real world, this isn't often true<sup><a href=&quot;#1-ref&quot; id=&quot;1-exp&quot;>1</a></sup>. Blocks aren't perfect rectangles made from streets and
+                    your steps are rarely parallel/orthogonal to the x/y axis
+                    so, unlike the idealized example, you're rarely moving in
+                    just the x or y direction at a single time. Regardless, I
+                    still think it's an interesting thought puzzle of sorts.
                 </p>
 <!-- <p>---</p>
                 <p>
@@ -170,13 +219,22 @@
                     equivalent to [left, up] since they're symmetric, so [left,
                     up, ...] is equivalent to [up, left, ...].
                 </p> -->
-<p>---</p>
 <p>
                     Shout out to David Jiang + Jack Guerrisi for helping me wrap
                     my head around this problem and to Frank Liu and Phoebe Chen
                     for listening to me try to explain this while toasted on the
                     way to Asian Ghetto! :)
                 </p>
+<p>---</p>
+<p>
+<sup><a href=&quot;#1-exp&quot; id=&quot;1-ref&quot;>1</a></sup>
+<i>Update:</i> I found a set of stairs outside the
+                    <a href=&quot;//www.google.com/maps/place/@37.8803004,-122.2452309,19z&quot;>MSRI</a>
+                    (fitting!) which is a sort of tiling switchback in that it
+                    constrains you to moving like the particle in this problem.
+                    It was very foggy that night, so here's a scuffed photo:
+                    <img src=&quot;/static/media/posts/PXL_20211119_022706222.jpg&quot;/>
+</p>
 </article>]]></content:encoded>
 		</item>
 		<item>
