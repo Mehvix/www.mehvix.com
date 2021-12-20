@@ -40,8 +40,11 @@ var attr_lst = [
     'This sentence contains exactly threee erors.',
     'This sentence refers to all sentences that do not refer to themselves.',
     'This sentence is false.',
+    'Max is short for Maxabillion.',
     'The em dash—particularly when used to interject into sentences—is my favorite punctuation mark.',
-    'My favorite book is <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">GEB</a>'
+    'My favorite book is <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">GEB</a>',
+    'One of these facts are false (and no, it\'s not this one).',
+    '<code>YYYY-MM-DD</code> is the ideal date format.'
 ]
 
 function randto(n) {
