@@ -289,18 +289,6 @@ s {
   background-image: linear-gradient(transparent 0.5em, #000000 0.5em, #000000 9px, transparent 9px);
 }
 
-div.box {
-  max-width: 50rem;
-  margin: 2em;
-  border: 0.4ch solid black;
-  padding: 3ch;
-  background: var(--inside-bg-color);
-  overflow-wrap: break-word;
-  vertical-align: middle;
-  margin-top: 3em;
-  box-shadow: 1.5ch 1.5ch black;
-}
-
 a button[disabled],
 button[disabled],
 input[type=submit][disabled],
@@ -354,6 +342,18 @@ div.nav > a:first-child {
 div.nav > a:last-child,
 div.nav > a strong {
   font-weight: 600;
+}
+
+div.box {
+  max-width: 50rem;
+  margin: 2em;
+  border: 0.4ch solid black;
+  padding: 3ch;
+  background: var(--inside-bg-color);
+  overflow-wrap: break-word;
+  vertical-align: middle;
+  margin-top: 3em;
+  box-shadow: 1.5ch 1.5ch black;
 }
 
 img.dropdown {

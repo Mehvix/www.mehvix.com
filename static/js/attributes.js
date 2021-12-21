@@ -43,8 +43,9 @@ var attr_lst = [
     'Max is short for Maxabillion.',
     'The em dash—particularly when used to interject into sentences—is my favorite punctuation mark.',
     'My favorite book is <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">GEB</a>',
-    'One of these facts are false (and no, it\'s not this one).',
-    '<code>YYYY-MM-DD</code> is the ideal date format.'
+    "One of these facts are false (and no, it's not this one).",
+    '<code>YYYY-MM-DD</code> is the ideal date format.',
+    'I have a black aunt who is younger than me.',
 ]
 
 function randto(n) {
@@ -53,3 +54,5 @@ function randto(n) {
 
 attr_element = document.getElementById('attribute')
 attr_selected = attr_lst[randto(attr_lst.length)]
+
+// todo make this not random, but cycle (or not repeat, somehow)

@@ -276,17 +276,6 @@ s
     background-image: linear-gradient(transparent .5em,#000000 .5em,#000000 9px,transparent 9px)
     // ^make strike line thicc
 
-div.box
-    max-width: 50rem
-    margin: 2em
-    border: .4ch solid black
-    padding: 3ch
-    background: css-var(inside-bg-color)
-    overflow-wrap: break-word
-    vertical-align: middle
-    margin-top: 3em
-    box-shadow: 1.5ch 1.5ch black
-
 a button[disabled],
 button[disabled],
 input[type="submit"][disabled],
@@ -333,7 +322,7 @@ input[type="button"][disabled]
     & li::marker
         content: '* '
 
-// this should've been an ID
+// these should've been IDs
 div.nav
     font-size: 115%
     margin-bottom: 1em
@@ -347,6 +336,17 @@ div.nav
         &:last-child,
         strong
             font-weight: 600
+
+div.box
+    max-width: 50rem
+    margin: 2em
+    border: .4ch solid black
+    padding: 3ch
+    background: css-var(inside-bg-color)
+    overflow-wrap: break-word
+    vertical-align: middle
+    margin-top: 3em
+    box-shadow: 1.5ch 1.5ch black
 
 // ===============
 // === Classes ===
