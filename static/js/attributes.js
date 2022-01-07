@@ -19,6 +19,8 @@ var attr_lst = [
     'My favorite Gatorade color is <span style="color: orange">orange</span>.',
     'My favorite Quake level is <code>ts_ca1</code>.',
     'My favorite TF2 map is <a href="https://comp.tf/wiki/Gullywash">cp_gullywash_final1</a>.',
+    'My favorite TF2 6s role is roamer.',
+    'My FPS inches per 360 is 22.8" (.45 source sensitivity @ 1600 dpi).',
     'My favorite <span class="aoe2">Age of Empires II</span> map is Black Forest.',
     'My favorite <span class="aoe2">Age of Empires II</span> civilization are the Mayans.',
     'My favorite <span class="aoe2">Age of Empires II</span> track is <a href="//www.youtube.com/watch?v=kd6zvRtwRzI/">Pork Parts</a>.',
@@ -27,6 +29,7 @@ var attr_lst = [
     'My favorite C++ Compiler is GCC.',
     'My favorite drink is Arnold Palmer.',
     'My favorite energy drink is Fruit Punch Rockstar (if for no other reason than it reminds me of middleschool snowboard club).',
+    'My favorite swimming-stroke is butterfly 🦋',
     'My eye color is <span style="color: #207708">Green</span>-<span style="color: #8E7618">Hazel</span>.',
     'My corrective lenses is -4.75 -1.00 (very poor!).',
     'My height is 6\' 1".',
@@ -46,6 +49,8 @@ var attr_lst = [
     "One of these facts are false (and no, it's not this one).",
     '<code>YYYY-MM-DD</code> is the ideal date format.',
     'I have a black aunt who is younger than me.',
+    'My birthday contains two palindromes.',
+    "I don't believe in astrology; I'm a Leo and we're all so smart and would never believe in something so silly."
 ]
 
 function randto(n) {
