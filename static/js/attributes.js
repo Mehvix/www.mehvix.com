@@ -50,7 +50,9 @@ var attr_lst = [
     '<code>YYYY-MM-DD</code> is the ideal date format.',
     'I have a black aunt who is younger than me.',
     'My birthday contains two palindromes.',
-    "I don't believe in astrology; I'm a Leo and we're all so smart and would never believe in something so silly."
+    "I don't believe in astrology; I'm a Leo and we're all so smart and would never believe in something so silly.",
+    'Consider the expression "The smallest positive integer not definable in under sixty letters."',
+    'Time flies like an arrow; fruit flies like a banana.',
 ]
 
 function randto(n) {
