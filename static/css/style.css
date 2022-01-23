@@ -131,12 +131,14 @@ a:visited.inverse-bg:hover *::selection {
   background-color: var(--text-color-inverse);
   color: var(--text-color);
 }
-a.no-custom,
-a:visited.no-custom {
+a.no-custom, img a,
+a:visited.no-custom,
+img a:visited {
   box-shadow: none;
 }
-a.no-custom:hover,
-a:visited.no-custom:hover {
+a.no-custom:hover, img a:hover,
+a:visited.no-custom:hover,
+img a:visited:hover {
   background-color: transparent;
 }
 
