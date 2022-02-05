@@ -53,6 +53,7 @@ var attr_lst = [
     "I don't believe in astrology; I'm a Leo and we're all so smart and would never believe in something so silly.",
     'Consider the expression "The smallest positive integer not definable in under sixty letters."',
     'Time flies like an arrow; fruit flies like a banana.',
+    'There is no 19th story.',
 ]
 
 function randto(n) {

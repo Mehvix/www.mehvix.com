@@ -3,10 +3,179 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Fri, 10 Dec 2021 01:14:13 -0000</lastBuildDate>
+		<lastBuildDate>Sat, 05 Feb 2022 07:34:31 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
+		<item>
+			<author>Max Vogel</author>
+			<title>The Colemak Experience</title>
+			<pubDate>Fri, 04 Feb 2022 08:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/colemak.html</link>
+			<guid>https://mehvix.com/posts/colemak.html</guid>
+			<content:encoded><![CDATA[<article>
+<h1>Pre</h1>
+<div>
+<p>
+                        I have now typed in Colemak for 391 days in a row, so I
+                        feel somewhat qualified to tell you why you should
+                        consider (not) switching your keyboard layout.
+                    </p>
+</div>
+<h1>What</h1>
+<div>
+<img alt=&quot;&quot; src=&quot;/static/media/posts/cm.png&quot;/>
+<blockquote>
+                        Colemak is a modern alternative to the QWERTY and Dvorak
+                        layouts, designed for efficient and ergonomic touch
+                        typing in English. Learning Colemak is a one-time
+                        investment that will allow you to enjoy faster and
+                        pain-free typing for the rest of your life (<a href=&quot;https://colemak.com/&quot;>colemak.com</a>)
+                    </blockquote>
+<p>
+                        Simply, Colemak places the most commonly typed letters
+                        (based on the English language) on the home row and
+                        determines the position of the rest by accounting for
+                        finger distance, row jumping, same-finger typing
+                        <a href=&quot;https://colemak.com/Ergonomic&quot;>etc</a>,
+                        <a href=&quot;https://colemak.com/Fast&quot;>etc</a>.
+                    </p>
+</div>
+<h1>Why Not</h1>
+<div>
+<p>
+                        Switching to Colemak takes long. And is just hard. You
+                        have to break your old muscle memory. Typing is going to
+                        be a slow, ugly drudge for a while. I got back to
+                        averaging 70 WPM (my OG QWERTY speed) after a (long)
+                        month. Then again, my roommate Jack got back 84 WPM
+                        after two days (he was formerly avg 140)-- this is a
+                        developing situation (he just got 84 five minutes ago)
+                        but at this rate I'm sure he'll get 140 by the end of
+                        the week. This is the hardest part of the whole process.
+                    </p>
+<p>
+                        After you learn Colemak, good luck using other people's
+                        computers. It's embarrassing. When you learn Colemak,
+                        you have to destroy all your pre-existing typing habits,
+                        thus, you (need to) forget QWERTY (on a regular
+                        keyboard, phone fine). I now carry around a USB with
+                        Windows/Linux Colemak files (which isn't terrible since
+                        I always have a password-backup USB on me). Regardless,
+                        it's a hassle. Additionally, sometimes you do not have
+                        permissions to install layouts (school/works computers).
+                        To circumvent this, I was looking into building a
+                        physical middle-man between the keyboard and computer
+                        using an Arduino. The parts arrived but now that I'm at
+                        Berkeley and I have no free time (or, there are more
+                        fulfilling things to do with my free time). Maybe this
+                        summer. Anyways, more reasons not to use Colemak:
+                    </p>
+<p>
+                        If you use
+                        <a href=&quot;./win-insecure-files.html&quot;>VeraCrypt</a> or any
+                        other encryption system that requires unlocking the
+                        drive prior to the operating system loading (so, yes,
+                        LUKS) then typing your password is pain: your keyboard
+                        will be typing in QWERTY (unless you have a hardware
+                        Colemak keyboard, which you probably shouldn't). You can
+                        circumvent this by setting your keyboard layout
+                        temporarily to QWERTY, then typing your password like
+                        you normally would (just type what you would by pressing
+                        the keys as if they were Colemak), and you're set.
+                        Additionally, some (most) of Linux DE's do not load the
+                        layout on the initial lock screen so you'll have to
+                        slowly type it out. I've found that after a while my
+                        brain can store the QWERTY-muscle memory of my most
+                        common passwords so it's not terrible after you encode
+                        the important/common ones in your brain.
+                    </p>
+<p>
+                        Vim is not as slick: your movement keys aren't in the
+                        same proximity. You can rebind the keys, of course, but
+                        out of the box (ex. when you SSH into a machine) it's
+                        annoying. More generally, shortcuts may be more a hassle
+                        for other programs. For what it's worth, Colemak does
+                        have <code>C</code> and <code>V</code> unchanged (for
+                        copy / paste respectively) unlike Dvorak.
+                    </p>
+<p>
+                        Finally, I can only imagine it's fairly easy to
+                        fingerprint Colemak (or really any non-mainstream
+                        layout) users, either through reading the current
+                        keyboard layout or by unique, colemak-specific typing
+                        mannerisms (look up 'Behavioral Biometrics'). This only
+                        matters if you're a privacy nut or Snowden-level wanted.
+                    </p>
+<p>
+                        Summary: the hardest part is the first month (getting
+                        back to your old WPM). The rest of the reasons are
+                        mostly small nuisances and edge cases that you can judge
+                        if they matter.
+                    </p>
+</div>
+<h1>Why</h1>
+<div>
+<p>
+                        It's fun to learn as a challenge. If you like learning
+                        skills, this is one of the ones to at least try out. I
+                        can tell you it's more useful than knowing morse-code
+                        (besides perhaps <code>...---...</code>) and around the
+                        same impressiveness as being able to solve a rubik's
+                        cube. It's also fun to type: if you go online you'll see
+                        people talking about the sweet '<a href=&quot;https://forum.colemak.com/topic/802-finger-rolls/&quot;>finger rolls</a>' that Colemak is conductive to. If you switch, type
+                        'tenderheartednesses' and you'll see.
+                    </p>
+<p>
+                        You will probably get faster. Then again, I may have
+                        gotten equally better had I spend this time and focus
+                        towards improving regular typing. Anyways, I went from
+                        averaging 70 to 100 WPM. Below is my progress on
+                        monkeytype:
+                    </p>
+<img alt=&quot;&quot; src=&quot;/static/media/posts/prog.png&quot;/>
+<p>
+                        Also, you may not get RSI or carpal tunnel which is
+                        pretty dope 👌.
+                    </p>
+</div>
+<h1>How</h1>
+<div>
+<p>
+                        To end this post, I'm actually a liar! I use a
+                        derivative of Colemak, called
+                        <a href=&quot;https://colemakmods.github.io/mod-dh/&quot;>Colemak-DH</a>, which has a few other additional tweaks you can read
+                        about on the website. Skim it and choose if you want it
+                        or Colemak-- it really doesn't matter all that much. One
+                        minor thing is that base Colemak is included Manjaro
+                        (and presumably other distros) while -DH is not (making
+                        set up a bit more painful.)
+                    </p>
+<p>
+                        When you do decide to take the Colemak pill, set aside a
+                        weekend where you are okay being unproductive while
+                        using a computer. To learn Colemak, you have to use it
+                        lots. You can't swap back between it and QWERTY, so you
+                        have to grind back to an acceptable WPM.
+                    </p>
+<p>
+                        After running the installer (<a href=&quot;https://colemak.com/Download&quot;>colemak installers</a>,
+                        <a href=&quot;https://colemakmods.github.io/mod-dh/&quot;>-DH installers</a>), I started by going through all the keys on
+                        <a href=&quot;https://first20hours.github.io/keyzen-colemak/&quot;>keyzen colemak</a>, then
+                        <a href=&quot;https://www.colemak.academy/&quot;>colemak.academy</a>, and finally grinding
+                        <a href=&quot;https://monkeytype.com/&quot;>monkeytype</a>. This
+                        is what I recommend to others, and how my roommate Jack
+                        is learning very quickly. You may also want to checkout
+                        the
+                        <a href=&quot;https://old.reddit.com/r/Colemak/&quot;>subreddit</a>
+                        to see what's worked for others. Ultimately, it boils
+                        down to focusing on breaking your old habits. If you
+                        think that sounds lke a fun challenge, highly
+                        recommended!
+                    </p>
+</div>
+</article>]]></content:encoded>
+		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Killing pass.mehvix.com</title>
@@ -228,170 +397,24 @@
 <p>---</p>
 <p>
 <sup><a href=&quot;#1-exp&quot; id=&quot;1-ref&quot;>1</a></sup>
-<i>Update:</i> I found a set of stairs outside the
+<i>Update #1:</i> I found a set of stairs outside the
                     <a href=&quot;//www.google.com/maps/place/@37.8803004,-122.2452309,19z&quot;>MSRI</a>
                     (fitting!) which is a sort of tiling switchback in that it
                     constrains you to moving like the particle in this problem.
                     It was very foggy that night, so here's a scuffed photo:
                     <img src=&quot;/static/media/posts/PXL_20211119_022706222.jpg&quot;/>
 </p>
-</article>]]></content:encoded>
-		</item>
-		<item>
-			<author>Max Vogel</author>
-			<title>Current Plans</title>
-			<pubDate>Fri, 18 Jun 2021 07:00:00 -0000</pubDate>
-			<link>https://mehvix.com/posts/plans-2021.html</link>
-			<guid>https://mehvix.com/posts/plans-2021.html</guid>
-			<content:encoded><![CDATA[<article>
+<p>---</p>
 <p>
-                    Okay so for the past month I wasted a lot of my time
-                    (binging
-                    <a href=&quot;//yewtu.be/channel/UCYwVxWpjeKFWwu8TML-Te9A&quot;>JCS</a>, playing
-                    <a href=&quot;//store.steampowered.com/app/629760/MORDHAU/&quot;>Mordhau</a>, doomscrolling) and I think writing out my general summer
-                    goals will be helpful for a couple reasons: (1) even though
-                    few people I know read this blog, I hope I'll feel some
-                    amount of accountability to follow through, (2) when people
-                    ask me what I'm doing I hope to not give ad-hoc answers, (3)
-                    I think writing in general makes me think more deeply about
-                    the content, and I want to think more deeply about my goals
-                    and (4) I think it'll be interesting to look back this in
-                    the fall and beyond.
-                </p>
-<h1>Chess</h1>
-<p>
-                    I've been split between trying to improve at either Age of
-                    Empires II, Poker, or Chess. AoE is stressful to play and I
-                    don't want to ruin the childhood nostalgia I have for it.
-                    They're also releasing co-op campaigns and I think that'll
-                    be more fun than 1v1 Arabia wars. As for Poker, I enjoy it
-                    in-person with friends but I'd suspect none of my friends
-                    would want to grind it as much as I would want to this
-                    summer, leaving only online. While crypto has revived online
-                    to some degree, I think it's hard to improve online because
-                    you tend not to play with the same people and you don't have
-                    the fun of in-person tells. Also I don't want to go broke.
-                </p>
-<p>
-                    That leaves Chess, which is probably my weakest of the
-                    three. I'm not really sure where to start right now. This
-                    past week I've been working through puzzles on LiChess, but
-                    I don't think I have a (strong) foundation. I know control
-                    middle, don't fuck up your pawn structure, and don't do
-                    <a href=&quot;//youtu.be/e91M0XLX7Jw&quot;>this</a>. I've got
-                    <a href=&quot;//www.masterclass.com/classes/garry-kasparov-teaches-chess&quot;>Kasparov's Masterclass</a>
-                    downloaded which I may binge through to get a sense of where
-                    to start. I've also got friends who already play and are
-                    very good (at least seem very good to me, probably how I
-                    seem 'good' at AoE to them) so maybe I can get some
-                    coaching.
-                </p>
-<h1>Friends</h1>
-<p>
-                    It didn't hit me that
-                    <i>&quot;wow I'm not going to see most of my classmates ever
-                        again&quot;</i>
-                    until maybe a week after graduation. And I'm still now sure
-                    how I feel about that. Asking my self
-                    <i>
-                        &quot;how do I want to spend my last summer where I will have
-                        the least number of responsibilities&quot;
-                    </i>
-                    was a wake-up call to spend more time in-person with my
-                    friends (especially compared to spending time pubbing TF2 or
-                    binging Sopranos a third time). And to be realistic, I
-                    probably won't keep in touch with 80% of them after freshmen
-                    year – when I began to focus on academics and robotics
-                    Sophomore year, I only kept in touch with maybe three main
-                    friends (and that was when I would see my main friend group
-                    nearly every day).
-                </p>
-<p>
-<a href=&quot;//artofproblemsolving.com/community/c1080751h2594496&quot;>David and I have been hiking twice this week</a>
-                    which has been fun (and I can sub in hiking for running in
-                    my workout, I hate running). I've been using
-                    <a href=&quot;//www.alltrails.com/&quot;>AllTrails</a> which has a big
-                    enough userbase near Madison that there are fairly accurate
-                    and up-to-date reviews and statistics of nearby places.
-                    Maybe I'll make a post later once we hit all the nearby
-                    places summarizing my thoughts. Also, Aidan's getting back
-                    from rowing competitions next week so I'm hoping we can wrap
-                    up our Pathfinder game and go fishing with the fellas like
-                    last summer.
-                </p>
-<h1>Read</h1>
-<p>
-                    I haven't read for the sake of reading in a long time. It's
-                    gotten to the point where I have a que of books that I've
-                    asked for over the years just sitting on my shelf. Two years
-                    back, I started scheduling my day down to the 15-minute mark
-                    and I think I've never given my self the opportunity to sit
-                    down for an extended period of time and read. It's crazy to
-                    think that I read as much as I did when I did those library
-                    summer reading programs (Now that I think of it, I was so
-                    cool that I used to do two library's reading programs at
-                    once).
-                </p>
-<p>
-                    Anyways, last week I started
-                    <a href=&quot;//www.goodreads.com/book/show/113537.Positively_Fifth_Street&quot;>Positively Fifth Street</a>
-                    and I have
-                    <a href=&quot;//www.goodreads.com/book/show/662.Atlas_Shrugged&quot;>Atlas Shrugged</a>,
-                    <a href=&quot;//www.goodreads.com/book/show/45363333-harassment-architecture&quot;>Harassment Architecture</a>, and
-                    <a href=&quot;//www.goodreads.com/book/show/135479.Cat_s_Cradle&quot;>Cat's Cradle</a>
-                    ready on my bookshelf. Using
-                    <a href=&quot;http://wordcounters.com&quot;>this site</a> to figure
-                    out word counts, it's around 500,000 words in all (for what
-                    it's worth, Rand's work is 327k). Lets say I can read 250
-                    words a minute and I have six weeks left of summer. Doing
-                    the math, I need to read about an hour a day. I know I do
-                    anything best when I'm in
-                    <a href=&quot;//en.wikipedia.org/wiki/Flow_(psychology)&quot;>flow</a>, so I think I'll try and read my seven hours in two
-                    sessions each week. I don't want to schedule reading down to
-                    the hour, rather just set the expectation of
-                    <i>&quot;I'm going to read this afternoon&quot;</i> so I avoid
-                    overloading my mind during those sessions.
-                </p>
-<h1>Don't 'Learn', Do Projects</h1>
-<p>
-                    This may just be me, but I do not enjoy learning all the
-                    nuances behind learning a programming language. I like
-                    diving in head first. I learned my first language, Python,
-                    by dicking around with
-                    <a href=&quot;//github.com/Rapptz/discord.py&quot;>discord.py</a>
-                    and building a
-                    <a href=&quot;//github.com/mehvix/synapsbot-rw&quot;>Discord bot</a>
-                    my freshmen summer. I doubt that I wouldn't have learned
-                    nearly as much compared to if I had followed a course.
-                    That's not to say that courses don't have good content, I
-                    would've gotten bored.
-                </p>
-<p>
-                    For example: Two weeks ago I tried learning C++ from the
-                    start with
-                    <a href=&quot;http://learncpp.com&quot;>learncpp.com</a> and it was
-                    tedious. Nothing against the site, but it a time sink
-                    because I'd have to go page after page skimming past stuff I
-                    already knew while trying to pick out what knowledge I
-                    didn't already know. Compare this to me learning Ruby a
-                    month ago when I threw together an
-                    <a href=&quot;//github.com/Mehvix/aops-blog-rss&quot;>RSS generator for AoPS</a>
-                    : I learned all sorts of stuff not only about Ruby, but also
-                    about Heroku and the steps behind getting code from my PC to
-                    a server.
-                </p>
-<p>
-                    That being said, while I've got a huuuge backload of
-                    projects in my
-                    <a href=&quot;/todo.html&quot;>todo list</a> I honestly have lost the
-                    spark-of-interest I previously had for most of them.
-                    Throughout this summer, I don't want to force myself to work
-                    on something I'm not actively interested in. Rather, I want
-                    to work on projects spontaneously when ideas come to me –
-                    that's when I learn most. After all, I'll have at least four
-                    years to formally learn information and follow class
-                    projects :p.
-                </p>
+<i>Update #2:</i> Aidan McNabb (cowboy hat) showed me a
+                    contradiction that pi equals four (the
+                    <a href=&quot;https://math.stackexchange.com/questions/12906/the-staircase-paradox-or-why-pi-ne4&quot;>staircase paradox</a>) which follows a similar line of reasoning (has the same
+                    faults). Turns out this is a fairly old problem and there's
+                    a entire form of geometry called
+                    <a href=&quot;https://en.wikipedia.org/wiki/Taxicab_geometry&quot;>Taxicab geometry</a>
+                    .
+                    <img alt=&quot;&quot; src=&quot;/static/media/posts/PXL_20220118_042533313.jpg&quot;/>
+</p>
 </article>]]></content:encoded>
 		</item>
 		<item>
