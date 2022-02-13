@@ -30,6 +30,8 @@ var attr_lst = [
     'My favorite drink is Arnold Palmer.',
     'My favorite energy drink is Fruit Punch Rockstar (if for no other reason than it reminds me of middleschool snowboard club).',
     'My favorite swimming-stroke is butterfly 🦋',
+    "My favorite physics textbook is Morin's 'Problems and Solutions in Introductory Mechanics'",
+    'My favorite band is ween.',
     'My eye color is <span style="color: #207708">Green</span>-<span style="color: #8E7618">Hazel</span>.',
     'My corrective lenses is -4.75 -1.00 (very poor!).',
     'My height is 6\' 1".',
@@ -46,7 +48,7 @@ var attr_lst = [
     'Max is short for Maxabillion.',
     'The em dash—particularly when used to interject into sentences—is my favorite punctuation mark.',
     'My favorite book is <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">GEB</a>.',
-    "One of these facts are false (and no, it's not this one).",
+    "One of these facts about me are a lie (and no, it's not this one).",
     '<code>YYYY-MM-DD</code> is the ideal date format.',
     'I have a black aunt who is younger than me.',
     'My birthday contains two palindromes.',
@@ -54,6 +56,7 @@ var attr_lst = [
     'Consider the expression "The smallest positive integer not definable in under sixty letters."',
     'Time flies like an arrow; fruit flies like a banana.',
     'There is no 19th story.',
+    'Google "lavon affair."',
 ]
 
 function randto(n) {
