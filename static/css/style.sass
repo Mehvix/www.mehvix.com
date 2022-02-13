@@ -43,6 +43,7 @@ body
     margin: auto
     color: css-var(text-color)
     background-color: css-var(outside-bg-color)
+    text-align: justify
 
     &::-webkit-scrollbar
         width: 10px // width of the entire scrollbar
@@ -80,23 +81,23 @@ button
     transition-duration: $transition-time
 
     // dark default
-    background-color: var(--code-bg-color)
-    color: var(--inside-bg-color)
+    background-color: css-var(code-bg-color)
+    color: css-var(inside-bg-color)
 
     @media (prefers-color-scheme: light)
-        background-color: var(--bg-color)
-        color: var(--text-color)
+        background-color: css-var(bg-color)
+        color: css-var(text-color)
 
     &:hover
         box-shadow: 5px 5px black
 
-        background-color: var(--text-color)
-        color: var(--text-color-inverse)
+        background-color: css-var(text-color)
+        color: css-var(text-color-inverse)
         filter: brightness(1.35)
 
         @media (prefers-color-scheme: light)
             background-color: rgba(221, 221, 221, 0.7)
-            color: var(--code-bg-color)
+            color: css-var(code-bg-color)
             filter: brightness(0.95)
 
     &:active // click
@@ -204,6 +205,7 @@ img
 
 p
     margin: 0.5em 0
+    text-align: justify
 
     article &
         margin: 0.25em 0 1em
@@ -235,7 +237,7 @@ li
     vertical-align: inherit
     margin: .6ch 0
 
-    &::marker
+    :not(ol &)::marker
         content: '- '
 
 h1 + h2, h2 + h3, h3 + h4
@@ -341,7 +343,7 @@ div.box
     max-width: 50rem
     margin: 2em
     border: .4ch solid black
-    padding: 3ch
+    padding: 3.25ch
     background: css-var(inside-bg-color)
     overflow-wrap: break-word
     vertical-align: middle

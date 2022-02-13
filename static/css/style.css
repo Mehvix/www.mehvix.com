@@ -29,6 +29,7 @@ body {
   margin: auto;
   color: var(--text-color);
   background-color: var(--outside-bg-color);
+  text-align: justify;
 }
 body::-webkit-scrollbar {
   width: 10px;
@@ -202,6 +203,7 @@ img {
 
 p {
   margin: 0.5em 0;
+  text-align: justify;
 }
 article p {
   margin: 0.25em 0 1em;
@@ -236,7 +238,7 @@ li {
   vertical-align: inherit;
   margin: 0.6ch 0;
 }
-li::marker {
+:not(ol li)::marker {
   content: "- ";
 }
 
@@ -347,7 +349,7 @@ div.box {
   max-width: 50rem;
   margin: 2em;
   border: 0.4ch solid black;
-  padding: 3ch;
+  padding: 3.25ch;
   background: var(--inside-bg-color);
   overflow-wrap: break-word;
   vertical-align: middle;

@@ -3,10 +3,35 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Sat, 05 Feb 2022 07:34:31 -0000</lastBuildDate>
+		<lastBuildDate>Sun, 13 Feb 2022 23:58:20 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
+		<item>
+			<author>Max Vogel</author>
+			<title>Feedback</title>
+			<pubDate>Sun, 13 Feb 2022 08:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/feedback.html</link>
+			<guid>https://mehvix.com/posts/feedback.html</guid>
+			<content:encoded><![CDATA[<article>
+<div>
+                    My mistakes and regrets are the product of my own ignorance,
+                    arrogance, and unawareness. I would much rather hear what
+                    may not be nice to hear in-the-moment than to never hear it
+                    at all—— nothing else quite jolts me 'out of my own head'
+                    and inspires conscious self-reflection to the same degree
+                    other than perhaps (romantic) rejection. If you have the
+                    spare time, I'd greatly appreciate your feedback——negative
+                    or positive, big or small——so I can recognize my
+                    <a href=&quot;https://en.wikipedia.org/wiki/Maya_(religion)#Vedanta_school&quot;>Maya</a>. You can fill out the anonymous feedback form below or
+                    <a href=&quot;https://cloud.mehvix.com/apps/forms/4nPHba8sQqbecmnN&quot;>at this link</a>. I only ask that you
+                    <a href=&quot;https://larahogan.me/blog/dont-soften-feedback/&quot;>Don't Soften Feedback</a>
+                    and, if praising,
+                    <a href=&quot;https://chrislakin.com/praise&quot;>Praise Descriptively</a>.
+                </div>
+<iframe frameborder=&quot;0&quot; height=&quot;600px&quot; src=&quot;https://cloud.mehvix.com/apps/forms/4nPHba8sQqbecmnN&quot; width=&quot;100%&quot;></iframe>
+</article>]]></content:encoded>
+		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>The Colemak Experience</title>
@@ -146,7 +171,7 @@
                         derivative of Colemak, called
                         <a href=&quot;https://colemakmods.github.io/mod-dh/&quot;>Colemak-DH</a>, which has a few other additional tweaks you can read
                         about on the website. Skim it and choose if you want it
-                        or Colemak-- it really doesn't matter all that much. One
+                        or Colemak—— it really doesn't matter all that much. One
                         minor thing is that base Colemak is included Manjaro
                         (and presumably other distros) while -DH is not (making
                         set up a bit more painful.)
@@ -361,7 +386,7 @@
                     the units <code>seconds</code> which is consistent with our
                     other for the particle to travel all paths.
                 </p>
-<h1>What does this mean and what are the limits?</h1>
+<h1>Implications given Constraint</h1>
 <p>
                     With that being said, this seems to say that travelling
                     eight blocks east and eight blocks north should take the
@@ -402,8 +427,8 @@
                     (fitting!) which is a sort of tiling switchback in that it
                     constrains you to moving like the particle in this problem.
                     It was very foggy that night, so here's a scuffed photo:
-                    <img src=&quot;/static/media/posts/PXL_20211119_022706222.jpg&quot;/>
-</p>
+                </p>
+<img src=&quot;/static/media/posts/PXL_20211119_022706222.jpg&quot;/>
 <p>---</p>
 <p>
 <i>Update #2:</i> Aidan McNabb (cowboy hat) showed me a
