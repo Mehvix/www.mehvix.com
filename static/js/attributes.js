@@ -32,6 +32,7 @@ var attr_lst = [
     'My favorite swimming-stroke is butterfly 🦋',
     "My favorite physics textbook is Morin's 'Problems and Solutions in Introductory Mechanics'",
     'My favorite band is ween.',
+    'My favorite 3D printing method is <a href="https://en.wikipedia.org/wiki/Computed_axial_lithography">CAL</a>.',
     'My eye color is <span style="color: #207708">Green</span>-<span style="color: #8E7618">Hazel</span>.',
     'My corrective lenses is -4.75 -1.00 (very poor!).',
     'My height is 6\' 1".',
