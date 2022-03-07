@@ -33,6 +33,7 @@ var attr_lst = [
     "My favorite physics textbook is Morin's 'Problems and Solutions in Introductory Mechanics'",
     'My favorite band is ween.',
     'My favorite 3D printing method is <a href="https://en.wikipedia.org/wiki/Computed_axial_lithography">CAL</a>.',
+    'My favorite girl scout cookies are the ones with coconuts.',
     'My eye color is <span style="color: #207708">Green</span>-<span style="color: #8E7618">Hazel</span>.',
     'My corrective lenses is -4.75 -1.00 (very poor!).',
     'My height is 6\' 1".',
@@ -57,7 +58,11 @@ var attr_lst = [
     'Consider the expression "The smallest positive integer not definable in under sixty letters."',
     'Time flies like an arrow; fruit flies like a banana.',
     'There is no 19th story.',
-    'Google "lavon affair."',
+    "Google 'lavon affair.'",
+    'Gods in his heaven // Alls right with the world.',
+    'Cool ranch came before ranch.',
+    "Who's Jon Corzine? I know who Rihanna is..",
+    // "It's impossible to die of alcohol poisoning.", // I'll leave this commented out, but if you are reading this we have to have a talk
 ]
 
 function randto(n) {
