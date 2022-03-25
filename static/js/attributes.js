@@ -62,7 +62,9 @@ var attr_lst = [
     'Gods in his heaven // Alls right with the world.',
     'Cool ranch came before ranch.',
     "Who's Jon Corzine? I know who Rihanna is..",
-    // "It's impossible to die of alcohol poisoning.", // I'll leave this commented out, but if you are reading this we have to have a talk
+    '211 8.1%; whatchu know bout that?',
+    'Buy real estate in imaginary places.',
+    // "It's impossible to die of alcohol poisoning.",
 ]
 
 function randto(n) {
