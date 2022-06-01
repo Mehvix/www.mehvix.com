@@ -76,8 +76,12 @@ input
     &[type="radio"]
         width: unset
 
-    &[type="button"]:focus
-        background-color: css-var(outside-bg-color)
+    progress,
+    &[type="radio"],
+    &[type="range"],
+    &[type="button"],
+    &[type="checkbox"]:focus
+        accent-color: css-var(outside-bg-color)
 
 button
     font-size: 16px
