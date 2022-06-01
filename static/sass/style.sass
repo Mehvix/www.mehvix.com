@@ -58,22 +58,26 @@ body
         border: 2px solid css-var(inside-bg-color) // creates padding around scroll thumb
 
 input
-    font-family: 'PT Mono', monospace !important
-    background-color: css-var(code-bg-color)
-    color: css-var(inside-bg-color)
+    &[type="text"]
+        font-family: 'PT Mono', monospace !important
+        background-color: css-var(code-bg-color)
+        color: css-var(inside-bg-color)
 
-    border-radius: $code-radius
-    width: 100%
-    font-size: $font-size
-    height: 2.5em
-    padding: 0.5ch 0.5ch 0.5ch 0.75ch
+        border-radius: $code-radius
+        width: 100%
+        font-size: $font-size
+        height: 2.5em
+        padding: 0.5ch 0.5ch 0.5ch 0.75ch
 
-    box-sizing: border-box
-    box-shadow: 4px 4px black
-    border-style: outset
+        box-sizing: border-box
+        box-shadow: 4px 4px black
+        border-style: outset
 
     &[type="radio"]
         width: unset
+
+    &[type="button"]:focus
+        background-color: css-var(outside-bg-color)
 
 button
     font-size: 16px
