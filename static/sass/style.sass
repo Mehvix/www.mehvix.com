@@ -301,14 +301,16 @@ s
     background-image: linear-gradient(transparent .5em,#000000 .5em,#000000 9px,transparent 9px)
     // ^make strike line thicc
 
-a button[disabled],
-button[disabled],
-input[type="submit"][disabled],
-input[type="reset"][disabled],
-input[type="button"][disabled]
-    cursor: default
-    opacity: .5
-    cursor: not-allowed // Set the [X] cursor while hovering a disabled link
+a button,
+button,
+textarea,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]
+    &[disabled], &[readonly]
+        cursor: default
+        cursor: not-allowed // Set the [X] cursor while hovering a disabled link
+        opacity: .5
 
 // =====================
 // === IDs / Uniques ===
