@@ -58,6 +58,9 @@ body
         border: 2px solid css-var(inside-bg-color) // creates padding around scroll thumb
 
 input
+    &, & + label, label + &
+        cursor: pointer
+
     &[type="text"]
         font-family: 'PT Mono', monospace !important
         background-color: css-var(code-bg-color)
@@ -80,8 +83,11 @@ input
     &[type="radio"],
     &[type="range"],
     &[type="button"],
-    &[type="checkbox"]:focus
+    &[type="checkbox"]:checked
         accent-color: css-var(outside-bg-color)
+
+*:focus-visible
+    outline: css-var(outside-bg-color) auto 1px
 
 button
     font-size: 16px
