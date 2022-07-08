@@ -16,7 +16,6 @@ var attr_lst = [
     'I <s>know</s> used to know <code>-- --- .-. ... . / -.-. --- -.. ..</code>',
     'My teeth parity is odd (I was born without a tooth.)',
     'I have an irrational fear of eels.',
-    'My dad wanted to name me Jimi after Hendrix.',
     'I have <a href="//en.wikipedia.org/wiki/Synesthesia">projective synesthesia</a> in response to music.',
     'I have <a href="//en.wikipedia.org/wiki/Photic_sneeze_reflex">ACHOO syndrome</a>, inherited from my mom.',
     'Max is short for Maxabillion.',
@@ -58,12 +57,15 @@ var attr_lst = [
     'My favorite swimming-stroke is butterfly 🦋',
     "My favorite physics textbook is Morin's <i>Introductory Mechanics</i>",
     'My favorite band is ween.',
+    'My favorite Pink Floyd song is Alan\'s Psychedelic Breakfast.',
+    'My dad wanted to name me Jimi after Hendrix.',
     'My favorite 3D printing method is <a href="https://en.wikipedia.org/wiki/Computed_axial_lithography">CAL</a>-- Go Bears!',
     'My favorite girl scout cookies are the ones with the coconuts.',
     'My favorite greek letter is ɣ.',
     'My favorite book is <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">GEB</a>.',
     'My favorite music video is <a href="https://www.youtube.com/watch?v=uURB-vo9rZ4">Revolution 909</a>.',
     'My favorite documentary is Adam Curtis\' <a href="https://www.imdb.com/title/tt13973190/">Can\'t Get You Out of My Head</a>.',
+    'My favorite comic is Norm.',
     // .
     "I don't believe in astrology; I'm a Leo and we're all so smart and would never believe in something so silly.",
     "There's nothing worse than people who don't understand hyperbole.",
@@ -83,6 +85,11 @@ var attr_lst = [
     'Everything is vanity.',
     '"I" am the source of my desires.',
     "People from Ireland: they tell you they're from Ireland.",
+    "Everything that is solid melts into air.",
+    "All work and no play makes Jack a dull boy.",
+    "My favorite painter is Carroll Dunham.",
+    "If while washing dishes, we think only of the cup of tea that awaits us, thus hurrying to get the dishes out of the way as if they were a nuisance, then we are not “washing the dishes to wash the dishes.” What’s more, we are not alive during the time we are washing the dishes. In fact we are completely incapable of realizing the miracle of life while standing at the sink. If we can’t wash the dishes, the chances are we won’t be able to drink our tea either. While drinking the cup of tea, we will only be thinking of other things, barely aware of the cup in our hands. Thus we are sucked away into the future—and we are incapable of actually living one minute of life.",
+    "Pride is a sin.",
     // > videos
     'Cool ranch came before ranch.',
     "Who's Jon Corzine? I know who Rihanna is..",
@@ -94,13 +101,13 @@ var attr_lst = [
     'Dismiss this line--',
     "I'm on a journey to the center of three",
     "I'll frequently check credit at (Moral) bank (hole in wall).",
-]
+];
 
 function randto(n) {
-    return Math.floor(Math.random() * (n - 1))
+    return Math.floor(Math.random() * (n - 1));
 }
 
-attr_element = document.getElementById('attribute')
-attr_selected = attr_lst[randto(attr_lst.length)]
+attr_element = document.getElementById('attribute');
+attr_selected = attr_lst[randto(attr_lst.length)];
 
 // todo make this not random, but cycle (or not repeat, somehow)
