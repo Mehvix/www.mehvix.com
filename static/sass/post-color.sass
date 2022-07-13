@@ -1,92 +1,46 @@
-/* BG Shadow CSS */
-/* todo this sucks but is okay atm */
-#feedback
+@mixin post($color, $text: var(--inside-bg-color), $marker: "*")
     box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #920954
+    box-shadow: inset 0 -0.14em 0 $color
 
     &:hover
-        background-color: #920954
+        background-color: $color
+        color: $text
+
+#feedback
+    @include post(#920954)
 
 #colemak-experience
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #2943b6
-
-    &:hover
-        background-color: #2943b6
+    @include post(#2943b6)
 
 #pass
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #b92626
-
-    &:hover
-        background-color: #b9262e
+    @include post(#b92626)
 
 #tiling-distance
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #004a5d
-
-    &:hover
-        background-color: #004a5d
+    @include post(#004a5d)
 
 #plans-2021
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #ee3f8c
-
-    &:hover
-        background-color: #ee3f8c
+    @include post(#ee3f8c)
 
 #aops-rss
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #42c2cb
-
-    &:hover
-        background-color: #42c2cb
+    @include post(#42c2cb)
 
 #use-www
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #199209
-
-    &:hover
-        background-color: #199209
+    @include post(#199209)
 
 #win-insecure-files
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #0072c6
-
-    &:hover
-        background-color: #0072c6
+    @include post(#0072c6)
 
 #what-is-this
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #093e92
-
-    &:hover
-        background-color: #093e92
+    @include post(#093e92)
 
 #calyx
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #7cab2b
-
-    &:hover
-        background-color: #7cab2b
+    @include post(#7cab2b)
 
 #twitter
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #15202b
-
-    &:hover
-        background-color: #15202b
+    @include post(#15202b)
 
 #nextcloud-calendar
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #d06500
-
-    &:hover
-        background-color: #d06500
+    @include post(#d06500)
 
 #nextcloud-guide
-    box-shadow: inherit
-    box-shadow: inset 0 -0.14em 0 #003354
-
-    &:hover
-        background-color: #003354
+    @include post(#003354)

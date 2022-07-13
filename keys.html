@@ -1,138 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Default Required Resources -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=569,
-    maximum-scale=1"
-        />
-        <link
-            rel="alternate"
-            type="application/rss+xml"
-            title="Blog RSS"
-            href="//mehvix.com/posts/rss.xml"
-        />
-        <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
-        <script src="/static/js/include.js"></script>
 
-        <!-- HLJS (try and remove if not used) -->
-        <!-- https://cdnjs.com/libraries/highlight.js -->
-        <link
-            type="text/css"
-            rel="stylesheet"
-            href="/static/css/atom-one-dark.css"
-        />
-        <script
-            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
-            integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
-        <script>
-            hljs.highlightAll()
-        </script>
+<head>
+    <!-- Default Required Resources -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=569,
+    maximum-scale=1" />
+    <link rel="alternate" type="application/rss+xml" title="Blog RSS" href="//mehvix.com/posts/rss.xml" />
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="/static/js/include.js"></script>
 
-        <title>Mehvix | Keys</title>
-        <style>
-            :root {
-                --code-bg-color: #210124 !important;
-                --outside-bg-color: #210124 !important;
+    <!-- HLJS (try and remove if not used) -->
+    <!-- https://cdnjs.com/libraries/highlight.js -->
+    <link type="text/css" rel="stylesheet" href="/static/css/atom-one-dark.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
+        integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        hljs.highlightAll()
+    </script>
+
+    <title>Mehvix | Keys</title>
+    <style>
+        :root {
+            --code-bg-color: #210124 !important;
+            --outside-bg-color: #210124 !important;
+        }
+
+    </style>
+
+    <script>
+        function copyText(id) {
+            var textToCopy = document.getElementById(id);
+
+            var currentRange;
+            if (document.getSelection().rangeCount > 0) {
+                currentRange = document.getSelection().getRangeAt(0);
+                window.getSelection().removeRange(currentRange);
+            } else {
+                currentRange = false;
             }
-        </style>
 
-        <script>
-            function copyText(id) {
-                var textToCopy = document.getElementById(id)
+            var CopyRange = document.createRange();
+            CopyRange.selectNode(textToCopy);
+            window.getSelection().addRange(CopyRange);
+            document.execCommand('copy');
 
-                var currentRange
-                if (document.getSelection().rangeCount > 0) {
-                    currentRange = document.getSelection().getRangeAt(0)
-                    window.getSelection().removeRange(currentRange)
-                } else {
-                    currentRange = false
-                }
+            window.getSelection().removeRange(CopyRange);
 
-                var CopyRange = document.createRange()
-                CopyRange.selectNode(textToCopy)
-                window.getSelection().addRange(CopyRange)
-                document.execCommand('copy')
-
-                window.getSelection().removeRange(CopyRange)
-
-                if (currentRange) {
-                    window.getSelection().addRange(currentRange)
-                }
+            if (currentRange) {
+                window.getSelection().addRange(currentRange);
             }
-        </script>
-    </head>
+        }
+    </script>
+</head>
 
-    <body>
-        <div class="box">
-            <div class="nav">
-                <a href="./index.html">~</a>/<a href="" class="inverse-bg"
-                    >Keys</a
-                >
-            </div>
+<body>
+    <div class="box">
+        <div class="nav">
+            <a href="./index.html">~</a>/<a href="" class="inverse-bg">Keys</a>
+        </div>
 
-            <h1>Matrix</h1>
-            <ul style="font-weight: 500">
-                <li>Element Desktop (Windows): <code>RQHVDPLNIL</code></li>
-                <li>Element Desktop (Linux): <code>OLBDXYXCNV</code></li>
-                <li>Element Android: <code>NUOPAMGSIG</code></li>
-            </ul>
+        <h1>Matrix</h1>
+        <ul style="font-weight: 500">
+            <li>Element Desktop (Windows): <code>RQHVDPLNIL</code></li>
+            <li>Element Desktop (Linux): <code>OLBDXYXCNV</code></li>
+            <li>Element Android: <code>NUOPAMGSIG</code></li>
+        </ul>
 
-            <h1>PGP Keys</h1>
-            <h2>Keybase</h2>
-            Grab all keys on my
-            <a href="https://keybase.io/mehvix">Keybase account</a>:
-            <pre><code class="pgp language-sh"># curl + gpg pro tip import mehvix's keys
+        <h1>PGP Keys</h1>
+        <h2>Keybase</h2>
+        Grab all keys on my
+        <a href="https://keybase.io/mehvix">Keybase account</a>:
+        <pre><code class="pgp language-sh"># curl + gpg
 curl https://keybase.io/mehvix/pgp_keys.asc | gpg --import
-                
-# the Keybase app can push to gpg keychain, too
+
+# keybase
 keybase pgp pull mehvix</code></pre>
 
-            <h2>ProtonMail PGP</h2>
-            <p>
-                Most email sent to @[this domain] goes to ProtonMail. If you
-                trust ProtonMail, use this key. If you don't, use my
-                <a href="#pgp-personal">personal key</a> below.
-            </p>
-            <ul>
-                <li>
-                    ProtonMail API:
-                    <a
-                        href="//api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com"
-                        >Download</a
-                    ><br />
-                </li>
-                <li>
-                    mehvix.com:
-                    <a href="./static/media/mehvix@protonmail.com.asc"
-                        >Download</a
-                    ><br />
-                </li>
-                <li>
-                    mehvix.com:
-                    <a href="javascript:;" onclick="copyText('pgp-pm')"
-                        >Copy to clipboard</a
-                    >
-                </li>
-                <li>
-                    Fingerprint:
-                    <code>A7969972931732460A6D49F7DA2E597476F671AA</code>
-                </li>
-                <li>
-                    Primary Key-ID:
-                    <code>DA2E 5974 76F6 71AA</code>
-                </li>
-            </ul>
-            <pre><code class="pgp select-all language-sh no-scroll">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
+        <h2>ProtonMail PGP</h2>
+        <p>
+            Most email sent to @[this domain] goes to ProtonMail. If you
+            trust ProtonMail, use this key. If you don't, use my
+            <a href="#pgp-personal">personal key</a> below.
+        </p>
+        <ul>
+            <li>
+                ProtonMail API:
+                <a href="//api.protonmail.ch/pks/lookup?op=get&search=mehvix@protonmail.com">Download</a><br />
+            </li>
+            <li>
+                mehvix.com:
+                <a href="./static/media/mehvix@protonmail.com.asc">Download</a><br />
+            </li>
+            <li>
+                mehvix.com:
+                <a href="javascript:;" onclick="copyText('pgp-pm')">Copy to clipboard</a>
+            </li>
+            <li>
+                Fingerprint:
+                <code>A7969972931732460A6D49F7DA2E597476F671AA</code>
+            </li>
+            <li>
+                Primary Key-ID:
+                <code>DA2E 5974 76F6 71AA</code>
+            </li>
+        </ul>
+        <pre><code class="pgp select-all language-sh no-scroll">curl -L https://mehvix.com/static/media/mehvix@protonmail.com.asc | gpg --import</code></pre>
 
-            <details>
-                <summary>Reveal ProtonMail Key</summary>
-                <pre><code id="pgp-pm" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
+        <details>
+            <summary>Reveal ProtonMail Key</summary>
+            <pre><code id="pgp-pm" class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: ProtonMail
 
 xsBNBFwGCl4BCACpgPGL6hTyM+t9CloUGX8e2SLPAxtvLPlsrPoDS81cMEhQ
@@ -164,42 +142,38 @@ DgDijjaudFqQR/3Vt18G2rMYIgvs0Se184IyAWkFnbZae+e0aBBxRjK+K84B
 LKutr+KwFwaJLLcqxjciyMueRAnPoKrodbIZ+ALMR2GMhJD6y7RuDBm1ll7c
 =SbG5
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
-            </details>
+        </details>
 
-            <br />
-            <h2>Personal PGP</h2>
-            <p>
-                For if you don't trust ProtonMail or you're contacting me
-                through something other than email.
-            </p>
-            <ul>
-                <li>
-                    mehvix.com:
-                    <a href="./static/media/Max Vogel_0x8DDCB0EF_public.asc"
-                        >Download</a
-                    ><br />
-                </li>
-                <li>
-                    mehvix.com:
-                    <a href="javascript:;" onclick="copyText('pgp-personal')"
-                        >Copy to clipboard</a
-                    >
-                </li>
-                <li>
-                    Fingerprint:
-                    <code>4C0719541B56135DDED18C86716AED528DDCB0EF</code>
-                </li>
-                <li>
-                    Primary Key-ID:
-                    <code>716A ED52 8DDC B0EF</code>
-                </li>
-            </ul>
-            <pre><code class="pgp select-all language-sh no-scroll">curl -L https://www.mehvix.com/static/media/Max%20Vogel_0x8DDCB0EF_public.asc | gpg --import</code></pre>
+        <br />
+        <h2>Personal PGP</h2>
+        <p>
+            For if you don't trust ProtonMail or you're contacting me
+            through something other than email.
+        </p>
+        <ul>
+            <li>
+                mehvix.com:
+                <a href="./static/media/Max Vogel_0x8DDCB0EF_public.asc">Download</a><br />
+            </li>
+            <li>
+                mehvix.com:
+                <a href="javascript:;" onclick="copyText('pgp-personal')">Copy to clipboard</a>
+            </li>
+            <li>
+                Fingerprint:
+                <code>4C0719541B56135DDED18C86716AED528DDCB0EF</code>
+            </li>
+            <li>
+                Primary Key-ID:
+                <code>716A ED52 8DDC B0EF</code>
+            </li>
+        </ul>
+        <pre><code class="pgp select-all language-sh no-scroll">curl -L https://www.mehvix.com/static/media/Max%20Vogel_0x8DDCB0EF_public.asc | gpg --import</code></pre>
 
-            <details id="pgp-personal">
-                <summary>Reveal Personal Key</summary>
+        <details id="pgp-personal">
+            <summary>Reveal Personal Key</summary>
 
-                <pre><code  class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
+            <pre><code  class="select-all language-diff">-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBGEQQXYBEACeHbxJ976g7UoZfhrklvWRsbPGknVzat9RwOGlej1Cld3WNGB+
 EJGLQRTtiraZaHo2Y3NW9wYT6sBBG+Ej10VOtY/LCkX3ZR62u3ttq6YSavsJUVzZ
@@ -250,30 +224,31 @@ Ooo2EjY2W9N6CwefkV5bYp8UM4iapYbZo24f8biRe9euPQx1qIuQNHnUVKeKGo+j
 BiuehVc+/HmZIyUt31m6fMLf191XIoUxjSBQE3uidRN0Kb5giuQ=
 =nTuc
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
-            </details>
+        </details>
 
-            <div id="footer">
-                <table id="footerTable">
-                    <tr>
-                        <td>$BTC</td>
-                        <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
-                    </tr>
-                    <tr>
-                        <td>$XMR</td>
-                        <td>
-                            45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>$ETH</td>
-                        <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
-                    </tr>
-                    <tr>
-                        <td id="footerDateYear">2021</td>
-                        <td>Max Vogel</td>
-                    </tr>
-                </table>
-            </div>
+        <div id="footer">
+            <table id="footerTable">
+                <tr>
+                    <td>$BTC</td>
+                    <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
+                </tr>
+                <tr>
+                    <td>$XMR</td>
+                    <td>
+                        45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
+                    </td>
+                </tr>
+                <tr>
+                    <td>$ETH</td>
+                    <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
+                </tr>
+                <tr>
+                    <td id="footerDateYear">2021</td>
+                    <td>Max Vogel</td>
+                </tr>
+            </table>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

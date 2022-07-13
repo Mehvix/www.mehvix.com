@@ -61,20 +61,26 @@ input
     &, & + label, label + &
         cursor: pointer
 
-    &[type="text"]
+    &[type="text"],
+    &[type="number"]
         font-family: 'PT Mono', monospace !important
         background-color: css-var(code-bg-color)
         color: css-var(inside-bg-color)
 
         border-radius: $code-radius
-        width: 100%
         font-size: $font-size
-        height: 2.5em
         padding: 0.5ch 0.5ch 0.5ch 0.75ch
+        margin: .5ch
+
+        height: 2.5em
+        max-width: 98%
 
         box-sizing: border-box
         box-shadow: 4px 4px black
         border-style: outset
+
+    &[type="text"]
+        width: 98%
 
     &[type="radio"]
         width: unset
@@ -293,6 +299,7 @@ h3
 
 select:focus,
 input:focus,
+textarea:focus,
 datalist:focus
     outline: 0 solid transparent !important
 
