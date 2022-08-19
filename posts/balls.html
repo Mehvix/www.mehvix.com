@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Default Required Resources -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=569,
+        maximum-scale=1" />
+    <link rel="alternate" type="application/rss+xml" title="Blog RSS" href="//mehvix.com/posts/rss.xml" />
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="/static/js/include.js"></script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"],
+                ],
+            },
+            svg: {
+                fontCache: "global",
+            },
+            loader: { load: ["input/tex", "output/svg"] },
+        };
+    </script>
+
+    <link rel="stylesheet" href="/static/css/posts/balls.css">
+    <title>Mehvix | It's all Balls (and Bins)</title>
+    <style>
+        :root {
+            --outside-bg-color: #f29900;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="nav">
+            <a href="/">~</a>/<a href="/posts/">Posts</a>/<a href="" class="inverse-bg">It's all Balls (and Bins)</a>
+        </div>
+
+        <br>
+
+        <article>
+            <div>
+                <span>
+                    $$x_1 + x_2 + x_3 + x_4 + x_5 = 50$$
+
+                    $50$ balls, $5$ bins: ${50 + 5 - 1 \choose 5 - 1}$
+                </span>
+                <!-- <span>
+                    $$x_1 \leq x_2 \leq x_3 \leq x_4 \leq x_5$$
+
+                    $10$ bins of each digit, and $5$ balls: ${10+5-1 \choose 5-1}$. Remember that order does not matter.
+                </span> -->
+                <span>
+                    $$x_1 + x_2 + x_3 + x_4 + x_5 \leq 50$$
+
+                    $\sum_1^5 x_i = n$ with excess of $50-n$ which we can place in an extra bin: $50$ balls, $6$ bins:
+                    ${50
+                    + 6
+                    - 1 \choose 6 - 1}$
+                </span>
+                <span>
+                    $$x_1 + x_2 + x_3 + x_4 + x_5 = 50$$
+                    $$\text{st } (\forall i \in [5])(x_i \geq 1)$$
+
+                    Distribute $5$ beforehand, leaving $45$ balls still to be distributed: ${45 + 5 - 1
+                    \choose 5 - 1}$
+                </span>
+                <span>
+                    $$x_1 + x_2 + x_3 + x_4 + x_5 = 50$$
+                    $$\text{st } (\forall i \in [5])(x_i \geq i)$$
+
+                    Distribute $1,\dots,5$ beforehand, leaving $50-\sum_1^5i = 35$ balls still to be distributed: ${35 +
+                    5 -
+                    1
+                    \choose 5 - 1}$
+                </span>
+                <span>
+                    $$x_1 + x_2 + x_3 + x_4 + x_5 = 50$$
+                    $$\text{st } (\exists \gamma \in [50])(x_1 \leq \gamma)$$
+
+                    This is the very first case, excluding those when $x_1 > \gamma$. That is, when we have $50 -
+                    \gamma$
+                    left to distribute. Thus we can take our first case and pattern-match with the prior case: ${50 + 5
+                    - 1 \choose 5 - 1} - {(50-\gamma) + 5 - 1 \choose 5 - 1}$
+                </span>
+            </div>
+
+            <hr>
+
+            <p>
+                Huh? See <a href="https://en.wikipedia.org/wiki/Balls_into_bins_problem">Balls into bins
+                    problem</a>.
+            </p>
+
+        </article>
+
+        <div id="footer">
+            <table id="footerTable">
+                <tr>
+                    <td>$BTC</td>
+                    <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
+                </tr>
+                <tr>
+                    <td>$XMR</td>
+                    <td>
+                        45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
+                    </td>
+                </tr>
+                <tr>
+                    <td>$ETH</td>
+                    <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
+                </tr>
+                <tr>
+                    <td id="footerDateYear">2021</td>
+                    <td>Max Vogel</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

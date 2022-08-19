@@ -3,10 +3,15 @@
 // =================
 // === Variables ===
 // =================
-$font-size: 14px
+$font-size: 12px
 $code-radius: 5px
 $transition-time: 250ms
 $border-dash: 1px dashed css-var(text-color)
+
+$box-padding: 2em
+$body-width: 52em
+$body-margin-top: 3em
+$body-margin-side: 2em
 
 \:root
     --inside-bg-color: #e2e5e2
@@ -40,7 +45,7 @@ body
     font-family: 'PT Mono', monospace !important
     font-weight: 400
     font-size: $font-size
-    max-width: 42em
+    max-width: $body-width
     margin: auto
     color: css-var(text-color)
     background-color: css-var(outside-bg-color)
@@ -96,7 +101,7 @@ input
     outline: css-var(outside-bg-color) auto 1px
 
 button
-    font-size: 16px
+    font-size: 150%
     font-family: inherit
     padding: 0.4ch 0.8ch
     margin: 0.4em 0.2em
@@ -324,6 +329,7 @@ input[type="button"]
 // =====================
 
 #footer
+    $footer-text-w: 7ch
     padding-top: 1em
     width: 100%
 
@@ -344,15 +350,17 @@ input[type="button"]
             padding: 0
 
             &:nth-of-type(1)
-                min-width: 7ch !important
+                min-width: $footer-text-w
 
                 &::after
                     content: ' /'
 
             &:nth-of-type(2)
-                max-width: 46.5ch // todo this isn't great
+                max-width: calc($body-width - $footer-text-w - 2*$body-margin-side - 2*$box-padding - 1ch)
                 overflow: auto
                 display: flex
+                // overflow: clip
+            // overflow-clip-margin: 0
 
 // these should've been IDs
 div.nav
@@ -370,15 +378,21 @@ div.nav
             font-weight: 600
 
 div.box
-    max-width: 50rem
-    margin: 2em
-    border: .4ch solid black
-    padding: 3.25ch
+    padding: $box-padding
+
+    // max-width: 50rem
+    margin: $body-margin-top $body-margin-side
+    border: .5ch solid black
+
+    overflow: hidden
+
     background: css-var(inside-bg-color)
     overflow-wrap: break-word
     vertical-align: middle
-    margin-top: 3em
     box-shadow: 1.5ch 1.5ch black
+
+    & span
+        max-width: calc(100% - $box-padding)
 
 // ===============
 // === Classes ===

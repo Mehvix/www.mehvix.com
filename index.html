@@ -33,75 +33,11 @@
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦧</text></svg>" />
 
+    <link rel="stylesheet" href="/static/css/home.css">
     <title>Mehvix | Home</title>
     <style>
         :root {
             --outside-bg-color: #920909;
-        }
-
-        h3 {
-            margin-bottom: 0%;
-        }
-
-        code {
-            margin: auto 0.5ch;
-        }
-
-        tr.no-line>td:nth-of-type(1)::before {
-            content: ' ' !important;
-        }
-
-        table.about {
-            width: 100%;
-        }
-
-        table.about>tbody>tr>td:nth-of-type(1) {
-            vertical-align: top;
-            white-space: nowrap;
-            width: min-content;
-        }
-
-        table.about>tbody>tr>td:nth-of-type(1)::before {
-            content: '- ';
-        }
-
-        table.about>tbody>tr>td:nth-of-type(2):before {
-            content: '/ ';
-        }
-
-        table.about>tbody>tr>td:nth-of-type(2) {
-            padding: 0 0 0 1ch;
-        }
-
-        /* For dropdown img */
-        .visible {
-            display: block;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* For attr */
-        @font-face {
-            font-family: 'Aachen-Bold';
-            src: url('/static/font/Aachen-Bold.woff2') format('woff2');
-        }
-
-        .pulp-fiction {
-            font-family: 'Aachen-Bold';
-            font-size: 95%;
-        }
-
-        @font-face {
-            font-family: 'aoe2';
-            src: url('/static/font/CentaurMT.woff2') format('woff2');
-        }
-
-        .aoe2 {
-            font-family: 'aoe2';
-            font-weight: bolder;
-            font-size: 110%;
         }
 
     </style>
@@ -124,27 +60,11 @@
                 username for most things on the web — I'm sure you can
                 figure out what it means. Here is a
                 <a href="./static/media/home/me/gmaps2.png">photo of me</a><img alt="Expand image"
-                    src="/static/media/expandoImage.svg" class="dropdown" onclick="toggleImage(me)"
-                    style="margin-left: 0.5ch" /><img alt="Me!" id="me" src="/static/media/home/me/gmaps2.png"
-                    style="width: 100%; margin: 1% 0" class="hidden" />
+                    src="/static/media/expandoImage.svg" class="dropdown"
+                    onclick="toggleImage(me)" "margin-left: 0.5ch" /><img alt="Me!" id="me"
+                    src="/static/media/home/me/gmaps2.png" style="width: 100%; margin: 1% 0; display: block"
+                    class="hidden" />
                 on Google Maps in 2007.
-                <!-- Here’s a
-                    <a href="./static/media/home/me/IMG_20191020_011042.jpg"
-                        >photo of me</a
-                    ><img
-                        alt="Expand image"
-                        src="/static/media/expandoImage.svg"
-                        class="dropdown"
-                        onclick="toggleImage(me)"
-                        style="margin-left: 0.5ch"
-                    /><img
-                        alt="Me!"
-                        id="me"
-                        src="/static/media/home/me/IMG_20191020_011042.jpg"
-                        style="width: 100%; margin: 1% 0"
-                        class="hidden"
-                    />
-                    at UW-Madhacks 2019. -->
                 Right now I'm a second-year at
                 <a href="//www.berkeley.edu/">UC Berkeley</a> majoring in
                 <a href="//eecseecs.com/">EECS</a> and perhaps the
@@ -154,18 +74,20 @@
                 free time I enjoy
                 <a href="http://www.cracoviafoilfencing.com/">foil fencing</a>,
                 <a href="//www.instagram.com/tyrolbasinparks/">snowboarding park</a>,
-                <a href="/static/media/home/IMG_20210616_131213.jpg">hiking earth</a>, among creating things I find
-                interesting: I'm an amateur
+                <a href="/static/media/home/IMG_20210616_131213.jpg">hiking earth</a>, among creating things: I'm an
+                amateur
                 <a href="//cloud.mehvix.com">server admin</a>, gourmet
                 <a href="/static/media/home/for-fun.png">mycologist</a>,
                 3D-printing cybernaut, and
                 <a href="/static/media/home/20210816-001132.png">pyrotechnic</a>
-                (in that order, least to most amateur). Fun fact:
+                (in that order, least to most amateur).<br>
+                Fun fact:
                 <script>
                     document.write(attr_selected)
                 </script>
-                <noscript>If you enabled JavaScript, this sentence becomes much
-                    more fun.</noscript>
+                <noscript>
+                    If you enabled JavaScript, this sentence becomes much more fun.
+                </noscript>
             </p>
         </div>
 
@@ -176,6 +98,9 @@
                 Berkeley / the bay area and want to grab coffee (or go
                 <a href="/static/media/home/steam-tunnel.jpeg">steam tunneling</a>) sometime, reach out!
             </p>
+            <p>Also, I am a <a href="https://signal.org/">Signal</a> fanatic —— I use it to reach
+                everyone from my roommates to my grandparents. If you don't
+                have my number, shoot me an email with yours.</p>
             <div>
                 <table class="about">
                     <tr>
@@ -186,7 +111,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Signal<sup>1</sup></td>
+                        <td>Signal</td>
                         <td>[phone number, email me yours]</td>
                     </tr>
                     <tr>
@@ -200,10 +125,11 @@
                         <td>Discord</td>
                         <td>
                             <span class="select-all">Mehvix#7966</span>
-                            <wbr />(<a href="//stallman.org/discord.html">if possible, don't use</a>)
+                            <wbr />(<a href="//stallman.org/discord.html">if possible, don't use!</a>)
                         </td>
                     </tr>
-                    <tr>
+                    <!-- I do not actively used session. -->
+                    <!-- <tr>
                         <td>Session</td>
                         <td style="vertical-align: middle">
                             <img alt="Session QR Expand" src="/static/media/expandoImage.svg" class="dropdown"
@@ -214,29 +140,13 @@
                                         display: inline;
                                     " />
                             <pre
-                                style="
-                                        margin: 0;
-                                        display: inline;
-                                        float: right;
-                                    "><code style="margin: 0; width: 52vw; max-width: 41.45ch;" class="no-scroll select-all">054d937b2d1395f1560551eeb1552e3e60308c0350623c92ad7f6f31e3411f161a</code></pre>
-                            <!--fuck you firefox-->
+                                style="margin: 0; display: inline; float: right;"><code style="margin: 0; width: 52vw; max-width: 41.45ch;" class="no-scroll select-all">054d937b2d1395f1560551eeb1552e3e60308c0350623c92ad7f6f31e3411f161a</code></pre>
                         </td>
-                    </tr>
+                    </tr> -->
+                    <!-- <img alt="Session QR" id="session" src="/static/media/home/session-qr.png"
+                        style="width: 25ch; margin-left: 32ch; position: absolute;" class="hidden" /> -->
                 </table>
-
-                <img alt="Session QR" id="session" src="/static/media/home/session-qr.png" style="
-                            width: 25ch;
-                            margin-left: 32ch;
-                            position: absolute;
-                        " class="hidden" />
             </div>
-
-            <p style="font-size: 85%">
-                <sup>1</sup>I <b><i>heavily</i></b> prefer
-                <a href="https://signal.org/">Signal</a>——I use it to reach
-                everyone from my roommates to my grandparents. If you don't
-                have my number, shoot me an email with yours.
-            </p>
         </div>
 
         <div>
@@ -248,49 +158,37 @@
                     <a href="//scratch.mit.edu/users/maxninja/">Scratch</a>.
                 </li>
                 <li>
-                    Judge my
-                    <a href="//stackoverflow.com/users/7833617/">Stack Overflow</a>
-                    answers.
+                    Judge my <a href="//stackoverflow.com/users/7833617/">Stack Overflow</a> answers.
                 </li>
                 <li>
                     Jam out to my
                     <a href="//open.spotify.com/user/mehvix">Spotify</a>
                     playlists or
-                    <a href="//musictaste.space/request/radiant-sheep-192">compare our tastes</a>.
+                    <a href="//musictaste.space/request/welcome-potato-808">compare our tastes</a>.
                 </li>
                 <li>
-                    Connect on the corporate cesspool
-                    <a href="//www.linkedin.com/in/mehvix/">LinkedIn</a>.
+                    Connect on the corporate cesspool <a href="//www.linkedin.com/in/mehvix/">LinkedIn</a>.
                 </li>
                 <li>
-                    Verify I am who I say I am through
-                    <a href="//keybase.io/mehvix/">Keybase</a>.
+                    Verify I am who I say I am through <a href="//keybase.io/mehvix/">Keybase</a>.
                 </li>
                 <li>
-                    Stalk what I('m) read(ing) on
-                    <a href="//www.goodreads.com/mehvix/">GoodReads</a>.
+                    Stalk what I'm reading on <a href="//www.goodreads.com/mehvix/">GoodReads</a>.
                 </li>
                 <li>
-                    See how many hours I've wasted away on
-                    <a href="//steamcommunity.com/id/Mehvix/">Steam</a> and
-                    <a href="//rgl.gg/Public/PlayerProfile.aspx?p=76561198127743698&r=40">RGL</a>.
+                    See how many hours I've wasted away on <a href="//steamcommunity.com/id/Mehvix/">Steam</a> and <a
+                        href="//rgl.gg/Public/PlayerProfile.aspx?p=76561198127743698&r=40">RGL</a>.
                 </li>
                 <li>
-                    Watch Jon Bois' copyright-claimed magnum opus I've
-                    archived on
-                    <a
-                        href="https://odysee.com/@Mehvix:4/%27WHY-DO-I-CHOOSE-THIS-FOR-A-LIVING%27----Jon-Bois-Pretty-Good-E8:2">Odysee</a>
-                    +
-                    <a href="//www.youtube.com/watch?v=bDt90EyZnWA">Youtube</a><span
+                    Watch Jon Bois' copyright-claimed magnum opus on <a
+                        href="//odysee.com/@Mehvix:4/%27WHY-DO-I-CHOOSE-THIS-FOR-A-LIVING%27----Jon-Bois-Pretty-Good-E8:2">Odysee</a>
+                    + <a href="//www.youtube.com/watch?v=bDt90EyZnWA">Youtube</a><span
                         title="just follow the first rule of fight club">*</span>.
                 </li>
-                <!-- todo: uncomment when resume updated -->
-                <!-- later note: ehhhh most ppl who list resume on their personal websites tend to be asses -->
-                <!-- if you're reading this hi! I'll leave this link in as an easter egg now please hire me -->
                 <!-- <li>
                         Resumé
                         <a
-                            href="https://cloud.mehvix.com/s/ePa34QwXgT4D29j"
+                            href="//cloud.mehvix.com/s/ePa34QwXgT4D29j"
                             >Link</a
                         >
                     </li> -->
@@ -302,8 +200,12 @@
             <ul>
                 <li>
                     <a href="posts">Blog</a> (<a href="posts/rss.xml">RSS</a>)
-                    <!-- todo automate this -->
                     <ul class="sub-posts">
+                        <!-- todo automate this -->
+                        <li>
+                            22-08-13 ::
+                            <a href="posts/balls.html" id="feedback">It's all Balls</a>
+                        </li>
                         <li>
                             22-02-13 ::
                             <a href="posts/feedback.html" id="feedback">Feedback</a>
@@ -311,10 +213,6 @@
                         <li>
                             22-02-04 ::
                             <a href="posts/colemak.html" id="colemak-experience">The Colemak Experience</a>
-                        </li>
-                        <li>
-                            21-12-09 ::
-                            <a href="posts/pass.html" id="pass">Killing pass.mehvix.com</a>
                         </li>
                     </ul>
                 </li>
