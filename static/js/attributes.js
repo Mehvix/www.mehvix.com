@@ -118,7 +118,9 @@ attr_lst.push(`There are ${attr_lst.length + 1} fun facts, and now you've seen t
 
 let cookies = document.cookie.split("; ").map(prop => prop.split("=")).find(prop => prop[0] === 'attr');
 let index = 1;
-if (!cookies || cookies[1] >= 0) {
+if (!cookies) {
+    index = 0;
+} else if (cookies[1] >= 0) {
     index = (1 + parseInt(cookies[1])) % attr_lst.length;
 }
 document.cookie = `attr=${index};samesite=strict`;
