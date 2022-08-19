@@ -76,6 +76,7 @@ var attr_lst = [
     'My favorite series of integers is <a href="https://oeis.org/A000108">OEIS A000108</a>.',
     'My favorite xkcd is #927.',
     'My favorite Adam Sandler movie is Punch Drunk Love.',
+    'If you didn\'t notice the favicon, my favorite monkey is the Orangutan.',
     // .
     "I don't believe in astrology; I'm a Leo and we're all so smart and would never believe in something so silly.",
     "There's nothing worse than people who don't understand hyperbole.",
@@ -117,7 +118,7 @@ attr_lst.push(`There are ${attr_lst.length + 1} fun facts, and now you've seen t
 
 let cookies = document.cookie.split("; ").map(prop => prop.split("=")).find(prop => prop[0] === 'attr');
 let index = 1;
-if (cookies[1] >= 0) {
+if (!cookies || cookies[1] >= 0) {
     index = (1 + parseInt(cookies[1])) % attr_lst.length;
 }
 document.cookie = `attr=${index};samesite=strict`;
@@ -126,5 +127,5 @@ function randto(n) {
     return Math.floor(Math.random() * (n - 1));
 }
 
-attr_element = document.getElementById('attribute');
+// attr_element = document.getElementById('attribute');
 attr_selected = attr_lst[index];
