@@ -8,7 +8,7 @@ var attr_lst = [
     // me
     'I use <a href="//colemakmods.github.io/mod-dh/">Colemak Mod-DH</a> as my keyboard layout.',
     "My eye color is <span style='color: #207708'>Green</span>-<span style='color: #8E7618'>Hazel</span>.",
-    'My mothers maiden name is ████████████.',
+    'My mother\'s maiden name is ████████████.',
     'My corrective lenses is -4.75 -1.00 (very poor!).',
     `My height is 6' 2".`,
     'My shoe size is 12 US.',
