@@ -103,6 +103,7 @@ var attr_lst = [
     "My favorite painter is Carroll Dunham.",
     "If while washing dishes, we think only of the cup of tea that awaits us, thus hurrying to get the dishes out of the way as if they were a nuisance, then we are not “washing the dishes to wash the dishes.” What’s more, we are not alive during the time we are washing the dishes. In fact we are completely incapable of realizing the miracle of life while standing at the sink. If we can’t wash the dishes, the chances are we won’t be able to drink our tea either. While drinking the cup of tea, we will only be thinking of other things, barely aware of the cup in our hands. Thus we are sucked away into the future—and we are incapable of actually living one minute of life.",
     "Pride is a sin.",
+    "You forget a thousand things every day, make sure this is one of 'em.",
     // > videos
     'Cool ranch came before ranch.',
     "Who's Jon Corzine? I know who Rihanna is..",
@@ -115,6 +116,8 @@ var attr_lst = [
     "I'll frequently check credit at (Moral) bank (hole in wall).",
 ];
 attr_lst.push(`There are ${attr_lst.length + 1} fun facts, and now you've seen them all!`);
+
+// todo make random order
 
 let cookies = document.cookie.split("; ").map(prop => prop.split("=")).find(prop => prop[0] === 'attr');
 let index = 1;

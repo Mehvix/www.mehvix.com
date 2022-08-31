@@ -1,19 +1,37 @@
-from bs4 import BeautifulSoup
-from xml.dom import minidom
 import os
 import datetime
 import time
+
+from bs4 import BeautifulSoup
+from xml.dom import minidom
 from email import utils
 from xml.sax.saxutils import unescape
+from subprocess import Popen, PIPE
 
 # todos:
 # append <article> tag contents
 # figure out how to do <description>
 
-fin = open('posts/index.html', encoding='utf-8').read()
-fout = 'posts/rss.xml'
-soup = BeautifulSoup(fin, 'html.parser')
+posts_index = "posts/index.html"
+fout = "posts/rss.xml"
 
+try:
+    project_path = os.environ['CODE_ROOT'] + '/mehvix.com/'
+    posts_index = project_path + posts_index
+    fout = project_path + fout
+except KeyError as e:
+    print('Environment variable CODE_ROOT not set! Defaulting to project directory.')
+
+try:
+    fin = open(posts_index, encoding='utf-8').read()
+except FileNotFoundError as e:
+    print("Couldn't find `posts/index.html`. Are you in the project root directory?")
+    exit(1)
+
+start_time = time.time()
+print("Generating RSS feed...")
+
+soup = BeautifulSoup(fin, 'html.parser')
 
 mini = minidom.Document()
 content = mini.createElement('rss')
@@ -128,3 +146,11 @@ channel.appendChild(atomElement)
 
 with open(fout, "w", encoding='utf-8') as f:
     f.write(unescape(mini.toprettyxml(indent="\t", newl="\n")))
+
+end_time = time.time() - start_time
+print("RSS feed generated in {:.4f} seconds!".format(end_time))
+
+out, err = Popen(f'git diff {fout} | grep "+\t\t\t<title>"', shell=True, stdout=PIPE, stderr=PIPE).communicate()
+soup = BeautifulSoup(out, 'html.parser')
+for title in soup.findAll("title"):
+    print("+", title.string)

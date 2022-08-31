@@ -1,0 +1,41 @@
+h1,
+div > pre:first-child code
+    margin-top: 2em
+
+article table
+    table-layout: fixed
+    border-collapse: collapse
+    tr
+        th
+            background-color: hsl(120,5%,75%)
+            padding: 0 .66ch
+
+        td
+            text-align: right
+            // border-right: 1px dashed
+            padding: 0 1ch
+
+            &:nth-child(odd)
+                background-color: hsl(120,5%,85%)
+
+#n
+    background: unset
+    border: unset
+    margin: unset
+    padding: 0 1ch 0 0 !important
+    box-shadow: unset
+    color: unset
+    width: 8ch
+    text-align: right
+    direction: rtl
+    border-radius: 0
+    height: 1.5em
+
+    // opacity: 0.8
+    $bg: #adadad6b
+    $fg: transparent
+    background-color: $fg
+    background-color: $fg
+    background: repeating-linear-gradient( 45deg, $bg, $bg 1px, $fg 1px, $fg 5px )
+    background-position: 0 0, 10px 10px
+    background-size: 20px 20px

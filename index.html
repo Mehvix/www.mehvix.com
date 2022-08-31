@@ -39,7 +39,6 @@
         :root {
             --outside-bg-color: #920909;
         }
-
     </style>
 
     <link href="/static/css/post-color.css" type="text/css" rel="stylesheet" />
@@ -58,20 +57,16 @@
             <p>
                 Hello! My name is Max Vogel, but <i>Mehvix</i> is my
                 username for most things on the web — I'm sure you can
-                figure out what it means. Here is a
-                <a href="./static/media/home/me/gmaps2.png">photo of me</a><img alt="Expand image"
-                    src="/static/media/expandoImage.svg" class="dropdown"
-                    onclick="toggleImage(me)" "margin-left: 0.5ch" /><img alt="Me!" id="me"
-                    src="/static/media/home/me/gmaps2.png" style="width: 100%; margin: 1% 0; display: block"
-                    class="hidden" />
-                on Google Maps in 2007.
+                figure out what it means. I was born in 2002 and grew up around Madison, Wisconsin. Here is a
+                <a onclick="toggleImage(me)">photo of me</a><img class="expander" onclick="toggleImage(me)" />
+                <img alt="Me!" id="me" src="/static/media/home/me/gmaps2.png" class="hidden dropdown" />
+                in 2007 from Google Maps.
+            </p>
+            <p>
                 Right now I'm a second-year at
-                <a href="//www.berkeley.edu/">UC Berkeley</a> majoring in
-                <a href="//eecseecs.com/">EECS</a> and perhaps the
-                non-computer <a href="//cogsci.berkeley.edu/">CS</a>. I'm
-                working this summer at
-                <a href="//tritonsensors.com/">Triton Sensors</a> as a software engineer. In my
-                free time I enjoy
+                <a href="//www.berkeley.edu/">Berkeley</a> majoring in
+                <a href="//eecseecs.com/">EECS</a> and working at
+                <a href="//tritonsensors.com/">Triton Sensors</a> as a software engineer. In my free time I enjoy
                 <a href="http://www.cracoviafoilfencing.com/">foil fencing</a>,
                 <a href="//www.instagram.com/tyrolbasinparks/">snowboarding park</a>,
                 <a href="/static/media/home/IMG_20210616_131213.jpg">hiking earth</a>, among creating things: I'm an
@@ -80,7 +75,7 @@
                 <a href="/static/media/home/for-fun.png">mycologist</a>,
                 3D-printing cybernaut, and
                 <a href="/static/media/home/20210816-001132.png">pyrotechnic</a>
-                (in that order, least to most amateur).<br>
+                (in that order, least to most amateur). I am passionate about protecting digital privacy and freedoms.
                 Fun fact:
                 <script>
                     document.write(attr_selected)
@@ -94,13 +89,13 @@
         <div>
             <h1>Contact</h1>
             <p>
-                I enjoy meeting interesting people. If you're around
-                Berkeley / the bay area and want to grab coffee (or go
+                I enjoy meeting interesting people. If you're around Berkeley / the bay area and want to grab coffee (or go
                 <a href="/static/media/home/steam-tunnel.jpeg">steam tunneling</a>) sometime, reach out!
             </p>
-            <p>Also, I am a <a href="https://signal.org/">Signal</a> fanatic —— I use it to reach
-                everyone from my roommates to my grandparents. If you don't
-                have my number, shoot me an email with yours.</p>
+            <p>
+                I am a <a href="https://signal.org/">Signal</a> fanatic —— I use it to reach everyone from my roommates to my
+                grandparents. If you don't have my number, shoot me an email with yours.
+            </p>
             <div>
                 <table class="about">
                     <tr>
@@ -182,8 +177,7 @@
                 <li>
                     Watch Jon Bois' copyright-claimed magnum opus on <a
                         href="//odysee.com/@Mehvix:4/%27WHY-DO-I-CHOOSE-THIS-FOR-A-LIVING%27----Jon-Bois-Pretty-Good-E8:2">Odysee</a>
-                    + <a href="//www.youtube.com/watch?v=bDt90EyZnWA">Youtube</a><span
-                        title="just follow the first rule of fight club">*</span>.
+                    + <a href="//www.youtube.com/watch?v=bDt90EyZnWA">Youtube</a>.
                 </li>
                 <!-- <li>
                         Resumé
@@ -199,20 +193,20 @@
             <h1>Pages</h1>
             <ul>
                 <li>
-                    <a href="posts">Blog</a> (<a href="posts/rss.xml">RSS</a>)
+                    <a href="posts">Blog</a> -- <a href="posts/rss.xml">RSS Feed</a>
                     <ul class="sub-posts">
                         <!-- todo automate this -->
                         <li>
+                            22-08-30 ::
+                            <a href="posts/counter.html" id="count">Probabilistic Counter</a>
+                        </li>
+                        <li>
                             22-08-13 ::
-                            <a href="posts/balls.html" id="feedback">It's all Balls</a>
+                            <a href="posts/balls.html" id="balls">It's all Balls</a>
                         </li>
                         <li>
                             22-02-13 ::
                             <a href="posts/feedback.html" id="feedback">Feedback</a>
-                        </li>
-                        <li>
-                            22-02-04 ::
-                            <a href="posts/colemak.html" id="colemak-experience">The Colemak Experience</a>
                         </li>
                     </ul>
                 </li>
@@ -259,6 +253,9 @@
                         </li>
                         <li id="rsa">
                             <a href="//toolbox.mehvix.com/rsa/">RSA Encoder</a>
+                        </li>
+                        <li id="serpinski">
+                            <a href="//toolbox.mehvix.com/serpinski/">CSS Sierpiński Triangle</a>
                         </li>
                     </ul>
                 </li>

@@ -192,7 +192,7 @@ code,
     border-radius: $code-radius
 
     &::selection,
-    & > span::selection
+    & span::selection
         color: limegreen !important
         background: black !important
 
@@ -204,6 +204,12 @@ pre > code
 
     color: css_var(text-color-inverse)
     background: css_var(code-bg-color)
+
+    &.right
+        @extend .skinny
+        float: right
+        margin-left: 2ch
+        margin-bottom: .25em
 
     &::-webkit-scrollbar
         width: .66ch // width of the entire scrollbar
@@ -398,16 +404,33 @@ div.box
 // === Classes ===
 // ===============
 
+// Toggle image expand
+.hidden
+    display: none !important
+
+img.expander
+    margin-left: 0.5ch
+    height: 1.08em
+    vertical-align: middle
+    width: initial
+    content: urL('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMyIgaGVpZ2h0PSIyMyIgdmlld0JveD0iMCAwIDIzIDIzIj4KCTxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMyIgaGVpZ2h0PSIyMyIgcng9IjIuNSIgcnk9IjIuNSIgZmlsbD0icmdiKDIwNCwgMjA0LCAyMDEpIiAvPgoJPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CgkJPHBhdGgKCQkJZD0iCgkJCQlNNCw1IGwxLC0uNSBoMiBsMSwuNSBoMSBsMSwtMSBoMyBsMiwyIGgyCgkJCQl2OCBoLTEzegoJCQkJTTUsNiBoMiB2MSBoLTIgdi0xegoJCQkJTSAxMS41IDkuNSBtIC0zLjUsIDAgYSAzLjUsMy41IDAgMSwwIDcsMCBhIDMuNSwzLjUgMCAxLDAgLTcsMAoJCQkJTSAxMS41IDkuNSBtIC0yLjUsIDAgYSAyLjUsMi41IDAgMSwwIDUsMCBhIDIuNSwyLjUgMCAxLDAgLTUsMAoJCQkiCgkJLz4KCTwvZz4KCTxnIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiPgoJCTxsaW5lIHgxPSIxOC43NSIgeTE9IjE2LjUiIHgyPSIxOC43NSIgeTI9IjIxIiAvPgoJCTxsaW5lIHgxPSIxNi41IiB5MT0iMTguNzUiIHgyPSIyMSIgeTI9IjE4Ljc1IiAvPgoJPC9nPgo8L3N2Zz4=')
+    // content: urL('/static/media/expandoImage.svg')
+    alt: "Expand image"
+
+img.dropdown
+    width: 100%
+    margin: 0
+    // display: block
+
+// For blog
 .sub-posts
     margin: 0.5ch 0
 
     & li::marker
         content: '* '
 
-img.dropdown
-    height: 1.08em
-    vertical-align: middle
-    width: initial
+.skinny
+    display: inline-block !important
 
 .no-scroll
     scrollbar-width: none // remove scroller in FF

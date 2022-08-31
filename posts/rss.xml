@@ -3,10 +3,319 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Sun, 13 Feb 2022 23:58:20 -0000</lastBuildDate>
+		<lastBuildDate>Wed, 31 Aug 2022 00:49:52 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
+		<item>
+			<author>Max Vogel</author>
+			<title>Probabilistic Counter</title>
+			<pubDate>Tue, 30 Aug 2022 07:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/counting.html</link>
+			<guid>https://mehvix.com/posts/counting.html</guid>
+			<content:encoded><![CDATA[<article>
+<div>
+<pre><code class=&quot;language-python right&quot;>
+class Counter:
+    def __init__(self):
+        self.n = 0
+    def increment(self):
+        self.n += 1
+    def query(self):
+        return self.n
+                </code></pre>
+<h1>Trivial</h1>
+<p>
+                    Consider the following trivial counter to the right. It keeps a tally $n$ of how many times
+                    <code class=&quot;hljs-title&quot;>increment</code> has been called, which can then be queried at any time. Under
+                    the hood, since $n$ is an integer it's represented in binary (base-2) which uses $\text{len}(n_2) =
+                    \lceil \log_2 (n + 1) \rceil = \lfloor \log_2 (n) + 1 \rfloor$ bits of memory. Thus this counter has a
+                    <a href=&quot;https://en.wikipedia.org/wiki/Space_complexity&quot;>space complexity</a> of $\mathcal{O}(\log
+                    (n))$. You can see this in the table below:
+                </p>
+<table>
+<tr>
+<th>$n = n_{10}$</th>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>8</td>
+<td>16</td>
+<td>32</td>
+<td style=&quot;padding: 0&quot;>
+<input id=&quot;n&quot; min=&quot;0&quot; name=&quot;n&quot; oninput=&quot;n2.innerText=(+this.value).toString(2); nbit.innerText=Math.ceil(Math.log2((+this.value)+1)); &quot; placeholder=&quot;33&quot; type=&quot;number&quot;/>
+</td>
+<script>
+                        document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+                            n.dispatchEvent(new Event(&quot;input&quot;));
+                        });
+
+                        </script>
+</tr>
+<tr>
+<th>$n_2$</th>
+<td>0</td>
+<td>1</td>
+<td>10</td>
+<td>11</td>
+<td>100</td>
+<td>101</td>
+<td>1000</td>
+<td>10000</td>
+<td>100000</td>
+<td id=&quot;n2&quot;></td>
+</tr>
+<tr>
+<th>$\lfloor \log_2 (n) + 1 \rfloor$</th>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td id=&quot;nbit&quot;></td>
+</tr>
+</table>
+</div>
+<div>
+<h1>Morris Counter</h1>
+<p>
+                    Can we do better? That is, can we come up with a better representation (data structure)? Lets say there
+                    does in fact exist some schema such that
+                    we can represent a <span style=&quot;display: inline-block&quot;>$n$umber</span> using less than $\log(n)$ bits.
+                    Then, by the
+                    <a href=&quot;https://artofproblemsolving.com/wiki/index.php/Pigeonhole_Principle&quot;>Pigeon Hole Principle</a>
+                    there exist two distinct integers $a,\ b \in [n]$ corresponding to two different iterations of increments
+                    which map to the same representation in memory. Therefore, when queried they both return the same value
+                    which is a contradiction! So at least until Quantum Computers aren't a meme, we can't do better.
+                </p>
+<p>
+                    This lead to an interesting insight: what if we could be 'okay' with $a,\ b$ mapping to the same
+                    memory? This would involve losing some information, so we'd only have approximations
+                    the true values of $a$ and $b$ represent. Why and when would we want to do this?
+                    In 1985 <a href=&quot;https://en.wikipedia.org/wiki/Robert_Morris_(cryptographer)&quot;>Robert Morris</a> was
+                    working at Bell Labs on a spellchecking program and wanted to keep track of
+                    <a href=&quot;https://en.wikipedia.org/wiki/Trigram&quot;>trigram</a> counts, requiring $26^3$
+                    simultaneous counters. To reduce the memory needed, he invented the
+                    <a href=&quot;https://en.wikipedia.org/wiki/Approximate_counting_algorithm&quot;>Morris Counter</a> which
+                    approximates this count proportional to $\mathcal{O}(\log (\log (n)))$ space. You can read much more of
+                    the history <a href=&quot;https://arxiv.org/pdf/1805.00612.pdf&quot;>here</a>. And even with the
+                    cheap and bountiful memory we have now, Redis implements an altered Morris counter in it's
+                    <a href=&quot;https://redis.io/docs/manual/eviction/&quot;>key eviction policies'</a>
+<a href=&quot;https://en.wikipedia.org/wiki/Least_frequently_used&quot;>Least Frequently Used</a> algorithm: this
+                    requires keeping track how many times each key in the database has been queried to prune the least used.
+                </p>
+<p>
+<pre><code class=&quot;language-python right&quot;>
+class MorrisCounter:
+    def __init__(self):
+        self.X = 0
+    def increment(self):
+        if random.random() &lt; 1/(2**self.X):
+            self.X +=1
+    def query(self):
+        return (2**self.X) - 1
+                    </code></pre>
+                    The Morris counter itself works by incrementing the counter probabilistically. That is, after <code class=&quot;hljs-title&quot;>increment</code> is called $n$ times then our representation $X_n$ is increment
+                    with a probability of $\frac 1 2^{X_n}$ and <code class=&quot;hljs-title&quot;>query</code> returns the estimate
+                    $\hat n = 2^{X_n} - 1$. Notice how this estimate can only take on a subset of values-- this is the
+                    tradeoff that allows us to obtain better memory complexity. Intuitively, the chance we increment $X_n$
+                    decreases logarithmically with $n$ so we can speculate that our estimate has space complexity of
+                    $\mathcal{O}(\log (\log (n)))$. To prove that that
+                    our $\hat n$ is given by the prior formula is accurate, we can prove with induction that $\Bbb{E}
+                    \left(2^{X_n}\right) = n+1$:
+                    $$\begin{align*}
+                    \mathbb{E}\Big(2^{X_{n+1}}\Big) &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \Bbb{E} \Big( 2^{X_{n + 1}}
+                    \mid X_n = i\Big) \\
+                    &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left(\left(1- \frac 1 2^i \right) 2^i + \frac 1 2^i 2^{i+1}
+                    \right) \\
+                    &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left((2^i - 1) + 2\right) \\
+                    &amp;= 1 \cdot \sum_{i=0}^\infty \Bbb{P} (X_n = i) + 2^i \cdot \sum_{i=0}^\infty \Bbb{P} (X_n = i) \\
+                    &amp;= 1 + \Bbb{E} \Big(2^{X_n}\Big) \\
+                    &amp;= n + 2 \\
+                    \end{align*}$$
+                    The second term expands to the expected value if incremented plus the expected value if not
+                    incremented. And after expanding, the first term simplifies to $1$ given by
+                    <a href=&quot;https://en.wikipedia.org/wiki/Law_of_total_probability&quot;>law of total probability</a> and the
+                    second is the expected value of $X_n$.
+                </p>
+<p>
+                    It can also be shown by a similar process that the variance is given by
+                    <!-- beautify ignore:start -->
+                    $\text{Var}(\hat n) = \frac{n^2}{2} - \frac n 2 - 1 &lt; \frac{n^2}{2}$. With this, we can use <a href=&quot;https://en.wikipedia.org/wiki/Chebyshev's_inequality&quot;>Chebyshev's inequality</a> to set up an equation to bind the variance:
+                    $$\begin{align*}
+                    \mathbb{P}(|\hat n - n| \geq \varepsilon n) &amp; \leq \frac{\text{Var}(\hat n)}{\varepsilon^2 n^2} \leq \delta \\
+                    &amp; &lt; \frac{\frac{n^2}{2}}{\varepsilon^2 n^2} = \frac{1}{2\varepsilon^2} \leq \delta \\
+                    \end{align*}$$
+                    <!-- beautify ignore:end -->
+</p>
+</div>
+<div>
+<h1>Generalization &amp; Improving</h1>
+<p>
+                    Instead of incrementing with probability $\frac 1 2 ^X$, we use $\frac 1 {1 + \alpha}^X$, where alpha is
+                    some constant ($\alpha = 1$ in the case of OG Morris Counter). We also have return our estimate $\frac
+                    {(1 + \alpha)^X}{\alpha} - 1$. This now gives us control over the
+                    behavior of our counter: intuitively, as $\alpha \to 1$ we approach a deterministic counter so $\alpha$
+                    is directly related to memory usage (bits) and inversely related to variability. In his
+                    <a href=&quot;https://www.inf.ed.ac.uk/teaching/courses/exc/reading/morris.pdf&quot;>original paper</a>, Morris
+                    showed that if we set $\alpha = \varepsilon^2 \delta$ leads to a $(1+\varepsilon)$-approximation
+                    with $1-\delta$ probability using $\mathcal{O}\left(\log \log n + \log \frac 1 \varepsilon +
+                    \log \frac 1 \delta\right)$ bits. Then, in 2022 (40+ years later!)
+                    <a href=&quot;https://arxiv.org/pdf/2010.02116.pdf&quot;>Jelani Nelson and Huacheng Yu</a> proved
+                    that there exists an even tighter bound of $\mathcal{\Theta}(\log \log n + \log \frac 1 \varepsilon +
+                    \log \log \frac 1 \delta)$.
+                </p>
+<p>
+                    Another improvement we could implement is to use a deterministic counter for small
+                    values and switch over to approximate after a certain threshold <code>lim</code>:
+                </p>
+<pre><code class=&quot;language-python&quot;>
+class MorrisAlpha:
+    def __init__(self, a=.05, lim=8):
+        self.X = 0
+        self.a = a
+        self.lim = lim
+    def increment(self):
+        if self.X &lt; self.lim:
+            self.X += 1
+        elif random.random() &lt; 1/((1 + self.a)**self.X):
+            self.X += 1
+    def query(self):
+        if self.X &lt;= self.lim:
+            return self.X
+        return ((1 + self.a)**self.X)/self.a - 1
+                </code></pre>
+</div>
+<div>
+<h1>Concurrent</h1>
+<p>
+<!-- beautify ignore:start -->
+                    What if we used many concurrent, independent Morris counters? That is, we have $y$ counters $\{\hat n_1
+                    \dots \hat n_y\}$ and we returned the average of their outputs when queried: $\hat n = \frac 1 y
+                    \sum_{i=1}^y \hat n_i$. The expectation of a summation of independent random variables is given by
+                    $\Bbb{E}(\hat n) = \Bbb{E}\left(\frac 1 y \sum_{i=1}^y \hat n_i\right) = \Bbb{E}(\hat n_i) = n$. When a
+                    random variable is multiped by a constant $\gamma = \frac 1 y$ then it's variance changes by $\gamma^2$:
+                    $\text{Var}(\hat n) = \text{Var}\left(\frac 1 y \sum_{i=1}^y \hat n_i\right) = \frac {1}{y^2}
+                    \sum_{i=1}^y \text{Var}\left(\hat n_i\right) &lt; \frac{n^2}{2y}$. We can then set up Chebyshev's inequality
+                    to get the following bound:
+                    $$\Bbb{P}(|\hat n - n| \geq \varepsilon n) \leq \frac{1}{2 \varepsilon^2 y} &lt; \delta$$
+                    for $y = \left\lceil \dfrac {1}{2 \varepsilon^2 \delta}\right\rceil$. This has space complexity of
+                    $\mathcal{O} (y \cdot \log \log n) = \mathcal{O} \left(\dfrac {\log \log n}{\varepsilon^2 \delta}\right)$.
+                    <!-- beautify ignore:end -->
+</p>
+<p>
+                    The main takeaway is that we can now choose how tight we want the variance to be by averaging many copies
+                    of Morris, but at the cost of blowing up our memory.
+                </p>
+<pre><code class=&quot;language-python&quot;>
+class MorrisConcurrent:
+    def __init__(self, y):
+        self.X = 0
+        self.ys = [MorrisCounter() for _ in range(y)]
+    def increment(self):
+        [y.increment() for y in self.ys]
+    def query(self):
+        return sum([y.query() for y in self.ys])/len(self.ys)
+                    </code></pre>
+</div>
+<div>
+<h1>Mo(o)re</h1>
+<p>
+                    We can go even further by using another $z$ independent instances of the concurrent counters,
+                    each with chance of failure $\delta = \frac 1 3$. Then, we output the median of all $y$ counters where
+                    the median is valid iff we have $\frac z 2$ 'successful counters'. Since $\delta = \frac 1 3$ then a
+                    deviation of $\frac z 2 - \frac z 3 = \frac z 6$ from the median is valid. We can then set up a
+                    <a href=&quot;https://en.wikipedia.org/wiki/Hoeffding's_inequality&quot;>Hoeffding bound:</a>
+<!-- beautify ignore:start -->
+                    $$
+                    \Bbb{P}\left(\sum_{i=1}^z Y_i \leq \frac z 2\right) &lt; \Bbb{P}\left( \left| \sum_{i=1}^z Y_i -
+                    \Bbb{E}(Y_i) \right| &lt; \frac z 6 \right) \leq e^{-2 (\frac{1}{6})^2 z} \leq \delta %&gt;
+                    $$
+                    <!-- beautify ignore:end -->
+                    Thus, we have a total of $yz = \left\lceil\dfrac {\log{\frac 1 \delta}}{\varepsilon^2}\right\rceil$
+                    copies of the original Morris counter. Once any of the counters reach $\log \frac {yzn} \delta$ the
+                    chance that it increments again is $\frac \delta {yzn}$ so the chance it increments in the next $n$
+                    increments is $\frac \delta {yz}$. Thus, if we set the bound $\delta$ such that none of the counters
+                    go above $\log \frac {yzn} \delta$ (using $\mathcal{O} \left({\log{\log \frac {yzn}\delta}}\right)$
+                    bits) then we have a bounded space complexity of
+                    $\mathcal{O} (yz \cdot \log\log n) = \mathcal{O} \left(\dfrac{\log \frac 1 \delta \log\log
+                    n}{\varepsilon^2}\right)$.
+                </p>
+<p>
+                    You can see that the subsequent two algorithms are actually slower than a Generalized Morris counter
+                    with optimal $\alpha$ that Morris proved in his original paper. However, this process of taking the
+                    median of many means (of a fixed failure rate) exponentially decreases the overall failure rate and can
+                    be applied to other algorithms to obtain a better space complexity.
+                </p>
+</div>
+</article>]]></content:encoded>
+		</item>
+		<item>
+			<author>Max Vogel</author>
+			<title>It's all Balls</title>
+			<pubDate>Thu, 18 Aug 2022 07:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/balls.html</link>
+			<guid>https://mehvix.com/posts/balls.html</guid>
+			<content:encoded><![CDATA[<article>
+<div>
+<span>
+                    $$x_1 + x_2 + x_3 + x_4 + x_5 = 50$$
+
+                    $50$ balls, $5$ bins: ${50 + 5 - 1 \choose 5 - 1}$
+                </span>
+<!-- <span>
+                    $$x_1 \leq x_2 \leq x_3 \leq x_4 \leq x_5$$
+
+                    $10$ bins of each digit, and $5$ balls: ${10+5-1 \choose 5-1}$. Remember that order does not matter.
+                </span> -->
+<span>
+                    $$x_1 + x_2 + x_3 + x_4 + x_5 \leq 50$$
+
+                    $\sum_1^5 x_i = n$ with excess of $50-n$ which we can place in an extra bin: $50$ balls, $6$ bins:
+                    ${50
+                    + 6
+                    - 1 \choose 6 - 1}$
+                </span>
+<span>
+                    $$x_1 + x_2 + x_3 + x_4 + x_5 = 50$$
+                    $$\text{st } (\forall i \in [5])(x_i \geq 1)$$
+
+                    Distribute $5$ beforehand, leaving $45$ balls still to be distributed: ${45 + 5 - 1
+                    \choose 5 - 1}$
+                </span>
+<span>
+                    $$x_1 + x_2 + x_3 + x_4 + x_5 = 50$$
+                    $$\text{st } (\forall i \in [5])(x_i \geq i)$$
+
+                    Distribute $1,\dots,5$ beforehand, leaving $50-\sum_1^5i = 35$ balls still to be distributed: ${35 +
+                    5 -
+                    1
+                    \choose 5 - 1}$
+                </span>
+<span>
+                    $$x_1 + x_2 + x_3 + x_4 + x_5 = 50$$
+                    $$\text{st } (\exists \gamma \in [50])(x_1 \leq \gamma)$$
+
+                    This is the very first case, excluding those when $x_1 &gt; \gamma$. That is, when we have $50 -
+                    \gamma$
+                    left to distribute. Thus we can take our first case and pattern-match with the prior case: ${50 + 5
+                    - 1 \choose 5 - 1} - {(50-\gamma) + 5 - 1 \choose 5 - 1}$
+                </span>
+</div>
+<hr/>
+<p>
+                Huh? See <a href=&quot;https://en.wikipedia.org/wiki/Balls_into_bins_problem&quot;>Balls into bins
+                    problem</a>.
+            </p>
+</article>]]></content:encoded>
+		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Feedback</title>
@@ -18,18 +327,18 @@
                     My mistakes and regrets are the product of my own ignorance,
                     arrogance, and unawareness. I would much rather hear what
                     may not be nice to hear in-the-moment than to never hear it
-                    at all—— nothing else quite jolts me 'out of my own head'
-                    and inspires conscious self-reflection to the same degree
+                    at all—— nothing else inspires conscious self-reflection
                     other than perhaps (romantic) rejection. If you have the
                     spare time, I'd greatly appreciate your feedback——negative
-                    or positive, big or small——so I can recognize my
+                    or positive, big or small, pertaining to my code or
+                    beliefs——so I can recognize my
                     <a href=&quot;https://en.wikipedia.org/wiki/Maya_(religion)#Vedanta_school&quot;>Maya</a>. You can fill out the anonymous feedback form below or
                     <a href=&quot;https://cloud.mehvix.com/apps/forms/4nPHba8sQqbecmnN&quot;>at this link</a>. I only ask that you
                     <a href=&quot;https://larahogan.me/blog/dont-soften-feedback/&quot;>Don't Soften Feedback</a>
                     and, if praising,
                     <a href=&quot;https://chrislakin.com/praise&quot;>Praise Descriptively</a>.
                 </div>
-<iframe frameborder=&quot;0&quot; height=&quot;600px&quot; src=&quot;https://cloud.mehvix.com/apps/forms/4nPHba8sQqbecmnN&quot; width=&quot;100%&quot;></iframe>
+<iframe frameborder=&quot;0&quot; src=&quot;https://cloud.mehvix.com/apps/forms/4nPHba8sQqbecmnN&quot;></iframe>
 </article>]]></content:encoded>
 		</item>
 		<item>
@@ -209,41 +518,26 @@
 			<guid>https://mehvix.com/posts/pass.html</guid>
 			<content:encoded><![CDATA[<article>
 <p>I received an email threatening legal action against me:</p>
-<img alt=&quot;&quot; src=&quot;/static/media/posts/pass-email.png&quot; srcset=&quot;&quot;/>
+<img src=&quot;/static/media/posts/pass-email.png&quot;/>
 <p>
-                    After this blog post goes up, I am taking down
-                    pass.mehvix.com. But, given the nature of open source code,
-                    <b>I have no power over people
-                        <a href=&quot;https://github.com/Mehvix/pass/tree/2a9f0943c1de99367f638fcf27ccf8add635290f&quot;>forking</a>
-                        and running their own
-                        <a href=&quot;https://github.com/Mehvix/pass/network/members&quot;>instances</a></b>.
-                    <a href=&quot;https://www.eff.org/deeplinks/2015/04/remembering-case-established-code-speech&quot;>Code is free speech</a>.
-                    <a href=&quot;https://www.youtube.com/watch?v=PVF9lZ-i_ss&quot;>You can't stop the signal</a>.
-                </p>
+                After this blog post goes up, I am taking down
+                <a href=&quot;http://pass.mehvix.com&quot;>pass.mehvix.com</a>. But, given the nature of open source code,
+                <b>I have no power over anyone <a href=&quot;https://github.com/Mehvix/pass/tree/2a9f0943c1de99367f638fcf27ccf8add635290f&quot;>forking</a> and running their own <a href=&quot;https://github.com/Mehvix/pass/network/members&quot;>instance</a>
+</b>. Or using <code>about://inspect/#devices</code> in a Chromium browser to see the app's source code.
+                <a href=&quot;https://www.eff.org/deeplinks/2015/04/remembering-case-established-code-speech&quot;>Code is free speech</a>.
+                <a href=&quot;https://www.youtube.com/watch?v=PVF9lZ-i_ss&quot;>You can't stop the signal</a>.
+            </p>
 <p>
-                    It was a good run- I started pass for myself and roomies,
-                    then they told five people, and those people told five more,
-                    etc etc until it came full loop where people would tell me
-                    about pass.mehvix.com not knowing that I was mehvix.
-                </p>
+                It was a good run- I started pass for myself and roomies, then they told five people, and those people told
+                five more, etc etc until it came full loop where people would tell me about pass.mehvix.com not knowing that
+                I was mehvix.
+            </p>
 <p>Here's the cloudflare analytics for anyone interested:</p>
 <img alt=&quot;&quot; src=&quot;/static/media/posts/pass-stats.png&quot;/>
 <p>
-                    Try and see if you can infer when lunch and dinner are based
-                    on the spikes. Also, don't worry if you've used pass and are
-                    concerned about your privacy: I'm a privacy nut and have
-                    never collected any user information.
-                </p>
-<br/>
-<p>
-                    PS to UCB- If I can circumvent your &quot;campus safety feature&quot;
-                    in five minutes and you don't realize for two months, then
-                    maybe (just maybe!) it's an issue with the campus safety
-                    feature itself 🤔🤔. Also, how am I supposed to get food?
-                    I'm paying you guys for a meal plan that I cannot use
-                    because I cannot get into the dining halls because your app
-                    doesn't work.
-                </p>
+                Try and see if you can infer when lunch and dinner are based on the spikes. Also, don't worry if you've used
+                pass and are concerned about your privacy: I'm a privacy nut and have never collected any user information.
+            </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
@@ -450,43 +744,45 @@
 			<guid>https://mehvix.com/posts/aops-rss.html</guid>
 			<content:encoded><![CDATA[<article>
 <p>
-                    Hey math monke(s), do you use
-                    <a href=&quot;//en.wikipedia.org/wiki/RSS&quot;>RSS</a> (bonus if you
-                    are cool enough to have a
-                    <a href=&quot;http://cloud.mehvix.com&quot;>cloud.mehvix.com</a>
-                    account and use the
-                    <a href=&quot;//apps.nextcloud.com/apps/news&quot;>News app</a>) and
-                    read AoPS blogs? If so, you should checkout
-                    <a href=&quot;http://aops-rss.mehvix.com&quot;>aops-rss.mehvix.com</a>
-                    — plug in a blog's URL like
-                    <a href=&quot;//artofproblemsolving.com/community/c1273888&quot;>Dan's</a>
-                    (kiss_mm) and it should spit out a
-                    <a href=&quot;//aops-rss.herokuapp.com/1273888&quot;>RSS feed</a>.
-                    Prior to this project, I haven't used Ruby so there may be
-                    kinks and edge case errors — if you run into any,
-                    <a href=&quot;//github.com/Mehvix/aops-blog-rss/issues&quot;>create an issue on Github</a>
-                    or reach out :)
-                </p>
+                Hey math monke(s), do you use
+                <a href=&quot;//en.wikipedia.org/wiki/RSS&quot;>RSS</a> (bonus if you
+                are cool enough to have a
+                <a href=&quot;http://cloud.mehvix.com&quot;>cloud.mehvix.com</a>
+                account and use the
+                <a href=&quot;//apps.nextcloud.com/apps/news&quot;>News app</a>) and
+                read AoPS blogs? If so, you should checkout
+                <a href=&quot;http://aops-rss.mehvix.com&quot;>aops-rss.mehvix.com</a>
+                — plug in a blog's URL like
+                <a href=&quot;//artofproblemsolving.com/community/c1273888&quot;>Dan's</a>
+                (kiss_mm) and it should spit out a
+                <a href=&quot;//aops-rss.herokuapp.com/1273888&quot;>RSS feed</a>.
+                Prior to this project, I haven't used Ruby so there may be
+                kinks and edge case errors — if you run into any,
+                <a href=&quot;//github.com/Mehvix/aops-blog-rss/issues&quot;>create an issue on Github</a>
+                or reach out :)
+            </p>
 <p>
-                    If you haven't heard of RSS, you should check it out. In
-                    essence, it lets you keep up with online feeds (blogs /
-                    forums posts, news sites, podcasts,
-                    <a href=&quot;//www.comicsrss.com/rss/calvinandhobbes.rss&quot;>Calvin and Hobbes</a>, etc.) without having to manually check webpages for
-                    updates. I'd recommend using
-                    <a href=&quot;//chrome.google.com/webstore/detail/get-rss-feed-url/kfghpdldaipanmkhfpdcjglncmilendn&quot;>this extension</a>
-                    for Chrome-based browsers to see if a site has an RSS feed.
-                    Plus, with <a href=&quot;//nitter.net/&quot;>Nitter</a> and
-                    <a href=&quot;//bibliogram.art/&quot;>Bibliogram</a> you can create
-                    proxied RSS feeds for Twitter and Instagram accounts so you
-                    don't have to deal with the bullshit spying + ads. If you
-                    don't have a
-                    <a href=&quot;//cloud.mehvix.com&quot;>cloud.mehvix.com</a>
-                    account, there's lots of RSS Readers out there. I've heard
-                    alright things about
-                    <a href=&quot;//feedly.com/&quot;>Feedly</a> and
-                    <a href=&quot;//www.newsblur.com/&quot;>NewsBlur</a> but do your own
-                    due diligence.
-                </p>
+                If you haven't heard of RSS, you should check it out. In
+                essence, it lets you keep up with online feeds (blogs /
+                forums posts, news sites, podcasts,
+                <a href=&quot;//www.comicsrss.com/rss/calvinandhobbes.rss&quot;>Calvin and Hobbes</a>, etc.) without having to
+                manually check webpages for
+                updates. I'd recommend using
+                <a href=&quot;//chrome.google.com/webstore/detail/get-rss-feed-url/kfghpdldaipanmkhfpdcjglncmilendn&quot;>this
+                    extension</a>
+                for Chrome-based browsers to see if a site has an RSS feed.
+                Plus, with <a href=&quot;//nitter.net/&quot;>Nitter</a> and
+                <a href=&quot;//bibliogram.art/&quot;>Bibliogram</a> you can create
+                proxied RSS feeds for Twitter and Instagram accounts so you
+                don't have to deal with the bullshit spying + ads. If you
+                don't have a
+                <a href=&quot;//cloud.mehvix.com&quot;>cloud.mehvix.com</a>
+                account, there's lots of RSS Readers out there. I've heard
+                alright things about
+                <a href=&quot;//feedly.com/&quot;>Feedly</a> and
+                <a href=&quot;//www.newsblur.com/&quot;>NewsBlur</a> but do your own
+                due diligence.
+            </p>
 </article>]]></content:encoded>
 		</item>
 		<item>

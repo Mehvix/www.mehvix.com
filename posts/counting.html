@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script defer src="/static/js/hljs-strip.js"></script>
+
+    <!-- Default Required Resources -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=569,
+        maximum-scale=1" />
+    <link rel="alternate" type="application/rss+xml" title="Blog RSS" href="//mehvix.com/posts/rss.xml" />
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="/static/js/include.js"></script>
+
+    <!-- https://cdnjs.com/libraries/highlight.js -->
+    <link type="text/css" rel="stylesheet" href="/static/css/atom-one-dark.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
+        integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        hljs.highlightAll()
+    </script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"],
+                ],
+            },
+            svg: {
+                fontCache: "global",
+            },
+            loader: {
+                load: ["input/tex", "output/svg"]
+            },
+        };
+    </script>
+
+    <title>Mehvix | Probabilistic Counter</title>
+    <style>
+        :root {
+            --outside-bg-color: #3e0992;
+        }
+    </style>
+    <link rel="stylesheet" href="/static/css/posts/counting.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="nav">
+            <a href="/">~</a>/<a href="/posts/">Posts</a>/<a href="" class="inverse-bg">Probabilistic Counter</a>
+        </div>
+
+        <article>
+            <div>
+                <pre><code class='language-python right'>
+class Counter:
+    def __init__(self):
+        self.n = 0
+    def increment(self):
+        self.n += 1
+    def query(self):
+        return self.n
+                </code></pre>
+                <h1>Trivial</h1>
+                <p>
+                    Consider the following trivial counter to the right. It keeps a tally $n$ of how many times
+                    <code class='hljs-title'>increment</code> has been called, which can then be queried at any time. Under
+                    the hood, since $n$ is an integer it's represented in binary (base-2) which uses $\text{len}(n_2) =
+                    \lceil \log_2 (n + 1) \rceil = \lfloor \log_2 (n) + 1 \rfloor$ bits of memory. Thus this counter has a
+                    <a href="https://en.wikipedia.org/wiki/Space_complexity">space complexity</a> of $\mathcal{O}(\log
+                    (n))$. You can see this in the table below:
+                </p>
+                <table>
+                    <tr>
+                        <th>$n = n_{10}$</th>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>8</td>
+                        <td>16</td>
+                        <td>32</td>
+                        <td style="padding: 0">
+                            <input type="number" name="n" id="n" min="0" placeholder="33"
+                                oninput="n2.innerText=(+this.value).toString(2); nbit.innerText=Math.ceil(Math.log2((+this.value)+1)); ">
+                        </td>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function() {
+                                n.dispatchEvent(new Event("input"));
+                            });
+                        </script>
+                    </tr>
+                    <tr>
+                        <th>$n_2$</th>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>100</td>
+                        <td>101</td>
+                        <td>1000</td>
+                        <td>10000</td>
+                        <td>100000</td>
+                        <td id="n2"></td>
+                    </tr>
+                    <tr>
+                        <th>$\lfloor \log_2 (n) + 1 \rfloor$</th>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td id="nbit"></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div>
+                <h1>Morris Counter</h1>
+                <p>
+                    Can we do better? That is, can we come up with a better representation (data structure)? Lets say there
+                    does in fact exist some schema such that
+                    we can represent a <span style="display: inline-block">$n$umber</span> using less than $\log(n)$ bits.
+                    Then, by the
+                    <a href="https://artofproblemsolving.com/wiki/index.php/Pigeonhole_Principle">Pigeon Hole Principle</a>
+                    there exist two distinct integers $a,\ b \in [n]$ corresponding to two different iterations of increments
+                    which map to the same representation in memory. Therefore, when queried they both return the same value
+                    which is a contradiction! So at least until Quantum Computers aren't a meme, we can't do better.
+                </p>
+                <p>
+                    This lead to an interesting insight: what if we could be 'okay' with $a,\ b$ mapping to the same
+                    memory? This would involve losing some information, so we'd only have approximations
+                    the true values of $a$ and $b$ represent. Why and when would we want to do this?
+                    In 1985 <a href="https://en.wikipedia.org/wiki/Robert_Morris_(cryptographer)">Robert Morris</a> was
+                    working at Bell Labs on a spellchecking program and wanted to keep track of
+                    <a href="https://en.wikipedia.org/wiki/Trigram">trigram</a> counts, requiring $26^3$
+                    simultaneous counters. To reduce the memory needed, he invented the
+                    <a href="https://en.wikipedia.org/wiki/Approximate_counting_algorithm">Morris Counter</a> which
+                    approximates this count proportional to $\mathcal{O}(\log (\log (n)))$ space. You can read much more of
+                    the history <a href="https://arxiv.org/pdf/1805.00612.pdf">here</a>. And even with the
+                    cheap and bountiful memory we have now, Redis implements an altered Morris counter in it's
+                    <a href="https://redis.io/docs/manual/eviction/">key eviction policies'</a>
+                    <a href="https://en.wikipedia.org/wiki/Least_frequently_used">Least Frequently Used</a> algorithm: this
+                    requires keeping track how many times each key in the database has been queried to prune the least used.
+                </p>
+                <p>
+                    <pre><code class='language-python right'>
+class MorrisCounter:
+    def __init__(self):
+        self.X = 0
+    def increment(self):
+        if random.random() < 1/(2**self.X):
+            self.X +=1
+    def query(self):
+        return (2**self.X) - 1
+                    </code></pre>
+                    The Morris counter itself works by incrementing the counter probabilistically. That is, after <code
+                        class='hljs-title'>increment</code> is called $n$ times then our representation $X_n$ is increment
+                    with a probability of $\frac 1 2^{X_n}$ and <code class='hljs-title'>query</code> returns the estimate
+                    $\hat n = 2^{X_n} - 1$. Notice how this estimate can only take on a subset of values-- this is the
+                    tradeoff that allows us to obtain better memory complexity. Intuitively, the chance we increment $X_n$
+                    decreases logarithmically with $n$ so we can speculate that our estimate has space complexity of
+                    $\mathcal{O}(\log (\log (n)))$. To prove that that
+                    our $\hat n$ is given by the prior formula is accurate, we can prove with induction that $\Bbb{E}
+                    \left(2^{X_n}\right) = n+1$:
+                    $$\begin{align*}
+                    \mathbb{E}\Big(2^{X_{n+1}}\Big) &= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \Bbb{E} \Big( 2^{X_{n + 1}}
+                    \mid X_n = i\Big) \\
+                    &= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left(\left(1- \frac 1 2^i \right) 2^i + \frac 1 2^i 2^{i+1}
+                    \right) \\
+                    &= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left((2^i - 1) + 2\right) \\
+                    &= 1 \cdot \sum_{i=0}^\infty \Bbb{P} (X_n = i) + 2^i \cdot \sum_{i=0}^\infty \Bbb{P} (X_n = i) \\
+                    &= 1 + \Bbb{E} \Big(2^{X_n}\Big) \\
+                    &= n + 2 \\
+                    \end{align*}$$
+                    The second term expands to the expected value if incremented plus the expected value if not
+                    incremented. And after expanding, the first term simplifies to $1$ given by
+                    <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">law of total probability</a> and the
+                    second is the expected value of $X_n$.
+                </p>
+                <p>
+                    It can also be shown by a similar process that the variance is given by
+                    <!-- beautify ignore:start -->
+                    $\text{Var}(\hat n) = \frac{n^2}{2} - \frac n 2 - 1 < \frac{n^2}{2}$. With this, we can use <a href="https://en.wikipedia.org/wiki/Chebyshev's_inequality">Chebyshev's inequality</a> to set up an equation to bind the variance:
+                    $$\begin{align*}
+                    \mathbb{P}(|\hat n - n| \geq \varepsilon n) & \leq \frac{\text{Var}(\hat n)}{\varepsilon^2 n^2} \leq \delta \\
+                    & < \frac{\frac{n^2}{2}}{\varepsilon^2 n^2} = \frac{1}{2\varepsilon^2} \leq \delta \\
+                    \end{align*}$$
+                    <!-- beautify ignore:end -->
+                </p>
+            </div>
+            <div>
+                <h1>Generalization & Improving</h1>
+                <p>
+                    Instead of incrementing with probability $\frac 1 2 ^X$, we use $\frac 1 {1 + \alpha}^X$, where alpha is
+                    some constant ($\alpha = 1$ in the case of OG Morris Counter). We also have return our estimate $\frac
+                    {(1 + \alpha)^X}{\alpha} - 1$. This now gives us control over the
+                    behavior of our counter: intuitively, as $\alpha \to 1$ we approach a deterministic counter so $\alpha$
+                    is directly related to memory usage (bits) and inversely related to variability. In his
+                    <a href="https://www.inf.ed.ac.uk/teaching/courses/exc/reading/morris.pdf">original paper</a>, Morris
+                    showed that if we set $\alpha = \varepsilon^2 \delta$ leads to a $(1+\varepsilon)$-approximation
+                    with $1-\delta$ probability using $\mathcal{O}\left(\log \log n + \log \frac 1 \varepsilon +
+                    \log \frac 1 \delta\right)$ bits. Then, in 2022 (40+ years later!)
+                    <a href="https://arxiv.org/pdf/2010.02116.pdf">Jelani Nelson and Huacheng Yu</a> proved
+                    that there exists an even tighter bound of $\mathcal{\Theta}(\log \log n + \log \frac 1 \varepsilon +
+                    \log \log \frac 1 \delta)$.
+                </p>
+                <p>
+                    Another improvement we could implement is to use a deterministic counter for small
+                    values and switch over to approximate after a certain threshold <code>lim</code>:
+                </p>
+
+                <pre><code class='language-python'>
+class MorrisAlpha:
+    def __init__(self, a=.05, lim=8):
+        self.X = 0
+        self.a = a
+        self.lim = lim
+    def increment(self):
+        if self.X < self.lim:
+            self.X += 1
+        elif random.random() < 1/((1 + self.a)**self.X):
+            self.X += 1
+    def query(self):
+        if self.X <= self.lim:
+            return self.X
+        return ((1 + self.a)**self.X)/self.a - 1
+                </code></pre>
+            </div>
+
+            <div>
+                <h1>Concurrent</h1>
+                <p>
+                    <!-- beautify ignore:start -->
+                    What if we used many concurrent, independent Morris counters? That is, we have $y$ counters $\{\hat n_1
+                    \dots \hat n_y\}$ and we returned the average of their outputs when queried: $\hat n = \frac 1 y
+                    \sum_{i=1}^y \hat n_i$. The expectation of a summation of independent random variables is given by
+                    $\Bbb{E}(\hat n) = \Bbb{E}\left(\frac 1 y \sum_{i=1}^y \hat n_i\right) = \Bbb{E}(\hat n_i) = n$. When a
+                    random variable is multiped by a constant $\gamma = \frac 1 y$ then it's variance changes by $\gamma^2$:
+                    $\text{Var}(\hat n) = \text{Var}\left(\frac 1 y \sum_{i=1}^y \hat n_i\right) = \frac {1}{y^2}
+                    \sum_{i=1}^y \text{Var}\left(\hat n_i\right) < \frac{n^2}{2y}$. We can then set up Chebyshev's inequality
+                    to get the following bound:
+                    $$\Bbb{P}(|\hat n - n| \geq \varepsilon n) \leq \frac{1}{2 \varepsilon^2 y} < \delta$$
+                    for $y = \left\lceil \dfrac {1}{2 \varepsilon^2 \delta}\right\rceil$. This has space complexity of
+                    $\mathcal{O} (y \cdot \log \log n) = \mathcal{O} \left(\dfrac {\log \log n}{\varepsilon^2 \delta}\right)$.
+                    <!-- beautify ignore:end -->
+                </p>
+                <p>
+                    The main takeaway is that we can now choose how tight we want the variance to be by averaging many copies
+                    of Morris, but at the cost of blowing up our memory.
+                </p>
+                <pre><code class='language-python'>
+class MorrisConcurrent:
+    def __init__(self, y):
+        self.X = 0
+        self.ys = [MorrisCounter() for _ in range(y)]
+    def increment(self):
+        [y.increment() for y in self.ys]
+    def query(self):
+        return sum([y.query() for y in self.ys])/len(self.ys)
+                    </code></pre>
+            </div>
+            <div>
+                <h1>Mo(o)re</h1>
+                <p>
+                    We can go even further by using another $z$ independent instances of the concurrent counters,
+                    each with chance of failure $\delta = \frac 1 3$. Then, we output the median of all $y$ counters where
+                    the median is valid iff we have $\frac z 2$ 'successful counters'. Since $\delta = \frac 1 3$ then a
+                    deviation of $\frac z 2 - \frac z 3 = \frac z 6$ from the median is valid. We can then set up a
+                    <a href="https://en.wikipedia.org/wiki/Hoeffding's_inequality">Hoeffding bound:</a>
+                    <!-- beautify ignore:start -->
+                    $$
+                    \Bbb{P}\left(\sum_{i=1}^z Y_i \leq \frac z 2\right) < \Bbb{P}\left( \left| \sum_{i=1}^z Y_i -
+                    \Bbb{E}(Y_i) \right| < \frac z 6 \right) \leq e^{-2 (\frac{1}{6})^2 z} \leq \delta %>
+                    $$
+                    <!-- beautify ignore:end -->
+                    Thus, we have a total of $yz = \left\lceil\dfrac {\log{\frac 1 \delta}}{\varepsilon^2}\right\rceil$
+                    copies of the original Morris counter. Once any of the counters reach $\log \frac {yzn} \delta$ the
+                    chance that it increments again is $\frac \delta {yzn}$ so the chance it increments in the next $n$
+                    increments is $\frac \delta {yz}$. Thus, if we set the bound $\delta$ such that none of the counters
+                    go above $\log \frac {yzn} \delta$ (using $\mathcal{O} \left({\log{\log \frac {yzn}\delta}}\right)$
+                    bits) then we have a bounded space complexity of
+                    $\mathcal{O} (yz \cdot \log\log n) = \mathcal{O} \left(\dfrac{\log \frac 1 \delta \log\log
+                    n}{\varepsilon^2}\right)$.
+                </p>
+                <p>
+                    You can see that the subsequent two algorithms are actually slower than a Generalized Morris counter
+                    with optimal $\alpha$ that Morris proved in his original paper. However, this process of taking the
+                    median of many means (of a fixed failure rate) exponentially decreases the overall failure rate and can
+                    be applied to other algorithms to obtain a better space complexity.
+                </p>
+            </div>
+        </article>
+        <div id="footer">
+            <table id="footerTable">
+                <tr>
+                    <td>$BTC</td>
+                    <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
+                </tr>
+                <tr>
+                    <td>$XMR</td>
+                    <td>
+                        45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
+                    </td>
+                </tr>
+                <tr>
+                    <td>$ETH</td>
+                    <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
+                </tr>
+                <tr>
+                    <td id="footerDateYear">2021</td>
+                    <td>Max Vogel</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
