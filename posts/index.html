@@ -32,20 +32,6 @@
         :root {
             --outside-bg-color: #005f4f;
         }
-
-        #blogs tr>td:nth-of-type(1) {
-            white-space: nowrap;
-            padding-right: 1ch;
-            vertical-align: top;
-        }
-
-        #blogs tr>td:nth-of-type(1)::before {
-            content: '* ';
-        }
-
-        #blogs tr>td:nth-of-type(1)::after {
-            content: ' :: ';
-        }
     </style>
 
     <!-- update the post-color.sass file so that the homepage updates colors too -->
@@ -59,121 +45,100 @@
             </a>
         </div>
 
-        <a href="rss.xml">RSS feed</a>
-
-        <table style="margin-top: 1.5em" id="blogs">
-            <!-- <tr>
-                <td class="posts">_DATE</td>
-                <td>
-                    <a href="_FNAME.html" id="POST-COLOR.SASS ID" "also add to main index page">_TITLE</a>
-                </td>
-            </tr>
-
-            -->
-            <tr>
-                <td class="posts">22-08-30</td>
-                <td>
-                    <a href="counting.html" id="counter">Probabilistic Counter</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="posts">22-08-18</td>
-                <td>
-                    <a href="balls.html" id="balls">It's all Balls</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="posts">22-02-13</td>
-                <td>
-                    <a href="feedback.html" id="feedback">Feedback</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="posts">22-02-04</td>
-                <td>
-                    <a href="colemak.html" id="colemak-experience">The Colemak Experience</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="posts">21-12-09</td>
-                <td>
-                    <a href="pass.html" id="pass">Killing pass.mehvix.com</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="posts">21-10-31</td>
-                <td>
-                    <a href="tiling-distance.html" id="tiling-distance">Tiling Distance Contradiction</a>
-                </td>
-            </tr>
-            <!-- <tr>
-                    <td class="posts">21-06-18</td>
+        <article>
+            Support a decentralized web: consider using an RSS reader for <a href="rss.xml">my feed</a>.
+            <hr class="double">
+            <table style="margin-top: 1.5em" id="blogs">
+                <!-- <tr>
+                    <td class="posts">_DATE</td>
                     <td>
-                        <a href="plans-2021.html" id="plans-2021"
-                            >Current Plans</a
-                        >
-                    </td> -->
-            </tr>
-            <tr>
-                <td class="posts">21-05-18</td>
-                <td>
-                    <a href="aops-rss.html" id="aops-rss">AoPS Blogs + RSS</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="posts">21-05-17</td>
-                <td>
-                    <a href="use-www.html" id="use-www">Webmonkeys: Use www</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="posts">21-05-13</td>
-                <td>
-                    <a href="win-insecure-files.html" id="win-insecure-files">Windows: Your files are insecure</a>
-                </td>
-            </tr>
-
-            <!-- <tr>
-                    <td class="posts">21-04-16</td>
-                    <td>
-                        <a href="what-is-this.html" id="what-is-this"
-                            >What is this site?</a
-                        >
+                        <a href="_FNAME.html" id="POST-COLOR.SASS ID" "also add to main index page">_TITLE</a>
                     </td>
                 </tr> -->
-
-            <tr>
-                <td class="posts">21-01-29</td>
-                <td>
-                    <a href="calyx.html" id="calyx">CalyxOS Install Guide</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="posts">20-12-07</td>
-                <td>
-                    <a href="twitter.html" id="twitter">Make Twitter Suck Less</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="posts">20-04-08</td>
-                <td>
-                    <a href="nextcloud-calendar.html" id="nextcloud-calendar">
-                        NC Importing + Automating Calendars
-                    </a>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="posts">19-09-03</td>
-                <td>
-                    <a href="nextcloud-guide.html" id="nextcloud-guide">Nextcloud Install Guide
-                    </a>
-                </td>
-            </tr>
-        </table>
-
+                <tr>
+                    <td class="posts">22-08-30</td>
+                    <td>
+                        <a href="counting.html" id="counter">Probabilistic Counter</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">22-08-18</td>
+                    <td>
+                        <a href="balls.html" id="balls">It's all Balls</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">22-02-13</td>
+                    <td>
+                        <a href="feedback.html" id="feedback">Feedback</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">22-02-04</td>
+                    <td>
+                        <a href="colemak.html" id="colemak-experience">The Colemak Experience</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">21-12-09</td>
+                    <td>
+                        <a href="pass.html" id="pass">Killing pass.mehvix.com</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">21-10-31</td>
+                    <td>
+                        <a href="tiling-distance.html" id="tiling-distance">Tiling Distance Contradiction</a>
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td class="posts">21-05-18</td>
+                    <td>
+                        <a href="aops-rss.html" id="aops-rss">AoPS Blogs + RSS</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">21-05-17</td>
+                    <td>
+                        <a href="use-www.html" id="use-www">Webmonkeys: Use www</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">21-05-13</td>
+                    <td>
+                        <a href="win-insecure-files.html" id="win-insecure-files">Windows: Your files are insecure</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">21-01-29</td>
+                    <td>
+                        <a href="calyx.html" id="calyx">CalyxOS Install Guide</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">20-12-07</td>
+                    <td>
+                        <a href="twitter.html" id="twitter">Make Twitter Suck Less</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">20-04-08</td>
+                    <td>
+                        <a href="nextcloud-calendar.html" id="nextcloud-calendar">
+                            NC Importing + Automating Calendars
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="posts">19-09-03</td>
+                    <td>
+                        <a href="nextcloud-guide.html" id="nextcloud-guide">Nextcloud Install Guide
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </article>
         <div id="footer">
             <table id="footerTable">
                 <tr>

@@ -3,7 +3,7 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Wed, 31 Aug 2022 00:49:52 -0000</lastBuildDate>
+		<lastBuildDate>Wed, 31 Aug 2022 18:14:19 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
@@ -49,10 +49,9 @@ class Counter:
 <input id=&quot;n&quot; min=&quot;0&quot; name=&quot;n&quot; oninput=&quot;n2.innerText=(+this.value).toString(2); nbit.innerText=Math.ceil(Math.log2((+this.value)+1)); &quot; placeholder=&quot;33&quot; type=&quot;number&quot;/>
 </td>
 <script>
-                        document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
-                            n.dispatchEvent(new Event(&quot;input&quot;));
-                        });
-
+                            document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+                                n.dispatchEvent(new Event(&quot;input&quot;));
+                            });
                         </script>
 </tr>
 <tr>

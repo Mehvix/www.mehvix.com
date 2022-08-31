@@ -177,6 +177,17 @@ a:visited
 hr
     border-top: $border-dash
 
+hr.double
+    overflow: visible
+    padding: 0
+    margin: .5em 0
+
+    border: none
+    border-top: medium double css-var(text-color)
+
+    color: css-var(text-color)
+    background: transparent
+
 fieldset
     text-align: center
     margin-bottom: 1ch
@@ -272,16 +283,25 @@ blockquote
         padding-bottom: 0
         margin-bottom: 0
 
-ul
+ul,
+ol
     padding-left: 2ch
+
+    & ul,
+    & ol
+        padding-left: 0
 
 li
     line-height: 1.44
     vertical-align: inherit
-    margin: .6ch 0
+    padding-left: 0
+    margin: 0.66ch 0
 
-    *:not(ol &)::marker
+    ul &::marker
         content: '- '
+
+    ol &::marker
+        content: '* '
 
 h1 + h2, h2 + h3, h3 + h4
     margin-top: .75em
@@ -368,6 +388,17 @@ input[type="button"]
                 // overflow: clip
             // overflow-clip-margin: 0
 
+#blogs tr>td:nth-of-type(1)
+    white-space: nowrap
+    padding-right: 1ch
+    vertical-align: top
+
+    &::before
+        content: '* '
+
+    &::after
+        content: ' :: '
+
 // these should've been IDs
 div.nav
     font-size: 115%
@@ -404,6 +435,9 @@ div.box
 // === Classes ===
 // ===============
 
+.sub-posts
+    padding-left: 2ch
+
 // Toggle image expand
 .hidden
     display: none !important
@@ -421,13 +455,6 @@ img.dropdown
     width: 100%
     margin: 0
     // display: block
-
-// For blog
-.sub-posts
-    margin: 0.5ch 0
-
-    & li::marker
-        content: '* '
 
 .skinny
     display: inline-block !important
