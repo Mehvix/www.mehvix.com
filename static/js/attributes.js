@@ -28,6 +28,7 @@ var attr_lst = [
     `My favorite keyboard size is 68%.`,
     `My favorite key switch are <span style="color: #e600de">pinks</span>.`,
     `My favorite Pokémon is Electabuzz.`,
+    `Pokemon was the only reason I learned to read voluntarily.`,
     `My favorite CAD program is reluctantly Solidworks.`,
     `My favorite Wii game is Lego Star Wars: The Complete Saga.`,
     `My favorite shell is zsh.`,
@@ -36,9 +37,10 @@ var attr_lst = [
     `My favorite color scheme is <a href="//toolbox.mehvix.com/onedark/">OneDark</a>.`,
     `My favorite movie is <span class="pulp-fiction">Pulp Fiction</span>.`,
     `My favorite Adam Sandler movie is Punch Drunk Love.`,
-    `My favorite movie soundtrack is from The Social Network.`,
+    `My favorite movie soundtrack by Trent Reznor and Atticus Ross for The Social Network.`,
     `My favorite director is Tarantino.`,
     `My favorite, all-time TV show is Sopranos.`,
+    `Sopranos ended with 'Don’t Stop Believin' because the crew hated it.`,
     `My favorite, on-air TV show is The Rehearsal.`,
     `My favorite Survivor season is Cagayan (28).`,
     `My favorite Gatorade is <span style="color: orange">orange</span>.`,
@@ -71,8 +73,11 @@ var attr_lst = [
     `My favorite music poster is from Pink Floyd's 1977 Animals tour at the <a href='https://images.wolfgangsvault.com/m/xlarge/OCA770509-PO/pink-floyd-poster-may-9-1977.webp'>Oakland Coliseum Arena Concert</a>.`,
     `My favorite genre is brown.`,
     `My favorite music video is <a href="https://www.youtube.com/watch?v=uURB-vo9rZ4">Revolution 909</a>.`,
-    `My favorite punk song is <a href="https://youtu.be/iVuB1ZASrGw">DVP</a>`,
-    `My favorite Pink Floyd song is Alan's Psychedelic Breakfast.`,
+    `My favorite punk song is <a href="https://youtu.be/iVuB1ZASrGw">DVP</a>.`,
+    `My favorite Pink Floyd album is Atom Heart Mother.`,
+    `My favorite Pink Floyd song is <a href="https://en.wikipedia.org/wiki/Echoes_(Pink_Floyd_song)">Echoes</a> -- <a href="https://youtu.be/PGwPSPIhohk">Live at Pompeii</a>.`,
+    `<a href="https://youtu.be/rn7MmS3vazU">Pink Floyd's 'Echoes' syncs to 2001: A Space Odyssey.</a>`,
+    `You learned about the Mandela effect from vsauce.`,
     `My favorite underrated album is White Pepper.`,
     `My dad wanted to name me Jimi after Hendrix.`,
     `My favorite girl scout cookies are the ones with the coconuts.`,
@@ -83,7 +88,7 @@ var attr_lst = [
     `My favorite living comic is Tom Meyers.`,
     `My favorite comic strip Calvin and Hobbes.`,
     `My favorite constant is <a href="https://en.wikipedia.org/wiki/Euler's_constant">Euler's.</a>`,
-    `The em dash—particularly when used to interject into sentences—is my favorite punctuation mark.`,
+    `The em dash—particularly when used to interject sentences—is my favorite punctuation mark.`,
     `My favorite series of integers is <a href="https://oeis.org/A000108">OEIS A000108</a>.`,
     `My favorite xkcd is #927.`,
     `If you didn't notice the favicon, my favorite monkey is the Orangutan.`,
@@ -113,10 +118,13 @@ var attr_lst = [
     `All work and no play makes Jack a dull boy.`,
     `My favorite painter is Carroll Dunham.`,
     `If while washing dishes, we think only of the cup of tea that awaits us, thus hurrying to get the dishes out of the way as if they were a nuisance, then we are not “washing the dishes to wash the dishes.” What’s more, we are not alive during the time we are washing the dishes. In fact we are completely incapable of realizing the miracle of life while standing at the sink. If we can’t wash the dishes, the chances are we won’t be able to drink our tea either. While drinking the cup of tea, we will only be thinking of other things, barely aware of the cup in our hands. Thus we are sucked away into the future—and we are incapable of actually living one minute of life.`,
+    `Dihydrogen Monoxide (DHMO) is a colorless and odorless chemical compound, also referred to by some as Dihydrogen Oxide, Hydrogen Hydroxide, Hydronium Hydroxide, or simply Hydric acid. Its basis is the highly reactive hydroxyl radical, a species shown to mutate DNA, denature proteins, disrupt cell membranes, and chemically alter critical neurotransmitters. The atomic components of DHMO are found in a number of caustic, explosive and poisonous compounds such as Sulfuric Acid, Nitroglycerine and Ethyl Alcohol.`,
     `Pride is a sin.`,
     `You forget a thousand things every day, make sure this is one of 'em.`,
     `A monad is just a monoid in the category of endofunctors.`,
+    `A tensor is something that transforms as a tensor.`,
     `Every planet in our solar system is named after a God, except Earth which is named after the stuff on the ground.`,
+    `All happy families are alike; each unhappy family is unhappy in its own way.`,
     // > videos
     `Cool ranch came before ranch.`,
     `Who's Jon Corzine? I know who Rihanna is..`,
@@ -126,7 +134,7 @@ var attr_lst = [
     `Dismiss this line--`,
     `I'm on a journey to the center of three.`,
 ];
-attr_lst.push(`There are ${attr_lst.length + 1} fun facts, and now you've seen them all!`);
+attr_lst.push(`This has been ${attr_lst.length + 1} fun facts, and now you've seen them all!`);
 
 // todo make random order
 
