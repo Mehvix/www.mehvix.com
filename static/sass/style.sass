@@ -1,12 +1,16 @@
 @import url('//fonts.googleapis.com/css2?family=PT+Mono&display=swap')
 
+// botched way to have dynamic css variables (sass variables need reload to update :p)
+@function css-var($color-name)
+    @return var(--#{$color-name})
+
 // =================
 // === Variables ===
 // =================
 $font-size: 12px
 $code-radius: 5px
 $transition-time: 250ms
-$border-dash: 1px dashed css-var(text-color)
+$border-dash: thin dashed css-var(text-color)
 
 $box-padding: 2em
 $body-width: 52em
@@ -19,10 +23,6 @@ $body-margin-side: 2em
     --code-bg-color: #282c34
     --text-color: #2b2b2b
     --text-color-inverse: #d4d4d4
-
-// botched way to have dynamic css variables (sass variables need reload to update :p)
-@function css-var($color-name)
-    @return var(--#{$color-name})
 
 // ================
 // === Elements ===
@@ -37,13 +37,14 @@ $body-margin-side: 2em
         color: css-var(text-color-inverse)
 
 html
-    overflow-y: scroll ////stackoverflow.com/a/7607206/7833617
+    overflow-y: scroll //stackoverflow.com/a/7607206/7833617
     // scroll-behavior: smooth
     // ^todo this breaks fast scroll, find workaround
 
 body
     font-family: 'PT Mono', monospace !important
-    font-weight: 400
+    font-weight: normal
+    font-variant: slashed-zero
     font-size: $font-size
     max-width: $body-width
     margin: auto
@@ -174,19 +175,22 @@ a:visited
         &:hover
             background-color: transparent
 
+.vr
+    border-left: $border-dash
+    margin: 0 0.5em
+
 hr
-    border-top: $border-dash
-
-hr.double
-    overflow: visible
-    padding: 0
-    margin: .5em 0
-
     border: none
-    border-top: medium double css-var(text-color)
-
+    border-top: $border-dash
     color: css-var(text-color)
+
+    overflow: visible
     background: transparent
+    padding: 0
+    margin: 0.5em 0
+
+    &.double
+        border-top: medium double css-var(text-color)
 
 fieldset
     text-align: center
@@ -309,7 +313,7 @@ h1 + h2, h2 + h3, h3 + h4
 h1,
 h2,
 h3
-    font-weight: 700
+    font-weight: bold
     margin-top: 2em
     margin-bottom: 0.25em
 
@@ -475,5 +479,16 @@ img.dropdown
     -ms-user-select: all // Internet Explorer/Edge
     user-select: all // Chrome and Opera
 
-.MathJax *
-    line-height: unset
+.MathJax
+    & *
+        line-height: unset
+
+    a
+        all: unset
+
+        &:hover
+            all: unset
+
+.sc // small caps
+    font-variant: small-caps
+    font-weight: bold
