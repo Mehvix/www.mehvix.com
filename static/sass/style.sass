@@ -29,7 +29,7 @@ $body-margin-side: 2em
 // ================
 *
     letter-spacing: 0
-    line-height: 1.44
+    line-height: 1.5
     scrollbar-width: thin // "auto" or "thin"
 
     &::selection
@@ -314,21 +314,26 @@ h1,
 h2,
 h3
     font-weight: bold
-    margin-top: 2em
     margin-bottom: 0.25em
+
+    &::before
+        font-style: initial
 
 h1
     font-size: 123%
+    margin-top: 2em
     &::before
         content: '# '
 
 h2
     font-size: 112%
+    margin-top: 1.25em
     &::before
         content: '## '
 
 h3
     font-size: 105%
+    margin-top: 1.25em
     &::before
         content: '### '
 
@@ -337,11 +342,6 @@ input:focus,
 textarea:focus,
 datalist:focus
     outline: 0 solid transparent !important
-
-s
-    text-decoration: none
-    background-image: linear-gradient(transparent .5em,#000000 .5em,#000000 9px,transparent 9px)
-    // ^make strike line thicc
 
 a button,
 button,
@@ -492,3 +492,34 @@ img.dropdown
 .sc // small caps
     font-variant: small-caps
     font-weight: bold
+    font-size: 120%
+
+    display: inline-block // for ::first-letter
+    &::first-letter
+        font-size: 100%
+        font-weight: bolder
+
+    @at-root i#{&},    // https://github.com/sass/sass/issues/1425#issuecomment-55114453
+    &.big
+        // font-size: 125%
+        // text-transform: lowercase
+
+        font-size: 85%
+        text-transform: uppercase
+        // makes more sese that text becomes capitalised
+
+        &::first-letter
+            font-size: unset
+
+            // bruh https://bugs.chromium.org/p/chromium/issues/detail?id=17528
+            // &::selection
+            //     background-color: inherit !important
+
+sc
+    @extend .sc
+
+s,
+.strike
+    text-decoration: none
+    background-image: linear-gradient(transparent .5em,#000000 .5em,#000000 9px,transparent 9px)
+    // ^make strike line thicc
