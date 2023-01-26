@@ -3,10 +3,58 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Wed, 31 Aug 2022 18:14:19 -0000</lastBuildDate>
+		<lastBuildDate>Thu, 26 Jan 2023 18:46:50 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
+		<item>
+			<author>Max Vogel</author>
+			<title>Driving Stick and Design</title>
+			<pubDate>Sun, 27 Nov 2022 08:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/stick.html</link>
+			<guid>https://mehvix.com/posts/stick.html</guid>
+			<content:encoded><![CDATA[<article>
+<p>
+<a href=&quot;http://www.icsi.berkeley.edu/icsi/people/shenker&quot;>Scott Shenker</a> gave a <a href=&quot;https://youtu.be/3d1dLT6yMyA&quot;>talk</a> in my networking class where he shared an anecdote that went
+                something like this:
+            </p>
+<blockquote>
+                To give some background, I did my training as a theoretical physicist: I took a postdoc in physics
+                and then I joined Xerox Palo Alto Research Center (PARC). Xerox PARC was basically where Modern PCs and
+                interfaces were invented: it's where Apple.. I don't want to say stole, since Steve
+                Job visited and we showed him all the technology. But that's what the Macintosh was built on, was
+                copying these ideas.
+                <br/>
+<br/>
+                I arrived in 1984 and a year and a half after I joined <a href=&quot;https://jnd.org/&quot;>Don Norman</a>, the lead
+                UI designer at Apple, came to visit Xerox PARC. Now I was a physicist so my ego was not involved in this but
+                certainly the computer scientists thought <i>'we invented this stuff! we know about user interfaces! how
+                    could somebody come and tell us, you who built the Mac--this cheap piece of shit--how dare you come and
+                    try and tell us how to build user interfaces!'</i>
+<br/>
+<br/>
+                The auditorium was packed with 300 Engineers, lots of energy in the room. Don Norman, this charismatic man
+                who's even older than I am, just walks up to the podium and looks out at us for for what felt like forever (but
+                it was probably 30 seconds) before asking &quot;How many of you drive a stick shift?&quot; And it's a bunch of male
+                engineers so a bunch of hands went up and you could tell it was 'well <i>I</i> drive a stick shift!'
+                <br/>
+<br/>
+                He looks at us and says &quot;None of you should <sc>Ever</sc> design a user interface!&quot;
+            </blockquote>
+<p>
+                Mastering complexity is valuable: it is crucial when developing novel systems. It is also an indicator of
+                enjoying the process--learning the skills, nuances, mindset--needed to cope with said complexity.
+            </p>
+<p>
+                These motivations are orthogonal to the goal of design: to extract simplicity, abolishing complexity. If you
+                are an enjoyer of mastering complexity, your innate mental attitude will blind you from recognizing the
+                grooves you have learned, making you incapable of extracting simplicity. It is the difference of low and high
+                level perspectives. You will never succeed in design if you do not recognize that it involves an entirely
+                different set of skills with respect to mastering
+                complexity.
+            </p>
+</article>]]></content:encoded>
+		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Probabilistic Counter</title>
@@ -99,9 +147,9 @@ class Counter:
                     memory? This would involve losing some information, so we'd only have approximations
                     the true values of $a$ and $b$ represent. Why and when would we want to do this?
                     In 1985 <a href=&quot;https://en.wikipedia.org/wiki/Robert_Morris_(cryptographer)&quot;>Robert Morris</a> was
-                    working at Bell Labs on a spellchecking program and wanted to keep track of
-                    <a href=&quot;https://en.wikipedia.org/wiki/Trigram&quot;>trigram</a> counts, requiring $26^3$
-                    simultaneous counters. To reduce the memory needed, he invented the
+                    working at Bell Labs on the Unix <a href=&quot;https://github.com/memnoth/unix-v6/blob/master/source/s2/typo.c&quot;>spellchecking program</a> and
+                    wanted to keep track of <a href=&quot;https://en.wikipedia.org/wiki/Trigram&quot;>trigram</a> counts, requiring
+                    $26^3$ simultaneous counters. To reduce the memory needed, he invented the
                     <a href=&quot;https://en.wikipedia.org/wiki/Approximate_counting_algorithm&quot;>Morris Counter</a> which
                     approximates this count proportional to $\mathcal{O}(\log (\log (n)))$ space. You can read much more of
                     the history <a href=&quot;https://arxiv.org/pdf/1805.00612.pdf&quot;>here</a>. And even with the
@@ -135,7 +183,7 @@ class MorrisCounter:
                     &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left(\left(1- \frac 1 2^i \right) 2^i + \frac 1 2^i 2^{i+1}
                     \right) \\
                     &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left((2^i - 1) + 2\right) \\
-                    &amp;= 1 \cdot \sum_{i=0}^\infty \Bbb{P} (X_n = i) + 2^i \cdot \sum_{i=0}^\infty \Bbb{P} (X_n = i) \\
+                    &amp;= \sum_{i=0}^\infty 1 \cdot \Bbb{P} (X_n = i) + \sum_{i=0}^\infty 2^i \cdot \Bbb{P} (X_n = i) \\
                     &amp;= 1 + \Bbb{E} \Big(2^{X_n}\Big) \\
                     &amp;= n + 2 \\
                     \end{align*}$$
