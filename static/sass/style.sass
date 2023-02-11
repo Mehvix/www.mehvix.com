@@ -162,7 +162,12 @@ a:visited
 
     &.inverse-bg
         color: css-var(--text-color-inverse)
+        // box-shadow: inset 0 -0.14em 0 css-var(--text-color-inverse)
+
         filter: invert(100%)
+
+        &, & *
+            transition-duration: $transition-time
 
         &:hover::selection,
         &:hover *::selection
@@ -422,9 +427,19 @@ div.nav
         &:first-child
             margin-left: 0
 
-        &:last-child,
-        strong
-            font-weight: bold !important  // bold last
+        &:last-child
+            &, strong
+                font-weight: bold !important  // bold last
+
+            @extend .inverse-bg
+
+            & *
+                filter: invert(100%)  // un-invert
+                // transition-duration: $transition-time
+
+            &:hover *
+                filter: none  // un-un-invert
+
 
 div.box
     padding: $box-padding

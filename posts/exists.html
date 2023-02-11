@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Default Required Resources -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=569,
+    maximum-scale=1" />
+    <link rel="alternate" type="application/rss+xml" title="Blog RSS" href="//mehvix.com/posts/rss.xml" />
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="/static/js/include.js"></script>
+
+    <!-- HLJS (remove if not used) -->
+    <!-- https://cdnjs.com/libraries/highlight.js -->
+    <!-- <link type="text/css" rel="stylesheet" href="/static/css/atom-one-dark.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js" integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+    hljs.highlightAll()
+    </script> -->
+
+    <!-- MathJax (remove if not used) -->
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"],
+                ],
+            },
+            svg: {
+                fontCache: "global"
+            },
+            loader: {
+                load: ["input/tex", "output/svg"]
+            },
+        };
+    </script>
+
+    <title>Mehvix | Painting Balls</title>
+    <style>
+        :root {
+            --outside-bg-color: #510069;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="nav">
+            <a href="/">~</a>/<a href="/posts/">Posts</a>/<a href="">Painting Balls</a>
+        </div>
+
+        <article>
+            <p>
+                Say we have a sphere with 10% of it's surface area painted in blue and the remaining 90% red. We want to
+                show that, no matter how the sphere is painted, we can always <a
+                    href="https://en.wikipedia.org/wiki/Inscribed_figure">inscribe</a> a cube inside such that it's 8 corners
+                (vertices) are all touching red.
+                <hr>
+                Formalizing this in terms of probabilities, we operate over the space $\Omega$ of all possible sphere
+                paintings. We know that if we randomly placed a vertex $i$, the chance of it being red is $\mathbb{P}(R_i) =
+                0.9$
+                and similarly $\mathbb{P}(B_i) = 0.1$. Thus we can state our problem as:
+
+                $$
+                \begin{align}
+                \mathbb{P}\left(\bigcap^8_{i=1} R_i \right) &= 1 - \mathbb{P}\left(\bigcup^8_{i=1} B_i \right) \\
+                &\geq 1- \sum_{i=1}^8 \mathbb{P}(B_i) \\
+                &= 1 - 8 \cdot 0.1 \\
+                &= 0.2 \\
+                &\neq 0 \iff \bigcap^8_{i=1} R_i \in \Omega
+                \end{align}
+                $$
+
+                In other words, we showed that some event (with the property of having all 8 vertices be red) is non-zero.
+                This works because to show that some specific element $\omega \in \Omega$, it is sufficient to show that
+                there exists a probability distribution $p$ over $\Omega$ where $p(\omega) > 0$. This follows from the fact
+                that if $\omega \not\in \Omega$ then $p(\omega) = p(\varnothing) = 0$. This proof technique is called <a
+                    href="https://en.wikipedia.org/wiki/Probabilistic_method">The Probabilistic Method</a> and notably
+                non-constructive: given the sphere's blue coloring, it does not show how to orient a cube, rather,
+                it shows that there exists some orientation regardless of the exact blue locations.
+            </p>
+            <p>
+                Talking around, Aidan (<a href="/posts/tiling-distance.html">cowboy hat</a>) came up with another proof.
+                Essentially, each of the eight sphere octants around each of the eight points contains $100/8 = 12.5\%$ of
+                the total surface area. And as any $c\%$ is painted in one octant, the other seven octants will be
+                constrained similarly: there will be a corresponding $c\%$ 'implicitly painted' such that placing a vertex in
+                this area will cause another vertex to be blue. Thus we can view the problem as an issue of covering an
+                octant's $12.5\%$ surface area given $10\%$ blue -- impossible! The proof is a tad handwavy, but gives a
+                sense of how we could construct an orientation by collapsing each octants into a single one that reveals the
+                (minimally $2.5\%$) remaining, valid red area.
+            </p>
+        </article>
+
+        <div id="footer">
+            <table id="footerTable">
+                <tr>
+                    <td>$BTC</td>
+                    <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
+                </tr>
+                <tr>
+                    <td>$XMR</td>
+                    <td>45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ</td>
+                </tr>
+                <tr>
+                    <td>$ETH</td>
+                    <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
+                </tr>
+                <tr>
+                    <td id="footerDateYear">2021</td>
+                    <td>Max Vogel</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

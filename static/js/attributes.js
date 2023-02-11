@@ -146,6 +146,9 @@ var attr_lst = [
     `<i>"Sticks and stones can break my bones but names will never hurt me"</i> was the popular response by WWII-era kids -- espicially German-American me. One taught oneself to tolerate ignorance and the negative opinions of others thus maintaining peace and most often gaining positive change by example. Works! (the mad dogtender)`,
     `How many probabilists does it take to screw in a light bulb? <spoil>Two. Plus a fair coin</spoil>.`,
     `How many probabilists does it actually take to screw in a light bulb? <spoil>One minus the number it takes to unscrew it.</spoil>.`,
+    `Waluigi is the ultimate symbol of postmodernism, he exists only as a foil.`,
+    `<a href='//mhvx.us/jo>When science is outlawed only outlaws will do science</a>`,
+    `Hair is a queue (FIFO).`,
     // > videos
     `<a href='https://www.youtube.com/watch?v=axiGV09C85A'>Pufferfish eats carrot (full video)</a>`,
     `Cool ranch came before ranch.`,
