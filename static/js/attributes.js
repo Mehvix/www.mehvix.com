@@ -3,7 +3,7 @@
 ///////////////////////////////////////////////////////////////////////////
 
 var attr_lst = [
-    `This sentence changes each time you reload.`,
+    `This sentence changes each time you reload!`,
     `This feature was inspired by <a href="//tom7.org">tom7.org</a>.`,
     // me
     `I use <a href="//colemakmods.github.io/mod-dh/">Colemak Mod-DH</a> as my keyboard layout and am still slow.`,
@@ -14,13 +14,14 @@ var attr_lst = [
     `My shoe size is 12 US.`,
     `My hand dominance is left. This is a fairly substantial advantage in fencing when you start out, however, it tapers off the better your opponents become.`,
     `I <s>know</s> used to know <code>-- --- .-. ... . / -.-. --- -.. ..</code>`,
+    `I know the NATO phonetic alphabet.`,
     `My teeth parity is odd (I was born without a tooth).`,
     `I have a Cheliphobia.`,
     `I have <a href="//en.wikipedia.org/wiki/Synesthesia">projective synesthesia</a> in response to music.`,
     `I have <a href="//en.wikipedia.org/wiki/Photic_sneeze_reflex">ACHOO syndrome</a>, inherited from my mom.`,
     `Max is short for Maxabillion.`,
     `I have a black aunt who is younger than me.`,
-    `I was dropped on my head as a baby.`,
+    `I was dropped on my head as a baby (and by my Native American aunt, nonetheless.)`,
     `I was held back a year in preschool.`,
     `My birthday contains two palindromes.`,
     `I've never been able to instantly know left from right or AM from PM.`,
@@ -30,19 +31,19 @@ var attr_lst = [
     `My favorite key switch are <span style="color: #e600de">pinks</span>.`,
     `My favorite Pokémon is Electabuzz.`,
     `Pokemon was the only reason I learned to read voluntarily.`,
-    `My favorite CAD program is reluctantly Solidworks.`,
+    `My favorite CAD program is (reluctantly) Solidworks.`,
     `My favorite Wii game is Lego Star Wars: The Complete Saga.`,
     `My favorite shell is zsh.`,
     `My favorite text editor is neovim.`,
     `My favorite mono font is the one you're reading, <a href="//fonts.adobe.com/fonts/pt-mono">PT Mono</a>.`,
     `My favorite color scheme is <a href="//toolbox.mehvix.com/onedark/">OneDark</a>.`,
+    `My favorite director is Tarantino.`,
     `My favorite movie is <span class="pulp-fiction">Pulp Fiction</span>.`,
     `My favorite Adam Sandler movie is Punch Drunk Love.`,
-    `My favorite movie soundtrack by Trent Reznor and Atticus Ross for The Social Network.`,
-    `My favorite director is Tarantino.`,
+    `My favorite movie soundtrack by Trent Reznor and Atticus Ross for <i>The Social Network</i>.`,
     `My favorite, all-time TV show is Sopranos.`,
     `Sopranos ended with 'Don’t Stop Believin' because the crew hated it.`,
-    `No man for any considerable period can wear one face to himself, and another to the multitude, without finally getting bewildered as to which may be the true.`,
+    `<i>No man for any considerable period can wear one face to himself, and another to the multitude, without finally getting bewildered as to which may be the true</i>.`,
     `My favorite, on-air TV show is The Rehearsal.`,
     `My favorite TNG character Q.`,
     `My favorite Survivor season is Cagayan (28).`,
@@ -73,15 +74,19 @@ var attr_lst = [
     `My first audio player was the first gen <a href='https://en.wikipedia.org/wiki/IPod_Shuffle#1st_generation'>iPod Shuffle</a>. My dad loaded it up with his favorite music and was probably the most influential factor in my music tastes now.`,
     `My favorite swimming-stroke is butterfly 🦋`,
     `My favorite physics textbook is Morin's <i>Introductory Mechanics.</i>`,
+    `My favorite cs textbook (and perhaps only textbook I have read in-all) is DPV.`,
     `My favorite band is ween.`,
+    `When you lie<br>
+Kiss your baby bye bye bye<br>
+And if you're true<br>
+The whole wide world will laugh with you.<br>`,
     `My favorite Australian band is King Gizzard & the Lizard Wizard 🇦🇺`,
-    `My favorite Canadian band is <a href='https://youtu.be/iVuB1ZASrGw'>PUP</a> 🇨🇦`,
+    `My favorite Canadian band is <a href='//mhvx.us/pup'>PUP</a> 🇨🇦`,
     `My favorite boyband is Pink Floyd.`,
     `My favorite music poster is from Pink Floyd's 1977 Animals tour at the <a href='https://images.wolfgangsvault.com/m/xlarge/OCA770509-PO/pink-floyd-poster-may-9-1977.webp'>Oakland Coliseum Arena Concert</a>.`,
     `My favorite genre is brown.`,
-    `My favorite music video is <a href="https://www.youtube.com/watch?v=uURB-vo9rZ4">Revolution 909</a>.`,
+    `My favorite music video is <a href="//mhvx.us/forever">Let Forever Be</a>.`,
     `My second favorite music video is <a href="https://www.youtube.com/watch?v=5IsSpAOD6K8">Once in a Lifetime</a>.`,
-    `My favorite punk song is <a href="https://youtu.be/iVuB1ZASrGw">DVP</a>.`,
     `My favorite Pink Floyd album is Atom Heart Mother.`,
     `My favorite Pink Floyd song is <a href="https://en.wikipedia.org/wiki/Echoes_(Pink_Floyd_song)">Echoes</a> -- <a href="https://youtu.be/PGwPSPIhohk">Live at Pompeii</a>.`,
     `<a href="https://youtu.be/rn7MmS3vazU">Pink Floyd's 'Echoes' fits to 2001: A Space Odyssey.</a>`,
@@ -102,7 +107,10 @@ var attr_lst = [
     `If you didn't notice the favicon, my favorite monkey is the Orangutan.`,
     `Mr. Beamon is my favorite Bob.`,
     `My favorite condiment is <a href="https://www.youtube.com/watch?v=GNXWZOJOe3A">mustard</a>.`,
+    `My favorite scientists is Claude Shannon.`,
+    `I pronoundce 10 like tin.`,
     `Middleton, WI is home to the National Mustard Museum.`,
+    `<a href='//mhvx.us/1971'>WTF Happened In 1971</a>?`,
     // .
     `I don't believe in astrology; I'm a Leo and we're all so smart and would never believe in something so silly.`,
     `There's nothing worse than people who don't understand hyperbole.`,
@@ -123,17 +131,20 @@ var attr_lst = [
     `Free men do not ask.`,
     `Free men do not ask.`,
     `His name was Richard Russel.`,
-    `His name was Seth Rich.`,
+    `His name was <a href='//mhvx.us/seth'>Seth Smith</a>.`,
+    `His name was <a href='//mhvx.us/rich1'>Seth</a> <a href='//mhvx.us/rich2'>Rich</a>.`,
     `His name was Aaron Swartz.`,
-    `His name is Charles Innes.`,
+    `His name is <a href='//mhvx.us/innes'>Charles Innes</a>.`,
     `Everything is vanity.`,
     `"I" am the source of my desires.`,
     `People from Ireland: they tell you they're from Ireland.`,
     `Everything solid melts into air.`,
     `All work and no play makes Jack a dull boy.`,
     `If while washing dishes, we think only of the cup of tea that awaits us, thus hurrying to get the dishes out of the way as if they were a nuisance, then we are not “washing the dishes to wash the dishes.” What’s more, we are not alive during the time we are washing the dishes. In fact we are completely incapable of realizing the miracle of life while standing at the sink. If we can’t wash the dishes, the chances are we won’t be able to drink our tea either. While drinking the cup of tea, we will only be thinking of other things, barely aware of the cup in our hands. Thus we are sucked away into the future—and we are incapable of actually living one minute of life.`,
+    `If the words 'life, liberty, and the pursuit of happiness' don't include the right to experiment with your own consciousness, then the Declaration of Independence isn't worth the hemp it was written on.`,
     `Dihydrogen Monoxide (DHMO) is a colorless and odorless chemical compound, also referred to by some as Dihydrogen Oxide, Hydrogen Hydroxide, Hydronium Hydroxide, or simply Hydric acid. Its basis is the highly reactive hydroxyl radical, a species shown to mutate DNA, denature proteins, disrupt cell membranes, and chemically alter critical neurotransmitters. The atomic components of DHMO are found in a number of caustic, explosive and poisonous compounds such as Sulfuric Acid, Nitroglycerine and Ethyl Alcohol.`,
     `I am thinking therefore I am.`,
+    `Head creates world, we control Head.`,
     `Pride is a sin.`,
     `You forget a thousand things every day, make sure this is one of 'em.`,
     `A monad is just a monoid in the category of endofunctors.`,
@@ -159,16 +170,19 @@ var attr_lst = [
     `<a href='https://www.youtube.com/watch?v=pgwr9r36zIU'>bing</a>.`,
     `THE ROOM Plays at The Balboa, The First Saturday of Every Month.`,
     `You can either love or hate <i>Uncut Gems</i>.`,
+    `<a href='//mhvx.us/whynot'>why not?</a> (feat big K)`,
     // > songs
-    `where the cheese go?`,
     `Buy real estate in imaginary places.`,
     `Dismiss this line--`,
     `I'm on a journey to the center of three.`,
     `Number of times since 1979 that Britain has ''refined'' its method of counting the unemployed: <spoil>24 (23 of them lowered unemployment!)</spoil>.`
+        `where the cheese go?`,
+    `<a href='https://youtu.be/-SyBR-M2YvU'>who took the bomp?</a>`
+        `Everything's color<br>Everything, you know, is<br>Oh, it must be to do with orange!`,
 ];
 attr_lst.push(`This has been ${attr_lst.length + 1} fun facts, and now you've seen them all!`);
 
-// todo make random order
+// todo: shuffle in random order
 
 let cookies = document.cookie.split("; ").map(prop => prop.split("=")).find(prop => prop[0] === 'attr');
 let index = 1;
