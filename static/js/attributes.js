@@ -160,6 +160,7 @@ The whole wide world will laugh with you.<br>`,
     `Waluigi is the ultimate symbol of postmodernism, he exists only as a foil.`,
     `<a href='//mhvx.us/jo>When science is outlawed only outlaws will do science</a>`,
     `Hair is a queue (FIFO).`,
+    `Cryptography = fractals - LSD.`,
     // > videos
     `<a href='https://www.youtube.com/watch?v=axiGV09C85A'>Pufferfish eats carrot (full video)</a>`,
     `Cool ranch came before ranch.`,
@@ -175,7 +176,7 @@ The whole wide world will laugh with you.<br>`,
     `Buy real estate in imaginary places.`,
     `Dismiss this line--`,
     `I'm on a journey to the center of three.`,
-    `Number of times since 1979 that Britain has ''refined'' its method of counting the unemployed: <spoil>24 (23 of them lowered unemployment!)</spoil>.`
+    `Number of times since 1979 that Britain has ''refined'' its method of counting the unemployed: <spoil>24 (23 of them lowered unemployment!)</spoil>.`,
         `where the cheese go?`,
     `<a href='https://youtu.be/-SyBR-M2YvU'>who took the bomp?</a>`
         `Everything's color<br>Everything, you know, is<br>Oh, it must be to do with orange!`,
