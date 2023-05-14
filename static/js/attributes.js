@@ -178,8 +178,6 @@ The whole wide world will laugh with you.<br>`,
     `I'm on a journey to the center of three.`,
     `Number of times since 1979 that Britain has ''refined'' its method of counting the unemployed: <spoil>24 (23 of them lowered unemployment!)</spoil>.`,
         `where the cheese go?`,
-    `<a href='https://youtu.be/-SyBR-M2YvU'>who took the bomp?</a>`
-        `Everything's color<br>Everything, you know, is<br>Oh, it must be to do with orange!`,
 ];
 attr_lst.push(`This has been ${attr_lst.length + 1} fun facts, and now you've seen them all!`);
 
