@@ -219,7 +219,7 @@ code,
         background: black !important
 
 pre > code
-    // .hljs from atom-one-dark.css line 21
+    // hljs from atom-one-dark.css line 21
     display: block
     overflow-x: scroll
     padding: 0.5em
@@ -275,6 +275,9 @@ p
     article &
         margin: 0.25em 0 1em
 
+section
+    white-space: pre-line // respect newline
+
 blockquote
     border-left: 1.25ch solid css-var(--inside-bg-color)
     filter: brightness(95%) // botched way to darken the color
@@ -329,20 +332,23 @@ h3
 h1
     font-size: 123%
     margin-top: 2em
+    // vertical-align: middle
+
     &::before
-        content: '# '
+        content: '⌗ '
+        // vertical-align: inherit
 
 h2
     font-size: 112%
     margin-top: 1.75em
     &::before
-        content: '## '
+        content: '⌗⌗ '
 
 h3
     font-size: 105%
     margin-top: 1.75em
     &::before
-        content: '### '
+        content: '⌗⌗⌗ '
 
 select:focus,
 input:focus,
@@ -415,12 +421,12 @@ div.nav
     font-size: 115%
     margin-bottom: 1em
 
-    font-weight: bold !important  // bold slashes
+    font-weight: bold !important // bold slashes
 
     & > a
         font-variant: small-caps
 
-        font-weight: initial !important  // unbold path
+        font-weight: initial !important // unbold path
         font-style: italic
         margin: 0 0.25em // padding between slashes
 
@@ -429,17 +435,16 @@ div.nav
 
         &:last-child
             &, strong
-                font-weight: bold !important  // bold last
+                font-weight: bold !important // bold last
 
-            @extend .inverse-bg
+                @extend .inverse-bg
 
             & *
-                filter: invert(100%)  // un-invert
+                filter: invert(100%) // un-invert
                 // transition-duration: $transition-time
 
             &:hover *
-                filter: none  // un-un-invert
-
+                filter: none // un-un-invert
 
 div.box
     padding: $box-padding
@@ -558,7 +563,6 @@ a.spoil
     &:hover
         background-color: unset
         color: unset
-
 
 // todo is there a better method?
 .grid

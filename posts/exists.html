@@ -43,6 +43,7 @@
         :root {
             --outside-bg-color: #510069;
         }
+
     </style>
 </head>
 
@@ -56,11 +57,13 @@
             <p>
                 Say we have a sphere with 10% of it's surface area painted in blue and the remaining 90% red. We want to
                 show that, no matter how the sphere is painted, we can always <a
-                    href="https://en.wikipedia.org/wiki/Inscribed_figure">inscribe</a> a cube inside such that it's 8 corners
+                    href="https://en.wikipedia.org/wiki/Inscribed_figure">inscribe</a> a cube inside such that it's 8
+                corners
                 (vertices) are all touching red.
                 <hr>
                 Formalizing this in terms of probabilities, we operate over the space $\Omega$ of all possible sphere
-                paintings. We know that if we randomly placed a vertex $i$, the chance of it being red is $\mathbb{P}(R_i) =
+                paintings. We know that if we randomly placed a vertex $i$, the chance of it being red is
+                $\mathbb{P}(R_i) =
                 0.9$
                 and similarly $\mathbb{P}(B_i) = 0.1$. Thus we can state our problem as:
 
@@ -74,23 +77,29 @@
                 \end{align}
                 $$
 
-                In other words, we showed that some event (with the property of having all 8 vertices be red) is non-zero.
-                This works because to show that some specific element $\omega \in \Omega$, it is sufficient to show that
-                there exists a probability distribution $p$ over $\Omega$ where $p(\omega) > 0$. This follows from the fact
-                that if $\omega \not\in \Omega$ then $p(\omega) = p(\varnothing) = 0$. This proof technique is called <a
-                    href="https://en.wikipedia.org/wiki/Probabilistic_method">The Probabilistic Method</a> and notably
+                In other words, we showed that some event (with the property of having all 8 vertices be red) is
+                non-zero. This works because to show that some specific element $\omega \in \Omega$, it is sufficient to show that
+                there exists a probability distribution $p$ over $\Omega$ where $p(\omega) > 0$. This follows from the
+                fact that if $\omega \not\in \Omega$ then $p(\omega) = p(\varnothing) = 0$. This proof technique is called <a
+                    href="https://en.wikipedia.org/wiki/Probabilistic_method">The Probabilistic Method</a> and is notably
                 non-constructive: given the sphere's blue coloring, it does not show how to orient a cube, rather,
-                it shows that there exists some orientation regardless of the exact blue locations.
+                it shows that there exists some orientation regardless of the exact blue locations (as opposed to a
+                constructive proof, i.e. <a href="https://www.youtube.com/watch?v=6hVPNONm7xw">this hat puzzle</a>
+                <spoil>
+                    where events 10 events of 10% likelihood are constructed in such a way to ensure mutually exclusivity, implying a
+                    zero chance of all events not occurring.
+                </spoil>.)
             </p>
             <p>
                 Talking around, Aidan (<a href="/posts/tiling-distance.html">cowboy hat</a>) came up with another proof.
-                Essentially, each of the eight points correspond to an octant with $100/8 = 12.5\%$ surface area. And as any
+                Essentially, each of the eight points correspond to an octant with $100/8 = 12.5\%$ surface area. And as
+                any
                 $c\%$ is painted in any single octant, the other seven will be similarly constrained: there will be a
-                corresponding $c\%$ 'implicitly painted' in all others such that placing a vertex in this area will result in
-                at least one other vertex to be <a href="https://www.youtube.com/watch?v=68ugkg9RePc">blue</a>. Thus we can
-                view the problem as an issue of covering an octant's $12.5\%$ surface area given $10\%$ blue -- impossible!
-                The proof is a tad handwavy, but gives a sense of how we could collapse the
-                octants to reveal the (minimally $2.5\%$) remaining red area and thus construct a valid orientation.
+                corresponding $c\%$ 'implicitly painted' in all others such that placing a vertex in this area will result in at least
+                one other vertex to be <a href="https://www.youtube.com/watch?v=68ugkg9RePc">blue</a>. Thus we can view the problem as
+                an issue of covering an octant's $12.5\%$ surface area given $10\%$ blue --
+                impossible! The proof is a tad handwavy, but gives a sense of how we could collapse the octants to reveal the (minimally
+                $2.5\%$) remaining red area and thus construct a valid orientation.
             </p>
         </article>
 
@@ -102,7 +111,8 @@
                 </tr>
                 <tr>
                     <td>$XMR</td>
-                    <td>45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ</td>
+                    <td>45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
+                    </td>
                 </tr>
                 <tr>
                     <td>$ETH</td>

@@ -16,15 +16,28 @@ table.about
             white-space: nowrap
             width: min-content
 
+            &::before
+                content: '* '
+                vertical-align: sub
+                margin-right: 2px
+
         &:nth-of-type(2)
             padding: 0 0 0 1ch
             width: 100%
 
-        &:nth-of-type(1)::before
-            content: '- '
+            &::before
+                content: ':: '
+                padding: 0 1ch
 
-        &:nth-of-type(2)::before
-            content: '/ '
+#portorait-container
+    // mobile-specific support
+    background-color: #969696
+    float: right
+    padding: 1ch
+    margin-left: 2ch
+    margin-bottom: 2ch
+    max-width: 50%
+    // click to enlarge; JS?
 
 /* For attr */
 @font-face

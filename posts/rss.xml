@@ -3,24 +3,26 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Sat, 11 Feb 2023 23:49:53 -0000</lastBuildDate>
+		<lastBuildDate>Thu, 28 Dec 2023 02:28:16 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
 		<item>
 			<author>Max Vogel</author>
 			<title>Painting Balls</title>
-			<pubDate>Sat, 11 Feb 2023 08:00:00 -0000</pubDate>
+			<pubDate>Sat, 11 Feb 2023 06:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/exists.html</link>
 			<guid>https://mehvix.com/posts/exists.html</guid>
 			<content:encoded><![CDATA[<article>
 <p>
                 Say we have a sphere with 10% of it's surface area painted in blue and the remaining 90% red. We want to
-                show that, no matter how the sphere is painted, we can always <a href=&quot;https://en.wikipedia.org/wiki/Inscribed_figure&quot;>inscribe</a> a cube inside such that it's 8 corners
+                show that, no matter how the sphere is painted, we can always <a href=&quot;https://en.wikipedia.org/wiki/Inscribed_figure&quot;>inscribe</a> a cube inside such that it's 8
+                corners
                 (vertices) are all touching red.
                 <hr/>
                 Formalizing this in terms of probabilities, we operate over the space $\Omega$ of all possible sphere
-                paintings. We know that if we randomly placed a vertex $i$, the chance of it being red is $\mathbb{P}(R_i) =
+                paintings. We know that if we randomly placed a vertex $i$, the chance of it being red is
+                $\mathbb{P}(R_i) =
                 0.9$
                 and similarly $\mathbb{P}(B_i) = 0.1$. Thus we can state our problem as:
 
@@ -34,29 +36,35 @@
                 \end{align}
                 $$
 
-                In other words, we showed that some event (with the property of having all 8 vertices be red) is non-zero.
-                This works because to show that some specific element $\omega \in \Omega$, it is sufficient to show that
-                there exists a probability distribution $p$ over $\Omega$ where $p(\omega) &gt; 0$. This follows from the fact
-                that if $\omega \not\in \Omega$ then $p(\omega) = p(\varnothing) = 0$. This proof technique is called <a href=&quot;https://en.wikipedia.org/wiki/Probabilistic_method&quot;>The Probabilistic Method</a> and notably
+                In other words, we showed that some event (with the property of having all 8 vertices be red) is
+                non-zero. This works because to show that some specific element $\omega \in \Omega$, it is sufficient to show that
+                there exists a probability distribution $p$ over $\Omega$ where $p(\omega) &gt; 0$. This follows from the
+                fact that if $\omega \not\in \Omega$ then $p(\omega) = p(\varnothing) = 0$. This proof technique is called <a href=&quot;https://en.wikipedia.org/wiki/Probabilistic_method&quot;>The Probabilistic Method</a> and is notably
                 non-constructive: given the sphere's blue coloring, it does not show how to orient a cube, rather,
-                it shows that there exists some orientation regardless of the exact blue locations.
+                it shows that there exists some orientation regardless of the exact blue locations (as opposed to a
+                constructive proof, i.e. <a href=&quot;https://www.youtube.com/watch?v=6hVPNONm7xw&quot;>this hat puzzle</a>
+<spoil>
+                    where events 10 events of 10% likelihood are constructed in such a way to ensure mutually exclusivity, implying a
+                    zero chance of all events not occurring.
+                </spoil>.)
             </p>
 <p>
                 Talking around, Aidan (<a href=&quot;/posts/tiling-distance.html&quot;>cowboy hat</a>) came up with another proof.
-                Essentially, each of the eight sphere octants around each of the eight points contains $100/8 = 12.5\%$ of
-                the total surface area. And as any $c\%$ is painted in one octant, the other seven octants will be
-                constrained similarly: there will be a corresponding $c\%$ 'implicitly painted' such that placing a vertex in
-                this area will cause another vertex to be blue. Thus we can view the problem as an issue of covering an
-                octant's $12.5\%$ surface area given $10\%$ blue -- impossible! The proof is a tad handwavy, but gives a
-                sense of how we could construct an orientation by collapsing each octants into a single one that reveals the
-                (minimally $2.5\%$) remaining, valid red area.
+                Essentially, each of the eight points correspond to an octant with $100/8 = 12.5\%$ surface area. And as
+                any
+                $c\%$ is painted in any single octant, the other seven will be similarly constrained: there will be a
+                corresponding $c\%$ 'implicitly painted' in all others such that placing a vertex in this area will result in at least
+                one other vertex to be <a href=&quot;https://www.youtube.com/watch?v=68ugkg9RePc&quot;>blue</a>. Thus we can view the problem as
+                an issue of covering an octant's $12.5\%$ surface area given $10\%$ blue --
+                impossible! The proof is a tad handwavy, but gives a sense of how we could collapse the octants to reveal the (minimally
+                $2.5\%$) remaining red area and thus construct a valid orientation.
             </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Driving Stick and Design</title>
-			<pubDate>Sun, 27 Nov 2022 08:00:00 -0000</pubDate>
+			<pubDate>Sun, 27 Nov 2022 06:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/stick.html</link>
 			<guid>https://mehvix.com/posts/stick.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -88,23 +96,29 @@
                 He looks at us and says &quot;None of you should <sc>Ever</sc> design a user interface!&quot;
             </blockquote>
 <p>
-                Mastering complexity is valuable: it is crucial when developing novel systems. It is also an indicator of
+<i>Mastering Complexity</i> is valuable: it is crucial when developing novel systems. It is also an indicator of
                 enjoying the process--learning the skills, nuances, mindset--needed to cope with said complexity.
             </p>
 <p>
-                These motivations are orthogonal to the goal of design: to extract simplicity, abolishing complexity. If you
-                are an enjoyer of mastering complexity, your innate mental attitude will blind you from recognizing the
-                grooves you have learned, making you incapable of extracting simplicity. It is the difference of low and high
-                level perspectives. You will never succeed in design if you do not recognize that it involves an entirely
-                different set of skills with respect to mastering
-                complexity.
+                Driving stick embodies the act of <i>Mastering Complexity</i>, and for the sake of itself: the practice is a
+                feedback loop of constant refinement, sharpening the axe by focusing the subtle nuances. <a href=&quot;https://youtu.be/LK2uDUndpww?t=10&quot;>Van argues it is a creative exercise</a>; an
+                endeavor that (in the states) is the inconvenient, non-default route -- you must yearn to pursue the practice. In
+                the
+                same vein, you are &quot;that guy&quot; if you learn drive stick (ala <a href=&quot;./colemak.html&quot;>colemake-dh</a>).
+                </p>
+<p>
+                    These motivations, may be creative in spirit, yet are orthogonal to the goal of design: to extract simplicity;
+                    abolish
+                    complexity. If you are an enjoyer of <i>Mastering Complexity</i>, your innate state will blind you from recognizing
+                    the mental grooves you've developed alongside constructing [software, user experience, etc.]. You cannot
+                    succeed in design if you do not consciously curb this ethos.
             </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Probabilistic Counter</title>
-			<pubDate>Tue, 30 Aug 2022 07:00:00 -0000</pubDate>
+			<pubDate>Tue, 30 Aug 2022 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/counting.html</link>
 			<guid>https://mehvix.com/posts/counting.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -353,7 +367,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>It's all Balls</title>
-			<pubDate>Thu, 18 Aug 2022 07:00:00 -0000</pubDate>
+			<pubDate>Thu, 18 Aug 2022 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/balls.html</link>
 			<guid>https://mehvix.com/posts/balls.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -412,7 +426,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>Feedback</title>
-			<pubDate>Sun, 13 Feb 2022 08:00:00 -0000</pubDate>
+			<pubDate>Sun, 13 Feb 2022 06:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/feedback.html</link>
 			<guid>https://mehvix.com/posts/feedback.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -429,7 +443,7 @@ class MorrisConcurrent:
                     <a href=&quot;https://cloud.mehvix.com/apps/forms/4nPHba8sQqbecmnN&quot;>at this link</a>. I only ask that you
                     <a href=&quot;https://larahogan.me/blog/dont-soften-feedback/&quot;>Don't Soften Feedback</a>
                     and, if praising,
-                    <a href=&quot;https://chrislakin.com/praise&quot;>Praise Descriptively</a>.
+                    <a href=&quot;https://web.archive.org/web/20220809093201/https://chrislakin.substack.com/p/praise-that-doesnt-feel-uncomfortable&quot;>Praise Descriptively</a>.
                 </div>
 <iframe frameborder=&quot;0&quot; src=&quot;https://cloud.mehvix.com/apps/forms/4nPHba8sQqbecmnN&quot;></iframe>
 </article>]]></content:encoded>
@@ -437,7 +451,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>The Colemak Experience</title>
-			<pubDate>Fri, 04 Feb 2022 08:00:00 -0000</pubDate>
+			<pubDate>Fri, 04 Feb 2022 06:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/colemak.html</link>
 			<guid>https://mehvix.com/posts/colemak.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -606,7 +620,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>Killing pass.mehvix.com</title>
-			<pubDate>Thu, 09 Dec 2021 08:00:00 -0000</pubDate>
+			<pubDate>Thu, 09 Dec 2021 06:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/pass.html</link>
 			<guid>https://mehvix.com/posts/pass.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -636,7 +650,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>Tiling Distance Contradiction</title>
-			<pubDate>Sun, 31 Oct 2021 07:00:00 -0000</pubDate>
+			<pubDate>Sun, 31 Oct 2021 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/tiling-distance.html</link>
 			<guid>https://mehvix.com/posts/tiling-distance.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -832,7 +846,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>AoPS Blogs + RSS</title>
-			<pubDate>Tue, 18 May 2021 07:00:00 -0000</pubDate>
+			<pubDate>Tue, 18 May 2021 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/aops-rss.html</link>
 			<guid>https://mehvix.com/posts/aops-rss.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -881,7 +895,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>Webmonkeys: Use www</title>
-			<pubDate>Mon, 17 May 2021 07:00:00 -0000</pubDate>
+			<pubDate>Mon, 17 May 2021 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/use-www.html</link>
 			<guid>https://mehvix.com/posts/use-www.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -932,7 +946,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>Windows: Your files are insecure</title>
-			<pubDate>Thu, 13 May 2021 07:00:00 -0000</pubDate>
+			<pubDate>Thu, 13 May 2021 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/win-insecure-files.html</link>
 			<guid>https://mehvix.com/posts/win-insecure-files.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -1029,7 +1043,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>CalyxOS Install Guide</title>
-			<pubDate>Fri, 29 Jan 2021 08:00:00 -0000</pubDate>
+			<pubDate>Fri, 29 Jan 2021 06:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/calyx.html</link>
 			<guid>https://mehvix.com/posts/calyx.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -1130,7 +1144,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>Make Twitter Suck Less</title>
-			<pubDate>Mon, 07 Dec 2020 08:00:00 -0000</pubDate>
+			<pubDate>Mon, 07 Dec 2020 06:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/twitter.html</link>
 			<guid>https://mehvix.com/posts/twitter.html</guid>
 			<content:encoded><![CDATA[<article id=&quot;content&quot;>
@@ -1277,7 +1291,7 @@ keywords.reduce(async (prev, keyword) =&gt; {
 		<item>
 			<author>Max Vogel</author>
 			<title>NC Importing + Automating Calendars</title>
-			<pubDate>Wed, 08 Apr 2020 07:00:00 -0000</pubDate>
+			<pubDate>Wed, 08 Apr 2020 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/nextcloud-calendar.html</link>
 			<guid>https://mehvix.com/posts/nextcloud-calendar.html</guid>
 			<content:encoded><![CDATA[<article id=&quot;content&quot;>
@@ -1346,7 +1360,7 @@ keywords.reduce(async (prev, keyword) =&gt; {
 		<item>
 			<author>Max Vogel</author>
 			<title>Nextcloud Install Guide</title>
-			<pubDate>Tue, 03 Sep 2019 07:00:00 -0000</pubDate>
+			<pubDate>Tue, 03 Sep 2019 05:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/nextcloud-guide.html</link>
 			<guid>https://mehvix.com/posts/nextcloud-guide.html</guid>
 			<content:encoded><![CDATA[<article>
