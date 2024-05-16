@@ -224,8 +224,8 @@ pre > code
     overflow-x: scroll
     padding: 0.5em
 
-    color: css_var(text-color-inverse)
-    background: css_var(code-bg-color)
+    color: css-var(--text-color-inverse)
+    background: css-var(--code-bg-color)
 
     &.right
         @extend .skinny
@@ -236,16 +236,16 @@ pre > code
     &::-webkit-scrollbar
         width: .66ch // width of the entire scrollbar
     &::-webkit-scrollbar-track
-        background: css_var(code-bg-color) // color of the tracking area
+        background: css-var(--code-bg-color) // color of the tracking area
         border-radius: $code-radius*1.25 // roundness of the track
     &::-webkit-scrollbar-thumb
         background-color: #323742 // color of the scroll thumb
         border-radius: $code-radius // roundness of the scroll thumb
 
 details
-    color: css_var(text-color-inverse)
+    color: css-var(--text-color-inverse)
     padding: .4rem .75rem
-    background: css_var(code-bg-color)
+    background: css-var(--code-bg-color)
     border-radius: $code-radius
     font-size: 87% !important
 
