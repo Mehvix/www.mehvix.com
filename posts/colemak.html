@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Default Required Resources -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=569,
-    maximum-scale=1"
-        />
-        <link
-            rel="alternate"
-            type="application/rss+xml"
-            title="Blog RSS"
-            href="//mehvix.com/posts/rss.xml"
-        />
-        <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
-        <script src="/static/js/include.js"></script>
 
-        <!-- HLJS (try and remove if not used) -->
-        <!-- https://cdnjs.com/libraries/highlight.js -->
-        <!-- <link
+<head>
+    <!-- Default Required Resources -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=569,
+    maximum-scale=1" />
+    <link rel="alternate" type="application/rss+xml" title="Blog RSS" href="//mehvix.com/posts/rss.xml" />
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="/static/js/include.js"></script>
+
+    <!-- HLJS (try and remove if not used) -->
+    <!-- https://cdnjs.com/libraries/highlight.js -->
+    <!-- <link
             type="text/css"
             rel="stylesheet"
             href="/static/css/atom-one-dark.css"
@@ -34,237 +27,216 @@
             hljs.highlightAll()
         </script> -->
 
-        <title>Mehvix | The Colemak Experience</title>
-        <style>
-            :root {
-                --outside-bg-color: #2943b6;
-            }
-            body {
-                background-image: url('/static/media/posts/cm-tile.png');
-                background-repeat: repeat;
-            }
-        </style>
-    </head>
+    <title>Mehvix | The Colemak Experience</title>
+    <style>
+        :root {
+            --outside-bg-color: #2943b6;
+        }
 
-    <body>
-        <div class="box">
-            <div class="nav">
-                <a href="/">~</a>/<a href="/posts/">Posts</a>/<a
-                    href=""
-                    class="inverse-bg"
-                    >The Colemak Experience</a
-                >
-            </div>
+        body {
+            background-image: url('/static/media/posts/cm-tile.png');
+            background-repeat: repeat;
+        }
 
-            <article>
-                <h1>Pre</h1>
-                <div>
-                    <p>
-                        I have now typed in Colemak for 391 days in a row, so I
-                        feel somewhat qualified to tell you why you should
-                        consider (not) switching your keyboard layout.
-                    </p>
-                </div>
+    </style>
+</head>
 
-                <h1>What</h1>
-                <div>
-                    <img src="/static/media/posts/cm.png" alt="" />
-                    <blockquote>
-                        Colemak is a modern alternative to the QWERTY and Dvorak
-                        layouts, designed for efficient and ergonomic touch
-                        typing in English. Learning Colemak is a one-time
-                        investment that will allow you to enjoy faster and
-                        pain-free typing for the rest of your life (<a
-                            href="https://colemak.com/"
-                            >colemak.com</a
-                        >)
-                    </blockquote>
-                    <p>
-                        Simply, Colemak places the most commonly typed letters
-                        (based on the English language) on the home row and
-                        determines the position of the rest by accounting for
-                        finger distance, row jumping, same-finger typing
-                        <a href="https://colemak.com/Ergonomic">etc</a>,
-                        <a href="https://colemak.com/Fast">etc</a>.
-                    </p>
-                </div>
-
-                <h1>Why Not</h1>
-                <div>
-                    <p>
-                        Switching to Colemak takes long. And is just hard. You
-                        have to break your old muscle memory. Typing is going to
-                        be a slow, ugly drudge for a while. I got back to
-                        averaging 70 WPM (my OG QWERTY speed) after a (long)
-                        month. Then again, my roommate Jack got back 84 WPM
-                        after two days (he was formerly avg 140)-- this is a
-                        developing situation (he just got 84 five minutes ago)
-                        but at this rate I'm sure he'll get 140 by the end of
-                        the week. This is the hardest part of the whole process.
-                    </p>
-                    <p>
-                        After you learn Colemak, good luck using other people's
-                        computers. It's embarrassing. When you learn Colemak,
-                        you have to destroy all your pre-existing typing habits,
-                        thus, you (need to) forget QWERTY (on a regular
-                        keyboard, phone fine). I now carry around a USB with
-                        Windows/Linux Colemak files (which isn't terrible since
-                        I always have a password-backup USB on me). Regardless,
-                        it's a hassle. Additionally, sometimes you do not have
-                        permissions to install layouts (school/works computers).
-                        To circumvent this, I was looking into building a
-                        physical middle-man between the keyboard and computer
-                        using an Arduino. The parts arrived but now that I'm at
-                        Berkeley and I have no free time (or, there are more
-                        fulfilling things to do with my free time). Maybe this
-                        summer. Anyways, more reasons not to use Colemak:
-                    </p>
-                    <p>
-                        If you use
-                        <a href="./win-insecure-files.html">VeraCrypt</a> or any
-                        other encryption system that requires unlocking the
-                        drive prior to the operating system loading (so, yes,
-                        LUKS) then typing your password is pain: your keyboard
-                        will be typing in QWERTY (unless you have a hardware
-                        Colemak keyboard, which you probably shouldn't). You can
-                        circumvent this by setting your keyboard layout
-                        temporarily to QWERTY, then typing your password like
-                        you normally would (just type what you would by pressing
-                        the keys as if they were Colemak), and you're set.
-                        Additionally, some (most) of Linux DE's do not load the
-                        layout on the initial lock screen so you'll have to
-                        slowly type it out. I've found that after a while my
-                        brain can store the QWERTY-muscle memory of my most
-                        common passwords so it's not terrible after you encode
-                        the important/common ones in your brain.
-                    </p>
-                    <p>
-                        Vim is not as slick: your movement keys aren't in the
-                        same proximity. You can rebind the keys, of course, but
-                        out of the box (ex. when you SSH into a machine) it's
-                        annoying. More generally, shortcuts may be more a hassle
-                        for other programs. For what it's worth, Colemak does
-                        have <code>C</code> and <code>V</code> unchanged (for
-                        copy / paste respectively) unlike Dvorak.
-                    </p>
-                    <p>
-                        Finally, I can only imagine it's fairly easy to
-                        fingerprint Colemak (or really any non-mainstream
-                        layout) users, either through reading the current
-                        keyboard layout or by unique, colemak-specific typing
-                        mannerisms (look up 'Behavioral Biometrics'). This only
-                        matters if you're a privacy nut or Snowden-level wanted.
-                    </p>
-
-                    <p>
-                        Summary: the hardest part is the first month (getting
-                        back to your old WPM). The rest of the reasons are
-                        mostly small nuisances and edge cases that you can judge
-                        if they matter.
-                    </p>
-                </div>
-
-                <h1>Why</h1>
-                <div>
-                    <p>
-                        It's fun to learn as a challenge. If you like learning
-                        skills, this is one of the ones to at least try out. I
-                        can tell you it's more useful than knowing morse-code
-                        (besides perhaps <code>...---...</code>) and around the
-                        same impressiveness as being able to solve a rubik's
-                        cube. It's also fun to type: if you go online you'll see
-                        people talking about the sweet '<a
-                            href="https://forum.colemak.com/topic/802-finger-rolls/"
-                            >finger rolls</a
-                        >' that Colemak is conductive to. If you switch, type
-                        'tenderheartednesses' and you'll see.
-                    </p>
-                    <p>
-                        You will probably get faster. Then again, I may have
-                        gotten equally better had I spend this time and focus
-                        towards improving regular typing. Anyways, I went from
-                        averaging 70 to 100 WPM. Below is my progress on
-                        monkeytype:
-                    </p>
-                    <img src="/static/media/posts/prog.png" alt="" />
-                    <p>
-                        Also, you may not get RSI or carpal tunnel which is
-                        pretty dope 👌.
-                    </p>
-                </div>
-
-                <h1>How</h1>
-                <div>
-                    <p>
-                        To end this post, I'm actually a liar! I use a
-                        derivative of Colemak, called
-                        <a href="https://colemakmods.github.io/mod-dh/"
-                            >Colemak-DH</a
-                        >, which has a few other additional tweaks you can read
-                        about on the website. Skim it and choose if you want it
-                        or Colemak—— it really doesn't matter all that much. One
-                        minor thing is that base Colemak is included Manjaro
-                        (and presumably other distros) while -DH is not (making
-                        set up a bit more painful.)
-                    </p>
-                    <p>
-                        When you do decide to take the Colemak pill, set aside a
-                        weekend where you are okay being unproductive while
-                        using a computer. To learn Colemak, you have to use it
-                        lots. You can't swap back between it and QWERTY, so you
-                        have to grind back to an acceptable WPM.
-                    </p>
-                    <p>
-                        After running the installer (<a
-                            href="https://colemak.com/Download"
-                            >colemak installers</a
-                        >,
-                        <a href="https://colemakmods.github.io/mod-dh/"
-                            >-DH installers</a
-                        >), I started by going through all the keys on
-                        <a href="https://first20hours.github.io/keyzen-colemak/"
-                            >keyzen colemak</a
-                        >, then
-                        <a href="https://www.colemak.academy/"
-                            >colemak.academy</a
-                        >, and finally grinding
-                        <a href="https://monkeytype.com/">monkeytype</a>. This
-                        is what I recommend to others, and how my roommate Jack
-                        is learning very quickly. You may also want to checkout
-                        the
-                        <a href="https://old.reddit.com/r/Colemak/"
-                            >subreddit</a
-                        >
-                        to see what's worked for others. Ultimately, it boils
-                        down to focusing on breaking your old habits. If you
-                        think that sounds lke a fun challenge, highly
-                        recommended!
-                    </p>
-                </div>
-            </article>
-
-            <div id="footer">
-                <table id="footerTable">
-                    <tr>
-                        <td>$BTC</td>
-                        <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
-                    </tr>
-                    <tr>
-                        <td>$XMR</td>
-                        <td>
-                            45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>$ETH</td>
-                        <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
-                    </tr>
-                    <tr>
-                        <td id="footerDateYear">2021</td>
-                        <td>Max Vogel</td>
-                    </tr>
-                </table>
-            </div>
+<body>
+    <div class="box">
+        <div class="nav">
+            <a href="/">~</a>/<a href="/posts/">Posts</a>/<a href="" class="inverse-bg">The Colemak Experience</a>
         </div>
-    </body>
+
+        <article>
+            <h1>Pre</h1>
+            <div>
+                <p>
+                    I have now typed in Colemak for 391 days in a row, so I
+                    feel somewhat qualified to tell you why you should
+                    consider (not) switching your keyboard layout.
+                </p>
+            </div>
+
+            <h1>What</h1>
+            <div>
+                <img src="/static/media/posts/cm.png" alt="" />
+                <blockquote>
+                    Colemak is a modern alternative to the QWERTY and Dvorak
+                    layouts, designed for efficient and ergonomic touch
+                    typing in English. Learning Colemak is a one-time
+                    investment that will allow you to enjoy faster and
+                    pain-free typing for the rest of your life (<a href="https://colemak.com/">colemak.com</a>)
+                </blockquote>
+                <p>
+                    Simply, Colemak places the most commonly typed letters
+                    (based on the English language) on the home row and
+                    determines the position of the rest by accounting for
+                    finger distance, row jumping, same-finger typing
+                    <a href="https://colemak.com/Ergonomic">etc</a>,
+                    <a href="https://colemak.com/Fast">etc</a>.
+                </p>
+            </div>
+
+            <h1>Why Not</h1>
+            <div>
+                <p>
+                    Switching to Colemak takes long. And is just hard. You
+                    have to break your old muscle memory. Typing is going to
+                    be a slow, ugly drudge for a while. I got back to
+                    averaging 70 WPM (my OG QWERTY speed) after a (long)
+                    month. Then again, my roommate Jack got back 84 WPM
+                    after two days (he was formerly avg 140)-- this is a
+                    developing situation (he just got 84 five minutes ago)
+                    but at this rate I'm sure he'll get 140 by the end of
+                    the week. This is the hardest part of the whole process.
+                </p>
+                <p>
+                    After you learn Colemak, good luck using other people's
+                    computers. It's embarrassing. When you learn Colemak,
+                    you have to destroy all your pre-existing typing habits,
+                    thus, you (need to) forget QWERTY (on a regular
+                    keyboard, phone fine). I now carry around a USB with
+                    Windows/Linux Colemak files (which isn't terrible since
+                    I always have a password-backup USB on me). Regardless,
+                    it's a hassle. Additionally, sometimes you do not have
+                    permissions to install layouts (school/works computers).
+                    To circumvent this, I was looking into building a
+                    physical middle-man between the keyboard and computer
+                    using an Arduino. The parts arrived but now that I'm at
+                    Berkeley and I have no free time (or, there are more
+                    fulfilling things to do with my free time). Maybe this
+                    summer. Anyways, more reasons not to use Colemak:
+                </p>
+                <p>
+                    If you use
+                    <a href="./win-insecure-files.html">VeraCrypt</a> or any
+                    other encryption system that requires unlocking the
+                    drive prior to the operating system loading (so, yes,
+                    LUKS) then typing your password is pain: your keyboard
+                    will be typing in QWERTY (unless you have a hardware
+                    Colemak keyboard, which you probably shouldn't). You can
+                    circumvent this by setting your keyboard layout
+                    temporarily to QWERTY, then typing your password like
+                    you normally would (just type what you would by pressing
+                    the keys as if they were Colemak), and you're set.
+                    Additionally, some (most) of Linux DE's do not load the
+                    layout on the initial lock screen so you'll have to
+                    slowly type it out. I've found that after a while my
+                    brain can store the QWERTY-muscle memory of my most
+                    common passwords so it's not terrible after you encode
+                    the important/common ones in your brain.
+                </p>
+                <p>
+                    Vim is not as slick: your movement keys aren't in the
+                    same proximity. You can rebind the keys, of course, but
+                    out of the box (ex. when you SSH into a machine) it's
+                    annoying. More generally, shortcuts may be more a hassle
+                    for other programs. For what it's worth, Colemak does
+                    have <code>C</code> and <code>V</code> unchanged (for
+                    copy / paste respectively) unlike Dvorak.
+                </p>
+                <p>
+                    Finally, I can only imagine it's fairly easy to
+                    fingerprint Colemak (or really any non-mainstream
+                    layout) users, either through reading the current
+                    keyboard layout or by unique, colemak-specific typing
+                    mannerisms (look up 'Behavioral Biometrics'). This only
+                    matters if you're a privacy nut or Snowden-level wanted.
+                </p>
+
+                <p>
+                    Summary: the hardest part is the first month (getting
+                    back to your old WPM). The rest of the reasons are
+                    mostly small nuisances and edge cases that you can judge
+                    if they matter.
+                </p>
+            </div>
+
+            <h1>Why</h1>
+            <div>
+                <p>
+                    It's fun to learn as a challenge. If you like learning
+                    skills, this is one of the ones to at least try out. I
+                    can tell you it's more useful than knowing morse-code
+                    (besides perhaps <code>...---...</code>) and around the
+                    same impressiveness as being able to solve a rubik's
+                    cube. It's also fun to type: if you go online you'll see
+                    people talking about the sweet '<a href="https://forum.colemak.com/topic/802-finger-rolls/">finger rolls</a>' that Colemak is conductive to. If you switch, type 'tenderheartednesses' and you'll see.
+                </p>
+                <p>
+                    You will probably get faster. Then again, I may have
+                    gotten equally better had I spend this time and focus
+                    towards improving regular typing. Anyways, I went from
+                    averaging 70 to 100 WPM. Below is my progress on
+                    monkeytype:
+                </p>
+                <img src="/static/media/posts/prog.png" alt="" />
+                <p>
+                    Also, you may not get RSI or carpal tunnel which is
+                    pretty dope 👌.
+                </p>
+            </div>
+
+            <h1>How</h1>
+            <div>
+                <p>
+                    To end this post, I'm actually a liar! I use a
+                    derivative of Colemak, called
+                    <a href="https://colemakmods.github.io/mod-dh/">Colemak-DH</a>, which has a few other additional tweaks you can read
+                    about on the website. Skim it and choose if you want it
+                    or Colemak—— it really doesn't matter all that much. One
+                    minor thing is that base Colemak is included Manjaro
+                    (and presumably other distros) while -DH is not (making
+                    set up a bit more painful.)
+                </p>
+                <p>
+                    When you do decide to take the Colemak pill, set aside a
+                    weekend where you are okay being unproductive while
+                    using a computer. To learn Colemak, you have to use it
+                    lots. You can't swap back between it and QWERTY, so you
+                    have to grind back to an acceptable WPM.
+                </p>
+                <p>
+                    After running the installer (<a href="https://colemak.com/Download">colemak installers</a>,
+                    <a href="https://colemakmods.github.io/mod-dh/">-DH installers</a>), I started by going through all the keys on
+                    <a href="https://first20hours.github.io/keyzen-colemak/">keyzen colemak</a>, then
+                    <a href="https://www.colemak.academy/">colemak.academy</a>, and finally grinding
+                    <a href="https://monkeytype.com/">monkeytype</a>. This
+                    is what I recommend to others, and how my roommate Jack
+                    is learning very quickly. You may also want to checkout
+                    the
+                    <a href="https://old.reddit.com/r/Colemak/">subreddit</a>
+                    to see what's worked for others. Ultimately, it boils
+                    down to focusing on breaking your old habits. If you
+                    think that sounds lke a fun challenge, highly
+                    recommended!
+                </p>
+            </div>
+        </article>
+
+        <div id="footer">
+            <table id="footerTable">
+                <tr>
+                    <td>$BTC</td>
+                    <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
+                </tr>
+                <tr>
+                    <td>$XMR</td>
+                    <td>
+                        45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
+                    </td>
+                </tr>
+                <tr>
+                    <td>$ETH</td>
+                    <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
+                </tr>
+                <tr>
+                    <td id="footerDateYear">2021</td>
+                    <td>Max Vogel</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
 </html>

@@ -14,16 +14,13 @@
 
     <!-- https://cdnjs.com/libraries/highlight.js -->
     <link type="text/css" rel="stylesheet" href="/static/css/atom-one-dark.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
-        integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js" integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
         hljs.highlightAll()
     </script>
 
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
         MathJax = {
             tex: {
@@ -46,6 +43,7 @@
         :root {
             --outside-bg-color: #3e0992;
         }
+
     </style>
     <link rel="stylesheet" href="/static/css/posts/counting.css">
 </head>
@@ -89,11 +87,10 @@ class Counter:
                         <td>16</td>
                         <td>32</td>
                         <td style="padding: 0">
-                            <input type="number" name="n" id="n" min="0" placeholder="33"
-                                oninput="n2.innerText=(+this.value).toString(2); nbit.innerText=Math.ceil(Math.log2((+this.value)+1)); ">
+                            <input type="number" name="n" id="n" min="0" placeholder="33" oninput="n2.innerText=(+this.value).toString(2); nbit.innerText=Math.ceil(Math.log2((+this.value)+1)); ">
                         </td>
                         <script>
-                            document.addEventListener("DOMContentLoaded", function() {
+                            document.addEventListener("DOMContentLoaded", function () {
                                 n.dispatchEvent(new Event("input"));
                             });
                         </script>
@@ -146,8 +143,7 @@ class Counter:
                     memory? This would involve losing some information, so we'd only have approximations
                     the true values of $a$ and $b$ represent. Why and when would we want to do this?
                     In 1985 <a href="https://en.wikipedia.org/wiki/Robert_Morris_(cryptographer)">Robert Morris</a> was
-                    working at Bell Labs on the Unix <a
-                        href="https://github.com/memnoth/unix-v6/blob/master/source/s2/typo.c">spellchecking program</a> and
+                    working at Bell Labs on the Unix <a href="https://github.com/memnoth/unix-v6/blob/master/source/s2/typo.c">spellchecking program</a> and
                     wanted to keep track of <a href="https://en.wikipedia.org/wiki/Trigram">trigram</a> counts, requiring
                     $26^3$ simultaneous counters. To reduce the memory needed, he invented the
                     <a href="https://en.wikipedia.org/wiki/Approximate_counting_algorithm">Morris Counter</a> which
@@ -159,7 +155,7 @@ class Counter:
                     requires keeping track how many times each key in the database has been queried to prune the least used.
                 </p>
                 <p>
-                    <pre><code class='language-python right'>
+                <pre><code class='language-python right'>
 class MorrisCounter:
     def __init__(self):
         self.X = 0
@@ -169,29 +165,28 @@ class MorrisCounter:
     def query(self):
         return (2**self.X) - 1
                     </code></pre>
-                    The Morris counter itself works by incrementing the counter probabilistically. That is, after <code
-                        class='hljs-title'>increment</code> is called $n$ times then our representation $X_n$ is increment
-                    with a probability of $\frac 1 2^{X_n}$ and <code class='hljs-title'>query</code> returns the estimate
-                    $\hat n = 2^{X_n} - 1$. Notice how this estimate can only take on a subset of values-- this is the
-                    tradeoff that allows us to obtain better memory complexity. Intuitively, the chance we increment $X_n$
-                    decreases logarithmically with $n$ so we can speculate that our estimate has space complexity of
-                    $\mathcal{O}(\log (\log (n)))$. To prove that that
-                    our $\hat n$ is given by the prior formula is accurate, we can prove with induction that $\Bbb{E}
-                    \left(2^{X_n}\right) = n+1$:
-                    $$\begin{align*}
-                    \mathbb{E}\Big(2^{X_{n+1}}\Big) &= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \Bbb{E} \Big( 2^{X_{n + 1}}
-                    \mid X_n = i\Big) \\
-                    &= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left(\left(1- \frac 1 2^i \right) 2^i + \frac 1 2^i 2^{i+1}
-                    \right) \\
-                    &= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left((2^i - 1) + 2\right) \\
-                    &= \sum_{i=0}^\infty 1 \cdot \Bbb{P} (X_n = i) + \sum_{i=0}^\infty 2^i \cdot \Bbb{P} (X_n = i) \\
-                    &= 1 + \Bbb{E} \Big(2^{X_n}\Big) \\
-                    &= n + 2 \\
-                    \end{align*}$$
-                    The second term expands to the expected value if incremented plus the expected value if not
-                    incremented. And after expanding, the first term simplifies to $1$ given by
-                    <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">law of total probability</a> and the
-                    second is the expected value of $X_n$.
+                The Morris counter itself works by incrementing the counter probabilistically. That is, after <code class='hljs-title'>increment</code> is called $n$ times then our representation $X_n$ is increment
+                with a probability of $\frac 1 2^{X_n}$ and <code class='hljs-title'>query</code> returns the estimate
+                $\hat n = 2^{X_n} - 1$. Notice how this estimate can only take on a subset of values-- this is the
+                tradeoff that allows us to obtain better memory complexity. Intuitively, the chance we increment $X_n$
+                decreases logarithmically with $n$ so we can speculate that our estimate has space complexity of
+                $\mathcal{O}(\log (\log (n)))$. To prove that that
+                our $\hat n$ is given by the prior formula is accurate, we can prove with induction that $\Bbb{E}
+                \left(2^{X_n}\right) = n+1$:
+                $$\begin{align*}
+                \mathbb{E}\Big(2^{X_{n+1}}\Big) &= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \Bbb{E} \Big( 2^{X_{n + 1}}
+                \mid X_n = i\Big) \\
+                &= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left(\left(1- \frac 1 2^i \right) 2^i + \frac 1 2^i 2^{i+1}
+                \right) \\
+                &= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left((2^i - 1) + 2\right) \\
+                &= \sum_{i=0}^\infty 1 \cdot \Bbb{P} (X_n = i) + \sum_{i=0}^\infty 2^i \cdot \Bbb{P} (X_n = i) \\
+                &= 1 + \Bbb{E} \Big(2^{X_n}\Big) \\
+                &= n + 2 \\
+                \end{align*}$$
+                The second term expands to the expected value if incremented plus the expected value if not
+                incremented. And after expanding, the first term simplifies to $1$ given by
+                <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">law of total probability</a> and the
+                second is the expected value of $X_n$.
                 </p>
                 <p>
                     It can also be shown by a similar process that the variance is given by

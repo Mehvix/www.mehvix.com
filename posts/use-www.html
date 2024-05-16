@@ -1,130 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Default Required Resources -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=569,
-    maximum-scale=1"
-        />
-        <link
-            rel="alternate"
-            type="application/rss+xml"
-            title="Blog RSS"
-            href="//mehvix.com/posts/rss.xml"
-        />
-        <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
-        <script src="/static/js/include.js"></script>
 
-        <!-- HLJS (try and remove if not used) -->
-        <!-- https://cdnjs.com/libraries/highlight.js -->
-        <!-- <link
-            type="text/css"
-            rel="stylesheet"
-            href="/static/css/atom-one-dark.css"
-        />
-        <script
-            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
-            integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
-        <script>
-            hljs.highlightAll()
-        </script> -->
+<head>
+    <!-- Default Required Resources -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=569,
+    maximum-scale=1" />
+    <link rel="alternate" type="application/rss+xml" title="Blog RSS" href="//mehvix.com/posts/rss.xml" />
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="/static/js/include.js"></script>
 
-        <title>Mehvix | Use www</title>
-        <style>
-            :root {
-                --outside-bg-color: #199209;
-            }
-        </style>
-    </head>
+    <title>Mehvix | Use www</title>
+    <style>
+        :root {
+            --outside-bg-color: #199209;
+        }
 
-    <body>
-        <div class="box">
-            <div class="nav">
-                <a href="/">~</a>/<a href="/posts/">Posts</a>/<a
-                    href=""
-                    class="inverse-bg"
-                    >Use www</a
-                >
-            </div>
-            <article>
-                <p>
-                    I have a <i>yuuuug</i> bookmarks folder of assorted articles
-                    I've come across but haven't had the time to delve into. Now
-                    that I'm through my UW classwork I've finally been able to
-                    chunk through some of them and today and I came across the
-                    (mostly-irrelevant, website-related decision) debate between
-                    <a href="http://no-www.org/">no-www</a> and
-                    <a href="//www.yes-www.org/"><b>www</b>.yes-www</a>.
-                </p>
+    </style>
+</head>
 
-                <h1>The debate</h1>
-                <p>
-                    The argument by <a href="http://no-www.org/">no-www</a> is
-                    that <code>www</code> is supposedly “deprecated” in that
-                    it's redundant to type. But, if you look at our tech
-                    overlords like <a href="http://google.com">Google</a>,
-                    <a href="http://amazon.com">Amazon</a>,
-                    <a href="http://apple.com">Apple</a>, etc. you'll see that
-                    they redirect no-www to www (more on why later). For what
-                    it's worth though, having no <code>www</code> has its
-                    <i>minimalism aesthetic</i> and anecdotally most smaller
-                    sites seem to have no www.
-                </p>
-                <p>
-                    <a href="//www.yes-www.org/">yes-www</a>
-                    has actual
-                    <a href="//www.yes-www.org/why-use-www/"
-                        >technical arguments</a
-                    >: (1) you can’t use a CNAME record on a "naked domain"
-                    (that is, sites with no <code>www</code>) and (2) cookies on
-                    the naked domain get sent to all subdomains (so all
-                    <code>*.mehvix.com</code> domains) which can mess up caching
-                    for static files.
-                </p>
-
-                <h1>Changing</h1>
-                <p>
-                    Both of the pro-<code>www</code> points aren't an issue for
-                    me now, but best not to limit myself later down the line. To
-                    swap, I prefaced the domain with <code>www</code> on this
-                    site's
-                    <a
-                        href="//github.com/Mehvix/mehvix.com/commit/037e1dde90bc5a4e43adfe72dfeeb0e49d73d898"
-                        >CNAME on the GitHub</a
-                    >
-                    , changed my <code>CNAME</code> and <code>A</code> DNS
-                    records so that all prior non-<code>www</code> links would
-                    go to the new <code>www</code> version.
-                </p>
-            </article>
-
-            <div id="footer">
-                <table id="footerTable">
-                    <tr>
-                        <td>$BTC</td>
-                        <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
-                    </tr>
-                    <tr>
-                        <td>$XMR</td>
-                        <td>
-                            45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>$ETH</td>
-                        <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
-                    </tr>
-                    <tr>
-                        <td id="footerDateYear">2021</td>
-                        <td>Max Vogel</td>
-                    </tr>
-                </table>
-            </div>
+<body>
+    <div class="box">
+        <div class="nav">
+            <a href="/">~</a>/<a href="/posts/">Posts</a>/<a href="" class="inverse-bg">Use www</a>
         </div>
-    </body>
+        <article>
+            <p>
+                I have a <i>yuuuug</i> bookmarks folder of assorted articles
+                I've come across but haven't had the time to delve into. Now that I'm through my UW classwork I've finally been able to chunk through some of them and today and I came across the (mostly-irrelevant, website-related decision) debate between <a href="http://no-www.org/">no-www</a> and <a href="//www.yes-www.org/"><b>www</b>.yes-www</a>.
+            </p>
+
+            <h1>The debate</h1>
+            <p>
+                The argument by <a href="http://no-www.org/">no-www</a> is that <code>www</code> is supposedly “deprecated” in that it's redundant to type. But, if you look at our tech overlords like <a href="http://google.com">Google</a>, <a href="http://amazon.com">Amazon</a>, <a href="http://apple.com">Apple</a>, etc. you'll see that they redirect no-www to www (more on why later). For what it's worth though, having no <code>www</code> has its <i>minimalism aesthetic</i> and anecdotally most smaller sites seem to have no www.
+            </p>
+            <p>
+                <a href="//www.yes-www.org/">yes-www</a> has actual <a href="//www.yes-www.org/why-use-www/">technical arguments</a>: (1) you can't use a CNAME record on a "naked domain" (that is, sites with no <code>www</code>) and (2) cookies on the naked domain get sent to all subdomains (so all <code>*.mehvix.com</code> domains) which can mess up caching for static files.
+            </p>
+
+            <h1>Changing</h1>
+            <p>
+                Both of the pro-<code>www</code> points aren't an issue for me now, but best not to limit myself later down the line. To swap, I prefaced the domain with <code>www</code> on this site's <a href="//github.com/Mehvix/mehvix.com/commit/037e1dde90bc5a4e43adfe72dfeeb0e49d73d898">CNAME on the GitHub</a>, changed my <code>CNAME</code> and <code>A</code> DNS records so that all prior non-<code>www</code> links would go to the new <code>www</code> version.
+            </p>
+        </article>
+
+        <div id="footer">
+            <table id="footerTable">
+                <tr>
+                    <td>$BTC</td>
+                    <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
+                </tr>
+                <tr>
+                    <td>$XMR</td>
+                    <td>
+                        45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
+                    </td>
+                </tr>
+                <tr>
+                    <td>$ETH</td>
+                    <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
+                </tr>
+                <tr>
+                    <td id="footerDateYear">2021</td>
+                    <td>Max Vogel</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
 </html>

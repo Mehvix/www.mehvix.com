@@ -97,7 +97,7 @@
                     class="language-shell"
                 ><code>$ sudo apt update && sudo apt upgrade
 $ sudo apt install apache2
-$ systemctl start apache2 # turns on apache now 
+$ systemctl start apache2 # turns on apache now
 $ systemctl enable apache2 # auto-start apache2 on boot</code></pre>
 
                 <p>
@@ -124,7 +124,7 @@ $ mysql_secure_installation</code></pre>
                     own password created during the installation phase).
                 </p>
 
-                <pre><code class="language-pgsql">$ mariadb 
+                <pre><code class="language-pgsql">$ mariadb
 CREATE DATABASE nextcloud;
 CREATE USER nextcloud IDENTIFIED BY 'Password';
 GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password';
@@ -631,7 +631,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
                     <pre><code>$ cd /var/www/html/apps/
 $ wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&amp;confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&amp; 1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j" -O rclick &amp;&amp; rm -rf /tmp/cookies.txt
 $ rm -rf files_rightclick/
-$ unzip rclick      
+$ unzip rclick
 $ rm rclick
 $ systemctl restart apache2</code></pre>
                     <code>systemctl restart apache2</code>

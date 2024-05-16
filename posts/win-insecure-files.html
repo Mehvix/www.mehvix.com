@@ -1,194 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Default Required Resources -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=569,
-    maximum-scale=1"
-        />
-        <link
-            rel="alternate"
-            type="application/rss+xml"
-            title="Blog RSS"
-            href="//mehvix.com/posts/rss.xml"
-        />
-        <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
-        <script src="/static/js/include.js"></script>
 
-        <!-- HLJS (try and remove if not used) -->
-        <!-- https://cdnjs.com/libraries/highlight.js -->
-        <!-- <link
-            type="text/css"
-            rel="stylesheet"
-            href="/static/css/atom-one-dark.css"
-        />
-        <script
-            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
-            integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
-        <script>
-            hljs.highlightAll()
-        </script> -->
+<head>
+    <!-- Default Required Resources -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=569,
+    maximum-scale=1" />
+    <link rel="alternate" type="application/rss+xml" title="Blog RSS" href="//mehvix.com/posts/rss.xml" />
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="/static/js/include.js"></script>
 
-        <title>Mehvix | Windows: Your files are insecure</title>
-        <style>
-            :root {
-                --outside-bg-color: #0072c6;
-            }
-        </style>
-    </head>
+    <title>Mehvix | Windows: Your files are Insecure</title>
+    <style>
+        :root {
+            --outside-bg-color: #0072c6;
+        }
 
-    <body>
-        <div class="box">
-            <div class="nav">
-                <a href="/">~</a>/<a href="/posts/">Posts</a>/<a
-                    href=""
-                    class="inverse-bg"
-                    >Windows: Your files are insecure</a
-                >
-            </div>
+    </style>
+</head>
 
-            <article>
-                <p>
-                    Anyone who has physical access to your Windows machine can
-                    plug in and boot to a live USB drive which allows them to
-                    see/edit/copy your entire filesystem — all images,
-                    documents, applications, etc. — without logging in. All this
-                    can be prevented by just encrypting your file system.
-                </p>
-
-                <h1>BitLocker</h1>
-                <p>
-                    Microsoft doesn't value your security. Their proprietary
-                    encryption software
-                    <a href="//en.wikipedia.org/wiki/BitLocker">BitLocker</a>
-                    is only available for paying Windows Pro and Enterprise
-                    users (and even then, it isn't enabled by default 🤔). And,
-                    if for some reason you're paying (extra) for Windows, you
-                    still shouldn't use BitLocker. Microsoft practice
-                    <a href="//en.wikipedia.org/wiki/Security_through_obscurity"
-                        >security through obscurity</a
-                    >: like Windows, BitLocker code is proprietary meaning
-                    there's no way to vet it's security or verify there are not
-                    backdoors for any of the
-                    <a
-                        href="//en.wikipedia.org/wiki/Alphabet_agencies#Modern_era"
-                        >alphabet boys</a
-                    >
-                    which Microsoft has done before — from what's been made
-                    <i>public</i>, Microsoft has
-                    <a href="//archive.ph/Y3hsk"
-                        >helped the NSA to circumvent their own encryption</a
-                    >,
-                    <a href="//archive.ph/ETUkp"
-                        >backdoored pre-installed disk encryption</a
-                    >,
-                    <a href="//archive.ph/sX5dY"
-                        >informed the NSA of bugs in Windows before fixing
-                        them</a
-                    >, and
-                    <a href="//archive.is/ZW77o"
-                        >there's a secret NSA key in Windows, whose functions we
-                        don't know</a
-                    >.
-                </p>
-
-                <p>
-                    The alternative to proprietary software is open source
-                    software: anyone can verify an open source project's
-                    legitimacy and contribute improvements of their own. For
-                    Windows, the open source encryption software I'd recommend
-                    is
-                    <a href="//veracrypt.fr/en/Home.html">VeraCrypt</a>.
-                </p>
-
-                <h1>VeraCrypt</h1>
-                <p>
-                    You can download the latest installer of VeraCrypt
-                    <a href="//veracrypt.fr/en/Downloads.html">here</a>. Once
-                    you install it, the process of encrypting your drive(s) is
-                    fairly trivial. For encrypting your storage device with the
-                    operating system, you start by going selecting
-                    <code>System</code> >
-                    <code>Encrypt System Partition/Drive...</code> and following
-                    the creation wizard. The default AES + SHA-512 is more than
-                    enough. Once you get to "Collecting Random Data", shake your
-                    mouse around — VeraCrypt gathers random data from your
-                    mouse's position because (somewhat unintuitively)
-                    <a
-                        href="//www.howtogeek.com/183051/htg-explains-how-computers-generate-random-numbers/"
-                        >it's hard for computers to generate unpredictable
-                        random numbers on their own</a
-                    >.
-                </p>
-
-                <h2>Rescue Disk</h2>
-                <p>
-                    Later, when prompted to, I'd recommend that you create a
-                    rescue disk — this is allows you to unlock your drive if one
-                    day Windows can't boot or the VeraCrypt bootloader get
-                    damaged (unlikely, but possible). All you have to do is grab
-                    a USB drive, create a folder called <code>EFI</code>, and
-                    add copy the generated Rescue Disk. If something ever does
-                    go wrong and you want to decrypt your drive outside of
-                    Windows, all you have to do is plug in and boot to the USB
-                    then enter your decryption password. Because you still need
-                    to have your password, you don't need to keep this USB
-                    especially secure (but hey, it can't hurt!).
-                </p>
-
-                <h2>Wiping</h2>
-                <p>
-                    You'll also be able to optionally write wipe the drive of
-                    all unencrypted data from the drive. Multiple passes is an
-                    <a
-                        href="http://www.infosecisland.com/blogview/16130-The-Urban-Legend-of-Multipass-Hard-Disk-Overwrite.html"
-                        >urban legend</a
-                    >
-                    (doesn't improve security), wears the drives down, and can
-                    take a very long time. One pass is sufficient and doesn't
-                    take too long (compared to no passes).
-                </p>
-                <h2>Testing</h2>
-                <p>
-                    After selecting the number of passes, you should be prompted
-                    to test that the boot loader works before VeraCrypt proceeds
-                    with encryption and the wipe(s). Once you restart, you'll be
-                    be prompted with the VeraCrypt boot loader before the
-                    Windows login screen. Here, you enter your password (and pin
-                    if you opted for one; if you didn't leave it empty). Once
-                    you get back into Windows, VeraCrypt will open and prompt
-                    you to actually encrypt your data and fulfill the wipe(s).
-                    When that completes, you're done!
-                </p>
-            </article>
-
-            <div id="footer">
-                <table id="footerTable">
-                    <tr>
-                        <td>$BTC</td>
-                        <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
-                    </tr>
-                    <tr>
-                        <td>$XMR</td>
-                        <td>
-                            45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>$ETH</td>
-                        <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
-                    </tr>
-                    <tr>
-                        <td id="footerDateYear">2021</td>
-                        <td>Max Vogel</td>
-                    </tr>
-                </table>
-            </div>
+<body>
+    <div class="box">
+        <div class="nav">
+            <a href="/">~</a>/<a href="/posts/">Posts</a>/<a href="" class="inverse-bg">Windows: Your files are Insecure</a>
         </div>
-    </body>
+
+        <article>
+            <p>
+                Anyone who has physical access to your Windows machine can plug in and boot to a live USB drive which allows them to see/edit/copy your entire filesystem — all images, documents, applications, etc. — without logging in. All this can be prevented by just encrypting your file system.
+            </p>
+
+            <h1>BitLocker</h1>
+            <p>
+                Microsoft doesn't value your security. Their proprietary encryption software <a href="//en.wikipedia.org/wiki/BitLocker">BitLocker</a> is only available for paying Windows Pro and Enterprise users (and even then, it isn't enabled by default 🤔). And, if for some reason you're paying (extra) for Windows, you still shouldn't use BitLocker. Microsoft practice <a href="//en.wikipedia.org/wiki/Security_through_obscurity">security through obscurity</a>: like Windows, BitLocker code is proprietary meaning there's no way to vet it's security or verify there are not backdoors for any of the <a href="//en.wikipedia.org/wiki/Alphabet_agencies#Modern_era">alphabet boys</a>
+                which Microsoft has done before — from what's been made <i>public</i>, Microsoft has <a href="//archive.ph/Y3hsk">helped the NSA to circumvent their own encryption</a>, <a href="//archive.ph/ETUkp">backdoored pre-installed disk encryption</a>, <a href="//archive.ph/sX5dY">informed the NSA of bugs in Windows before fixing them</a>, and <a href="//archive.is/ZW77o">there's a secret NSA key in Windows, whose functions we don't know</a>.
+            </p>
+
+            <p>
+                The alternative to proprietary software is open source software: anyone can verify an open source project's legitimacy and contribute improvements of their own. For Windows, the open source encryption software I'd recommend is
+                <a href="//veracrypt.fr/en/Home.html">VeraCrypt</a>.
+            </p>
+
+            <h1>VeraCrypt</h1>
+            <p>
+                You can download the latest installer of VeraCrypt <a href="//veracrypt.fr/en/Downloads.html">here</a>. Once you install it, the process of encrypting your drive(s) is fairly trivial. To encrypt the storage device with the operating system, you start by going selecting <code>System</code> > <code>Encrypt System Partition/Drive...</code> and following the creation wizard. The default AES + SHA-512 is more than enough. Note that if you are dual-booting from <i>different</i> disks you do not need to use the dual-boot setting. Once you get to "Collecting Random Data", shake your mouse around — VeraCrypt gathers random data from your mouse's position because (somewhat unintuitively) <a href="//www.howtogeek.com/183051/htg-explains-how-computers-generate-random-numbers/">it's hard for computers to generate unpredictable random numbers on their own</a>.
+            </p>
+
+            <h2>Rescue Disk</h2>
+            <p>
+                Later, when prompted to, I'd recommend that you create a rescue disk — this is allows you to unlock your drive if one day Windows can't boot or the VeraCrypt bootloader get damaged (unlikely, but possible). All you have to do is grab a USB drive, create a folder called <code>EFI</code>, and add copy the generated Rescue Disk. If something ever does go wrong and you want to decrypt your drive outside of Windows, all you have to do is plug in and boot to the USB then enter your decryption password. Because you still need to have your password, you don't need to keep this USB especially secure (but hey, it can't hurt!).
+            </p>
+
+            <h2>Wiping</h2>
+            <p>
+                You'll also be able to optionally write wipe the drive of all unencrypted data from the drive. Multiple passes is an <a href="http://www.infosecisland.com/blogview/16130-The-Urban-Legend-of-Multipass-Hard-Disk-Overwrite.html">urban legend</a> (doesn't improve security), wears the drives down, and can take a very long time. One pass is sufficient and doesn't take too long (compared to no passes).
+            </p>
+            <h2>Testing</h2>
+            <p>
+                After selecting the number of passes, you should be prompted to test that the boot loader works before VeraCrypt proceeds with encryption and the wipe(s). Once you restart, you'll be be prompted with the VeraCrypt boot loader before the Windows login screen. Here, you enter your password (and pin if you opted for one; if you didn't leave it empty). Once you get back into Windows, VeraCrypt will open and prompt you to actually encrypt your data and fulfill the wipe(s). When that completes, you're done!
+            </p>
+        </article>
+
+        <div id="footer">
+            <table id="footerTable">
+                <tr>
+                    <td>$BTC</td>
+                    <td>15adHcuUPLHzVmUqKqgeLfLzvtfD5r7WJ1</td>
+                </tr>
+                <tr>
+                    <td>$XMR</td>
+                    <td>
+                        45MaKMYnWBnNWS4rtbrMp8C6wL1B1mguW6AjmJBGqLJkCzVUMuXwamzRfrmiwLw1WrbUptNjY1DoL4Yu4fXqTDAcDEWpuTZ
+                    </td>
+                </tr>
+                <tr>
+                    <td>$ETH</td>
+                    <td>0xeeC384Cdef3aD975EdF1D2f6C1dC9a4b1fEEBF74</td>
+                </tr>
+                <tr>
+                    <td id="footerDateYear">2021</td>
+                    <td>Max Vogel</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
 </html>
