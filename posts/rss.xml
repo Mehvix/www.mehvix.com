@@ -3,14 +3,37 @@
 	<channel>
 		<title>mehvix.com</title>
 		<description>Updates from mehvix.com (Max Vogel)</description>
-		<lastBuildDate>Tue, 02 Jan 2024 22:38:39 -0000</lastBuildDate>
+		<lastBuildDate>Thu, 16 May 2024 23:57:11 -0000</lastBuildDate>
 		<language>en-us</language>
 		<link>https://www.mehvix.com</link>
 		<category>Blog</category>
 		<item>
 			<author>Max Vogel</author>
+			<title>mhvx.us is dead!</title>
+			<pubDate>Sat, 27 Apr 2024 07:00:00 -0000</pubDate>
+			<link>https://mehvix.com/posts/us.html</link>
+			<guid>https://mehvix.com/posts/us.html</guid>
+			<content:encoded><![CDATA[<article>
+<p>
+                TL;DR Long live <a href=&quot;//mhvx.cc&quot;>mhvx.cc</a>! This is now where my <a href=&quot;https://github.com/Mehvix/golink&quot;>golink instance</a> points to.
+            </p>
+<p>
+                My former domain, <a href=&quot;//mhvx.us&quot;>mhvx.us</a>, has been compromised; it's now registered with <a href=&quot;https://www.galcomm.com/about/&quot;>this Israeli registrar</a> and redirects to ads.
+            </p>
+<p>
+                I will not be registering a .us TLD again. They require your phone number and address, which will be publicly posted on WHOIS and is a pain to get it scrubbed; I still get rings from Indian webdev companies calling to tell me that I own the site and should buy their Wordpress services (to which I refer them to <a href=&quot;//mhvx.cc/211&quot;>./211</a>).
+            </p>
+<p>
+                Originally, I obtained the domain for free using an MLH promo code from TreeHacks 2022, where it was registered on Porkbun. Trying to transfer to Cloudflare was impossible (whoever manages the .us TLD kept denying my transfer, I don't think this was porkbun) so I let it expire. Little did I know of the eons of <a href=&quot;https://kb.porkbun.com/article/37-what-happens-after-a-domain-expires&quot;>grace period days</a>,
+                so I twiddled my thumbs from the time it expired, January 17th,
+                'til April 3rd when it was snatched up by an ad agency.
+            </p>
+</article>]]></content:encoded>
+		</item>
+		<item>
+			<author>Max Vogel</author>
 			<title>Privacy, Orthodoxy</title>
-			<pubDate>Wed, 27 Dec 2023 06:00:00 -0000</pubDate>
+			<pubDate>Wed, 27 Dec 2023 08:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/orthodoxy.html</link>
 			<guid>https://mehvix.com/posts/orthodoxy.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -82,7 +105,7 @@
 		<item>
 			<author>Max Vogel</author>
 			<title>Painting Balls</title>
-			<pubDate>Sat, 11 Feb 2023 06:00:00 -0000</pubDate>
+			<pubDate>Sat, 11 Feb 2023 08:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/exists.html</link>
 			<guid>https://mehvix.com/posts/exists.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -136,7 +159,7 @@
 		<item>
 			<author>Max Vogel</author>
 			<title>Driving Stick and Design</title>
-			<pubDate>Sun, 27 Nov 2022 06:00:00 -0000</pubDate>
+			<pubDate>Sun, 27 Nov 2022 08:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/stick.html</link>
 			<guid>https://mehvix.com/posts/stick.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -177,20 +200,20 @@
                 endeavor that (in the states) is the inconvenient, non-default route -- you must yearn to pursue the practice. In
                 the
                 same vein, you are &quot;that guy&quot; if you learn drive stick (ala <a href=&quot;./colemak.html&quot;>colemake-dh</a>).
-                </p>
+            </p>
 <p>
-                    These motivations, may be creative in spirit, yet are orthogonal to the goal of design: to extract simplicity;
-                    abolish
-                    complexity. If you are an enjoyer of <i>Mastering Complexity</i>, your innate state will blind you from recognizing
-                    the mental grooves you've developed alongside constructing [software, user experience, etc.]. You cannot
-                    succeed in design if you do not consciously curb this ethos.
+                These motivations, may be creative in spirit, yet are orthogonal to the goal of design: to extract simplicity;
+                abolish
+                complexity. If you are an enjoyer of <i>Mastering Complexity</i>, your innate state will blind you from recognizing
+                the mental grooves you've developed alongside constructing [software, user experience, etc.]. You cannot
+                succeed in design if you do not consciously curb this ethos.
             </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Probabilistic Counter</title>
-			<pubDate>Tue, 30 Aug 2022 05:00:00 -0000</pubDate>
+			<pubDate>Tue, 30 Aug 2022 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/counting.html</link>
 			<guid>https://mehvix.com/posts/counting.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -229,7 +252,7 @@ class Counter:
 <input id=&quot;n&quot; min=&quot;0&quot; name=&quot;n&quot; oninput=&quot;n2.innerText=(+this.value).toString(2); nbit.innerText=Math.ceil(Math.log2((+this.value)+1)); &quot; placeholder=&quot;33&quot; type=&quot;number&quot;/>
 </td>
 <script>
-                            document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+                            document.addEventListener(&quot;DOMContentLoaded&quot;, function () {
                                 n.dispatchEvent(new Event(&quot;input&quot;));
                             });
                         </script>
@@ -301,28 +324,28 @@ class MorrisCounter:
     def query(self):
         return (2**self.X) - 1
                     </code></pre>
-                    The Morris counter itself works by incrementing the counter probabilistically. That is, after <code class=&quot;hljs-title&quot;>increment</code> is called $n$ times then our representation $X_n$ is increment
-                    with a probability of $\frac 1 2^{X_n}$ and <code class=&quot;hljs-title&quot;>query</code> returns the estimate
-                    $\hat n = 2^{X_n} - 1$. Notice how this estimate can only take on a subset of values-- this is the
-                    tradeoff that allows us to obtain better memory complexity. Intuitively, the chance we increment $X_n$
-                    decreases logarithmically with $n$ so we can speculate that our estimate has space complexity of
-                    $\mathcal{O}(\log (\log (n)))$. To prove that that
-                    our $\hat n$ is given by the prior formula is accurate, we can prove with induction that $\Bbb{E}
-                    \left(2^{X_n}\right) = n+1$:
-                    $$\begin{align*}
-                    \mathbb{E}\Big(2^{X_{n+1}}\Big) &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \Bbb{E} \Big( 2^{X_{n + 1}}
-                    \mid X_n = i\Big) \\
-                    &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left(\left(1- \frac 1 2^i \right) 2^i + \frac 1 2^i 2^{i+1}
-                    \right) \\
-                    &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left((2^i - 1) + 2\right) \\
-                    &amp;= \sum_{i=0}^\infty 1 \cdot \Bbb{P} (X_n = i) + \sum_{i=0}^\infty 2^i \cdot \Bbb{P} (X_n = i) \\
-                    &amp;= 1 + \Bbb{E} \Big(2^{X_n}\Big) \\
-                    &amp;= n + 2 \\
-                    \end{align*}$$
-                    The second term expands to the expected value if incremented plus the expected value if not
-                    incremented. And after expanding, the first term simplifies to $1$ given by
-                    <a href=&quot;https://en.wikipedia.org/wiki/Law_of_total_probability&quot;>law of total probability</a> and the
-                    second is the expected value of $X_n$.
+                The Morris counter itself works by incrementing the counter probabilistically. That is, after <code class=&quot;hljs-title&quot;>increment</code> is called $n$ times then our representation $X_n$ is increment
+                with a probability of $\frac 1 2^{X_n}$ and <code class=&quot;hljs-title&quot;>query</code> returns the estimate
+                $\hat n = 2^{X_n} - 1$. Notice how this estimate can only take on a subset of values-- this is the
+                tradeoff that allows us to obtain better memory complexity. Intuitively, the chance we increment $X_n$
+                decreases logarithmically with $n$ so we can speculate that our estimate has space complexity of
+                $\mathcal{O}(\log (\log (n)))$. To prove that that
+                our $\hat n$ is given by the prior formula is accurate, we can prove with induction that $\Bbb{E}
+                \left(2^{X_n}\right) = n+1$:
+                $$\begin{align*}
+                \mathbb{E}\Big(2^{X_{n+1}}\Big) &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \Bbb{E} \Big( 2^{X_{n + 1}}
+                \mid X_n = i\Big) \\
+                &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left(\left(1- \frac 1 2^i \right) 2^i + \frac 1 2^i 2^{i+1}
+                \right) \\
+                &amp;= \sum_{i=0}^\infty \Bbb{P} (X_n = i) \cdot \left((2^i - 1) + 2\right) \\
+                &amp;= \sum_{i=0}^\infty 1 \cdot \Bbb{P} (X_n = i) + \sum_{i=0}^\infty 2^i \cdot \Bbb{P} (X_n = i) \\
+                &amp;= 1 + \Bbb{E} \Big(2^{X_n}\Big) \\
+                &amp;= n + 2 \\
+                \end{align*}$$
+                The second term expands to the expected value if incremented plus the expected value if not
+                incremented. And after expanding, the first term simplifies to $1$ given by
+                <a href=&quot;https://en.wikipedia.org/wiki/Law_of_total_probability&quot;>law of total probability</a> and the
+                second is the expected value of $X_n$.
                 </p>
 <p>
                     It can also be shown by a similar process that the variance is given by
@@ -439,7 +462,7 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>It's all Balls</title>
-			<pubDate>Thu, 18 Aug 2022 05:00:00 -0000</pubDate>
+			<pubDate>Thu, 18 Aug 2022 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/balls.html</link>
 			<guid>https://mehvix.com/posts/balls.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -497,202 +520,176 @@ class MorrisConcurrent:
 		</item>
 		<item>
 			<author>Max Vogel</author>
-			<title>Feedback</title>
-			<pubDate>Sun, 13 Feb 2022 06:00:00 -0000</pubDate>
-			<link>https://mehvix.com/posts/feedback.html</link>
-			<guid>https://mehvix.com/posts/feedback.html</guid>
-			<content:encoded><![CDATA[<article>
-<div>
-                    My mistakes and regrets are the product of my own ignorance,
-                    arrogance, and unawareness. I would much rather hear what
-                    may not be nice to hear in-the-moment than to never hear it
-                    at all—— nothing else inspires conscious self-reflection
-                    other than perhaps (romantic) rejection. If you have the
-                    spare time, I'd greatly appreciate your feedback——negative
-                    or positive, big or small, pertaining to my code or
-                    beliefs——so I can recognize my
-                    <a href=&quot;https://en.wikipedia.org/wiki/Maya_(religion)#Vedanta_school&quot;>Maya</a>. You can fill out the anonymous feedback form below or
-                    <a href=&quot;https://cloud.mehvix.com/apps/forms/4nPHba8sQqbecmnN&quot;>at this link</a>. I only ask that you
-                    <a href=&quot;https://larahogan.me/blog/dont-soften-feedback/&quot;>Don't Soften Feedback</a>
-                    and, if praising,
-                    <a href=&quot;https://web.archive.org/web/20220809093201/https://chrislakin.substack.com/p/praise-that-doesnt-feel-uncomfortable&quot;>Praise Descriptively</a>.
-                </div>
-<iframe frameborder=&quot;0&quot; src=&quot;https://cloud.mehvix.com/apps/forms/4nPHba8sQqbecmnN&quot;></iframe>
-</article>]]></content:encoded>
-		</item>
-		<item>
-			<author>Max Vogel</author>
 			<title>The Colemak Experience</title>
-			<pubDate>Fri, 04 Feb 2022 06:00:00 -0000</pubDate>
+			<pubDate>Fri, 04 Feb 2022 08:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/colemak.html</link>
 			<guid>https://mehvix.com/posts/colemak.html</guid>
 			<content:encoded><![CDATA[<article>
 <h1>Pre</h1>
 <div>
 <p>
-                        I have now typed in Colemak for 391 days in a row, so I
-                        feel somewhat qualified to tell you why you should
-                        consider (not) switching your keyboard layout.
-                    </p>
+                    I have now typed in Colemak for 391 days in a row, so I
+                    feel somewhat qualified to tell you why you should
+                    consider (not) switching your keyboard layout.
+                </p>
 </div>
 <h1>What</h1>
 <div>
 <img alt=&quot;&quot; src=&quot;/static/media/posts/cm.png&quot;/>
 <blockquote>
-                        Colemak is a modern alternative to the QWERTY and Dvorak
-                        layouts, designed for efficient and ergonomic touch
-                        typing in English. Learning Colemak is a one-time
-                        investment that will allow you to enjoy faster and
-                        pain-free typing for the rest of your life (<a href=&quot;https://colemak.com/&quot;>colemak.com</a>)
-                    </blockquote>
+                    Colemak is a modern alternative to the QWERTY and Dvorak
+                    layouts, designed for efficient and ergonomic touch
+                    typing in English. Learning Colemak is a one-time
+                    investment that will allow you to enjoy faster and
+                    pain-free typing for the rest of your life (<a href=&quot;https://colemak.com/&quot;>colemak.com</a>)
+                </blockquote>
 <p>
-                        Simply, Colemak places the most commonly typed letters
-                        (based on the English language) on the home row and
-                        determines the position of the rest by accounting for
-                        finger distance, row jumping, same-finger typing
-                        <a href=&quot;https://colemak.com/Ergonomic&quot;>etc</a>,
-                        <a href=&quot;https://colemak.com/Fast&quot;>etc</a>.
-                    </p>
+                    Simply, Colemak places the most commonly typed letters
+                    (based on the English language) on the home row and
+                    determines the position of the rest by accounting for
+                    finger distance, row jumping, same-finger typing
+                    <a href=&quot;https://colemak.com/Ergonomic&quot;>etc</a>,
+                    <a href=&quot;https://colemak.com/Fast&quot;>etc</a>.
+                </p>
 </div>
 <h1>Why Not</h1>
 <div>
 <p>
-                        Switching to Colemak takes long. And is just hard. You
-                        have to break your old muscle memory. Typing is going to
-                        be a slow, ugly drudge for a while. I got back to
-                        averaging 70 WPM (my OG QWERTY speed) after a (long)
-                        month. Then again, my roommate Jack got back 84 WPM
-                        after two days (he was formerly avg 140)-- this is a
-                        developing situation (he just got 84 five minutes ago)
-                        but at this rate I'm sure he'll get 140 by the end of
-                        the week. This is the hardest part of the whole process.
-                    </p>
+                    Switching to Colemak takes long. And is just hard. You
+                    have to break your old muscle memory. Typing is going to
+                    be a slow, ugly drudge for a while. I got back to
+                    averaging 70 WPM (my OG QWERTY speed) after a (long)
+                    month. Then again, my roommate Jack got back 84 WPM
+                    after two days (he was formerly avg 140)-- this is a
+                    developing situation (he just got 84 five minutes ago)
+                    but at this rate I'm sure he'll get 140 by the end of
+                    the week. This is the hardest part of the whole process.
+                </p>
 <p>
-                        After you learn Colemak, good luck using other people's
-                        computers. It's embarrassing. When you learn Colemak,
-                        you have to destroy all your pre-existing typing habits,
-                        thus, you (need to) forget QWERTY (on a regular
-                        keyboard, phone fine). I now carry around a USB with
-                        Windows/Linux Colemak files (which isn't terrible since
-                        I always have a password-backup USB on me). Regardless,
-                        it's a hassle. Additionally, sometimes you do not have
-                        permissions to install layouts (school/works computers).
-                        To circumvent this, I was looking into building a
-                        physical middle-man between the keyboard and computer
-                        using an Arduino. The parts arrived but now that I'm at
-                        Berkeley and I have no free time (or, there are more
-                        fulfilling things to do with my free time). Maybe this
-                        summer. Anyways, more reasons not to use Colemak:
-                    </p>
+                    After you learn Colemak, good luck using other people's
+                    computers. It's embarrassing. When you learn Colemak,
+                    you have to destroy all your pre-existing typing habits,
+                    thus, you (need to) forget QWERTY (on a regular
+                    keyboard, phone fine). I now carry around a USB with
+                    Windows/Linux Colemak files (which isn't terrible since
+                    I always have a password-backup USB on me). Regardless,
+                    it's a hassle. Additionally, sometimes you do not have
+                    permissions to install layouts (school/works computers).
+                    To circumvent this, I was looking into building a
+                    physical middle-man between the keyboard and computer
+                    using an Arduino. The parts arrived but now that I'm at
+                    Berkeley and I have no free time (or, there are more
+                    fulfilling things to do with my free time). Maybe this
+                    summer. Anyways, more reasons not to use Colemak:
+                </p>
 <p>
-                        If you use
-                        <a href=&quot;./win-insecure-files.html&quot;>VeraCrypt</a> or any
-                        other encryption system that requires unlocking the
-                        drive prior to the operating system loading (so, yes,
-                        LUKS) then typing your password is pain: your keyboard
-                        will be typing in QWERTY (unless you have a hardware
-                        Colemak keyboard, which you probably shouldn't). You can
-                        circumvent this by setting your keyboard layout
-                        temporarily to QWERTY, then typing your password like
-                        you normally would (just type what you would by pressing
-                        the keys as if they were Colemak), and you're set.
-                        Additionally, some (most) of Linux DE's do not load the
-                        layout on the initial lock screen so you'll have to
-                        slowly type it out. I've found that after a while my
-                        brain can store the QWERTY-muscle memory of my most
-                        common passwords so it's not terrible after you encode
-                        the important/common ones in your brain.
-                    </p>
+                    If you use
+                    <a href=&quot;./win-insecure-files.html&quot;>VeraCrypt</a> or any
+                    other encryption system that requires unlocking the
+                    drive prior to the operating system loading (so, yes,
+                    LUKS) then typing your password is pain: your keyboard
+                    will be typing in QWERTY (unless you have a hardware
+                    Colemak keyboard, which you probably shouldn't). You can
+                    circumvent this by setting your keyboard layout
+                    temporarily to QWERTY, then typing your password like
+                    you normally would (just type what you would by pressing
+                    the keys as if they were Colemak), and you're set.
+                    Additionally, some (most) of Linux DE's do not load the
+                    layout on the initial lock screen so you'll have to
+                    slowly type it out. I've found that after a while my
+                    brain can store the QWERTY-muscle memory of my most
+                    common passwords so it's not terrible after you encode
+                    the important/common ones in your brain.
+                </p>
 <p>
-                        Vim is not as slick: your movement keys aren't in the
-                        same proximity. You can rebind the keys, of course, but
-                        out of the box (ex. when you SSH into a machine) it's
-                        annoying. More generally, shortcuts may be more a hassle
-                        for other programs. For what it's worth, Colemak does
-                        have <code>C</code> and <code>V</code> unchanged (for
-                        copy / paste respectively) unlike Dvorak.
-                    </p>
+                    Vim is not as slick: your movement keys aren't in the
+                    same proximity. You can rebind the keys, of course, but
+                    out of the box (ex. when you SSH into a machine) it's
+                    annoying. More generally, shortcuts may be more a hassle
+                    for other programs. For what it's worth, Colemak does
+                    have <code>C</code> and <code>V</code> unchanged (for
+                    copy / paste respectively) unlike Dvorak.
+                </p>
 <p>
-                        Finally, I can only imagine it's fairly easy to
-                        fingerprint Colemak (or really any non-mainstream
-                        layout) users, either through reading the current
-                        keyboard layout or by unique, colemak-specific typing
-                        mannerisms (look up 'Behavioral Biometrics'). This only
-                        matters if you're a privacy nut or Snowden-level wanted.
-                    </p>
+                    Finally, I can only imagine it's fairly easy to
+                    fingerprint Colemak (or really any non-mainstream
+                    layout) users, either through reading the current
+                    keyboard layout or by unique, colemak-specific typing
+                    mannerisms (look up 'Behavioral Biometrics'). This only
+                    matters if you're a privacy nut or Snowden-level wanted.
+                </p>
 <p>
-                        Summary: the hardest part is the first month (getting
-                        back to your old WPM). The rest of the reasons are
-                        mostly small nuisances and edge cases that you can judge
-                        if they matter.
-                    </p>
+                    Summary: the hardest part is the first month (getting
+                    back to your old WPM). The rest of the reasons are
+                    mostly small nuisances and edge cases that you can judge
+                    if they matter.
+                </p>
 </div>
 <h1>Why</h1>
 <div>
 <p>
-                        It's fun to learn as a challenge. If you like learning
-                        skills, this is one of the ones to at least try out. I
-                        can tell you it's more useful than knowing morse-code
-                        (besides perhaps <code>...---...</code>) and around the
-                        same impressiveness as being able to solve a rubik's
-                        cube. It's also fun to type: if you go online you'll see
-                        people talking about the sweet '<a href=&quot;https://forum.colemak.com/topic/802-finger-rolls/&quot;>finger rolls</a>' that Colemak is conductive to. If you switch, type
-                        'tenderheartednesses' and you'll see.
-                    </p>
+                    It's fun to learn as a challenge. If you like learning
+                    skills, this is one of the ones to at least try out. I
+                    can tell you it's more useful than knowing morse-code
+                    (besides perhaps <code>...---...</code>) and around the
+                    same impressiveness as being able to solve a rubik's
+                    cube. It's also fun to type: if you go online you'll see
+                    people talking about the sweet '<a href=&quot;https://forum.colemak.com/topic/802-finger-rolls/&quot;>finger rolls</a>' that Colemak is conductive to. If you switch, type 'tenderheartednesses' and you'll see.
+                </p>
 <p>
-                        You will probably get faster. Then again, I may have
-                        gotten equally better had I spend this time and focus
-                        towards improving regular typing. Anyways, I went from
-                        averaging 70 to 100 WPM. Below is my progress on
-                        monkeytype:
-                    </p>
+                    You will probably get faster. Then again, I may have
+                    gotten equally better had I spend this time and focus
+                    towards improving regular typing. Anyways, I went from
+                    averaging 70 to 100 WPM. Below is my progress on
+                    monkeytype:
+                </p>
 <img alt=&quot;&quot; src=&quot;/static/media/posts/prog.png&quot;/>
 <p>
-                        Also, you may not get RSI or carpal tunnel which is
-                        pretty dope 👌.
-                    </p>
+                    Also, you may not get RSI or carpal tunnel which is
+                    pretty dope 👌.
+                </p>
 </div>
 <h1>How</h1>
 <div>
 <p>
-                        To end this post, I'm actually a liar! I use a
-                        derivative of Colemak, called
-                        <a href=&quot;https://colemakmods.github.io/mod-dh/&quot;>Colemak-DH</a>, which has a few other additional tweaks you can read
-                        about on the website. Skim it and choose if you want it
-                        or Colemak—— it really doesn't matter all that much. One
-                        minor thing is that base Colemak is included Manjaro
-                        (and presumably other distros) while -DH is not (making
-                        set up a bit more painful.)
-                    </p>
+                    To end this post, I'm actually a liar! I use a
+                    derivative of Colemak, called
+                    <a href=&quot;https://colemakmods.github.io/mod-dh/&quot;>Colemak-DH</a>, which has a few other additional tweaks you can read
+                    about on the website. Skim it and choose if you want it
+                    or Colemak—— it really doesn't matter all that much. One
+                    minor thing is that base Colemak is included Manjaro
+                    (and presumably other distros) while -DH is not (making
+                    set up a bit more painful.)
+                </p>
 <p>
-                        When you do decide to take the Colemak pill, set aside a
-                        weekend where you are okay being unproductive while
-                        using a computer. To learn Colemak, you have to use it
-                        lots. You can't swap back between it and QWERTY, so you
-                        have to grind back to an acceptable WPM.
-                    </p>
+                    When you do decide to take the Colemak pill, set aside a
+                    weekend where you are okay being unproductive while
+                    using a computer. To learn Colemak, you have to use it
+                    lots. You can't swap back between it and QWERTY, so you
+                    have to grind back to an acceptable WPM.
+                </p>
 <p>
-                        After running the installer (<a href=&quot;https://colemak.com/Download&quot;>colemak installers</a>,
-                        <a href=&quot;https://colemakmods.github.io/mod-dh/&quot;>-DH installers</a>), I started by going through all the keys on
-                        <a href=&quot;https://first20hours.github.io/keyzen-colemak/&quot;>keyzen colemak</a>, then
-                        <a href=&quot;https://www.colemak.academy/&quot;>colemak.academy</a>, and finally grinding
-                        <a href=&quot;https://monkeytype.com/&quot;>monkeytype</a>. This
-                        is what I recommend to others, and how my roommate Jack
-                        is learning very quickly. You may also want to checkout
-                        the
-                        <a href=&quot;https://old.reddit.com/r/Colemak/&quot;>subreddit</a>
-                        to see what's worked for others. Ultimately, it boils
-                        down to focusing on breaking your old habits. If you
-                        think that sounds lke a fun challenge, highly
-                        recommended!
-                    </p>
+                    After running the installer (<a href=&quot;https://colemak.com/Download&quot;>colemak installers</a>,
+                    <a href=&quot;https://colemakmods.github.io/mod-dh/&quot;>-DH installers</a>), I started by going through all the keys on
+                    <a href=&quot;https://first20hours.github.io/keyzen-colemak/&quot;>keyzen colemak</a>, then
+                    <a href=&quot;https://www.colemak.academy/&quot;>colemak.academy</a>, and finally grinding
+                    <a href=&quot;https://monkeytype.com/&quot;>monkeytype</a>. This
+                    is what I recommend to others, and how my roommate Jack
+                    is learning very quickly. You may also want to checkout
+                    the
+                    <a href=&quot;https://old.reddit.com/r/Colemak/&quot;>subreddit</a>
+                    to see what's worked for others. Ultimately, it boils
+                    down to focusing on breaking your old habits. If you
+                    think that sounds lke a fun challenge, highly
+                    recommended!
+                </p>
 </div>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Killing pass.mehvix.com</title>
-			<pubDate>Thu, 09 Dec 2021 06:00:00 -0000</pubDate>
+			<pubDate>Thu, 09 Dec 2021 08:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/pass.html</link>
 			<guid>https://mehvix.com/posts/pass.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -722,157 +719,157 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>Tiling Distance Contradiction</title>
-			<pubDate>Sun, 31 Oct 2021 05:00:00 -0000</pubDate>
+			<pubDate>Sun, 31 Oct 2021 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/tiling-distance.html</link>
 			<guid>https://mehvix.com/posts/tiling-distance.html</guid>
 			<content:encoded><![CDATA[<article>
 <h1>Background</h1>
 <p>
-                    This past weekend I was walking around downtown Berkeley
-                    with my friends to get
-                    <i><a href=&quot;http://www.kingpindonuts.com/&quot;>Kingpin Donuts</a></i>
-                    when I thought of this contradiction involving the quickest
-                    way to traverses a square with infinitely small street
-                    blocks street blocks.
-                </p>
+                This past weekend I was walking around downtown Berkeley
+                with my friends to get
+                <i><a href=&quot;http://www.kingpindonuts.com/&quot;>Kingpin Donuts</a></i>
+                when I thought of this contradiction involving the quickest
+                way to traverses a square with infinitely small street
+                blocks street blocks.
+            </p>
 <h1>Problem</h1>
 <h2>Setup</h2>
 <p>
-                    Consider a <code>1 x 1</code> unit square and a particle
-                    starting at the bottom left of the square:
-                    <code>(0,0)</code>. This particle wants to move to
-                    <code>(1,1)</code>
-                    [top right] as quickly as possible while moving only along
-                    the edges [streets] of the square. In the
-                    <code>1 x 1</code> case, you have two paths each involving
-                    two steps: (1) up, right and (2) right, up. Since these
-                    paths are symmetric, we'll treat them as a single path. In
-                    this single path, we clearly travel a distance of
-                    <code>2 units</code> [<code>1 unit per step</code> and
-                    <code>2 steps</code>].
-                </p>
+                Consider a <code>1 x 1</code> unit square and a particle
+                starting at the bottom left of the square:
+                <code>(0,0)</code>. This particle wants to move to
+                <code>(1,1)</code>
+                [top right] as quickly as possible while moving only along
+                the edges [streets] of the square. In the
+                <code>1 x 1</code> case, you have two paths each involving
+                two steps: (1) up, right and (2) right, up. Since these
+                paths are symmetric, we'll treat them as a single path. In
+                this single path, we clearly travel a distance of
+                <code>2 units</code> [<code>1 unit per step</code> and
+                <code>2 steps</code>].
+            </p>
 <h2>Smaller Blocks</h2>
 <p>
-                    Now, what if we divide our existing block into forths; that
-                    is, we have four <code>0.5 x 0.5</code> unit squares. Now,
-                    consider the following two paths that each take four steps:
-                    (1) right, right, up, up and (2) right, up, right, up. Just
-                    as the previous <code>1 x 1</code> case, both of these paths
-                    travel a total distance of <code>2 units</code> [each of the
-                    four steps travels <code>0.5 units</code>].
-                </p>
+                Now, what if we divide our existing block into forths; that
+                is, we have four <code>0.5 x 0.5</code> unit squares. Now,
+                consider the following two paths that each take four steps:
+                (1) right, right, up, up and (2) right, up, right, up. Just
+                as the previous <code>1 x 1</code> case, both of these paths
+                travel a total distance of <code>2 units</code> [each of the
+                four steps travels <code>0.5 units</code>].
+            </p>
 <p>
-                    Say we repeat this dividing of the square
-                    <code>n</code> times so our original <code>1 x 1</code> unit
-                    block is split into <code>2^n x 2^n</code> sub-blocks, each
-                    with side length <code>1/2^n</code>. Now both the outermost
-                    and alternating paths each take <code>2 * 2^n</code> steps:
-                    (1) right <code>2^n</code> times followed by up
-                    <code>2^n</code> more times and (2) right, up
-                    <code>2^n</code> times. Again, both travel a total distance
-                    of <code>2 units</code> for all <code>n &gt; 0</code>.
-                </p>
+                Say we repeat this dividing of the square
+                <code>n</code> times so our original <code>1 x 1</code> unit
+                block is split into <code>2^n x 2^n</code> sub-blocks, each
+                with side length <code>1/2^n</code>. Now both the outermost
+                and alternating paths each take <code>2 * 2^n</code> steps:
+                (1) right <code>2^n</code> times followed by up
+                <code>2^n</code> more times and (2) right, up
+                <code>2^n</code> times. Again, both travel a total distance
+                of <code>2 units</code> for all <code>n &gt; 0</code>.
+            </p>
 <h2>Contradiction</h2>
 <p>
-                    However, as we take <code>n</code> to infinity the
-                    alternating path looks more and more like particle is
-                    travelling along the hypotenuse line from
-                    <code>(0,0)</code> to <code>(1,1)</code>. But, we know that
-                    the distance traveled is always <code>2 units</code>. How
-                    can this be if the particle is travelling along the distance
-                    of the hypotenuse which has a distances of
-                    <code>√2 units</code>?!
-                </p>
+                However, as we take <code>n</code> to infinity the
+                alternating path looks more and more like particle is
+                travelling along the hypotenuse line from
+                <code>(0,0)</code> to <code>(1,1)</code>. But, we know that
+                the distance traveled is always <code>2 units</code>. How
+                can this be if the particle is travelling along the distance
+                of the hypotenuse which has a distances of
+                <code>√2 units</code>?!
+            </p>
 <h1>Explanation</h1>
 <p>
-                    This contradiction stumped me for a bit, but I thought of
-                    three different ways to explain this seeming contradiction
-                    while showering last night.
-                </p>
+                This contradiction stumped me for a bit, but I thought of
+                three different ways to explain this seeming contradiction
+                while showering last night.
+            </p>
 <h2>1: Kinematics</h2>
 <p>
-                    We know that the particle takes a total of
-                    <code>2 * n^2</code> steps, each of which are at a constant
-                    speed [lets say <code>1 unit/second</code>]. In the original
-                    <code>1 x 1</code> case, we travel <code>2 units </code> so
-                    we take <code>2 seconds</code>. In each following case, we
-                    take just as long since both the speed and distance are
-                    constant so we know that the time we travel is constantly
-                    <code>2 seconds</code>. Therefore, in the
-                    <code>2^n x 2^n</code> sub-blocks case, since we know that
-                    we're traveling at a constant <code>1 unit/sec</code> and
-                    taking <code>2 seconds</code> meaning we're traveling
-                    <code>2 units</code>.
-                </p>
+                We know that the particle takes a total of
+                <code>2 * n^2</code> steps, each of which are at a constant
+                speed [lets say <code>1 unit/second</code>]. In the original
+                <code>1 x 1</code> case, we travel <code>2 units </code> so
+                we take <code>2 seconds</code>. In each following case, we
+                take just as long since both the speed and distance are
+                constant so we know that the time we travel is constantly
+                <code>2 seconds</code>. Therefore, in the
+                <code>2^n x 2^n</code> sub-blocks case, since we know that
+                we're traveling at a constant <code>1 unit/sec</code> and
+                taking <code>2 seconds</code> meaning we're traveling
+                <code>2 units</code>.
+            </p>
 <p>
-                    If we watched this scenario play out, we would see the
-                    particle appearing to move at a speed of
-                    <code>1/√2 units/sec</code>. That is, even though the line
-                    <i>looks</i> like the hypotenuse, it isn't. This makes sense
-                    because we cannot travel along the hypotenuse, no matter how
-                    small we get: At the very beginning we said the particle can
-                    only move along the edges [streets] of the square, meaning
-                    only travel right and up. So when we see the particle travel
-                    along the hypotenuse at <code>1/√2 units/sec</code>, we're
-                    actually seeing the particle move right and up [or up and
-                    right] a tiny amount that we only <i>assume</i> to be along
-                    the hypotenuse.
-                </p>
+                If we watched this scenario play out, we would see the
+                particle appearing to move at a speed of
+                <code>1/√2 units/sec</code>. That is, even though the line
+                <i>looks</i> like the hypotenuse, it isn't. This makes sense
+                because we cannot travel along the hypotenuse, no matter how
+                small we get: At the very beginning we said the particle can
+                only move along the edges [streets] of the square, meaning
+                only travel right and up. So when we see the particle travel
+                along the hypotenuse at <code>1/√2 units/sec</code>, we're
+                actually seeing the particle move right and up [or up and
+                right] a tiny amount that we only <i>assume</i> to be along
+                the hypotenuse.
+            </p>
 <p>
-                    Again, the time staying constant because our speed and
-                    distance stay the same: we keep moving
-                    <code>1 unit/sec</code> and we travel a distance [2 for
-                    up/right] * [paths] * [distance/path] =
-                    <code>2 * 2^n * 1/2^n = 2</code> so we take
-                    <code>2 seconds</code> to traverse the grid even as we push
-                    <code>n</code> to infinity.
-                </p>
+                Again, the time staying constant because our speed and
+                distance stay the same: we keep moving
+                <code>1 unit/sec</code> and we travel a distance [2 for
+                up/right] * [paths] * [distance/path] =
+                <code>2 * 2^n * 1/2^n = 2</code> so we take
+                <code>2 seconds</code> to traverse the grid even as we push
+                <code>n</code> to infinity.
+            </p>
 <h2>2: Additive</h2>
 <p>
-                    Instead of dividing the square into sub-squares, what if we
-                    tiled instead so that we doubled each existing square. That
-                    is, we'd start with a single <code>1 x 1</code> unit block,
-                    then grow to <code>2 x 2, 4 x 4, 8 x 8, ...</code> etc.
-                    However, while we exponentially increase perimeter, we'll
-                    also increased our speed proportionally [starting at
-                    <code>1</code> unit/sec, then
-                    <code>2, 4, 8, ...</code> units/sec]. That way, the particle
-                    will always take 2 seconds to complete the square.
-                </p>
+                Instead of dividing the square into sub-squares, what if we
+                tiled instead so that we doubled each existing square. That
+                is, we'd start with a single <code>1 x 1</code> unit block,
+                then grow to <code>2 x 2, 4 x 4, 8 x 8, ...</code> etc.
+                However, while we exponentially increase perimeter, we'll
+                also increased our speed proportionally [starting at
+                <code>1</code> unit/sec, then
+                <code>2, 4, 8, ...</code> units/sec]. That way, the particle
+                will always take 2 seconds to complete the square.
+            </p>
 <p>
-                    In addition to seeing that this 2 seconds is a constant for
-                    any resolution, we can also see that the two steps of both
-                    right and up movements are finite distances. That means that
-                    both the up and right movements are not, and cannot ever, be
-                    treated as a single move diagonally [this is what we
-                    implicitly assumed was happening when the sub-square sides
-                    were of length
-                    <code>1/2^n x 1/2^n</code>].
-                </p>
+                In addition to seeing that this 2 seconds is a constant for
+                any resolution, we can also see that the two steps of both
+                right and up movements are finite distances. That means that
+                both the up and right movements are not, and cannot ever, be
+                treated as a single move diagonally [this is what we
+                implicitly assumed was happening when the sub-square sides
+                were of length
+                <code>1/2^n x 1/2^n</code>].
+            </p>
 <h2>3: Limit</h2>
 <p>
-                    Adding on to the explanation involving tiling above, we can
-                    write an equation to relate the total distance traveled
-                    [units] per speed [in units/sec]: <code>2n/n</code>. With
-                    this, we can take the limit of <code>n</code> to infinity
-                    and clearly this ends up as <code>2</code>. This result has
-                    the units <code>seconds</code> which is consistent with our
-                    other for the particle to travel all paths.
-                </p>
+                Adding on to the explanation involving tiling above, we can
+                write an equation to relate the total distance traveled
+                [units] per speed [in units/sec]: <code>2n/n</code>. With
+                this, we can take the limit of <code>n</code> to infinity
+                and clearly this ends up as <code>2</code>. This result has
+                the units <code>seconds</code> which is consistent with our
+                other for the particle to travel all paths.
+            </p>
 <h1>Implications given Constraint</h1>
 <p>
-                    With that being said, this seems to say that travelling
-                    eight blocks east and eight blocks north should take the
-                    same time as travelling east then north eight times (eight
-                    is arbitrary).
-                </p>
+                With that being said, this seems to say that travelling
+                eight blocks east and eight blocks north should take the
+                same time as travelling east then north eight times (eight
+                is arbitrary).
+            </p>
 <p>
-                    In the real world, this isn't often true<sup><a href=&quot;#1-ref&quot; id=&quot;1-exp&quot;>1</a></sup>. Blocks aren't perfect rectangles made from streets and
-                    your steps are rarely parallel/orthogonal to the x/y axis
-                    so, unlike the idealized example, you're rarely moving in
-                    just the x or y direction at a single time. Regardless, I
-                    still think it's an interesting thought puzzle of sorts.
-                </p>
+                In the real world, this isn't often true<sup><a href=&quot;#1-ref&quot; id=&quot;1-exp&quot;>1</a></sup>. Blocks aren't perfect rectangles made from streets and
+                your steps are rarely parallel/orthogonal to the x/y axis
+                so, unlike the idealized example, you're rarely moving in
+                just the x or y direction at a single time. Regardless, I
+                still think it's an interesting thought puzzle of sorts.
+            </p>
 <!-- <p>---</p>
                 <p>
                     <sup><a href=&quot;#0-ref&quot; id=&quot;0-exp&quot;>0</a></sup> Considering
@@ -887,38 +884,38 @@ class MorrisConcurrent:
                     up, ...] is equivalent to [up, left, ...].
                 </p> -->
 <p>
-                    Shout out to David Jiang + Jack Guerrisi for helping me wrap
-                    my head around this problem and to Frank Liu and Phoebe Chen
-                    for listening to me try to explain this while toasted on the
-                    way to Asian Ghetto! :)
-                </p>
+                Shout out to David Jiang + Jack Guerrisi for helping me wrap
+                my head around this problem and to Frank Liu and Phoebe Chen
+                for listening to me try to explain this while toasted on the
+                way to Asian Ghetto! :)
+            </p>
 <p>---</p>
 <p>
 <sup><a href=&quot;#1-exp&quot; id=&quot;1-ref&quot;>1</a></sup>
 <i>Update #1:</i> I found a set of stairs outside the
-                    <a href=&quot;//www.google.com/maps/place/@37.8803004,-122.2452309,19z&quot;>MSRI</a>
-                    (fitting!) which is a sort of tiling switchback in that it
-                    constrains you to moving like the particle in this problem.
-                    It was very foggy that night, so here's a scuffed photo:
-                </p>
+                <a href=&quot;//www.google.com/maps/place/@37.8803004,-122.2452309,19z&quot;>MSRI</a>
+                (fitting!) which is a sort of tiling switchback in that it
+                constrains you to moving like the particle in this problem.
+                It was very foggy that night, so here's a scuffed photo:
+            </p>
 <img src=&quot;/static/media/posts/PXL_20211119_022706222.jpg&quot;/>
 <p>---</p>
 <p>
 <i>Update #2:</i> Aidan McNabb (cowboy hat) showed me a
-                    contradiction that pi equals four (the
-                    <a href=&quot;https://math.stackexchange.com/questions/12906/the-staircase-paradox-or-why-pi-ne4&quot;>staircase paradox</a>) which follows a similar line of reasoning (has the same
-                    faults). Turns out this is a fairly old problem and there's
-                    a entire form of geometry called
-                    <a href=&quot;https://en.wikipedia.org/wiki/Taxicab_geometry&quot;>Taxicab geometry</a>
-                    .
-                    <img alt=&quot;&quot; src=&quot;/static/media/posts/PXL_20220118_042533313.jpg&quot;/>
+                contradiction that pi equals four (the
+                <a href=&quot;https://math.stackexchange.com/questions/12906/the-staircase-paradox-or-why-pi-ne4&quot;>staircase paradox</a>) which follows a similar line of reasoning (has the same
+                faults). Turns out this is a fairly old problem and there's
+                a entire form of geometry called
+                <a href=&quot;https://en.wikipedia.org/wiki/Taxicab_geometry&quot;>Taxicab geometry</a>
+                .
+                <img alt=&quot;&quot; src=&quot;/static/media/posts/PXL_20220118_042533313.jpg&quot;/>
 </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>AoPS Blogs + RSS</title>
-			<pubDate>Tue, 18 May 2021 05:00:00 -0000</pubDate>
+			<pubDate>Tue, 18 May 2021 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/aops-rss.html</link>
 			<guid>https://mehvix.com/posts/aops-rss.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -967,472 +964,238 @@ class MorrisConcurrent:
 		<item>
 			<author>Max Vogel</author>
 			<title>Webmonkeys: Use www</title>
-			<pubDate>Mon, 17 May 2021 05:00:00 -0000</pubDate>
+			<pubDate>Mon, 17 May 2021 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/use-www.html</link>
 			<guid>https://mehvix.com/posts/use-www.html</guid>
 			<content:encoded><![CDATA[<article>
 <p>
-                    I have a <i>yuuuug</i> bookmarks folder of assorted articles
-                    I've come across but haven't had the time to delve into. Now
-                    that I'm through my UW classwork I've finally been able to
-                    chunk through some of them and today and I came across the
-                    (mostly-irrelevant, website-related decision) debate between
-                    <a href=&quot;http://no-www.org/&quot;>no-www</a> and
-                    <a href=&quot;//www.yes-www.org/&quot;><b>www</b>.yes-www</a>.
-                </p>
+                I have a <i>yuuuug</i> bookmarks folder of assorted articles
+                I've come across but haven't had the time to delve into. Now that I'm through my UW classwork I've finally been able to chunk through some of them and today and I came across the (mostly-irrelevant, website-related decision) debate between <a href=&quot;http://no-www.org/&quot;>no-www</a> and <a href=&quot;//www.yes-www.org/&quot;><b>www</b>.yes-www</a>.
+            </p>
 <h1>The debate</h1>
 <p>
-                    The argument by <a href=&quot;http://no-www.org/&quot;>no-www</a> is
-                    that <code>www</code> is supposedly “deprecated” in that
-                    it's redundant to type. But, if you look at our tech
-                    overlords like <a href=&quot;http://google.com&quot;>Google</a>,
-                    <a href=&quot;http://amazon.com&quot;>Amazon</a>,
-                    <a href=&quot;http://apple.com&quot;>Apple</a>, etc. you'll see that
-                    they redirect no-www to www (more on why later). For what
-                    it's worth though, having no <code>www</code> has its
-                    <i>minimalism aesthetic</i> and anecdotally most smaller
-                    sites seem to have no www.
-                </p>
+                The argument by <a href=&quot;http://no-www.org/&quot;>no-www</a> is that <code>www</code> is supposedly “deprecated” in that it's redundant to type. But, if you look at our tech overlords like <a href=&quot;http://google.com&quot;>Google</a>, <a href=&quot;http://amazon.com&quot;>Amazon</a>, <a href=&quot;http://apple.com&quot;>Apple</a>, etc. you'll see that they redirect no-www to www (more on why later). For what it's worth though, having no <code>www</code> has its <i>minimalism aesthetic</i> and anecdotally most smaller sites seem to have no www.
+            </p>
 <p>
-<a href=&quot;//www.yes-www.org/&quot;>yes-www</a>
-                    has actual
-                    <a href=&quot;//www.yes-www.org/why-use-www/&quot;>technical arguments</a>: (1) you can’t use a CNAME record on a &quot;naked domain&quot;
-                    (that is, sites with no <code>www</code>) and (2) cookies on
-                    the naked domain get sent to all subdomains (so all
-                    <code>*.mehvix.com</code> domains) which can mess up caching
-                    for static files.
-                </p>
+<a href=&quot;//www.yes-www.org/&quot;>yes-www</a> has actual <a href=&quot;//www.yes-www.org/why-use-www/&quot;>technical arguments</a>: (1) you can't use a CNAME record on a &quot;naked domain&quot; (that is, sites with no <code>www</code>) and (2) cookies on the naked domain get sent to all subdomains (so all <code>*.mehvix.com</code> domains) which can mess up caching for static files.
+            </p>
 <h1>Changing</h1>
 <p>
-                    Both of the pro-<code>www</code> points aren't an issue for
-                    me now, but best not to limit myself later down the line. To
-                    swap, I prefaced the domain with <code>www</code> on this
-                    site's
-                    <a href=&quot;//github.com/Mehvix/mehvix.com/commit/037e1dde90bc5a4e43adfe72dfeeb0e49d73d898&quot;>CNAME on the GitHub</a>
-                    , changed my <code>CNAME</code> and <code>A</code> DNS
-                    records so that all prior non-<code>www</code> links would
-                    go to the new <code>www</code> version.
-                </p>
+                Both of the pro-<code>www</code> points aren't an issue for me now, but best not to limit myself later down the line. To swap, I prefaced the domain with <code>www</code> on this site's <a href=&quot;//github.com/Mehvix/mehvix.com/commit/037e1dde90bc5a4e43adfe72dfeeb0e49d73d898&quot;>CNAME on the GitHub</a>, changed my <code>CNAME</code> and <code>A</code> DNS records so that all prior non-<code>www</code> links would go to the new <code>www</code> version.
+            </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Windows: Your files are insecure</title>
-			<pubDate>Thu, 13 May 2021 05:00:00 -0000</pubDate>
+			<pubDate>Thu, 13 May 2021 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/win-insecure-files.html</link>
 			<guid>https://mehvix.com/posts/win-insecure-files.html</guid>
 			<content:encoded><![CDATA[<article>
 <p>
-                    Anyone who has physical access to your Windows machine can
-                    plug in and boot to a live USB drive which allows them to
-                    see/edit/copy your entire filesystem — all images,
-                    documents, applications, etc. — without logging in. All this
-                    can be prevented by just encrypting your file system.
-                </p>
+                Anyone who has physical access to your Windows machine can plug in and boot to a live USB drive which allows them to see/edit/copy your entire filesystem — all images, documents, applications, etc. — without logging in. All this can be prevented by just encrypting your file system.
+            </p>
 <h1>BitLocker</h1>
 <p>
-                    Microsoft doesn't value your security. Their proprietary
-                    encryption software
-                    <a href=&quot;//en.wikipedia.org/wiki/BitLocker&quot;>BitLocker</a>
-                    is only available for paying Windows Pro and Enterprise
-                    users (and even then, it isn't enabled by default 🤔). And,
-                    if for some reason you're paying (extra) for Windows, you
-                    still shouldn't use BitLocker. Microsoft practice
-                    <a href=&quot;//en.wikipedia.org/wiki/Security_through_obscurity&quot;>security through obscurity</a>: like Windows, BitLocker code is proprietary meaning
-                    there's no way to vet it's security or verify there are not
-                    backdoors for any of the
-                    <a href=&quot;//en.wikipedia.org/wiki/Alphabet_agencies#Modern_era&quot;>alphabet boys</a>
-                    which Microsoft has done before — from what's been made
-                    <i>public</i>, Microsoft has
-                    <a href=&quot;//archive.ph/Y3hsk&quot;>helped the NSA to circumvent their own encryption</a>,
-                    <a href=&quot;//archive.ph/ETUkp&quot;>backdoored pre-installed disk encryption</a>,
-                    <a href=&quot;//archive.ph/sX5dY&quot;>informed the NSA of bugs in Windows before fixing
-                        them</a>, and
-                    <a href=&quot;//archive.is/ZW77o&quot;>there's a secret NSA key in Windows, whose functions we
-                        don't know</a>.
-                </p>
+                Microsoft doesn't value your security. Their proprietary encryption software <a href=&quot;//en.wikipedia.org/wiki/BitLocker&quot;>BitLocker</a> is only available for paying Windows Pro and Enterprise users (and even then, it isn't enabled by default 🤔). And, if for some reason you're paying (extra) for Windows, you still shouldn't use BitLocker. Microsoft practice <a href=&quot;//en.wikipedia.org/wiki/Security_through_obscurity&quot;>security through obscurity</a>: like Windows, BitLocker code is proprietary meaning there's no way to vet it's security or verify there are not backdoors for any of the <a href=&quot;//en.wikipedia.org/wiki/Alphabet_agencies#Modern_era&quot;>alphabet boys</a>
+                which Microsoft has done before — from what's been made <i>public</i>, Microsoft has <a href=&quot;//archive.ph/Y3hsk&quot;>helped the NSA to circumvent their own encryption</a>, <a href=&quot;//archive.ph/ETUkp&quot;>backdoored pre-installed disk encryption</a>, <a href=&quot;//archive.ph/sX5dY&quot;>informed the NSA of bugs in Windows before fixing them</a>, and <a href=&quot;//archive.is/ZW77o&quot;>there's a secret NSA key in Windows, whose functions we don't know</a>.
+            </p>
 <p>
-                    The alternative to proprietary software is open source
-                    software: anyone can verify an open source project's
-                    legitimacy and contribute improvements of their own. For
-                    Windows, the open source encryption software I'd recommend
-                    is
-                    <a href=&quot;//veracrypt.fr/en/Home.html&quot;>VeraCrypt</a>.
-                </p>
+                The alternative to proprietary software is open source software: anyone can verify an open source project's legitimacy and contribute improvements of their own. For Windows, the open source encryption software I'd recommend is
+                <a href=&quot;//veracrypt.fr/en/Home.html&quot;>VeraCrypt</a>.
+            </p>
 <h1>VeraCrypt</h1>
 <p>
-                    You can download the latest installer of VeraCrypt
-                    <a href=&quot;//veracrypt.fr/en/Downloads.html&quot;>here</a>. Once
-                    you install it, the process of encrypting your drive(s) is
-                    fairly trivial. For encrypting your storage device with the
-                    operating system, you start by going selecting
-                    <code>System</code> &gt;
-                    <code>Encrypt System Partition/Drive...</code> and following
-                    the creation wizard. The default AES + SHA-512 is more than
-                    enough. Once you get to &quot;Collecting Random Data&quot;, shake your
-                    mouse around — VeraCrypt gathers random data from your
-                    mouse's position because (somewhat unintuitively)
-                    <a href=&quot;//www.howtogeek.com/183051/htg-explains-how-computers-generate-random-numbers/&quot;>it's hard for computers to generate unpredictable
-                        random numbers on their own</a>.
-                </p>
+                You can download the latest installer of VeraCrypt <a href=&quot;//veracrypt.fr/en/Downloads.html&quot;>here</a>. Once you install it, the process of encrypting your drive(s) is fairly trivial. To encrypt the storage device with the operating system, you start by going selecting <code>System</code> &gt; <code>Encrypt System Partition/Drive...</code> and following the creation wizard. The default AES + SHA-512 is more than enough. Note that if you are dual-booting from <i>different</i> disks you do not need to use the dual-boot setting. Once you get to &quot;Collecting Random Data&quot;, shake your mouse around — VeraCrypt gathers random data from your mouse's position because (somewhat unintuitively) <a href=&quot;//www.howtogeek.com/183051/htg-explains-how-computers-generate-random-numbers/&quot;>it's hard for computers to generate unpredictable random numbers on their own</a>.
+            </p>
 <h2>Rescue Disk</h2>
 <p>
-                    Later, when prompted to, I'd recommend that you create a
-                    rescue disk — this is allows you to unlock your drive if one
-                    day Windows can't boot or the VeraCrypt bootloader get
-                    damaged (unlikely, but possible). All you have to do is grab
-                    a USB drive, create a folder called <code>EFI</code>, and
-                    add copy the generated Rescue Disk. If something ever does
-                    go wrong and you want to decrypt your drive outside of
-                    Windows, all you have to do is plug in and boot to the USB
-                    then enter your decryption password. Because you still need
-                    to have your password, you don't need to keep this USB
-                    especially secure (but hey, it can't hurt!).
-                </p>
+                Later, when prompted to, I'd recommend that you create a rescue disk — this is allows you to unlock your drive if one day Windows can't boot or the VeraCrypt bootloader get damaged (unlikely, but possible). All you have to do is grab a USB drive, create a folder called <code>EFI</code>, and add copy the generated Rescue Disk. If something ever does go wrong and you want to decrypt your drive outside of Windows, all you have to do is plug in and boot to the USB then enter your decryption password. Because you still need to have your password, you don't need to keep this USB especially secure (but hey, it can't hurt!).
+            </p>
 <h2>Wiping</h2>
 <p>
-                    You'll also be able to optionally write wipe the drive of
-                    all unencrypted data from the drive. Multiple passes is an
-                    <a href=&quot;http://www.infosecisland.com/blogview/16130-The-Urban-Legend-of-Multipass-Hard-Disk-Overwrite.html&quot;>urban legend</a>
-                    (doesn't improve security), wears the drives down, and can
-                    take a very long time. One pass is sufficient and doesn't
-                    take too long (compared to no passes).
-                </p>
+                You'll also be able to optionally write wipe the drive of all unencrypted data from the drive. Multiple passes is an <a href=&quot;http://www.infosecisland.com/blogview/16130-The-Urban-Legend-of-Multipass-Hard-Disk-Overwrite.html&quot;>urban legend</a> (doesn't improve security), wears the drives down, and can take a very long time. One pass is sufficient and doesn't take too long (compared to no passes).
+            </p>
 <h2>Testing</h2>
 <p>
-                    After selecting the number of passes, you should be prompted
-                    to test that the boot loader works before VeraCrypt proceeds
-                    with encryption and the wipe(s). Once you restart, you'll be
-                    be prompted with the VeraCrypt boot loader before the
-                    Windows login screen. Here, you enter your password (and pin
-                    if you opted for one; if you didn't leave it empty). Once
-                    you get back into Windows, VeraCrypt will open and prompt
-                    you to actually encrypt your data and fulfill the wipe(s).
-                    When that completes, you're done!
-                </p>
+                After selecting the number of passes, you should be prompted to test that the boot loader works before VeraCrypt proceeds with encryption and the wipe(s). Once you restart, you'll be be prompted with the VeraCrypt boot loader before the Windows login screen. Here, you enter your password (and pin if you opted for one; if you didn't leave it empty). Once you get back into Windows, VeraCrypt will open and prompt you to actually encrypt your data and fulfill the wipe(s). When that completes, you're done!
+            </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>CalyxOS Install Guide</title>
-			<pubDate>Fri, 29 Jan 2021 06:00:00 -0000</pubDate>
+			<pubDate>Fri, 29 Jan 2021 08:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/calyx.html</link>
 			<guid>https://mehvix.com/posts/calyx.html</guid>
 			<content:encoded><![CDATA[<article>
 <p>
-                    This blog goes over how to install CalyxOS — a custom
-                    Android ROM for (somewhat ironically) Google's Pixel phones.
-                    It's built with &quot;Privacy by Design&quot;; minimizing tracking
-                    done by phone manufacturers, cell providers, ISPs,
-                    advertising companies, etc. That being said, it's not as
-                    extreme as alternatives, notably
-                    <a href=&quot;//grapheneos.org/&quot;>GrapheneOS</a>, and seeks
-                    to maintain a balance between usability and privacy. You can
-                    check (and contribute) app compatibility
-                    <a href=&quot;//plexus.techlore.tech/&quot;>here</a>.
-                </p>
-                ---
+                This blog goes over how to install CalyxOS — a custom
+                Android ROM for (somewhat ironically) Google's Pixel phones.
+                It's built with &quot;Privacy by Design&quot;; minimizing tracking
+                done by phone manufacturers, cell providers, ISPs,
+                advertising companies, etc. That being said, it's not as
+                extreme as alternatives, notably
+                <a href=&quot;//grapheneos.org/&quot;>GrapheneOS</a>, and seeks
+                to maintain a balance between usability and privacy. You can
+                check (and contribute) app compatibility
+                <a href=&quot;//plexus.techlore.tech/&quot;>here</a>.
+            </p>
+            ---
 
-                <h1>Backup</h1>
+            <h1>Backup</h1>
 <p>
-                    You will loose all of your data so backup stuff you want to
-                    keep. You won't be using Google to backup/restore once you
-                    get CalyxOS installed, so you're best bet is probably to
-                    transfer files directly to your computer. You can do so by
-                    enabling &quot;Data Transfer through USB&quot; so your files can be
-                    viewed &amp; copied from your PC File Explorer.
-                </p>
+                You will loose all of your data so backup stuff you want to
+                keep. You won't be using Google to backup/restore once you
+                get CalyxOS installed, so you're best bet is probably to
+                transfer files directly to your computer. You can do so by
+                enabling &quot;Data Transfer through USB&quot; so your files can be
+                viewed &amp; copied from your PC File Explorer.
+            </p>
 <h1>Unlock Bootloader</h1>
 <p>
-                    Go into your device's settings, <code>About phone</code>,
-                    and down to <code>Build number</code>. Spam the button 10
-                    times until you get developer. Then, go back and to
-                    <code>System</code> &gt; <code>Advanced</code> &gt;
-                    <code>Developer options</code> and enable
-                    <code>USB debugging</code> and
-                    <code>OEM unlocking</code>
+                Go into your device's settings, <code>About phone</code>,
+                and down to <code>Build number</code>. Spam the button 10
+                times until you get developer. Then, go back and to
+                <code>System</code> &gt; <code>Advanced</code> &gt;
+                <code>Developer options</code> and enable
+                <code>USB debugging</code> and
+                <code>OEM unlocking</code>
 </p>
 <h1>Update Drivers</h1>
 <p>
-                    Download the
-                    <a href=&quot;//developer.android.com/studio/run/win-usb&quot;>Google USB Drivers</a>
-                    and extract the files somewhere on your PC. Then, showdown
-                    the phone, press and hold the power and volume down until
-                    the bootloader (black screen with a red triangle) appears.
-                    You can then connect the phone to your PC if you haven't
-                    already and go to Device Manager in Windows. Then, navigate
-                    to <code>Other Devices</code>, find your phone, right-click,
-                    and go to <code>Update drivers</code> &gt;
-                    <code>Browse...</code> &gt; point to where you extract the USB
-                    drivers, and Windows should do the rest.
-                </p>
+                Download the
+                <a href=&quot;//developer.android.com/studio/run/win-usb&quot;>Google USB Drivers</a>
+                and extract the files somewhere on your PC. Then, showdown
+                the phone, press and hold the power and volume down until
+                the bootloader (black screen with a red triangle) appears.
+                You can then connect the phone to your PC if you haven't
+                already and go to Device Manager in Windows. Then, navigate
+                to <code>Other Devices</code>, find your phone, right-click,
+                and go to <code>Update drivers</code> &gt;
+                <code>Browse...</code> &gt; point to where you extract the USB
+                drivers, and Windows should do the rest.
+            </p>
 <h1>Flash CalyxOS</h1>
 <p>
-                    Create a new folder and download the
-                    <a href=&quot;//calyxos.org/get&quot;>CalyxOS release for your device</a>
-                    (don't unzip it though!) as well as the
-                    <a href=&quot;//github.com/AOSPAlliance/device-flasher/releases/&quot;>device flasher</a>
-                    (which may be falsely flagged as a virus). From there, you
-                    can run the
-                    <code>device-flasher.exe</code> and follow along the
-                    instructions. If you've followed the steps this far, the
-                    only step not done is to remove the SIM card. Once you hit
-                    enter to begin the flash, you can just sit back and wait for
-                    it to install. Once it has, all you have to do is re-lock
-                    the bootloader and you're set!
-                </p>
+                Create a new folder and download the
+                <a href=&quot;//calyxos.org/get&quot;>CalyxOS release for your device</a>
+                (don't unzip it though!) as well as the
+                <a href=&quot;//github.com/AOSPAlliance/device-flasher/releases/&quot;>device flasher</a>
+                (which may be falsely flagged as a virus). From there, you
+                can run the
+                <code>device-flasher.exe</code> and follow along the
+                instructions. If you've followed the steps this far, the
+                only step not done is to remove the SIM card. Once you hit
+                enter to begin the flash, you can just sit back and wait for
+                it to install. Once it has, all you have to do is re-lock
+                the bootloader and you're set!
+            </p>
 <h1>Next</h1>
 <p>
                 If you need help with CalyxOS I'd recommend asking any through
                 any of the following services:
-                <table>
+            <table>
 <ul>
 <li>
-                            Matrix:
-                            <a href=&quot;//matrix.to/#/#CalyxOS:matrix.org&quot;>#CalyxOS:matrix.org</a>
+                        Matrix:
+                        <a href=&quot;//matrix.to/#/#CalyxOS:matrix.org&quot;>#CalyxOS:matrix.org</a>
 </li>
 <li>
-                            IRC:
-                            <a href=&quot;//webchat.freenode.net/#calyxos&quot;>#calyxos</a>
-                            on Freenode
-                        </li>
+                        IRC:
+                        <a href=&quot;//webchat.freenode.net/#calyxos&quot;>#calyxos</a>
+                        on Freenode
+                    </li>
 <li>
-                            Telegram:
-                            <a href=&quot;//t.me/CalyxOSpublic&quot;>CalyxOSpublic</a>
+                        Telegram:
+                        <a href=&quot;//t.me/CalyxOSpublic&quot;>CalyxOSpublic</a>
 </li>
 <li>Reddit: <a href=&quot;//old.reddit.com/r/CalyxOS/&quot;>/r/CalyxOS</a></li>
 </ul>
 </table>
-                All of the chat rooms are bridged so messages sent on one will show up on others and vice versa.
-                </p>
+            All of the chat rooms are bridged so messages sent on one will show up on others and vice versa.
+            </p>
 <p>
-                    Last, there's an
-                    <a href=&quot;//calyxos.org/news/&quot;>blog</a> for updates +
-                    known bugs (and fixes) that's got an
-                    <a href=&quot;//calyxos.org/feed.xml&quot;>RSS feed</a> too.
-                </p>
-</article>]]></content:encoded>
-		</item>
-		<item>
-			<author>Max Vogel</author>
-			<title>Make Twitter Suck Less</title>
-			<pubDate>Mon, 07 Dec 2020 06:00:00 -0000</pubDate>
-			<link>https://mehvix.com/posts/twitter.html</link>
-			<guid>https://mehvix.com/posts/twitter.html</guid>
-			<content:encoded><![CDATA[<article id=&quot;content&quot;>
-<p>
-                    Twitter is pretty bad. But, it's the only place with
-                    <a href=&quot;//twitter.com/jon_bois&quot;>Jon Bois tweets</a>. Here
-                    are a couple ways you can make Twitter suck less.
-                </p>
-<p>
-<i>2/2/2021 Update:</i> I came across
-                    <a href=&quot;//github.com/zedeus/nitter&quot;>nitter</a> which is a
-                    FOSS proxy to Twitter. Currently, you can only view certain
-                    profiles but is perfect for my use-case.
-                </p>
-
-                ---
-                <div>
-<h1 style=&quot;margin-top: 1em&quot;>Remove Homepage Crap</h1>
-                    The Twitter &quot;What's Happening&quot; sidebar is dedicated to drama
-                    and stuff intended to make you angry. To remove this, you'll
-                    need
-                    <a href=&quot;//github.com/gorhill/uBlock&quot;>uBlock origin</a>
-                    (which is something you should have installed if you want a
-                    more suck less internet in general). Once you have it
-                    installed, go to the
-                    <a href=&quot;chrome-extension://cjpalhdlnbpafiamejdnhcphjbkeiagm/dashboard.html&quot;>dashboard</a>
-                    add the following under the &quot;My filters&quot; tab:
-                    <pre><code class=&quot;css&quot;>twitter.com##.r-1hycxz.r-zso239.r-aqfbo4.css-1dbjc4n</code></pre>
-</div>
-<div>
-<h1>De-numerate</h1>
-                    As
-                    <a href=&quot;//bengrosser.com/projects/twitter-demetricator/&quot;>Ben Grosser</a>
-                    writes:
-                    <blockquote>
-                        Visible metrics can make us feel more compulsive,
-                        competitive, and anxious. Further—without realizing it,
-                        we craft rules for ourselves based on what the numbers
-                        say, and these rules affect what we post, who we friend,
-                        and which posts we “like.”
-                    </blockquote>
-
-                    He's written a tool to remove all metrics (likes, retweets,
-                    replies, followers, etc.) which you can install through one
-                    sources
-                    <a href=&quot;//bengrosser.com/projects/twitter-demetricator/install-twitter-demetricator/&quot;>linked here</a>. I am personally using
-                    <a href=&quot;//github.com/violentmonkey/violentmonkey&quot;>Violentmonkey</a>.
-                </div>
-<div>
-<h1>Remove Interests</h1>
-                    Twitter keeps track of what it think is you're interesting
-                    in, then uses it to show you &quot;relevant&quot; tweets (and ads).
-                    You can manually prune these
-                    <a href=&quot;//twitter.com/settings/your_twitter_data/twitter_interests&quot;>here</a>, but the list can get very long, very quick. You can
-                    automate &quot;un-interesting&quot; all topics by pasting
-                    <a href=&quot;//gist.github.com/edjw/61cda68535b237fa7fa8db23842c1b6d/&quot;>Ed Johnson-Williams'</a>
-                    script in console:
-
-                    <pre><code class=&quot;js&quot;>&quot;use strict;&quot;
-var labelSelector = &quot;.r-1p0dtai.r-1ei5mc7.r-1pi2tsx.r-1d2f490.r-crgep1.r-orgf3d.r-t60dpp.r-u8s1d.r-zchlnj.r-ipm5af.r-13qz1uu&quot;
-
-// Get all the interests that Twitter has inferred about your account
-var interests = Array.from(document.querySelectorAll(labelSelector));
-console.log(`${interests.length} total interests found`);
-var checkedInterests = 0;
-console.log(`Starting…`);
-
-// For each of those interests, if it's selected, uncheck the checkbox 
-interests.forEach((interest) =&gt; {
-    if (interest.checked) {
-        checkedInterests++
-        interest.click();
-        console.log(`${checkedInterests} of ${interests.length}`)
-    }
-});
-
-console.log(`Finished`);</code></pre>
-</div>
-<div>
-<h1>Remove Suggested Content</h1>
-
-                    Under the
-                    <a href=&quot;//twitter.com/settings/add_muted_keyword&quot;>muted keywords</a>
-                    section, you paste
-                    <a href=&quot;//gist.github.com/IanColdwater/88b3341a7c4c0cf71c73ac56f9bd36ec#gistcomment-3153196&quot;>Jake Bellacera's</a>
-                    script to automatically add suggest content keywords to the
-                    blocklist, cleaning up your timeline.
-                    <pre><code class=&quot;js&quot;>const delayMs = 500; // change this if you feel like its running too fast
-const keywords = `ActivityTweet
-generic_activity_highlights
-generic_activity_momentsbreaking
-RankedOrganicTweet
-suggest_activity
-suggest_activity_feed
-suggest_activity_highlights
-suggest_activity_tweet
-suggest_grouped_tweet_hashtag
-suggest_pyle_tweet
-suggest_ranked_organic_tweet
-suggest_ranked_timeline_tweet
-suggest_recap
-suggest_recycled_tweet
-suggest_recycled_tweet_inline
-suggest_sc_tweet
-suggest_timeline_tweet
-suggest_who_to_follow
-suggestactivitytweet
-suggestpyletweet
-suggestrecycledtweet_inline`.split(/\W+/);
-
-const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, &quot;value&quot;).set;
-
-const addMutedKeyword = keyword =&gt; {
-    const input = document.querySelector(&quot;[name='keyword']&quot;);
-    nativeInputValueSetter.call(input, keyword);
-    input.dispatchEvent(new Event('input', { bubbles: true }));
-    document.querySelector(&quot;[data-testid='settingsDetailSave']&quot;).click();
-}
-
-const delay = () =&gt; {
-    return new Promise(res =&gt; setTimeout(res, delayMs));
-};
-
-keywords.reduce(async (prev, keyword) =&gt; {
-    await prev;
-    document.querySelector(&quot;a[href='/settings/add_muted_keyword']&quot;).click();
-    await delay();
-    addMutedKeyword(keyword);
-    return delay();
-}, Promise.resolve());</code></pre>
-</div>
-
-                ---
-
-                <div>
-                    In the end, you should get something less distracting and
-                    more focused on the content you enjoy. For example, here's
-                    my new homepage:
-
-                    <img alt=&quot;End result&quot; src=&quot;/static/media/posts/suckless-twitter-result.JPG&quot; style=&quot;width: 100%; margin-top: 1em&quot;/>
-</div>
+                Last, there's an
+                <a href=&quot;//calyxos.org/news/&quot;>blog</a> for updates +
+                known bugs (and fixes) that's got an
+                <a href=&quot;//calyxos.org/feed.xml&quot;>RSS feed</a> too.
+            </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>NC Importing + Automating Calendars</title>
-			<pubDate>Wed, 08 Apr 2020 05:00:00 -0000</pubDate>
+			<pubDate>Wed, 08 Apr 2020 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/nextcloud-calendar.html</link>
 			<guid>https://mehvix.com/posts/nextcloud-calendar.html</guid>
 			<content:encoded><![CDATA[<article id=&quot;content&quot;>
 <p>
-                    Upgrading to Nextcloud 18 broke both importing public Google
-                    calendars and external calendars so that they don’t update
-                    automatically. Fortunately, both of these issues have
-                    workarounds<br/>
+                Upgrading to Nextcloud 18 broke both importing public Google
+                calendars and external calendars so that they don’t update
+                automatically. Fortunately, both of these issues have
+                workarounds<br/>
 </p>
 <h1>Importing Google Calendars</h1>
 <p>
-                    For external calendars, Nextcloud needs a
-                    <code>.ics</code> or <code>.ical</code> file. To add a
-                    Google Calendar, we just have to adjust the URL's formatting
-                    which you can do automatically using
-                    <a href=&quot;//toolbox.mehvix.com/ical-generator/&quot;>this online tool</a>. Alternatively, you can follow the manual method below.
-                </p>
+                For external calendars, Nextcloud needs a
+                <code>.ics</code> or <code>.ical</code> file. To add a
+                Google Calendar, we just have to adjust the URL's formatting
+                which you can do automatically using
+                <a href=&quot;//toolbox.mehvix.com/ical-generator/&quot;>this online tool</a>. Alternatively, you can follow the manual method below.
+            </p>
 <p>
-                    For embedded calendars (in this example the
-                    <a href=&quot;//codeforces.com/calendar&quot;>Codeforces calendar</a>)
-                    you can find the <code>cid</code> by clicking on the plus
-                    button in the bottom right corner which will open the
-                    following URL:
-                </p>
+                For embedded calendars (in this example the
+                <a href=&quot;//codeforces.com/calendar&quot;>Codeforces calendar</a>)
+                you can find the <code>cid</code> by clicking on the plus
+                button in the bottom right corner which will open the
+                following URL:
+            </p>
 <pre><code class=&quot;ini&quot;>https://calendar.google.com/calendar/render?cid=k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com&amp;ctz=America/Chicago</code></pre>
 <p>
-                    Alternatively, you can get also use inspect element which
-                    will yield the following URL containing the
-                    <code>src</code>:
-                </p>
+                Alternatively, you can get also use inspect element which
+                will yield the following URL containing the
+                <code>src</code>:
+            </p>
 <pre><code class=&quot;ini&quot;>https://calendar.google.com/calendar/embed?src=k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com&amp;ctz=America/Chicago&amp;hl=en&amp;wkst=1</code></pre>
 <p>
-                    Then take everything <strong>after</strong>
+                Then take everything <strong>after</strong>
 <code>src=</code>, <code>cid=</code>, or
-                    <code>/ical/</code> and up to the next <code>&amp;</code> sign,
-                    oftentimes this will look something like
-                    <code>[id]@[group].calendar.google.com</code>. Then, take
-                    this string and add it to the following:
-                </p>
+                <code>/ical/</code> and up to the next <code>&amp;</code> sign,
+                oftentimes this will look something like
+                <code>[id]@[group].calendar.google.com</code>. Then, take
+                this string and add it to the following:
+            </p>
 <pre><code class=&quot;ini&quot;>https://calendar.google.com/calendar/ical/[add here!]/public/basic.ics</code></pre>
 <p>
-                    For example, using the Codeforces calendar you'd grab
-                    <code>k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com</code>
-                    and get the following:
-                </p>
+                For example, using the Codeforces calendar you'd grab
+                <code>k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com</code>
+                and get the following:
+            </p>
 <pre><code class=&quot;ini&quot;>https://calendar.google.com/calendar/ical/k23j233gtcvau7a8ulk2p360m4@group.calendar.google.com/public/basic.ics</code></pre>
 <p>
-                    You can then use this URL to as the external URL in the
-                    Nextcloud Calendar app.
-                </p>
+                You can then use this URL to as the external URL in the
+                Nextcloud Calendar app.
+            </p>
 <h1>Automatically Updating Calendars</h1>
 <p>
-                    The default subscription refreshing interval is of one week
-                    (unless the subscription itself asks for a different rate).
-                </p>
+                The default subscription refreshing interval is of one week
+                (unless the subscription itself asks for a different rate).
+            </p>
 <p>You may override it with something like:</p>
 <code>sudo -u www-data php /var/www/html/occ config:app:set dav
                     calendarSubscriptionRefreshRate --value &quot;P1DT6H&quot;</code>
 <p>
-                    which would set the interval to 1 day and 6 hours. The
-                    <code>--value</code> data type is
-                    <a href=&quot;//www.php.net/manual/en/dateinterval.construct.php&quot;>DataInterval</a>.
-                </p>
+                which would set the interval to 1 day and 6 hours. The
+                <code>--value</code> data type is
+                <a href=&quot;//www.php.net/manual/en/dateinterval.construct.php&quot;>DataInterval</a>.
+            </p>
 </article>]]></content:encoded>
 		</item>
 		<item>
 			<author>Max Vogel</author>
 			<title>Nextcloud Install Guide</title>
-			<pubDate>Tue, 03 Sep 2019 05:00:00 -0000</pubDate>
+			<pubDate>Tue, 03 Sep 2019 07:00:00 -0000</pubDate>
 			<link>https://mehvix.com/posts/nextcloud-guide.html</link>
 			<guid>https://mehvix.com/posts/nextcloud-guide.html</guid>
 			<content:encoded><![CDATA[<article>
@@ -1449,7 +1212,7 @@ keywords.reduce(async (prev, keyword) =&gt; {
                 </p>
 <pre class=&quot;language-shell&quot;><code>$ sudo apt update &amp;&amp; sudo apt upgrade
 $ sudo apt install apache2
-$ systemctl start apache2 # turns on apache now 
+$ systemctl start apache2 # turns on apache now
 $ systemctl enable apache2 # auto-start apache2 on boot</code></pre>
 <p>
                     If you’ve configured the server right, you should be able to
@@ -1470,7 +1233,7 @@ $ mysql_secure_installation</code></pre>
                     NextCloud. (note that &quot;<code>Password</code>&quot; will be your
                     own password created during the installation phase).
                 </p>
-<pre><code class=&quot;language-pgsql&quot;>$ mariadb 
+<pre><code class=&quot;language-pgsql&quot;>$ mariadb
 CREATE DATABASE nextcloud;
 CREATE USER nextcloud IDENTIFIED BY 'Password';
 GRANT USAGE ON *.* TO nextcloud@localhost IDENTIFIED BY 'Password';
@@ -1850,7 +1613,7 @@ innodb_default_row_format = 'DYNAMIC'</code></pre>
                     <pre><code>$ cd /var/www/html/apps/
 $ wget --load-cookies /tmp/cookies.txt &quot;https://docs.google.com/uc?export=download&amp;confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&amp;id=1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&amp; 1usRzYpaOVFwKn63xrCrtJTHuLpMXQz_j&quot; -O rclick &amp;&amp; rm -rf /tmp/cookies.txt
 $ rm -rf files_rightclick/
-$ unzip rclick      
+$ unzip rclick
 $ rm rclick
 $ systemctl restart apache2</code></pre>
 <code>systemctl restart apache2</code>
