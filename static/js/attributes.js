@@ -79,7 +79,7 @@ The whole wide world will laugh with you.<br>`,
     `I pronounce 10 like tin.`,
     // .
     `There's nothing worse than people who don't understand hyperbole.`,
-    `<code>YYYY-MM-DD</code> is the ideal date format.`,
+    `<code>YYYY-MM-DD</code> is the ideal date format.`, // certainly not YYYY-$month-DD !
     // syntax
     `This sentence contains threee erors.`,
     `This sentence refers to all sentences that do not refer to themselves.`,
