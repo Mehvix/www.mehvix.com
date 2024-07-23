@@ -141,6 +141,7 @@ The whole wide world will laugh with you.<br>`,
     `211 8.1%. whatchu know bout that?`,
     `THE ROOM Plays at The Balboa, The First Saturday of Every Month.`,
     `<a href='//mhvx.cc/whynot'>why not?</a> (feat big K)`,
+    `<i><a href='https://youtu.be/9EcjWd-O4jI'>Pump Up The Jam</a></i> is the national anthem of Canada.`,
     // > songs
     `Buy real estate in imaginary places.`,
     `Dismiss this line--`,

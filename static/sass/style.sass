@@ -36,6 +36,9 @@ $body-margin-side: 2em
         background-color: css-var(--outside-bg-color)
         color: css-var(--text-color-inverse)
 
+*:focus-visible
+    outline: css-var(--outside-bg-color) solid 2px
+
 html
     overflow-y: scroll //stackoverflow.com/a/7607206/7833617
     // scroll-behavior: smooth
@@ -98,8 +101,36 @@ input
     &[type="checkbox"]:checked
         accent-color: css-var(--outside-bg-color)
 
-*:focus-visible
-    outline: css-var(--outside-bg-color) auto 1px
+h1 + h2, h2 + h3, h3 + h4
+        margin-top: .75em
+
+h1, h2, h3
+    font-weight: bold
+    margin-bottom: 0.25em
+
+    &::before
+        font-style: initial
+
+h1
+    font-size: 123%
+    margin-top: 2em
+    // vertical-align: middle
+
+    &::before
+        content: '⌗ '
+        // vertical-align: inherit
+
+h2
+    font-size: 112%
+    margin-top: 1.75em
+    &::before
+        content: '⌗⌗ '
+
+h3
+    font-size: 105%
+    margin-top: 1.75em
+    &::before
+        content: '⌗⌗⌗ '
 
 button
     font-size: 150%
@@ -142,6 +173,11 @@ a:visited
     transition-property: background-color
     transition-timing-function: ease-in-out
     transition-duration: $transition-time
+
+    &:focus-visible
+        box-shadow: none
+        outline-style: dashed
+        outline-offset: 0.5px
 
     img
         margin-bottom: 0
@@ -204,20 +240,6 @@ fieldset
     margin-bottom: 1ch
     border: $border-dash
 
-code,
-.hljs
-    font-family: 'PT Mono', monospace !important
-    padding: 2px 4px
-    font-size: 90%
-    background-color: css-var(--code-bg-color) !important
-    color: css-var(--text-color-inverse)
-    border-radius: $code-radius
-
-    &::selection,
-    & span::selection
-        color: limegreen !important
-        background: black !important
-
 pre > code
     // hljs from atom-one-dark.css line 21
     display: block
@@ -241,6 +263,20 @@ pre > code
     &::-webkit-scrollbar-thumb
         background-color: #323742 // color of the scroll thumb
         border-radius: $code-radius // roundness of the scroll thumb
+
+code,
+.hljs
+    font-family: 'PT Mono', monospace !important
+    padding: 2px 4px
+    font-size: 90%
+    background-color: css-var(--code-bg-color) !important
+    color: css-var(--text-color-inverse)
+    border-radius: $code-radius
+
+    &::selection,
+    & span::selection
+        color: limegreen !important
+        background: black !important
 
 details
     color: css-var(--text-color-inverse)
@@ -311,54 +347,19 @@ li
     padding-left: 0
     margin: 0.66ch 0
 
-
     // & li
     //     margin-left: 2ch
 
+ul li::marker
+    content: '- '
 
-    ul &::marker
-        content: '- '
-
-    ol &
-        &::marker
-            content: ''
-
-        &::before
-            content: '* '
-            vertical-align: text-top
-
-h1 + h2, h2 + h3, h3 + h4
-    margin-top: .75em
-
-h1,
-h2,
-h3
-    font-weight: bold
-    margin-bottom: 0.25em
+ol li
+    &::marker
+        content: ''
 
     &::before
-        font-style: initial
-
-h1
-    font-size: 123%
-    margin-top: 2em
-    // vertical-align: middle
-
-    &::before
-        content: '⌗ '
-        // vertical-align: inherit
-
-h2
-    font-size: 112%
-    margin-top: 1.75em
-    &::before
-        content: '⌗⌗ '
-
-h3
-    font-size: 105%
-    margin-top: 1.75em
-    &::before
-        content: '⌗⌗⌗ '
+        content: '* '
+        vertical-align: text-top
 
 select:focus,
 input:focus,
@@ -555,7 +556,8 @@ img.dropdown
             // &::selection
             //     background-color: inherit !important
 
-sc
+sc,
+small-cap
     @extend .sc
 
 s,
@@ -575,12 +577,12 @@ a.spoil
         background-color: unset
         color: unset
 
-// todo is there a better method?
 .grid
     display: inline-grid
     text-align: center
     grid-row-gap: .5ch
 
+    // todo is there a better method?
     &.five
         grid-template-columns: repeat(5, 1fr)
 
@@ -595,6 +597,44 @@ a.spoil
 
     &.one
         grid-template-columns: repeat(1, 1fr)
+
+.footnote
+    cursor: pointer
+    font-style: italic
+    color: red
+    text-decoration-color: red
+    text-decoration-thickness: 1.5px
+    text-underline-offset: 1.5px
+    text-decoration-style: dotted
+    text-decoration-line: underline
+
+    &::hover, &::focus, &::active
+        text-decoration-style: solid
+
+.footnote-container
+    position: absolute
+    background-color: css-var(--inside-bg-color)
+    filter: brightness(1.1)
+
+    border-width: 3.5px
+    border-style: ridge
+    // border-color: css-var(--text-color)
+    border-color: #a5a5a5
+    // border-style: inset
+    // border-color: #c1c1c1
+    // border-bottom-color: css-var(--text-color)
+    // border-right-color: css-var(--text-color)
+
+    padding: 1ch
+    max-width: 300px
+    box-shadow: 6px 6px 6px 3px rgba(0, 0, 0, .45), inset 1px 1px 0px 0px rgba(0,0,0,0.9)
+
+    z-index: 1000
+    margin-right: 1rem
+
+    display: none
+    &.active
+        display: block
 
 // .hover>img:last-child {
 //     display: none;
