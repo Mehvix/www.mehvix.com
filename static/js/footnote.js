@@ -12,27 +12,23 @@ document.addEventListener('DOMContentLoaded', function () {
         return container;
     }
 
-    function showFootnote(footnote, container) {
-        // const rect = footnote.getBoundingClientRect();
-        // container.style.left = `${rect.left}px`;
-        // container.style.top = `${rect.bottom + window.scrollY + 5}px`;
-        // container.classList.add('active');
-
-        // activeFootnote = footnote;
-        // activeContainer = container;
-
+    function positionFootnote(footnote, container) {
         const rect = footnote.getBoundingClientRect();
         const containerWidth = parseInt(window.getComputedStyle(container).getPropertyValue('max-width'), 10);
         const windowWidth = window.innerWidth;
         const margin = 16; // 1rem
 
-        let left = rect.left;
+        let left = rect.left + window.scrollX;
         if (left + containerWidth + margin > windowWidth) {
             left = windowWidth - containerWidth - margin;
         }
 
         container.style.left = `${Math.max(margin, left)}px`;
         container.style.top = `${rect.bottom + window.scrollY + 5}px`;
+    }
+
+    function showFootnote(footnote, container) {
+        positionFootnote(footnote, container);
         container.classList.add('active');
 
         if (window.MathJax) {
@@ -112,5 +108,16 @@ document.addEventListener('DOMContentLoaded', function () {
         if (activeContainer && activeContainer.contains(e.target)) {
             e.stopPropagation();
         }
+    });
+
+    // Handle window resize and zoom
+    let resizeTimer;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            if (activeFootnote && activeContainer) {
+                positionFootnote(activeFootnote, activeContainer);
+            }
+        }, 100);
     });
 });
