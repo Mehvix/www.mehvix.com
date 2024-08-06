@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const container = document.createElement('div');
         container.className = 'footnote-container';
         container.innerHTML = footnote.getAttribute('data-footnote');
+
+        const customStyles = footnote.getAttribute('style-footnote');
+        if (customStyles)
+            container.style.cssText = customStyles;
+
         document.body.appendChild(container);
         return container;
     }
@@ -15,7 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function positionFootnote(footnote, container) {
         const rect = footnote.getBoundingClientRect();
         const containerWidth = parseInt(window.getComputedStyle(container).getPropertyValue('max-width'), 10);
-        const windowWidth = window.innerWidth;
+        let windowWidth = window.innerWidth;
+
+        if (window.innerWidth > document.documentElement.clientWidth)
+            windowWidth -= window.innerWidth - document.documentElement.clientWidth + 10;
+
         const margin = 16; // 1rem
 
         let left = rect.left + window.scrollX;
@@ -24,20 +33,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         container.style.left = `${Math.max(margin, left)}px`;
-        container.style.top = `${rect.bottom + window.scrollY + 5}px`;
+        container.style.top = `${rect.bottom + window.scrollY + 1}px`;
     }
 
     function showFootnote(footnote, container) {
         positionFootnote(footnote, container);
         container.classList.add('active');
 
-        if (window.MathJax) {
+        if (window.MathJax)
             MathJax.typesetPromise([container]).catch((err) => console.log('MathJax error:', err));
-        }
 
         activeFootnote = footnote;
         activeContainer = container;
-        isClicked = true;
     }
 
     function hideActiveFootnote() {
@@ -49,10 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function handleHover(event) {
-        if (isClicked)
-            return;
-
+    function handleMouseEnter(event) {
         const footnote = event.target;
         let container = footnote.footnoteContainer;
 
@@ -62,7 +66,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         showFootnote(footnote, container);
-        isClicked = false;
+    }
+
+    function handleMouseLeave(event) {
+        if (!isClicked) {
+            const relatedTarget = event.relatedTarget;
+            if (!relatedTarget || !activeContainer || !activeContainer.contains(relatedTarget)) {
+                hideActiveFootnote();
+            }
+        }
     }
 
     function handleClick(event) {
@@ -76,17 +88,18 @@ document.addEventListener('DOMContentLoaded', function () {
             footnote.footnoteContainer = container;
         }
 
-        if (!(activeFootnote === footnote && isClicked)) {
+        if (activeFootnote === footnote && isClicked) {
+            hideActiveFootnote();
+        } else {
             if (activeContainer) { hideActiveFootnote(); }
             showFootnote(footnote, container);
+            isClicked = true;
         }
     }
 
     footnotes.forEach(footnote => {
-        footnote.addEventListener('mouseover', handleHover);
-        footnote.addEventListener('mouseout', function (event) {
-            if (!isClicked) { hideActiveFootnote(); }
-        });
+        footnote.addEventListener('mouseenter', handleMouseEnter);
+        footnote.addEventListener('mouseleave', handleMouseLeave);
         footnote.addEventListener('click', handleClick);
 
         footnote.addEventListener('touchstart', function (e) {
@@ -95,18 +108,26 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    document.addEventListener('mouseover', function(e) {
+        if (activeContainer && (e.target === activeContainer || activeContainer.contains(e.target))) {
+            clearTimeout(activeContainer.hideTimeout);
+        }
+    });
+
+    document.addEventListener('mouseout', function(e) {
+        if (activeContainer && !isClicked) {
+            const relatedTarget = e.relatedTarget;
+            if (!relatedTarget || (!activeContainer.contains(relatedTarget) && !activeFootnote.contains(relatedTarget))) {
+                activeContainer.hideTimeout = setTimeout(hideActiveFootnote, 100);
+            }
+        }
+    });
+
     document.addEventListener('click', function (e) {
         if (!e.target.classList.contains('footnote') &&
             activeContainer &&
             !activeContainer.contains(e.target)) {
             hideActiveFootnote();
-        }
-    });
-
-    // Prevent closing when clicking inside the footnote container
-    document.addEventListener('click', function (e) {
-        if (activeContainer && activeContainer.contains(e.target)) {
-            e.stopPropagation();
         }
     });
 
