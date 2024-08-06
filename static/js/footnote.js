@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const footnotes = document.querySelectorAll('.footnote');
     let activeFootnote = null;
     let activeContainer = null;
-    let isClicked = false;
+    let clickedFootnote = null;
+    let clickedContainer = null;
 
     function createFootnoteContainer(footnote) {
         const container = document.createElement('div');
@@ -15,32 +16,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function positionFootnote(footnote, container) {
         const rect = footnote.getBoundingClientRect();
-        const windowWidth = Math.min(window.innerWidth, document.documentElement.clientWidth);
         const containerWidth = parseInt(window.getComputedStyle(container).getPropertyValue('max-width'), 10);
+        const windowWidth = Math.min(window.innerWidth, document.documentElement.clientWidth);
         const margin = 16;
 
         const left = Math.max(margin, Math.min(rect.left, windowWidth - containerWidth - margin));
         container.style.left = `${left}px`;
-        container.style.top = `${rect.bottom + window.scrollY + 1}px`;
+        container.style.top = `${rect.bottom + window.scrollY}px`;
     }
 
-    function showFootnote(footnote, container) {
+    function showFootnote(footnote, container, isClicked = false) {
         positionFootnote(footnote, container);
         container.classList.add('active');
-        activeFootnote = footnote;
-        activeContainer = container;
+
+        if (isClicked) {
+            if (clickedContainer && clickedContainer !== container)
+                hideFootnote(clickedContainer);
+            clickedFootnote = footnote;
+            clickedContainer = container;
+        } else {
+            activeFootnote = footnote;
+            activeContainer = container;
+        }
 
         if (window.MathJax)
             window.MathJax.typesetPromise([container]).catch((err) => console.log('MathJax error:', err));
     }
 
-    function hideActiveFootnote() {
-        if (activeContainer) {
-            activeContainer.classList.remove('active');
-            activeFootnote = null;
-            activeContainer = null;
-            isClicked = false;
-        }
+    function hideFootnote(container) {
+        if (container) container.classList.remove('active');
     }
 
     function handleInteraction(event, isMouseEnter) {
@@ -53,11 +57,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (isMouseEnter) {
-            showFootnote(footnote, container);
-        } else if (!isClicked) {
+            if (footnote !== clickedFootnote) showFootnote(footnote, container);
+        } else {
             const relatedTarget = event.relatedTarget;
-            if (!relatedTarget || !activeContainer || !activeContainer.contains(relatedTarget)) {
-                hideActiveFootnote();
+            if (!relatedTarget || !container.contains(relatedTarget)) {
+                if (footnote !== clickedFootnote) {
+                    hideFootnote(container);
+                    activeFootnote = null;
+                    activeContainer = null;
+                }
             }
         }
     }
@@ -67,12 +75,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const footnote = event.target;
         const container = footnote.footnoteContainer || createFootnoteContainer(footnote);
 
-        if (activeFootnote === footnote && isClicked) {
-            hideActiveFootnote();
+        if (clickedFootnote === footnote) {
+            hideFootnote(container);
+            clickedFootnote = null;
+            clickedContainer = null;
         } else {
-            if (activeContainer) hideActiveFootnote();
-            showFootnote(footnote, container);
-            isClicked = true;
+            showFootnote(footnote, container, true);
         }
     }
 
@@ -90,23 +98,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('mouseout', (e) => {
-        if (activeContainer && !isClicked) {
+        if (activeContainer && activeFootnote !== clickedFootnote) {
             const relatedTarget = e.relatedTarget;
             if (!relatedTarget || (!activeContainer.contains(relatedTarget) && !activeFootnote.contains(relatedTarget))) {
-                activeContainer.hideTimeout = setTimeout(hideActiveFootnote, 100);
+                activeContainer.hideTimeout = setTimeout(() => {
+                    hideFootnote(activeContainer);
+                    activeFootnote = null;
+                    activeContainer = null;
+                }, 100);
             }
         }
     });
 
     document.addEventListener('click', (e) => {
-        if (activeContainer && !e.target.classList.contains('footnote') && !activeContainer.contains(e.target)) {
-            hideActiveFootnote();
+        if (clickedContainer && !e.target.classList.contains('footnote') && !clickedContainer.contains(e.target)) {
+            hideFootnote(clickedContainer);
+            clickedFootnote = null;
+            clickedContainer = null;
         }
     });
 
     window.addEventListener('resize', () => {
         if (activeFootnote && activeContainer) {
             positionFootnote(activeFootnote, activeContainer);
+        }
+        if (clickedFootnote && clickedContainer) {
+            positionFootnote(clickedFootnote, clickedContainer);
         }
     });
 });
