@@ -8,43 +8,30 @@ document.addEventListener('DOMContentLoaded', function () {
         const container = document.createElement('div');
         container.className = 'footnote-container';
         container.innerHTML = footnote.getAttribute('data-footnote');
-
-        const customStyles = footnote.getAttribute('style-footnote');
-        if (customStyles)
-            container.style.cssText = customStyles;
-
+        container.style.cssText = footnote.getAttribute('style-footnote') || '';
         document.body.appendChild(container);
         return container;
     }
 
     function positionFootnote(footnote, container) {
         const rect = footnote.getBoundingClientRect();
+        const windowWidth = Math.min(window.innerWidth, document.documentElement.clientWidth);
         const containerWidth = parseInt(window.getComputedStyle(container).getPropertyValue('max-width'), 10);
-        let windowWidth = window.innerWidth;
+        const margin = 16;
 
-        if (window.innerWidth > document.documentElement.clientWidth)
-            windowWidth -= window.innerWidth - document.documentElement.clientWidth + 10;
-
-        const margin = 16; // 1rem
-
-        let left = rect.left + window.scrollX;
-        if (left + containerWidth + margin > windowWidth) {
-            left = windowWidth - containerWidth - margin;
-        }
-
-        container.style.left = `${Math.max(margin, left)}px`;
+        const left = Math.max(margin, Math.min(rect.left, windowWidth - containerWidth - margin));
+        container.style.left = `${left}px`;
         container.style.top = `${rect.bottom + window.scrollY + 1}px`;
     }
 
     function showFootnote(footnote, container) {
         positionFootnote(footnote, container);
         container.classList.add('active');
-
-        if (window.MathJax)
-            MathJax.typesetPromise([container]).catch((err) => console.log('MathJax error:', err));
-
         activeFootnote = footnote;
         activeContainer = container;
+
+        if (window.MathJax)
+            window.MathJax.typesetPromise([container]).catch((err) => console.log('MathJax error:', err));
     }
 
     function hideActiveFootnote() {
@@ -56,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function handleMouseEnter(event) {
+    function handleInteraction(event, isMouseEnter) {
         const footnote = event.target;
         let container = footnote.footnoteContainer;
 
@@ -65,11 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
             footnote.footnoteContainer = container;
         }
 
-        showFootnote(footnote, container);
-    }
-
-    function handleMouseLeave(event) {
-        if (!isClicked) {
+        if (isMouseEnter) {
+            showFootnote(footnote, container);
+        } else if (!isClicked) {
             const relatedTarget = event.relatedTarget;
             if (!relatedTarget || !activeContainer || !activeContainer.contains(relatedTarget)) {
                 hideActiveFootnote();
@@ -79,42 +64,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleClick(event) {
         event.stopPropagation();
-
         const footnote = event.target;
-        let container = footnote.footnoteContainer;
-
-        if (!container) {
-            container = createFootnoteContainer(footnote);
-            footnote.footnoteContainer = container;
-        }
+        const container = footnote.footnoteContainer || createFootnoteContainer(footnote);
 
         if (activeFootnote === footnote && isClicked) {
             hideActiveFootnote();
         } else {
-            if (activeContainer) { hideActiveFootnote(); }
+            if (activeContainer) hideActiveFootnote();
             showFootnote(footnote, container);
             isClicked = true;
         }
     }
 
     footnotes.forEach(footnote => {
-        footnote.addEventListener('mouseenter', handleMouseEnter);
-        footnote.addEventListener('mouseleave', handleMouseLeave);
+        footnote.addEventListener('mouseenter', (e) => handleInteraction(e, true));
+        footnote.addEventListener('mouseleave', (e) => handleInteraction(e, false));
         footnote.addEventListener('click', handleClick);
-
-        footnote.addEventListener('touchstart', function (e) {
-            e.preventDefault();
-            handleClick(e);
-        });
+        footnote.addEventListener('touchstart', (e) => { e.preventDefault(); handleClick(e); });
     });
 
-    document.addEventListener('mouseover', function(e) {
-        if (activeContainer && (e.target === activeContainer || activeContainer.contains(e.target))) {
+    document.addEventListener('mouseover', (e) => {
+        if (activeContainer && activeContainer.contains(e.target)) {
             clearTimeout(activeContainer.hideTimeout);
         }
     });
 
-    document.addEventListener('mouseout', function(e) {
+    document.addEventListener('mouseout', (e) => {
         if (activeContainer && !isClicked) {
             const relatedTarget = e.relatedTarget;
             if (!relatedTarget || (!activeContainer.contains(relatedTarget) && !activeFootnote.contains(relatedTarget))) {
@@ -123,22 +98,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.addEventListener('click', function (e) {
-        if (!e.target.classList.contains('footnote') &&
-            activeContainer &&
-            !activeContainer.contains(e.target)) {
+    document.addEventListener('click', (e) => {
+        if (activeContainer && !e.target.classList.contains('footnote') && !activeContainer.contains(e.target)) {
             hideActiveFootnote();
         }
     });
 
-    // Handle window resize and zoom
-    let resizeTimer;
-    window.addEventListener('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
-            if (activeFootnote && activeContainer) {
-                positionFootnote(activeFootnote, activeContainer);
-            }
-        }, 100);
+    window.addEventListener('resize', () => {
+        if (activeFootnote && activeContainer) {
+            positionFootnote(activeFootnote, activeContainer);
+        }
     });
 });

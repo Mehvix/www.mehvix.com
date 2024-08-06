@@ -12,6 +12,7 @@
 
     <!-- Unique -->
     <script src="/static/js/attributes.js"></script>
+    <script src="/static/js/footnote.js"></script>
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦧</text></svg>" />
 
@@ -38,11 +39,14 @@
         <div class="nav"><a href="">~</a>/</div>
         <div>
             <p>
-                Hello. My name is Max Vogel, but <i class="sc">Mehvix</i> is my username for most things on the web — surely you can figure out what it means. Born in 2002, I am glad to have grown up around the <a href="https://en.wikipedia.org/wiki/Dane_County,_Wisconsin">great dairyland</a>. Here is a <a onclick="toggleImage(me)">picture</a><img class="expander" onclick="toggleImage(me)" /> of my dad and me circa 2007 Google Maps.
+                Hello. My name is Max Vogel, but <i class="sc">Mehvix</i> is my username for most things on the web — surely you can figure out what it means. Born in 2002, I am glad to have grown up around the <a href="https://en.wikipedia.org/wiki/Wisconsin">great dairyland</a>.
+                Here is a <span class="footnote" data-footnote="<img src='/static/media/home/me/gmaps2.png'/>" style-footnote="max-width: 400px; line-height: 0">picture</span>
+                <!-- Here is a <a onclick="toggleImage(me)">picture</a><img class="expander" onclick="toggleImage(me)" /> -->
+                of my dad and me circa 2007 Google Maps.
             </p>
-            <img id="me" src="/static/media/home/me/gmaps2.png" class="hidden dropdown" />
+            <!-- <img id="me" src="/static/media/home/me/gmaps2.png" class="hidden dropdown" /> -->
             <p>
-                Right now I'm in my forth year at <a href="//eecs.berkeley.edu/">Berkeley EECS</a> and a research assistant with the <a href="//radiology.ucsf.edu/research/labs/physics/big-data">BDRAD lab</a> at UCSF; I'm versed in modern approaches to machine learning and computer vision. I am commit to establishing and protecting digital privacy and freedoms; I daily-drive a Linux system, as all CS majors ought to.
+                Right now I'm in my forth year at <a href="//eecs.berkeley.edu/">Berkeley EECS</a> and a research assistant with the <a href="//radiology.ucsf.edu/research/labs/physics/big-data">BDRAD lab</a> at UCSF; I'm versed in modern approaches to machine learning and computer vision. Personally, I value craftsmanship, and am commit to establishing and protecting digital privacy and freedoms; I daily-drive a Linux system, as all CS majors ought to.
 
                 To turn off my brain, you may find me <a href="//www.instagram.com/tyrolbasinparks/">snowboarding park</a>, <a href="//www.mosaicboulders.com//">bouldering</a>, or on a hike.
             </p>
@@ -226,7 +230,7 @@
                 </li>
                 <li><a href="//notes.mehvix.com">Notes</a></li>
                 <li><a href="//mse.mehvix.com">MSE</a></li>
-                <li><a href="//cs180.mehvix.com">CS180</a> & <a href="//cs194.mehvix.com">CS194</a></li>
+                <li><a href="//cs184.mehvix.com">CS184</a> & <a href="//cs194.mehvix.com">CS194</a></li>
                 <li><a href="//aops-rss.mehvix.com">AoPS RSS Generator</a></li>
             </ul>
         </div>

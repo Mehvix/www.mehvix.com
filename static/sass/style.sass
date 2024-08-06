@@ -30,7 +30,7 @@ $body-margin-side: 2em
 *
     letter-spacing: 0
     line-height: 1.5
-    scrollbar-width: thin // "auto" or "thin"
+    scrollbar-width: auto // "thin" breaks style
 
     &::selection
         background-color: css-var(--outside-bg-color)
@@ -625,11 +625,16 @@ a.spoil
     // border-bottom-color: css-var(--text-color)
     // border-right-color: css-var(--text-color)
 
+    line-height: unset
     padding: 1ch
     max-width: 300px
-    box-shadow: 6px 6px 6px 3px rgba(0, 0, 0, .45), inset 1px 1px 0px 0px rgba(0,0,0,0.9)
+    // max-width: 300px
+    box-shadow: 6px 6px 6px 3px rgba(0, 0, 0, .45), inset 1px 1px 0px 0px rgba(0,0,0,0.2)
 
-    z-index: 1000
+    // overflow-y: auto
+    // overflow-x: hidden
+
+    z-index: 200 // mathjax rightclick menu is 201
     margin-right: 1rem
 
     display: none
