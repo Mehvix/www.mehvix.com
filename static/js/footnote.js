@@ -1,3 +1,8 @@
+// HOW TO USE:
+// give element, i.e. <span>, class 'footnote'
+// data-footnote attribute will populate the contents
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const footnotes = document.querySelectorAll('.footnote');
     let activeFootnote = null;
