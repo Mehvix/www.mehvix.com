@@ -16,7 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const container = footnote.footnoteContainer = document.createElement('div');
         container.className = 'footnote-container';
-        container.innerHTML = footnote.getAttribute('data-footnote');
+
+        // Check for img-footnote attribute
+        const imgFootnote = footnote.getAttribute('img-footnote');
+        if (imgFootnote)
+            container.innerHTML = `<img src='${imgFootnote}'>`;
+        else
+            container.innerHTML = footnote.getAttribute('data-footnote');
+
         container.style.cssText = footnote.getAttribute('style-footnote') || '';
         document.body.appendChild(container);
         return container;
